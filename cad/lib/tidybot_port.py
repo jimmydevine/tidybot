@@ -93,6 +93,21 @@ PORT = dict(
     FLANGE_GAP        = 1.0,     # designed air gap; steel carries the load
 )
 
+# Materials. Stainless, not mild steel: the posts sit exposed whenever a
+# module is off, on a machine that mops. Rust would SWELL a Ø10 post in a
+# Ø10.2 socket and bind it, shed abrasive particles into a joint that mates
+# 500 times, and stain whatever it touched.
+#
+# Buy 303 if you are cutting the taper and groove yourself -- it is the
+# free-machining grade. 304/316/A2 are common as dowel stock but gummy, and
+# they work-harden: dwell with a file and the surface hardens under you.
+# The yield figure below is the conservative austenitic value, so the margins
+# hold whichever grade you end up with.
+MATERIAL = dict(
+    STEEL_YIELD_MPA   = 205.0,   # 304/316/A2 austenitic, conservative
+    PETG_COMP_MPA     = 50.0,
+)
+
 # Design loads -- ADR 0007. Not geometry, but every margin below refers to them.
 LOAD = dict(
     AXIAL_TOP_N       = 192.0,   # 3-stack flight, top port
@@ -228,8 +243,9 @@ def derived(p=None):
     d["LOCK_LOAD_N"]  = LOAD["AXIAL_TOP_N"] / 3.0
     d["LOCK_BEARING_MPA"] = d["LOCK_LOAD_N"] / d["LOCK_BEARING_MM2"]
     d["POST_TENSION_MPA"] = d["LOCK_LOAD_N"] / d["POST_NET_MM2"]
-    d["LOCK_MARGIN"] = 250.0 / d["LOCK_BEARING_MPA"]     # mild steel plate
-    d["POST_MARGIN"] = 250.0 / d["POST_TENSION_MPA"]
+    y = MATERIAL["STEEL_YIELD_MPA"]
+    d["LOCK_MARGIN"] = y / d["LOCK_BEARING_MPA"]
+    d["POST_MARGIN"] = y / d["POST_TENSION_MPA"]
     if d["LOCK_MARGIN"] < 10.0:
         raise ValueError("Lock plate bearing margin only %.1fx." % d["LOCK_MARGIN"])
     return d
@@ -533,22 +549,26 @@ def report(p=None):
 
     print("\nMARGINS (top port, %.0f N flight load, %.0f N per post)"
           % (LOAD["AXIAL_TOP_N"], d["LOCK_LOAD_N"]))
-    print("  lock plate bearing    %.2f MPa -> %.0fx (mild steel)"
-          % (d["LOCK_BEARING_MPA"], d["LOCK_MARGIN"]))
+    print("  lock plate bearing    %.2f MPa -> %.0fx (stainless, %.0f MPa yield)"
+          % (d["LOCK_BEARING_MPA"], d["LOCK_MARGIN"], MATERIAL["STEEL_YIELD_MPA"]))
     print("  post net section      %.2f MPa -> %.0fx" % (d["POST_TENSION_MPA"], d["POST_MARGIN"]))
     print("\nBILL OF MATERIALS per mated pair")
-    print("  3 x Ø%.0f x %.0f MILD steel rod  (posts)" % (p["POST_DIA"], d["POST_TOTAL_LEN"]))
+    print("  3 x Ø%.0f x %.0f STAINLESS rod, grade 303  (posts)"
+          % (p["POST_DIA"], d["POST_TOTAL_LEN"]))
     print("        - turn one end to Ø%.0f over %.1f mm at %.0f deg  (the capture taper)"
           % (p["POST_TIP_DIA"], d["POST_TAPER_LEN"], p["POST_TAPER_ANGLE"]))
     print("        - cut a Ø%.0f groove, %.1f wide, centred %.0f mm above the shoulder"
           % (p["GROOVE_ROOT_DIA"], p["GROOVE_WIDTH"], p["GROOVE_Z"]))
     print("        - press %.0f mm into the plate (bore Ø%.2f)"
           % (p["POST_EMBED"], p["POST_BORE_DIA"]))
-    print("        NOTE: a groove is one lathe op, or a round file against the")
-    print("              rod spun in a drill. No cross-hole, no V-block, no")
-    print("              drilling hardened stock -- so ground locating pins")
-    print("              become a viable starting point too.")
-    print("  1 x lock plate, %.0f mm, 3 keyholes  (steel or laser-cut)" % p["LOCK_PLATE_THK"])
+    print("        NOTE: 303 is the free-machining grade -- buy that if you are")
+    print("              cutting the taper yourself. 304/316/A2 are common as")
+    print("              dowel stock but work-harden under a file.")
+    print("              Both features are one lathe op, or a file against the")
+    print("              rod spun in a drill. No cross-hole, no V-block.")
+    print("  1 x lock plate, %.0f mm, 3 keyholes  (laser-cut)" % p["LOCK_PLATE_THK"])
+    print("        NOTE: use a DIFFERENT alloy from the posts. Austenitic")
+    print("              stainless galls against itself under load.")
     print("  3 x lip seal, %.1f mm            (socket mouths)" % p["LIP_SEAL_W"])
     print("  1 x TPU O-ring, Ø%.0f x %.0f       (perimeter gasket, on the base)"
           % (p["GASKET_BC"], p["GASKET_H"]))

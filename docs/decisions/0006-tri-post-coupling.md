@@ -56,6 +56,12 @@ And energised posts on a mopping robot are a bridged bus waiting for a puddle. A
 contacts go in the sealed central connector instead, where CAN stays a proper twisted
 pair.
 
+**Materials are stainless, not mild steel.** The posts are exposed whenever a module is
+off, on a machine that mops. Rust swells, and a rusted Ø10 post binds in a Ø10.2 socket.
+Grade 303 for anything being machined by hand; a different alloy for the lock plate, since
+austenitic stainless galls against itself under load. Margins are quoted at the
+conservative 205 MPa austenitic yield and remain 61× and 123×.
+
 **Costs accepted:**
 
 - The central connector cone is the deepest feature (~25 mm) and dominates the volume

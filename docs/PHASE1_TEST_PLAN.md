@@ -31,7 +31,7 @@ Print as generated — orientation is a spec, not a slicer setting ([ADR 0005](d
 
 | Qty | Item | Notes |
 |---|---|---|
-| 3 | **Ø10 × 30 mild steel rod** | Posts — see machining below |
+| 3 | **Ø10 × 30 stainless rod, 303** | Posts — see machining below |
 | 1 | **Lock plate, 3 mm, 3 keyholes** | Steel or laser-cut; `coupon_lock_plate` |
 | 3 | Ø10 lip seal / wiper | Socket mouths |
 | 1 | TPU O-ring, Ø118 × 2 | Perimeter gasket, seats in the base groove |
@@ -46,6 +46,13 @@ Each Ø10 × 30 rod needs three operations:
    where the post meets the plate, 12 mm from the *unturned* end. The lock plate seats in
    this groove and bears on its upper shoulder.
 3. **Press 12 mm into the plate**, into a Ø9.90 bore. Leaves 18 mm proud.
+
+**Stainless, grade 303.** The posts are exposed whenever a module is off, on a robot that
+mops — mild steel would rust, and rust swells enough to bind a Ø10 post in a Ø10.2 socket.
+Buy **303** specifically: it is the free-machining grade. 304, 316 and A2 are common as
+dowel stock but work-harden under a file, and once the surface hardens nothing cuts it.
+
+Use a different alloy for the lock plate — austenitic stainless galls against itself.
 
 **A groove, not a cross-hole.** This is deliberate and it is the reason the part is
 makeable by hand. A cross-hole through a round bar needs a V-block and a centre punch or

@@ -61,7 +61,7 @@ one feature, and no feature does two:
 | Taper | 30° from axis, 3.46 mm long → 2.0 mm capture |
 | Protrusion | 18.0 |
 | Embedded | 12.0, pressed into a Ø9.90 bore |
-| Stock | **Ø10 × 30 mild steel rod** |
+| Stock | **Ø10 × 30 stainless rod, grade 303** |
 | Socket | Ø10.2 × 20.0 deep |
 
 **Steel, not printed.** The posts are steel rod pressed into the plate, never printed
@@ -116,6 +116,30 @@ A groove is a single lathe op, or a round file against the rod spun in a drill p
 
 **One plate replaces three pins and the cam plate that would have driven them.** It lives
 entirely inside the sealed base, so nothing that moves ever sees the room.
+
+### 2.3b Materials — stainless, and which grade
+
+The posts sit **exposed whenever a module is off**, on a machine that mops. Mild steel
+would rust, and rust here is not cosmetic: it **swells**, and a rusted Ø10 post binds in a
+Ø10.2 socket. It also sheds abrasive particles into a joint that mates 500 times, and
+stains whatever the module touches.
+
+| Grade | Yield | Lock plate margin | Post margin | Notes |
+|---|---|---|---|---|
+| 303 stainless | 240 MPa | 71× | 145× | **Free-machining. Buy this.** |
+| 304 / 316 / A2 | 205 MPa | 61× | 123× | Common dowel stock; work-hardens |
+
+Margins are quoted at the conservative 205 MPa so they hold whichever grade turns up.
+
+**Buy 303 if you are cutting the taper and groove yourself.** It is the free-machining
+grade, with sulphur added. 304, 316 and the A2/A4 fastener grades are gummy and
+work-harden — dwell with a file and the surface hardens under you, after which nothing
+cuts.
+
+**Make the lock plate a different alloy from the posts.** Austenitic stainless galls
+badly against itself under load. The risk here is modest, because the plate rotates while
+the joint is *unloaded* — you lock, then fly — and galling needs sliding under load. But
+flight vibration is micro-motion at full load, and a different alloy is free insurance.
 
 ### 2.4 Connector cone — the primary alignment feature
 
