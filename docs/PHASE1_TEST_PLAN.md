@@ -19,7 +19,7 @@ Produces in `cad/tests/`:
 
 | Part | Size | Volume | Print time (est.) |
 |---|---|---|---|
-| `coupon_module_face` | 130 × 130 × 28 | 98 cm³ | ~3 h |
+| `coupon_module_face` | 130 × 130 × 34 | 96 cm³ | ~3 h |
 | `coupon_base_face` | 130 × 130 × 31 | 375 cm³ | ~7 h |
 
 TAZ 6, PETG, 0.5 mm nozzle, 0.25 mm layers, 4 perimeters, 40 % gyroid, **no supports**.
@@ -31,14 +31,28 @@ Print as generated — orientation is a spec, not a slicer setting ([ADR 0005](d
 
 | Qty | Item | Notes |
 |---|---|---|
-| 3 | Ø10 × 26 steel dowel | Posts. One end turned to Ø6 over 3.5 mm at 30° |
+| 3 | **Ø10 × 30 mild steel rod** | Posts — see machining below |
 | 3 | Ø5 × 40 steel dowel | Locking pins |
 | 3 | Ø10 lip seal / wiper | Socket mouths |
 | 1 | TPU O-ring, Ø118 × 2 | Perimeter gasket, seats in the base groove |
 | 8 | M5 × 20 bolts | Fixture and pull-test spreader |
 
-The posts need one turned taper each. If you have no lathe access, a drill press and a
-file will get close enough for a v0.1 coupon — the taper is capture, not precision.
+### Machining the posts
+
+Each Ø10 × 30 rod needs three operations:
+
+1. **Turn one end** to Ø6 over 3.5 mm, at 30° from the axis. This is the capture taper.
+2. **Drill a Ø5.15 cross-hole** 9 mm from the shoulder — the shoulder being where the
+   post meets the plate, 12 mm from the *unturned* end. This is where the locking pin
+   passes through, in double shear.
+3. **Press 12 mm into the plate**, into a Ø9.90 bore. Leaves 18 mm proud.
+
+**Use mild steel, not hardened dowel pins.** You have to drill a cross-hole through it,
+which is miserable in hardened stock — and the pin shear margin is 123×, so hardness buys
+nothing. A length of Ø10 mild steel round bar is the right material.
+
+If you have no lathe, a drill press and a file will get the taper close enough for a first
+coupon. It is capture, not precision.
 
 Also needed: dial indicator (0.01 mm), spring gauge to 25 kg, feeler gauges, calipers,
 fine dust (flour or dry cement), and water with a drop of detergent.
@@ -47,12 +61,16 @@ fine dust (flour or dry cement), and water with a drop of detergent.
 
 ### Module coupon (`coupon_module_face`)
 
-A Ø130 disc with three posts and a cone standing up from it.
+A Ø130 disc with a central cone and three bores for the steel posts. **The posts are not
+printed** — they are steel, pressed into those bores (ADR 0005: printed plastic is bulk
+and rough alignment; anything that locates or takes load is steel). Each bore has a Ø18
+boss behind the plate to give 12 mm of grip.
 
 | What you see | Ø | Where | What it does |
 |---|---|---|---|
 | 4 holes near the rim | 5.5 | Ø120 circle | M5 fixture bolts |
-| **3 tall posts** | 10 → 6 | **Ø100 circle at 0° / 120° / 235°** | locate, retain, key |
+| **3 bores with bosses behind** | 9.90 | **Ø100 circle at 0° / 120° / 235°** | press-fit steel posts |
+| (posts, once fitted) | 10 → 6 | standing 18 mm proud | locate, retain, key |
 | Cross-hole in each post | 5.15 | 9 mm up, **radial** | the locking pin |
 | Big central cone | 40 → 30 | centre, 22 tall | lands first, kills lateral error |
 | Recess in the cone tip | 22 × 10 | | contact pad PCB |
@@ -80,9 +98,9 @@ because the two faces meet. This is correct, not a typo.
 
 ## 4. Assembly
 
-1. Press the three Ø10 posts into the module coupon, tapered end out. **Check protrusion
-   is 18.0 ± 0.1 mm on all three** before anything is glued — this sets how squarely the
-   joint seats.
+1. Press the three machined posts into the module coupon, tapered end out. **Check
+   protrusion is 18.0 ± 0.1 mm on all three** and that each cross-hole is aligned
+   radially — the pin has to enter from outside and pass straight through.
 2. Fit the lip seals into the base socket mouths.
 3. Seat the TPU O-ring in the base's perimeter groove.
 4. Leave the locking pins loose for T1–T3; they are inserted by hand.

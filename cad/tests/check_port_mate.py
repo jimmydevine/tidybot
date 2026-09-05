@@ -22,7 +22,8 @@ from FreeCAD import Vector
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(_HERE, "..", "lib"))
 
-from tidybot_port import PORT, LOAD, derived, module_port, base_port  # noqa: E402
+from tidybot_port import (PORT, LOAD, derived, module_port,   # noqa: E402
+                          base_port, steel_post)
 from coupon import build_module_coupon, build_base_coupon            # noqa: E402
 
 failures = []
@@ -77,29 +78,39 @@ def main():
           % ("/".join("%.0f" % a for a in p["POST_ANGLES"]),
              "/".join("%.0f" % a for a in d["SOCKET_ANGLES"])))
 
-    _say("\nSTEEL -- the parts that carry load")
-    straight = p["POST_LEN"] - d["POST_TAPER_LEN"]
-    worst_fit = 0.0
-    for ang in p["POST_ANGLES"]:
-        x, y = polar(p["POST_BC"] / 2.0, ang)
-        post = Part.makeCylinder(p["POST_DIA"] / 2.0, straight,
-                                 Vector(x, y, 0), Vector(0, 0, 1))
-        worst_fit = max(worst_fit, post.common(bm).Volume)
+    _say("\nSTEEL -- modelled as hardware, not assumed")
+    posts = [steel_post(p, a) for a in p["POST_ANGLES"]]
+
+    # The posts must be steel, so there must be NOTHING printed where they go.
+    printed_in_post_space = max(q.common(m).Volume for q in posts)
+    press = math.pi * ((p["POST_DIA"] / 2.0) ** 2 - (p["POST_BORE_DIA"] / 2.0) ** 2) \
+        * p["POST_EMBED"] * 3.0
+    check("posts are steel, not printed", printed_in_post_space < press * 1.5,
+          "%.0f mm3 overlap = the %.2f mm press fit only"
+          % (printed_in_post_space, (p["POST_DIA"] - p["POST_BORE_DIA"]) / 2.0))
+
+    worst_fit = max(q.common(bm).Volume for q in posts)
     check("posts seat without binding", worst_fit < 1.0,
           "%.2f mm3 interference, %.2f mm radial clearance"
           % (worst_fit, (d["SOCKET_DIA"] - p["POST_DIA"]) / 2.0))
 
     pin_z = p["PIN_HOLE_Z"]
     worst_pin = 0.0
-    for ang in p["POST_ANGLES"]:
+    for ang, post in zip(p["POST_ANGLES"], posts):
         x, y = polar(p["POST_BC"] / 2.0, ang)
         ux, uy = polar(1.0, ang)
         pin = Part.makeCylinder(p["PIN_DIA"] / 2.0, 60.0,
                                 Vector(x - ux * 30.0, y - uy * 30.0, pin_z),
                                 Vector(ux, uy, 0))
-        worst_pin = max(worst_pin, pin.common(m).Volume, pin.common(bm).Volume)
-    check("pin passes through both bores", worst_pin < 1.0,
-          "%.2f mm3 obstruction on the pin path" % worst_pin)
+        worst_pin = max(worst_pin, pin.common(post).Volume,
+                        pin.common(m).Volume, pin.common(bm).Volume)
+    check("pin clears the dowel cross-hole", worst_pin < 1.0,
+          "%.2f mm3 obstruction through steel and plastic alike" % worst_pin)
+
+    check("boss wall survives the press fit", d["BOSS_WALL"] >= 3.0,
+          "%.1f mm of PETG around a Ø%.2f bore" % (d["BOSS_WALL"], p["POST_BORE_DIA"]))
+    check("post grip is at least one diameter", p["POST_EMBED"] >= p["POST_DIA"],
+          "%.0f mm embedded in a Ø%.0f post" % (p["POST_EMBED"], p["POST_DIA"]))
 
     check("pin bore has base material above it", d["PIN_BORE_COVER"] >= 3.0,
           "%.2f mm of cover" % d["PIN_BORE_COVER"])
@@ -112,8 +123,13 @@ def main():
           % (d["CONE_CAPTURE"], d["POST_CAPTURE"]))
 
     _say("\nKEYING -- a wrong orientation must be impossible")
+    # Rotate the ASSEMBLED module -- plate plus its steel posts. Rotating the
+    # printed half alone proves nothing now that the posts are hardware.
+    assembled = m
+    for q in posts:
+        assembled = assembled.fuse(q)
     for phi in (120.0, 240.0):
-        wrong = m.copy()
+        wrong = assembled.copy()
         wrong.rotate(Vector(0, 0, 0), Vector(0, 0, 1), phi)
         blocked = wrong.common(bm).Volume
         check("blocked at %.0f deg" % phi, blocked > 100.0,

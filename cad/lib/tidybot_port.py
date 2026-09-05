@@ -51,6 +51,9 @@ PORT = dict(
     POST_TIP_DIA      = 6.0,     # taper does the capture, on the post
     POST_TAPER_ANGLE  = 30.0,    # from the post axis; steeper = capture without length
     POST_LEN          = 18.0,    # protrusion from the module face
+    POST_EMBED        = 12.0,    # pressed into the module plate + boss
+    POST_BORE_DIA     = 9.90,    # light interference for a Ø10 rod in PETG
+    POST_BOSS_DIA     = 18.0,    # boss behind the plate, so 12 mm of grip exists
     SOCKET_CLEARANCE  = 0.20,    # diametral
 
     # --- Locking pins: double shear, driven by a cam plate INSIDE the base --
@@ -128,6 +131,18 @@ def derived(p=None):
     d["VOL_SOCKETS"] = v_sockets
     d["VOL_CONE"]    = v_cone
     d["VOL_TOTAL"]   = v_sockets + v_cone
+
+    # --- Post mounting: the posts are STEEL, pressed into the plate --------
+    d["POST_TOTAL_LEN"] = p["POST_LEN"] + p["POST_EMBED"]
+    d["BOSS_WALL"] = (p["POST_BOSS_DIA"] - p["POST_BORE_DIA"]) / 2.0
+    if d["BOSS_WALL"] < 3.0:
+        raise ValueError(
+            "Only %.1f mm of wall around the post bore. A press fit will split it."
+            % d["BOSS_WALL"])
+    if p["POST_EMBED"] < p["POST_DIA"]:
+        raise ValueError(
+            "Post embedded only %.1f mm for a Ø%.1f post. Aim for at least one "
+            "diameter of grip." % (p["POST_EMBED"], p["POST_DIA"]))
 
     # --- Mirror handedness -------------------------------------------------
     #  The two faces meet each other, so they are mirror images. A module post
@@ -234,24 +249,21 @@ def module_port_parts(p=None):
     body = Part.makeCylinder(p["PLATE_DIA"] / 2.0, p["PLATE_THK"],
                              App.Vector(0, 0, -p["PLATE_THK"]), Z)
 
-    # --- three identical tapered posts -------------------------------------
-    straight = p["POST_LEN"] - d["POST_TAPER_LEN"]
+    # --- mounting for three identical STEEL posts --------------------------
+    #  The posts are steel dowels, NOT printed. ADR 0005: precision and load
+    #  surfaces are steel; printed plastic is bulk and rough alignment only.
+    #  The pin bears inside the post's cross-hole, so that hole has to be in
+    #  metal or it crushes and every margin on this port is fiction.
     for ang in p["POST_ANGLES"]:
         x, y = _polar(p["POST_BC"] / 2.0, ang)
+        # boss behind the plate, giving POST_EMBED of grip
         body = body.fuse(Part.makeCylinder(
-            p["POST_DIA"] / 2.0, straight, App.Vector(x, y, 0.0), Z))
-        body = body.fuse(Part.makeCone(
-            p["POST_DIA"] / 2.0, p["POST_TIP_DIA"] / 2.0, d["POST_TAPER_LEN"],
-            App.Vector(x, y, straight), Z))
-        # cross-hole for the locking pin, in the cylindrical section.
-        # RADIAL, matching the cam plate that drives the pins -- not along X,
-        # or only the post at 0 deg would line up.
-        ux, uy = _polar(1.0, ang)
+            p["POST_BOSS_DIA"] / 2.0, p["POST_EMBED"] - p["PLATE_THK"],
+            App.Vector(x, y, -p["POST_EMBED"]), Z))
+        # press-fit bore for the dowel
         cuts.append(Part.makeCylinder(
-            (p["PIN_DIA"] + p["PIN_CLEARANCE"]) / 2.0, p["POST_DIA"] * 3.0,
-            App.Vector(x - ux * p["POST_DIA"] * 1.5, y - uy * p["POST_DIA"] * 1.5,
-                       p["PIN_HOLE_Z"]),
-            App.Vector(ux, uy, 0.0)))
+            p["POST_BORE_DIA"] / 2.0, p["POST_EMBED"] + 0.1,
+            App.Vector(x, y, -p["POST_EMBED"]), Z))
 
     # --- central connector cone: lands first, kills lateral error ----------
     body = body.fuse(Part.makeCone(
@@ -267,6 +279,36 @@ def module_port_parts(p=None):
         8.0, p["CONE_LEN"] + p["PLATE_THK"] + 2.0,
         App.Vector(0, 0, -p["PLATE_THK"] - 1.0), Z))
     return body, cuts
+
+
+def steel_post(p=None, angle=0.0):
+    """One post, as hardware: a Ø10 steel rod with a turned taper and a
+    drilled cross-hole, positioned as it sits when pressed into the module.
+
+    Modelled explicitly so the checks can verify the steel, not just the
+    plastic around it. v0.1's checks passed on a coupling whose steel could
+    never touch.
+    """
+    Part, App = _fc()
+    p = p or PORT
+    d = derived(p)
+    Z = App.Vector(0, 0, 1)
+    x, y = _polar(p["POST_BC"] / 2.0, angle)
+    straight = p["POST_LEN"] - d["POST_TAPER_LEN"]
+
+    post = Part.makeCylinder(p["POST_DIA"] / 2.0, p["POST_EMBED"] + straight,
+                             App.Vector(x, y, -p["POST_EMBED"]), Z)
+    post = post.fuse(Part.makeCone(
+        p["POST_DIA"] / 2.0, p["POST_TIP_DIA"] / 2.0, d["POST_TAPER_LEN"],
+        App.Vector(x, y, straight), Z))
+    # cross-hole, RADIAL to match the cam plate that drives the pins
+    ux, uy = _polar(1.0, angle)
+    post = post.cut(Part.makeCylinder(
+        (p["PIN_DIA"] + p["PIN_CLEARANCE"]) / 2.0, p["POST_DIA"] * 3.0,
+        App.Vector(x - ux * p["POST_DIA"] * 1.5, y - uy * p["POST_DIA"] * 1.5,
+                   p["PIN_HOLE_Z"]),
+        App.Vector(ux, uy, 0.0)))
+    return post
 
 
 def base_port_parts(p=None):
@@ -379,6 +421,9 @@ def report(p=None):
     print("  taper                 %.2f mm long -> %.2f mm capture, on the post"
           % (d["POST_TAPER_LEN"], d["POST_CAPTURE"]))
     print("  socket                Ø%.2f x %.1f deep" % (d["SOCKET_DIA"], d["SOCKET_DEPTH"]))
+    print("  post is STEEL         Ø%.1f x %.0f rod, %.0f embedded + %.0f proud"
+          % (p["POST_DIA"], d["POST_TOTAL_LEN"], p["POST_EMBED"], p["POST_LEN"]))
+    print("  press bore            Ø%.2f, %.1f mm boss wall" % (p["POST_BORE_DIA"], d["BOSS_WALL"]))
     print("  cone                  Ø%.0f->Ø%.0f x %.0f, leads the posts by %.0f mm"
           % (p["CONE_BASE_DIA"], p["CONE_TIP_DIA"], p["CONE_LEN"], d["CONE_LEAD"]))
     print("  receptacle depth      %.1f mm  (the cone is the deepest feature)"
@@ -401,8 +446,16 @@ def report(p=None):
           % (d["PIN_CAPACITY_N"], d["PIN_LOAD_N"], d["PIN_MARGIN"]))
     print("  bearing on PETG       %.2f MPa -> %.0fx" % (d["BEARING_MPA"], d["BEARING_MARGIN"]))
     print("\nBILL OF MATERIALS per mated pair")
-    print("  3 x Ø%.0f x %.0f steel dowel, one end tapered %.0f deg  (posts)"
-          % (p["POST_DIA"], p["POST_LEN"] + 8, p["POST_TAPER_ANGLE"]))
+    print("  3 x Ø%.0f x %.0f MILD steel rod  (posts)" % (p["POST_DIA"], d["POST_TOTAL_LEN"]))
+    print("        - turn one end to Ø%.0f over %.1f mm at %.0f deg  (the capture taper)"
+          % (p["POST_TIP_DIA"], d["POST_TAPER_LEN"], p["POST_TAPER_ANGLE"]))
+    print("        - drill Ø%.2f cross-hole, %.0f mm from the shoulder"
+          % (p["PIN_DIA"] + p["PIN_CLEARANCE"], p["PIN_HOLE_Z"]))
+    print("        - press %.0f mm into the plate (bore Ø%.2f)"
+          % (p["POST_EMBED"], p["POST_BORE_DIA"]))
+    print("        NOTE: mild steel, not hardened dowel -- you must drill it,")
+    print("              and the shear margin is %.0fx so hardness buys nothing."
+          % d["PIN_MARGIN"])
     print("  3 x Ø%.0f steel dowel                                 (locking pins)" % p["PIN_DIA"])
     print("  3 x lip seal, %.1f mm            (socket mouths)" % p["LIP_SEAL_W"])
     print("  1 x TPU O-ring, Ø%.0f x %.0f       (perimeter gasket, on the base)"

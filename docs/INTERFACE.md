@@ -60,7 +60,14 @@ one feature, and no feature does two:
 | Post Ø | 10.0, tapering to 6.0 |
 | Taper | 30° from axis, 3.46 mm long → 2.0 mm capture |
 | Protrusion | 18.0 |
+| Embedded | 12.0, pressed into a Ø9.90 bore |
+| Stock | **Ø10 × 30 mild steel rod** |
 | Socket | Ø10.2 × 20.0 deep |
+
+**Steel, not printed.** The posts are steel rod pressed into the plate, never printed
+features. The locking pin bears *inside* the post's cross-hole; in printed PETG that hole
+crushes and every margin quoted here becomes fiction. Mild steel rather than hardened
+dowel — the cross-hole has to be drilled, and a 123× shear margin makes hardness pointless.
 
 **Three, not four.** A rigid body has six degrees of freedom and each post in a socket
 removes two. Three is exactly determinate; four is over-constrained by two, and in
