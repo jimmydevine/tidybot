@@ -1,20 +1,19 @@
 # =============================================================================
-#  TidyBot -- TB-Port mate validation
+#  TidyBot -- TB-Port validation  (spec 0.2.0)
 # =============================================================================
-#  A regression test for the interface geometry. Run it after ANY change to
-#  cad/lib/tidybot_port.py, before printing anything.
+#  Run after ANY change to cad/lib/tidybot_port.py, before printing.
+#      freecadcmd check_port_mate.py        (or: make -C cad check)
 #
-#      freecad.cmd check_port_mate.py       (or: make -C cad check)
-#
-#  It asserts the property the whole coupling depends on: when seated, the two
-#  printed halves do NOT touch. All load goes through steel. If plastic
-#  interferes, the coupling is over-constrained and repeatability is gone.
+#  v0.1's checks compared plastic to plastic and passed while the coupling
+#  could not physically work -- the balls never reached their dowels. These
+#  checks model the STEEL: posts seated in sockets, pins through their
+#  cross-holes. They assert that parts touch where they must and clear where
+#  they must, and that a wrong orientation is physically blocked.
 # =============================================================================
-
-import os
-import sys
 
 import math
+import os
+import sys
 
 import Part
 import FreeCAD as App
@@ -23,99 +22,135 @@ from FreeCAD import Vector
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(_HERE, "..", "lib"))
 
-from tidybot_port import PORT, derived, male_port, female_port  # noqa: E402
-from coupon import build_male, build_female  # noqa: E402
-
-CLASH_TOL_CM3 = 0.01
+from tidybot_port import PORT, LOAD, derived, module_port, base_port  # noqa: E402
+from coupon import build_module_coupon, build_base_coupon            # noqa: E402
 
 failures = []
 
 
 def _say(msg):
-    # FreeCAD discards buffered stdout on sys.exit(), so flush every line.
     print(msg)
     sys.stdout.flush()
 
 
 def check(label, ok, detail):
-    _say("  [%s] %-34s %s" % ("PASS" if ok else "FAIL", label, detail))
+    _say("  [%s] %-36s %s" % ("PASS" if ok else "FAIL", label, detail))
     if not ok:
         failures.append(label)
 
 
+def seat_base(shape):
+    """Flip the base half and lift it by FLANGE_GAP -- the mated position."""
+    s = shape.copy()
+    s.rotate(Vector(0, 0, 0), Vector(1, 0, 0), 180)
+    s.translate(Vector(0, 0, PORT["FLANGE_GAP"]))
+    return s
+
+
+def polar(r, a):
+    return r * math.cos(math.radians(a)), r * math.sin(math.radians(a))
+
+
 def main():
-    _say("TB-Port %s -- mate validation\n" % PORT["SPEC_VERSION"])
-    d = derived()
-    m = male_port()
-    f = female_port()
+    p, d = PORT, derived()
+    _say("TB-Port %s -- validation\n" % p["SPEC_VERSION"])
+
+    m = module_port()
+    b = base_port()
+    bm = seat_base(b)
 
     _say("GEOMETRY")
-    for name, s in (("male", m), ("female", f)):
+    for name, s in (("module half", m), ("base half", b)):
         check("%s is a valid solid" % name,
               s.isValid() and len(s.Solids) == 1,
-              "%d solid(s), %.1f cm3, ~%.0f g PETG @45%%"
+              "%d solid(s), %.1f cm3, ~%.0f g PETG"
               % (len(s.Solids), s.Volume / 1000.0, s.Volume / 1000.0 * 1.27 * 0.45))
 
-    _say("\nMATE")
-    # Seat the female: flip it, then lift it by the designed flange gap.
-    fm = f.copy()
-    fm.rotate(Vector(0, 0, 0), Vector(1, 0, 0), 180)
-    fm.translate(Vector(0, 0, PORT["FLANGE_GAP"]))
+    _say("\nMATE -- plastic must NOT touch")
+    clash = m.common(bm).Volume / 1000.0
+    check("no plastic-on-plastic contact", clash < 0.01,
+          "%.4f cm3 across a %.1f mm designed gap" % (clash, p["FLANGE_GAP"]))
 
-    clash = m.common(fm)
-    vol = clash.Volume / 1000.0
-    check("no plastic-on-plastic contact", vol < CLASH_TOL_CM3,
-          "interference %.4f cm3 (tol %.2f)" % (vol, CLASH_TOL_CM3))
+    check("socket pattern mirrors the posts",
+          tuple(sorted(d["SOCKET_ANGLES"])) == tuple(sorted((-a) % 360.0 for a in p["POST_ANGLES"])),
+          "posts %s -> sockets %s"
+          % ("/".join("%.0f" % a for a in p["POST_ANGLES"]),
+             "/".join("%.0f" % a for a in d["SOCKET_ANGLES"])))
 
-    check("boss does not bottom out", d["TIP_CLEARANCE"] >= 1.0,
-          "%.2f mm of air below the seated boss tip" % d["TIP_CLEARANCE"])
+    _say("\nSTEEL -- the parts that carry load")
+    straight = p["POST_LEN"] - d["POST_TAPER_LEN"]
+    worst_fit = 0.0
+    for ang in p["POST_ANGLES"]:
+        x, y = polar(p["POST_BC"] / 2.0, ang)
+        post = Part.makeCylinder(p["POST_DIA"] / 2.0, straight,
+                                 Vector(x, y, 0), Vector(0, 0, 1))
+        worst_fit = max(worst_fit, post.common(bm).Volume)
+    check("posts seat without binding", worst_fit < 1.0,
+          "%.2f mm3 interference, %.2f mm radial clearance"
+          % (worst_fit, (d["SOCKET_DIA"] - p["POST_DIA"]) / 2.0))
 
-    check("key engages before contacts",
-          PORT["KEY_PROTRUSION"] > PORT["CONTACT_POGO_DEPTH"] - PORT["CONTACT_DEPTH"],
-          "key %.1f mm vs contact travel %.1f mm"
-          % (PORT["KEY_PROTRUSION"], PORT["CONTACT_POGO_DEPTH"] - PORT["CONTACT_DEPTH"]))
+    pin_z = p["PIN_HOLE_Z"]
+    worst_pin = 0.0
+    for ang in p["POST_ANGLES"]:
+        x, y = polar(p["POST_BC"] / 2.0, ang)
+        ux, uy = polar(1.0, ang)
+        pin = Part.makeCylinder(p["PIN_DIA"] / 2.0, 60.0,
+                                Vector(x - ux * 30.0, y - uy * 30.0, pin_z),
+                                Vector(ux, uy, 0))
+        worst_pin = max(worst_pin, pin.common(m).Volume, pin.common(bm).Volume)
+    check("pin passes through both bores", worst_pin < 1.0,
+          "%.2f mm3 obstruction on the pin path" % worst_pin)
 
-    check("parallel engagement sufficient", d["ENGAGEMENT"] >= 6.0,
-          "%.2f mm after the funnel" % d["ENGAGEMENT"])
+    check("pin bore has base material above it", d["PIN_BORE_COVER"] >= 3.0,
+          "%.2f mm of cover" % d["PIN_BORE_COVER"])
 
-    # The coupon is what actually gets printed. Validating only the raw port
-    # missed a bug where fusing the coupon plate back-filled every kinematic
-    # ball socket -- geometry correct in male_port(), absent from the STL.
-    # Check the artifact, not the ideal.
+    _say("\nSEQUENCE -- the cone must land before the posts")
+    check("cone leads the posts", d["CONE_LEAD"] >= 3.0,
+          "%.1f mm (cone %.0f, posts %.0f)" % (d["CONE_LEAD"], p["CONE_LEN"], p["POST_LEN"]))
+    check("cone capture exceeds post capture", d["CONE_CAPTURE"] > d["POST_CAPTURE"],
+          "cone %.1f mm kills lateral, posts %.1f mm kill yaw"
+          % (d["CONE_CAPTURE"], d["POST_CAPTURE"]))
+
+    _say("\nKEYING -- a wrong orientation must be impossible")
+    for phi in (120.0, 240.0):
+        wrong = m.copy()
+        wrong.rotate(Vector(0, 0, 0), Vector(0, 0, 1), phi)
+        blocked = wrong.common(bm).Volume
+        check("blocked at %.0f deg" % phi, blocked > 100.0,
+              "%.0f mm3 of collision -- cannot enter" % blocked)
+    check("misfit far exceeds clearance",
+          d["KEY_MISFIT_MM"] > 5.0 * p["SOCKET_CLEARANCE"],
+          "%.2f mm misfit vs %.2f mm clearance"
+          % (d["KEY_MISFIT_MM"], p["SOCKET_CLEARANCE"]))
+
+    _say("\nCONTAMINATION -- every socket must drain")
+    for ang in d["SOCKET_ANGLES"]:
+        x, y = polar(p["POST_BC"] / 2.0, ang)
+        ux, uy = polar(1.0, ang)
+        rr = p["PLATE_DIA"] / 2.0 + 2.0
+        probe = Part.makeSphere(1.5, Vector(ux * rr, uy * rr,
+                                            -d["SOCKET_DEPTH"] + p["DRAIN_DIA"] / 2.0
+                                            - (rr - p["POST_BC"] / 2.0) * 0.15))
+        check("socket at %3.0f deg drains outward" % ang,
+              probe.common(b).Volume < probe.Volume * 0.5,
+              "drain exits the side wall")
+
     _say("\nCOUPON AS PRINTED")
-    cm, cf = build_male(), build_female()
-
-    socket_depth = PORT["KC_BALL_DIA"] - PORT["KC_PROTRUSION"]
-    for ang in PORT["KC_ANGLES"]:
-        a = math.radians(ang)
-        x = PORT["KC_BOLT_CIRCLE"] / 2.0 * math.cos(a)
-        y = PORT["KC_BOLT_CIRCLE"] / 2.0 * math.sin(a)
-        probe = Part.makeCylinder(PORT["KC_SOCKET_DIA"] / 2.0, socket_depth,
-                                  Vector(x, y, -socket_depth), Vector(0, 0, 1))
-        void = probe.Volume - cm.common(probe).Volume
-        check("ball socket open @ %.0f deg" % ang, void > probe.Volume * 0.9,
-              "%.0f of %.0f mm3 clear" % (void, probe.Volume))
-
-    for ang in PORT["KC_ANGLES"]:
-        a = math.radians(ang)
-        x = PORT["KC_BOLT_CIRCLE"] / 2.0 * math.cos(a)
-        y = PORT["KC_BOLT_CIRCLE"] / 2.0 * math.sin(a)
-        probe = Part.makeCylinder(3.0, 2.0, Vector(x, y, -3.0), Vector(0, 0, 1))
-        void = probe.Volume - cf.common(probe).Volume
-        check("vee pocket open @ %.0f deg" % ang, void > probe.Volume * 0.9,
-              "%.0f of %.0f mm3 clear" % (void, probe.Volume))
-
-    for name, shape in (("male", cm), ("female", cf)):
+    cm, cb = build_module_coupon(), build_base_coupon()
+    for name, s in (("module", cm), ("base", cb)):
+        bb = s.BoundBox
         check("%s coupon is one solid" % name,
-              shape.isValid() and len(shape.Solids) == 1,
-              "%d solid(s), %.1f cm3" % (len(shape.Solids), shape.Volume / 1000.0))
-
-    _say("\nPRINTABILITY (ADR 0005)")
-    for name, shape in (("male coupon", cm), ("female coupon", cf)):
-        bb = shape.BoundBox
-        check("%s fits TAZ 6 volume" % name,
+              s.isValid() and len(s.Solids) == 1,
+              "%d solid(s), %.1f cm3" % (len(s.Solids), s.Volume / 1000.0))
+        check("%s coupon fits TAZ 6" % name,
               max(bb.XLength, bb.YLength) <= 250.0 and bb.ZLength <= 230.0,
               "%.1f x %.1f x %.1f mm" % (bb.XLength, bb.YLength, bb.ZLength))
+
+    _say("\nMARGINS")
+    check("pin double shear", d["PIN_MARGIN"] >= 10.0,
+          "%.0fx on the %.0f N flight load" % (d["PIN_MARGIN"], LOAD["AXIAL_TOP_N"]))
+    check("bearing on PETG", d["BEARING_MARGIN"] >= 3.0,
+          "%.1f MPa, %.0fx margin" % (d["BEARING_MPA"], d["BEARING_MARGIN"]))
 
     _say("")
     if failures:

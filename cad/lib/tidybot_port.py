@@ -1,153 +1,202 @@
 # =============================================================================
-#  TidyBot -- TB-Port interface geometry  (SPEC VERSION 0.1.0)
+#  TidyBot -- TB-Port interface geometry  (SPEC VERSION 0.2.0)
 # =============================================================================
-#  THE authoritative definition of the module interface. Every module in the
-#  project imports this file and calls male_port() or female_port(). Nothing
-#  anywhere else may re-declare a port dimension.
+#  THE authoritative definition of the module interface. Every module imports
+#  this file. Nothing anywhere else may re-declare a port dimension.
 #
-#  Prose rationale for these numbers: docs/INTERFACE.md
+#  Architecture: three identical tapered steel posts per face, retained by
+#  cross pins in double shear, with all electricals in a sealed central
+#  connector. Rationale: docs/decisions/0006-tri-post-coupling.md
+#  Prose spec: docs/INTERFACE.md
 #
-#  Usage from a FreeCAD generator script:
-#      import sys, os
-#      sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
-#      from tidybot_port import PORT, male_port, female_port
+#  Supersedes the 0.1.0 boss-and-bore geometry (git tag / commit 2c18923).
 #
-#  The PORT dict and derived() are importable with plain CPython (no FreeCAD),
-#  so firmware and test tooling can read the same numbers:
-#      python3 -c "from tidybot_port import PORT; print(PORT['BOSS_DIA'])"
+#  The PORT dict and derived() import under plain CPython -- no FreeCAD --
+#  so firmware and test tooling read the same numbers:
+#      python3 -c "from tidybot_port import PORT; print(PORT['POST_DIA'])"
 #
 #  COORDINATE CONVENTION -- both halves are built in their natural PRINT
 #  orientation, features growing +Z off the bed:
 #
-#      male_port()   flange body z = -FLANGE_THK .. 0, boss grows +Z (boss up)
-#      female_port() flange face at z = 0, body grows -Z, bore opens upward
+#      module_port_parts()  plate z = -PLATE_THK..0, posts and cone grow +Z
+#      base_port_parts()    face at z = 0, body grows -Z, sockets open upward
 #
-#  To mate, one half is flipped. Both print as-generated with no supports.
+#  To mate, the base half is flipped and lifted by FLANGE_GAP.
 # =============================================================================
 
+import itertools
 import math
 
-SPEC_VERSION = "0.1.0"
+SPEC_VERSION = "0.2.0"
 
 # ----------------------------------------------------------------------------
 #  PARAMETERS -- the interface. Changing anything here is a spec change:
-#  bump SPEC_VERSION, update docs/INTERFACE.md, and `make all` to regenerate.
+#  bump SPEC_VERSION, update docs/INTERFACE.md, run `make -C cad check`.
 # ----------------------------------------------------------------------------
 PORT = dict(
     SPEC_VERSION      = SPEC_VERSION,
 
-    # --- Flange (the outer disc that carries the kinematic coupling) --------
-    FLANGE_DIA        = 90.0,
-    FLANGE_THK        = 8.0,
+    # --- Overall footprint --------------------------------------------------
+    PLATE_DIA         = 130.0,
+    PLATE_THK         = 6.0,
 
-    # --- Boss / bore (coarse alignment + latch) -----------------------------
-    BOSS_DIA          = 50.0,
-    BOSS_LEN          = 22.0,
-    BORE_CLEARANCE    = 0.40,   # diametral: bore = BOSS_DIA + this
-    TIP_CHAMFER       = 2.0,    # lead-in on the boss tip
+    # --- Posts: 3, IDENTICAL, unequally spaced ------------------------------
+    #  The 5 deg asymmetry at 235 is the keying feature. It makes a wrong
+    #  orientation miss by ~4.4 mm against a 0.2 mm clearance -- mechanically
+    #  impossible rather than merely discouraged. Keep the posts identical:
+    #  one dowel size, one socket, one lip seal, one reamer, one spare.
+    POST_ANGLES       = (0.0, 120.0, 235.0),
+    POST_BC           = 100.0,   # bolt circle dia -> r = 50
+    POST_DIA          = 10.0,
+    POST_TIP_DIA      = 6.0,     # taper does the capture, on the post
+    POST_TAPER_ANGLE  = 30.0,    # from the post axis; steeper = capture without length
+    POST_LEN          = 18.0,    # protrusion from the module face
+    SOCKET_CLEARANCE  = 0.20,    # diametral
 
-    # --- Capture funnel ------------------------------------------------------
-    CAPTURE_LATERAL   = 8.0,    # mm of lateral misalignment absorbed
-    FUNNEL_ANGLE      = 35.0,   # degrees from the mate axis
+    # --- Locking pins: double shear, driven by a cam plate INSIDE the base --
+    PIN_DIA           = 5.0,
+    PIN_HOLE_Z        = 9.0,     # cross-hole centre, above the module face
+    PIN_CLEARANCE     = 0.15,
 
-    # --- Kinematic coupling (3 balls into 3 dowel-pin vees) ------------------
-    KC_BALL_DIA       = 8.0,
-    KC_DOWEL_DIA      = 3.0,
-    KC_DOWEL_SPACING  = 7.0,    # tangential centre-to-centre of the vee pair
-    KC_BOLT_CIRCLE    = 70.0,
-    KC_ANGLES         = (90.0, 210.0, 330.0),
-    KC_PROTRUSION     = 3.0,    # ball height above the male flange face
-    KC_SOCKET_DIA     = 8.2,    # epoxy socket in the male flange
-    FLANGE_GAP        = 1.0,    # designed air gap when seated -- the balls
-                                # carry the load, NOT the plastic faces
-
-    # --- Latch (ball detent) -------------------------------------------------
-    DETENT_Z          = 16.0,   # groove centre, above the male flange face
-    DETENT_DEPTH      = 2.0,    # radial depth of the groove
-    DETENT_BALL_DIA   = 6.0,
-    DETENT_ANGLES     = (30.0, 150.0, 270.0),
-
-    # --- Keying (defeats the coupling's 3-fold symmetry) --------------------
-    KEY_DIA           = 5.0,
-    KEY_BC            = 36.0,   # on the boss end face
-    KEY_ANGLE         = 180.0,
-    KEY_PROTRUSION    = 6.0,    # engages BEFORE the electrical contacts
-
-    # --- Electrical contacts (on the boss end face, recessed & protected) ----
-    CONTACT_BC        = 36.0,
-    CONTACT_ANGLE     = 0.0,
-    CONTACT_W         = 24.0,   # 8 pins @ 2.54 mm + margin
+    # --- Central connector cone: engages FIRST, kills lateral error ---------
+    #  It sits at r = 0, so yaw cannot displace it. That is the whole point:
+    #  cone kills lateral, posts kill yaw. One feature, one job.
+    CONE_BASE_DIA     = 40.0,
+    CONE_TIP_DIA      = 30.0,
+    CONE_LEN          = 22.0,    # > POST_LEN + 3 so it lands well before the posts
+    CONE_CLEARANCE    = 0.30,
+    CONTACT_COUNT     = 8,
+    CONTACT_W         = 22.0,
     CONTACT_L         = 10.0,
-    CONTACT_DEPTH     = 1.6,    # pad PCB recess on the male half
-    CONTACT_POGO_DEPTH= 6.0,    # pogo block pocket on the female half
+    CONTACT_DEPTH     = 1.6,
+    CONTACT_POGO_DEPTH= 6.0,
 
-    # --- Services ------------------------------------------------------------
-    WIRE_BORE_DIA     = 20.0,   # central pass-through for the harness
+    # --- Sealing and drainage (ADR 0006, section on contamination) ----------
+    GASKET_BC         = 118.0,   # groove on the BASE half; one gasket, not N
+    GASKET_W          = 4.0,
+    GASKET_H          = 2.0,
+    DRAIN_DIA         = 4.0,     # from each socket floor, out the SIDE wall
+    LIP_SEAL_W        = 1.5,
+
+    FLANGE_GAP        = 1.0,     # designed air gap; steel carries the load
+)
+
+# Design loads -- ADR 0007. Not geometry, but every margin below refers to them.
+LOAD = dict(
+    AXIAL_TOP_N       = 192.0,   # 3-stack flight, top port
+    AXIAL_BOTTOM_N    = 59.0,
+    MOMENT_NM         = 4.0,
 )
 
 
 # ----------------------------------------------------------------------------
-#  DERIVED GEOMETRY
-#  The vee-groove depths follow from ball and dowel size by trigonometry, so
-#  changing KC_BALL_DIA or KC_DOWEL_SPACING re-solves the pockets automatically
-#  instead of silently invalidating a hand-entered depth.
+#  DERIVED GEOMETRY + GUARDS
+#  Everything here is solved from the parameters, so a parameter change
+#  re-solves instead of silently invalidating a hand-entered number. The
+#  guards refuse specs that cannot work -- v0.1 shipped three bugs that a
+#  guard would have caught.
 # ----------------------------------------------------------------------------
 def derived(p=None):
     p = p or PORT
     d = {}
 
-    r_ball  = p["KC_BALL_DIA"] / 2.0
-    r_dowel = p["KC_DOWEL_DIA"] / 2.0
-    half_sp = p["KC_DOWEL_SPACING"] / 2.0
+    # --- Post taper: the capture feature, riding on the post ---------------
+    dr = (p["POST_DIA"] - p["POST_TIP_DIA"]) / 2.0
+    if dr <= 0:
+        raise ValueError("POST_TIP_DIA must be smaller than POST_DIA")
+    d["POST_CAPTURE"]   = dr
+    d["POST_TAPER_LEN"] = dr / math.tan(math.radians(p["POST_TAPER_ANGLE"]))
 
-    # A ball resting on two parallel dowels: its centre sits this far above the
-    # plane containing the two dowel axes.
-    contact = r_ball + r_dowel
-    if half_sp >= contact:
+    d["SOCKET_DIA"]   = p["POST_DIA"] + p["SOCKET_CLEARANCE"]
+    d["SOCKET_DEPTH"] = p["POST_LEN"] + 2.0
+
+    # --- Cone: engages before the posts ------------------------------------
+    d["CONE_CAPTURE"]      = (p["CONE_BASE_DIA"] - p["CONE_TIP_DIA"]) / 2.0
+    d["CONE_RECESS_DEPTH"] = p["CONE_LEN"] + 3.0
+    d["CONE_LEAD"]         = p["CONE_LEN"] - p["POST_LEN"]
+    if d["CONE_LEAD"] < 3.0:
         raise ValueError(
-            "KC_DOWEL_SPACING (%.2f) is too wide for a %.1f mm ball -- the ball "
-            "would fall through between the dowels." % (p["KC_DOWEL_SPACING"], p["KC_BALL_DIA"])
-        )
-    d["KC_BALL_ABOVE_DOWELS"] = math.sqrt(contact**2 - half_sp**2)
+            "Cone leads the posts by only %.1f mm. It must land first and settle "
+            "the lateral error before any post enters, or the posts inherit a job "
+            "they cannot do (see ADR 0006)." % d["CONE_LEAD"])
 
-    # In the FEMALE local frame (flange face z = 0, body growing -Z):
-    #   seated ball centre sits FLANGE_GAP below the male face, which is
-    #   KC_PROTRUSION above it -> ball centre is this far below the female face.
-    d["KC_BALL_CENTRE_Z"] = -(p["KC_PROTRUSION"] - p["FLANGE_GAP"])
-    d["KC_DOWEL_AXIS_Z"]  = d["KC_BALL_CENTRE_Z"] - d["KC_BALL_ABOVE_DOWELS"]
+    # --- Receptacle depth and volume consumed ------------------------------
+    d["RECEPTACLE_DEPTH"] = max(d["SOCKET_DEPTH"], d["CONE_RECESS_DEPTH"])
+    v_sockets = 3 * math.pi * (d["SOCKET_DIA"] / 2.0) ** 2 * d["SOCKET_DEPTH"]
+    r1, r2 = p["CONE_BASE_DIA"] / 2.0, p["CONE_TIP_DIA"] / 2.0
+    v_cone = math.pi / 3.0 * d["CONE_RECESS_DEPTH"] * (r1*r1 + r1*r2 + r2*r2)
+    d["VOL_SOCKETS"] = v_sockets
+    d["VOL_CONE"]    = v_cone
+    d["VOL_TOTAL"]   = v_sockets + v_cone
 
-    # Pocket floor must clear the bottom of the seated ball, or the plastic
-    # takes the load instead of the steel and the coupling is meaningless.
-    ball_bottom = d["KC_BALL_CENTRE_Z"] - r_ball
-    d["KC_POCKET_DEPTH"] = abs(ball_bottom) + 1.0
+    # --- Mirror handedness -------------------------------------------------
+    #  The two faces meet each other, so they are mirror images. A module post
+    #  at angle a must find a base socket at -a. With the old symmetric
+    #  0/120/240 layout this was invisible (the set mirrors onto itself); the
+    #  asymmetric keying layout makes it real, and getting it wrong means
+    #  nothing mates at all.
+    d["SOCKET_ANGLES"] = tuple((-a) % 360.0 for a in p["POST_ANGLES"])
 
-    # Bore and funnel
-    d["BORE_DIA"]     = p["BOSS_DIA"] + p["BORE_CLEARANCE"]
-    d["FUNNEL_MOUTH"] = d["BORE_DIA"] + 2.0 * p["CAPTURE_LATERAL"]
-    d["FUNNEL_DEPTH"] = p["CAPTURE_LATERAL"] / math.tan(math.radians(p["FUNNEL_ANGLE"]))
-    d["BORE_DEPTH"]   = p["BOSS_LEN"] - p["FLANGE_GAP"] + 2.0
-    # Air below the seated boss tip. Must stay positive, or the boss bottoms
-    # out on the bore floor and the kinematic coupling never seats.
-    d["TIP_CLEARANCE"] = d["BORE_DEPTH"] - p["BOSS_LEN"] + p["FLANGE_GAP"]
-
-    # Parallel (non-funnel) engagement length -- the part that actually resists
-    # tilt. If this goes small, the funnel is eating the joint's stiffness.
-    d["ENGAGEMENT"] = d["BORE_DEPTH"] - d["FUNNEL_DEPTH"]
-    if d["ENGAGEMENT"] < 6.0:
+    # --- Keying: a wrong orientation must be physically impossible ---------
+    r = p["POST_BC"] / 2.0
+    A = [a % 360.0 for a in p["POST_ANGLES"]]
+    worst = 1e9
+    for phi in (120.0, 240.0):
+        rot = [(a + phi) % 360.0 for a in A]
+        best = 1e9
+        for perm in itertools.permutations(rot):
+            err = max(min(abs(x - a), 360.0 - abs(x - a)) for x, a in zip(perm, A))
+            best = min(best, err)
+        worst = min(worst, best)
+    d["KEY_MISFIT_DEG"] = worst
+    d["KEY_MISFIT_MM"]  = r * math.radians(worst)
+    if d["KEY_MISFIT_MM"] < 5.0 * p["SOCKET_CLEARANCE"]:
         raise ValueError(
-            "Only %.1f mm of parallel engagement left after the funnel. Increase "
-            "BOSS_LEN, steepen FUNNEL_ANGLE, or reduce CAPTURE_LATERAL."
-            % d["ENGAGEMENT"]
-        )
+            "POST_ANGLES %s let the module mate in more than one orientation: a "
+            "wrong orientation misses by only %.2f mm against %.2f mm of clearance. "
+            "Break the symmetry (see ADR 0006)."
+            % (p["POST_ANGLES"], d["KEY_MISFIT_MM"], p["SOCKET_CLEARANCE"]))
 
-    # Detent ball centre height in the female frame
-    d["DETENT_Z_FEMALE"] = -(p["DETENT_Z"] - p["FLANGE_GAP"])
+    # --- Load-centroid offset, the cost of that asymmetry ------------------
+    cx = sum(math.cos(math.radians(a)) for a in A) / 3.0 * r
+    cy = sum(math.sin(math.radians(a)) for a in A) / 3.0 * r
+    d["CENTROID_OFFSET"] = math.hypot(cx, cy)
+    d["LOAD_IMBALANCE_NM"] = LOAD["AXIAL_TOP_N"] * d["CENTROID_OFFSET"] / 1000.0
+
+    # --- Margins -----------------------------------------------------------
+    A_shear = 2.0 * math.pi * (p["PIN_DIA"] / 2.0) ** 2   # double shear
+    d["PIN_CAPACITY_N"]  = A_shear * 200.0                # mild steel, conservative
+    d["PIN_LOAD_N"]      = LOAD["AXIAL_TOP_N"] / 3.0
+    d["PIN_MARGIN"]      = d["PIN_CAPACITY_N"] / d["PIN_LOAD_N"]
+    wall = (d["SOCKET_DIA"] - p["PIN_DIA"]) / 2.0 + p["PIN_DIA"]
+    d["BEARING_MPA"]     = d["PIN_LOAD_N"] / (p["PIN_DIA"] * p["PIN_DIA"])
+    d["BEARING_MARGIN"]  = 50.0 / d["BEARING_MPA"]        # PETG compressive
+    if d["BEARING_MARGIN"] < 3.0:
+        raise ValueError("Pin bearing margin only %.1fx on printed plastic."
+                         % d["BEARING_MARGIN"])
+
+    # --- Enough base material above the pin bore ---------------------------
+    #  The pin bore is a hole in the base near the mating face. Too close and
+    #  it breaks out into the face under load.
+    d["PIN_BORE_COVER"] = (p["PIN_HOLE_Z"] - p["FLANGE_GAP"]
+                           - (p["PIN_DIA"] + p["PIN_CLEARANCE"]) / 2.0)
+    if d["PIN_BORE_COVER"] < 3.0:
+        raise ValueError(
+            "Only %.1f mm of base material between the pin bore and the mating "
+            "face. It will break out. Raise PIN_HOLE_Z or lengthen the post."
+            % d["PIN_BORE_COVER"])
+
+    # --- Pin must actually pass through the post ---------------------------
+    if p["PIN_HOLE_Z"] + p["PIN_DIA"] / 2.0 > p["POST_LEN"] - d["POST_TAPER_LEN"]:
+        raise ValueError(
+            "The cross-hole at z=%.1f runs into the taper, which starts at %.1f. "
+            "The pin would bear on a conical surface instead of a cylindrical one."
+            % (p["PIN_HOLE_Z"], p["POST_LEN"] - d["POST_TAPER_LEN"]))
     return d
 
 
 # ----------------------------------------------------------------------------
-#  FREECAD GEOMETRY
-#  Imported lazily so this module stays usable under plain CPython.
+#  FREECAD GEOMETRY  (imported lazily; module stays CPython-importable)
 # ----------------------------------------------------------------------------
 def _fc():
     import Part
@@ -161,94 +210,20 @@ def _polar(radius, angle_deg):
 
 
 def _rotated(shape, angle_deg):
-    """Copy a shape and spin it about Z. Copy first -- rotate() mutates."""
     _, App = _fc()
     s = shape.copy()
     s.rotate(App.Vector(0, 0, 0), App.Vector(0, 0, 1), angle_deg)
     return s
 
 
-def male_port_parts(p=None):
-    """Return (additive_solid, [cut_tools]) for the male half.
+def module_port_parts(p=None):
+    """Male half, on every module: (additive_solid, [cut_tools]).
 
-    Use this -- not male_port() -- whenever the port is fused onto a larger
-    body. Fuse the additive solid FIRST, subtract the cut tools LAST.
+    Plate at z = -PLATE_THK..0; three tapered posts and the connector cone
+    grow +Z. Prints as generated, features up, no supports.
 
-    Fusing a host body over an already-finished port back-fills its ball
-    sockets and recesses with solid material, silently and with no error.
-    attach() below does the ordering for you.
-    """
-    Part, App = _fc()
-    p = p or PORT
-    Z = App.Vector(0, 0, 1)
-    O = App.Vector(0, 0, 0)
-    tip = p["BOSS_LEN"]
-    cuts = []
-
-    # --- additive ---------------------------------------------------------
-    flange = Part.makeCylinder(p["FLANGE_DIA"] / 2.0, p["FLANGE_THK"],
-                               App.Vector(0, 0, -p["FLANGE_THK"]), Z)
-    boss = Part.makeCylinder(p["BOSS_DIA"] / 2.0, p["BOSS_LEN"], O, Z)
-    body = flange.fuse(boss)
-
-    # --- subtractive ------------------------------------------------------
-    # Lead-in chamfer on the boss tip
-    ch = p["TIP_CHAMFER"]
-    ring = Part.makeCylinder(p["BOSS_DIA"] / 2.0 + 1.0, ch + 0.1,
-                             App.Vector(0, 0, tip - ch), Z)
-    cone = Part.makeCone(p["BOSS_DIA"] / 2.0 - ch, p["BOSS_DIA"] / 2.0, ch,
-                         App.Vector(0, 0, tip - ch), Z)
-    cuts.append(ring.cut(cone))
-
-    # Latch detent groove
-    cuts.append(Part.makeTorus(p["BOSS_DIA"] / 2.0, p["DETENT_DEPTH"],
-                               App.Vector(0, 0, p["DETENT_Z"]), Z))
-
-    # Kinematic coupling ball sockets (flat-bottom, balls epoxied in).
-    # These sit in the flange face -- exactly the region a host body overlaps,
-    # which is why cut ordering matters.
-    socket_depth = p["KC_BALL_DIA"] - p["KC_PROTRUSION"]
-    for ang in p["KC_ANGLES"]:
-        x, y = _polar(p["KC_BOLT_CIRCLE"] / 2.0, ang)
-        cuts.append(Part.makeCylinder(
-            p["KC_SOCKET_DIA"] / 2.0, socket_depth + 0.5,
-            App.Vector(x, y, -socket_depth), Z))
-
-    # Keying pin bore (Ø5 dowel pressed in, protruding past the tip)
-    kx, ky = _polar(p["KEY_BC"] / 2.0, p["KEY_ANGLE"])
-    cuts.append(Part.makeCylinder(4.9 / 2.0, 10.0,
-                                  App.Vector(kx, ky, tip - 10.0), Z))
-
-    # Contact pad PCB recess on the boss end face
-    cx, cy = _polar(p["CONTACT_BC"] / 2.0, p["CONTACT_ANGLE"])
-    cuts.append(Part.makeBox(
-        p["CONTACT_W"], p["CONTACT_L"], p["CONTACT_DEPTH"] + 0.1,
-        App.Vector(cx - p["CONTACT_W"] / 2.0, cy - p["CONTACT_L"] / 2.0,
-                   tip - p["CONTACT_DEPTH"])))
-
-    # Central harness pass-through
-    cuts.append(Part.makeCylinder(
-        p["WIRE_BORE_DIA"] / 2.0, p["FLANGE_THK"] + p["BOSS_LEN"] + 2.0,
-        App.Vector(0, 0, -p["FLANGE_THK"] - 1.0), Z))
-    return body, cuts
-
-
-def male_port(p=None):
-    """Male half as a standalone finished solid.
-
-    Flange body at z = -FLANGE_THK..0, boss growing +Z. Prints as generated,
-    boss up, no supports.
-    Requires: 3 x Ø8 balls (epoxy), 1 x Ø5 dowel (press), pad PCB.
-
-    Do NOT fuse a host body onto the result -- use attach() instead.
-    """
-    return _resolve(male_port_parts(p))
-
-
-def female_port_parts(p=None):
-    """Return (additive_solid, [cut_tools]) for the female half.
-
-    Same ordering rule as male_port_parts(): fuse additive first, cut last.
+    Use attach() -- never host.fuse(module_port()) -- when putting this on a
+    module body. Fusing over a finished port back-fills its recesses.
     """
     Part, App = _fc()
     p = p or PORT
@@ -256,76 +231,107 @@ def female_port_parts(p=None):
     Z = App.Vector(0, 0, 1)
     cuts = []
 
-    # --- additive ---------------------------------------------------------
-    depth = d["BORE_DEPTH"] + p["FLANGE_THK"]
-    body = Part.makeCylinder(p["FLANGE_DIA"] / 2.0, depth,
-                             App.Vector(0, 0, -depth), Z)
+    body = Part.makeCylinder(p["PLATE_DIA"] / 2.0, p["PLATE_THK"],
+                             App.Vector(0, 0, -p["PLATE_THK"]), Z)
 
-    # --- subtractive ------------------------------------------------------
-    # Bore + capture funnel
-    cuts.append(Part.makeCylinder(
-        d["BORE_DIA"] / 2.0, d["BORE_DEPTH"] + 0.1,
-        App.Vector(0, 0, -d["BORE_DEPTH"]), Z))
-    cuts.append(Part.makeCone(
-        d["FUNNEL_MOUTH"] / 2.0, d["BORE_DIA"] / 2.0, d["FUNNEL_DEPTH"],
-        App.Vector(0, 0, -d["FUNNEL_DEPTH"]), Z))
+    # --- three identical tapered posts -------------------------------------
+    straight = p["POST_LEN"] - d["POST_TAPER_LEN"]
+    for ang in p["POST_ANGLES"]:
+        x, y = _polar(p["POST_BC"] / 2.0, ang)
+        body = body.fuse(Part.makeCylinder(
+            p["POST_DIA"] / 2.0, straight, App.Vector(x, y, 0.0), Z))
+        body = body.fuse(Part.makeCone(
+            p["POST_DIA"] / 2.0, p["POST_TIP_DIA"] / 2.0, d["POST_TAPER_LEN"],
+            App.Vector(x, y, straight), Z))
+        # cross-hole for the locking pin, in the cylindrical section.
+        # RADIAL, matching the cam plate that drives the pins -- not along X,
+        # or only the post at 0 deg would line up.
+        ux, uy = _polar(1.0, ang)
+        cuts.append(Part.makeCylinder(
+            (p["PIN_DIA"] + p["PIN_CLEARANCE"]) / 2.0, p["POST_DIA"] * 3.0,
+            App.Vector(x - ux * p["POST_DIA"] * 1.5, y - uy * p["POST_DIA"] * 1.5,
+                       p["PIN_HOLE_Z"]),
+            App.Vector(ux, uy, 0.0)))
 
-    # Kinematic vee pockets: a slot, crossed by two radial dowels the ball
-    # rests on. The dowels are supported at both ends by the pocket walls.
-    pk_d   = d["KC_POCKET_DEPTH"]
-    pk_len = p["KC_BALL_DIA"] + 12.0
-    pk_wid = p["KC_DOWEL_SPACING"] + p["KC_DOWEL_DIA"] + 6.0
-    for ang in p["KC_ANGLES"]:
-        r = p["KC_BOLT_CIRCLE"] / 2.0
-        pocket = Part.makeBox(pk_len, pk_wid, pk_d + 0.1,
-                              App.Vector(r - pk_len / 2.0, -pk_wid / 2.0, -pk_d))
-        cuts.append(_rotated(pocket, ang))
-        for side in (-1.0, 1.0):
-            ch = Part.makeCylinder(
-                p["KC_DOWEL_DIA"] / 2.0 + 0.05, pk_len + 14.0,
-                App.Vector(r - pk_len / 2.0 - 7.0,
-                           side * p["KC_DOWEL_SPACING"] / 2.0,
-                           d["KC_DOWEL_AXIS_Z"]),
-                App.Vector(1, 0, 0))
-            cuts.append(_rotated(ch, ang))
-
-    # Latch detent: radial through-holes for the Ø6 balls, backed by a collar
-    for ang in p["DETENT_ANGLES"]:
-        hole = Part.makeCylinder(
-            p["DETENT_BALL_DIA"] / 2.0 + 0.1, p["FLANGE_DIA"],
-            App.Vector(0, 0, d["DETENT_Z_FEMALE"]), App.Vector(1, 0, 0))
-        cuts.append(_rotated(hole, ang))
-
-    # Keying pin clearance -- deliberately loose
-    kx, ky = _polar(p["KEY_BC"] / 2.0, p["KEY_ANGLE"])
-    cuts.append(Part.makeCylinder(
-        5.3 / 2.0, 12.0, App.Vector(kx, ky, -d["BORE_DEPTH"] - 6.0), Z))
-
-    # Pogo pin block pocket
-    cx, cy = _polar(p["CONTACT_BC"] / 2.0, p["CONTACT_ANGLE"])
+    # --- central connector cone: lands first, kills lateral error ----------
+    body = body.fuse(Part.makeCone(
+        p["CONE_BASE_DIA"] / 2.0, p["CONE_TIP_DIA"] / 2.0, p["CONE_LEN"],
+        App.Vector(0, 0, 0), Z))
+    # contact pad PCB recess in the cone tip
     cuts.append(Part.makeBox(
-        p["CONTACT_W"] + 1.0, p["CONTACT_L"] + 1.0, p["CONTACT_POGO_DEPTH"],
-        App.Vector(cx - (p["CONTACT_W"] + 1.0) / 2.0,
-                   cy - (p["CONTACT_L"] + 1.0) / 2.0,
-                   -d["BORE_DEPTH"] - p["CONTACT_POGO_DEPTH"] + 0.1)))
-
-    # Central harness pass-through
+        p["CONTACT_W"], p["CONTACT_L"], p["CONTACT_DEPTH"] + 0.1,
+        App.Vector(-p["CONTACT_W"] / 2.0, -p["CONTACT_L"] / 2.0,
+                   p["CONE_LEN"] - p["CONTACT_DEPTH"])))
+    # harness bore up the cone axis
     cuts.append(Part.makeCylinder(
-        p["WIRE_BORE_DIA"] / 2.0, depth + 2.0,
-        App.Vector(0, 0, -depth - 1.0), Z))
+        8.0, p["CONE_LEN"] + p["PLATE_THK"] + 2.0,
+        App.Vector(0, 0, -p["PLATE_THK"] - 1.0), Z))
     return body, cuts
 
 
-def female_port(p=None):
-    """Female half as a standalone finished solid.
+def base_port_parts(p=None):
+    """Female half, on the base: (additive_solid, [cut_tools]).
 
-    Flange face at z = 0, body growing -Z, bore opening upward. Prints as
-    generated, bore up, no supports.
-    Requires: 6 x Ø3 dowels (vees), 3 x Ø6 balls + collar (latch), pogo block.
-
-    Do NOT fuse a host body onto the result -- use attach() instead.
+    Face at z = 0, body grows -Z, sockets open upward. Prints as generated.
+    Every socket drains out the SIDE wall -- never into the electronics.
     """
-    return _resolve(female_port_parts(p))
+    Part, App = _fc()
+    p = p or PORT
+    d = derived(p)
+    Z = App.Vector(0, 0, 1)
+    cuts = []
+
+    depth = d["RECEPTACLE_DEPTH"] + p["PLATE_THK"]
+    body = Part.makeCylinder(p["PLATE_DIA"] / 2.0, depth,
+                             App.Vector(0, 0, -depth), Z)
+
+    for ang in d["SOCKET_ANGLES"]:
+        x, y = _polar(p["POST_BC"] / 2.0, ang)
+        # socket
+        cuts.append(Part.makeCylinder(
+            d["SOCKET_DIA"] / 2.0, d["SOCKET_DEPTH"] + 0.1,
+            App.Vector(x, y, -d["SOCKET_DEPTH"]), Z))
+        # lead-in chamfer at the socket mouth, so the taper meets a taper
+        cuts.append(Part.makeCone(
+            d["SOCKET_DIA"] / 2.0 + 1.2, d["SOCKET_DIA"] / 2.0, 1.2,
+            App.Vector(x, y, -1.2), Z))
+        # radial bore for the locking pin, driven from inside the base
+        z_pin = -(p["PIN_HOLE_Z"] - p["FLANGE_GAP"])
+        ux, uy = _polar(1.0, ang)
+        cuts.append(Part.makeCylinder(
+            (p["PIN_DIA"] + p["PIN_CLEARANCE"]) / 2.0, p["PLATE_DIA"] / 2.0,
+            App.Vector(x - ux * 40.0, y - uy * 40.0, z_pin),
+            App.Vector(ux, uy, 0.0)))
+        # drain: socket floor -> out through the side wall
+        cuts.append(Part.makeCylinder(
+            p["DRAIN_DIA"] / 2.0, p["PLATE_DIA"],
+            App.Vector(x, y, -d["SOCKET_DEPTH"] + p["DRAIN_DIA"] / 2.0),
+            App.Vector(ux, uy, -0.15)))
+
+    # --- connector cone recess --------------------------------------------
+    cc = p["CONE_CLEARANCE"]
+    cuts.append(Part.makeCone(
+        (p["CONE_BASE_DIA"] + cc) / 2.0, (p["CONE_TIP_DIA"] + cc) / 2.0,
+        p["CONE_LEN"], App.Vector(0, 0, 0), App.Vector(0, 0, -1)))
+    cuts.append(Part.makeCylinder(
+        (p["CONE_TIP_DIA"] + cc) / 2.0, d["CONE_RECESS_DEPTH"] - p["CONE_LEN"] + 0.1,
+        App.Vector(0, 0, -d["CONE_RECESS_DEPTH"]), Z))
+    # pogo block pocket at the cone floor
+    cuts.append(Part.makeBox(
+        p["CONTACT_W"] + 1.0, p["CONTACT_L"] + 1.0, p["CONTACT_POGO_DEPTH"],
+        App.Vector(-(p["CONTACT_W"] + 1.0) / 2.0, -(p["CONTACT_L"] + 1.0) / 2.0,
+                   -d["CONE_RECESS_DEPTH"] - p["CONTACT_POGO_DEPTH"] + 0.1)))
+    # harness bore
+    cuts.append(Part.makeCylinder(
+        8.0, depth + 2.0, App.Vector(0, 0, -depth - 1.0), Z))
+
+    # --- perimeter gasket groove: one gasket on the base, not N on modules -
+    go = Part.makeCylinder((p["GASKET_BC"] + p["GASKET_W"]) / 2.0,
+                           p["GASKET_H"] + 0.1, App.Vector(0, 0, -p["GASKET_H"]), Z)
+    gi = Part.makeCylinder((p["GASKET_BC"] - p["GASKET_W"]) / 2.0,
+                           p["GASKET_H"] + 0.3, App.Vector(0, 0, -p["GASKET_H"] - 0.1), Z)
+    cuts.append(go.cut(gi))
+    return body, cuts
 
 
 def _resolve(parts):
@@ -335,12 +341,22 @@ def _resolve(parts):
     return body
 
 
+def module_port(p=None):
+    """Male half as a standalone finished solid. Do NOT fuse a host onto it."""
+    return _resolve(module_port_parts(p))
+
+
+def base_port(p=None):
+    """Female half as a standalone finished solid. Do NOT fuse a host onto it."""
+    return _resolve(base_port_parts(p))
+
+
 def attach(host, parts):
     """Fuse a port onto a host body with the correct cut ordering.
 
-    ALWAYS use this instead of host.fuse(male_port()). Fusing a host over a
-    finished port back-fills its ball sockets with solid material -- no error,
-    no warning, just a part that cannot work.
+    ALWAYS use this instead of host.fuse(module_port()). Fusing a host over a
+    finished port back-fills its recesses -- silently, with no error. This
+    exact bug shipped in v0.1 and removed all three ball sockets.
     """
     body, cuts = parts
     out = host.fuse(body)
@@ -349,53 +365,49 @@ def attach(host, parts):
     return out
 
 
-def latch_collar(p=None):
-    """v0.1 hand-operated collar: a plain ring that traps the detent balls.
-
-    Slides down over the female flange to lock, lifts to release. Powered
-    actuation is v0.2, deliberately deferred until the coupling is validated.
-    """
-    Part, App = _fc()
-    p = p or PORT
-    d = derived(p)
-    Z = App.Vector(0, 0, 1)
-
-    h  = 16.0
-    id_ = p["FLANGE_DIA"] + 0.6
-    od  = id_ + 2 * 4.0
-    ring = Part.makeCylinder(od / 2.0, h, App.Vector(0, 0, 0), Z)
-    ring = ring.cut(Part.makeCylinder(id_ / 2.0, h + 2.0, App.Vector(0, 0, -1), Z))
-    # Relief pockets so the balls can retract when the collar is lifted
-    for ang in p["DETENT_ANGLES"]:
-        pocket = Part.makeCylinder(
-            p["DETENT_BALL_DIA"] / 2.0 + 0.6, 6.0,
-            App.Vector(id_ / 2.0 - 1.0, 0, h - 4.0), App.Vector(1, 0, 0))
-        ring = ring.cut(_rotated(pocket, ang))
-    return ring
-
-
 def report(p=None):
-    """Print the derived geometry. Run under plain python3 to sanity-check a
-    parameter change before committing to an 8-hour print."""
+    """Derived geometry, margins and BOM. Runs under plain python3."""
     p = p or PORT
     d = derived(p)
-    print("TB-Port spec %s" % p["SPEC_VERSION"])
-    print("  bore                 Ø%.2f mm" % d["BORE_DIA"])
-    print("  funnel mouth         Ø%.2f mm  (capture ±%.1f mm)"
-          % (d["FUNNEL_MOUTH"], p["CAPTURE_LATERAL"]))
-    print("  funnel depth          %.2f mm  @ %.0f deg" % (d["FUNNEL_DEPTH"], p["FUNNEL_ANGLE"]))
-    print("  parallel engagement   %.2f mm" % d["ENGAGEMENT"])
-    print("  tip clearance         %.2f mm" % d["TIP_CLEARANCE"])
-    print("  ball above dowels     %.3f mm" % d["KC_BALL_ABOVE_DOWELS"])
-    print("  vee dowel axis z      %.3f mm (female frame)" % d["KC_DOWEL_AXIS_Z"])
-    print("  vee pocket depth      %.3f mm" % d["KC_POCKET_DEPTH"])
-    print("  detent ball z         %.3f mm (female frame)" % d["DETENT_Z_FEMALE"])
-    print("\nBill of materials per mated pair:")
-    print("  3 x Ø%.0f bearing ball   (kinematic, epoxy into male flange)" % p["KC_BALL_DIA"])
-    print("  6 x Ø%.0f dowel pin      (vee grooves, female flange)" % p["KC_DOWEL_DIA"])
-    print("  3 x Ø%.0f bearing ball   (latch detent, female bore)" % p["DETENT_BALL_DIA"])
-    print("  1 x Ø%.0f dowel pin      (key, press into male boss)" % p["KEY_DIA"])
-    print("  1 x 8-way pogo block + mating pad PCB")
+    print("TB-Port spec %s  --  three tapered posts, cross pins" % p["SPEC_VERSION"])
+    print("\nGEOMETRY")
+    print("  post                  3 x Ø%.1f, identical, at %s deg"
+          % (p["POST_DIA"], "/".join("%.0f" % a for a in p["POST_ANGLES"])))
+    print("  post bolt circle      Ø%.0f  (r = %.0f)" % (p["POST_BC"], p["POST_BC"] / 2))
+    print("  base sockets at       %s deg  (mirror of the posts -- the faces meet)"
+          % "/".join("%.0f" % a for a in d["SOCKET_ANGLES"]))
+    print("  taper                 %.2f mm long -> %.2f mm capture, on the post"
+          % (d["POST_TAPER_LEN"], d["POST_CAPTURE"]))
+    print("  socket                Ø%.2f x %.1f deep" % (d["SOCKET_DIA"], d["SOCKET_DEPTH"]))
+    print("  cone                  Ø%.0f->Ø%.0f x %.0f, leads the posts by %.0f mm"
+          % (p["CONE_BASE_DIA"], p["CONE_TIP_DIA"], p["CONE_LEN"], d["CONE_LEAD"]))
+    print("  receptacle depth      %.1f mm  (the cone is the deepest feature)"
+          % d["RECEPTACLE_DEPTH"])
+    print("  pin bore cover        %.2f mm of base material above the bore"
+          % d["PIN_BORE_COVER"])
+    print("\nVOLUME CONSUMED IN THE BASE")
+    print("  3 post sockets        %6.0f mm3" % d["VOL_SOCKETS"])
+    print("  connector cone        %6.0f mm3" % d["VOL_CONE"])
+    print("  total                 %6.0f mm3   (bayonet alternative: ~69,979)"
+          % d["VOL_TOTAL"])
+    print("\nKEYING")
+    print("  wrong orientation misses by %.1f deg = %.2f mm at r=%.0f"
+          % (d["KEY_MISFIT_DEG"], d["KEY_MISFIT_MM"], p["POST_BC"] / 2))
+    print("  socket clearance %.2f mm -> a wall, not a tight fit" % p["SOCKET_CLEARANCE"])
+    print("  cost: centroid %.2f mm off axis = %.2f N*m imbalance"
+          % (d["CENTROID_OFFSET"], d["LOAD_IMBALANCE_NM"]))
+    print("\nMARGINS (top port, %.0f N flight load)" % LOAD["AXIAL_TOP_N"])
+    print("  pin double shear      %.0f N per pin, need %.0f -> %.0fx"
+          % (d["PIN_CAPACITY_N"], d["PIN_LOAD_N"], d["PIN_MARGIN"]))
+    print("  bearing on PETG       %.2f MPa -> %.0fx" % (d["BEARING_MPA"], d["BEARING_MARGIN"]))
+    print("\nBILL OF MATERIALS per mated pair")
+    print("  3 x Ø%.0f x %.0f steel dowel, one end tapered %.0f deg  (posts)"
+          % (p["POST_DIA"], p["POST_LEN"] + 8, p["POST_TAPER_ANGLE"]))
+    print("  3 x Ø%.0f steel dowel                                 (locking pins)" % p["PIN_DIA"])
+    print("  3 x lip seal, %.1f mm            (socket mouths)" % p["LIP_SEAL_W"])
+    print("  1 x TPU O-ring, Ø%.0f x %.0f       (perimeter gasket, on the base)"
+          % (p["GASKET_BC"], p["GASKET_H"]))
+    print("  1 x %d-way pogo block + mating pad PCB  (central connector)" % p["CONTACT_COUNT"])
 
 
 if __name__ == "__main__":

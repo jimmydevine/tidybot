@@ -40,3 +40,5 @@ What else was on the table, and the specific reason it lost.
 | [0003](0003-can-bus.md) | CAN for the inter-module bus | Accepted |
 | [0004](0004-two-ports-top-bottom.md) | Two ports (top and bottom); sensors use an accessory rail | Accepted |
 | [0005](0005-print-constraints-taz6.md) | Design rules for the LulzBot TAZ 6 | Accepted |
+| [0006](0006-tri-post-coupling.md) | Three tapered posts with cross pins | Accepted |
+| [0007](0007-coaxial-ports-tension-path.md) | Coaxial ports; the base is a structural member | Accepted |

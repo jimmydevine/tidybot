@@ -1,228 +1,246 @@
 # TidyBot Port Specification — "TB-Port"
 
-**Spec version: 0.1.0 (DRAFT — not yet bench-validated)**
+**Spec version: 0.2.0 (DRAFT — not yet bench-validated)**
 
-This is the single most important document in the project. Every module ever built
-must satisfy it. Change it deliberately, bump the version, and regenerate all CAD.
+The single most important document in the project. Every module ever built must satisfy
+it. Change it deliberately, bump the version, and regenerate all CAD.
 
-Machine-readable source of truth for dimensions: `cad/lib/tidybot_port.py` (`PORT` dict).
-This document explains *why*; the Python file is *what*. If they disagree, the Python
-file wins and this document is stale — fix it.
+Machine-readable source of truth: [`cad/lib/tidybot_port.py`](../cad/lib/tidybot_port.py)
+(`PORT` and `LOAD`). This document explains *why*; the Python file is *what*. If they
+disagree, the Python file wins and this document is stale — fix it.
+
+Architecture rationale: [ADR 0006](decisions/0006-tri-post-coupling.md).
+Structural context: [ADR 0007](decisions/0007-coaxial-ports-tension-path.md).
+
+Supersedes 0.1.0 (boss-and-bore), retained at commit `2c18923`.
 
 ---
 
-## 0. Terminology
+## 0. Notation
 
-| Term | Meaning |
+| Symbol | Means |
 |---|---|
-| **Male half** | The half with the protruding boss. Lives on **modules**. |
-| **Female half** | The half with the bore. Lives on the **base** (and on the docking station rack). |
-| **Mate axis** | +Z. Modules always approach along the base's Z axis. |
-| **Seated** | Kinematic balls in their vees, latch engaged, contacts made. |
-| **Descriptor** | The CAN message a module sends on attach describing itself. |
+| `Ø` | diameter, in millimetres — **not** degrees |
+| `°` | degrees of angle |
 
-Convention: the base carries female halves (top and bottom). Modules carry male halves.
-A pass-through module (e.g. a drive sled) has a male half up and a female half down.
+So "3 × Ø10 posts on a Ø100 circle at 0° / 120° / 235°" is three ten-millimetre posts,
+arranged on a hundred-millimetre circle, at those three clock positions.
+
+Convention: the **base** (middle section) carries sockets on both faces. **Modules**
+carry posts. Every port is identical — one spec, both ports, any module either way up.
 
 ---
 
-## 1. Mechanical
+## 1. The four jobs
 
-### 1.1 Design intent
+The port must **capture** a module arriving misaligned, **locate** it repeatably,
+**retain** it against flight loads, and **connect** power and data. Each job is done by
+one feature, and no feature does two:
 
-Three jobs are handled by three separate features. Do not let them blur together:
-
-1. **Capture** — a conical funnel absorbs gross misalignment from the docking approach.
-2. **Location** — a 3-ball / 3-vee kinematic coupling exactly constrains all 6 DOF.
-3. **Retention** — a ball-detent latch holds the halves together along Z.
-
-Precision comes from **steel hardware**, never from printed plastic surfaces
-(see [ADR 0005](decisions/0005-print-constraints-taz6.md)). Printed plastic is bulk
-and alignment only.
-
-### 1.2 Capture envelope
-
-| Parameter | Value | Notes |
+| Job | Feature | Where |
 |---|---|---|
-| Lateral capture | **±8.0 mm** | At the funnel mouth |
-| Angular capture | **±5°** | Tilt about X or Y |
-| Funnel half-angle | 35° from axis | Shallow enough to self-centre, steep enough to stay short |
-| Funnel mouth Ø | 66.4 mm | = bore Ø + 2 × lateral capture |
+| Capture, lateral | connector cone | centre, r = 0 |
+| Capture, yaw | post tapers | r = 50 |
+| Locate | posts in sockets | r = 50 |
+| Retain | cross pins, double shear | r = 50 |
+| Connect | central connector | centre |
+| Key | post asymmetry | r = 50 |
 
-The docking station adds its own coarse funnel for the base as a whole. Total system
-capture = station funnel + port funnel; the port does **not** have to absorb raw
-navigation error on its own. Phase 4 measures the actual docking repeatability
-distribution, and that measurement is what validates or resizes this number.
+---
 
-### 1.3 Kinematic coupling (location)
+## 2. Mechanical
 
-Classic Maxwell coupling: three Ø8 mm steel balls on the male flange, each seating
-into a radial vee on the female flange. Each vee is formed by **two Ø3 mm steel dowel
-pins** lying across a printed pocket — steel-on-steel line contact from cheap hardware,
-which is the whole trick for getting precision off a 0.5 mm nozzle.
+### 2.1 Posts — three, identical, unequally spaced
 
 | Parameter | Value |
 |---|---|
-| Ball Ø | 8.0 mm (chrome steel bearing balls) |
-| Ball bolt circle | Ø70.0 mm, at 90° / 210° / 330° |
-| Ball protrusion above male flange | 3.0 mm |
-| Ball retention | Ø8.2 × 5.0 mm flat-bottom bore, epoxy |
-| Vee dowel Ø | 3.0 mm |
-| Vee dowel spacing | 7.0 mm (tangential) |
-| Nominal flange gap when seated | 1.0 mm |
+| Count | 3 |
+| Angles | **0° / 120° / 235°** |
+| Bolt circle | Ø100 (r = 50) |
+| Post Ø | 10.0, tapering to 6.0 |
+| Taper | 30° from axis, 3.46 mm long → 2.0 mm capture |
+| Protrusion | 18.0 |
+| Socket | Ø10.2 × 20.0 deep |
 
-The 1.0 mm flange gap is deliberate: **the balls carry the load, not the plastic faces.**
-If the flanges touch, the coupling is over-constrained and repeatability is gone.
+**Three, not four.** A rigid body has six degrees of freedom and each post in a socket
+removes two. Three is exactly determinate; four is over-constrained by two, and in
+printed plastic one post lands first while the rest fight it — the joint rocks or jams.
 
-Ball / dowel geometry is derived trigonometrically in `tidybot_port.py` — change the ball
-or dowel size and the pocket depths recompute themselves.
+**Identical, not graduated.** Sizing them Ø10/Ø8/Ø6 would also key the joint, but the
+smallest post would set the rating and you would make, stock, ream, seal and replace
+three parts instead of one.
 
-### 1.4 Retention (latch)
+**235°, not 240°.** That 5° asymmetry is the keying feature — see §5.
 
-A ball-detent latch, mechanically equivalent to a scaled-up pneumatic quick-coupler.
+**The taper is the funnel.** Because it rides on the post rather than sitting in the
+base, capture costs **zero receptacle depth**. This is the only geometry considered where
+that is true.
 
-- Male boss carries a circumferential groove (Ø46 root, semicircular, 2.0 mm deep)
-  16 mm up from the flange face.
-- Female bore carries 3 × Ø6 mm steel balls in radial through-holes at 120°.
-- A collar around the female bore backs the balls inward. Collar retracted → balls free
-  → module releases.
+### 2.2 Socket angles are the mirror
 
-**The latch is fail-secure.** Springs hold it engaged; energy is required to *release*.
-A power loss or firmware crash must never drop a module.
+The two faces meet each other, so they are mirror images: a module post at angle *a*
+finds a base socket at *−a*. Sockets therefore sit at **0° / 240° / 125°**.
 
-**The release actuator lives on the base, never on modules.** The base has two ports, so
-you pay for two actuators once. Modules stay 100 % passive — no motors, no latch
-electronics, no reason a module can't cost $30. This is the decision that determines
-whether you end up with six modules or two. See [ADR 0001](decisions/0001-locomotion-in-base.md)
-for the same reasoning applied to drivetrains.
+With the old symmetric layout this was invisible, because the set mirrors onto itself.
+The asymmetric layout makes it real, and getting it backwards means nothing mates at all.
+`derived()` computes `SOCKET_ANGLES`; never hand-enter them.
 
-v0.1 bench coupons ship with a plain slip-on collar (hand-operated). Powered collar
-actuation is v0.2, after the coupling itself is validated.
+### 2.3 Retention — cross pins in double shear
 
-### 1.5 Keying
+A Ø5 steel pin passes through a transverse hole in each post, driven radially by a cam
+plate **inside the base**. Loaded in double shear, which is indifferent to load
+direction — the property the flight case demands.
 
-The 3-fold symmetry of the coupling means a module could seat in any of three
-orientations. A single Ø5 mm dowel pin on the boss end face at a known clock angle,
-with a clearance-fit hole opposite, forces one orientation. It is a *key*, not a
-locating feature — it must stay clearance-fit so it never fights the kinematic coupling.
-
-### 1.6 Load rating (target, to be verified in Phase 1)
-
-| Load | Target |
+| | |
 |---|---|
-| Static axial (tension) | 8 kg |
-| Moment about X/Y | 4 N·m |
-| Play at flange rim, seated | < 0.3 mm |
-| Mate/demate cycles before re-qualification | 500 |
+| Pin capacity | 7,854 N each (**123×** on the 192 N flight load) |
+| Bearing on PETG | 2.56 MPa (**20×**) |
+| Cross-hole height | 9.0 mm above the module face |
+| Cover above the bore | 5.42 mm of base material |
+
+The cross-hole must sit in the post's *cylindrical* section, and the bore must keep
+enough base material above it to avoid breaking out into the mating face. Both are
+guarded in `derived()`.
+
+**The pins are not conductors.** A pin must bear on its post to carry load, which makes
+them one electrical node — three posts would give three circuits, not eight. See §3.
+
+### 2.4 Connector cone — the primary alignment feature
+
+| Parameter | Value |
+|---|---|
+| Ø | 40 → 30 |
+| Length | 22.0 (leads the posts by 4.0 mm) |
+| Capture | 5.0 mm lateral |
+
+The cone lands **before** any post enters. It sits at r = 0, where yaw cannot displace
+it, so it kills lateral error while being blind to rotation. The posts then have only
+yaw left to absorb.
+
+That decomposition is the whole design. Asking the posts to do both needs 14.2 mm of
+capture against a 2.0 mm taper — it fails. Split the job and they need 0.74 mm.
+
+### 2.5 Load rating
+
+| Load | Value | From |
+|---|---|---|
+| Axial, top port | **192 N** | 3-stack flight, ADR 0007 |
+| Axial, bottom port | 59 N | |
+| Moment | 4.0 N·m | |
+| Flange gap when seated | 1.0 mm | steel carries the load, never the plastic |
 
 ---
 
-## 2. Electrical
+## 3. Electrical
 
-### 2.1 Power
+**All eight contacts live in the central connector**, inside the cone, behind the
+perimeter gasket. The posts carry load only.
 
-**24 V nominal DC bus** (6S Li-ion: 25.2 V full, 18.0 V empty). See [ADR 0002](decisions/0002-bus-voltage-24v.md).
+Two reasons. A pin bears on its post to transmit load, so they are a single node — the
+posts cannot furnish eight circuits. And this robot mops: energised posts, exposed
+whenever a module is off, are a bridged supply waiting for a puddle.
 
-- Each module bucks its own logic rails locally. The bus carries 24 V and ground only.
-- Per-port budget: **150 W continuous, 250 W peak (2 s)**. Enforced by the base with
-  a current-sense shunt per port; a module exceeding its declared draw gets shed.
-- Modules must declare peak draw in their descriptor. The base refuses to enable the
-  bus for a module whose declared draw exceeds the remaining budget.
-- Inrush: modules > 20 W must soft-start. An unlimited bulk-cap inrush will brown out
-  the base's compute.
+Keeping the signals central also keeps **CAN H and CAN L a genuine twisted pair**. On
+posts 160 mm apart they would be a loop antenna beside three motors — exactly what
+[ADR 0003](decisions/0003-can-bus.md) chose CAN to avoid.
 
-### 2.2 Contacts
+| Pin | Function |
+|---|---|
+| 1, 2 | GND |
+| 3, 4 | +24 V, switched, off by default |
+| 5 | +5 V aux, always on, ≤ 500 mA |
+| 6, 7 | CAN H / CAN L |
+| 8 | PRESENCE (hard interlock) |
 
-Pogo pins on the **female** (base) half; flat gold pads on the **male** (module) half.
-Pogos wear fastest, and there is exactly one base to service versus N modules.
+Pogo pins on the base side, gold pads on the module side. Discovery sequence and the
+module descriptor are unchanged from 0.1.0 — see §3.1 of the git history for that text,
+reproduced below.
 
-Contacts sit on the **boss end face**, recessed inside the bore — protected from
-debris, and they only engage in the last few mm of travel, after mechanical alignment
-is already established.
+### 3.1 Discovery
 
-| Pin | Function | Notes |
-|---|---|---|
-| 1, 2 | GND | Doubled for current |
-| 3, 4 | +24 V bus | Doubled; switched by the base, off by default |
-| 5 | +5 V aux | Always-on, ≤ 500 mA. Powers the module's MCU for discovery *before* the main bus is enabled. |
-| 6 | CAN H | |
-| 7 | CAN L | |
-| 8 | PRESENCE | Pulled low by a link in the module. Continuously monitored. |
-
-PRESENCE is a hard interlock, not a convenience: losing it mid-drive means a module is
-detaching and the base must stop immediately.
-
-The +5 V aux rail is what makes safe hot-plug work — the module boots, identifies
-itself, and declares its power needs *before* anything switches 24 V into it.
-
-### 2.3 Discovery sequence
-
-1. Mechanical seat → PRESENCE goes low.
+1. Mechanical seat → PRESENCE low.
 2. Base enables +5 V aux.
-3. Module MCU boots, joins the CAN bus, publishes its **descriptor**.
-4. Base validates the descriptor against the remaining power budget.
-5. Base enables the 24 V bus for that port.
-6. Base updates its kinematic/mass model and spins up the matching software stack.
+3. Module MCU boots, joins CAN, publishes its **descriptor**: type, hw/fw revision,
+   `port_spec_version`, serial, `mass_g`, `com_xyz_mm`, `power_peak_w`, capabilities.
+4. Base validates against the remaining power budget.
+5. Base enables 24 V for that port.
+6. Base updates its mass model and launches the module's software stack.
+
+`mass_g` and `com_xyz_mm` are not bookkeeping — they are how the base retunes itself
+when 1.5 kg of vacuum hangs off the bottom port, and how the rotor unit knows what it is
+lifting.
 
 ---
 
-## 3. Data
+## 4. Contamination
 
-**CAN 2.0B, 500 kbit/s.** See [ADR 0003](decisions/0003-can-bus.md).
+This robot vacuums and mops. Five rules, all applied:
 
-Strongly consider **Cyphal/CAN** (formerly UAVCAN) rather than a bespoke protocol — it
-was designed for exactly this problem (node discovery, heartbeats, typed pub/sub,
-hot-plug on a shared bus) and comes with tooling. Decide before writing firmware; this
-is cheap to choose now and expensive to change in Phase 3.
+1. **The mechanism never leaves the base.** Pins, cam plate and motor are sealed inside.
+   What is exposed is solid steel posts and drained holes — nothing that can foul.
+2. **Every socket drains out the side wall.** Never into the electronics.
+3. **Lip seal at each socket mouth.** The post wipes itself clean on entry.
+4. **Perimeter gasket** on the base half — one gasket, replaceable, rather than one per
+   module.
+5. **Contacts sealed** inside the gasketed cone.
 
-Bus topology: linear, base at one end, 120 Ω termination at the base and at the
-electrically-farthest port. Stub length from a port to the trunk ≤ 100 mm.
+---
 
-### 3.1 Module descriptor
+## 5. Keying
 
-Every module publishes this on attach. It is what turns "swappable parts" into a robot
-that actually reconfigures itself:
+Three posts at 120° would mate three ways. Moving one to **235°** makes the wrong
+orientations miss by **4.36 mm** against 0.20 mm of clearance — a wall, not a tight fit.
 
-| Field | Type | Why it matters |
+The cost is a load centroid 1.45 mm off axis, worth 0.28 N·m of imbalance against a 20×
+bearing margin. Negligible.
+
+Orientation matters even though the posts carry no current: the connector's eight
+contacts must land on their opposite numbers, and modules have a front — a vacuum's brush
+roll faces the direction of travel.
+
+Because the misfit is *angular*, it grows with radius, so a misaligned module cannot even
+begin to enter. It sits proud and detectable rather than jamming halfway.
+
+---
+
+## 6. Alignment cascade
+
+No single feature is heroic. Each stage handles only what the previous one left:
+
+| Stage | Mechanism | Residual |
 |---|---|---|
-| `module_type` | enum | Selects the software stack to launch |
-| `hw_revision` | u8 | |
-| `fw_version` | semver | |
-| `port_spec_version` | semver | Base refuses incompatible majors |
-| `serial` | u64 | Per-unit calibration lookup |
-| `mass_g` | u32 | Feeds the drive controller and tip-over limits |
-| `com_xyz_mm` | i16[3] | Relative to the port origin |
-| `power_peak_w` | u16 | Validated against the remaining budget |
-| `power_idle_w` | u16 | Runtime estimation |
-| `capabilities` | bitfield | What the module can be asked to do |
+| 0 | navigation | 10 mm / 3° |
+| 1 | dock vee rails guide the whole robot | 2 mm / 1° |
+| 2 | compliant module cradle in the dock | 1 mm / 0.5° |
+| 3 | connector cone | 0.3 mm |
+| 4 | post tapers | 0.1 mm |
 
-`mass_g` and `com_xyz_mm` are not bookkeeping. They are how the base retunes itself
-when you hang 1.5 kg of vacuum off the bottom port.
+**Two of the five stages live in the docking station**, which puts the dock on the
+critical path rather than in Phase 4.
 
----
-
-## 4. Compatibility policy
-
-Semantic versioning on `port_spec_version`:
-
-- **Patch** — tolerance or documentation changes. No re-print.
-- **Minor** — additive, backwards compatible. Old modules still mate and function.
-- **Major** — mechanical or pinout break. Old modules will not mate. Avoid at nearly
-  any cost; if you take one, retrofit or retire every existing module in the same change.
-
-The base logs the spec version of every module it sees and refuses a mismatched major.
+Do not stagger the post lengths to make them engage in sequence. It moves the centre of
+rotation onto the first post, so the second sees r·√3·θ instead of r·θ — 73% worse. The
+first feature to engage must be the central one.
 
 ---
 
-## 5. Open questions for Phase 1
+## 7. Compatibility
 
-These are the things the bench coupon exists to answer. Do not design a real module
-until they are closed:
+Semantic versioning on `port_spec_version`. **Patch:** tolerances and documentation.
+**Minor:** additive, backwards compatible. **Major:** mechanical or pinout break — old
+modules will not mate; retrofit or retire every one in the same change.
 
-1. Does the 1.0 mm flange gap survive real loads, or does it need a preload spring?
-2. Is 8 mm lateral capture achievable with a 35° funnel, or does the funnel need to be
-   shallower (and therefore longer)?
-3. Does the detent groove at 2.0 mm depth hold 8 kg, or does it cam out?
-4. What is the actual repeatability across 50 mate cycles?
-5. Does the Ø8.2 epoxy ball socket survive 500 cycles in PETG, or does it need a
-   metal insert?
+The base logs each module's spec version and refuses a mismatched major.
+
+---
+
+## 8. Open questions for Phase 1
+
+1. Does 0.10 mm of radial socket clearance survive 500 cycles with dust present, or does
+   it wear open?
+2. Is 2.0 mm of post capture enough once the cone has done its job, or does the cascade's
+   stage-3 residual exceed 0.3 mm in practice?
+3. Do the lip seals survive 500 wipes, and do the drains actually clear standing water?
+4. Does the cone bottom out on debris before the posts seat?
+5. What is the real pull-out load of a Ø5 pin bearing on printed PETG, against the
+   calculated 20× margin?

@@ -30,8 +30,10 @@ Two rules follow from that and shape everything else:
   at $40 instead of $200 — and that cost difference is what decides whether you end up
   with six modules or two.
 - **Precision comes from steel, not plastic.** Printed parts are bulk and rough
-  alignment. Bearing balls and dowel pins do the locating. See
+  alignment. Steel dowels locate; steel pins retain. See
   [ADR 0005](docs/decisions/0005-print-constraints-taz6.md).
+- **One feature, one job.** The cone kills lateral error, the post tapers kill yaw, the
+  pins retain, the asymmetry keys. Asking any feature to do two makes it fail at both.
 
 ## CAD
 
@@ -94,5 +96,10 @@ Design rules: [ADR 0005](docs/decisions/0005-print-constraints-taz6.md).
 
 ## Status
 
-Phase 0 complete. Phase 1 (port bench validation) is next — nothing else should be
-designed until `SPEC_VERSION` reaches 1.0.0.
+**TB-Port 0.2.0** — three tapered posts with cross pins, sealed central connector.
+22 checks pass. Phase 1 (bench validation) is next; nothing else should be designed
+until `SPEC_VERSION` reaches 1.0.0.
+
+The 0.1.0 boss-and-bore geometry is superseded and retained at commit `2c18923` — see
+[ADR 0006](docs/decisions/0006-tri-post-coupling.md) for why it was abandoned rather
+than repaired.

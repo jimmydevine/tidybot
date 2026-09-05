@@ -6,7 +6,8 @@ the phases are ordered by risk, not by how interesting they are.
 | Phase | Deliverable | Exit criterion | Status |
 |---|---|---|---|
 | **0. Spec** | Interface spec, budgets, ADRs, parametric port library, generated coupons | Port geometry validates and coupons generate | **Done** |
-| **1. The port** | Bench coupons, no robot | T1–T5 pass; `SPEC_VERSION` → 1.0.0 | Next |
+| **0b. Redesign** | TB-Port 0.2.0: three tapered posts, cross pins, sealed central connector | 22 checks pass, modelling the steel | **Done** |
+| **1. The port** | Bench coupons, no robot | T1–T6 pass; `SPEC_VERSION` → 1.0.0 | Next |
 | **2. Rolling base** | Chassis, drive, LiDAR, SLAM, CAN discovery, ballast module | Base navigates a room; detects attach/detach; adapts its mass model | |
 | **3. Vacuum module** | First real module | Cleans a room end to end, module attached by hand | |
 | **4. Dock: charging** | Charge-only dock | 50/50 autonomous docks; **repeatability distribution measured** | |
@@ -17,6 +18,11 @@ the phases are ordered by risk, not by how interesting they are.
 
 **Phase 1 before everything.** The coupler is the single component every future module
 depends on. A change to it after three modules exist means reprinting three modules.
+
+**The dock is now on the critical path.** Two of the port's five alignment stages live in
+the docking station (vee rails guiding the whole robot, and a compliant module cradle).
+That was a Phase 4 concern when the port absorbed all the error itself; it is a Phase 1
+assumption now. See [INTERFACE.md §6](INTERFACE.md).
 
 **Phase 4 before Phase 5.** Docking repeatability is the *input* to the swap mechanism's
 tolerance budget. Designing the swapper before measuring it is guessing.
