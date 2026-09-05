@@ -56,10 +56,19 @@ PORT = dict(
     POST_BOSS_DIA     = 18.0,    # boss behind the plate, so 12 mm of grip exists
     SOCKET_CLEARANCE  = 0.20,    # diametral
 
-    # --- Locking pins: double shear, driven by a cam plate INSIDE the base --
-    PIN_DIA           = 5.0,
-    PIN_HOLE_Z        = 9.0,     # cross-hole centre, above the module face
-    PIN_CLEARANCE     = 0.15,
+    # --- Retention: circumferential groove + one rotating lock plate -------
+    #  A groove is a single lathe op -- or a round file against a rod spun in
+    #  a drill. A cross-hole needs a V-block and a centre punch, and in
+    #  hardened stock it needs carbide or EDM. Same double shear either way.
+    #  The lock plate carries a KEYHOLE per post: the wide mouth lets the post
+    #  through, then ~10 deg of rotation slides the throat into the groove.
+    #  One plate replaces three pins AND the cam plate that drove them.
+    GROOVE_Z          = 9.0,     # groove centre, above the module face
+    GROOVE_ROOT_DIA   = 7.0,
+    GROOVE_WIDTH      = 3.4,     # lock plate thickness + clearance
+    LOCK_PLATE_THK    = 3.0,
+    LOCK_OPEN_DIA     = 10.4,    # keyhole mouth -- the post passes through
+    LOCK_CAPTURE_DIA  = 7.2,     # keyhole throat -- captures the groove
 
     # --- Central connector cone: engages FIRST, kills lateral error ---------
     #  It sits at r = 0, so yaw cannot displace it. That is the whole point:
@@ -178,35 +187,51 @@ def derived(p=None):
     d["CENTROID_OFFSET"] = math.hypot(cx, cy)
     d["LOAD_IMBALANCE_NM"] = LOAD["AXIAL_TOP_N"] * d["CENTROID_OFFSET"] / 1000.0
 
-    # --- Margins -----------------------------------------------------------
-    A_shear = 2.0 * math.pi * (p["PIN_DIA"] / 2.0) ** 2   # double shear
-    d["PIN_CAPACITY_N"]  = A_shear * 200.0                # mild steel, conservative
-    d["PIN_LOAD_N"]      = LOAD["AXIAL_TOP_N"] / 3.0
-    d["PIN_MARGIN"]      = d["PIN_CAPACITY_N"] / d["PIN_LOAD_N"]
-    wall = (d["SOCKET_DIA"] - p["PIN_DIA"]) / 2.0 + p["PIN_DIA"]
-    d["BEARING_MPA"]     = d["PIN_LOAD_N"] / (p["PIN_DIA"] * p["PIN_DIA"])
-    d["BEARING_MARGIN"]  = 50.0 / d["BEARING_MPA"]        # PETG compressive
-    if d["BEARING_MARGIN"] < 3.0:
-        raise ValueError("Pin bearing margin only %.1fx on printed plastic."
-                         % d["BEARING_MARGIN"])
+    # --- Groove and lock plate ---------------------------------------------
+    d["GROOVE_DEPTH"] = (p["POST_DIA"] - p["GROOVE_ROOT_DIA"]) / 2.0
+    d["LOCK_TRAVEL"]  = (p["LOCK_OPEN_DIA"] + p["LOCK_CAPTURE_DIA"]) / 2.0
+    d["LOCK_ROT_DEG"] = math.degrees(d["LOCK_TRAVEL"] / (p["POST_BC"] / 2.0))
+    d["LOCK_ENGAGE"]  = (p["POST_DIA"] - p["LOCK_CAPTURE_DIA"]) / 2.0
 
-    # --- Enough base material above the pin bore ---------------------------
-    #  The pin bore is a hole in the base near the mating face. Too close and
-    #  it breaks out into the face under load.
-    d["PIN_BORE_COVER"] = (p["PIN_HOLE_Z"] - p["FLANGE_GAP"]
-                           - (p["PIN_DIA"] + p["PIN_CLEARANCE"]) / 2.0)
-    if d["PIN_BORE_COVER"] < 3.0:
+    if p["LOCK_OPEN_DIA"] <= p["POST_DIA"]:
         raise ValueError(
-            "Only %.1f mm of base material between the pin bore and the mating "
-            "face. It will break out. Raise PIN_HOLE_Z or lengthen the post."
-            % d["PIN_BORE_COVER"])
+            "Keyhole mouth Ø%.2f will not pass a Ø%.2f post -- the module could "
+            "never be inserted." % (p["LOCK_OPEN_DIA"], p["POST_DIA"]))
+    if not (p["GROOVE_ROOT_DIA"] < p["LOCK_CAPTURE_DIA"] < p["POST_DIA"]):
+        raise ValueError(
+            "Keyhole throat Ø%.2f must sit between the groove root Ø%.2f and the "
+            "post Ø%.2f: wider and it slips off, narrower and it jams on the root."
+            % (p["LOCK_CAPTURE_DIA"], p["GROOVE_ROOT_DIA"], p["POST_DIA"]))
+    if p["GROOVE_WIDTH"] <= p["LOCK_PLATE_THK"]:
+        raise ValueError("Groove %.2f mm is not wider than the %.2f mm lock plate."
+                         % (p["GROOVE_WIDTH"], p["LOCK_PLATE_THK"]))
 
-    # --- Pin must actually pass through the post ---------------------------
-    if p["PIN_HOLE_Z"] + p["PIN_DIA"] / 2.0 > p["POST_LEN"] - d["POST_TAPER_LEN"]:
+    # The groove must sit in the post's cylindrical section, clear of the
+    # taper, with the whole width above the base's mating face.
+    g_top = p["GROOVE_Z"] + p["GROOVE_WIDTH"] / 2.0
+    g_bot = p["GROOVE_Z"] - p["GROOVE_WIDTH"] / 2.0
+    if g_top > p["POST_LEN"] - d["POST_TAPER_LEN"]:
         raise ValueError(
-            "The cross-hole at z=%.1f runs into the taper, which starts at %.1f. "
-            "The pin would bear on a conical surface instead of a cylindrical one."
-            % (p["PIN_HOLE_Z"], p["POST_LEN"] - d["POST_TAPER_LEN"]))
+            "The groove reaches z=%.2f but the taper starts at %.2f. The lock "
+            "plate would bear on a cone instead of a square shoulder."
+            % (g_top, p["POST_LEN"] - d["POST_TAPER_LEN"]))
+    d["GROOVE_COVER"] = g_bot - p["FLANGE_GAP"]
+    if d["GROOVE_COVER"] < 3.0:
+        raise ValueError(
+            "Only %.2f mm between the groove and the mating face. The lock slot "
+            "would break out of the base's face." % d["GROOVE_COVER"])
+
+    # --- Margins: the lock plate is the load path --------------------------
+    d["LOCK_BEARING_MM2"] = 0.5 * math.pi / 4.0 * (
+        p["POST_DIA"] ** 2 - p["LOCK_CAPTURE_DIA"] ** 2)
+    d["POST_NET_MM2"] = math.pi / 4.0 * p["GROOVE_ROOT_DIA"] ** 2
+    d["LOCK_LOAD_N"]  = LOAD["AXIAL_TOP_N"] / 3.0
+    d["LOCK_BEARING_MPA"] = d["LOCK_LOAD_N"] / d["LOCK_BEARING_MM2"]
+    d["POST_TENSION_MPA"] = d["LOCK_LOAD_N"] / d["POST_NET_MM2"]
+    d["LOCK_MARGIN"] = 250.0 / d["LOCK_BEARING_MPA"]     # mild steel plate
+    d["POST_MARGIN"] = 250.0 / d["POST_TENSION_MPA"]
+    if d["LOCK_MARGIN"] < 10.0:
+        raise ValueError("Lock plate bearing margin only %.1fx." % d["LOCK_MARGIN"])
     return d
 
 
@@ -301,14 +326,67 @@ def steel_post(p=None, angle=0.0):
     post = post.fuse(Part.makeCone(
         p["POST_DIA"] / 2.0, p["POST_TIP_DIA"] / 2.0, d["POST_TAPER_LEN"],
         App.Vector(x, y, straight), Z))
-    # cross-hole, RADIAL to match the cam plate that drives the pins
-    ux, uy = _polar(1.0, angle)
-    post = post.cut(Part.makeCylinder(
-        (p["PIN_DIA"] + p["PIN_CLEARANCE"]) / 2.0, p["POST_DIA"] * 3.0,
-        App.Vector(x - ux * p["POST_DIA"] * 1.5, y - uy * p["POST_DIA"] * 1.5,
-                   p["PIN_HOLE_Z"]),
-        App.Vector(ux, uy, 0.0)))
+    # circumferential groove -- a single lathe op, or a round file against
+    # the rod spun in a drill. The lock plate seats in here.
+    ring = Part.makeCylinder(p["POST_DIA"] / 2.0 + 1.0, p["GROOVE_WIDTH"],
+                             App.Vector(x, y, p["GROOVE_Z"] - p["GROOVE_WIDTH"] / 2.0), Z)
+    ring = ring.cut(Part.makeCylinder(
+        p["GROOVE_ROOT_DIA"] / 2.0, p["GROOVE_WIDTH"] + 0.2,
+        App.Vector(x, y, p["GROOVE_Z"] - p["GROOVE_WIDTH"] / 2.0 - 0.1), Z))
+    post = post.cut(ring)
     return post
+
+
+def lock_plate(p=None, rotation=None):
+    """The retention mechanism: ONE plate carrying a keyhole per post.
+
+    The wide mouth of each keyhole passes the post; ~10 deg of rotation
+    slides the narrow throat into the post's groove, locking all three at
+    once. Replaces three loose pins and the cam plate that drove them.
+
+    rotation=None  -> locked position
+    rotation=0     -> open position (posts pass freely)
+
+    Lives entirely inside the sealed base: nothing that moves ever sees the
+    room, which is the property that matters on a robot that mops.
+    """
+    Part, App = _fc()
+    p = p or PORT
+    d = derived(p)
+    Z = App.Vector(0, 0, 1)
+    if rotation is None:
+        rotation = d["LOCK_ROT_DEG"]
+    r = p["POST_BC"] / 2.0
+
+    z0 = p["GROOVE_Z"] - p["LOCK_PLATE_THK"] / 2.0
+    plate = Part.makeCylinder(r + 14.0, p["LOCK_PLATE_THK"], App.Vector(0, 0, z0), Z)
+    plate = plate.cut(Part.makeCylinder(r - 14.0, p["LOCK_PLATE_THK"] + 2.0,
+                                        App.Vector(0, 0, z0 - 1.0), Z))
+
+    for ang in p["POST_ANGLES"]:
+        # In the plate's own frame: mouth at the post angle, throat behind it
+        # by the lock rotation, so rotating forward brings the throat home.
+        a_open = ang
+        a_cap = ang - d["LOCK_ROT_DEG"]
+        ox, oy = _polar(r, a_open)
+        cx, cy = _polar(r, a_cap)
+        plate = plate.cut(Part.makeCylinder(
+            p["LOCK_OPEN_DIA"] / 2.0, p["LOCK_PLATE_THK"] + 2.0,
+            App.Vector(ox, oy, z0 - 1.0), Z))
+        plate = plate.cut(Part.makeCylinder(
+            p["LOCK_CAPTURE_DIA"] / 2.0, p["LOCK_PLATE_THK"] + 2.0,
+            App.Vector(cx, cy, z0 - 1.0), Z))
+        # the slot joining mouth to throat
+        mx, my = (ox + cx) / 2.0, (oy + cy) / 2.0
+        span = math.hypot(ox - cx, oy - cy)
+        slot = Part.makeBox(span, p["LOCK_CAPTURE_DIA"], p["LOCK_PLATE_THK"] + 2.0,
+                            App.Vector(-span / 2.0, -p["LOCK_CAPTURE_DIA"] / 2.0, z0 - 1.0))
+        slot.rotate(App.Vector(0, 0, 0), App.Vector(0, 0, 1),
+                    math.degrees(math.atan2(oy - cy, ox - cx)))
+        slot.translate(App.Vector(mx, my, 0))
+        plate = plate.cut(slot)
+
+    return _rotated(plate, rotation)
 
 
 def base_port_parts(p=None):
@@ -337,13 +415,16 @@ def base_port_parts(p=None):
         cuts.append(Part.makeCone(
             d["SOCKET_DIA"] / 2.0 + 1.2, d["SOCKET_DIA"] / 2.0, 1.2,
             App.Vector(x, y, -1.2), Z))
-        # radial bore for the locking pin, driven from inside the base
-        z_pin = -(p["PIN_HOLE_Z"] - p["FLANGE_GAP"])
         ux, uy = _polar(1.0, ang)
-        cuts.append(Part.makeCylinder(
-            (p["PIN_DIA"] + p["PIN_CLEARANCE"]) / 2.0, p["PLATE_DIA"] / 2.0,
-            App.Vector(x - ux * 40.0, y - uy * 40.0, z_pin),
-            App.Vector(ux, uy, 0.0)))
+        # cavity for the lock plate to sweep through, at the groove height
+        z_lock = -(p["GROOVE_Z"] - p["FLANGE_GAP"])
+        sweep = 2.0 * d["LOCK_TRAVEL"] + p["POST_DIA"] + 6.0
+        slot = Part.makeBox(sweep, p["POST_DIA"] + 8.0, p["GROOVE_WIDTH"],
+                            App.Vector(-sweep / 2.0, -(p["POST_DIA"] + 8.0) / 2.0,
+                                       z_lock - p["GROOVE_WIDTH"] / 2.0))
+        slot.rotate(App.Vector(0, 0, 0), App.Vector(0, 0, 1), ang + 90.0)
+        slot.translate(App.Vector(x, y, 0.0))
+        cuts.append(slot)
         # drain: socket floor -> out through the side wall
         cuts.append(Part.makeCylinder(
             p["DRAIN_DIA"] / 2.0, p["PLATE_DIA"],
@@ -411,7 +492,7 @@ def report(p=None):
     """Derived geometry, margins and BOM. Runs under plain python3."""
     p = p or PORT
     d = derived(p)
-    print("TB-Port spec %s  --  three tapered posts, cross pins" % p["SPEC_VERSION"])
+    print("TB-Port spec %s  --  three tapered posts, groove + lock plate" % p["SPEC_VERSION"])
     print("\nGEOMETRY")
     print("  post                  3 x Ø%.1f, identical, at %s deg"
           % (p["POST_DIA"], "/".join("%.0f" % a for a in p["POST_ANGLES"])))
@@ -428,8 +509,8 @@ def report(p=None):
           % (p["CONE_BASE_DIA"], p["CONE_TIP_DIA"], p["CONE_LEN"], d["CONE_LEAD"]))
     print("  receptacle depth      %.1f mm  (the cone is the deepest feature)"
           % d["RECEPTACLE_DEPTH"])
-    print("  pin bore cover        %.2f mm of base material above the bore"
-          % d["PIN_BORE_COVER"])
+    print("  groove cover          %.2f mm of base material below the lock slot"
+          % d["GROOVE_COVER"])
     print("\nVOLUME CONSUMED IN THE BASE")
     print("  3 post sockets        %6.0f mm3" % d["VOL_SOCKETS"])
     print("  connector cone        %6.0f mm3" % d["VOL_CONE"])
@@ -441,22 +522,33 @@ def report(p=None):
     print("  socket clearance %.2f mm -> a wall, not a tight fit" % p["SOCKET_CLEARANCE"])
     print("  cost: centroid %.2f mm off axis = %.2f N*m imbalance"
           % (d["CENTROID_OFFSET"], d["LOAD_IMBALANCE_NM"]))
-    print("\nMARGINS (top port, %.0f N flight load)" % LOAD["AXIAL_TOP_N"])
-    print("  pin double shear      %.0f N per pin, need %.0f -> %.0fx"
-          % (d["PIN_CAPACITY_N"], d["PIN_LOAD_N"], d["PIN_MARGIN"]))
-    print("  bearing on PETG       %.2f MPa -> %.0fx" % (d["BEARING_MPA"], d["BEARING_MARGIN"]))
+    print("\nRETENTION -- groove + one rotating lock plate")
+    print("  groove                Ø%.1f root, %.1f wide, %.2f mm deep"
+          % (p["GROOVE_ROOT_DIA"], p["GROOVE_WIDTH"], d["GROOVE_DEPTH"]))
+    print("  keyhole               Ø%.1f mouth -> Ø%.1f throat"
+          % (p["LOCK_OPEN_DIA"], p["LOCK_CAPTURE_DIA"]))
+    print("  lock motion           %.1f mm tangential = %.1f deg of plate rotation"
+          % (d["LOCK_TRAVEL"], d["LOCK_ROT_DEG"]))
+    print("  shoulder engagement   %.2f mm of radial overlap" % d["LOCK_ENGAGE"])
+
+    print("\nMARGINS (top port, %.0f N flight load, %.0f N per post)"
+          % (LOAD["AXIAL_TOP_N"], d["LOCK_LOAD_N"]))
+    print("  lock plate bearing    %.2f MPa -> %.0fx (mild steel)"
+          % (d["LOCK_BEARING_MPA"], d["LOCK_MARGIN"]))
+    print("  post net section      %.2f MPa -> %.0fx" % (d["POST_TENSION_MPA"], d["POST_MARGIN"]))
     print("\nBILL OF MATERIALS per mated pair")
     print("  3 x Ø%.0f x %.0f MILD steel rod  (posts)" % (p["POST_DIA"], d["POST_TOTAL_LEN"]))
     print("        - turn one end to Ø%.0f over %.1f mm at %.0f deg  (the capture taper)"
           % (p["POST_TIP_DIA"], d["POST_TAPER_LEN"], p["POST_TAPER_ANGLE"]))
-    print("        - drill Ø%.2f cross-hole, %.0f mm from the shoulder"
-          % (p["PIN_DIA"] + p["PIN_CLEARANCE"], p["PIN_HOLE_Z"]))
+    print("        - cut a Ø%.0f groove, %.1f wide, centred %.0f mm above the shoulder"
+          % (p["GROOVE_ROOT_DIA"], p["GROOVE_WIDTH"], p["GROOVE_Z"]))
     print("        - press %.0f mm into the plate (bore Ø%.2f)"
           % (p["POST_EMBED"], p["POST_BORE_DIA"]))
-    print("        NOTE: mild steel, not hardened dowel -- you must drill it,")
-    print("              and the shear margin is %.0fx so hardness buys nothing."
-          % d["PIN_MARGIN"])
-    print("  3 x Ø%.0f steel dowel                                 (locking pins)" % p["PIN_DIA"])
+    print("        NOTE: a groove is one lathe op, or a round file against the")
+    print("              rod spun in a drill. No cross-hole, no V-block, no")
+    print("              drilling hardened stock -- so ground locating pins")
+    print("              become a viable starting point too.")
+    print("  1 x lock plate, %.0f mm, 3 keyholes  (steel or laser-cut)" % p["LOCK_PLATE_THK"])
     print("  3 x lip seal, %.1f mm            (socket mouths)" % p["LIP_SEAL_W"])
     print("  1 x TPU O-ring, Ø%.0f x %.0f       (perimeter gasket, on the base)"
           % (p["GASKET_BC"], p["GASKET_H"]))

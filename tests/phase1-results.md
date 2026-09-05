@@ -22,7 +22,7 @@ Procedure: [docs/PHASE1_TEST_PLAN.md](../docs/PHASE1_TEST_PLAN.md)
 | T3 capture, lateral | ≥ 3 mm | | |
 | T3 capture, yaw | ≥ 1° | | |
 | T4 static pull | 200 N for 60 s | | |
-| T4 failure mode | PETG bearing before pin shear | | |
+| T4 failure mode | lock plate yields before post | | |
 | T5 contamination, dust | 50/50 | | |
 | T5 contamination, wet | 50/50, drains clear < 30 s | | |
 | T6 cycle life | T1 + T3 hold at 500 | | |

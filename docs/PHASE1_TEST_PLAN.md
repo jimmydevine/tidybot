@@ -32,7 +32,7 @@ Print as generated — orientation is a spec, not a slicer setting ([ADR 0005](d
 | Qty | Item | Notes |
 |---|---|---|
 | 3 | **Ø10 × 30 mild steel rod** | Posts — see machining below |
-| 3 | Ø5 × 40 steel dowel | Locking pins |
+| 1 | **Lock plate, 3 mm, 3 keyholes** | Steel or laser-cut; `coupon_lock_plate` |
 | 3 | Ø10 lip seal / wiper | Socket mouths |
 | 1 | TPU O-ring, Ø118 × 2 | Perimeter gasket, seats in the base groove |
 | 8 | M5 × 20 bolts | Fixture and pull-test spreader |
@@ -42,17 +42,23 @@ Print as generated — orientation is a spec, not a slicer setting ([ADR 0005](d
 Each Ø10 × 30 rod needs three operations:
 
 1. **Turn one end** to Ø6 over 3.5 mm, at 30° from the axis. This is the capture taper.
-2. **Drill a Ø5.15 cross-hole** 9 mm from the shoulder — the shoulder being where the
-   post meets the plate, 12 mm from the *unturned* end. This is where the locking pin
-   passes through, in double shear.
+2. **Cut a Ø7 groove, 3.4 mm wide**, centred 9 mm from the shoulder — the shoulder being
+   where the post meets the plate, 12 mm from the *unturned* end. The lock plate seats in
+   this groove and bears on its upper shoulder.
 3. **Press 12 mm into the plate**, into a Ø9.90 bore. Leaves 18 mm proud.
 
-**Use mild steel, not hardened dowel pins.** You have to drill a cross-hole through it,
-which is miserable in hardened stock — and the pin shear margin is 123×, so hardness buys
-nothing. A length of Ø10 mild steel round bar is the right material.
+**A groove, not a cross-hole.** This is deliberate and it is the reason the part is
+makeable by hand. A cross-hole through a round bar needs a V-block and a centre punch or
+the drill walks off the crown; in hardened stock it wants carbide or EDM. A groove is one
+lathe op — or a round file held against the rod while it spins in a drill press.
 
-If you have no lathe, a drill press and a file will get the taper close enough for a first
-coupon. It is capture, not precision.
+Both features can be cut that way: chuck the rod, spin it, apply a file. The taper is
+capture and the groove is a shoulder; neither is a precision surface.
+
+That also re-opens the **buy** route. Ground locating pins with tapered or bullet noses
+are a catalogue item (Misumi, Carr Lane, Jergens and similar). Previously they were a dead
+end because you still had to drill hardened steel; with a groove instead, adding one to a
+bought pin — or specifying it — is straightforward.
 
 Also needed: dial indicator (0.01 mm), spring gauge to 25 kg, feeler gauges, calipers,
 fine dust (flour or dry cement), and water with a drop of detergent.
@@ -71,7 +77,7 @@ boss behind the plate to give 12 mm of grip.
 | 4 holes near the rim | 5.5 | Ø120 circle | M5 fixture bolts |
 | **3 bores with bosses behind** | 9.90 | **Ø100 circle at 0° / 120° / 235°** | press-fit steel posts |
 | (posts, once fitted) | 10 → 6 | standing 18 mm proud | locate, retain, key |
-| Cross-hole in each post | 5.15 | 9 mm up, **radial** | the locking pin |
+| Groove in each post | 7.0 root × 3.4 wide | centred 9 mm up | the lock plate seats here |
 | Big central cone | 40 → 30 | centre, 22 tall | lands first, kills lateral error |
 | Recess in the cone tip | 22 × 10 | | contact pad PCB |
 | Bore up the cone axis | 16 | | harness |
@@ -88,7 +94,7 @@ A Ø130 × 31 block with the sockets opening upward.
 | 4 holes near the rim | 5.5 | Ø120 circle | M5 fixture bolts |
 | **3 sockets** | 10.2 × 20 deep | **Ø100 circle at 0° / 240° / 125°** | the posts |
 | Chamfer at each socket mouth | | | meets the post taper |
-| Radial bore into each socket | 5.15 | 8 mm down | locking pin |
+| Flat cavity across each socket | 3.4 mm tall | 8 mm down | the lock plate sweeps through |
 | Angled hole from each socket floor | 4 | exits the **side wall** | drain |
 | Central cone recess | 40.3 → 30.3 × 25 | centre | the connector cone |
 | Annular groove on the face | Ø118 × 4 wide | | perimeter gasket |
@@ -99,11 +105,12 @@ because the two faces meet. This is correct, not a typo.
 ## 4. Assembly
 
 1. Press the three machined posts into the module coupon, tapered end out. **Check
-   protrusion is 18.0 ± 0.1 mm on all three** and that each cross-hole is aligned
-   radially — the pin has to enter from outside and pass straight through.
+   protrusion is 18.0 ± 0.1 mm on all three**, and that all three grooves sit at the same
+   height — the lock plate is one rigid part and cannot accommodate a post that sits proud.
 2. Fit the lip seals into the base socket mouths.
 3. Seat the TPU O-ring in the base's perimeter groove.
-4. Leave the locking pins loose for T1–T3; they are inserted by hand.
+4. Fit the lock plate in its cavity. Rotating it ~10° moves all three posts from open to
+   locked at once. Leave it open for T1–T3.
 
 ## 5. Tests
 
@@ -134,7 +141,7 @@ and yaw angle that still seats.
 ### T4 — Static pull (answers Q5)
 Pins home, M5 spreader on the fixture holes, load axially.
 
-- **Pass:** holds **200 N** for 60 s, no permanent deformation, no pin migration.
+- **Pass:** holds **200 N** for 60 s, no permanent deformation, lock plate does not spread.
 - Then load to failure and record the mode. The calculation says the PETG bearing yields
   long before the pin shears; confirm that, because it is the assumption every margin on
   this port rests on.

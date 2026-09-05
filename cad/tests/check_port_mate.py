@@ -23,7 +23,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(_HERE, "..", "lib"))
 
 from tidybot_port import (PORT, LOAD, derived, module_port,   # noqa: E402
-                          base_port, steel_post)
+                          base_port, steel_post, lock_plate)
 from coupon import build_module_coupon, build_base_coupon            # noqa: E402
 
 failures = []
@@ -94,26 +94,42 @@ def main():
           "%.2f mm3 interference, %.2f mm radial clearance"
           % (worst_fit, (d["SOCKET_DIA"] - p["POST_DIA"]) / 2.0))
 
-    pin_z = p["PIN_HOLE_Z"]
-    worst_pin = 0.0
-    for ang, post in zip(p["POST_ANGLES"], posts):
-        x, y = polar(p["POST_BC"] / 2.0, ang)
-        ux, uy = polar(1.0, ang)
-        pin = Part.makeCylinder(p["PIN_DIA"] / 2.0, 60.0,
-                                Vector(x - ux * 30.0, y - uy * 30.0, pin_z),
-                                Vector(ux, uy, 0))
-        worst_pin = max(worst_pin, pin.common(post).Volume,
-                        pin.common(m).Volume, pin.common(bm).Volume)
-    check("pin clears the dowel cross-hole", worst_pin < 1.0,
-          "%.2f mm3 obstruction through steel and plastic alike" % worst_pin)
-
     check("boss wall survives the press fit", d["BOSS_WALL"] >= 3.0,
           "%.1f mm of PETG around a Ø%.2f bore" % (d["BOSS_WALL"], p["POST_BORE_DIA"]))
     check("post grip is at least one diameter", p["POST_EMBED"] >= p["POST_DIA"],
           "%.0f mm embedded in a Ø%.0f post" % (p["POST_EMBED"], p["POST_DIA"]))
 
-    check("pin bore has base material above it", d["PIN_BORE_COVER"] >= 3.0,
-          "%.2f mm of cover" % d["PIN_BORE_COVER"])
+    _say("\nRETENTION -- the lock plate must open AND grip")
+    open_plate = lock_plate(p, rotation=0.0)
+    shut_plate = lock_plate(p)
+
+    # Open: every post passes through the keyhole mouth unobstructed.
+    worst_open = max(q.common(open_plate).Volume for q in posts)
+    check("open position passes the posts", worst_open < 1.0,
+          "%.2f mm3 obstruction through the keyhole mouths" % worst_open)
+
+    # Locked: the plate sits IN the groove, so it must not foul the post...
+    worst_shut = max(q.common(shut_plate).Volume for q in posts)
+    check("locked plate seats in the groove", worst_shut < 1.0,
+          "%.2f mm3 interference with the grooved post" % worst_shut)
+
+    # ...but it MUST overlap where the post's full diameter would be, or it is
+    # not under the shoulder and carries nothing.
+    grip = 0.0
+    for ang in p["POST_ANGLES"]:
+        x, y = polar(p["POST_BC"] / 2.0, ang)
+        envelope = Part.makeCylinder(
+            p["POST_DIA"] / 2.0, p["GROOVE_WIDTH"],
+            Vector(x, y, p["GROOVE_Z"] - p["GROOVE_WIDTH"] / 2.0), Vector(0, 0, 1))
+        grip = max(grip, envelope.common(shut_plate).Volume)
+    check("locked plate grips the shoulder", grip > 20.0,
+          "%.0f mm3 under the shoulder, %.2f mm radial engagement"
+          % (grip, d["LOCK_ENGAGE"]))
+
+    check("lock rotation is small", d["LOCK_ROT_DEG"] < 20.0,
+          "%.1f deg moves all three posts from open to locked" % d["LOCK_ROT_DEG"])
+    check("groove clears the base face", d["GROOVE_COVER"] >= 3.0,
+          "%.2f mm of base material below the lock slot" % d["GROOVE_COVER"])
 
     _say("\nSEQUENCE -- the cone must land before the posts")
     check("cone leads the posts", d["CONE_LEAD"] >= 3.0,
@@ -163,10 +179,11 @@ def main():
               "%.1f x %.1f x %.1f mm" % (bb.XLength, bb.YLength, bb.ZLength))
 
     _say("\nMARGINS")
-    check("pin double shear", d["PIN_MARGIN"] >= 10.0,
-          "%.0fx on the %.0f N flight load" % (d["PIN_MARGIN"], LOAD["AXIAL_TOP_N"]))
-    check("bearing on PETG", d["BEARING_MARGIN"] >= 3.0,
-          "%.1f MPa, %.0fx margin" % (d["BEARING_MPA"], d["BEARING_MARGIN"]))
+    check("lock plate bearing", d["LOCK_MARGIN"] >= 10.0,
+          "%.2f MPa, %.0fx on the %.0f N flight load"
+          % (d["LOCK_BEARING_MPA"], d["LOCK_MARGIN"], LOAD["AXIAL_TOP_N"]))
+    check("post net section at the groove", d["POST_MARGIN"] >= 10.0,
+          "%.2f MPa, %.0fx" % (d["POST_TENSION_MPA"], d["POST_MARGIN"]))
 
     _say("")
     if failures:

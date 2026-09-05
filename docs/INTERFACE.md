@@ -42,7 +42,7 @@ one feature, and no feature does two:
 | Capture, lateral | connector cone | centre, r = 0 |
 | Capture, yaw | post tapers | r = 50 |
 | Locate | posts in sockets | r = 50 |
-| Retain | cross pins, double shear | r = 50 |
+| Retain | groove + lock plate, double shear | r = 50 |
 | Connect | central connector | centre |
 | Key | post asymmetry | r = 50 |
 
@@ -92,25 +92,30 @@ With the old symmetric layout this was invisible, because the set mirrors onto i
 The asymmetric layout makes it real, and getting it backwards means nothing mates at all.
 `derived()` computes `SOCKET_ANGLES`; never hand-enter them.
 
-### 2.3 Retention — cross pins in double shear
+### 2.3 Retention — groove and one rotating lock plate
 
-A Ø5 steel pin passes through a transverse hole in each post, driven radially by a cam
-plate **inside the base**. Loaded in double shear, which is indifferent to load
-direction — the property the flight case demands.
+Each post carries a circumferential groove. A single plate inside the base carries a
+**keyhole per post**: the wide mouth passes the post, then about 10° of rotation slides
+the narrow throat into the groove, locking all three at once.
 
 | | |
 |---|---|
-| Pin capacity | 7,854 N each (**123×** on the 192 N flight load) |
-| Bearing on PETG | 2.56 MPa (**20×**) |
-| Cross-hole height | 9.0 mm above the module face |
-| Cover above the bore | 5.42 mm of base material |
+| Groove | Ø7.0 root, 3.4 mm wide, 1.50 mm deep |
+| Keyhole | Ø10.4 mouth → Ø7.2 throat |
+| Lock motion | 8.8 mm tangential = **10.1°** of plate rotation |
+| Shoulder engagement | 1.40 mm radial |
+| Lock plate bearing | 3.38 MPa (**74×** in mild steel) |
+| Post net section | 1.66 MPa (**150×**) |
+| Material below the slot | 6.30 mm |
 
-The cross-hole must sit in the post's *cylindrical* section, and the bore must keep
-enough base material above it to avoid breaking out into the mating face. Both are
-guarded in `derived()`.
+**Why a groove and not a cross-hole.** Both give double shear and both are strong enough
+many times over. But a cross-hole through a round bar needs a V-block and a centre punch
+or the drill wanders, and in hardened stock it needs carbide or EDM — which ruled out
+buying ready-made ground locating pins, the one off-the-shelf route that solves the taper.
+A groove is a single lathe op, or a round file against the rod spun in a drill press.
 
-**The pins are not conductors.** A pin must bear on its post to carry load, which makes
-them one electrical node — three posts would give three circuits, not eight. See §3.
+**One plate replaces three pins and the cam plate that would have driven them.** It lives
+entirely inside the sealed base, so nothing that moves ever sees the room.
 
 ### 2.4 Connector cone — the primary alignment feature
 

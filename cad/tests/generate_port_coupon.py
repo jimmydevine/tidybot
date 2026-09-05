@@ -18,7 +18,7 @@ import sys
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(_HERE, "..", "lib"))
 
-from tidybot_port import PORT, derived                        # noqa: E402
+from tidybot_port import PORT, derived, lock_plate            # noqa: E402
 from coupon import build_module_coupon, build_base_coupon     # noqa: E402
 
 OUT = _HERE
@@ -47,6 +47,8 @@ def main():
             "/".join("%.0f" % a for a in d["SOCKET_ANGLES"])))
     export(build_module_coupon(), "coupon_module_face")
     export(build_base_coupon(),   "coupon_base_face")
+    export(lock_plate(),          "coupon_lock_plate")
+    _say("  (lock plate: steel or laser-cut for T4; a printed one is fine for T1-T3)")
     _say("\nAssembly + test procedure: docs/PHASE1_TEST_PLAN.md")
     _say("Steel BOM:                 make -C cad report")
 
