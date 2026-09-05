@@ -1,0 +1,13 @@
+# STEP is ASCII and diffs (badly, but it stores fine) -- keep it in git if a
+# part is ever committed as a release artifact.
+*.step text
+
+# Binary CAD and mesh formats. Generated output is gitignored; if a part is
+# ever committed deliberately, route it through LFS.
+#
+# NOTE: these filters need git-lfs installed, which it currently is not.
+# Run `git lfs install` BEFORE committing any file matching the patterns
+# below, or git will store a broken pointer instead of the file.
+*.FCStd  filter=lfs diff=lfs merge=lfs -text
+*.stl    filter=lfs diff=lfs merge=lfs -text
+*.3mf    filter=lfs diff=lfs merge=lfs -text

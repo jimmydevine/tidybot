@@ -1,0 +1,1353 @@
+<title>TB-Port Coupling Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --paper:      #F1F2F4;
+    --surface:    #FBFBFC;
+    --ink:        #16181C;
+    --muted:      #5A6069;
+    --faint:      #8B9099;
+    --rule:       #D2D5DA;
+    --accent:     #1B4F8C;
+    --steel:      #7E8791;
+    --plastic:    #E2E5E9;
+    --alert:      #A33A2A;
+    --good:       #2E6B4F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #101216;  --surface: #181B21;  --ink:     #E4E7EB;
+      --muted:   #99A0AA;  --faint:   #6C737D;  --rule:    #2C313A;
+      --accent:  #79A9E0;  --steel:   #79828D;  --plastic: #262B33;
+      --alert:   #D97A66;  --good:    #6FB894;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #101216;  --surface: #181B21;  --ink:     #E4E7EB;
+    --muted:   #99A0AA;  --faint:   #6C737D;  --rule:    #2C313A;
+    --accent:  #79A9E0;  --steel:   #79828D;  --plastic: #262B33;
+    --alert:   #D97A66;  --good:    #6FB894;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 28px 96px; }
+
+  .mast { border-bottom: 2px solid var(--ink); padding: 56px 0 20px; margin-bottom: 40px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 18px;
+  }
+  h1 {
+    font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700; font-size: clamp(2rem, 5.2vw, 3.15rem);
+    line-height: 1.02; letter-spacing: -.022em; margin: 0 0 16px; text-wrap: balance;
+  }
+  .standfirst { font-size: 1.115rem; color: var(--muted); max-width: 62ch; margin: 0; }
+
+  h2 {
+    font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600; font-size: 1.42rem; letter-spacing: -.014em;
+    margin: 0 0 4px; text-wrap: balance;
+  }
+  h3 {
+    font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600; font-size: 1.02rem; letter-spacing: -.008em; margin: 0 0 6px;
+  }
+  section { margin-top: 60px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 14px;
+    border-top: 1px solid var(--rule); padding-top: 14px; margin-bottom: 22px;
+  }
+  .sec-num {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--accent); font-weight: 600; letter-spacing: .04em; flex: none;
+  }
+  p { margin: 0 0 15px; max-width: 68ch; }
+  .lede { max-width: 68ch; color: var(--muted); margin-bottom: 24px; }
+  strong { font-weight: 600; }
+  em { font-style: normal; color: var(--accent); font-weight: 500; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .93em; }
+
+  figure {
+    margin: 30px 0; background: var(--surface); border: 1px solid var(--rule);
+    border-radius: 3px; padding: 22px 22px 16px; overflow-x: auto;
+  }
+  figure svg { display: block; width: 100%; height: auto; min-width: 640px; }
+  figcaption {
+    font-size: 13.5px; color: var(--muted); margin-top: 14px; padding-top: 12px;
+    border-top: 1px solid var(--rule); max-width: 78ch;
+  }
+  figcaption b { color: var(--ink); font-weight: 600; }
+
+  .dwg .plastic { fill: var(--plastic); stroke: var(--ink); stroke-width: 1.25; stroke-linejoin: round; }
+  .dwg .steel   { fill: var(--steel);   stroke: var(--ink); stroke-width: 1.05; stroke-linejoin: round; }
+  .dwg .void    { fill: var(--surface); stroke: var(--ink); stroke-width: 1.25; }
+  .dwg .dim     { stroke: var(--accent); stroke-width: 1; fill: none; }
+  .dwg .lead    { stroke: var(--faint);  stroke-width: .9; fill: none; }
+  .dwg .ctr     { stroke: var(--faint);  stroke-width: .8; stroke-dasharray: 7 3 2 3; fill: none; }
+  .dwg .bad     { stroke: var(--alert);  stroke-width: 1.6; fill: none; }
+  .dwg .hi      { stroke: var(--accent); stroke-width: 2; fill: none; }
+  .dwg text { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; fill: var(--ink); }
+  .dwg .t-dim { fill: var(--accent); font-size: 12.5px; font-weight: 600; }
+  .dwg .t-mut { fill: var(--muted);  font-size: 10px; }
+  .dwg .t-bad { fill: var(--alert);  font-size: 11.5px; font-weight: 600; }
+  .dwg .t-hd  { font-family: Archivo, sans-serif; font-size: 13.5px; font-weight: 700; fill: var(--ink); }
+  .dwg .t-out { font-family: Archivo, sans-serif; font-size: 13.5px; font-weight: 700; fill: var(--faint); }
+
+  .tbl-wrap { overflow-x: auto; margin: 24px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+  th, td { text-align: left; padding: 10px 13px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead th {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1.5px solid var(--ink); font-weight: 500;
+  }
+  td.num, th.num { text-align: right; font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  tbody tr:last-child td { border-bottom: none; }
+  .win { color: var(--good); font-weight: 600; }
+  .lose { color: var(--alert); }
+  .out td { opacity: .55; }
+
+  .opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(216px, 1fr)); gap: 18px; margin: 26px 0; }
+  .opt {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent); border-radius: 3px; padding: 18px 19px;
+  }
+  .opt.dead { border-top-color: var(--alert); opacity: .72; }
+  .opt-k {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px;
+  }
+  .opt p { font-size: 14px; color: var(--muted); margin: 0 0 10px; max-width: none; }
+  .opt dl { margin: 0; font-size: 13px; font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .opt dt { color: var(--faint); float: left; clear: left; width: 74px; }
+  .opt dd { margin: 0 0 3px 78px; color: var(--ink); }
+
+  .bugs { display: grid; gap: 11px; margin: 22px 0; }
+  .bug {
+    display: grid; grid-template-columns: 34px 1fr; gap: 14px;
+    background: var(--surface); border: 1px solid var(--rule);
+    border-left: 3px solid var(--alert); border-radius: 3px; padding: 14px 17px;
+  }
+  .bug-n {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 19px; font-weight: 600; color: var(--alert); line-height: 1.2;
+  }
+  .bug h3 { margin-bottom: 2px; }
+  .bug p { margin: 0; font-size: 14px; color: var(--muted); max-width: none; }
+
+  .verdict {
+    border: 2px solid var(--ink); border-radius: 3px;
+    padding: 26px 28px; margin: 32px 0 0; background: var(--surface);
+  }
+  .verdict h2 { margin-bottom: 10px; }
+  .verdict p:last-child { margin-bottom: 0; }
+  .open { border-top: 1px solid var(--rule); margin-top: 30px; padding-top: 20px; }
+  .open ol { padding-left: 20px; max-width: 68ch; }
+  .open li { margin-bottom: 11px; }
+
+  @media (max-width: 800px) { .opts { grid-template-columns: 1fr; } }
+  @media (max-width: 720px) { .wrap { padding: 0 18px 64px; } }
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">
+      <span>TidyBot / TB-Port</span>
+      <span>Spec 0.1.0 &rarr; 0.2.0</span>
+      <span>Decision pending</span>
+    </div>
+    <h1>TB-Port Coupling Study</h1>
+    <p class="standfirst">
+      Five ways to build the interface every TidyBot module attaches through, drawn to one
+      scale and judged against what the robot actually has to survive.
+    </p>
+  </header>
+
+  <p class="lede">
+    The port has four jobs: <em>capture</em> a module arriving misaligned, <em>locate</em> it
+    to under 0.1&nbsp;mm, <em>retain</em> it against gravity and driving loads, and
+    <em>connect</em> 24&nbsp;V and CAN. Every option below does all four. They differ in where
+    on the flange those jobs happen &mdash; and that sets how much of the robot's height the
+    connector eats.
+  </p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Criterion</th><th>What it means here</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mates every time</b></td><td>500 cycles unattended. No jamming, no partial seats, no retries.</td></tr>
+        <tr><td><b>Low profile</b></td><td>Measured as volume of each section consumed, not depth alone.</td></tr>
+        <tr><td><b>Power and data through</b></td><td>24 V and CAN from the middle section out to both neighbours.</td></tr>
+        <tr><td><b>Survives dust and water</b></td><td>Vacuuming, mopping, hair, grit. The joint cannot be a fair-weather part.</td></tr>
+        <tr><td><b>Holds under lift</b></td><td>192 N in tension when the 3-stack flies &mdash; see section 04.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    <strong>The governing insight:</strong> everything expensive in the original design traces
+    to concentrating all four jobs into a small central boss. At small radius, tilt resistance
+    and capture both have to be bought with <em>depth</em>. Spread the same jobs across the full
+    &Oslash;90 flange and they get cheap in exactly the dimension the base is short of. Radius
+    is free; depth is charged twice, once per port.
+  </p>
+
+  <!-- ============================ 1 ============================ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>Five options at one scale</h2>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 1260 400" class="dwg" role="img"
+           aria-label="Cross-sections of five coupling options at identical scale. Boss and bore is 31 millimetres deep, bayonet 11, cone with central latch 14, linear slide 10, and tapered post with cross pins 18 but consuming only three corner bores.">
+        <defs>
+          <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <!-- shared datum -->
+        <line class="lead" x1="30" y1="250" x2="1235" y2="250" stroke-dasharray="3 4"/>
+        <text class="t-mut" x="1235" y="264" text-anchor="end">mating plane</text>
+
+        <!-- ============ A ============ -->
+        <text class="t-out" x="140" y="30" text-anchor="middle">A &nbsp;BOSS + BORE</text>
+        <text class="t-mut" x="140" y="46" text-anchor="middle">spec 0.1.0 &mdash; superseded</text>
+        <line class="ctr" x1="140" y1="150" x2="140" y2="310"/>
+
+        <path class="plastic" d="M50,188 L230,188 L230,250 L206,250 L190,227 L190,204 L90,204 L90,227 L74,250 L50,250 Z"/>
+        <path class="plastic" d="M50,300 L50,250 L90,250 L90,206 L190,206 L190,250 L230,250 L230,300 Z"/>
+        <circle class="steel" cx="86" cy="218" r="5"/>
+        <circle class="steel" cx="194" cy="218" r="5"/>
+        <circle class="steel" cx="70" cy="252" r="8"/>
+        <circle class="steel" cx="210" cy="252" r="8"/>
+
+        <line class="dim" x1="36" y1="188" x2="36" y2="250" marker-start="url(#a1)" marker-end="url(#a1)" color="var(--accent)"/>
+        <text class="t-dim" x="30" y="222" text-anchor="end">31</text>
+        <text class="t-mut" x="140" y="326" text-anchor="middle">deep boss in a bore</text>
+        <text class="t-mut" x="140" y="340" text-anchor="middle">ball detent + sliding collar</text>
+
+        <!-- ============ B ============ -->
+        <text class="t-hd" x="380" y="30" text-anchor="middle">B &nbsp;BAYONET</text>
+        <text class="t-mut" x="380" y="46" text-anchor="middle">rotating collar</text>
+        <line class="ctr" x1="380" y1="150" x2="380" y2="310"/>
+
+        <rect class="plastic" x="290" y="228" width="180" height="16"/>
+        <path class="plastic" d="M290,300 L290,250 L300,250 L300,236 L326,236 L326,250 L434,250 L434,236 L460,236 L460,250 L470,250 L470,300 Z"/>
+        <path class="steel" d="M284,228 L306,228 L306,240 L284,234 Z"/>
+        <path class="steel" d="M476,228 L454,228 L454,240 L476,234 Z"/>
+        <circle class="steel" cx="352" cy="252" r="8"/>
+        <circle class="steel" cx="408" cy="252" r="8"/>
+        <path class="hi" d="M392,196 A34,34 0 0,1 442,204" marker-end="url(#a1)" color="var(--accent)"/>
+        <text class="t-dim" x="446" y="196">60&deg;</text>
+
+        <line class="dim" x1="276" y1="228" x2="276" y2="250" marker-start="url(#a1)" marker-end="url(#a1)" color="var(--accent)"/>
+        <text class="t-dim" x="270" y="243" text-anchor="end">11</text>
+        <text class="t-mut" x="313" y="326" text-anchor="middle">lug</text>
+        <text class="t-mut" x="380" y="340" text-anchor="middle">3 lugs at r=40, collar ramps pull down</text>
+
+        <!-- ============ C ============ -->
+        <text class="t-hd" x="620" y="30" text-anchor="middle">C &nbsp;CONE + LATCH</text>
+        <text class="t-mut" x="620" y="46" text-anchor="middle">3 balls, one central pin</text>
+        <line class="ctr" x1="620" y1="150" x2="620" y2="310"/>
+
+        <path class="plastic" d="M534,222 L612,222 L612,250 L546,250 L534,242 Z"/>
+        <path class="plastic" d="M628,222 L706,222 L706,242 L694,250 L628,250 Z"/>
+        <path class="plastic" d="M530,300 L530,258 L544,252 L612,252 L612,300 Z"/>
+        <path class="plastic" d="M628,300 L628,252 L696,252 L710,258 L710,300 Z"/>
+        <rect class="steel" x="612" y="216" width="16" height="36"/>
+        <rect class="steel" x="596" y="220" width="48" height="8" rx="3"/>
+        <circle class="steel" cx="562" cy="254" r="8"/>
+        <circle class="steel" cx="678" cy="254" r="8"/>
+        <line class="hi" x1="586" y1="224" x2="600" y2="224" marker-start="url(#a1)" color="var(--accent)"/>
+
+        <line class="dim" x1="520" y1="222" x2="520" y2="250" marker-start="url(#a1)" marker-end="url(#a1)" color="var(--accent)"/>
+        <text class="t-dim" x="514" y="240" text-anchor="end">14</text>
+        <text class="t-mut" x="576" y="212" text-anchor="middle">pin drives in</text>
+        <text class="t-mut" x="620" y="326" text-anchor="middle">chamfer captures, balls locate</text>
+        <text class="t-mut" x="620" y="340" text-anchor="middle">one pin retains &mdash; 4 parts total</text>
+
+        <!-- ============ D ============ -->
+        <text class="t-hd" x="860" y="30" text-anchor="middle">D &nbsp;LINEAR SLIDE</text>
+        <text class="t-mut" x="860" y="46" text-anchor="middle">power-tool battery pattern</text>
+        <line class="ctr" x1="860" y1="150" x2="860" y2="310"/>
+
+        <rect class="plastic" x="770" y="230" width="180" height="12"/>
+        <path class="steel" d="M786,242 L814,242 L820,258 L780,258 Z"/>
+        <path class="steel" d="M906,242 L934,242 L940,258 L900,258 Z"/>
+        <path class="plastic" d="M770,300 L770,248 L784,248 L778,258 L822,258 L816,248 L904,248 L898,258 L942,258 L936,248 L950,248 L950,300 Z"/>
+        <rect class="steel" x="850" y="240" width="20" height="12" rx="2"/>
+
+        <circle class="lead" cx="860" cy="190" r="11"/>
+        <line class="lead" x1="852" y1="182" x2="868" y2="198"/>
+        <line class="lead" x1="868" y1="182" x2="852" y2="198"/>
+        <text class="t-mut" x="878" y="194">slide axis</text>
+
+        <line class="dim" x1="756" y1="230" x2="756" y2="250" marker-start="url(#a1)" marker-end="url(#a1)" color="var(--accent)"/>
+        <text class="t-dim" x="750" y="245" text-anchor="end">10</text>
+        <text class="t-mut" x="860" y="326" text-anchor="middle">dovetail rails + spring latch</text>
+        <text class="t-mut" x="860" y="340" text-anchor="middle">the robot's own drive inserts it</text>
+
+        <!-- ============ E ============ -->
+        <text class="t-hd" x="1100" y="30" text-anchor="middle">E &nbsp;TAPERED POST + PIN</text>
+        <text class="t-mut" x="1100" y="46" text-anchor="middle">clevis joint, 3 posts</text>
+        <line class="ctr" x1="1100" y1="150" x2="1100" y2="310"/>
+
+        <rect class="plastic" x="1010" y="236" width="180" height="14"/>
+        <rect class="plastic" x="1022" y="208" width="40" height="28"/>
+        <rect class="plastic" x="1138" y="208" width="40" height="28"/>
+        <path class="steel" d="M1032,250 L1032,224 L1038,212 L1046,212 L1052,224 L1052,250 Z"/>
+        <path class="steel" d="M1148,250 L1148,224 L1154,212 L1162,212 L1168,224 L1168,250 Z"/>
+        <rect class="steel" x="1014" y="220" width="56" height="8" rx="3"/>
+        <rect class="steel" x="1130" y="220" width="56" height="8" rx="3"/>
+        <rect class="plastic" x="1010" y="250" width="180" height="50"/>
+        <rect class="void" x="1078" y="236" width="44" height="14"/>
+        <rect class="steel" x="1082" y="240" width="36" height="10" rx="2"/>
+
+        <line class="hi" x1="1004" y1="224" x2="1018" y2="224" marker-start="url(#a1)" color="var(--accent)"/>
+        <line class="hi" x1="1196" y1="224" x2="1182" y2="224" marker-start="url(#a1)" color="var(--accent)"/>
+
+        <line class="dim" x1="996" y1="208" x2="996" y2="250" marker-start="url(#a1)" marker-end="url(#a1)" color="var(--accent)"/>
+        <text class="t-dim" x="990" y="232" text-anchor="end">18</text>
+        <text class="t-mut" x="1100" y="326" text-anchor="middle">tapers self-centre, pins in double shear</text>
+        <text class="t-mut" x="1100" y="340" text-anchor="middle">deeper, but only at 3 corners</text>
+        <text class="t-dim" x="1100" y="356" text-anchor="middle">centre stays free</text>
+
+        <!-- legend -->
+        <rect class="plastic" x="50" y="372" width="18" height="11"/>
+        <text class="t-mut" x="76" y="381">printed plastic</text>
+        <rect class="steel" x="180" y="372" width="18" height="11"/>
+        <text class="t-mut" x="206" y="381">steel hardware</text>
+        <text class="t-dim" x="330" y="381">dimensions in mm, receptacle depth into the base &mdash; but for E, read volume not depth</text>
+      </svg>
+      <figcaption>
+        <b>Same scale, same &Oslash;90 flange, same load rating.</b> Only the mechanism
+        changes. A buys its tilt resistance with an 11.6&nbsp;mm boss and an 11.4&nbsp;mm capture
+        funnel, so the base surrenders 31&nbsp;mm. B, C and D move the working features outward,
+        where the same resistance costs almost no depth. E goes further still: its bores are
+        18&nbsp;mm deep but sit only at three corners, so it eats <b>88% less of the base</b> than
+        any of them and leaves the whole centre free. D is drawn in section across its rails;
+        its approach is horizontal, into the page.
+      </figcaption>
+    </figure>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Vertical budget</th>
+            <th class="num">A</th><th class="num">B</th><th class="num">C</th><th class="num">D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Receptacle depth, per port</td><td class="num">31</td><td class="num">11</td><td class="num">14</td><td class="num win">10</td></tr>
+          <tr><td>Two ports, mm</td><td class="num">62</td><td class="num">22</td><td class="num">28</td><td class="num win">20</td></tr>
+          <tr><td>Share of 120 mm base height</td><td class="num lose">52%</td><td class="num">18%</td><td class="num">23%</td><td class="num win">17%</td></tr>
+          <tr><td>Left for battery, compute, drive</td><td class="num">58</td><td class="num">98</td><td class="num">92</td><td class="num win">100</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================ 2 ============================ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>What each one actually is</h2>
+    </div>
+
+    <div class="opts">
+      <div class="opt">
+        <div class="opt-k">Option B</div>
+        <h3>Bayonet + rotating collar</h3>
+        <p>Three lugs pass through slots; a collar turns 60&deg; and its ramps drag them into
+        preload. Critically the <b>collar</b> rotates, not the module &mdash; so the module drops
+        straight down and the contacts land in a known orientation instead of wiping.</p>
+        <dl>
+          <dt>Depth</dt><dd>11 mm</dd>
+          <dt>Parts</dt><dd>~8 moving</dd>
+          <dt>Actuator</dt><dd>1 per port</dd>
+          <dt>Fail-safe</dt><dd>worm geometry</dd>
+        </dl>
+      </div>
+
+      <div class="opt">
+        <div class="opt-k">Option C</div>
+        <h3>Cone, three balls, one pin</h3>
+        <p>Keeps the good half of A &mdash; the three-ball kinematic coupling &mdash; and throws
+        away everything that generated its bugs. Capture comes from a chamfer at full flange
+        radius. Retention is <b>one</b> pin through a central stud.</p>
+        <dl>
+          <dt>Depth</dt><dd>14 mm</dd>
+          <dt>Parts</dt><dd>4 moving</dd>
+          <dt>Actuator</dt><dd>1 per port</dd>
+          <dt>Fail-safe</dt><dd>leadscrew / spring</dd>
+        </dl>
+      </div>
+
+      <div class="opt">
+        <div class="opt-k">Option D</div>
+        <h3>Linear slide</h3>
+        <p>Dovetail rails and a spring latch &mdash; the interface on every cordless tool
+        battery, proven filthy and dropped. <b>The robot's drivetrain does the insertion</b>;
+        no actuator is needed to mate, only to release. Contacts wipe clean every cycle.</p>
+        <dl>
+          <dt>Depth</dt><dd>10 mm</dd>
+          <dt>Parts</dt><dd>2 moving</dd>
+          <dt>Actuator</dt><dd>release only</dd>
+          <dt>Fail-safe</dt><dd>spring latch</dd>
+        </dl>
+      </div>
+      <div class="opt">
+        <div class="opt-k">Option E &mdash; recommended</div>
+        <h3>Tapered post + cross pin</h3>
+        <p>Three tapered dowels per face drop into bores; locking pins drive through their
+        transverse holes inside the base. A <b>clevis joint</b> &mdash; how aircraft hardpoints
+        and lifting eyes are built. Pins load in double shear, so direction is irrelevant.</p>
+        <dl>
+          <dt>Posts</dt><dd>3, tapered</dd>
+          <dt>Volume</dt><dd>88% less</dd>
+          <dt>Actuator</dt><dd>1 per port</dd>
+          <dt>Fail-safe</dt><dd>pin in shear</dd>
+        </dl>
+      </div>
+    </div>
+
+    <p>
+      D is the outlier worth dwelling on. Every other option needs something to push the halves
+      together; D gets that for free because the robot is already driving into the dock. The
+      cost is that it locates exactly in only two axes &mdash; the third depends on an end stop,
+      so you would add a kinematic stop at the end of travel &mdash; and it demands a
+      straight-line approach, which constrains dock geometry more than an axial drop does.
+    </p>
+
+    <h3>E in plan &mdash; and why it changes the metric</h3>
+
+    <p>
+      E is deeper than B on paper, and that is misleading. Depth only matters where material is
+      actually removed, and E removes it at <strong>three corner bores</strong> rather than across
+      a &Oslash;90 disc. It consumes 8,143&nbsp;mm&sup3; of the base against the bayonet's
+      69,979&nbsp;mm&sup3; &mdash; and leaves the entire centre untouched.
+    </p>
+
+    <figure>
+      <svg viewBox="0 0 780 340" class="dwg" role="img"
+           aria-label="Plan view of the tapered post coupling. Three posts sit near the perimeter, a rotating cam plate drives three locking pins radially through them, and the centre of the port stays free for the whole contact block.">
+        <defs>
+          <marker id="a6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <circle class="plastic" cx="230" cy="170" r="132"/>
+        <circle class="void" cx="230" cy="170" r="64"/>
+
+        <circle class="steel" cx="230" cy="74" r="14"/>
+        <circle class="steel" cx="147" cy="218" r="14"/>
+        <circle class="steel" cx="313" cy="218" r="14"/>
+
+        <line class="steel" x1="230" y1="106" x2="230" y2="60" stroke="var(--steel)" stroke-width="9" stroke-linecap="round"/>
+        <line class="steel" x1="175" y1="202" x2="135" y2="225" stroke="var(--steel)" stroke-width="9" stroke-linecap="round"/>
+        <line class="steel" x1="285" y1="202" x2="325" y2="225" stroke="var(--steel)" stroke-width="9" stroke-linecap="round"/>
+
+        <rect class="steel" x="206" y="152" width="48" height="36" rx="3"/>
+        <text class="t-mut" x="230" y="205" text-anchor="middle">connector</text>
+
+        <path class="hi" d="M230,94 A76,76 0 0,1 306,170" marker-end="url(#a6)" color="var(--accent)"/>
+        <text class="t-dim" x="292" y="130">cam plate</text>
+
+        <line class="lead" x1="255" y1="66" x2="392" y2="66"/>
+        <text class="t-dim" x="400" y="66">3 posts near the rim</text>
+        <text class="t-mut" x="400" y="80">maximum moment arm</text>
+
+        <line class="lead" x1="338" y1="240" x2="392" y2="262"/>
+        <text class="t-dim" x="400" y="262">pins driven radially</text>
+        <text class="t-mut" x="400" y="276">one rotation moves all three</text>
+
+        <line class="lead" x1="272" y1="170" x2="392" y2="170"/>
+        <text class="t-dim" x="400" y="166">centre stays free</text>
+        <text class="t-mut" x="400" y="180">a real connector fits here &mdash; the</text>
+        <text class="t-mut" x="400" y="193">problem every other option fought</text>
+
+        <text class="t-mut" x="230" y="326" text-anchor="middle">viewed from inside the base, looking at the mating face</text>
+      </svg>
+      <figcaption>
+        <b>One rotary actuator drives all four pins.</b> A cam plate with four spiral slots
+        advances every pin together, so the actuator count matches B &mdash; one per port. The three
+        posts sit near the rim for the longest available moment arm, and because nothing occupies the
+        middle, the contact block finally gets somewhere protected and roomy to live.
+      </figcaption>
+    </figure>
+
+    <h3>The posts cannot be conductors &mdash; correcting an earlier claim</h3>
+
+    <p>
+      An earlier draft of this page said the dowel could be an outer conductor and the pin an
+      inner one, giving two isolated circuits per post. <strong>That is wrong, and it is worth
+      being precise about why.</strong> It describes a coaxial pin running down the post's axis.
+      The actual mechanism is not that: the pin runs <em>perpendicular</em>, through a cross-hole,
+      and bears against the inside of that hole. <strong>That contact is the load path.</strong>
+      Metal pressed against metal under 64&nbsp;N is a single electrical node, not two.
+    </p>
+
+    <figure>
+      <svg viewBox="0 0 780 250" class="dwg" role="img"
+           aria-label="Detail of a locking pin passing through a post's cross-hole. The pin bears directly on the hole wall, which is both the load path and an electrical short, so post and pin form a single circuit.">
+        <defs>
+          <marker id="a8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+          </marker>
+        </defs>
+        <path class="steel" d="M300,40 L380,40 L380,104 L300,104 Z"/>
+        <path class="steel" d="M300,146 L380,146 L380,222 L300,222 Z"/>
+        <rect class="steel" x="180" y="108" width="420" height="34" rx="4"/>
+        <line class="bad" x1="300" y1="106" x2="380" y2="106"/>
+        <line class="bad" x1="300" y1="144" x2="380" y2="144"/>
+        <line class="bad" x1="340" y1="70" x2="340" y2="100" marker-end="url(#a8)"/>
+        <text class="t-mut" x="340" y="34" text-anchor="middle">post pulled down &mdash; 64 N</text>
+        <line class="lead" x1="396" y1="106" x2="470" y2="80"/>
+        <text class="t-bad" x="478" y="76">contact patch</text>
+        <text class="t-mut" x="478" y="90">the load path &mdash; and a dead short</text>
+        <line class="lead" x1="180" y1="125" x2="130" y2="125"/>
+        <text class="t-mut" x="124" y="129" text-anchor="end">locking pin</text>
+        <text class="t-mut" x="390" y="196">post and pin are one node &mdash; 3 posts = 3 circuits, not 6</text>
+        <text class="t-mut" x="390" y="212">the spec needs 8</text>
+      </svg>
+      <figcaption>
+        <b>Why the two-conductor trick fails.</b> The pin has to bear on the post &mdash; that
+        bearing contact is exactly what carries the 192&nbsp;N flight load in double shear. You
+        cannot both transmit load through a metal contact and hold a voltage across it.
+      </figcaption>
+    </figure>
+
+    <p>
+      An insulating bushing between them would be <em>structurally</em> fine: 64&nbsp;N over a
+      5&nbsp;&times;&nbsp;5&nbsp;mm bearing is 2.6&nbsp;MPa, a 47&times; margin against PEEK. But
+      it puts a wear surface in the load path of a wet, gritty joint, and the failure mode is two
+      circuits shorting &mdash; one of them the 24&nbsp;V bus.
+    </p>
+
+    <p>
+      <strong>And the wet environment settles it anyway.</strong> Posts are exposed whenever a
+      module is off, and this robot mops. Two energised posts plus a film of detergent water is a
+      bridged supply, in the wettest place on the machine. Steel is electrically excellent
+      &mdash; a &Oslash;5 pin is 0.21&nbsp;m&Omega;, a 1.7&nbsp;mV drop at 8&nbsp;A &mdash; but
+      that was never the constraint.
+    </p>
+
+    <p>
+      So: <strong>posts carry load only.</strong> All eight contacts go in the sealed central
+      connector, behind the perimeter gasket, in the space E frees up. That also disposes of the
+      CAN problem &mdash; H and L on posts 160&nbsp;mm apart would have been a loop antenna beside
+      three motors, precisely what <span class="mono">ADR&nbsp;0003</span> chose CAN to avoid.
+      In the centre they stay a proper twisted pair.
+    </p>
+  </section>
+
+  <!-- ============================ 2b ============================ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2>Designing for dust and water</h2>
+    </div>
+
+    <p class="lede">
+      This robot vacuums, mops and dusts. The coupling lives in fine abrasive dust, detergent
+      water, hair and grit &mdash; and it has to mate reliably 500 times in that. Treating this
+      as a first-class constraint rather than an afterthought changes the ranking.
+    </p>
+
+    <p>
+      The useful realisation is that contamination tolerance is <strong>mostly orthogonal to the
+      coupling mechanism.</strong> It comes down to five rules that can be applied to almost any
+      of the options &mdash; except where a mechanism structurally violates one.
+    </p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Rule</th><th>Why</th><th class="num">Costs</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Mechanism inside the sealed base</b></td><td>Grit jams sliding and rotating parts. If the actuator never sees the room, it cannot foul.</td><td class="num">free</td></tr>
+          <tr><td><b>Drain every socket</b></td><td>An upward-facing bore is a dust cup and a water trap. A channel out the side wall empties it.</td><td class="num">free</td></tr>
+          <tr><td><b>Lip seal at each socket mouth</b></td><td>The post wipes itself clean on entry, and the seal keeps standing water out between mates.</td><td class="num">1 TPU part</td></tr>
+          <tr><td><b>Perimeter gasket on the mating face</b></td><td>Seals the contact zone once mated, so the electricals live in a protected volume.</td><td class="num">1 TPU part</td></tr>
+          <tr><td><b>Wiping or contactless electricals</b></td><td>Static contacts corrode and bridge with damp dust. Wiping ones scrub clean every cycle.</td><td class="num">design choice</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Applying rule one is where the options separate sharply, because it is the one that cannot
+      be retrofitted:
+    </p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Option</th><th>Where the mechanism lives</th><th class="num">Exposed moving parts</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>B &middot; Bayonet</td><td>Collar and ramps, outside the joint, in the room</td><td class="num lose">8</td></tr>
+          <tr><td>A &middot; Boss + detent</td><td>Balls and collar inside the joint but open to it</td><td class="num lose">4</td></tr>
+          <tr><td>D &middot; Slide</td><td>Spring latch in the rail</td><td class="num">2</td></tr>
+          <tr><td>E &middot; Post + pin</td><td><b>Pins move entirely inside the sealed base</b></td><td class="num win">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      <strong>Post-and-pin is the only option whose mechanism never sees the room.</strong> The
+      posts are solid steel with nothing to jam; the pins, cam plate and actuator are all inside
+      the base's sealed volume. B is the opposite case &mdash; a rotating collar with ramped
+      slots, mounted on the outside of a robot that generates abrasive dust for a living.
+    </p>
+
+    <figure>
+      <svg viewBox="0 0 780 350" class="dwg" role="img"
+           aria-label="Section through one socket showing a tapered steel post entering past a lip seal, a locking pin driven by a cam plate entirely inside the sealed base, a drain channel exiting the side wall, and a perimeter gasket on the mating face.">
+        <defs>
+          <marker id="a7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <path class="plastic" d="M150,60 L520,60 L520,222 L424,222 L424,108 L326,108 L326,222 L150,222 Z"/>
+        <path class="plastic" d="M150,300 L520,300 L520,232 L410,232 L410,300 Z M150,232 L330,232 L330,300 L150,300 Z"/>
+        <path class="steel" d="M334,300 L334,150 L346,116 L404,116 L416,150 L416,300 Z"/>
+        <rect class="steel" x="286" y="168" width="180" height="14" rx="4"/>
+        <rect class="void"  x="360" y="166" width="30" height="18"/>
+        <rect class="steel" x="206" y="162" width="80" height="26" rx="3"/>
+        <path class="hi" d="M232,150 A28,28 0 0,1 268,158" marker-end="url(#a7)" color="var(--accent)"/>
+
+        <path class="bad" d="M330,110 L246,110 L200,150 L200,206"/>
+        <path class="bad" d="M200,200 L200,214" marker-end="url(#a7)"/>
+
+        <path class="hi" d="M322,216 L330,224 L322,232"/>
+        <path class="hi" d="M428,216 L420,224 L428,232"/>
+        <rect class="steel" x="200" y="222" width="110" height="10" rx="5"/>
+        <rect class="steel" x="440" y="222" width="70" height="10" rx="5"/>
+
+        <line class="lead" x1="470" y1="120" x2="556" y2="106"/>
+        <text class="t-dim" x="564" y="102">tapered post</text>
+        <text class="t-mut" x="564" y="116">taper is the funnel &mdash; costs no base depth</text>
+
+        <line class="lead" x1="466" y1="175" x2="556" y2="160"/>
+        <text class="t-dim" x="564" y="156">pin in double shear</text>
+        <text class="t-mut" x="564" y="170">cam plate and motor sealed inside the base</text>
+
+        <line class="lead" x1="436" y1="224" x2="556" y2="212"/>
+        <text class="t-dim" x="564" y="208">lip seal + perimeter gasket</text>
+        <text class="t-mut" x="564" y="222">post wipes clean on entry; joint seals when mated</text>
+
+        <line class="lead" x1="196" y1="200" x2="120" y2="230"/>
+        <text class="t-bad" x="112" y="234" text-anchor="end">drain</text>
+        <text class="t-mut" x="112" y="248" text-anchor="end">out the side wall</text>
+
+        <text class="t-mut" x="335" y="332" text-anchor="middle">every socket drains; nothing that moves is ever exposed to the room</text>
+      </svg>
+      <figcaption>
+        <b>One socket, with all five rules applied.</b> The post's taper does the capture, so the
+        funnel costs no depth in the base. It wipes past a lip seal on entry. The locking pin,
+        cam plate and motor are sealed inside the base. Anything that does get in drains out the
+        side wall rather than into the electronics, and a perimeter gasket protects the contact
+        zone once mated.
+      </figcaption>
+    </figure>
+
+    <h3>Three posts, not four</h3>
+
+    <p>
+      A rigid body has six degrees of freedom, and each post in a socket removes two. <strong>Three
+      posts is exactly determinate; four is over-constrained by two.</strong> In printed plastic
+      that difference is the whole ballgame &mdash; with four, one post lands first and the other
+      three fight it, so the joint either rocks or jams. Three tapered posts seat cleanly every
+      time and can rotate a fraction to self-centre, which also softens the yaw sensitivity that
+      was the concept's main weakness.
+    </p>
+
+    <p>
+      The taper earns its place twice: a 15&nbsp;mm tip at 20&deg; gives <strong>5.5&nbsp;mm of
+      capture per post</strong>, and because it lives on the post rather than in the base, that
+      capture costs <em>zero</em> receptacle depth. It is the only option here where capture is
+      free.
+    </p>
+
+    <h3>The contactless variant</h3>
+
+    <p>
+      Worth keeping on the table: <strong>inductive power and optical data</strong>, which
+      removes exposed electrical contacts altogether &mdash; the standard answer in washdown
+      industrial equipment. At the top port's 40&nbsp;W it is easy, costing about 4&nbsp;W of coil
+      heat. At the bottom port's 150&nbsp;W it means roughly 18&nbsp;W to shed inside the joint,
+      which is real but not disqualifying. Pancake coils are 2&ndash;3&nbsp;mm thick, so it costs
+      no height, and an IR emitter and photodiode for data are trivial and completely immune to
+      water.
+    </p>
+
+    <p>
+      This is orthogonal to the mechanical choice &mdash; it can be bolted onto any of the
+      options. The honest cost is efficiency, complexity and money in <em>every module</em>, which
+      is the thing the project has been carefully keeping cheap.
+    </p>
+  </section>
+
+  <!-- ============================ align ============================ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2>Making it self-aligning</h2>
+    </div>
+
+    <p class="lede">
+      Yaw sensitivity is the one real weakness of a multi-post joint, and it is worth attacking
+      directly rather than tolerating. The fix is not a better taper &mdash; it is refusing to
+      let one feature do two jobs.
+    </p>
+
+    <h3>Decompose the error</h3>
+
+    <p>
+      A feature at the <strong>centre</strong> sits at r&nbsp;=&nbsp;0, so yaw does not displace
+      it at all &mdash; it can kill lateral error while being completely blind to rotation. A
+      feature at <strong>radius r</strong> sees r&middot;&theta; from yaw &mdash; so it is the
+      right thing to kill rotation, once lateral error is already gone.
+    </p>
+
+    <p>
+      Ask the posts to absorb both at once and they need 14.2&nbsp;mm of capture against a taper
+      that provides 5.5. Split the job and they need <strong>0.74&nbsp;mm</strong> &mdash; a
+      7.4&times; margin on the same taper. The geometry does not change; the sequencing does.
+    </p>
+
+    <p>
+      Conveniently, the central connector needs a protective shroud anyway. <strong>Make that
+      shroud a tapered cone that engages before the posts</strong> and the primary alignment
+      feature costs nothing extra &mdash; it is a part the design already had to build.
+    </p>
+
+    <figure>
+      <svg viewBox="0 0 900 300" class="dwg" role="img"
+           aria-label="An alignment cascade in five stages. Navigation delivers ten millimetres and three degrees of error; a dock funnel, a compliant cradle, a central cone and finally the post tapers each reduce the residual, ending at a tenth of a millimetre.">
+        <defs>
+          <marker id="a9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <path class="plastic" d="M80,88 L228,114 L376,126 L524,138 L672,145 L820,145 L820,155 L672,155 L524,162 L376,174 L228,186 L80,212 Z"/>
+
+        <line class="lead" x1="228" y1="70" x2="228" y2="230"/>
+        <line class="lead" x1="376" y1="70" x2="376" y2="230"/>
+        <line class="lead" x1="524" y1="70" x2="524" y2="230"/>
+        <line class="lead" x1="672" y1="70" x2="672" y2="230"/>
+
+        <text class="t-mut" x="154" y="56" text-anchor="middle">navigation</text>
+        <text class="t-hd"  x="302" y="56" text-anchor="middle">dock funnel</text>
+        <text class="t-hd"  x="450" y="56" text-anchor="middle">compliant cradle</text>
+        <text class="t-hd"  x="598" y="56" text-anchor="middle">central cone</text>
+        <text class="t-hd"  x="746" y="56" text-anchor="middle">post tapers</text>
+
+        <text class="t-mut" x="302" y="252" text-anchor="middle">vee rails guide the</text>
+        <text class="t-mut" x="302" y="265" text-anchor="middle">whole robot</text>
+        <text class="t-mut" x="450" y="252" text-anchor="middle">module floats to</text>
+        <text class="t-mut" x="450" y="265" text-anchor="middle">meet the robot</text>
+        <text class="t-mut" x="598" y="252" text-anchor="middle">kills lateral,</text>
+        <text class="t-mut" x="598" y="265" text-anchor="middle">blind to yaw</text>
+        <text class="t-mut" x="746" y="252" text-anchor="middle">kill yaw at</text>
+        <text class="t-mut" x="746" y="265" text-anchor="middle">r = 50</text>
+
+        <text class="t-bad" x="80" y="230">10 mm</text>
+        <text class="t-bad" x="80" y="243">3&deg;</text>
+        <text class="t-dim" x="234" y="205">2 mm / 1&deg;</text>
+        <text class="t-dim" x="382" y="199">1 mm / 0.5&deg;</text>
+        <text class="t-dim" x="530" y="190">0.3 mm</text>
+        <text class="t-dim" x="678" y="180">0.1 mm</text>
+
+        <line class="dim" x1="80" y1="278" x2="820" y2="278" marker-end="url(#a9)" color="var(--accent)"/>
+        <text class="t-mut" x="450" y="294" text-anchor="middle">each stage only has to swallow what the previous one left</text>
+      </svg>
+      <figcaption>
+        <b>Five stages, each handling only the residual.</b> No single feature has to be heroic.
+        The two cheapest stages live in the <em>dock</em> &mdash; vee rails that guide the whole
+        chassis, and a cradle that lets the module float to meet the robot &mdash; which puts the
+        complexity in the one dock rather than in every module.
+      </figcaption>
+    </figure>
+
+    <h3>Put the compliance in the dock</h3>
+
+    <p>
+      The highest-leverage change is not on the robot at all. If the module sits in a
+      <strong>compliant cradle</strong> in the dock &mdash; sprung, or on a floating mount &mdash;
+      then the tapers generate a centring force and the cradle simply lets the module move to
+      meet the robot. This is the remote-centre-compliance trick from robotic assembly, and it
+      costs nothing on the robot or on any module. You build it once, in the dock.
+    </p>
+
+    <h3>Move the posts inboard</h3>
+
+    <p>
+      Yaw offset scales directly with post radius, and the structural penalty for coming inboard
+      is negligible:
+    </p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Post radius</th><th class="num">Yaw offset at 2&deg;</th><th class="num">Moment load per post pair</th></tr></thead>
+        <tbody>
+          <tr><td>r = 80 mm</td><td class="num lose">2.79 mm</td><td class="num">20 N</td></tr>
+          <tr><td>r = 65 mm</td><td class="num">2.27 mm</td><td class="num">25 N</td></tr>
+          <tr><td>r = 50 mm</td><td class="num win">1.75 mm</td><td class="num">32 N</td></tr>
+          <tr><td>r = 40 mm</td><td class="num win">1.40 mm</td><td class="num">40 N</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Halving the radius halves the yaw problem and doubles a load that was already trivial
+      against a 47&times; bearing margin. <strong>r&nbsp;=&nbsp;50 is close to free.</strong>
+    </p>
+
+    <h3>One idea that does not work</h3>
+
+    <p>
+      Staggering the post lengths so they engage in sequence sounds like it should help &mdash; a
+      first post lands, then the rest follow. <strong>It makes things worse.</strong> Seating one
+      post first moves the centre of rotation off-axis onto that post, so the second post now sees
+      r&middot;&radic;3&middot;&theta; instead of r&middot;&theta; &mdash; a 73% harder job.
+    </p>
+
+    <p>
+      Which is the same lesson from the other direction: <em>the first feature to engage has to
+      be the central one.</em> Anything else establishes a pivot in the wrong place.
+    </p>
+  </section>
+
+  <!-- ============================ key ============================ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2>Forcing one orientation</h2>
+    </div>
+
+    <p class="lede">
+      Three posts at 120&deg; have three-fold symmetry, so a module can mate three ways. Only one
+      of them is right &mdash; and this matters even though the posts no longer carry current.
+    </p>
+
+    <p>
+      Two reasons it still matters. The <strong>central connector</strong> has eight contacts that
+      must land on their opposite numbers. And more fundamentally, <strong>modules themselves have
+      a front</strong>: a vacuum's brush roll and suction throat face the direction of travel, a
+      dustbin has a door, a rotor unit has a forward axis. Orientation has to be deterministic
+      regardless of how power gets across.
+    </p>
+
+    <h3>Unequal spacing, not unequal posts</h3>
+
+    <p>
+      The instinct to shape the posts differently works, but it is the expensive version. Simply
+      <strong>move one post off the symmetric 120&deg;</strong> and the wrong orientations become
+      physically impossible &mdash; no new features, no new parts, no extra height.
+    </p>
+
+    <figure>
+      <svg viewBox="0 0 780 330" class="dwg" role="img"
+           aria-label="Two plan views. With posts at 0, 120 and 235 degrees the module seats. Rotated 120 degrees, two of the three posts miss their sockets by 5 degrees, or 4.4 millimetres at radius 50, so the module cannot enter.">
+        <defs>
+          <marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <text class="t-hd" x="200" y="30" text-anchor="middle">CORRECT</text>
+        <circle class="plastic" cx="200" cy="175" r="112"/>
+        <circle class="void" cx="200" cy="175" r="40"/>
+        <circle class="void" cx="290" cy="175" r="17"/>
+        <circle class="void" cx="155" cy="97"  r="17"/>
+        <circle class="void" cx="148" cy="249" r="17"/>
+        <circle class="steel" cx="290" cy="175" r="14"/>
+        <circle class="steel" cx="155" cy="97"  r="14"/>
+        <circle class="steel" cx="148" cy="249" r="14"/>
+        <text class="t-mut" x="200" y="180" text-anchor="middle">connector</text>
+        <text class="t-dim" x="200" y="312" text-anchor="middle">posts at 0&deg; / 120&deg; / 235&deg; &mdash; seats</text>
+
+        <text class="t-hd" x="560" y="30" text-anchor="middle">ROTATED 120&deg;</text>
+        <circle class="plastic" cx="560" cy="175" r="112"/>
+        <circle class="void" cx="560" cy="175" r="40"/>
+        <circle class="void" cx="650" cy="175" r="17"/>
+        <circle class="void" cx="515" cy="97"  r="17"/>
+        <circle class="void" cx="508" cy="249" r="17"/>
+        <circle class="steel" cx="515" cy="97"  r="14"/>
+        <circle class="steel" cx="515" cy="253" r="14"/>
+        <circle class="steel" cx="650" cy="183" r="14"/>
+
+        <line class="bad" x1="508" y1="249" x2="515" y2="253"/>
+        <line class="bad" x1="650" y1="175" x2="650" y2="183"/>
+        <line class="lead" x1="668" y1="190" x2="712" y2="212"/>
+        <text class="t-bad" x="700" y="232" text-anchor="middle">5&deg; = 4.4 mm</text>
+        <text class="t-mut" x="700" y="246" text-anchor="middle">clearance is 0.2 mm</text>
+        <text class="t-dim" x="560" y="312" text-anchor="middle">two posts miss &mdash; cannot be forced</text>
+      </svg>
+      <figcaption>
+        <b>Five degrees is decisive.</b> Socket clearance is around 0.2&nbsp;mm, so a 4.4&nbsp;mm
+        mismatch is not a tight fit &mdash; it is a wall. One post at 235&deg; instead of 240&deg;
+        makes the wrong orientation mechanically impossible, while the load centroid shifts only
+        1.45&nbsp;mm off axis, worth 0.28&nbsp;N&middot;m of imbalance against a 47&times; bearing
+        margin.
+      </figcaption>
+    </figure>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Layout</th><th class="num">Wrong orientation misses by</th><th class="num">Load imbalance</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0 / 120 / 240 &mdash; symmetric</td><td class="num lose">0 mm &mdash; mates 3 ways</td><td class="num win">none</td></tr>
+          <tr><td><b>0 / 120 / 235</b></td><td class="num win">4.4 mm</td><td class="num win">0.28 N&middot;m</td></tr>
+          <tr><td>0 / 120 / 230</td><td class="num win">8.7 mm</td><td class="num">0.56 N&middot;m</td></tr>
+          <tr><td>0 / 110 / 250</td><td class="num win">17.5 mm</td><td class="num lose">1.01 N&middot;m</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Why not different diameters</h3>
+
+    <p>
+      Sizing the posts &Oslash;10 / &Oslash;8 / &Oslash;6 also works, and all three are enormously
+      strong enough &mdash; the smallest still carries 11&nbsp;kN in double shear against a
+      64&nbsp;N requirement. The objection is not strength, it is that the smallest post now sets
+      the joint's rating, and you have three different parts to make, stock, inspect and replace
+      instead of one.
+    </p>
+
+    <p>
+      <strong>Unequal spacing keeps every post identical.</strong> That matters more than it
+      sounds: one dowel size, one socket size, one lip seal, one reamer, one spare. The
+      asymmetry lives in the plate the posts are mounted in, which is printed anyway and costs
+      nothing to make asymmetric.
+    </p>
+
+    <p>
+      A useful side effect: because the misfit is <em>angular</em>, it grows with radius. At
+      r&nbsp;=&nbsp;50 a 5&deg; error is 4.4&nbsp;mm, far beyond any taper's capture range, so a
+      misaligned module cannot even start to enter &mdash; it sits proud, visibly and detectably,
+      rather than jamming halfway.
+    </p>
+  </section>
+
+  <!-- ============================ 3 ============================ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <h2>Lift inverts the top port</h2>
+    </div>
+
+    <p class="lede">
+      The top module is meant to gain lift &mdash; the rotor unit that carries the robot over
+      stairs. That reverses the sign of the force at the top port, and it is the single most
+      consequential load case in the whole project. It disqualifies one of the options above.
+    </p>
+
+    <p>
+      Parked, the top port is in <strong>compression</strong>: a module sits on the base and
+      gravity holds it there. Under lift, the entire robot &mdash; base plus whatever is hanging
+      off the bottom &mdash; is suspended from that same joint in <strong>tension</strong>, with
+      thrust and shock multiplying it.
+    </p>
+
+    <figure>
+      <svg viewBox="0 0 780 380" class="dwg" role="img"
+           aria-label="Two states of the same stack. Parked, gravity presses the top module onto the base and the top port is in compression. Under lift, the whole robot hangs from the top port in tension at 192 newtons.">
+        <defs>
+          <marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <!-- ---------- PARKED ---------- -->
+        <text class="t-hd" x="200" y="32" text-anchor="middle">PARKED</text>
+        <text class="t-mut" x="200" y="48" text-anchor="middle">gravity presses the module on</text>
+
+        <rect class="plastic" x="140" y="92" width="120" height="44" rx="2"/>
+        <text x="200" y="119" text-anchor="middle">TOP MOD</text>
+        <rect class="plastic" x="126" y="150" width="148" height="58" rx="2"/>
+        <text class="t-hd" x="200" y="185" text-anchor="middle">BASE</text>
+        <rect class="plastic" x="140" y="222" width="120" height="44" rx="2"/>
+        <text x="200" y="249" text-anchor="middle">BOTTOM</text>
+        <line class="lead" x1="120" y1="276" x2="280" y2="276"/>
+
+        <line class="hi" x1="200" y1="138" x2="200" y2="148" marker-end="url(#a4)" color="var(--accent)"/>
+        <line class="lead" x1="286" y1="143" x2="322" y2="143"/>
+        <text class="t-dim" x="328" y="140">compression</text>
+        <text class="t-mut" x="328" y="154">a shroud would do</text>
+
+        <!-- ---------- LIFTING ---------- -->
+        <text class="t-hd" x="560" y="32" text-anchor="middle">LIFTING</text>
+        <text class="t-mut" x="560" y="48" text-anchor="middle">the robot hangs from this joint</text>
+
+        <line class="hi" x1="510" y1="86" x2="510" y2="66" marker-end="url(#a4)" color="var(--accent)"/>
+        <line class="hi" x1="560" y1="86" x2="560" y2="60" marker-end="url(#a4)" color="var(--accent)"/>
+        <line class="hi" x1="610" y1="86" x2="610" y2="66" marker-end="url(#a4)" color="var(--accent)"/>
+        <text class="t-dim" x="644" y="70">thrust</text>
+
+        <rect class="plastic" x="500" y="92" width="120" height="44" rx="2"/>
+        <text x="560" y="119" text-anchor="middle">LIFT MOD</text>
+        <rect class="plastic" x="486" y="150" width="148" height="58" rx="2"/>
+        <text class="t-hd" x="560" y="185" text-anchor="middle">BASE</text>
+        <rect class="plastic" x="500" y="222" width="120" height="44" rx="2"/>
+        <text x="560" y="249" text-anchor="middle">BOTTOM</text>
+
+        <line class="bad" x1="560" y1="140" x2="560" y2="130" marker-end="url(#a4)"/>
+        <line class="bad" x1="560" y1="146" x2="560" y2="156" marker-end="url(#a4)"/>
+        <line class="lead" x1="646" y1="143" x2="682" y2="143"/>
+        <text class="t-bad" x="688" y="139">TENSION</text>
+        <text class="t-bad" x="688" y="153">192 N</text>
+
+        <line class="lead" x1="470" y1="150" x2="440" y2="150"/>
+        <line class="lead" x1="440" y1="150" x2="440" y2="266"/>
+        <line class="lead" x1="440" y1="266" x2="470" y2="266"/>
+        <text class="t-mut" x="432" y="200" text-anchor="end">4.9 kg</text>
+        <text class="t-mut" x="432" y="214" text-anchor="end">hangs</text>
+        <text class="t-mut" x="432" y="228" text-anchor="end">below</text>
+
+        <line class="lead" x1="500" y1="300" x2="620" y2="300" stroke-dasharray="4 5"/>
+        <text class="t-mut" x="560" y="316" text-anchor="middle">floor, somewhere below</text>
+
+        <!-- load build-up -->
+        <text class="t-mut" x="60" y="336">4.9 kg static = 48 N</text>
+        <text class="t-mut" x="230" y="336">&times;2 thrust-to-weight = 96 N</text>
+        <text class="t-mut" x="440" y="336">&times;2 landing shock = 192 N</text>
+        <text class="t-bad" x="640" y="336">2.5&times; the 8 kg spec</text>
+        <line class="lead" x1="55" y1="344" x2="740" y2="344"/>
+      </svg>
+      <figcaption>
+        <b>The top port carries 2.5&times; its rated load, in the opposite direction.</b> Static
+        tension is 48&nbsp;N; a rotor unit needs roughly 2:1 thrust-to-weight for control
+        authority, and landing and gusts add as much again. The pendulum moment stays inside the
+        4&nbsp;N&middot;m spec &mdash; 3.2&nbsp;N&middot;m at a 40&deg; tilt &mdash; but the axial
+        rating has to roughly triple.
+      </figcaption>
+    </figure>
+
+    <p>
+      <strong>This eliminates Option C for the top port.</strong> The three-ball coupling is
+      stiff in compression because the balls take the moment out at r&nbsp;=&nbsp;35. Put the
+      joint in tension and <em>the balls simply lift off their vees</em>. All that remains is the
+      single central pin at r&nbsp;=&nbsp;0 &mdash; which is a pivot. Moment stiffness collapses
+      to the bending stiffness of one pin, and the joint becomes a hinge holding a swinging
+      5&nbsp;kg robot. That is the worst possible failure mode for something under a rotor.
+    </p>
+
+    <p>
+      Option B survives well: its lugs work in <strong>shear at r&nbsp;=&nbsp;40</strong>,
+      which is direction-agnostic, and a worm-driven collar cannot back-drive, so nothing
+      releases in flight. Option A's ball detent is the classic cam-out geometry and I would not
+      trust it in tension. Option D's rails are strong perpendicular to the slide, but a spring
+      latch is the only thing standing between 19.6&nbsp;kg and a dropped robot.
+    </p>
+
+    <p>
+      And because the stack flies <strong>as three</strong> &mdash; the tool stays attached
+      &mdash; the bottom port is in tension too. Only 59&nbsp;N of it, comfortably inside the
+      existing 8&nbsp;kg rating, but tension is a question of <em>direction</em>, not magnitude.
+      C's balls lift off at 59&nbsp;N exactly as they do at 192&nbsp;N.
+    </p>
+
+    <p>
+      That kills the idea of splitting the spec. Both ports face the same kind of load, so they
+      want the same mechanism &mdash; and one spec means any module still fits either port.
+      C survives only if its central latch <strong>preloads harder than the flight tension</strong>
+      (a joint stays stiff only while preload exceeds applied load), which means &gt;192&nbsp;N
+      through a single pin bearing on printed plastic. Option B needs no such trick: its lugs
+      work in shear and do not care which way the load points.
+    </p>
+
+    <h3>The base is now a structural member</h3>
+
+    <p>
+      This is the consequence that reaches furthest outside the port. In flight the load path
+      runs lift&nbsp;module &rarr; top&nbsp;port &rarr; <em>base structure</em> &rarr;
+      bottom&nbsp;port &rarr; tool. The base shell was designed to house components; it now has
+      to carry 192&nbsp;N straight through its middle. The two ports have to be structurally
+      tied &mdash; ideally coaxial, with a column between them &mdash; and that column lands
+      exactly where the &Oslash;20 harness bore already is. It wants to be a tube.
+    </p>
+
+    <figure>
+      <svg viewBox="0 0 760 300" class="dwg" role="img"
+           aria-label="The flight load path runs from the lift module through the top port, the base structure, the bottom port and into the tool, making the base a tension member. A central tension tube must share space with the harness bore.">
+        <defs>
+          <marker id="a5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <text class="t-hd" x="60" y="30">FLIGHT LOAD PATH</text>
+
+        <rect class="plastic" x="120" y="52" width="170" height="42" rx="2"/>
+        <text x="205" y="78" text-anchor="middle">LIFT MODULE</text>
+        <rect class="steel"   x="140" y="96" width="130" height="12"/>
+        <rect class="plastic" x="120" y="110" width="170" height="74" rx="2"/>
+        <text class="t-hd" x="205" y="152" text-anchor="middle">BASE</text>
+        <rect class="steel"   x="140" y="186" width="130" height="12"/>
+        <rect class="plastic" x="120" y="200" width="170" height="42" rx="2"/>
+        <text x="205" y="226" text-anchor="middle">TOOL</text>
+
+        <line class="bad" x1="205" y1="96" x2="205" y2="198"/>
+        <line class="bad" x1="205" y1="130" x2="205" y2="112" marker-end="url(#a5)"/>
+        <line class="bad" x1="205" y1="164" x2="205" y2="182" marker-end="url(#a5)"/>
+
+        <line class="lead" x1="296" y1="102" x2="330" y2="102"/>
+        <text class="t-bad" x="336" y="106">top port &mdash; 192 N</text>
+        <line class="lead" x1="296" y1="192" x2="330" y2="192"/>
+        <text class="t-bad" x="336" y="196">bottom port &mdash; 59 N</text>
+        <line class="lead" x1="296" y1="147" x2="330" y2="147"/>
+        <text class="t-dim" x="336" y="143">the shell carries it</text>
+        <text class="t-mut" x="336" y="157">between the two ports</text>
+
+        <text class="t-hd" x="500" y="30">CENTRE SECTION</text>
+        <rect class="plastic" x="548" y="96" width="22" height="102"/>
+        <rect class="plastic" x="622" y="96" width="22" height="102"/>
+        <line class="ctr" x1="596" y1="86" x2="596" y2="212"/>
+        <line class="bad" x1="559" y1="190" x2="559" y2="106" marker-end="url(#a5)"/>
+        <line class="bad" x1="633" y1="190" x2="633" y2="106" marker-end="url(#a5)"/>
+        <line class="dim" x1="570" y1="212" x2="622" y2="212" marker-start="url(#a5)" marker-end="url(#a5)" color="var(--accent)"/>
+        <text class="t-dim" x="596" y="228" text-anchor="middle">&Oslash;20 harness</text>
+        <line class="lead" x1="548" y1="90" x2="520" y2="76"/>
+        <text class="t-mut" x="516" y="72" text-anchor="end">tension tube</text>
+        <text class="t-mut" x="596" y="256" text-anchor="middle">the column and the wiring want the same space</text>
+        <text class="t-mut" x="596" y="270" text-anchor="middle">so the column becomes a tube around the harness</text>
+      </svg>
+      <figcaption>
+        <b>The port choice reaches into the chassis.</b> Once the stack flies as one, the base
+        stops being a box that holds parts and becomes the tension member between two ports.
+        That argues for coaxial top and bottom ports joined by a central tube &mdash; which the
+        harness then runs through rather than around.
+      </figcaption>
+    </figure>
+
+    <p>
+      One more reason stiffness matters more than it did an hour ago: <strong>rigid ports keep
+      this a rigid-body control problem.</strong> A stiff stack is a single body with a low
+      centre of mass, which is conventional to fly. A compliant one is a slung load under a
+      multirotor, which is a materially harder control problem. The coupling is what keeps the
+      vehicle on the easy side of that line.
+    </p>
+  </section>
+
+  <!-- ============================ 4 ============================ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">07</span>
+      <h2>Why A is out</h2>
+    </div>
+
+    <p class="lede">
+      Three bugs, all in the same congested ring between the bore wall and the flange edge
+      &mdash; only 19.8&nbsp;mm wide on the current spec. Each is fixable in an afternoon.
+      Together they are evidence that the geometry is over-packed, which is a statement about
+      the architecture rather than about any one dimension.
+    </p>
+
+    <div class="bugs">
+      <div class="bug">
+        <div class="bug-n">1</div>
+        <div>
+          <h3>Coupon plate back-filled the ball sockets</h3>
+          <p>Fusing the test plate onto a finished port unioned solid material into all three
+          sockets: 264&nbsp;mm&sup3; of void in the port, <span class="mono">0.0&nbsp;mm&sup3;</span>
+          in the printed part.</p>
+        </div>
+      </div>
+      <div class="bug">
+        <div class="bug-n">2</div>
+        <div>
+          <h3>Vee dowels collide with the boss</h3>
+          <p>Channels run from r&nbsp;=&nbsp;18 to 52&nbsp;mm against a bore wall at
+          r&nbsp;=&nbsp;25.2, so a real &Oslash;3 dowel intersects the seated boss by
+          <span class="mono">19.4&nbsp;mm&sup3;</span> &mdash; and nothing is left to support its
+          inner end.</p>
+        </div>
+      </div>
+      <div class="bug">
+        <div class="bug-n">3</div>
+        <div>
+          <h3>The kinematic coupling never engages</h3>
+          <p>A sign error puts the dowels 4.0&nbsp;mm too deep. The balls float
+          <span class="mono">3.45&nbsp;mm</span> short and the plastic flanges collide first
+          &mdash; the exact failure the coupling exists to prevent.</p>
+        </div>
+      </div>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 760 230" class="dwg" role="img"
+           aria-label="Detail showing the kinematic ball floating 3.45 millimetres above the vee dowels it should rest on, with only 1 millimetre of flange gap available.">
+        <defs>
+          <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+          </marker>
+        </defs>
+        <rect class="plastic" x="130" y="46" width="400" height="44"/>
+        <rect class="void"    x="250" y="90" width="160" height="42"/>
+        <rect class="plastic" x="130" y="90" width="120" height="42"/>
+        <rect class="plastic" x="410" y="90" width="120" height="42"/>
+        <circle class="steel" cx="296" cy="110" r="13"/>
+        <circle class="steel" cx="376" cy="110" r="13"/>
+        <rect class="plastic" x="130" y="142" width="400" height="50"/>
+        <circle class="steel" cx="336" cy="142" r="26"/>
+        <line class="bad" x1="336" y1="116" x2="336" y2="123" marker-start="url(#a3)" marker-end="url(#a3)"/>
+        <line class="lead" x1="546" y1="106" x2="352" y2="119"/>
+        <text class="t-bad" x="554" y="110">3.45 mm &mdash; the ball hangs here</text>
+        <line class="dim" x1="104" y1="132" x2="104" y2="142" marker-start="url(#a3)" marker-end="url(#a3)" color="var(--accent)"/>
+        <text class="t-dim" x="96" y="141" text-anchor="end">1 mm</text>
+        <text class="t-mut" x="96" y="156" text-anchor="end">flange gap</text>
+        <text class="t-mut" x="296" y="80" text-anchor="middle">&Oslash;3 vee dowels</text>
+        <text class="t-mut" x="420" y="186" text-anchor="middle">&Oslash;8 ball</text>
+        <text class="t-mut" x="336" y="216" text-anchor="middle">the faces close before the steel ever meets</text>
+      </svg>
+      <figcaption>
+        <b>Bug 3, drawn.</b> The ball must rise 3.45&nbsp;mm to reach the dowels, but only
+        1&nbsp;mm of flange gap exists. The plastic bottoms out and takes the load. The mate
+        check passed throughout because it verified nothing <em>clashes</em> &mdash; never that
+        the steel <em>touches</em>.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ============================ 5 ============================ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">08</span>
+      <h2>Side by side</h2>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Measure</th>
+            <th class="num">A &middot; Boss</th>
+            <th class="num">B &middot; Bayonet</th>
+            <th class="num">C &middot; Cone</th>
+            <th class="num">D &middot; Slide</th>
+            <th class="num">E &middot; Post + pin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Base volume consumed</b></td><td class="num lose">197k mm&sup3;</td><td class="num">70k</td><td class="num">89k</td><td class="num">64k</td><td class="num win">8k</td></tr>
+          <tr><td>Receptacle depth</td><td class="num">31 mm</td><td class="num win">11 mm</td><td class="num">14 mm</td><td class="num win">10 mm</td><td class="num">18 mm</td></tr>
+          <tr><td>Centre left free for a connector</td><td class="num lose">no</td><td class="num">partly</td><td class="num lose">no</td><td class="num">partly</td><td class="num win">fully</td></tr>
+          <tr><td><b>Exposed moving parts</b></td><td class="num lose">4</td><td class="num lose">8</td><td class="num">4</td><td class="num">2</td><td class="num win">0</td></tr>
+          <tr><td>Sockets can drain</td><td class="num lose">no</td><td class="num">partly</td><td class="num lose">no</td><td class="num win">yes</td><td class="num win">yes</td></tr>
+          <tr><td>Contacts self-clean</td><td class="num lose">no</td><td class="num lose">no</td><td class="num lose">no</td><td class="num win">wiping</td><td class="num win">wiping pins</td></tr>
+          <tr><td><b>Determinate seat</b></td><td class="num win">3-ball</td><td class="num">3 lug</td><td class="num win">3-ball</td><td class="num lose">2 + stop</td><td class="num win">3 post</td></tr>
+          <tr><td><b>Holds under lift</b></td><td class="num lose">cams out</td><td class="num">yes, shear</td><td class="num lose">becomes a hinge</td><td class="num lose">latch-limited</td><td class="num win">double shear</td></tr>
+          <tr><td>Margin on the 192 N case</td><td class="num">&mdash;</td><td class="num">69&times;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num win">164&times;</td></tr>
+          <tr><td>Capture costs base depth</td><td class="num lose">11.4 mm</td><td class="num">some</td><td class="num">some</td><td class="num">some</td><td class="num win">zero &mdash; on the post</td></tr>
+          <tr><td>Yaw sensitivity</td><td class="num win">none</td><td class="num win">none</td><td class="num win">none</td><td class="num">n/a</td><td class="num">eased by 3 posts</td></tr>
+          <tr><td>Actuators per port</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num win">release only</td><td class="num">1</td></tr>
+          <tr><td>Proven precedent</td><td class="num">&mdash;</td><td class="num">lens mounts</td><td class="num">camera plates</td><td class="num">tool batteries</td><td class="num win">aircraft hardpoints</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================ 6 ============================ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">09</span>
+      <h2>Where I land</h2>
+    </div>
+
+    <div class="verdict">
+      <h2>Three tapered posts with cross pins. Power through the posts, signals down the middle.</h2>
+      <p>
+        Against the five criteria it is not close. <strong>Mates every time:</strong> three posts
+        is exactly determinate &mdash; six constraints for six degrees of freedom &mdash; where
+        four is over-constrained and will rock or jam in printed plastic. The tapers self-centre.
+        <strong>Low profile:</strong> 8,143&nbsp;mm&sup3; of base consumed against 64&ndash;70k
+        for everything else, and the capture taper rides on the post, so it costs zero receptacle
+        depth. <strong>Holds under lift:</strong> pins in double shear, 164&times; margin,
+        indifferent to load direction.
+      </p>
+      <p>
+        <strong>And it is the only option whose mechanism never sees the room.</strong> The pins,
+        cam plate and motor are sealed inside the base; what is exposed is solid steel posts and
+        drained holes, with nothing that can foul. B is the mirror image &mdash; a ramped rotating
+        collar on the outside of a machine that manufactures abrasive dust for a living.
+      </p>
+      <p>
+        <strong>Posts carry load only; all electricals go in the sealed centre.</strong> The pin
+        must bear on the post to carry the load, which makes them one electrical node &mdash; so
+        three posts give three circuits, not the eight the spec needs. And energised posts on a
+        mopping robot are a bridged bus waiting for a puddle. E frees the entire centre of the
+        port, so the full contact block lives there, dry behind the perimeter gasket, with CAN as
+        a proper twisted pair. Orientation is forced by putting one post at 235&deg; rather than
+        240&deg; &mdash; see section 05.
+      </p>
+      <p>
+        <strong>Yaw sensitivity is solved by staging, not by tolerance.</strong> Asking the posts
+        to absorb lateral and angular error together needs 14.2&nbsp;mm of capture against a
+        5.5&nbsp;mm taper &mdash; it fails. Let a central cone kill lateral first (it sits at
+        r&nbsp;=&nbsp;0, so yaw cannot displace it) and the posts need 0.74&nbsp;mm, a 7.4&times;
+        margin on the same taper. Move the posts to r&nbsp;=&nbsp;50 and the margin grows again,
+        for a moment load that is still trivial. See section 04.
+      </p>
+      <p>
+        <strong>What it still costs.</strong> The sockets on the base's top face point upward and
+        will collect dust; they need lip seals and a drain out the <em>side wall</em>, not into
+        the electronics. And two of the five alignment stages live in the docking station, which
+        is barely designed &mdash; so the dock is now on the critical path rather than a later
+        concern. B remains the fallback if docking accuracy disappoints badly.
+      </p>
+    </div>
+
+    <div class="open">
+      <h3>What has to be settled either way</h3>
+      <ol>
+        <li>
+          <strong>What does the lift module weigh?</strong> REQUIREMENTS.md has no line for it.
+          At an estimated 2&nbsp;kg the all-up mass is 6.9&nbsp;kg, which needs about
+          13.8&nbsp;kg of thrust at 2:1. Every load number on this page moves with that estimate.
+        </li>
+        <li>
+          <strong>Do the two ports go coaxial?</strong> The flight load path effectively requires
+          it, and it changes the base's internal layout &mdash; battery and compute have to move
+          out of the centre column.
+        </li>
+        <li>
+          <strong>How accurately does the robot dock?</strong> Sets the capture requirement, and
+          it is still a guess. A Phase&nbsp;4 measurement.
+        </li>
+        <li>
+          <strong>What is the shock factor on landing?</strong> The 2&times; assumed here is a
+          placeholder, and the top port's rating is directly proportional to it.
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</div>

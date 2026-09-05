@@ -1,0 +1,22 @@
+# Generated geometry -- regenerate with `make -C cad all`
+*.stl
+*.step
+*.3mf
+*.gcode
+
+# FreeCAD
+*.FCBak
+*.FCStd1
+__pycache__/
+*.pyc
+
+# ROS 2
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Firmware
+firmware/**/build/
+firmware/**/.pio/
+
+.venv/
