@@ -180,6 +180,33 @@ Keeping the signals central also keeps **CAN H and CAN L a genuine twisted pair*
 posts 160 mm apart they would be a loop antenna beside three motors — exactly what
 [ADR 0003](decisions/0003-can-bus.md) chose CAN to avoid.
 
+### 3.1 Bonding — the posts are grounded, not floating
+
+The posts carry no signal, but they are still metal bridging the base to every module, and
+**floating metal on a machine that generates static is a bad default.** A vacuum builds
+serious charge; a floating assembly will accumulate it and dump it into the connector at
+the worst possible moment.
+
+Bond the posts to chassis ground on **both** sides. That turns a hazard into a feature:
+the posts engage several millimetres before the contacts close, so they become a
+**first-mate / last-break ground** that bleeds charge before any signal pin touches — the
+same trick as the long ground pins in a D-sub.
+
+Keep the galvanic couple inside the stainless family. 303 against 304 is a negligible
+driving voltage; aluminium or plated steel in the wet zone is not.
+
+**Do not use post continuity as a seating sense**, tempting as it is. A water bridge
+across two posts would read as "seated" — a false positive on a flight-critical interlock,
+in exactly the conditions the robot works in. Sense the lock plate's position instead, and
+PRESENCE through the connector.
+
+### 3.2 Contacts
+
+The pogo pins span a **3.60 mm gap** at full seat, well inside a 6 mm block with 4 mm of
+stroke. This is a spec, not an assumption — `derived()` refuses a geometry where the
+contacts could never close, or where the pad would crash into the block before the posts
+seat.
+
 | Pin | Function |
 |---|---|
 | 1, 2 | GND |
@@ -192,7 +219,7 @@ Pogo pins on the base side, gold pads on the module side. Discovery sequence and
 module descriptor are unchanged from 0.1.0 — see §3.1 of the git history for that text,
 reproduced below.
 
-### 3.1 Discovery
+### 3.3 Discovery
 
 1. Mechanical seat → PRESENCE low.
 2. Base enables +5 V aux.

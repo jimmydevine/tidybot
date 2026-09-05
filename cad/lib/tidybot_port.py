@@ -82,6 +82,7 @@ PORT = dict(
     CONTACT_L         = 10.0,
     CONTACT_DEPTH     = 1.6,
     CONTACT_POGO_DEPTH= 6.0,
+    CONTACT_STROKE_MAX= 4.0,     # the pogo travel a buyable block actually has
 
     # --- Sealing and drainage (ADR 0006, section on contamination) ----------
     GASKET_BC         = 118.0,   # groove on the BASE half; one gasket, not N
@@ -93,6 +94,14 @@ PORT = dict(
     FLANGE_GAP        = 1.0,     # designed air gap; steel carries the load
 )
 
+# The posts are structural, but they are still metal bridging the base to
+# every module. Bond them to chassis ground on BOTH sides -- do not leave
+# them floating. A vacuum generates serious static, and a floating metal
+# assembly will accumulate it and dump it into the connector at the worst
+# moment. Bonded, the posts engage before the contacts close, so they become
+# a first-mate / last-break ground that bleeds charge before the signal pins
+# ever touch: the same trick as long ground pins in a D-sub.
+#
 # Materials. Stainless, not mild steel: the posts sit exposed whenever a
 # module is off, on a machine that mops. Rust would SWELL a Ø10 post in a
 # Ø10.2 socket and bind it, shed abrasive particles into a joint that mates
@@ -139,7 +148,7 @@ def derived(p=None):
 
     # --- Cone: engages before the posts ------------------------------------
     d["CONE_CAPTURE"]      = (p["CONE_BASE_DIA"] - p["CONE_TIP_DIA"]) / 2.0
-    d["CONE_RECESS_DEPTH"] = p["CONE_LEN"] + 3.0
+    d["CONE_RECESS_DEPTH"] = p["CONE_LEN"] + 1.0
     d["CONE_LEAD"]         = p["CONE_LEN"] - p["POST_LEN"]
     if d["CONE_LEAD"] < 3.0:
         raise ValueError(
@@ -201,6 +210,23 @@ def derived(p=None):
     cy = sum(math.sin(math.radians(a)) for a in A) / 3.0 * r
     d["CENTROID_OFFSET"] = math.hypot(cx, cy)
     d["LOAD_IMBALANCE_NM"] = LOAD["AXIAL_TOP_N"] * d["CENTROID_OFFSET"] / 1000.0
+
+    # --- Do the contacts actually MEET? ------------------------------------
+    #  Every other check asks whether parts clash. This one asks whether they
+    #  touch -- the blind spot that let 0.1.0 ship a coupling whose balls
+    #  never reached their dowels.
+    pad = p["CONE_LEN"] - p["CONTACT_DEPTH"]
+    floor = p["FLANGE_GAP"] + d["CONE_RECESS_DEPTH"]
+    d["CONTACT_GAP"] = floor - pad
+    if d["CONTACT_GAP"] > p["CONTACT_POGO_DEPTH"] + p["CONTACT_STROKE_MAX"]:
+        raise ValueError(
+            "Pogo pins would have to span %.2f mm, beyond a %.1f mm block with "
+            "%.1f mm of stroke. The contacts would never close."
+            % (d["CONTACT_GAP"], p["CONTACT_POGO_DEPTH"], p["CONTACT_STROKE_MAX"]))
+    if d["CONTACT_GAP"] < 1.0:
+        raise ValueError(
+            "Only %.2f mm for the contacts. The pad would crash into the pogo "
+            "block before the posts seat." % d["CONTACT_GAP"])
 
     # --- Groove and lock plate ---------------------------------------------
     d["GROOVE_DEPTH"] = (p["POST_DIA"] - p["GROOVE_ROOT_DIA"]) / 2.0
@@ -527,6 +553,8 @@ def report(p=None):
           % d["RECEPTACLE_DEPTH"])
     print("  groove cover          %.2f mm of base material below the lock slot"
           % d["GROOVE_COVER"])
+    print("  contact gap           %.2f mm for the pogo pins to span"
+          % d["CONTACT_GAP"])
     print("\nVOLUME CONSUMED IN THE BASE")
     print("  3 post sockets        %6.0f mm3" % d["VOL_SOCKETS"])
     print("  connector cone        %6.0f mm3" % d["VOL_CONE"])

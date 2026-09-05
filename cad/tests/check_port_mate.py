@@ -138,6 +138,12 @@ def main():
           "cone %.1f mm kills lateral, posts %.1f mm kill yaw"
           % (d["CONE_CAPTURE"], d["POST_CAPTURE"]))
 
+    check("contacts can close", d["CONTACT_GAP"] <= p["CONTACT_POGO_DEPTH"] + p["CONTACT_STROKE_MAX"],
+          "%.2f mm gap, within a %.1f mm block + %.1f mm stroke"
+          % (d["CONTACT_GAP"], p["CONTACT_POGO_DEPTH"], p["CONTACT_STROKE_MAX"]))
+    check("contacts are not crushed", d["CONTACT_GAP"] >= 1.0,
+          "%.2f mm of standoff at full seat" % d["CONTACT_GAP"])
+
     _say("\nKEYING -- a wrong orientation must be impossible")
     # Rotate the ASSEMBLED module -- plate plus its steel posts. Rotating the
     # printed half alone proves nothing now that the posts are hardware.
