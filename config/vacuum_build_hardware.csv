@@ -1,0 +1,54 @@
+id,assembly,qty,unit,status,part_or_requirement,unit_price_usd,price_basis,placement_or_dependency,source
+battery,core,1,pack,owned,Zeee 3S 5200mAh XT60,,,135x43x22 mm owner body measurement; monitor and restraint required,
+pi,core,1,board,owned,Raspberry Pi 4,,,Pi tray; cooler microSD cable clearance and 5 V supply,
+lidar,core,1,unit,owned,RPLIDAR A1,,,Core-fixed; family geometry not delivered-revision check,
+motors,vacuum,2,motor,ordered,Pololu 4846 encoder gearmotor,56.95,2026-09-13 manufacturer listing; not actual order cost,Motor pods; receipt and actual purchase cost unreported,https://www.pololu.com/product/4846
+roboclaw,vacuum,1,board,ordered,Basicmicro IMC404 RoboClaw 2x7A,79.95,2026-09-13 manufacturer listing; not actual order cost,Both channels assigned to wheels; supply and current configuration,https://www.basicmicro.com/RoboClaw-2x7A-Motor-Controller_p_55.html
+tricut,vacuum,1,installed brush,order_category_reported,Dreame TriCut; expected order mapping,,,Exact invoice and drive/cutter interfaces pending,docs/VACUUM_RECOMMENDATION_REVIEW.md
+plain_brush,off_robot,1,comparison spare,order_mapping_inferred,Matching Dreame L40/X40 plain rubber brush,,,Confirm exact ordered variants; not carried with TriCut,docs/VACUUM_RECOMMENDATION_REVIEW.md
+filter,vacuum,1,installed filter,order_category_reported,Roborock S7/S8 family; expected order mapping,,,Actual seal and tab must fit allocation; spare quantities unknown,
+blower_kit,vacuum,1,kit,order_category_reported,BIQU Universal Turbo Kit1060000677,,,Includes expected Wonsmart blower and driver; confirm revision,https://global.bttwiki.com/Universal%20Turbo%20Kit.html
+blower_adapter,vacuum,0,additional purchase,expected_in_kit,BIQU printer control adapter,,,Optional installation; no extra driver purchase; count kit only once,
+wheels,vacuum,2,wheel,purchase_not_reported,goBILDA3626-0014-0072 Hogback72x24,8.99,2026-09-12 source record; recheck fulfillment,Selected baseline; wet grip and mounting-stack qualification,docs/DRIVETRAIN_SOURCING.md
+hubs,vacuum,2,hub,purchase_not_reported,goBILDA1309-0016-0004 Sonic4mm,6.99,2026-09-12 source record; recheck fulfillment,Buy with wheels; supplier mating pattern checked,docs/DRIVETRAIN_SOURCING.md
+wheel_screws,vacuum,8,screw,length_unselected,M4 wheel-to-hub fasteners,,,Four per wheel; length/head after plate-tire-hub solid check,
+motor_screws,vacuum,4,screw,length_unselected,Motor face fasteners; supplier drawing controls thread/depth,,,Two per motor proposed; no reused BDUAV M2 pattern,
+pod_pivots,vacuum,2,pivot assembly,unselected,Captured pivot pin or shoulder bolt and retainers,,,40 mm trailing pod; nominal y148/z36; strength and shaft diameter open,
+pod_bushings,vacuum,4,bushing,planning_quantity,Replaceable pivot bushings,,,Two per pod proposed; revise if bearing pivot selected,
+pod_springs,vacuum,2,spring,unselected,Captured pod spring,,,Rate/preload from wheel loading; 10 mm upward wheel travel,
+pod_stops,vacuum,2,stop set,design,Compression and droop limits,,,Printable stop geometry and pad material unselected,
+caster,vacuum,1,assembly,unselected,Soft-tread swivel caster,,,Complete swivel sweep <=80x80 and total height <=60; TENTE geometry reference only; removable axle and guards still needed,
+caster_fasteners,vacuum,1,set,unselected,Caster mounting fasteners,,,Exact count and size depend on caster SKU,
+roller_drive,vacuum,1,assembly,unselected,Main roller motor reduction coupling and feedback,,,TriCut cutter/end restraint and torque/RPM; 74x60x24 proposed bay,
+roller_stage,vacuum,1,channel,unselected,Dedicated roller motor power stage with current sensing,,,Choose after roller motor; RoboClaw wheel channels unavailable,
+side_brush,vacuum,1,brush,owned_candidate,Existing side-brush consumable,,,Interface and footprint unverified; bristles may extend,
+side_drive,vacuum,1,assembly,unselected,Side-brush gearmotor and hub,,,Narrow18x35mm plan allocation may require relocation,
+side_stage,vacuum,1,channel,unselected,Dedicated side-brush motor power stage with jam sensing,,,May share dual board with roller if ratings fit; avoid duplicate procurement,
+head_support,vacuum,1,set,design,Cassette receiver supports springs and captive retention,,,Four captive M3 retention points proposed; bearing/end supports follow actual brush,
+air_seals,vacuum,1,lot,design,Closed-cell gaskets and smooth flexible dirty-air joint,,,Seal widths bend radius material and lengths after interfaces,
+bin_gate,vacuum,1,assembly,design,Bin lid filter adapter rear emptying gate and clean-air release,,,Gate/hinge/seal hardware count and actuation still open,
+core_mcu,core,1,board,candidate,ESP32-DevKitC V4,,,Core power/interlocks; I/O and placement to close,https://documentation.espressif.com/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html
+bottom_mcu,vacuum,1,board,candidate,ESP32-DevKitC V4,,,Bottom actuator/stop handling; board and header fit to close,https://documentation.espressif.com/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html
+can_link,core_and_vacuum,2,transceiver,conditional,3.3 V MCU-compatible CAN transceivers plus two bus terminations,,,If proposed CAN module link adopted; exact boards and pinout open,
+logic_supply,core,1,regulator,candidate,Pololu D36V50F5 /4091,39.95,2026-09-13 manufacturer listing; rationed/backorders,5 V branch; verify load/temperature/cable drop; no stock guarantee,https://www.pololu.com/product/4091
+blower_supply,core,1,bare module,working_baseline,Cincon CHB100W-24S24,104.30,2026-09-13 DigiKey observed listing; cache and fulfillment to recheck,70x70x50 bay; 80W allocation; separate cooling carrier startup and protection qualification,https://www.digikey.com/en/products/detail/cincon-electronics-co-ltd/CHB100W-24S24/9684253
+pack_monitor,core,1,assembly,unselected,Pack/cell monitoring current sensing and charge interface,,,Owner hobby pack has no assumed integrated protection or automatic charger,
+protection,core,1,set,unselected,Main fuse branch fuses holders distribution and service disconnect,,,Rate to completed conductors current budget and startup; preserve braking-energy plan,
+braking_energy,core,1,provision,design,Regeneration absorption or voltage-clamp path,,,Full pack/protection-open behavior; dump resistor or active hardware as required,
+stop_system,core_and_vacuum,1,set,design,Accessible stop and hardware actuator inhibit path,,,Coordinate wheel stopping blower/brush off and power sequencing,
+blower_enable,vacuum,1,interface,unselected,Default-off Wonsmart driver enable and speed interface,,,Floating EN runs; MCU reset or unplug must not command run,
+floor_sensors,vacuum,1,coverage set,unselected,Cliff sensors bumper switches and short-range obstacle coverage,,,Exact number by coverage/stopping distance; LiDAR alone insufficient,
+core_bottom_connector,core_and_vacuum,1,mated set,unselected,Automatic power logic data and presence contacts,,,Voltage/current sequencing and retention clearances; no pinout frozen,
+head_connector,vacuum,1,mated set,unselected,Keyed manually serviced head power/signal connector,,,Ratings after drive choice; remains with replaceable cassette interface,
+harness,core_and_vacuum,1,lot,design,Power/encoder/sensor wires terminals sleeves and strain relief,,,Lengths and gauge after current/connector drawing; no breadboard motor power,
+structural_hardware,core_and_vacuum,1,lot,design,M3 fasteners washers inserts spacers and load spreaders,,,Counts and lengths after frame design; main pieces<=270x270,
+battery_restraint,core,1,set,design,Two retention straps plus tray padding and lead strain relief,,,No compression or fastener intrusion into pack,
+joint_locks,core_and_vacuum,1,set,unselected,Module seats capture/release and locks,,,Rear-inboard allocation14mmwide unresolved; include actuator/sensing if carried,
+pi_support,core,1,set,inventory_to_check,microSD cooling and short power/data cables,,,Pi4 only in baseline; do not buy duplicate boards,
+station,station,1,development bay,later_design,Capture transfer lift charge and bin evacuation hardware,,,Required for automation; excluded from first rolling vacuum purchase scope,
+measurement,off_robot,1,set,owned,Wattmeter scale and multimeter,,,Bench tools; no carried mass unless actually installed,
+converter_heatsink,core,1,heat sink,candidate,Cincon HBT127 / M-C091,4.82,2026-09-13 DigiKey product listing; category stock conflicts,Nominal stack only; source heat sink separately OR kit without duplicate purchase,https://www.digikey.com/en/products/detail/cincon-electronics-co-ltd/M-C091-HEAT-SINK/9684742
+converter_pad,core,1,pad,candidate,Cincon PH01,,,Pad required by stack; check whether included in chosen kit,https://www.cincon.com/_i/assets/upload/files/Datasheet-HS-LBQBHBFB.pdf
+converter_fan,core,1,fan,candidate,Noctua NF-A4x10 5V three-wire,,,12mm envelope with pads; 5V branch; cooling performance not qualified,https://www.noctua.at/en/products/nf-a4x10-5v/buy
+converter_carrier,core,1,assembly,design,Converter PCB decoupling local sense and default-off interface,,,Proposed66x64x1.6 PCB; unrouted; protected supply; fuse counted in protection row,docs/VACUUM_POWER_PACKAGING.md
+converter_cooling_hardware,core,1,set,design,Fan guard shroud thermal sensor heat-sink screws and mounts,,,Lengths after stack check; fan loss response and separated inlet/outlet airflow,docs/VACUUM_POWER_PACKAGING.md

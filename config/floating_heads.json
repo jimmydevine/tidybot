@@ -1,0 +1,63 @@
+{
+  "revision": "M: floating-head motion and load integration",
+  "status": "Packaging and mechanism requirements; not fabrication CAD or a purchase release",
+  "working_travel_mm": [-2, 10],
+  "tilt_limit_deg": 1.5,
+  "raised_travel_mm": 16,
+  "head_spring_rate_factor_cases": [0.8, 1, 1.2],
+  "parasitic_normal_force_n": [-1, 0, 1],
+  "vacuum_suction_force_n": [0, 5],
+  "assumptions": "Head spring rates and parasitic/suction forces are design sensitivities, not measured limits. Plane-following is an ideal mechanism requirement; guide friction, force moments, brush compression and floor steps are not solved.",
+  "shared_shifts_z_mm": {"pi_bay":20,"front_camera":16},
+  "vacuum_shifts_z_mm": {
+    "drive_control":18,"blower_driver":18,"G_bottom_supervisor":18,
+    "cincon_reference":18,"sink_reference":18,"motor_buck_reference":18,
+    "power_fan_reference":18,"clamp_resistor_reference":18,
+    "brake_cap_reference":18,"clamp_control_reference":18,
+    "floor_shelf_left":18,"floor_shelf_right":18,"floor_rear_stiffener":18,
+    "floor_front_stiffener":18,"H_shelf_rib":18
+  },
+  "cap_roof_raise_mm": 6,
+  "mop_tank_raise_mm": 18,
+  "mop_lift_raise_mm": 15,
+  "mop_drive_min_mm": [105,162,24],
+  "mop_drive_size_mm": [32,27,83],
+  "vacuum_drive_x_mm": 32,
+  "vacuum_drive_width_mm": 71,
+  "vacuum_head_height_mm": 48,
+  "vacuum_drive_height_mm": 29,
+  "modules": {
+    "vacuum": {
+      "moving_parts": ["vac_head", "vac_head_drive"],
+      "reference_mm": [137.5,36,0],
+      "target_contact_n": 3,
+      "spring_reference_q_mm": 4,
+      "total_spring_rate_n_mm": 0.12,
+      "mount_allowance_g": [65,90,130],
+      "mount_moving_g": [20,30,45],
+      "mount_cg_mm": [137.5,72,48],
+      "lift_addition_g": [45,62,88],
+      "lift_cg_mm": [213,72,43],
+      "riser_addition_g": [15,22,35],
+      "riser_cg_mm": [85,48,96]
+    },
+    "mop": {
+      "moving_parts": ["mop_pad", "mop_drive"],
+      "reference_mm": [137.5,171,0],
+      "target_contact_n": 8,
+      "spring_reference_q_mm": 1,
+      "total_spring_rate_n_mm": 0.16,
+      "calibration_pad_water_g": 50,
+      "mount_allowance_g": [60,80,115],
+      "mount_moving_g": [20,30,45],
+      "mount_cg_mm": [171,177,36],
+      "lift_addition_g": [0,0,0],
+      "lift_cg_mm": [213,170.5,41.5],
+      "riser_addition_g": [12,18,28],
+      "riser_cg_mm": [60.5,209.5,32]
+    }
+  },
+  "mass_policy": "Retain K complete hardware allowances and existing mop lift. Add M mounts/risers and vacuum lift without claiming savings from old suspension allowances. Resolve all head-part mass as moving; partition added mount mass. I geometry changes placement, not catalog mass substitution. These remain conservative planning totals.",
+  "actuator_reference": "https://www.actuonix.com/pq12-100-6-r",
+  "actuator_note": "Existing 20 mm stroke, 19 g actuator reference; 62 g installed lift allowance. 16 mm head lift is a linkage requirement, not a verified stroke/load/speed fit. Spring unloading and mechanical raised retention remain to detail."
+}

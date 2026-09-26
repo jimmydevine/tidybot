@@ -1,0 +1,86 @@
+{
+  "status": "LAYOUT_ONLY_NOT_FOR_FABRICATION",
+  "scope": "Everyday vacuum roller cassette and separate filter envelope; excludes complete robot and low-clearance head",
+  "measurement_date": "2026-09-06",
+  "measurement_source": "config/owned_parts.json",
+  "allowance_source": "config/vacuum_head_layout.json",
+  "default_roller_set": "short_7_25in",
+  "proposed_allowances_mm": {
+    "roller_center_distance": 30,
+    "axial_clearance_each_end": 2,
+    "end_support_bay_each_end": 10,
+    "drive_bay_width": 40,
+    "outer_wall": 3,
+    "front_rear_fin_clearance": 4,
+    "top_fin_clearance": 4,
+    "roof_thickness": 3,
+    "housing_ground_clearance": 3,
+    "split_joint_overlap": 15
+  },
+  "filter": {
+    "reported_body_envelope_mm": [
+      136,
+      76,
+      14
+    ],
+    "pull_tab": {
+      "reported_footprint_mm": [
+        20,
+        6.5
+      ],
+      "reported_approximate_rise_mm": 5,
+      "reported_location": "On one side of the filter, centered along the width axis",
+      "exact_face_and_footprint_orientation_verified": false
+    }
+  },
+  "filter_approximate_local_depth_mm": 19,
+  "variants": [
+    {
+      "id": "long_10in",
+      "label": "10 inch pair",
+      "roller_length_mm": 254,
+      "roller_diameter_mm": 28,
+      "roller_x_mm": 15,
+      "roller_center_y_mm": [
+        21.0,
+        51.0
+      ],
+      "roller_axis_height_mm": 14.0,
+      "max_fin_envelope_gap_mm": 2,
+      "cassette_study_width_mm": 324,
+      "cassette_study_depth_mm": 72,
+      "roof_reference_height_mm": 35,
+      "whole_piece_possible": false,
+      "panel_span_with_overlap_mm": 177.0
+    },
+    {
+      "id": "short_7_25in",
+      "label": "7.25 inch pair",
+      "roller_length_mm": 184.15,
+      "roller_diameter_mm": 28,
+      "roller_x_mm": 15,
+      "roller_center_y_mm": [
+        21.0,
+        51.0
+      ],
+      "roller_axis_height_mm": 14.0,
+      "max_fin_envelope_gap_mm": 2,
+      "cassette_study_width_mm": 254.15,
+      "cassette_study_depth_mm": 72,
+      "roof_reference_height_mm": 35,
+      "whole_piece_possible": true,
+      "panel_span_with_overlap_mm": 254.15
+    }
+  ],
+  "notes": [
+    "All allowances are designer proposals; roller and filter dimensions come from owned_parts.json.",
+    "30mm center spacing gives a 2mm gap between 28mm maximum fin envelopes. This is an unpowered clearance starting point, not an established cleaning setting.",
+    "Roller fin envelopes are tangent to the floor in this study; contact compression and compliant mounting remain to design.",
+    "The 40mm drive bay is a reservation without a selected motor or transmission. Its depth and height may grow.",
+    "Roller end fittings are not modeled. The entire reported end-to-end length is represented with the maximum fin diameter for preliminary packaging.",
+    "The filter is drawn separately, not installed in the roller cassette. Its exact pull-tab location is unknown.",
+    "Cassette roof height excludes any extra intake plenum, duct, drive protrusion, fastener or latch. It is not the height of the complete powered head.",
+    "The short cassette targets a whole 254.15mm-wide print under the owner's 275mm piece limit. Only the oversized long comparison uses a midpoint split and 15mm overlap; its assembled324mm width still exceeds the robot limit.",
+    "Current full-robot placement uses the short pair and a62mm side-drive height allowance; filter placement is recorded separately in ground_layout.json."
+  ]
+}

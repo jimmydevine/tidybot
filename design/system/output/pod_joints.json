@@ -1,0 +1,1279 @@
+{
+  "revision": "K: connected pod hardware and captured travel stop",
+  "config": {
+    "revision": "K: connected pod hardware and captured travel stop",
+    "status": "Candidate design; strength screens and nominal CAD, not fabrication release",
+    "stop": {
+      "fixed_yz_mm": [
+        125,
+        46
+      ],
+      "sleeve_od_mm": 8,
+      "sleeve_id_mm": 5.3,
+      "sleeve_length_mm": 6,
+      "sleeve_min_x_mm": 97,
+      "slot_width_mm": 8.5,
+      "moving_plate_min_x_mm": 98.5,
+      "moving_plate_thickness_mm": 3,
+      "edge_ligament_mm": 3,
+      "bolt_root_diameter_mm": 4.019,
+      "bolt_length_mm": 14,
+      "bolt_head_diameter_mm": 10,
+      "washer_mm": 0.8,
+      "nut_height_mm": 2.7,
+      "note": "M5x14 DIN 7991 screw + 8/5.3 x 6 mm steel sleeve + washer + DIN 439 thin nut. Linked screw source documents the 16 mm variant/head; 14 mm length is a procurement requirement. Sleeve OD/length have no selected SKU or tolerances. Nut needs a validated locking method. Slot endpoints compensate nominal radial clearance."
+    },
+    "tray": {
+      "top_z_mm": 21.5,
+      "thickness_mm": 4,
+      "net_strip_width_mm": 20,
+      "strip_cantilever_mm": 30,
+      "note": "4 mm 6061-T6 tray and two drilled 10 mm long aluminum bearing blocks replace the J printed structural cradle. Strip screen does not establish plate torsion, local bracket stiffness or fatigue."
+    },
+    "joints": {
+      "angle_leg_mm": 10,
+      "angle_wall_mm": 2,
+      "angle_length_mm": 22,
+      "cheek_bottom_z_mm": 28,
+      "M3_tensile_area_mm2": 5.03,
+      "bolt_tension_screen_mpa": 200,
+      "bolt_shear_screen_mpa": 120,
+      "metal_bearing_screen_mpa": 120,
+      "note": "Bolts/nuts shown as dimensioned envelopes. Exact grades, locking, torque, fit, spring-pin retention and supplied angle radii remain to be finalized."
+    },
+    "mass": {
+      "stock_factors": [
+        0.95,
+        1,
+        1.1
+      ],
+      "reserve_g": [
+        8,
+        15,
+        25
+      ],
+      "spring_bushings_g": 5,
+      "sensor_cable_reserve_g": 8,
+      "note": "K complete pod boundary includes fixed cheeks/cap and local rail clips; excludes motor, wheel and hub. Existing bottom-frame and unfinished F carrier allowances are retained, not removed as savings."
+    },
+    "sources": {
+      "aluminum": "https://www.hydro.com/globalassets/01-products--services/extruded-profiles/americas/ena-resources/alloy-data-sheets/hydro_2019_data_sheet_6061.pdf",
+      "stop_screw": "https://www.accu.co.uk/countersunk-socket-head-screws/495106-SSK-M5-16-10-9-Z",
+      "thin_nut": "https://uk.c.misumi-ec.com/book/EPE1_ENG_09_10_24/pdf/8002.pdf"
+    }
+  },
+  "slot": {
+    "radius_mm": 22.360679774997898,
+    "phi_rad": 2.677945044588987,
+    "radial_gap_mm": 0.25,
+    "end_trim_rad": 0.01118039811925475,
+    "start_rad": 2.6265846809117503,
+    "end_rad": 2.919444901611811,
+    "centreline_length_mm": 6.548553613909265,
+    "ends_yz_mm": [
+      [
+        125.53975093320454,
+        47.01356918797383
+      ],
+      [
+        123.18880048429597,
+        40.926619092861955
+      ]
+    ],
+    "nominal_contact_travel_mm": [
+      -2.5,
+      10
+    ]
+  },
+  "contacts": [
+    {
+      "travel_mm": -2.5,
+      "normal_yz": [
+        0.44220660773294046,
+        0.8969132154658696
+      ],
+      "contact_lever_mm": 22.360330386646794,
+      "cap_distance_mm": 0.2500000000000008
+    },
+    {
+      "travel_mm": 10,
+      "normal_yz": [
+        -0.45220660773293136,
+        -0.8919132154658741
+      ],
+      "contact_lever_mm": 22.360330386646794,
+      "cap_distance_mm": 0.2500000000000008
+    }
+  ],
+  "loads": {
+    "cases": [
+      {
+        "shim_mm": 0,
+        "fore_aft_n": -25,
+        "stop_force_n": 176.86152342137783,
+        "pin_moment_nmm": 3696.6501013205657,
+        "bearing_reaction_n": 358.07628890542736,
+        "max_inner_joint_bolt_n": 630.9880548295523
+      },
+      {
+        "shim_mm": 0,
+        "fore_aft_n": 25,
+        "stop_force_n": 257.36122842908776,
+        "pin_moment_nmm": 4993.430968952949,
+        "bearing_reaction_n": 469.7938866226004,
+        "max_inner_joint_bolt_n": 862.2536803018694
+      },
+      {
+        "shim_mm": 1,
+        "fore_aft_n": -25,
+        "stop_force_n": 172.99505010063083,
+        "pin_moment_nmm": 3691.998459142393,
+        "bearing_reaction_n": 357.32320690441946,
+        "max_inner_joint_bolt_n": 619.8751799405508
+      },
+      {
+        "shim_mm": 1,
+        "fore_aft_n": 25,
+        "stop_force_n": 253.49475510834077,
+        "pin_moment_nmm": 4987.6022709003455,
+        "bearing_reaction_n": 468.8614499993647,
+        "max_inner_joint_bolt_n": 851.1420706087528
+      },
+      {
+        "shim_mm": 2,
+        "fore_aft_n": -25,
+        "stop_force_n": 169.1512759444277,
+        "pin_moment_nmm": 3687.9034676923293,
+        "bearing_reaction_n": 356.60925360838803,
+        "max_inner_joint_bolt_n": 608.909942821786
+      },
+      {
+        "shim_mm": 2,
+        "fore_aft_n": 25,
+        "stop_force_n": 249.65098095213764,
+        "pin_moment_nmm": 4982.338198763664,
+        "bearing_reaction_n": 467.97131898824347,
+        "max_inner_joint_bolt_n": 840.1781939967941
+      },
+      {
+        "shim_mm": 3,
+        "fore_aft_n": -25,
+        "stop_force_n": 165.33316991611292,
+        "pin_moment_nmm": 3684.4107197370026,
+        "bearing_reaction_n": 355.9377733885404,
+        "max_inner_joint_bolt_n": 598.1108072840757
+      },
+      {
+        "shim_mm": 3,
+        "fore_aft_n": 25,
+        "stop_force_n": 245.83287492382289,
+        "pin_moment_nmm": 4977.691739348069,
+        "bearing_reaction_n": 467.127709595676,
+        "max_inner_joint_bolt_n": 829.3805200618872
+      },
+      {
+        "shim_mm": 4,
+        "fore_aft_n": -25,
+        "stop_force_n": 161.54423614466694,
+        "pin_moment_nmm": 3681.573621359839,
+        "bearing_reaction_n": 355.31268208867505,
+        "max_inner_joint_bolt_n": 587.4994287840575
+      },
+      {
+        "shim_mm": 4,
+        "fore_aft_n": 25,
+        "stop_force_n": 242.0439411523769,
+        "pin_moment_nmm": 4973.724879885489,
+        "bearing_reaction_n": 466.3355535170621,
+        "max_inner_joint_bolt_n": 818.7707096522149
+      },
+      {
+        "shim_mm": 5,
+        "fore_aft_n": -25,
+        "stop_force_n": 157.78863880040868,
+        "pin_moment_nmm": 3679.455196963583,
+        "bearing_reaction_n": 354.73859864627195,
+        "max_inner_joint_bolt_n": 577.1013701478092
+      },
+      {
+        "shim_mm": 5,
+        "fore_aft_n": 25,
+        "stop_force_n": 238.2883438081186,
+        "pin_moment_nmm": 4970.5106316128085,
+        "bearing_reaction_n": 465.6006587030457,
+        "max_inner_joint_bolt_n": 808.3743302046307
+      },
+      {
+        "shim_mm": 6,
+        "fore_aft_n": -25,
+        "stop_force_n": 154.07136325041762,
+        "pin_moment_nmm": 3678.130412452626,
+        "bearing_reaction_n": 354.22101450135386,
+        "max_inner_joint_bolt_n": 566.9470174257048
+      },
+      {
+        "shim_mm": 6,
+        "fore_aft_n": 25,
+        "stop_force_n": 234.57106825812758,
+        "pin_moment_nmm": 4968.135620458207,
+        "bearing_reaction_n": 464.92991488104605,
+        "max_inner_joint_bolt_n": 798.2217710388134
+      }
+    ],
+    "max_stop_force_n": 257.36122842908776,
+    "pivot_bending_mpa": 99.3411527121268,
+    "pivot_passes": true,
+    "inner_rail_joint": {
+      "max_bolt_force_n": 862.2536803018694,
+      "M3_shear_mpa": 171.42220284331398,
+      "M4_shear_mpa": 98.2065695104635,
+      "M3_passes": false,
+      "M4_passes": true,
+      "angle_countersink_edge_shear_mpa": 69.59271027456575,
+      "angle_edge_passes": true,
+      "rail_rear_edge_shear_mpa": 43.54816567181159,
+      "scope": "Two M4 bolts at Y=142/150.5, Z=57.5; inner rail/cheek to Y=156; angle front Y=137.25. Includes full +/-85 N cap branch bound. Other frame joints, preload and fatigue remain unqualified."
+    },
+    "stop_bolt_bending_mpa": 121.1463859153002,
+    "stop_bolt_passes": true,
+    "slot_bearing_mpa": 10.723384517878657,
+    "slot_edge_shear_mpa": 14.29784602383821,
+    "bearing_block_peak_reaction_n": 469.7938866226004,
+    "tray_strip": [
+      {
+        "thickness_mm": 3,
+        "bending_mpa": 150.0,
+        "deflection_mm": 0.43478260869565216,
+        "passes": false
+      },
+      {
+        "thickness_mm": 4,
+        "bending_mpa": 84.375,
+        "deflection_mm": 0.18342391304347827,
+        "passes": true
+      }
+    ],
+    "scope": "Static hand-calculation screens. No claim of complete fatigue, plate torsion, thread/preload or motor-bracket qualification."
+  },
+  "fabrication_release": false,
+  "full_structural_qualification": false,
+  "input_hashes": {
+    "system_design.json": "0fcabe616ea34c53c47c1d3dbd72489484af97ee88e86682df02577d6bf473a2",
+    "core_partition.json": "13c706f6e34d7dd15cbcf47dd890ee2b8d03b5726512eb5da802b25016d1bc11",
+    "frame_joints.json": "14dca6f7a3bdebac7e898b5191915c4c2b0a30231f19411a05d1bdd908b5bb35",
+    "floor_support.json": "f6bec40b01c20f41a5239abbd6beb3d98dbecb4d64321384e7a21a50e500b27c",
+    "height_mounting.json": "11dd586055ab38d75ba7043cc78b9cba4a4124c12a3ab119a1ccbd9a2ee4bfab",
+    "wheel_pod.json": "d330c86075b2f086a4233723457989fa739331fa512c437cc68f2580fbf40dd7",
+    "pod_joints.json": "fdcde2724f68d2f7ed7328b9e75a31b433e01bfbf1d20232191db3f8c5fcad1b"
+  },
+  "mass": {
+    "items": [
+      {
+        "id": "tray",
+        "mass_g": 45.003857867904614,
+        "cg_mm": [
+          68.39850702628729,
+          124.09636071203778,
+          19.505341496402078
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "bearing_block_0",
+        "mass_g": 9.114874642724242,
+        "cg_mm": [
+          43.99999999999999,
+          145.0,
+          32.77815683989551
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "bearing_bolt_0_140",
+        "mass_g": 0.6658605629283569,
+        "cg_mm": [
+          44.0,
+          140.0,
+          21.744791666666668
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "bearing_bolt_0_150",
+        "mass_g": 0.6658605629283569,
+        "cg_mm": [
+          44.0,
+          150.0,
+          21.744791666666668
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "bearing_block_1",
+        "mass_g": 9.114874642724242,
+        "cg_mm": [
+          88.00000000000001,
+          144.99999999999997,
+          32.77815683989551
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "bearing_bolt_1_140",
+        "mass_g": 0.6658605629283572,
+        "cg_mm": [
+          88.0,
+          140.0,
+          21.744791666666668
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "bearing_bolt_1_150",
+        "mass_g": 0.6658605629283572,
+        "cg_mm": [
+          88.0,
+          150.00000000000003,
+          21.744791666666668
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_bracket",
+        "mass_g": 8.5,
+        "cg_mm": [
+          42.73914471281233,
+          104.99999999999999,
+          26.04945941122388
+        ],
+        "basis": "catalog"
+      },
+      {
+        "id": "motor_screw_0",
+        "mass_g": 0.4439070419522378,
+        "cg_mm": [
+          26.3671875,
+          96.49999999999999,
+          35.99999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_screw_1",
+        "mass_g": 0.4439070419522378,
+        "cg_mm": [
+          26.3671875,
+          113.49999999999999,
+          35.99999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_39.85_94.15",
+        "mass_g": 1.1985490132710421,
+        "cg_mm": [
+          39.85,
+          94.15,
+          20.699999999999996
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_39.85_94.15_washer",
+        "mass_g": 0.075340889620227,
+        "cg_mm": [
+          39.85000000000001,
+          94.15000000000002,
+          17.250000000000007
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_39.85_94.15_nut",
+        "mass_g": 0.3418568087623303,
+        "cg_mm": [
+          39.85,
+          94.15,
+          15.799999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_39.85_115.85",
+        "mass_g": 1.1985490132710421,
+        "cg_mm": [
+          39.85,
+          115.84999999999998,
+          20.699999999999996
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_39.85_115.85_washer",
+        "mass_g": 0.075340889620227,
+        "cg_mm": [
+          39.85000000000001,
+          115.84999999999998,
+          17.250000000000007
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_39.85_115.85_nut",
+        "mass_g": 0.3418568087623303,
+        "cg_mm": [
+          39.85,
+          115.85,
+          15.799999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_65.25_94.15",
+        "mass_g": 1.198549013271042,
+        "cg_mm": [
+          65.25,
+          94.15000000000002,
+          20.699999999999996
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_65.25_94.15_washer",
+        "mass_g": 0.07534088962022698,
+        "cg_mm": [
+          65.25,
+          94.15000000000003,
+          17.249999999999996
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_65.25_94.15_nut",
+        "mass_g": 0.34185680876233043,
+        "cg_mm": [
+          65.25,
+          94.15,
+          15.800000000000002
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_65.25_115.85",
+        "mass_g": 1.198549013271042,
+        "cg_mm": [
+          65.25,
+          115.85000000000001,
+          20.699999999999996
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_65.25_115.85_washer",
+        "mass_g": 0.07534088962022699,
+        "cg_mm": [
+          65.25,
+          115.84999999999995,
+          17.249999999999993
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "motor_foot_65.25_115.85_nut",
+        "mass_g": 0.34185680876233043,
+        "cg_mm": [
+          65.25,
+          115.85,
+          15.800000000000002
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "lower_fork",
+        "mass_g": 3.2325920100193017,
+        "cg_mm": [
+          80.00720990752994,
+          129.00000000000003,
+          19.231744832782123
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "lower_fork_bolt_65",
+        "mass_g": 0.5548838024402973,
+        "cg_mm": [
+          64.99999999999999,
+          129.00000000000003,
+          18.293749999999996
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "lower_fork_bolt_94.5",
+        "mass_g": 0.5548838024402973,
+        "cg_mm": [
+          94.49999999999999,
+          129.00000000000003,
+          18.29375
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "stop_arm",
+        "mass_g": 4.572972905062419,
+        "cg_mm": [
+          100.00000000000003,
+          125.50678032635031,
+          32.45683033343164
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "stop_arm_angle",
+        "mass_g": 1.561521468357478,
+        "cg_mm": [
+          104.01435387830858,
+          134.26885574228285,
+          23.719338587034756
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "arm_angle_horizontal_123",
+        "mass_g": 0.4439070419522378,
+        "cg_mm": [
+          101.13281249999999,
+          122.99999999999999,
+          25.499999999999996
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "arm_angle_horizontal_132",
+        "mass_g": 0.4439070419522379,
+        "cg_mm": [
+          101.1328125,
+          132.0,
+          25.500000000000004
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "arm_angle_vertical_138",
+        "mass_g": 0.6658605629283572,
+        "cg_mm": [
+          104.5,
+          138.0,
+          19.255208333333336
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "arm_angle_vertical_138_washer",
+        "mass_g": 0.07534088962022698,
+        "cg_mm": [
+          104.5,
+          138.00000000000003,
+          17.249999999999996
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "arm_angle_vertical_138_nut",
+        "mass_g": 0.3418568087623306,
+        "cg_mm": [
+          104.50000000000001,
+          138.0,
+          15.800000000000002
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "arm_angle_vertical_150",
+        "mass_g": 0.6658605629283572,
+        "cg_mm": [
+          104.5,
+          150.00000000000003,
+          19.255208333333336
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "arm_angle_vertical_150_washer",
+        "mass_g": 0.07534088962022698,
+        "cg_mm": [
+          104.5,
+          150.0,
+          17.249999999999996
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "arm_angle_vertical_150_nut",
+        "mass_g": 0.3418568087623306,
+        "cg_mm": [
+          104.50000000000001,
+          150.0,
+          15.800000000000002
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "cheek_outer",
+        "mass_g": 5.406079226885099,
+        "cg_mm": [
+          27.515030546825784,
+          142.84174764025724,
+          45.23359632756765
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "cheek_inner",
+        "mass_g": 7.983423347157803,
+        "cg_mm": [
+          104.48381276629716,
+          137.5349765721601,
+          46.03894006324547
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "cap",
+        "mass_g": 28.74902089385792,
+        "cg_mm": [
+          65.85433363088369,
+          131.33755898526343,
+          63.49576039507936
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_cap_angle",
+        "mass_g": 1.991316915144233,
+        "cg_mm": [
+          32.26325678799046,
+          143.00000000000003,
+          58.83522616985329
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "inner_cap_angle",
+        "mass_g": 2.2061376215277155,
+        "cg_mm": [
+          99.10257818737752,
+          146.7049187671834,
+          58.51957219953939
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_rail_angle",
+        "mass_g": 1.991316915144233,
+        "cg_mm": [
+          31.238636048529518,
+          143.00000000000003,
+          68.14015309068579
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_cheek_joint_136",
+        "mass_g": 0.6658605629283569,
+        "cg_mm": [
+          30.244791666666664,
+          135.99999999999997,
+          56.50000000000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_cheek_joint_136_washer",
+        "mass_g": 0.07534088962022699,
+        "cg_mm": [
+          31.25,
+          136.0,
+          56.49999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_cheek_joint_136_nut",
+        "mass_g": 0.3418568087623304,
+        "cg_mm": [
+          32.7,
+          136.0,
+          56.50000000000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_rail_joint_136",
+        "mass_g": 0.5548838024402976,
+        "cg_mm": [
+          29.29375,
+          136.0,
+          70.99999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_rail_joint_136_washer",
+        "mass_g": 0.07534088962022698,
+        "cg_mm": [
+          30.25,
+          136.00000000000003,
+          70.99999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_rail_joint_136_nut",
+        "mass_g": 0.34185680876233043,
+        "cg_mm": [
+          31.7,
+          136.0,
+          71.0
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_cheek_joint_150",
+        "mass_g": 0.6658605629283569,
+        "cg_mm": [
+          30.244791666666664,
+          150.0,
+          56.50000000000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_cheek_joint_150_washer",
+        "mass_g": 0.07534088962022699,
+        "cg_mm": [
+          31.25,
+          150.0,
+          56.49999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_cheek_joint_150_nut",
+        "mass_g": 0.3418568087623304,
+        "cg_mm": [
+          32.7,
+          150.0,
+          56.50000000000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_rail_joint_150",
+        "mass_g": 0.5548838024402976,
+        "cg_mm": [
+          29.29375,
+          150.0,
+          70.99999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_rail_joint_150_washer",
+        "mass_g": 0.07534088962022698,
+        "cg_mm": [
+          30.25,
+          150.0,
+          70.99999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_rail_joint_150_nut",
+        "mass_g": 0.34185680876233043,
+        "cg_mm": [
+          31.7,
+          150.0,
+          71.0
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "inner_cheek_joint_142",
+        "mass_g": 1.8413921740240966,
+        "cg_mm": [
+          106.77142857142857,
+          142.0,
+          57.5
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "inner_cheek_joint_142_washer",
+        "mass_g": 0.1376111830051935,
+        "cg_mm": [
+          109.25000000000001,
+          142.00000000000003,
+          57.5
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "inner_cheek_joint_142_nut",
+        "mass_g": 0.8214632887853627,
+        "cg_mm": [
+          111.1,
+          142.0,
+          57.5
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "inner_cheek_joint_150.5",
+        "mass_g": 1.8413921740240966,
+        "cg_mm": [
+          106.77142857142857,
+          150.50000000000003,
+          57.5
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "inner_cheek_joint_150.5_washer",
+        "mass_g": 0.1376111830051935,
+        "cg_mm": [
+          109.25000000000001,
+          150.50000000000003,
+          57.5
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "inner_cheek_joint_150.5_nut",
+        "mass_g": 0.8214632887853627,
+        "cg_mm": [
+          111.1,
+          150.5,
+          57.5
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_stack_joint",
+        "mass_g": 1.1985490132710426,
+        "cg_mm": [
+          35.0,
+          143.0,
+          64.20000000000002
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_stack_joint_washer",
+        "mass_g": 0.07534088962022699,
+        "cg_mm": [
+          35.0,
+          143.0,
+          59.75000000000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "outer_stack_joint_nut",
+        "mass_g": 0.3418568087623304,
+        "cg_mm": [
+          35.0,
+          143.0,
+          58.29999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "inner_cap_joint",
+        "mass_g": 0.4439070419522379,
+        "cg_mm": [
+          97.0,
+          146.50000000000003,
+          62.63281250000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_fork",
+        "mass_g": 2.437458189580608,
+        "cg_mm": [
+          79.68906615888208,
+          131.78868036722258,
+          52.708554459679355
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "preload_shim",
+        "mass_g": 4.220272949802352,
+        "cg_mm": [
+          78.99180343002436,
+          133.77049604068176,
+          59.00000000000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_fork_bolt_70",
+        "mass_g": 0.9987908443925357,
+        "cg_mm": [
+          70.0,
+          141.00000000000003,
+          57.83680555555555
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_fork_bolt_70_washer",
+        "mass_g": 0.07534088962022698,
+        "cg_mm": [
+          70.0,
+          141.0,
+          53.749999999999986
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_fork_bolt_70_nut",
+        "mass_g": 0.3418568087623304,
+        "cg_mm": [
+          70.0,
+          141.0,
+          52.29999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_fork_bolt_88.5",
+        "mass_g": 0.9987908443925357,
+        "cg_mm": [
+          88.49999999999999,
+          141.00000000000003,
+          57.83680555555555
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_fork_bolt_88.5_washer",
+        "mass_g": 0.07534088962022698,
+        "cg_mm": [
+          88.49999999999999,
+          141.0,
+          53.749999999999986
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_fork_bolt_88.5_nut",
+        "mass_g": 0.3418568087623305,
+        "cg_mm": [
+          88.5,
+          141.0,
+          52.3
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "pivot_pin",
+        "mass_g": 31.566722983270214,
+        "cg_mm": [
+          66.00000000000001,
+          145.00000000000003,
+          36.00000000000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "collar_0",
+        "mass_g": 5.1,
+        "cg_mm": [
+          34.0,
+          144.99999999999997,
+          35.99999999999999
+        ],
+        "basis": "catalog"
+      },
+      {
+        "id": "collar_1",
+        "mass_g": 5.1,
+        "cg_mm": [
+          97.99999999999997,
+          144.99999999999997,
+          35.99999999999999
+        ],
+        "basis": "catalog"
+      },
+      {
+        "id": "stop_sleeve",
+        "mass_g": 1.328391823042071,
+        "cg_mm": [
+          100.00000000000001,
+          124.99999999999999,
+          45.99999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "stop_washer",
+        "mass_g": 0.35468172651983765,
+        "cg_mm": [
+          96.60000000000002,
+          125.00000000000001,
+          46.0
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "stop_nut",
+        "mass_g": 1.0043396824169388,
+        "cg_mm": [
+          94.85,
+          125.0,
+          46.000000000000014
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "stop_screw",
+        "mass_g": 2.6716627524903194,
+        "cg_mm": [
+          100.19591346153845,
+          125.0,
+          46.00000000000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "lower_cup",
+        "mass_g": 0.7403365486439767,
+        "cg_mm": [
+          79.99999409732828,
+          128.99999913162688,
+          24.00000225442827
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_cup",
+        "mass_g": 0.7403365486117898,
+        "cg_mm": [
+          79.9999940973445,
+          128.99999913150012,
+          50.0000022544818
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "lower_guide",
+        "mass_g": 0.13016796461067617,
+        "cg_mm": [
+          79.99999999999999,
+          129.0,
+          34.24999999999999
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_guide",
+        "mass_g": 0.4022190106469888,
+        "cg_mm": [
+          80.0,
+          129.0,
+          39.75000000000001
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "lower_trunnion",
+        "mass_g": 1.2540373935150726,
+        "cg_mm": [
+          79.99999999999999,
+          129.0,
+          24.0
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "upper_trunnion",
+        "mass_g": 1.2540373935150724,
+        "cg_mm": [
+          79.99999999999999,
+          128.99999999999997,
+          49.999999999999986
+        ],
+        "basis": "solid nominal volume"
+      },
+      {
+        "id": "spring_and_bushings",
+        "mass_g": 5,
+        "cg_mm": [
+          70,
+          135,
+          36
+        ],
+        "basis": "allowance"
+      },
+      {
+        "id": "sensor_and_cables",
+        "mass_g": 8,
+        "cg_mm": [
+          80,
+          140,
+          45
+        ],
+        "basis": "allowance"
+      }
+    ],
+    "modeled_and_allowance_subtotal_g": 229.51343847186743,
+    "completion_reserve_g": [
+      8,
+      15,
+      25
+    ],
+    "per_pod_interval_g": [
+      226.03776654827405,
+      244.51343847186743,
+      277.46478231905417
+    ],
+    "cg_mm": [
+      69.05381000949772,
+      133.75181628624492,
+      38.43737880682511
+    ],
+    "includes": "Moving metalwork, fixed cap/cheeks, local rail clips, shown fasteners, J springs/pivot/collars, sensor/cable and completion reserves",
+    "excludes": "Motor, wheel, hub and longitudinal floor rails/frame. Existing frame/carrier allowances retained in K mass scenario."
+  },
+  "ground": {
+    "vacuum": {
+      "before_g": [
+        3668.0449784355283,
+        4776.942082563714,
+        6406.136290820085
+      ],
+      "after_g": [
+        4036.1205115320763,
+        5141.96895950745,
+        6781.065855458194
+      ],
+      "cg_mm": [
+        129.42857697712012,
+        118.87122814805913,
+        73.9738068891069
+      ],
+      "nominal_delta_g": 365.02687694373526
+    },
+    "mop": {
+      "before_g": [
+        3604.9449784355284,
+        4490.942082563714,
+        5799.136290820086
+      ],
+      "after_g": [
+        3973.0205115320764,
+        4855.96895950745,
+        6174.065855458194
+      ],
+      "cg_mm": [
+        130.7819779296919,
+        139.34894785334146,
+        75.0167519351968
+      ],
+      "nominal_delta_g": 365.02687694373526
+    },
+    "low": {
+      "before_g": [
+        3874.9449784355284,
+        5055.942082563714,
+        6902.136290820085
+      ],
+      "after_g": [
+        4243.020511532077,
+        5420.96895950745,
+        7277.065855458194
+      ],
+      "cg_mm": [
+        134.4696364680541,
+        122.13991082804657,
+        73.73386968751498
+      ],
+      "nominal_delta_g": 365.02687694373526
+    }
+  },
+  "preload": {
+    "vacuum": {
+      "wheel_load_ranges_n": [
+        [
+          23.577659956509944,
+          24.55256724056583
+        ],
+        [
+          20.28206918652893,
+          21.256976470584817
+        ]
+      ],
+      "required_shim_ranges_mm": [
+        [
+          5.288829978254972,
+          5.776283620282914
+        ],
+        [
+          3.6410345932644645,
+          4.128488235292409
+        ]
+      ],
+      "within_adjuster_range": true
+    },
+    "mop": {
+      "wheel_load_ranges_n": [
+        [
+          17.428456444847523,
+          19.70831702974514
+        ],
+        [
+          14.83803130502845,
+          17.11789188992607
+        ]
+      ],
+      "required_shim_ranges_mm": [
+        [
+          2.2142282224237615,
+          3.3541585148725694
+        ],
+        [
+          0.9190156525142248,
+          2.0589459449630354
+        ]
+      ],
+      "within_adjuster_range": true
+    },
+    "low": {
+      "wheel_load_ranges_n": [
+        [
+          25.8517933852557,
+          26.785805202640905
+        ],
+        [
+          18.66007858198543,
+          20.459364346200662
+        ]
+      ],
+      "required_shim_ranges_mm": [
+        [
+          6.42589669262785,
+          6.892902601320452
+        ],
+        [
+          2.8300392909927155,
+          3.729682173100331
+        ]
+      ],
+      "within_adjuster_range": false
+    }
+  },
+  "mass_boundary": "Only G pod entries are replaced; motors kept once and separated for CG. All other G hardware, including bottom-frame and unfinished carrier allowances, remains. I changes are not silently combined."
+}

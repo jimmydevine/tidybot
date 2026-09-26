@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tidybot — suspension clearance and caster mount</title>
+<style>
+body{font:16px system-ui,sans-serif;color:#22333b;background:#f4f2ea;margin:0;padding:24px;max-width:1150px;margin-inline:auto}
+h1{font-size:28px;margin-bottom:8px}h2{font-size:20px}p{line-height:1.55;max-width:90ch}
+.controls,.cards{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:20px 0}
+select{font:inherit;padding:8px;border-radius:6px}label{cursor:pointer}.card{background:white;border:1px solid #ccc9bf;border-radius:8px;padding:16px;flex:1;min-width:210px}.number{display:block;font-size:28px;font-weight:650;margin:6px 0}
+.views{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}.view{background:white;border:1px solid #ccc9bf;border-radius:8px;padding:12px}svg{width:100%;height:auto}svg text{font:11px system-ui,sans-serif}a{color:#056878}.note{color:#775618}footer{margin-top:24px;border-top:1px solid #ccc;padding-top:10px}
+@media(max-width:850px){.views{grid-template-columns:1fr}body{padding:14px}}
+</style>
+<h1>Suspension clearance and caster mount</h1>
+<p>The I layout keeps 10 mm wheel bump and 2.5 mm candidate droop. A shorter lidar and rotated connector reservation recover height clearance; a taller, documented caster fitting gets its own mounting space.</p>
+<p class="note">Review geometry, not fabrication files. Heights are sampled calculations, not measured performance. Caster retention during lifting and the complete suspension joints remain open.</p>
+<div class="controls"><label>Bottom <select id="bottom"><option value="vacuum">Vacuum</option><option value="mop">Mop</option><option value="low">Sofa extension</option></select></label><label><input id="previous" type="checkbox" checked> Show previous placement</label></div>
+<div class="cards"><div class="card">Previous sampled height<strong class="number" id="oldHeight"></strong>A1 with H suspension</div><div class="card">Revised sampled height<strong class="number" id="newHeight"></strong>C1 candidate, full travel range sampled</div><div class="card">Including 2 mm reserve<strong class="number" id="reserve"></strong>180 mm project limit</div></div>
+<div class="views"><section class="view"><h2>Side projection — nominal pose</h2><svg id="layout" viewBox="0 0 620 425" role="img" aria-label="Nominal side projection showing lidar, battery, connector and rear equipment"></svg><p>Front is left. Outlines can overlap in this projection while being separated across the robot’s width. Hover over an outline for its name.</p><p><span style="color:#076a93">Blue: lidar</span> · <span style="color:#9c4824">Orange: connector</span> · <span style="color:#007566">Green: changed rear equipment</span> · dashed: previous placement</p></section>
+<section class="view"><h2>Caster fitting — reference floor</h2><svg id="caster" viewBox="0 0 440 320" role="img" aria-label="Caster plate and threaded stem mounting stack"></svg><p>The full stem tip governs clearance. The upper nut secures the stem to the plate; retention of the caster on the plug end still needs confirmation.</p><p id="optics"></p></section></div>
+<footer><a href="height_mounting.md">Calculations and design decisions</a> · <a href="height_mounting.FCStd">Vacuum FreeCAD model</a> · <a href="height_mounting_mop.FCStd">Mop</a> · <a href="height_mounting_low.FCStd">Sofa</a></footer>
+<script>
+'use strict';
+const D=__DATA__;
+const $=id=>document.getElementById(id), escapeText=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const colors={lidar:'#076a93',I_lidar_mount:'#076a93',top_port:'#9c4824',vac_bin_upper:'#007566',blower_bay:'#007566',exhaust:'#007566',mop_pump:'#007566',battery_bay:'#766537'};
+function box(p,dashed=false){const [x,y,z]=p.min,[w,l,h]=p.size,col=colors[p.id]||'#a5acac';return `<rect x="${25+2*y}" y="${390-2*(z+h)}" width="${2*l}" height="${2*h}" fill="${dashed?'none':col}" fill-opacity="${colors[p.id]?.16:.025}" stroke="${col}" stroke-width="${colors[p.id]?1.5:.5}" ${dashed?'stroke-dasharray="5 3"':''}><title>${escapeText(p.id)}: ${escapeText(p.min.join(', '))}; ${escapeText(p.size.join(' × '))} mm</title></rect>`;}
+function render(){
+ const b=$('bottom').value,r=D.after[b];
+ $('oldHeight').textContent=D.before[b].max_height_mm.toFixed(2)+' mm';
+ $('newHeight').textContent=r.max_height_mm.toFixed(2)+' mm';
+ $('reserve').textContent=r.reserved_height_mm.toFixed(2)+' mm';
+ let s='<line x1="25" y1="390" x2="575" y2="390" stroke="#333"/><text x="26" y="412">Front</text><text x="540" y="412">Rear</text><line x1="25" y1="30" x2="575" y2="30" stroke="#a73535" stroke-dasharray="5 3"/><text x="400" y="22" fill="#a73535">180 mm limit (nominal frame)</text>';
+ s+=D.parts[b].filter(p=>!p.id.startsWith('G_')).map(p=>box(p)).join('');
+ if($('previous').checked){
+  s+=box({id:'lidar',min:[86,94,124.1],size:[96.8,70.3,55]},true);
+  s+=box({id:'top_port',min:[193,88,124.1],size:[78,32,35]},true);
+  for(const p of D.parts[b]){const q=structuredClone(p);if(q.id==='vac_bin_upper'){q.min[2]=62;q.size[2]=32;s+=box(q,true);}else if(['blower_bay','exhaust'].includes(q.id)){q.min[2]-=10;s+=box(q,true);}else if(q.id==='mop_pump'){q.min[2]-=8;s+=box(q,true);}}
+ }
+ s+='<text x="245" y="68" fill="#076a93">C1 lidar</text><text x="310" y="156" fill="#766537">Battery</text>';$('layout').innerHTML=s;
+ const k=D.stack,z=v=>285-(v-40)*6;
+ let c=`<rect x="65" y="${z(50.5)}" width="90" height="${z(40)-z(50.5)}" fill="#e0e4e2"/><text x="190" y="${z(50.5)+4}">Bare caster top 50.5</text>`;
+ c+=`<rect x="99" y="${z(k.plate_bottom_mm)}" width="22" height="36" fill="#8b949a"/><rect x="60" y="${z(k.plate_top_mm)}" width="100" height="18" fill="#a2b2b8"/><rect x="106" y="${z(k.thread_tip_mm)}" width="8" height="90" fill="#697b84"/>`;
+ c+=`<rect x="95" y="${z(k.washer_top_mm)}" width="30" height="9.6" fill="#8b949a"/><rect x="97" y="${z(k.nut_top_mm)}" width="26" height="48" fill="#68727b"/>`;
+ for(const [v,text] of [[k.overhead_mm,'Equipment underside 74.0'],[k.thread_tip_mm,'Thread tip 71.5'],[k.nut_top_mm,'Nut top 69.1'],[k.plate_top_mm,'Plate top 59.5'],[k.plate_bottom_mm,'Shoulder 56.5']])c+=`<line x1="123" x2="180" y1="${z(v)}" y2="${z(v)}" stroke="#888"/><text x="190" y="${z(v)+4}">${text}</text>`;
+ c+=`<line x1="40" x2="170" y1="${z(k.overhead_mm)}" y2="${z(k.overhead_mm)}" stroke="#007566" stroke-width="3"/><text x="25" y="28">Dimensions in mm; underside of caster cropped</text>`;$('caster').innerHTML=c;
+ $('optics').textContent='Optical enclosure clears the connector reservation by '+D.optics.clear_gap_mm.toFixed(1)+' mm nominal. Mounts, cable loops and the final cap still need detailed checks.';
+}
+$('bottom').addEventListener('change',render);$('previous').addEventListener('change',render);render();
+</script></html>

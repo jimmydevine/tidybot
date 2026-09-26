@@ -1,0 +1,10 @@
+{
+  "fabrication_release": false,
+  "scope": "Allocation envelopes only; mounting hardware absent",
+  "scenes": {
+    "floating_heads_vacuum_working": 111,
+    "floating_heads_vacuum_raised": 111,
+    "floating_heads_mop_working": 101,
+    "floating_heads_mop_raised": 101
+  }
+}

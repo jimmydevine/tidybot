@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 670" role="img">
+<title>Everyday vacuum bottom · top view</title>
+<style>text{font-family:Arial,sans-serif;fill:#20344b} .dim{stroke:#5c7186;stroke-width:1;marker-start:url(#a);marker-end:url(#a)}</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5c7186"/></marker></defs>
+<rect width="900" height="670" fill="white"/>
+<text x="30" y="30" font-size="23" text-anchor="start">Everyday vacuum bottom · top view</text>
+<text x="30" y="54" font-size="12" text-anchor="start">PLACEMENT STUDY · mm · front at top · component sources and allowances in report</text>
+<rect x="85" y="110" width="456" height="480" fill="#fafbfc" stroke="#64798d" />
+<line x1="85" y1="83" x2="541" y2="83" class="dim"/>
+<text x="313" y="75" font-size="13" text-anchor="middle">380 mm body width</text>
+<line x1="57" y1="110" x2="57" y2="590" class="dim"/>
+<text x="42" y="350" font-size="12" text-anchor="middle">400</text>
+<g><title>Left motor / hub / mount bay | proposed reservation | 96 x 46 x 50 mm</title>
+<rect x="111.4" y="299.6" width="115.2" height="55.2" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Right motor / hub / mount bay | proposed reservation | 96 x 46 x 50 mm</title>
+<rect x="399.4" y="299.6" width="115.2" height="55.2" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Dirty-air duct corridor | proposed reservation | 80 x 117 x 35 mm</title>
+<rect x="261.4" y="262.4" width="96" height="140.4" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Rear-pull bin + filter drawer | proposed reservation | 190 x 156 x 93 mm</title>
+<rect x="217" y="402.8" width="228" height="187.2" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>CBM blower / mount bay | proposed reservation | 41 x 110 x 100 mm</title>
+<rect x="125.8" y="442.4" width="49.2" height="132" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Clean-air plenum + seal release | proposed reservation | 35 x 146 x 93 mm</title>
+<rect x="175" y="402.8" width="42" height="175.2" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Rear exhaust turn / diffuser | proposed reservation | 41 x 13 x 62 mm</title>
+<rect x="125.8" y="574.4" width="49.2" height="15.6" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Wheel H-bridge / terminal bay | proposed reservation | 124 x 86 x 42 mm</title>
+<rect x="238.6" y="280.4" width="148.8" height="103.2" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Bottom MCU / encoder interface | proposed reservation | 50 x 75 x 50 mm</title>
+<rect x="454.6" y="401.6" width="60" height="90" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Roller / brush / blower power | proposed reservation | 40 x 42 x 60 mm</title>
+<rect x="457" y="501.2" width="48" height="50.4" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Side brush swept allowance | proposed reservation | 70 x 70 x 3 mm</title>
+<ellipse cx="116.2" cy="132.8" rx="42" ry="42" fill="#e9eff4" stroke="#5f7288"/>
+</g>
+<g><title>Side brush motor bay | proposed reservation | 30 x 30 x 44 mm</title>
+<rect x="98.2" y="114.8" width="36" height="36" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Front compliant caster allowance | proposed reservation | 35 x 35 x 30 mm</title>
+<ellipse cx="313" cy="137.6" rx="21" ry="21" fill="#e9eff4" stroke="#5f7288"/>
+</g>
+<g><title>Rear left compliant caster | proposed reservation | 30 x 30 x 30 mm</title>
+<ellipse cx="105.4" cy="560" rx="18" ry="18" fill="#e9eff4" stroke="#5f7288"/>
+</g>
+<g><title>Rear right compliant caster | proposed reservation | 30 x 30 x 30 mm</title>
+<ellipse cx="487" cy="560" rx="18" ry="18" fill="#e9eff4" stroke="#5f7288"/>
+</g>
+<g><title>Front bumper allowance | proposed reservation | 380 x 4 x 42 mm</title>
+<rect x="85" y="110" width="456" height="4.8" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Left bumper / skirt allowance | proposed reservation | 5 x 310 x 13 mm</title>
+<rect x="85" y="158" width="6" height="372" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Right bumper / skirt allowance | proposed reservation | 5 x 310 x 13 mm</title>
+<rect x="535" y="158" width="6" height="372" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Front left floor sensor bay | proposed reservation | 20 x 24 x 12 mm</title>
+<rect x="181" y="119.6" width="24" height="28.8" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Front right floor sensor bay | proposed reservation | 20 x 24 x 12 mm</title>
+<rect x="415" y="119.6" width="24" height="28.8" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Rear left floor sensor bay | proposed reservation | 20 x 20 x 8 mm</title>
+<rect x="181" y="558.8" width="24" height="24" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Rear right floor sensor bay | proposed reservation | 12 x 18 x 8 mm</title>
+<rect x="452.2" y="563.6" width="14.4" height="21.6" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Bottom floating connector pocket | proposed reservation | 46 x 30 x 27 mm</title>
+<rect x="285.4" y="119.6" width="55.2" height="36" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Powered head reservation | proposed reservation | 324 x 72 x 78 mm</title>
+<rect x="118.6" y="176" width="388.8" height="86.4" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Owned left wheel | owner dimensions | 10 x 90 x 90 mm</title>
+<rect x="99.4" y="273.2" width="12" height="108" fill="#a7dac8" stroke="#64798d" />
+</g>
+<g><title>Owned right wheel | owner dimensions | 10 x 90 x 90 mm</title>
+<rect x="514.6" y="273.2" width="12" height="108" fill="#a7dac8" stroke="#64798d" />
+</g>
+<g><title>Bottom joint zone 1 | proposed reservation | 20 x 20 x 34 mm</title>
+<rect x="94.6" y="119.6" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Bottom joint zone 2 | proposed reservation | 20 x 20 x 34 mm</title>
+<rect x="507.4" y="119.6" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Bottom joint zone 3 | proposed reservation | 20 x 20 x 34 mm</title>
+<rect x="94.6" y="556.4" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Bottom joint zone 4 | proposed reservation | 20 x 20 x 34 mm</title>
+<rect x="507.4" y="556.4" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Owned roller style A | owner dimensions | 254 x 28 x 28 mm</title>
+<rect x="136.6" y="184.4" width="304.8" height="33.6" fill="#a7dac8" stroke="#64798d" />
+</g>
+<g><title>Owned roller style B | owner dimensions | 254 x 28 x 28 mm</title>
+<rect x="136.6" y="220.4" width="304.8" height="33.6" fill="#a7dac8" stroke="#64798d" />
+</g>
+<g><title>Roller drive side bay | proposed reservation | 40 x 66 x 72 mm</title>
+<rect x="455.8" y="179.6" width="48" height="79.2" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>25D left motor reference | manufacturer reference; not purchased | 69 x 25 x 25 mm</title>
+<rect x="127" y="312.2" width="82.8" height="30" fill="#afd2ef" stroke="#64798d" />
+</g>
+<g><title>Left output shaft | manufacturer reference; not purchased | 12.5 x 4 x 4 mm</title>
+<rect x="112" y="324.8" width="15" height="4.8" fill="#afd2ef" stroke="#64798d" />
+</g>
+<g><title>25D right motor reference | manufacturer reference; not purchased | 69 x 25 x 25 mm</title>
+<rect x="416.2" y="312.2" width="82.8" height="30" fill="#afd2ef" stroke="#64798d" />
+</g>
+<g><title>Right output shaft | manufacturer reference; not purchased | 12.5 x 4 x 4 mm</title>
+<rect x="499" y="324.8" width="15" height="4.8" fill="#afd2ef" stroke="#64798d" />
+</g>
+<g><title>Owned filter including tab allowance | owner dimensions + derived tab depth | 19 x 136 x 76 mm</title>
+<rect x="223" y="408.8" width="22.8" height="163.2" fill="#a7dac8" stroke="#64798d" />
+</g>
+<g><title>Proposed clear debris cavity | proposed reservation | 140 x 110 x 65 mm</title>
+<rect x="265" y="428" width="168" height="132" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Rear evacuation port allowance | proposed reservation | 50 x 10 x 45 mm</title>
+<rect x="301" y="578" width="60" height="12" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Owned CBM blower, upright | manufacturer envelope | 33 x 97 x 95 mm</title>
+<rect x="133" y="452" width="39.6" height="116.4" fill="#afd2ef" stroke="#64798d" />
+</g>
+<g><title>MDD10A PCB footprint reference | manufacturer footprint; 1 mm display thickness | 84.5 x 62 x 1 mm</title>
+<rect x="259" y="291.2" width="101.4" height="74.4" fill="#afd2ef" stroke="#64798d" />
+</g>
+<rect x="303" y="207.2" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="313" y="222.2" font-size="14" text-anchor="middle">H</text>
+<rect x="321" y="484.4" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="331" y="499.4" font-size="14" text-anchor="middle">B</text>
+<rect x="140.4" y="496.4" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="150.4" y="511.4" font-size="14" text-anchor="middle">V</text>
+<rect x="224.4" y="478.4" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="234.4" y="493.4" font-size="14" text-anchor="middle">F</text>
+<rect x="303" y="320" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="313" y="335" font-size="14" text-anchor="middle">W</text>
+<rect x="474.6" y="434.6" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="484.6" y="449.6" font-size="14" text-anchor="middle">M</text>
+<rect x="471" y="514.4" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="481" y="529.4" font-size="14" text-anchor="middle">P</text>
+<rect x="299.4" y="258.8" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="309.4" y="273.8" font-size="14" text-anchor="middle">D</text>
+<line x1="337" y1="263.6" x2="337" y2="398" stroke="#247d89" stroke-width="2" marker-end="url(#a)"/>
+<line x1="319" y1="458" x2="250.6" y2="458" stroke="#247d89" stroke-width="2" marker-end="url(#a)"/>
+<line x1="220.6" y1="458" x2="177.4" y2="458" stroke="#247d89" stroke-width="2" marker-end="url(#a)"/>
+<line x1="149.8" y1="568.4" x2="149.8" y2="596" stroke="#247d89" stroke-width="2" marker-end="url(#a)"/>
+<text x="573" y="139" font-size="13" text-anchor="start">H  Long roller head + drive</text>
+<text x="573" y="168" font-size="13" text-anchor="start">D  Dirty-air corridor</text>
+<text x="573" y="197" font-size="13" text-anchor="start">B  Bin slides out rear</text>
+<text x="573" y="226" font-size="13" text-anchor="start">F  Filter on drawer&#x27;s left wall</text>
+<text x="573" y="255" font-size="13" text-anchor="start">V  Upright blower beside bin</text>
+<text x="573" y="284" font-size="13" text-anchor="start">W  Wheel driver above duct</text>
+<text x="573" y="313" font-size="13" text-anchor="start">M  Bottom MCU + interfaces</text>
+<text x="573" y="342" font-size="13" text-anchor="start">P  Separate tool power stages</text>
+<text x="573" y="371" font-size="13" text-anchor="start">70 mm side brush: placeholder</text>
+<text x="573" y="400" font-size="13" text-anchor="start">Wheels: 90 mm; centers y=181</text>
+<text x="573" y="476" font-size="12" text-anchor="start">Green: owner dimensions</text>
+<text x="573" y="497" font-size="12" text-anchor="start">Blue: manufacturer reference</text>
+<text x="573" y="518" font-size="12" text-anchor="start">Purple: seller pack reference</text>
+<text x="573" y="539" font-size="12" text-anchor="start">Grey: proposed space</text>
+<text x="573" y="560" font-size="12" text-anchor="start">Amber: mating reservations</text>
+<text x="30" y="624" font-size="12" text-anchor="start">Positions, clearances and empty bays are design proposals. Full coordinates and limits are in the report.</text>
+<text x="30" y="647" font-size="12" text-anchor="start">Structure, wiring, port adapters and purchased mounts still need detailed fitting. Not fabrication geometry.</text>
+</svg>

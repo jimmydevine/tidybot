@@ -1,0 +1,1278 @@
+{
+  "config": {
+    "revision": "S: shared core equipment supports and battery receiver",
+    "status": "Material and packaging candidate; no fabrication or automatic-exchange release",
+    "replace_hardware_ids": [
+      "core_prints",
+      "battery_receiver"
+    ],
+    "material_g_mm3": {
+      "aluminum": 0.0027,
+      "polymer": 0.00127,
+      "steel": 0.00785
+    },
+    "bridge": {
+      "x": 4.0875,
+      "length": 266.825,
+      "front_y": 83.4125,
+      "rear_y": 154.6,
+      "z": 109.5,
+      "thickness": 1.5875,
+      "height": 12.7
+    },
+    "receiver": {
+      "left_x": 42.3,
+      "right_x": 224.7,
+      "sheet_thickness": 1,
+      "y": 85,
+      "z": 66,
+      "depth": 69.6,
+      "height": 55.5,
+      "latch_stroke": 3
+    },
+    "screen": {
+      "e_aluminum_mpa": 69000,
+      "equipment_acceleration_g": 3,
+      "sharing_beams": 2,
+      "bending_limit_mpa": 120,
+      "deflection_limit_mm": 1,
+      "cartridge_retention_n": 100,
+      "latches_sharing": 2
+    },
+    "remaining_parts": [
+      {
+        "id": "frame_and_equipment_fasteners",
+        "mass_g": 14,
+        "basis": "Installation allowance for beam clips, carrier fasteners, inserts and load spreaders; exact lengths and holes unresolved"
+      },
+      {
+        "id": "receiver_latch_completion",
+        "mass_g": 15,
+        "basis": "Latch guides, positive pawls, springs, two position sensors and associated hardware; two modeled tongues are counted separately"
+      },
+      {
+        "id": "receiver_contact_support",
+        "mass_g": 6,
+        "basis": "Fixed floating contact support and insulation; core-side power wiring stays in core_harness and cartridge contacts stay in battery_cartridge"
+      },
+      {
+        "id": "remaining_equipment_mounts",
+        "mass_g": 28,
+        "basis": "Camera, six near-sensor mounts, status hardware mounting, power-board mounting and port supports not detailed by this pass"
+      },
+      {
+        "id": "cooling_guides_and_wire_restraints",
+        "mass_g": 10,
+        "basis": "Short air guides, edge protection, cable clips and isolation; electrical harness/cooler hardware remains separate"
+      },
+      {
+        "id": "completion_reserve",
+        "mass_g": 15,
+        "basis": "Unassigned completion reserve inside the replacement scope; not fabricated material"
+      }
+    ],
+    "retained": {
+      "cartridge_shell_and_restraint_g": 65,
+      "cartridge_monitor_id_g": 35,
+      "cartridge_fuse_contacts_wiring_g": 40,
+      "battery_cells_g": 753,
+      "battery_capacity_ah": 5.2,
+      "battery_nominal_voltage_v": 22.2,
+      "module_locks_g": 130,
+      "core_harness_g": 125,
+      "core_power_protection_g": 80
+    },
+    "sources": {
+      "aluminum_reference": "https://www.hydro.com/globalassets/01-products--services/extruded-profiles/americas/ena-resources/alloy-data-sheets/hydro_2019_data_sheet_6061.pdf"
+    },
+    "policy": "Replace only core_prints and battery_receiver. Keep the complete G metal frame and its fasteners, eight module locks, cartridge shell/monitor/contacts, battery cells, protection, harness, cooling electronics and dock-power supply. The 600 N inter-module load stays on the unchanged corner frame; these added bridges screen equipment support only. Do not combine an unverified R saving. No new nominal system saving is booked."
+  },
+  "parts": [
+    {
+      "id": "equipment_bridge_front",
+      "material": "aluminum",
+      "add": [
+        [
+          4.0875,
+          83.4125,
+          109.5,
+          266.825,
+          1.5875,
+          12.7
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 5379.52553125002,
+      "mass_g": 14.524718934375056,
+      "centre_mm": [
+        137.49999999999997,
+        84.20625,
+        115.85
+      ],
+      "basis": "Dimensioned material; attachment holes and supplied radii not credited"
+    },
+    {
+      "id": "front_left_frame_clip",
+      "material": "aluminum",
+      "add": [
+        [
+          4.0875,
+          75.4125,
+          109.5,
+          1,
+          8,
+          6
+        ],
+        [
+          4.0875,
+          82.4125,
+          109.5,
+          8,
+          1,
+          6
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 90.0,
+      "mass_g": 0.24300000000000002,
+      "centre_mm": [
+        6.454166666666667,
+        81.04583333333333,
+        112.5
+      ],
+      "basis": "Gross angle-clip material; supplied bend radius and two-plane fasteners remain to detail"
+    },
+    {
+      "id": "front_right_frame_clip",
+      "material": "aluminum",
+      "add": [
+        [
+          269.91249999999997,
+          75.4125,
+          109.5,
+          1,
+          8,
+          6
+        ],
+        [
+          262.91249999999997,
+          82.4125,
+          109.5,
+          8,
+          1,
+          6
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 90.0,
+      "mass_g": 0.24300000000000002,
+      "centre_mm": [
+        268.5458333333333,
+        81.04583333333333,
+        112.5
+      ],
+      "basis": "Gross angle-clip material; supplied bend radius and two-plane fasteners remain to detail"
+    },
+    {
+      "id": "equipment_bridge_rear",
+      "material": "aluminum",
+      "add": [
+        [
+          4.0875,
+          154.6,
+          109.5,
+          266.825,
+          1.5875,
+          12.7
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 5379.52553125002,
+      "mass_g": 14.524718934375056,
+      "centre_mm": [
+        137.49999999999997,
+        155.39375,
+        115.85
+      ],
+      "basis": "Dimensioned material; attachment holes and supplied radii not credited"
+    },
+    {
+      "id": "rear_left_frame_clip",
+      "material": "aluminum",
+      "add": [
+        [
+          4.0875,
+          156.1875,
+          109.5,
+          1,
+          8,
+          6
+        ],
+        [
+          4.0875,
+          156.1875,
+          109.5,
+          8,
+          1,
+          6
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 90.0,
+      "mass_g": 0.24300000000000002,
+      "centre_mm": [
+        6.454166666666667,
+        158.55416666666667,
+        112.5
+      ],
+      "basis": "Gross angle-clip material; supplied bend radius and two-plane fasteners remain to detail"
+    },
+    {
+      "id": "rear_right_frame_clip",
+      "material": "aluminum",
+      "add": [
+        [
+          269.91249999999997,
+          156.1875,
+          109.5,
+          1,
+          8,
+          6
+        ],
+        [
+          262.91249999999997,
+          156.1875,
+          109.5,
+          8,
+          1,
+          6
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 90.0,
+      "mass_g": 0.24300000000000002,
+      "centre_mm": [
+        268.54583333333335,
+        158.55416666666667,
+        112.5
+      ],
+      "basis": "Gross angle-clip material; supplied bend radius and two-plane fasteners remain to detail"
+    },
+    {
+      "id": "left_receiver_end",
+      "material": "aluminum",
+      "add": [
+        [
+          42.3,
+          85,
+          66,
+          1,
+          69.6,
+          55.5
+        ]
+      ],
+      "cut": [
+        [
+          42.199999999999996,
+          94,
+          73,
+          1.2,
+          53,
+          43
+        ],
+        [
+          42.199999999999996,
+          111.8,
+          67.8,
+          1.2,
+          8.4,
+          2.4
+        ],
+        [
+          42.199999999999996,
+          129.5,
+          65.9,
+          1.2,
+          23,
+          2.9
+        ]
+      ],
+      "role": "fixed",
+      "volume_mm3": 1499.2399999999998,
+      "mass_g": 4.047948,
+      "centre_mm": [
+        42.79999999999999,
+        117.87637736453136,
+        94.07459779621674
+      ],
+      "basis": "1 mm receiver side web with central opening and latch slot; cartridge shoulder is in retained shell/restraint scope"
+    },
+    {
+      "id": "left_front_receiver_tab",
+      "material": "aluminum",
+      "add": [
+        [
+          43.3,
+          85,
+          116,
+          6,
+          1,
+          5.5
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 33.0,
+      "mass_g": 0.0891,
+      "centre_mm": [
+        46.3,
+        85.5,
+        118.75
+      ],
+      "basis": "Receiver-to-bridge tab material; radiused bend/joint and fastener access remain unresolved"
+    },
+    {
+      "id": "left_rear_receiver_tab",
+      "material": "aluminum",
+      "add": [
+        [
+          43.3,
+          153.6,
+          116,
+          6,
+          1,
+          5.5
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 33.0,
+      "mass_g": 0.0891,
+      "centre_mm": [
+        46.3,
+        154.1,
+        118.75
+      ],
+      "basis": "Receiver-to-bridge tab material; radiused bend/joint and fastener access remain unresolved"
+    },
+    {
+      "id": "left_guide_liner_0",
+      "material": "polymer",
+      "add": [
+        [
+          43.3,
+          88,
+          73,
+          0.5,
+          6,
+          43
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 129.0,
+      "mass_g": 0.16383,
+      "centre_mm": [
+        43.55,
+        91.0,
+        94.5
+      ],
+      "basis": "Replaceable guide strip; nominal 0.2 mm clearance to retained cartridge outline, tolerance not qualified"
+    },
+    {
+      "id": "left_guide_liner_1",
+      "material": "polymer",
+      "add": [
+        [
+          43.3,
+          145,
+          73,
+          0.5,
+          6,
+          43
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 129.0,
+      "mass_g": 0.16383,
+      "centre_mm": [
+        43.55,
+        148.0,
+        94.5
+      ],
+      "basis": "Replaceable guide strip; nominal 0.2 mm clearance to retained cartridge outline, tolerance not qualified"
+    },
+    {
+      "id": "left_battery_tongue",
+      "material": "steel",
+      "add": [
+        [
+          41.3,
+          112,
+          68,
+          4.2,
+          8,
+          2
+        ]
+      ],
+      "cut": [],
+      "role": "latch",
+      "volume_mm3": 67.20000000000005,
+      "mass_g": 0.5275200000000003,
+      "centre_mm": [
+        43.4,
+        116.0,
+        69.0
+      ],
+      "basis": "Closed-position tongue material; pawl, spring, guide and sensing retained in completion rows. Opens outward by 3 mm"
+    },
+    {
+      "id": "right_receiver_end",
+      "material": "aluminum",
+      "add": [
+        [
+          224.7,
+          85,
+          66,
+          1,
+          69.6,
+          55.5
+        ]
+      ],
+      "cut": [
+        [
+          224.6,
+          94,
+          73,
+          1.2,
+          53,
+          43
+        ],
+        [
+          224.6,
+          111.8,
+          67.8,
+          1.2,
+          8.4,
+          2.4
+        ],
+        [
+          224.6,
+          129.5,
+          65.9,
+          1.2,
+          23,
+          2.9
+        ]
+      ],
+      "role": "fixed",
+      "volume_mm3": 1499.2399999999998,
+      "mass_g": 4.047948,
+      "centre_mm": [
+        225.19999999999987,
+        117.87637736453136,
+        94.07459779621674
+      ],
+      "basis": "1 mm receiver side web with central opening and latch slot; cartridge shoulder is in retained shell/restraint scope"
+    },
+    {
+      "id": "right_front_receiver_tab",
+      "material": "aluminum",
+      "add": [
+        [
+          218.7,
+          85,
+          116,
+          6,
+          1,
+          5.5
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 33.0,
+      "mass_g": 0.0891,
+      "centre_mm": [
+        221.7,
+        85.5,
+        118.75
+      ],
+      "basis": "Receiver-to-bridge tab material; radiused bend/joint and fastener access remain unresolved"
+    },
+    {
+      "id": "right_rear_receiver_tab",
+      "material": "aluminum",
+      "add": [
+        [
+          218.7,
+          153.6,
+          116,
+          6,
+          1,
+          5.5
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 33.0,
+      "mass_g": 0.0891,
+      "centre_mm": [
+        221.7,
+        154.1,
+        118.75
+      ],
+      "basis": "Receiver-to-bridge tab material; radiused bend/joint and fastener access remain unresolved"
+    },
+    {
+      "id": "right_guide_liner_0",
+      "material": "polymer",
+      "add": [
+        [
+          224.2,
+          88,
+          73,
+          0.5,
+          6,
+          43
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 129.0,
+      "mass_g": 0.16383,
+      "centre_mm": [
+        224.45,
+        91.0,
+        94.5
+      ],
+      "basis": "Replaceable guide strip; nominal 0.2 mm clearance to retained cartridge outline, tolerance not qualified"
+    },
+    {
+      "id": "right_guide_liner_1",
+      "material": "polymer",
+      "add": [
+        [
+          224.2,
+          145,
+          73,
+          0.5,
+          6,
+          43
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 129.0,
+      "mass_g": 0.16383,
+      "centre_mm": [
+        224.45,
+        148.0,
+        94.5
+      ],
+      "basis": "Replaceable guide strip; nominal 0.2 mm clearance to retained cartridge outline, tolerance not qualified"
+    },
+    {
+      "id": "right_battery_tongue",
+      "material": "steel",
+      "add": [
+        [
+          222.5,
+          112,
+          68,
+          4.2,
+          8,
+          2
+        ]
+      ],
+      "cut": [],
+      "role": "latch",
+      "volume_mm3": 67.19999999999982,
+      "mass_g": 0.5275199999999985,
+      "centre_mm": [
+        224.6,
+        116.0,
+        69.0
+      ],
+      "basis": "Closed-position tongue material; pawl, spring, guide and sensing retained in completion rows. Opens outward by 3 mm"
+    },
+    {
+      "id": "pi_tray",
+      "material": "polymer",
+      "add": [
+        [
+          140,
+          11,
+          105.2,
+          108,
+          72.4125,
+          1.5
+        ],
+        [
+          140,
+          11,
+          106.7,
+          1.5,
+          72.4125,
+          8
+        ],
+        [
+          246.5,
+          11,
+          106.7,
+          1.5,
+          72.4125,
+          8
+        ],
+        [
+          140,
+          11,
+          106.7,
+          108,
+          1.5,
+          8
+        ],
+        [
+          140,
+          80,
+          114.7,
+          1.5,
+          3.4125,
+          6.8
+        ],
+        [
+          246.5,
+          80,
+          114.7,
+          1.5,
+          3.4125,
+          6.8
+        ],
+        [
+          135.5,
+          80,
+          113.5,
+          6,
+          3.4125,
+          8
+        ],
+        [
+          246.5,
+          80,
+          113.5,
+          6,
+          3.4125,
+          8
+        ],
+        [
+          140,
+          6.0625,
+          105.2,
+          8,
+          4.9375,
+          8
+        ],
+        [
+          240,
+          6.0625,
+          105.2,
+          8,
+          4.9375,
+          8
+        ]
+      ],
+      "cut": [
+        [
+          144,
+          15,
+          105.1,
+          100,
+          64.4125,
+          1.7
+        ],
+        [
+          139.9,
+          79.5,
+          105.1,
+          1.6,
+          3,
+          8.4
+        ]
+      ],
+      "role": "fixed",
+      "volume_mm3": 5976.815000000001,
+      "mass_g": 7.5905550500000025,
+      "centre_mm": [
+        194.33276711760348,
+        37.25089684576984,
+        109.27128269822632
+      ],
+      "basis": "Open printed tray with outside ribs and raised rear attachment tabs; local relief clears floor shelf stiffener without changing that bottom part"
+    },
+    {
+      "id": "supervisor_tray",
+      "material": "polymer",
+      "add": [
+        [
+          11,
+          94,
+          87,
+          30.8,
+          62,
+          1.5
+        ],
+        [
+          11,
+          94,
+          88.5,
+          1,
+          60,
+          22
+        ],
+        [
+          4.0875,
+          94,
+          109.5,
+          6.9125,
+          2,
+          1
+        ],
+        [
+          4.0875,
+          151.5,
+          109.5,
+          6.9125,
+          2,
+          1
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 4212.05,
+      "mass_g": 5.3493035,
+      "centre_mm": [
+        21.606757917759758,
+        124.67840778243372,
+        91.57835258365878
+      ],
+      "basis": "Printed shelf and outside wall tied to left G rail; board fasteners separate"
+    },
+    {
+      "id": "power_board_shelf",
+      "material": "aluminum",
+      "add": [
+        [
+          226.2,
+          84.5,
+          87.5,
+          44.3,
+          71,
+          1
+        ]
+      ],
+      "cut": [],
+      "role": "fixed",
+      "volume_mm3": 3145.3000000000006,
+      "mass_g": 8.492310000000002,
+      "centre_mm": [
+        248.35,
+        120.0,
+        88.00000000000001
+      ],
+      "basis": "Insulated shelf below protection bay; upright mounting and dielectric isolation retained in remaining mounts allowance"
+    },
+    {
+      "id": "logic_buck_tray",
+      "material": "polymer",
+      "add": [
+        [
+          9,
+          90,
+          123.6,
+          35,
+          49,
+          1
+        ]
+      ],
+      "cut": [
+        [
+          12,
+          93,
+          123.5,
+          29,
+          43,
+          1.2
+        ]
+      ],
+      "role": "fixed",
+      "volume_mm3": 468.0,
+      "mass_g": 0.59436,
+      "centre_mm": [
+        26.5,
+        114.5,
+        124.10000000000001
+      ],
+      "basis": "Open logic tray; standoffs/rail attachments remain in equipment mounting allowance"
+    },
+    {
+      "id": "dock_power_tray",
+      "material": "polymer",
+      "add": [
+        [
+          44.5,
+          89,
+          123.6,
+          36.5,
+          62,
+          1
+        ]
+      ],
+      "cut": [
+        [
+          47.5,
+          92,
+          123.5,
+          30.5,
+          56,
+          1.2
+        ]
+      ],
+      "role": "fixed",
+      "volume_mm3": 555.0,
+      "mass_g": 0.7048500000000001,
+      "centre_mm": [
+        62.75,
+        120.0,
+        124.1
+      ],
+      "basis": "Open logic tray; standoffs/rail attachments remain in equipment mounting allowance"
+    },
+    {
+      "id": "lidar_tray",
+      "material": "polymer",
+      "add": [
+        [
+          102.4,
+          97.15,
+          131.5,
+          64,
+          64,
+          1.5
+        ]
+      ],
+      "cut": [
+        [
+          110.4,
+          105.15,
+          131.4,
+          48,
+          48,
+          1.7
+        ]
+      ],
+      "role": "fixed",
+      "volume_mm3": 2688.0,
+      "mass_g": 3.4137600000000003,
+      "centre_mm": [
+        134.40000000000003,
+        129.15,
+        132.25
+      ],
+      "basis": "Ring plate inside I mount reservation; legs and exact fasteners remain in mounting allowance"
+    }
+  ],
+  "audit": {
+    "core_rows": [
+      {
+        "module": "core",
+        "id": "lidar",
+        "name": "Core-fixed SLAMTEC RPLIDAR A1",
+        "mass_g": 170,
+        "basis": "manufacturer family reference; owned revision not measured"
+      },
+      {
+        "module": "core",
+        "id": "core_prints",
+        "name": "Core PETG ribs, equipment trays and ducts",
+        "mass_g": 160,
+        "basis": "material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output"
+      },
+      {
+        "module": "core",
+        "id": "battery_cartridge",
+        "name": "Removable cartridge shell, cell monitor/ID/temperature, fuse and recessed contacts",
+        "mass_g": 140,
+        "basis": "Installed allowance: 65 g shell/restraint, 35 g monitor/ID, 40 g fuse/contacts/wiring nominal; excludes bare cell pack and fixed core receiver"
+      },
+      {
+        "module": "core",
+        "id": "core_locks",
+        "name": "Eight core-side captive sliding locks, seats, springs and detection",
+        "mass_g": 130.0,
+        "basis": "mechanism allowance; four top and four bottom, station-actuated"
+      },
+      {
+        "module": "core",
+        "id": "core_harness",
+        "name": "Core wiring, connector halves, fuse, charge and service access",
+        "mass_g": 125,
+        "basis": "route allowance; includes floor harness and short high-current trunk; excludes lift-side wiring"
+      },
+      {
+        "module": "core",
+        "id": "depth_camera",
+        "name": "OAK-D S2 USB stereo camera and bracket",
+        "mass_g": 106,
+        "basis": "manufacturer drawing and 91 g reference plus mount/cable allowance"
+      },
+      {
+        "module": "core",
+        "id": "pi",
+        "name": "Raspberry Pi 5, active cooler and microSD",
+        "mass_g": 82,
+        "basis": "installed allowance; owned board available; processing power is a workload estimate"
+      },
+      {
+        "module": "core",
+        "id": "core_monitor",
+        "name": "Core switched discharge bus, current shunt, precharge and protection power stage",
+        "mass_g": 80,
+        "basis": "custom PCB assembly allowance; reference IC is not a complete high-current BMS"
+      },
+      {
+        "module": "core",
+        "id": "battery_receiver",
+        "name": "Fixed battery guide, positive latch, presence switches and floating contact support",
+        "mass_g": 50,
+        "basis": "Additional automatic-exchange receiver allowance; passive latch retained without power"
+      },
+      {
+        "module": "core",
+        "id": "dock_logic_power",
+        "name": "Station logic-power input, 24 V to 5 V regulator, source OR and hold-up capacitors",
+        "mass_g": 45,
+        "basis": "Installed 40 W logic supply/interface allocation, not selected hardware"
+      },
+      {
+        "module": "core",
+        "id": "core_near",
+        "name": "Six near-field ToF boards, windows and core IMU allowance",
+        "mass_g": 32,
+        "basis": "sensor plus harness/mount allowance; no all-surface detection guarantee"
+      },
+      {
+        "module": "core",
+        "id": "G_frame_fasteners",
+        "name": "G frame fasteners",
+        "mass_g": 30,
+        "basis": "24 M3 screw/nut/washer sets: 8 rail-to-tube, 16 clip joints; 30 g nominal installation allowance"
+      },
+      {
+        "module": "core",
+        "id": "logic_buck",
+        "name": "5 V regulator and carrier, 40 W design allocation",
+        "mass_g": 25,
+        "basis": "assembly allowance; D42V110F5 family reference; exact variant and thermal review required"
+      },
+      {
+        "module": "core",
+        "id": "core_mcu",
+        "name": "ESP32-DevKitC plus CAN transceiver and hardware watchdog",
+        "mass_g": 20,
+        "basis": "board plus interface allowance"
+      },
+      {
+        "module": "core",
+        "id": "status",
+        "name": "Stop switch, buzzer, status LEDs and guard contacts",
+        "mass_g": 15,
+        "basis": "small hardware allowance"
+      },
+      {
+        "module": "core",
+        "id": "G_rail_front",
+        "name": "G rail front",
+        "mass_g": 13.881020625,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_rail_rear",
+        "name": "G rail rear",
+        "mass_g": 13.881020625,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_rail_left",
+        "name": "G rail left",
+        "mass_g": 12.792313125000002,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_rail_right",
+        "name": "G rail right",
+        "mass_g": 12.792313125000002,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "core_interface_F",
+        "name": "core interface F",
+        "mass_g": 8,
+        "basis": "Additional allowance; existing harness, converter carrier and frame budgets retained"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_0_front",
+        "name": "G corner 0 front",
+        "mass_g": 4.899183750000001,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_0_rear",
+        "name": "G corner 0 rear",
+        "mass_g": 4.899183750000001,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_1_front",
+        "name": "G corner 1 front",
+        "mass_g": 4.899183750000001,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_1_rear",
+        "name": "G corner 1 rear",
+        "mass_g": 4.899183750000001,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_2_front",
+        "name": "G corner 2 front",
+        "mass_g": 4.899183750000001,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_2_rear",
+        "name": "G corner 2 rear",
+        "mass_g": 4.899183750000001,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_3_front",
+        "name": "G corner 3 front",
+        "mass_g": 4.899183750000001,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_3_rear",
+        "name": "G corner 3 rear",
+        "mass_g": 4.899183750000001,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_0_bottom",
+        "name": "G corner 0 bottom",
+        "mass_g": 3.919347,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_0_top",
+        "name": "G corner 0 top",
+        "mass_g": 3.919347,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_1_bottom",
+        "name": "G corner 1 bottom",
+        "mass_g": 3.919347,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_1_top",
+        "name": "G corner 1 top",
+        "mass_g": 3.919347,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_2_bottom",
+        "name": "G corner 2 bottom",
+        "mass_g": 3.919347,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_2_top",
+        "name": "G corner 2 top",
+        "mass_g": 3.919347,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_3_bottom",
+        "name": "G corner 3 bottom",
+        "mass_g": 3.919347,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_corner_3_top",
+        "name": "G corner 3 top",
+        "mass_g": 3.919347,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_clip_0_x",
+        "name": "G clip 0 x",
+        "mass_g": 0.6913292624999999,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_clip_1_x",
+        "name": "G clip 1 x",
+        "mass_g": 0.6913292624999999,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_clip_2_x",
+        "name": "G clip 2 x",
+        "mass_g": 0.6913292624999999,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_clip_3_x",
+        "name": "G clip 3 x",
+        "mass_g": 0.6913292624999999,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_clip_0_y",
+        "name": "G clip 0 y",
+        "mass_g": 0.6049131046874999,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_clip_1_y",
+        "name": "G clip 1 y",
+        "mass_g": 0.6049131046874999,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_clip_2_y",
+        "name": "G clip 2 y",
+        "mass_g": 0.6049131046874999,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      },
+      {
+        "module": "core",
+        "id": "G_clip_3_y",
+        "name": "G clip 3 y",
+        "mass_g": 0.6049131046874999,
+        "basis": "Gross stock volume times density; drilled material is not credited"
+      }
+    ],
+    "core_including_cartridge_g": 1347.07988296875,
+    "metal_frame_and_fasteners_g": 159.07988296875,
+    "basis": "Latest M/N/O core ledger; G frame retained. These rows are NOT summed as the whole N/O robot: N replaces K pods and M/O add separate mechanisms."
+  },
+  "mass": {
+    "replaced_rows": [
+      {
+        "module": "core",
+        "id": "core_prints",
+        "name": "Core PETG ribs, equipment trays and ducts",
+        "mass_g": 160,
+        "basis": "material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output"
+      },
+      {
+        "module": "core",
+        "id": "battery_receiver",
+        "name": "Fixed battery guide, positive latch, presence switches and floating contact support",
+        "mass_g": 50,
+        "basis": "Additional automatic-exchange receiver allowance; passive latch retained without power"
+      }
+    ],
+    "before_g": 210,
+    "material_g": 66.32923241875011,
+    "unfinished_g": 88,
+    "candidate_g": 154.3292324187501,
+    "conditional_saving_g": 55.67076758124989,
+    "booked_saving_g": 0,
+    "current_transfer_g": 5274.841313853186,
+    "core_candidate_including_cartridge_g": 1291.4091153875002,
+    "same_capacity_wh": 115.44
+  },
+  "cases": [
+    {
+      "id": "N_mop",
+      "before_g": 4704.001313853186,
+      "candidate_g": 4648.330546271936,
+      "budget_g": 4500,
+      "candidate_gap_g": 148.33054627193633,
+      "layout_scope": "vacuum and mop core fit checked",
+      "measured_compliance": false
+    },
+    {
+      "id": "O_vacuum",
+      "before_g": 5274.841313853186,
+      "candidate_g": 5219.1705462719365,
+      "budget_g": 4500,
+      "candidate_gap_g": 719.1705462719365,
+      "layout_scope": "vacuum and mop core fit checked",
+      "measured_compliance": false
+    },
+    {
+      "id": "G_E_air_dust",
+      "before_g": 2611.07988296875,
+      "candidate_g": 2555.4091153875,
+      "budget_g": 3500,
+      "candidate_gap_g": -944.5908846124998,
+      "layout_scope": "mass projection only; common core placement has not been integrated with E duster",
+      "measured_compliance": false
+    }
+  ],
+  "beam_screen": {
+    "load_n": 30.89212257647324,
+    "equipment_mass_g": 2100.07988296875,
+    "stress_mpa": 48.28857068117127,
+    "deflection_mm": 0.6538728797590895,
+    "passes": true,
+    "scope": "Simply supported vertical bending, conservatively all baseline core plus cells at 3 g. End joints, weak-axis bending, torsion, holes and equipment fasteners unqualified. No 600 N module-interface load reassigned."
+  },
+  "latch_screen": {
+    "force_per_tongue_n": 50.0,
+    "nominal_engagement_mm": 1.5,
+    "nominal_released_clearance_mm": 1.5,
+    "average_shoulder_bearing_mpa": 4.166666666666667,
+    "cantilever_stress_mpa": 19.6875,
+    "scope": "Stress demand only, not allowable or qualification. Retained cartridge must have metal shoulders within its 65 g shell/restraint scope. All latches must lock; two-way sharing is not permission to operate with one unlocked."
+  },
+  "fabrication_release": false
+}

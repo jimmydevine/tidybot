@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TidyBot · selected-component integration</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f0f3f6;color:#182536;font:15px/1.5 system-ui,sans-serif}main{max-width:1260px;margin:auto;padding:24px}h1{font-size:28px;margin:0}h2{font-size:19px;margin-top:28px}.muted{color:#536274}.tag{display:inline-block;padding:4px 10px;background:#ffebc8;color:#704804;border-radius:6px;margin:8px 0}.grid{display:grid;grid-template-columns:1fr 280px;gap:16px}.panel{background:white;border:1px solid #dce2e9;border-radius:12px;padding:16px}.metrics{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.metric{background:white;padding:12px 18px;border-radius:8px;flex:1}.metric b{display:block;font-size:24px}canvas{width:100%;height:520px;touch-action:none;display:block;cursor:grab}label{display:block;margin:8px 0}input{accent-color:#287c91}button,select{font:inherit;padding:6px 10px;border:1px solid #bcc8d7;background:#fff;border-radius:6px;margin:3px}button{cursor:pointer}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:8px;border-bottom:1px solid #dce2e9;text-align:left;vertical-align:top}th{background:#eef2f6}.scroll{overflow:auto}a{color:#155c92}.swatch{display:inline-block;width:12px;height:12px;margin:0 6px;border-radius:2px}#detail{min-height:120px;font-size:13px}.drawings{display:grid;grid-template-columns:1fr 1fr;gap:16px}.drawings img{width:100%}summary{cursor:pointer;font-weight:600}li{margin:5px 0}@media(max-width:850px){.grid,.drawings{grid-template-columns:1fr}canvas{height:420px}main{padding:14px}}
+</style>
+<main><h1>Vacuum bottom + electronics core</h1><div class="tag">Integration reservations · not for fabrication</div>
+<p class="muted">Selected drivetrain, TriCut brush and BIQU blower, within a 275 × 275 × 180 mm limit. Drag to rotate; use layers to inspect the stack. Boxes reserve space and do not represent finished mechanisms.</p>
+<div class="metrics"><div class="metric"><b>271 mm</b>outside the tires</div><div class="metric"><b>178 mm</b>scanner top</div><div class="metric"><b>0.84 L</b>bin after simple walls*</div><div class="metric"><b>10 mm</b>allocated upward travel</div></div>
+<div class="grid"><div class="panel"><canvas id="scene" aria-label="Interactive 3D placement model"></canvas><div><button id="iso">Perspective</button><button id="top">Top</button><button id="side">Side</button><select id="service" aria-label="Service motion"><option value="">Assembled</option><option value="bin_service">Bin removed</option><option value="battery_service">Battery removed</option><option value="pi_service">Pi removed</option><option value="head_service">Head removed</option></select></div><p class="muted">Dashed outline: rigid limit. Colored translucent boxes: subsystem allocations. Dark wire boxes: nested part references. The LiDAR remains fixed to the core.</p></div>
+<div class="panel"><strong>Visible systems</strong><div id="layers"></div><label><input id="refs" type="checkbox" checked> Part references</label><label><input id="names" type="checkbox"> Labels</label><label><input id="travel" type="checkbox"> Full upward travel</label><hr><strong>Inspect a part</strong><select id="part" style="width:100%"></select><label><input id="isolate" type="checkbox"> Isolate selected assembly</label><div id="detail"></div></div></div>
+<p>*0.838 L assumes only 3 mm walls. Baffles, seal features, fill clearance and evacuation hardware reduce usable capacity. The 0.5–0.6 L usable target is unverified.</p>
+<div class="panel"><strong id="checkstatus"></strong><p>Checks cover independent reserved spaces, proposed vertical travel and conditional straight service paths. They do not certify internal mechanism fit, stability, airflow, structural strength or floor-transition performance.</p><ul id="open"></ul></div>
+<h2>Inspect or reproduce</h2><p><a href="vacuum_integration.FCStd">FreeCAD model</a> · <a href="vacuum_integration.step">STEP model</a> · <a href="vacuum_integration_report.md">Coordinate/check report</a> · <a href="../../../docs/VACUUM_INTEGRATION.md">Design decisions</a> · <a href="../../../docs/VACUUM_POWER_AND_HARDWARE.md">Power and remaining hardware</a></p>
+<details><summary>Static projections</summary><div class="drawings"><a href="vacuum_integration_top.svg"><img src="vacuum_integration_top.svg" alt="Top projection of allocated spaces"></a><a href="vacuum_integration_side.svg"><img src="vacuum_integration_side.svg" alt="Side projection of allocated spaces"></a></div></details>
+<h2>Dimensions and provenance</h2><div class="scroll panel"><table><thead><tr><th>Part / allocation</th><th>Minimum x/y/z</th><th>Size x/y/z</th><th>Evidence</th></tr></thead><tbody id="parts"></tbody></table></div>
+<p class="muted">Local, self-contained viewer. No network requests or external JavaScript libraries. Generated from config/vacuum_integration.json.</p></main>
+<script>
+'use strict';
+const data=__DATA__, colors=__COLORS__;
+const $=id=>document.getElementById(id), visible=new Set(Object.keys(colors));
+const titles={head:'Head and brush drive',traction:'Wheels, motors and supports',air:'Duct, bin, filter and blower',bottom:'Bottom electronics',core:'Core trays and power',interface:'Module joint reservations',cap:'Core-fixed scanner'};
+for(const [group,color] of Object.entries(colors)){const l=document.createElement('label');const input=document.createElement('input');input.type='checkbox';input.checked=true;input.onchange=()=>{input.checked?visible.add(group):visible.delete(group);draw()};l.append(input);const sw=document.createElement('span');sw.className='swatch';sw.style.background=color;l.append(sw,document.createTextNode(titles[group]));$('layers').append(l)}
+for(const p of data.parts){const o=document.createElement('option');o.value=p.id;o.textContent=p.label;$('part').append(o);const tr=document.createElement('tr');for(const text of [p.label,p.min.join(' / '),p.size.join(' / '),p.basis]){const td=document.createElement('td');td.textContent=text;tr.append(td)}$('parts').append(tr)}
+for(const s of data.unresolved){const li=document.createElement('li');li.textContent=s;$('open').append(li)}
+$('checkstatus').textContent=data.checks.errors.length?`${data.checks.errors.length} reservation conflicts — review required`:`No numerical conflicts among ${data.checks.root_reservations} root reservations in the defined checks.`;
+const canvas=$('scene'),ctx=canvas.getContext('2d');let yaw=-0.62,tilt=0.60;
+function inspect(){const p=data.parts.find(p=>p.id===$('part').value);$('detail').textContent=`${p.size.join(' × ')} mm. ${p.basis}. ${p.note||''}`;draw()}
+function project(v,origin=[137.5,137.5,75]){let [x,y,z]=v;x-=origin[0];y-=origin[1];z-=origin[2];const a=x*Math.cos(yaw)-y*Math.sin(yaw),b=x*Math.sin(yaw)+y*Math.cos(yaw);return[a,b*Math.sin(tilt)-z*Math.cos(tilt),b*Math.cos(tilt)+z*Math.sin(tilt)]}
+const edges=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+const faces=[[0,1,2,3],[4,5,6,7],[0,1,5,4],[1,2,6,5],[2,3,7,6],[3,0,4,7]];
+function corners(p){let [x,y,z]=p.min,[w,d,h]=p.size;return[[x,y,z],[x+w,y,z],[x+w,y+d,z],[x,y+d,z],[x,y,z+h],[x+w,y,z+h],[x+w,y+d,z+h],[x,y+d,z+h]]}
+function placed(p){const s=data.service_groups.find(s=>s.id===$('service').value);const result={...p,min:[...p.min]};const root=p.parent||p.id;if(s){if(s.released.includes(root))return null;if(s.members.includes(root))result.min=result.min.map((v,i)=>v+s.delta[i])}if($('travel').checked){let shift=data.parts.find(a=>a.id===root)?.motion;if(p.reference_motion)shift=p.reference_motion;if(shift)result.min=result.min.map((v,i)=>v+shift[i]);}return result}
+function draw(){const w=canvas.clientWidth,h=canvas.clientHeight,dpr=window.devicePixelRatio||1;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);const selected=data.parts.find(p=>p.id===$('part').value),selectedRoot=selected?.parent||selected?.id;
+ const root=placed(data.parts.find(p=>p.id===selectedRoot)),isolated=$('isolate').checked&&root;
+ const origin=isolated?root.min.map((v,i)=>v+root.size[i]/2):[137.5,137.5,75];
+ const span=isolated?Math.max(...root.size):275,scale=isolated?Math.min(w/(span*2+40),h/(span*2+40)):Math.min(w/640,h/490),screen=v=>{const [x,y,z]=project(v,origin);return[w/2+x*scale,h/2+y*scale,z]};
+ const parts=data.parts.filter(p=>visible.has(p.group)&&($('refs').checked||!p.parent)&&(!$('isolate').checked||(p.parent||p.id)===selectedRoot)).map(placed).filter(Boolean);const items=[];
+ for(const p of parts){const pts=corners(p).map(screen);if(!p.parent){for(const f of faces)items.push({p,pts:f.map(i=>pts[i]),depth:f.reduce((s,i)=>s+pts[i][2],0)/4})}}
+ items.sort((a,b)=>a.depth-b.depth);for(const f of items){ctx.beginPath();f.pts.forEach((v,i)=>i?ctx.lineTo(v[0],v[1]):ctx.moveTo(v[0],v[1]));ctx.closePath();ctx.globalAlpha=f.p.id===$('part').value?0.27:0.09;ctx.fillStyle=colors[f.p.group];ctx.fill();ctx.globalAlpha=1}
+ function wire(p,color,dashed){const pts=corners(p).map(screen);ctx.strokeStyle=color;ctx.lineWidth=p.id===$('part').value?2:0.8;ctx.setLineDash(dashed?[5,4]:[]);ctx.beginPath();for(const [a,b] of edges){ctx.moveTo(...pts[a].slice(0,2));ctx.lineTo(...pts[b].slice(0,2))}ctx.stroke();ctx.setLineDash([])}
+ if(!isolated)wire({min:[0,0,0],size:[275,275,180]},'#84909c',true);
+ for(const p of parts)wire(p,p.parent?'#455361':colors[p.group],false);
+ if($('names').checked){ctx.font='11px system-ui';for(const p of parts.filter(p=>!p.parent&&p.size[0]>30&&p.size[1]>30)){const v=screen(p.min.map((v,i)=>v+p.size[i]/2));ctx.fillStyle='#182536';ctx.fillText(p.id,v[0]+3,v[1]-3)}}
+ ctx.font='12px system-ui';ctx.fillStyle='#536274';ctx.fillText('FRONT = y 0    |    floor = z 0',12,h-12);
+}
+let dragging=false,last;
+canvas.onpointerdown=e=>{dragging=true;last=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId)};
+canvas.onpointerup=()=>dragging=false;canvas.onpointercancel=()=>dragging=false;
+canvas.onpointermove=e=>{if(!dragging)return;yaw+=(e.clientX-last[0])*0.008;tilt=Math.max(0.03,Math.min(Math.PI/2,tilt+(e.clientY-last[1])*0.008));last=[e.clientX,e.clientY];draw()};
+$('top').onclick=()=>{yaw=0;tilt=Math.PI/2;draw()};$('side').onclick=()=>{yaw=-Math.PI/2;tilt=0;draw()};$('iso').onclick=()=>{yaw=-0.62;tilt=0.60;draw()};
+for(const id of ['refs','names','service','travel','isolate'])$(id).onchange=draw;$('part').onchange=inspect;window.onresize=draw;inspect();
+</script></html>

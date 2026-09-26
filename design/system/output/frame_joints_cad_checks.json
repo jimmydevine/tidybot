@@ -1,0 +1,11 @@
+{
+  "valid_shapes": {
+    "frame_joints": 117,
+    "frame_joints_mop": 106,
+    "frame_joints_low": 117,
+    "frame_joints_duster": 97,
+    "frame_joints_core": 44
+  },
+  "total": 481,
+  "fabrication_release": false
+}

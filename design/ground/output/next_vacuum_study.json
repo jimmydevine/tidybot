@@ -1,0 +1,128 @@
+{
+  "created_date": "2026-09-13",
+  "status": "SUPERSEDED_DUAL_ROLLER_STUDY_NOT_FOR_FABRICATION",
+  "superseded_by": "docs/VACUUM_RECOMMENDATION_REVIEW.md",
+  "body_limit_mm": [
+    275,
+    275,
+    180
+  ],
+  "reported_threshold_range_mm": [
+    4,
+    10
+  ],
+  "wheel_centers_xy_mm": [
+    [
+      -123.5,
+      -5
+    ],
+    [
+      123.5,
+      -5
+    ]
+  ],
+  "wheel_diameter_mm": 72,
+  "wheel_width_mm": 24,
+  "motor_body_length_mm": 69,
+  "motor_body_diameter_mm": 25,
+  "motor_face_x_mm": [
+    -111.5,
+    111.5
+  ],
+  "roller_reference_length_mm": 184.15,
+  "roller_reference_diameter_mm": 28,
+  "component_selection_record": "config/vacuum_selection.json",
+  "roller_selection_note": "Earlier iRobot pair proposal; owner reference dimensions do not specify current Roborock single roller",
+  "filter_selection_note": "Earlier s-series proposal; does not place the current washable-filter candidate",
+  "blower_selection_note": "BIQU Universal Turbo Kit 1060000677 preferred; 71x70x37.5 bare blower, separate driver/adapter, placement open",
+  "roller_centers_y_mm": [
+    69,
+    99
+  ],
+  "head_width_mm": 214.15,
+  "head_depth_mm": 72,
+  "head_rear_y_mm": 48,
+  "drive_bay_strategy": "Move the former 40 mm lateral drive allowance above one roller end; unselected transmission",
+  "bin_outer_reservation_mm": [
+    192,
+    80,
+    60
+  ],
+  "bin_rear_y_mm": -122,
+  "bin_volume_note": "Outer reservation only; subtract walls, caster well, ducts, seals and freeboard",
+  "rear_support_zone_mm": [
+    50,
+    50
+  ],
+  "rear_support_center_xy_mm": [
+    0,
+    -106
+  ],
+  "rear_support_note": "Proposed caster and swivel space; vertical intrusion into bin must be deducted",
+  "brush_axis_xy_mm": [
+    120,
+    125
+  ],
+  "brush_bristle_radius_mm": 45,
+  "brush_note": "Illustrative axis and bristle sweep; motor and hub not selected",
+  "air_path": [
+    "roller intake",
+    "central duct between motors",
+    "rear collection bin",
+    "sealed filter",
+    "blower above/rear of bin",
+    "diffused exhaust"
+  ],
+  "head_width_saved_mm": 40.0,
+  "outer_wheel_width_mm": 271.0,
+  "wheel_to_head_plan_gap_mm": 17.0,
+  "central_motor_body_gap_mm": 85.0,
+  "bin_outer_volume_l": 0.9216,
+  "airflow_scenarios": [
+    {
+      "flow_lps": 3,
+      "illustrative_open_slot_mm": [
+        184.15,
+        4
+      ],
+      "mean_slot_speed_mps": 4.07,
+      "assumed_system_pressure_pa": 2000,
+      "air_power_w": 6.0,
+      "assumed_combined_efficiency": 0.25,
+      "illustrative_electrical_power_w": 24.0
+    },
+    {
+      "flow_lps": 5,
+      "illustrative_open_slot_mm": [
+        184.15,
+        4
+      ],
+      "mean_slot_speed_mps": 6.79,
+      "assumed_system_pressure_pa": 2000,
+      "air_power_w": 10.0,
+      "assumed_combined_efficiency": 0.25,
+      "illustrative_electrical_power_w": 40.0
+    },
+    {
+      "flow_lps": 8,
+      "illustrative_open_slot_mm": [
+        184.15,
+        4
+      ],
+      "mean_slot_speed_mps": 10.86,
+      "assumed_system_pressure_pa": 2000,
+      "air_power_w": 16.0,
+      "assumed_combined_efficiency": 0.25,
+      "illustrative_electrical_power_w": 64.0
+    }
+  ],
+  "threshold_scenario": {
+    "assumed_total_mass_kg": 5.0,
+    "assumed_total_drive_wheel_weight_fraction": 0.8,
+    "step_mm": 10.0,
+    "wheel_radius_mm": 36.0,
+    "static_wheel_torque_nm_each": 0.488,
+    "formula": "T_each = m*g*drive_weight_share/2 * sqrt(2*r*h-h*h)",
+    "limits": "Illustration only; instantaneous load redistribution, caster climb, grip and current/thermal duty remain open"
+  }
+}

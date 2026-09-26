@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TidyBot · Ground assembly placement</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;color:#20344b;background:#f2f5f8;margin:0}main{max-width:1040px;margin:30px auto;padding:24px;background:white;border-radius:12px}h1{font-size:30px;margin:0 0 8px}.eyebrow{color:#6a522b;font-weight:650;letter-spacing:.06em;font-size:12px}select{font:inherit;padding:8px;min-width:240px}figure{margin:20px 0}img{width:100%;height:auto}figure[hidden]{display:none}a{color:#245d8e}.facts{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}.facts span{background:#edf2f8;padding:10px 14px;border-radius:6px}p{max-width:930px}@media(max-width:600px){main{margin:0;padding:14px}}@media print{select,label,figcaption{display:none}figure[hidden]{display:block}figure{break-inside:avoid}}</style>
+<main><div class="eyebrow">PLACEMENT STUDY · 6 SEPTEMBER 2026 · DIMENSIONS ADJUSTABLE</div>
+<h1>Core, vacuum bottom and cap</h1>
+<p>The long rollers lead into a rear-service bin. Its filter faces the upright blower on the left.
+The battery and computer slide out opposite sides of the middle core, below its station pickup rails.</p>
+<div class="facts"><span><b>380 × 400 × 230 mm</b> body, including LiDAR</span><span><b>0.5–0.75 L</b> usable bin target</span><span><b>Owned 3S pack</b> retained</span></div>
+<label for="view">View: </label><select id="view"><option value="bottom">Vacuum bottom</option><option value="core">Electronics core</option><option value="cap">Cap / joints</option><option value="side">Complete stack</option><option value="service">Service paths</option></select>
+<figure data-view="bottom"><img src="ground_bottom.svg" alt="Vacuum bottom: dimensioned placement study"><figcaption><a href="ground_bottom.svg">Open standalone drawing</a></figcaption></figure><figure data-view="core" hidden><img src="ground_core.svg" alt="Electronics core: dimensioned placement study"><figcaption><a href="ground_core.svg">Open standalone drawing</a></figcaption></figure><figure data-view="cap" hidden><img src="ground_cap.svg" alt="Cap / joints: dimensioned placement study"><figcaption><a href="ground_cap.svg">Open standalone drawing</a></figcaption></figure><figure data-view="side" hidden><img src="ground_side.svg" alt="Complete stack: dimensioned placement study"><figcaption><a href="ground_side.svg">Open standalone drawing</a></figcaption></figure><figure data-view="service" hidden><img src="ground_service.svg" alt="Service paths: dimensioned placement study"><figcaption><a href="ground_service.svg">Open standalone drawing</a></figcaption></figure>
+<p>Part references nest inside proposed space reservations. The side brush size, powered roller drive,
+mounts, seals, cooling, wiring and automatic latch hardware remain to detail. The 70 mm brush placeholder
+expands the moving outline to 389 × 416 mm. No mass or flight capability is implied.</p>
+<p>Checked: reference containment, 3D reservation interference, three service sweeps, cap removal,
+station separation and proposed panel spans. These checks cover the modeled envelopes; structural and
+cleaning performance remain unverified.</p>
+<p><a href="ground_report.md">Coordinates and check report</a> · <a href="ground_layout.json">Machine-readable placement</a> ·
+<a href="ground_placement.FCStd">FreeCAD model</a> · <a href="ground_placement.step">STEP model</a> ·
+<a href="../../../docs/GROUND_PLACEMENT.md">Design decisions and next build work</a> ·
+<a href="vacuum_head_layout.html">Roller-length comparison</a></p>
+</main><script>
+const selector = document.getElementById('view');
+const figures = [...document.querySelectorAll('figure[data-view]')];
+function selectView() { for (const f of figures) f.hidden = f.dataset.view !== selector.value; }
+selector.addEventListener('change', selectView);
+selectView();
+</script></html>

@@ -1,0 +1,1 @@
+run_id,recorded_utc,mass_g,course_distance_m,elapsed_s,average_speed_m_s,equivalent_wheel_rpm,target_speed_m_s,direction,start_mode,surface,outcome,bus_voltage_v,bus_current_a,motor_start_temp_c,motor_end_temp_c,notes

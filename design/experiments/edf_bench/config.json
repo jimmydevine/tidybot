@@ -1,0 +1,178 @@
+{
+  "status": "DEFERRED_ALL_LIFT_WORK_GROUND_MODULES_FIRST",
+  "procurement": {
+    "status": "DEFERRED_COST_NOT_JUSTIFIED_FOR_INITIAL_SCREEN",
+    "date": "2026-09-05",
+    "hardware_list": "HARDWARE_LIST.md",
+    "order_csv": "hardware.csv",
+    "scope": "Owner rejected approximately 825 USD fixture and deferred all lift work; current phase docs/GROUND_MODULE_DESIGN.md",
+    "owner_can_cut_wood": true,
+    "owner_has_shaft_or_bearings": false,
+    "shaft_part": "goBILDA 2100-0008-0200",
+    "bearing_part": "goBILDA 1602-0032-0008",
+    "bearing_axis_above_foot_mm": 24.0,
+    "hub_part": "goBILDA 1310-0016-0008",
+    "disconnect_part": "Albright ED125-1",
+    "basis": "Selected purchased hardware; not yet installed or load-tested"
+  },
+  "confirmed": {
+    "fan_minimum_housing_od_mm": 74.0,
+    "fan_duct_length_excluding_motor_mm": 66.0,
+    "fan_lip_od_mm": 75.5,
+    "fan_overall_span_across_ears_mm": 91.0,
+    "fan_ear_hole_center_spacing_mm": 82.5,
+    "fan_ear_hole_center_spacing_basis": "Owner's best estimate; not a machining tolerance",
+    "fan_ear_depth_reported_mm": 3.0,
+    "fan_ear_width_reported_mm": 8.0,
+    "fan_ear_hole_center_to_width_edge_mm": 4.0,
+    "fan_ear_hole_diameter_mm": 4.0,
+    "fan_ear_thickness_along_fastener_mm": 3.0,
+    "fan_ear_height_along_duct_mm": 20.0,
+    "fan_ear_intake_end_from_motor_side_duct_end_mm": 39.0,
+    "fan_ear_dimension_basis": "Owner confirms 4 mm holes, 3 mm screw-path thickness, 8 mm width and 20 mm height along the duct; holes centered in each ear. Ear's intake-side end is 39 mm from the motor-side duct end, excluding the motor.",
+    "scale_model": "AWS SC-2kg",
+    "scale_platform_mm": [
+      100.0,
+      100.0
+    ],
+    "scale_capacity_g": 2000.0,
+    "scale_readability_g": 0.1,
+    "meter_brand": "KREATORDIRECT",
+    "meter_continuous_a": 50.0,
+    "meter_rating_basis": "Owner-supplied listing; not independently tested. Photo says 150A; listing says 0-200A."
+  },
+  "unmeasured": {
+    "fan_motor_protrusion_beyond_duct_mm": null,
+    "fan_74mm_band_width_mm": null
+  },
+  "housing_profile": {
+    "center_ring": {
+      "present": true,
+      "outside_diameter_mm": 75.5,
+      "axial_width_mm": 1.5,
+      "intake_edge_from_intake_face_mm": 36.25,
+      "basis": "Owner measures OD 75.5 mm, axial width 1.5 mm and center aligned with the ear-hole centers. Derived intake edge: 37 - 1.5/2 = 36.25 mm from intake face."
+    },
+    "cable_exit": {
+      "cable_count": 3,
+      "reported_width_mm": 6.0,
+      "reported_height_mm": 11.0,
+      "circumferential_location": "Centered between the mounting ears, on one side of the housing",
+      "axial_location": "On the motor side of the raised center ring",
+      "dimension_axes_confirmed": false,
+      "radial_projection_mm": null,
+      "axial_edge_from_ring_mm": null,
+      "basis": "Owner reports a 6 mm wide by 11 mm high cable-exit area and cable interference when that side is placed in the saddle. Exact dimension axes, protrusion and axial offset are not yet established."
+    }
+  },
+  "physical_checks": {
+    "housing_fit_gauge": {
+      "status": "OWNER_REPORTED_FIT",
+      "nominal_bore_mm": 74.4,
+      "axial_width_mm": 6.0,
+      "observation": "Ring gauge fits around the housing without force",
+      "scope": "Local unpowered fit only; radial play, exact location, filament/profile and whole-cradle fit are not established"
+    },
+    "cradle_v1": {
+      "status": "OWNER_REPORTED_FIT_FAILURE",
+      "printed_quantity": 1,
+      "observation": "Cradle does not fit well because it does not account for the lip in the center of the body",
+      "cause": "Cradle and fan model omitted the raised circumferential ring; local gauge fit was insufficient to establish the full mounting profile",
+      "next_action": "Ring measured; check corrected v2 cradle on the actual fan before progressing to stand assembly"
+    },
+    "cradle_v2": {
+      "status": "OWNER_REPORTED_ASSEMBLED_WITH_M3_HARDWARE",
+      "observation": "Owner reports the fan is mounted to the cradle with M3 nuts and bolts",
+      "scope": "Owner-reported installation; no proof-load, thermal, vibration or powered-stand validation",
+      "cable_side_observation": "Three cables emerge between the ears on the motor side of the ring; exit area reported as 6 mm wide by 11 mm high",
+      "body_ring_fit_observation": "Printed fine and fits perfectly, including the center ring, on the side without the three cables; does not fit over the cable-exit side"
+    },
+    "mounting_board": {
+      "status": "NOT_YET_REPORTED",
+      "next_action": "Deferred with all lift work; retain board proposal for later review"
+    }
+  },
+  "retaining_mount": {
+    "revision": "v2",
+    "status": "CRADLE_ASSEMBLED_FURTHER_WORK_DEFERRED",
+    "orientation": {
+      "cradle_count": 1,
+      "cable_exit_direction": "up",
+      "basis": "Use the owner-confirmed fitting side as the underside: cradle below fan, cable exit above it, ears on the two shelves. Cable-down fit is not supported by v2."
+    },
+    "center_ring_relief": {
+      "radial_clearance_mm": 0.3,
+      "axial_clearance_each_side_mm": 0.5,
+      "basis": "Trial groove OD 76.1 mm and width 2.5 mm around the measured 75.5 x 1.5 mm ring; verify on the printed part"
+    },
+    "body_axial_length_mm": 24.0,
+    "body_width_mm": 104.0,
+    "axis_above_base_bottom_mm": 54.0,
+    "base_length_mm": 48.0,
+    "base_width_mm": 112.0,
+    "base_thickness_mm": 8.0,
+    "ear_shelf_thickness_mm": 8.0,
+    "fan_slot_width_mm": 3.6,
+    "fan_slot_center_travel_mm": 1.0,
+    "nut_window_inner_y_mm": 37.0,
+    "nut_window_outer_y_mm": 46.5,
+    "nut_window_depth_mm": 14.0,
+    "base_hole_diameter_mm": 4.5,
+    "base_hole_spacing_x_mm": 36.0,
+    "base_hole_spacing_y_mm": 92.0,
+    "fan_screw_diameter_mm": 3.0,
+    "fan_screw_length_mm": 20.0,
+    "fan_washer_od_mm": 6.0,
+    "fan_washer_basis": "M3 DIN 433 small-series metal washer, 3.2 mm ID x 6 mm OD x 0.5 mm. Prior 7 mm OD collides with the measured ring at inward screw positions. Center screws and washers in the ear holes and verify a visible gap to the ring.",
+    "fan_washer_id_mm": 3.2,
+    "fan_washer_thickness_mm": 0.5,
+    "fan_nut_height_mm": 4.0,
+    "fan_nut_across_flats_mm": 5.5,
+    "mounting_board_mm": [
+      120.0,
+      140.0,
+      18.0
+    ]
+  },
+  "layout": {
+    "base_mm": [
+      600.0,
+      320.0,
+      18.0
+    ],
+    "pivot_x_mm": 330.0,
+    "pivot_z_above_base_mm": 180.0,
+    "thrust_height_above_pivot_mm": 120.0,
+    "scale_contact_left_of_pivot_mm": 240.0,
+    "shaft_diameter_mm": 8.0,
+    "shaft_length_mm": 200.0,
+    "bearing_y_mm": [
+      -65.0,
+      65.0
+    ],
+    "scale_body_envelope_mm": [
+      132.0,
+      110.0,
+      21.0
+    ],
+    "scale_body_envelope_basis": "Packaging allowance; owner platform measurement governs. Verify case/display clearance.",
+    "fan_length_allowance_mm": 100.0,
+    "fan_max_od_allowance_mm": 95.0,
+    "fan_package_allowance_basis": "Full-package allowance only; measured duct is 66 mm long, lip OD 75.5 mm, ear span 91 mm. Motor protrusion remains unmeasured.",
+    "fan_axial_mount_position": "Hole and ring planes are 37 mm from inlet; groove spans 35.75-38.25 mm. Owner confirms body/ring fit opposite the cable exit and installation with M3 nuts and bolts. Next: attach cradle to moving mounting board.",
+    "coupon_diametral_clearance_mm": 0.4,
+    "coupon_radial_wall_mm": 4.0,
+    "coupon_axial_height_mm": 6.0
+  },
+  "screening": {
+    "reference_robot_mass_g": 4222.4,
+    "fan_count": 4,
+    "reference_thrust_weight_target": 2.0,
+    "advertised_single_fan_thrust_gf": 1810.0,
+    "example_static_scale_preload_g": 200.0,
+    "gross_scale_working_stop_g": 1800.0,
+    "initial_current_ceiling_a": 20.0,
+    "later_operator_current_stop_a": 40.0,
+    "limits_basis": "Proposed experiment limits, not automatic protection or hardware validation. Final run duration, thermal and cell-voltage limits remain to set."
+  }
+}

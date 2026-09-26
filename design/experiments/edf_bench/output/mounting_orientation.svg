@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="950" height="630" viewBox="0 0 950 630">
+<rect width="950" height="630" fill="#f6f8fb"/>
+<style>text{font-family:Arial,sans-serif;font-size:17px;fill:#15243a}.note{font-size:14px}</style>
+<text x="35" y="32" font-size="23" font-weight="bold">V2 assembly: one cradle below, cables above</text>
+<text x="35" y="57" class="note">End view. Roll the fan about its axis to put the cable exit at the top; keep both ears horizontal.</text>
+<rect x="126.0" y="474.0" width="448.0" height="32.0" fill="#d1994f"/>
+<rect x="142.0" y="296.0" width="416.0" height="210.0" fill="#d1994f"/>
+<circle cx="350" cy="290" r="148.8" fill="#f6f8fb"/>
+<circle cx="350" cy="290" r="148.0" fill="#c7ddd3" stroke="#52675d" stroke-width="2"/>
+<rect x="169.0" y="284.0" width="32.0" height="12.0" fill="#c7ddd3" stroke="#52675d"/>
+<line x1="185.0" y1="278" x2="185.0" y2="330.0" stroke="#748ca4" stroke-width="6"/>
+<rect x="499.0" y="284.0" width="32.0" height="12.0" fill="#c7ddd3" stroke="#52675d"/>
+<line x1="515.0" y1="278" x2="515.0" y2="330.0" stroke="#748ca4" stroke-width="6"/>
+<path d="M341 144.0 C341 115 386 100 411 88" fill="none" stroke="#386fa4" stroke-width="6"/>
+<path d="M350 144.0 C350 115 395 100 420 88" fill="none" stroke="#424952" stroke-width="6"/>
+<path d="M359 144.0 C359 115 404 100 429 88" fill="none" stroke="#777f88" stroke-width="6"/>
+<text x="610" y="130">Three cables exit above the cradle</text>
+<text x="610" y="157" class="note">Exit is on the motor side of the ring.</text>
+<path d="M600 137 L467 137 L420 99" fill="none" stroke="#52675d" stroke-width="1.5"/>
+<text x="610" y="289">Ears sit on the two shelves</text>
+<path d="M600 295 H540" fill="none" stroke="#52675d" stroke-width="1.5"/>
+<text x="610" y="437">One printed cradle</text>
+<text x="610" y="464" class="note">The upper half stays open.</text>
+<path d="M600 443 H565" fill="none" stroke="#52675d" stroke-width="1.5"/>
+<text x="290" y="280">Existing fan</text>
+<text x="280" y="307" class="note">Internals omitted</text>
+<text x="35" y="553">Fit screws and washers with power disconnected; check seating and cable clearance.</text>
+<text x="35" y="582" class="note">Cable curves are schematic. Route actual leads clear of inlet/exhaust, with a flexible loop at the moving-to-fixed transition.</text>
+<text x="35" y="610" class="note">Owner-reported 6 × 11 mm exit area is recorded; dimension axes, protrusion and exact axial position are unconfirmed.</text>
+</svg>

@@ -1,0 +1,50 @@
+{
+  "status": "NOMINAL_GEOMETRY_CHECKS_PASSED_NOT_LOAD_VALIDATED",
+  "revision": "v2",
+  "v1_interference_with_measured_ring_mm3": 94.65256597847201,
+  "preserved_v1_interference_with_measured_ring_mm3": 94.65256597847201,
+  "v2_interference_with_measured_ring_mm3": 0.0,
+  "center_ring_geometry": {
+    "outside_diameter_mm": 75.5,
+    "axial_width_mm": 1.5,
+    "start_from_inlet_mm": 36.25,
+    "center_from_inlet_mm": 37.0,
+    "end_from_inlet_mm": 37.75,
+    "start_x_mm": -0.75,
+    "relief_start_from_inlet_mm": 35.75,
+    "relief_start_x_mm": -1.25,
+    "relief_width_mm": 2.5,
+    "relief_diameter_mm": 76.1
+  },
+  "material_above_base_under_groove_mm": 7.950000000000003,
+  "upper_washer_to_ring_nominal_gap_mm": 0.5294004655245317,
+  "upper_washer_to_ring_gap_at_sampled_slot_endpoints_mm": 0.029789570615662342,
+  "physical_fit_status": "OWNER_REPORTED_ASSEMBLED_WITH_M3_HARDWARE",
+  "physical_fit_observation": "Owner reports the fan is mounted to the cradle with M3 nuts and bolts",
+  "physical_fit_scope": "Owner-reported installation; no proof-load, thermal, vibration or powered-stand validation",
+  "body_ring_fit_observation": "Printed fine and fits perfectly, including the center ring, on the side without the three cables; does not fit over the cable-exit side",
+  "cradle_solid_volume_mm3": 97229.93345047953,
+  "cradle_stl_facets": 3888,
+  "print_extent_mm": [
+    48.0,
+    112.0,
+    52.5
+  ],
+  "fan_hardware_stack_mm": 16.0,
+  "screw_projection_beyond_nominal_nut_mm": 4.0,
+  "checks": [
+    "Measured ring collides with both regenerated and preserved v1 solid; clears the revised groove",
+    "Nominal fan interfaces clear cradle",
+    "Sampled vertical placement clear",
+    "M3 hardware clear at nominal and slot endpoints",
+    "Four board holes and base washer access clear",
+    "Four CAD/STEP exports reopened",
+    "Single-solid CAD and closed cradle STL"
+  ],
+  "limits": [
+    "Actual fan taper, root fillets, wiring and motor protrusion not measured",
+    "Inward screw positions leave little washer-to-ring margin; center the screws/washers in the ears and verify the actual gap. Washer float and manufacturing tolerances are not modeled.",
+    "Physical results are recorded separately; no load, thermal, vibration or powered fixture validation",
+    "Hardware models use nominal dimensions; verify purchased parts"
+  ]
+}

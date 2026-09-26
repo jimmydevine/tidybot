@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="720" viewBox="0 0 940 720">
+<rect width="100%" height="100%" fill="#f7f9fc"/>
+<g font-family="sans-serif">
+<text x="30" y="30" font-size="22">Everyday vacuum / drive + quad10 · top</text>
+<text x="30" y="53" font-size="12">Engineering allocations in mm; see hardware worksheet for evidence and mass intervals.</text>
+<rect x="168.1447963800905" y="300.8371040723982" width="15.203619909502262" height="46.87782805429864" fill="#147c88" fill-opacity=".12" stroke="#147c88"><title>72 mm wheel and hub, including upward travel</title></rect>
+<rect x="324.6153846153846" y="300.8371040723982" width="15.203619909502262" height="46.87782805429864" fill="#147c88" fill-opacity=".12" stroke="#147c88"><title>72 mm wheel and hub, including upward travel</title></rect>
+<ellipse cx="253.98190045248867" cy="402.1945701357466" rx="26.606334841628957" ry="26.606334841628957" fill="#147c88" fill-opacity=".08" stroke="#147c88"><title>Centered rear caster; full swivel allocation</title></ellipse>
+<rect x="181.13122171945702" y="259.02714932126696" width="145.70135746606334" height="38.009049773755656" fill="#b85552" fill-opacity=".12" stroke="#b85552"><title>Floor-following TriCut cassette</title></rect>
+<text x="184.13122171945702" y="272.02714932126696" font-size="9">vac_head</text>
+<rect x="168.1447963800905" y="273.59728506787326" width="11.402714932126695" height="22.171945701357465" fill="#b85552" fill-opacity=".12" stroke="#b85552"><title>Front-left edge-brush drive</title></rect>
+<rect x="168.1447963800905" y="256.49321266968326" width="10.135746606334841" height="15.203619909502262" fill="#147c88" fill-opacity=".12" stroke="#147c88"><title>Front backup pitch roller left</title></rect>
+<rect x="329.68325791855204" y="256.49321266968326" width="10.135746606334841" height="15.203619909502262" fill="#147c88" fill-opacity=".12" stroke="#147c88"><title>Front backup pitch roller right</title></rect>
+<rect x="241.94570135746605" y="297.03619909502265" width="24.07239819004525" height="16.470588235294116" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Flexible cassette-to-duct joint</title></rect>
+<rect x="241.94570135746605" y="313.50678733031674" width="24.07239819004525" height="41.17647058823529" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Smooth main dirt duct</title></rect>
+<rect x="183.34841628959276" y="354.68325791855204" width="41.80995475113122" height="66.51583710407239" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Bin left cell</title></rect>
+<rect x="225.15837104072398" y="354.68325791855204" width="57.01357466063348" height="19.638009049773753" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Bin front cell</title></rect>
+<rect x="183.34841628959276" y="310.97285067873304" width="50.678733031674206" height="40.542986425339365" fill="#147c88" fill-opacity=".12" stroke="#147c88"><title>Trailing drive pod and 75:1 encoder motor</title></rect>
+<rect x="273.9366515837104" y="310.97285067873304" width="50.678733031674206" height="40.542986425339365" fill="#147c88" fill-opacity=".12" stroke="#147c88"><title>Trailing drive pod and 75:1 encoder motor</title></rect>
+<rect x="221.04072398190044" y="431.3348416289593" width="65.88235294117646" height="17.104072398190045" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Rear stereo camera</title></rect>
+<rect x="184.6153846153846" y="259.02714932126696" width="47.511312217194565" height="38.009049773755656" fill="#b85552" fill-opacity=".12" stroke="#b85552"><title>Roller motor, transmission and current-sensed drive</title></rect>
+<rect x="347.420814479638" y="326.17647058823525" width="65.88235294117646" height="21.538461538461537" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Downward stereo camera / clear floor view</title></rect>
+<rect x="235.92760180995475" y="256.49321266968326" width="65.88235294117646" height="16.470588235294116" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Core stereo camera, front-facing</title></rect>
+<rect x="263.8009049773756" y="273.59728506787326" width="59.54751131221719" height="35.47511312217195" fill="#466cbd" fill-opacity=".12" stroke="#466cbd"><title>RoboClaw and bottom supervisor</title></rect>
+<rect x="235.2941176470588" y="274.86425339366514" width="25.339366515837103" height="32.94117647058823" fill="#466cbd" fill-opacity=".12" stroke="#466cbd"><title>Blower driver and default-off interface</title></rect>
+<rect x="169.41176470588235" y="356.5837104072398" width="11.402714932126695" height="31.674208144796378" fill="#ca7e26" fill-opacity=".12" stroke="#ca7e26"><title>Bottom power / CAN floating connector reservation</title></rect>
+<rect x="225.15837104072398" y="374.3212669683258" width="57.01357466063348" height="46.87782805429864" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Bin bridge over caster</title></rect>
+<rect x="284.07239819004525" y="355.31674208144796" width="48.77828054298642" height="54.47963800904977" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Blower, inlet plenum and vibration isolation</title></rect>
+<rect x="194.75113122171945" y="309.70588235294116" width="114.02714932126696" height="41.80995475113122" fill="#b88617" fill-opacity=".12" stroke="#b88617"><title>Automatic battery cartridge / fixed receiver allocation</title></rect>
+<text x="197.75113122171945" y="322.70588235294116" font-size="9">battery_bay</text>
+<rect x="168.1447963800905" y="259.02714932126696" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>cliff front left</title></rect>
+<rect x="329.68325791855204" y="259.02714932126696" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>cliff front right</title></rect>
+<rect x="169.41176470588235" y="419.29864253393663" width="11.402714932126695" height="8.235294117647058" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>cliff rear left</title></rect>
+<rect x="327.1493212669683" y="419.29864253393663" width="11.402714932126695" height="8.235294117647058" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>cliff rear right</title></rect>
+<rect x="289.7737556561086" y="410.42986425339365" width="31.674208144796378" height="10.769230769230768" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Rear clean-air exhaust and diffuser</title></rect>
+<rect x="133.61990950226243" y="152.28506787330315" width="12.669683257918551" height="380.0904977375565" fill="#6d63a9" fill-opacity=".12" stroke="#6d63a9"><title>20/18 mm carbon longitudinal beam</title></rect>
+<rect x="361.67420814479635" y="152.28506787330315" width="12.669683257918551" height="380.0904977375565" fill="#6d63a9" fill-opacity=".12" stroke="#6d63a9"><title>20/18 mm carbon longitudinal beam</title></rect>
+<rect x="146.289592760181" y="239.3891402714932" width="215.3846153846154" height="12.669683257918551" fill="#6d63a9" fill-opacity=".12" stroke="#6d63a9"><title>20/18 mm carbon crossbeam</title></rect>
+<rect x="146.289592760181" y="432.6018099547511" width="215.3846153846154" height="12.669683257918551" fill="#6d63a9" fill-opacity=".12" stroke="#6d63a9"><title>20/18 mm carbon crossbeam</title></rect>
+<rect x="168.46153846153845" y="256.8099547511312" width="171.04072398190044" height="6.334841628959276" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Core front aluminum rail at z 86</title></rect>
+<rect x="168.46153846153845" y="421.5158371040724" width="171.04072398190044" height="6.334841628959276" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Core rear aluminum rail at z 86</title></rect>
+<rect x="168.46153846153845" y="263.1447963800905" width="6.334841628959276" height="158.3710407239819" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Core left aluminum rail at z 86</title></rect>
+<rect x="333.1674208144796" y="263.1447963800905" width="6.334841628959276" height="158.3710407239819" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Core right aluminum rail at z 86</title></rect>
+<rect x="184.6153846153846" y="263.46153846153845" width="71.58371040723982" height="44.34389140271493" fill="#ca7e26" fill-opacity=".12" stroke="#ca7e26"><title>24 V converter / 12 V and 5 V power bay</title></rect>
+<text x="187.6153846153846" y="276.46153846153845" font-size="9">core_power</text>
+<rect x="258.0995475113122" y="263.46153846153845" width="65.88235294117646" height="44.34389140271493" fill="#466cbd" fill-opacity=".12" stroke="#466cbd"><title>Pi 5, active cooling and cable space</title></rect>
+<text x="261.0995475113122" y="276.46153846153845" font-size="9">pi_bay</text>
+<rect x="175.1131221719457" y="316.04072398190044" width="17.737556561085974" height="36.7420814479638" fill="#466cbd" fill-opacity=".12" stroke="#466cbd"><title>Core supervisor / CAN / watchdog</title></rect>
+<rect x="312.579185520362" y="309.70588235294116" width="27.239819004524886" height="43.07692307692307" fill="#ca7e26" fill-opacity=".12" stroke="#ca7e26"><title>Fixed main-bus switching, precharge and current sensing</title></rect>
+<rect x="168.1447963800905" y="292.60180995475116" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>cliff side left</title></rect>
+<rect x="332.21719457013575" y="292.60180995475116" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>cliff side right</title></rect>
+<rect x="183.34841628959276" y="360.38461538461536" width="98.8235294117647" height="60.81447963800905" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Filter drawer and dirty/clean plenums</title></rect>
+<text x="186.34841628959276" y="373.38461538461536" font-size="9">filter_bay</text>
+<ellipse cx="139.9547511312217" cy="164.9547511312217" rx="12.036199095022624" ry="12.036199095022624" fill="#6d63a9" fill-opacity=".08" stroke="#6d63a9"><title>Rotor 1: motor / prop / ESC</title></ellipse>
+<ellipse cx="368.0090497737557" cy="164.9547511312217" rx="12.036199095022624" ry="12.036199095022624" fill="#6d63a9" fill-opacity=".08" stroke="#6d63a9"><title>Rotor 2: motor / prop / ESC</title></ellipse>
+<ellipse cx="368.0090497737557" cy="519.7058823529411" rx="12.036199095022624" ry="12.036199095022624" fill="#6d63a9" fill-opacity=".08" stroke="#6d63a9"><title>Rotor 3: motor / prop / ESC</title></ellipse>
+<ellipse cx="139.9547511312217" cy="519.7058823529411" rx="12.036199095022624" ry="12.036199095022624" fill="#6d63a9" fill-opacity=".08" stroke="#6d63a9"><title>Rotor 4: motor / prop / ESC</title></ellipse>
+<rect x="230.85972850678732" y="433.868778280543" width="46.87782805429864" height="33.574660633484164" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Flight controller, vibration mount and connections</title></rect>
+<rect x="282.17194570135746" y="367.35294117647055" width="1.9004524886877827" height="36.10859728506787" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Clean-air bridge</title></rect>
+<ellipse cx="139.9547511312217" cy="164.9547511312217" rx="89.95475113122171" ry="89.95475113122171" fill="#6d63a9" fill-opacity=".08" stroke="#6d63a9"><title>Guard 1</title></ellipse>
+<text x="53.0" y="88.0" font-size="9">guard_1</text>
+<ellipse cx="368.00904977375563" cy="164.9547511312217" rx="89.95475113122171" ry="89.95475113122171" fill="#6d63a9" fill-opacity=".08" stroke="#6d63a9"><title>Guard 2</title></ellipse>
+<text x="281.0542986425339" y="88.0" font-size="9">guard_2</text>
+<ellipse cx="368.00904977375563" cy="519.7058823529412" rx="89.95475113122171" ry="89.95475113122171" fill="#6d63a9" fill-opacity=".08" stroke="#6d63a9"><title>Guard 3</title></ellipse>
+<text x="281.0542986425339" y="442.75113122171945" font-size="9">guard_3</text>
+<ellipse cx="139.9547511312217" cy="519.7058823529412" rx="89.95475113122171" ry="89.95475113122171" fill="#6d63a9" fill-opacity=".08" stroke="#6d63a9"><title>Guard 4</title></ellipse>
+<text x="53.0" y="442.75113122171945" font-size="9">guard_4</text>
+<rect x="168.46153846153845" y="256.8099547511312" width="171.04072398190044" height="6.334841628959276" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Core front aluminum rail at z 121</title></rect>
+<rect x="168.46153846153845" y="421.5158371040724" width="171.04072398190044" height="6.334841628959276" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Core rear aluminum rail at z 121</title></rect>
+<rect x="168.46153846153845" y="263.1447963800905" width="6.334841628959276" height="158.3710407239819" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Core left aluminum rail at z 121</title></rect>
+<rect x="333.1674208144796" y="263.1447963800905" width="6.334841628959276" height="158.3710407239819" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Core right aluminum rail at z 121</title></rect>
+<rect x="221.3574660633484" y="314.7737556561086" width="61.32126696832579" height="44.53393665158371" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Core-fixed RPLIDAR A1</title></rect>
+<rect x="289.14027149321265" y="310.97285067873304" width="49.41176470588235" height="20.271493212669682" fill="#ca7e26" fill-opacity=".12" stroke="#ca7e26"><title>Protected raw lift power / control connector reservation</title></rect>
+<rect x="168.1447963800905" y="343.91402714932127" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Core perimeter range sensor 3</title></rect>
+<rect x="332.21719457013575" y="343.91402714932127" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Core perimeter range sensor 4</title></rect>
+<rect x="195.3846153846154" y="312.23981900452486" width="22.171945701357465" height="38.009049773755656" fill="#ca7e26" fill-opacity=".12" stroke="#ca7e26"><title>Dock logic supply / reverse-blocking power handover</title></rect>
+<rect x="192.21719457013575" y="256.49321266968326" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Core perimeter range sensor 1</title></rect>
+<rect x="315.7466063348416" y="256.49321266968326" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Core perimeter range sensor 2</title></rect>
+<rect x="195.3846153846154" y="415.49773755656105" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Core perimeter range sensor 5</title></rect>
+<rect x="312.579185520362" y="415.49773755656105" width="8.235294117647058" height="11.402714932126695" fill="#954ab3" fill-opacity=".12" stroke="#954ab3"><title>Core perimeter range sensor 6</title></rect>
+<text x="30" y="680" font-size="14">Mass 7.03 kg; range 5.30–9.54 kg, with design payload and battery.</text>
+<text x="30" y="703" font-size="12">Front = y 0; extensions may have negative y. Distributed frames/wiring are not drawn as solid boxes.</text></g></svg>

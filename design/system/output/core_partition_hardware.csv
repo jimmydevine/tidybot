@@ -1,0 +1,243 @@
+configuration,instance,hardware_id,module,low_g,nominal_g,high_g,mass_basis
+vacuum,pi_bay:pi,pi,core,65,82,105,installed allowance; owned board available; processing power is a workload estimate
+vacuum,front_camera:depth_camera,depth_camera,core,91,106,125,manufacturer drawing and 91 g reference plus mount/cable allowance
+vacuum,core_mcu_bay:core_mcu,core_mcu,core,12,20,30,board plus interface allowance
+vacuum,battery_bay:battery_cartridge,battery_cartridge,core,85,140,220,"Installed allowance: 65 g shell/restraint, 35 g monitor/ID, 40 g fuse/contacts/wiring nominal; excludes bare cell pack and fixed core receiver"
+vacuum,battery_bay:battery_receiver,battery_receiver,core,30,50,85,Additional automatic-exchange receiver allowance; passive latch retained without power
+vacuum,pack_protection:core_monitor,core_monitor,core,45,80,140,custom PCB assembly allowance; reference IC is not a complete high-current BMS
+vacuum,lidar:lidar,lidar,core,160,170,185,manufacturer family reference; owned revision not measured
+vacuum,core_misc:core_prints,core_prints,core,110,160,225,material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output
+vacuum,core_misc:core_metal,core_metal,core,110,145,190,calculated stock allowance: two 270/250 mm square 2 mm rings = 112.3 g; spacers/spreaders added
+vacuum,core_misc:core_locks,core_locks,core,90,130,185,"mechanism allowance; four top and four bottom, station-actuated"
+vacuum,core_misc:core_harness,core_harness,core,85,125,190,route allowance; includes floor harness and short high-current trunk; excludes lift-side wiring
+vacuum,core_misc:core_near,core_near,core,20,32,50,sensor plus harness/mount allowance; no all-surface detection guarantee
+vacuum,core_misc:status,status,core,8,15,25,small hardware allowance
+vacuum,cap:cap,cap,cap,45,70,100,55 cm3 effective PETG/fastener allowance; no screen selected
+vacuum,wheel_left:drive_wheel,drive_wheel,drive,52,55,59,manufacturer reference
+vacuum,wheel_left:wheel_hub,wheel_hub,drive,12,17,23,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+vacuum,pod_left:drive_motor,drive_motor,drive,99,104,110,catalog reference and modest assembly variation
+vacuum,pod_left:pod,pod,drive,42,62,90,per-wheel material/hardware allowance: 28 cm3 PETG plus 26 g stock and fasteners
+vacuum,wheel_right:drive_wheel,drive_wheel,drive,52,55,59,manufacturer reference
+vacuum,wheel_right:wheel_hub,wheel_hub,drive,12,17,23,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+vacuum,pod_right:drive_motor,drive_motor,drive,99,104,110,catalog reference and modest assembly variation
+vacuum,pod_right:pod,pod,drive,42,62,90,per-wheel material/hardware allowance: 28 cm3 PETG plus 26 g stock and fasteners
+vacuum,drive_control:roboclaw,roboclaw,drive,18,24,33,catalog board 18 g plus mounts
+vacuum,drive_control:bottom_mcu,bottom_mcu,drive,18,28,42,installed electronics allowance
+vacuum,drive_misc:bottom_frame,bottom_frame,drive,160,225,305,"120 cm3 PETG plus 73 g rails/studs; contains no motors, pods, bumper or tool shell"
+vacuum,drive_misc:bottom_bumper,bottom_bumper,drive,35,55,80,material/hardware allowance
+vacuum,drive_misc:floor_sensors,floor_sensors,drive,22,36,55,assembled allowance; separate from core obstacle sensing
+vacuum,drive_misc:bottom_harness,bottom_harness,drive,40,65,95,"route allowance; includes encoder leads, sensor wiring and short tool cables"
+vacuum,caster:caster,caster,drive,90,112,145,"catalog caster 90 g, 50.5 mm height and 40.5 mm sweep radius; installed stem/plate added"
+vacuum,vac_head:tricut,tricut,vacuum,110,200,230,manufacturer listing 200 g; bare versus packaged mass unresolved
+vacuum,vac_head:head_frame,head_frame,vacuum,90,135,195,"80 cm3 PETG plus springs, bearings, captive M3 hardware and seals"
+vacuum,vac_head_drive:roller_motor,roller_motor,vacuum,90,95,101,catalog reference
+vacuum,vac_head_drive:roller_transmission,roller_transmission,vacuum,25,45,75,mechanical allowance; supplier cutter interface still unresolved
+vacuum,vac_head_drive:tool_stage,tool_stage,vacuum,3.1,7,13,catalog bare carrier 3.1 g plus installed allowance
+vacuum,vac_side:side_brush,side_brush,vacuum,15,25,40,consumable and hub allowance; excludes motor and power stage
+vacuum,vac_side:micro_motor,micro_motor,vacuum,10,11,13,catalog reference; power limited separately
+vacuum,vac_side:tool_stage,tool_stage,vacuum,3.1,7,13,catalog bare carrier 3.1 g plus installed allowance
+vacuum,vac_duct:air_plumbing,air_plumbing,vacuum,45,75,115,material allowance; all air remains on bottom
+vacuum,vac_bin_left:bin,bin,vacuum,130,195,280,145 cm3 PETG effective material plus hardware; 0.50 L usable design target
+vacuum,filter_bay:filter,filter,air_common,35,55,85,installed allowance; exact filter dimension and resistance still unknown
+vacuum,blower_bay:blower,blower,air_common,115,155,215,mass allowance; source provides dimensions/curve but no verified installed mass
+vacuum,blower_driver:blower_driver,blower_driver,air_common,15,24,36,driver sheet 15 g plus connections; omit optional printer adapter
+vacuum,air_sensing:air_sensing,air_sensing,air_common,22,38,58,"board/hose allowance; NXP MPX5010DP family reference, exact carrier TBD"
+vacuum,anti_tip_left:anti_tip,anti_tip,drive,12,18,28,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+vacuum,anti_tip_right:anti_tip,anti_tip,drive,12,18,28,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+vacuum,dock_logic_power:dock_logic_power,dock_logic_power,core,25,45,75,"Installed 40 W logic supply/interface allocation, not selected hardware"
+vacuum,core_logic_power_F:logic_buck,logic_buck,core,15,25,45,assembly allowance; D42V110F5 family reference; exact variant and thermal review required
+vacuum,cincon_reference:tool_converter,tool_converter,air_common,155,190,245,"catalog 95+50.4+1.9 g plus fan, carrier and mounting; comparison regulator for 6S case"
+vacuum,motor_buck_reference:motor_buck,motor_buck,drive,15,24,36,catalog bare 15 g plus installed allowance
+vacuum,clamp_resistor_reference:regen_clamp,regen_clamp,drive,22,40,70,"custom circuit allowance; 15 V comparator threshold, 10 ohm 25 W resistor, 2200 uF/25 V reference"
+vacuum,floor_shelf_left:floor_shelf_left,floor_shelf_left,drive,14.54355,15.309000000000001,16.839900000000004,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_shelf_right:floor_shelf_right,floor_shelf_right,drive,4.62213,4.8654,5.351940000000001,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_shelf_tab:floor_shelf_tab,floor_shelf_tab,drive,0.09234,0.09720000000000001,0.10692000000000002,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_foot_plate:floor_foot_plate,floor_foot_plate,drive,8.3106,8.748000000000001,9.622800000000002,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_foot_tab:floor_foot_tab,floor_foot_tab,drive,0.21545999999999998,0.2268,0.24948000000000004,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_rear_stiffener:floor_rear_stiffener,floor_rear_stiffener,drive,4.7196,4.968,5.4648,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_front_stiffener:floor_front_stiffener,floor_front_stiffener,drive,3.2832000000000003,3.4560000000000004,3.8016000000000005,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_post_0:floor_post_0,floor_post_0,drive,4.810736538405318,5.063933198321387,5.570326518153527,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_post_1:floor_post_1,floor_post_1,drive,4.810736538405318,5.063933198321387,5.570326518153527,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_post_2:floor_post_2,floor_post_2,drive,4.810736538405318,5.063933198321387,5.570326518153527,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,core_interface_F:core_interface_F,core_interface_F,core,4,8,15,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+vacuum,floor_interface_F:floor_interface_F,floor_interface_F,drive,10,16,28,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+vacuum,floor_carrier_fasteners:floor_carrier_fasteners,floor_carrier_fasteners,drive,6,10,18,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+vacuum,battery,design_6s,battery,700,753,820,Listed pack reference; no protection or harness double-counted
+vacuum,payload,payload,payload,150,150,300,Bounded design contents
+mop,pi_bay:pi,pi,core,65,82,105,installed allowance; owned board available; processing power is a workload estimate
+mop,front_camera:depth_camera,depth_camera,core,91,106,125,manufacturer drawing and 91 g reference plus mount/cable allowance
+mop,core_mcu_bay:core_mcu,core_mcu,core,12,20,30,board plus interface allowance
+mop,battery_bay:battery_cartridge,battery_cartridge,core,85,140,220,"Installed allowance: 65 g shell/restraint, 35 g monitor/ID, 40 g fuse/contacts/wiring nominal; excludes bare cell pack and fixed core receiver"
+mop,battery_bay:battery_receiver,battery_receiver,core,30,50,85,Additional automatic-exchange receiver allowance; passive latch retained without power
+mop,pack_protection:core_monitor,core_monitor,core,45,80,140,custom PCB assembly allowance; reference IC is not a complete high-current BMS
+mop,lidar:lidar,lidar,core,160,170,185,manufacturer family reference; owned revision not measured
+mop,core_misc:core_prints,core_prints,core,110,160,225,material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output
+mop,core_misc:core_metal,core_metal,core,110,145,190,calculated stock allowance: two 270/250 mm square 2 mm rings = 112.3 g; spacers/spreaders added
+mop,core_misc:core_locks,core_locks,core,90,130,185,"mechanism allowance; four top and four bottom, station-actuated"
+mop,core_misc:core_harness,core_harness,core,85,125,190,route allowance; includes floor harness and short high-current trunk; excludes lift-side wiring
+mop,core_misc:core_near,core_near,core,20,32,50,sensor plus harness/mount allowance; no all-surface detection guarantee
+mop,core_misc:status,status,core,8,15,25,small hardware allowance
+mop,cap:cap,cap,cap,45,70,100,55 cm3 effective PETG/fastener allowance; no screen selected
+mop,wheel_left:drive_wheel,drive_wheel,drive,52,55,59,manufacturer reference
+mop,wheel_left:wheel_hub,wheel_hub,drive,12,17,23,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+mop,pod_left:drive_motor,drive_motor,drive,99,104,110,catalog reference and modest assembly variation
+mop,pod_left:pod,pod,drive,42,62,90,per-wheel material/hardware allowance: 28 cm3 PETG plus 26 g stock and fasteners
+mop,wheel_right:drive_wheel,drive_wheel,drive,52,55,59,manufacturer reference
+mop,wheel_right:wheel_hub,wheel_hub,drive,12,17,23,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+mop,pod_right:drive_motor,drive_motor,drive,99,104,110,catalog reference and modest assembly variation
+mop,pod_right:pod,pod,drive,42,62,90,per-wheel material/hardware allowance: 28 cm3 PETG plus 26 g stock and fasteners
+mop,drive_control:roboclaw,roboclaw,drive,18,24,33,catalog board 18 g plus mounts
+mop,drive_control:bottom_mcu,bottom_mcu,drive,18,28,42,installed electronics allowance
+mop,drive_misc:bottom_frame,bottom_frame,drive,160,225,305,"120 cm3 PETG plus 73 g rails/studs; contains no motors, pods, bumper or tool shell"
+mop,drive_misc:bottom_bumper,bottom_bumper,drive,35,55,80,material/hardware allowance
+mop,drive_misc:floor_sensors,floor_sensors,drive,22,36,55,assembled allowance; separate from core obstacle sensing
+mop,drive_misc:bottom_harness,bottom_harness,drive,40,65,95,"route allowance; includes encoder leads, sensor wiring and short tool cables"
+mop,caster:caster,caster,drive,90,112,145,"catalog caster 90 g, 50.5 mm height and 40.5 mm sweep radius; installed stem/plate added"
+mop,mop_pad:mop_pad,mop_pad,mop,70,105,150,"material/textile allowance; 8 N normal-force design point, 3 mm peak-to-peak oscillation"
+mop,mop_drive:roller_motor,roller_motor,mop,90,95,101,catalog reference
+mop,mop_drive:mop_crank,mop_crank,mop,25,45,75,"material/mechanism allowance; 15 Hz at 900 RPM, not an OEM mop performance claim"
+mop,mop_drive:tool_stage,tool_stage,mop,3.1,7,13,catalog bare carrier 3.1 g plus installed allowance
+mop,mop_lift:pad_lift,pad_lift,mop,45,62,88,"19 g catalog actuator plus regulator, links, mount, switches and wire allowance; 12 mm lift from 20 mm stroke"
+mop,mop_tank:water_tank,water_tank,mop,75,115,175,90 cm3 PETG/liner allowance; printed shell needs a verified liner or leak-tight process
+mop,mop_pump:pump,pump,mop,190,200,215,catalog reference; 200–300 mA while running and up to 100 mL/min
+mop,mop_wet_io:wet_plumbing,wet_plumbing,mop,40,70,105,installed fluid hardware allowance; no dirty-water tank carried
+mop,mop_wet_io:wet_control,wet_control,mop,12,22,35,PCB and connectors allowance
+mop,anti_tip_left:anti_tip,anti_tip,drive,12,18,28,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+mop,anti_tip_right:anti_tip,anti_tip,drive,12,18,28,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+mop,dock_logic_power:dock_logic_power,dock_logic_power,core,25,45,75,"Installed 40 W logic supply/interface allocation, not selected hardware"
+mop,core_logic_power_F:logic_buck,logic_buck,core,15,25,45,assembly allowance; D42V110F5 family reference; exact variant and thermal review required
+mop,motor_buck_reference:motor_buck,motor_buck,drive,15,24,36,catalog bare 15 g plus installed allowance
+mop,clamp_resistor_reference:regen_clamp,regen_clamp,drive,22,40,70,"custom circuit allowance; 15 V comparator threshold, 10 ohm 25 W resistor, 2200 uF/25 V reference"
+mop,floor_shelf_left:floor_shelf_left,floor_shelf_left,drive,14.54355,15.309000000000001,16.839900000000004,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_shelf_right:floor_shelf_right,floor_shelf_right,drive,4.62213,4.8654,5.351940000000001,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_shelf_tab:floor_shelf_tab,floor_shelf_tab,drive,0.09234,0.09720000000000001,0.10692000000000002,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_foot_plate:floor_foot_plate,floor_foot_plate,drive,8.3106,8.748000000000001,9.622800000000002,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_foot_tab:floor_foot_tab,floor_foot_tab,drive,0.21545999999999998,0.2268,0.24948000000000004,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_rear_stiffener:floor_rear_stiffener,floor_rear_stiffener,drive,4.7196,4.968,5.4648,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_front_stiffener:floor_front_stiffener,floor_front_stiffener,drive,3.2832000000000003,3.4560000000000004,3.8016000000000005,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_post_0:floor_post_0,floor_post_0,drive,4.810736538405318,5.063933198321387,5.570326518153527,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_post_1:floor_post_1,floor_post_1,drive,4.810736538405318,5.063933198321387,5.570326518153527,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_post_2:floor_post_2,floor_post_2,drive,4.810736538405318,5.063933198321387,5.570326518153527,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,core_interface_F:core_interface_F,core_interface_F,core,4,8,15,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+mop,floor_interface_F:floor_interface_F,floor_interface_F,drive,10,16,28,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+mop,floor_carrier_fasteners:floor_carrier_fasteners,floor_carrier_fasteners,drive,6,10,18,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+mop,battery,design_6s,battery,700,753,820,Listed pack reference; no protection or harness double-counted
+mop,payload,payload,payload,400,400,450,Bounded design contents
+low,pi_bay:pi,pi,core,65,82,105,installed allowance; owned board available; processing power is a workload estimate
+low,front_camera:depth_camera,depth_camera,core,91,106,125,manufacturer drawing and 91 g reference plus mount/cable allowance
+low,core_mcu_bay:core_mcu,core_mcu,core,12,20,30,board plus interface allowance
+low,battery_bay:battery_cartridge,battery_cartridge,core,85,140,220,"Installed allowance: 65 g shell/restraint, 35 g monitor/ID, 40 g fuse/contacts/wiring nominal; excludes bare cell pack and fixed core receiver"
+low,battery_bay:battery_receiver,battery_receiver,core,30,50,85,Additional automatic-exchange receiver allowance; passive latch retained without power
+low,pack_protection:core_monitor,core_monitor,core,45,80,140,custom PCB assembly allowance; reference IC is not a complete high-current BMS
+low,lidar:lidar,lidar,core,160,170,185,manufacturer family reference; owned revision not measured
+low,core_misc:core_prints,core_prints,core,110,160,225,material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output
+low,core_misc:core_metal,core_metal,core,110,145,190,calculated stock allowance: two 270/250 mm square 2 mm rings = 112.3 g; spacers/spreaders added
+low,core_misc:core_locks,core_locks,core,90,130,185,"mechanism allowance; four top and four bottom, station-actuated"
+low,core_misc:core_harness,core_harness,core,85,125,190,route allowance; includes floor harness and short high-current trunk; excludes lift-side wiring
+low,core_misc:core_near,core_near,core,20,32,50,sensor plus harness/mount allowance; no all-surface detection guarantee
+low,core_misc:status,status,core,8,15,25,small hardware allowance
+low,cap:cap,cap,cap,45,70,100,55 cm3 effective PETG/fastener allowance; no screen selected
+low,wheel_left:drive_wheel,drive_wheel,drive,52,55,59,manufacturer reference
+low,wheel_left:wheel_hub,wheel_hub,drive,12,17,23,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+low,pod_left:drive_motor,drive_motor,drive,99,104,110,catalog reference and modest assembly variation
+low,pod_left:pod,pod,drive,42,62,90,per-wheel material/hardware allowance: 28 cm3 PETG plus 26 g stock and fasteners
+low,wheel_right:drive_wheel,drive_wheel,drive,52,55,59,manufacturer reference
+low,wheel_right:wheel_hub,wheel_hub,drive,12,17,23,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+low,pod_right:drive_motor,drive_motor,drive,99,104,110,catalog reference and modest assembly variation
+low,pod_right:pod,pod,drive,42,62,90,per-wheel material/hardware allowance: 28 cm3 PETG plus 26 g stock and fasteners
+low,drive_control:roboclaw,roboclaw,drive,18,24,33,catalog board 18 g plus mounts
+low,drive_control:bottom_mcu,bottom_mcu,drive,18,28,42,installed electronics allowance
+low,drive_misc:bottom_frame,bottom_frame,drive,160,225,305,"120 cm3 PETG plus 73 g rails/studs; contains no motors, pods, bumper or tool shell"
+low,drive_misc:bottom_bumper,bottom_bumper,drive,35,55,80,material/hardware allowance
+low,drive_misc:floor_sensors,floor_sensors,drive,22,36,55,assembled allowance; separate from core obstacle sensing
+low,drive_misc:bottom_harness,bottom_harness,drive,40,65,95,"route allowance; includes encoder leads, sensor wiring and short tool cables"
+low,caster:caster,caster,drive,90,112,145,"catalog caster 90 g, 50.5 mm height and 40.5 mm sweep radius; installed stem/plate added"
+low,filter_bay:filter,filter,air_common,35,55,85,installed allowance; exact filter dimension and resistance still unknown
+low,blower_bay:blower,blower,air_common,115,155,215,mass allowance; source provides dimensions/curve but no verified installed mass
+low,blower_driver:blower_driver,blower_driver,air_common,15,24,36,driver sheet 15 g plus connections; omit optional printer adapter
+low,air_sensing:air_sensing,air_sensing,air_common,22,38,58,"board/hose allowance; NXP MPX5010DP family reference, exact carrier TBD"
+low,extension:extension_duct,extension_duct,extension_common,205,270,380,"calculated thin-wall allowance: six 245 mm stages, 1 mm walls, PETG 1.27 g/cm3; guide/seal changes may increase mass"
+low,extension:extension_guides,extension_guides,extension_common,75,125,205,"custom mechanism allowance; 45 mm stage overlap, guided unsupported strip gap <=20 mm"
+low,extension_drive:extension_drive,extension_drive,extension_common,140,185,260,catalog motor plus mechanism allowance; 12 N force limit and 50 mm/s feed target
+low,extension_drive:tool_stage,tool_stage,extension_common,3.1,7,13,catalog bare carrier 3.1 g plus installed allowance
+low,extension_cable:extension_wiring,extension_wiring,extension_common,20,35,55,"installed allowance; 1 m extension, independent retraction confirmation"
+low,extension_air_turn:air_plumbing,air_plumbing,extension_common,45,75,115,material allowance; all air remains on bottom
+low,extension_bin:low_bin,low_bin,extension_common,100,155,220,material allowance; raised clear of central telescoping duct
+low,low_head:low_head,low_head,low,90,135,195,95 cm3 PETG plus lips/skids; no onboard head motor; optional powered cassette must be rebudgeted
+low,extension_lifter:pad_lift,pad_lift,extension_common,45,62,88,"19 g catalog actuator plus regulator, links, mount, switches and wire allowance; 12 mm lift from 20 mm stroke"
+low,extension_lifter:extension_cradle,extension_cradle,extension_common,35,55,90,material and hardware allowance; raises complete tube and head 12 mm before driving
+low,anti_tip_left:anti_tip,anti_tip,drive,12,18,28,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+low,anti_tip_right:anti_tip,anti_tip,drive,12,18,28,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+low,dock_logic_power:dock_logic_power,dock_logic_power,core,25,45,75,"Installed 40 W logic supply/interface allocation, not selected hardware"
+low,core_logic_power_F:logic_buck,logic_buck,core,15,25,45,assembly allowance; D42V110F5 family reference; exact variant and thermal review required
+low,cincon_reference:tool_converter,tool_converter,air_common,155,190,245,"catalog 95+50.4+1.9 g plus fan, carrier and mounting; comparison regulator for 6S case"
+low,motor_buck_reference:motor_buck,motor_buck,drive,15,24,36,catalog bare 15 g plus installed allowance
+low,clamp_resistor_reference:regen_clamp,regen_clamp,drive,22,40,70,"custom circuit allowance; 15 V comparator threshold, 10 ohm 25 W resistor, 2200 uF/25 V reference"
+low,floor_shelf_left:floor_shelf_left,floor_shelf_left,drive,14.54355,15.309000000000001,16.839900000000004,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,floor_shelf_right:floor_shelf_right,floor_shelf_right,drive,4.62213,4.8654,5.351940000000001,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,floor_shelf_tab:floor_shelf_tab,floor_shelf_tab,drive,0.09234,0.09720000000000001,0.10692000000000002,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,floor_foot_plate:floor_foot_plate,floor_foot_plate,drive,8.3106,8.748000000000001,9.622800000000002,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,floor_foot_tab:floor_foot_tab,floor_foot_tab,drive,0.21545999999999998,0.2268,0.24948000000000004,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,floor_rear_stiffener:floor_rear_stiffener,floor_rear_stiffener,drive,4.7196,4.968,5.4648,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,floor_front_stiffener:floor_front_stiffener,floor_front_stiffener,drive,3.2832000000000003,3.4560000000000004,3.8016000000000005,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,floor_post_0:floor_post_0,floor_post_0,drive,4.810736538405318,5.063933198321387,5.570326518153527,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,floor_post_1:floor_post_1,floor_post_1,drive,4.810736538405318,5.063933198321387,5.570326518153527,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,floor_post_2:floor_post_2,floor_post_2,drive,4.810736538405318,5.063933198321387,5.570326518153527,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+low,core_interface_F:core_interface_F,core_interface_F,core,4,8,15,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+low,floor_interface_F:floor_interface_F,floor_interface_F,drive,10,16,28,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+low,floor_carrier_fasteners:floor_carrier_fasteners,floor_carrier_fasteners,drive,6,10,18,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+low,battery,design_6s,battery,700,753,820,Listed pack reference; no protection or harness double-counted
+low,payload,payload,payload,120,120,250,Bounded design contents
+air_dust_quad,pi_bay:pi,pi,core,65,82,105,installed allowance; owned board available; processing power is a workload estimate
+air_dust_quad,front_camera:depth_camera,depth_camera,core,91,106,125,manufacturer drawing and 91 g reference plus mount/cable allowance
+air_dust_quad,core_mcu_bay:core_mcu,core_mcu,core,12,20,30,board plus interface allowance
+air_dust_quad,battery_bay:battery_cartridge,battery_cartridge,core,85,140,220,"Installed allowance: 65 g shell/restraint, 35 g monitor/ID, 40 g fuse/contacts/wiring nominal; excludes bare cell pack and fixed core receiver"
+air_dust_quad,battery_bay:battery_receiver,battery_receiver,core,30,50,85,Additional automatic-exchange receiver allowance; passive latch retained without power
+air_dust_quad,pack_protection:core_monitor,core_monitor,core,45,80,140,custom PCB assembly allowance; reference IC is not a complete high-current BMS
+air_dust_quad,lidar:lidar,lidar,core,160,170,185,manufacturer family reference; owned revision not measured
+air_dust_quad,core_misc:core_prints,core_prints,core,110,160,225,material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output
+air_dust_quad,core_misc:core_metal,core_metal,core,110,145,190,calculated stock allowance: two 270/250 mm square 2 mm rings = 112.3 g; spacers/spreaders added
+air_dust_quad,core_misc:core_locks,core_locks,core,90,130,185,"mechanism allowance; four top and four bottom, station-actuated"
+air_dust_quad,core_misc:core_harness,core_harness,core,85,125,190,route allowance; includes floor harness and short high-current trunk; excludes lift-side wiring
+air_dust_quad,core_misc:core_near,core_near,core,20,32,50,sensor plus harness/mount allowance; no all-surface detection guarantee
+air_dust_quad,core_misc:status,status,core,8,15,25,small hardware allowance
+air_dust_quad,dock_logic_power:dock_logic_power,dock_logic_power,core,25,45,75,"Installed 40 W logic supply/interface allocation, not selected hardware"
+air_dust_quad,core_logic_power_F:logic_buck,logic_buck,core,15,25,45,assembly allowance; D42V110F5 family reference; exact variant and thermal review required
+air_dust_quad,core_interface_F:core_interface_F,core_interface_F,core,4,8,15,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+air_dust_quad,air_frame_mass:air_frame,air_frame,air_dust,130,180,260,65 cm3 effective PETG at 1.27 g/cm3 plus two edgewise 270 x 20 x 2 mm aluminum crossmembers (58.3 g) and 39 g posts/seats/fasteners nominal; geometry and strength remain to detail
+air_dust_quad,air_feet_mass:air_feet,air_feet,air_dust,25,40,65,"Four 10 g installed feet nominal; no caster, wheels or wheel drive"
+air_dust_quad,air_root_mass:air_root,air_root,air_dust,30,50,85,"Root clamp/load spreader/retention allowance; through-fastened to rear bottom rail, offset right of the hex central support"
+air_dust_quad,air_tubes_mass:air_tubes,air_tubes,air_dust,28,35,50,"Calculated annular stock volume at 1.6 g/cm3, rounded; see boom dimensions"
+air_dust_quad,air_joints_mass:air_joints,air_joints,air_dust,18,28,45,"Two-piece clamps, positive mechanical retention and inserts; no printed long cantilever"
+air_dust_quad,air_head_mass:air_head,air_head,air_dust,22,35,60,60 x 50 x 20 mm head allowance; dust retention and finish compatibility require tests
+air_dust_quad,air_flexure_mass:air_flexure,air_flexure,air_dust,15,25,45,"Provisional 0.2 N contact / 0.5 N retreat; these are targets, not established limits"
+air_dust_quad,air_tip_sense_mass:air_tip_sense,air_tip_sense,air_dust,12,20,35,Sensor assembly allowance; no claim that a range sensor detects every blade or surface
+air_dust_quad,air_io_mass:air_io,air_io,air_dust,18,28,42,Retain local supervision even without drive motors
+air_dust_quad,air_wiring_mass:air_wiring,air_wiring,air_dust,25,40,65,Installed route allowance; includes removable boom connector and branch protection
+air_dust_quad,rotor_1:lift_motor,lift_motor,lift,122,125,132,"manufacturer reference, 4–6S, HQ10x4.5x3 curve at 24 V"
+air_dust_quad,rotor_1:lift_prop,lift_prop,lift,14,20,27,mass allowance; exact curve-matched CW/CCW propellers required
+air_dust_quad,rotor_1:lift_esc,lift_esc,lift,20,32,50,per-channel installed allowance; two four-channel boards for octo; exact assembly thermal/power review pending
+air_dust_quad,guard_1:lift_guard,lift_guard,lift,55,90,140,per-rotor material allowance; 5 mm mesh pitch/0.35 mm wire and 25 mm axial stand-off reference; no containment certification
+air_dust_quad,rotor_2:lift_motor,lift_motor,lift,122,125,132,"manufacturer reference, 4–6S, HQ10x4.5x3 curve at 24 V"
+air_dust_quad,rotor_2:lift_prop,lift_prop,lift,14,20,27,mass allowance; exact curve-matched CW/CCW propellers required
+air_dust_quad,rotor_2:lift_esc,lift_esc,lift,20,32,50,per-channel installed allowance; two four-channel boards for octo; exact assembly thermal/power review pending
+air_dust_quad,guard_2:lift_guard,lift_guard,lift,55,90,140,per-rotor material allowance; 5 mm mesh pitch/0.35 mm wire and 25 mm axial stand-off reference; no containment certification
+air_dust_quad,rotor_3:lift_motor,lift_motor,lift,122,125,132,"manufacturer reference, 4–6S, HQ10x4.5x3 curve at 24 V"
+air_dust_quad,rotor_3:lift_prop,lift_prop,lift,14,20,27,mass allowance; exact curve-matched CW/CCW propellers required
+air_dust_quad,rotor_3:lift_esc,lift_esc,lift,20,32,50,per-channel installed allowance; two four-channel boards for octo; exact assembly thermal/power review pending
+air_dust_quad,guard_3:lift_guard,lift_guard,lift,55,90,140,per-rotor material allowance; 5 mm mesh pitch/0.35 mm wire and 25 mm axial stand-off reference; no containment certification
+air_dust_quad,rotor_4:lift_motor,lift_motor,lift,122,125,132,"manufacturer reference, 4–6S, HQ10x4.5x3 curve at 24 V"
+air_dust_quad,rotor_4:lift_prop,lift_prop,lift,14,20,27,mass allowance; exact curve-matched CW/CCW propellers required
+air_dust_quad,rotor_4:lift_esc,lift_esc,lift,20,32,50,per-channel installed allowance; two four-channel boards for octo; exact assembly thermal/power review pending
+air_dust_quad,guard_4:lift_guard,lift_guard,lift,55,90,140,per-rotor material allowance; 5 mm mesh pitch/0.35 mm wire and 25 mm axial stand-off reference; no containment certification
+air_dust_quad,lift_structure:lift_structure,lift_structure,lift,259.0,378.0,546.0,"stock/material allowance; 20/18 mm main tubes, 10/8 mm braces, no printed primary arm cantilever"
+air_dust_quad,lift_joinery:lift_joinery,lift_joinery,lift,80,120,180,material/hardware allowance; four positive locks and metal load spreaders
+air_dust_quad,lift_harness:lift_harness,lift_harness,lift,280,430,650,route allowance; includes main contacts and two fore/aft feeds; battery-side protection stays in core
+air_dust_quad,flight_power:flight_power,flight_power,lift,30,50,85,assembly allowance; flight electronics remain live during floor-tool shutdown
+air_dust_quad,flight_sensors:flight_sensors,flight_sensors,lift,45,75,115,sensor/mount allowance; stereo cameras budgeted separately; not complete collision coverage by specification alone
+air_dust_quad,flight_io:flight_io,flight_io,lift,20,35,60,electronics allowance
+air_dust_quad,flight_fc_proxy:flight_controller,flight_controller,lift,42.4,53,70,catalog 42.4 g plus mount
+air_dust_quad,flight_camera_rear:depth_camera,depth_camera,lift,91,106,125,manufacturer drawing and 91 g reference plus mount/cable allowance
+air_dust_quad,flight_camera_down:depth_camera,depth_camera,lift,91,106,125,manufacturer drawing and 91 g reference plus mount/cable allowance
+air_dust_quad,battery,design_6s,battery,700,753,820,Listed pack reference; no protection or harness double-counted
+air_dust_quad,payload,payload,payload,5,15,30,Bounded design contents

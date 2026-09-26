@@ -1,0 +1,25 @@
+{
+  "status": "NOMINAL_GEOMETRY_CHECKS_PASSED_NOT_LOAD_VALIDATED",
+  "cradle_solid_volume_mm3": 97474.73691046299,
+  "cradle_stl_facets": 3384,
+  "print_extent_mm": [
+    48.0,
+    112.0,
+    52.5
+  ],
+  "fan_hardware_stack_mm": 16.0,
+  "screw_projection_beyond_nominal_nut_mm": 4.0,
+  "checks": [
+    "Nominal fan interfaces clear cradle",
+    "Sampled vertical placement clear",
+    "M3 hardware clear at nominal and slot endpoints",
+    "Four board holes and base washer access clear",
+    "Four CAD/STEP exports reopened",
+    "Single-solid CAD and closed cradle STL"
+  ],
+  "limits": [
+    "Actual fan taper, root fillets, wiring and motor protrusion not measured",
+    "No print, load, thermal, vibration or powered fixture validation",
+    "Hardware models use nominal dimensions; verify purchased parts"
+  ]
+}

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 780" role="img">
+<title>Vacuum head clearance study: 10 inch pair</title>
+<desc>Dimensioned top and side views of measured roller envelopes with proposed housing allowances. Filter shown separately. Not for fabrication.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526079"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#22334c} .dim{stroke:#526079;stroke-width:1;marker-start:url(#arrow);marker-end:url(#arrow)} .small{font-size:12px} .label{font-size:14px}</style>
+<rect width="900" height="780" fill="white"/>
+<text x="40" y="36" font-size="24" text-anchor="start" >Everyday vacuum head · 10 inch pair</text>
+<text x="40" y="62" font-size="13" text-anchor="start" >CLEARANCE STUDY · Blue/green: measured roller envelopes. Grey/amber: proposed reservations.</text>
+<text x="70" y="99" font-size="15" text-anchor="start" >TOP VIEW · front at top</text>
+<rect x="70" y="155" width="696.6" height="154.8" fill="#f1f4f8" stroke="#65758b" />
+<rect x="674.15" y="161.45" width="86" height="141.9" fill="#fff0cb" stroke="#65758b" />
+<rect x="76.45" y="161.45" width="21.5" height="141.9" fill="#d4dce7" stroke="#65758b" />
+<rect x="652.65" y="161.45" width="21.5" height="141.9" fill="#d4dce7" stroke="#65758b" />
+<rect x="102.25" y="170.05" width="546.1" height="60.2" fill="#acd4f4" stroke="#65758b" />
+<line x1="102.25" y1="200.15" x2="648.35" y2="200.15" stroke="#436584" stroke-dasharray="5 4"/>
+<text x="375.3" y="192.15" font-size="13" text-anchor="middle" >Style A · 254 × Ø28 mm</text>
+<rect x="102.25" y="234.55" width="546.1" height="60.2" fill="#a8e0d2" stroke="#65758b" />
+<line x1="102.25" y1="264.65" x2="648.35" y2="264.65" stroke="#436584" stroke-dasharray="5 4"/>
+<text x="375.3" y="256.65" font-size="13" text-anchor="middle" >Style B · 254 × Ø28 mm</text>
+<text x="717.15" y="222.4" font-size="13" text-anchor="middle" >Drive</text>
+<text x="717.15" y="242.4" font-size="11" text-anchor="middle" >reserved</text>
+<line x1="418.3" y1="155" x2="418.3" y2="170.05" stroke="#c66a17" stroke-width="2" stroke-dasharray="4 3"/>
+<line x1="418.3" y1="294.75" x2="418.3" y2="309.8" stroke="#c66a17" stroke-width="2" stroke-dasharray="4 3"/>
+<line x1="70" y1="125" x2="766.6" y2="125" class="dim"/>
+<text x="418.3" y="117" font-size="13" text-anchor="middle" >324 mm proposed width</text>
+<line x1="791.6" y1="155" x2="791.6" y2="309.8" class="dim"/>
+<text x="806.6" y="232.4" font-size="13" text-anchor="middle" transform="rotate(-90 806.6 232.4)">72 mm proposed depth</text>
+<line x1="102.25" y1="343.8" x2="648.35" y2="343.8" class="dim"/>
+<text x="375.3" y="335.8" font-size="13" text-anchor="middle" >254 mm reported overall roller length</text>
+<text x="70" y="380" font-size="13" text-anchor="start" >End bays: 10 mm each; axial clearance: 2 mm each; drive reservation: 40 mm.</text>
+<text x="70" y="402" font-size="13" text-anchor="start" >Orange marks suggest a panel join. Roller working lengths and end fittings are not modeled.</text>
+<text x="78" y="440" font-size="14" text-anchor="start" >SIDE VIEW · looking along the roller axes</text>
+<rect x="78" y="465" width="216" height="9" fill="#d4dce7" stroke="#65758b" />
+<rect x="78" y="465" width="9" height="96" fill="#d4dce7" stroke="#65758b" />
+<rect x="285" y="465" width="9" height="96" fill="#d4dce7" stroke="#65758b" />
+<circle cx="141" cy="528" r="42" fill="#acd4f4" stroke="#65758b"/>
+<line x1="136" y1="528" x2="146" y2="528" stroke="#65758b"/>
+<line x1="141" y1="523" x2="141" y2="533" stroke="#65758b"/>
+<circle cx="231" cy="528" r="42" fill="#a8e0d2" stroke="#65758b"/>
+<line x1="226" y1="528" x2="236" y2="528" stroke="#65758b"/>
+<line x1="231" y1="523" x2="231" y2="533" stroke="#65758b"/>
+<line x1="60" y1="570" x2="312" y2="570" stroke="#22334c" stroke-width="2"/>
+<text x="317" y="574" font-size="12" text-anchor="start" >Floor</text>
+<line x1="43" y1="465" x2="43" y2="570" class="dim"/>
+<text x="58" y="517.5" font-size="13" text-anchor="middle" transform="rotate(-90 58 517.5)">35 mm roof reference</text>
+<line x1="141" y1="608" x2="231" y2="608" class="dim"/>
+<text x="186" y="600" font-size="13" text-anchor="middle" >30 mm centers</text>
+<text x="78" y="639" font-size="12" text-anchor="start" >Outer-envelope gap: 2 mm. Contact setting unverified.</text>
+<text x="78" y="659" font-size="12" text-anchor="start" >Roof height excludes duct, plenum and drive protrusions.</text>
+<text x="500" y="429" font-size="14" text-anchor="start" >FILTER · separate component, placement open</text>
+<rect x="500" y="478" width="244.8" height="136.8" fill="#e4f0fb" stroke="#65758b" />
+<text x="622.4" y="541.4" font-size="13" text-anchor="middle" >Outside frame envelope</text>
+<text x="622.4" y="563.4" font-size="12" text-anchor="middle" >Pull-tab position not drawn</text>
+<line x1="500" y1="463" x2="744.8" y2="463" class="dim"/>
+<text x="622.4" y="455" font-size="13" text-anchor="middle" >136 mm</text>
+<line x1="766.8" y1="478" x2="766.8" y2="614.8" class="dim"/>
+<text x="781.8" y="546.4" font-size="13" text-anchor="middle" transform="rotate(-90 781.8 546.4)">76 mm</text>
+<text x="500" y="639" font-size="12" text-anchor="start" >Body thickness: 14 mm; local tab depth ≈19 mm.</text>
+<text x="500" y="659" font-size="12" text-anchor="start" >Tab: 20 × 6.5 mm, raised ≈5 mm; grip access additional.</text>
+<text x="40" y="710" font-size="13" text-anchor="start" >Measured dimensions set the part envelopes. Center spacing, walls and support/drive bays are design proposals.</text>
+<text x="40" y="733" font-size="13" text-anchor="start" >The completed powered head may be larger. No bearing seats, couplers, gears, latches or fastener holes are released.</text>
+<text x="40" y="756" font-size="13" text-anchor="start" >For layout review only · dimensions in millimeters · not a printable part or a low-clearance-head design.</text>
+</svg>

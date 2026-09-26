@@ -1,0 +1,443 @@
+[
+  {
+    "id": "cabinet",
+    "module": "station",
+    "min": [
+      0,
+      0,
+      0
+    ],
+    "size": [
+      1200,
+      1800,
+      1500
+    ],
+    "label": "Cabinet and handling envelope",
+    "group": "structure",
+    "hardware": [],
+    "shape": "distributed",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "arrival",
+    "module": "station",
+    "min": [
+      450,
+      -15,
+      10
+    ],
+    "size": [
+      300,
+      355,
+      180
+    ],
+    "label": "Robot arrival / scale",
+    "group": "drive",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "slot_1",
+    "module": "station",
+    "min": [
+      45,
+      210,
+      80
+    ],
+    "size": [
+      275,
+      335,
+      132
+    ],
+    "label": "Bottom position 1",
+    "group": "tool",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "slot_2",
+    "module": "station",
+    "min": [
+      45,
+      580,
+      80
+    ],
+    "size": [
+      275,
+      335,
+      132
+    ],
+    "label": "Bottom position 2",
+    "group": "tool",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "slot_3",
+    "module": "station",
+    "min": [
+      880,
+      210,
+      80
+    ],
+    "size": [
+      275,
+      335,
+      132
+    ],
+    "label": "Bottom position 3",
+    "group": "tool",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "slot_4",
+    "module": "station",
+    "min": [
+      880,
+      580,
+      80
+    ],
+    "size": [
+      275,
+      335,
+      132
+    ],
+    "label": "Bottom position 4",
+    "group": "tool",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "slot_5",
+    "module": "station",
+    "min": [
+      45,
+      950,
+      80
+    ],
+    "size": [
+      275,
+      335,
+      132
+    ],
+    "label": "Bottom position 5",
+    "group": "tool",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "core_held",
+    "module": "station",
+    "min": [
+      462.5,
+      287.5,
+      376
+    ],
+    "size": [
+      275,
+      275,
+      112
+    ],
+    "label": "Core raised clear of bottom transfer",
+    "group": "logic",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "core_lift",
+    "module": "station",
+    "min": [
+      345,
+      260,
+      10
+    ],
+    "size": [
+      85,
+      350,
+      490
+    ],
+    "label": "Core forks / vertical lift",
+    "group": "structure",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "top_park",
+    "module": "station",
+    "min": [
+      278,
+      308,
+      600
+    ],
+    "size": [
+      644,
+      1444,
+      180
+    ],
+    "label": "Intact eight-rotor top parking",
+    "group": "lift",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "cap_tray",
+    "module": "station",
+    "min": [
+      470,
+      1410,
+      220
+    ],
+    "size": [
+      275,
+      275,
+      180
+    ],
+    "label": "Cap / scanner-clear storage",
+    "group": "logic",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "bottom_transfer",
+    "module": "station",
+    "min": [
+      25,
+      120,
+      220
+    ],
+    "size": [
+      1150,
+      1250,
+      132
+    ],
+    "label": "Bottom picker travel plane",
+    "group": "structure",
+    "hardware": [],
+    "shape": "distributed",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "top_handler",
+    "module": "station",
+    "min": [
+      235,
+      200,
+      1050
+    ],
+    "size": [
+      730,
+      1580,
+      220
+    ],
+    "label": "Overhead Y/Z handler",
+    "group": "structure",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "wash",
+    "module": "station",
+    "min": [
+      460,
+      630,
+      30
+    ],
+    "size": [
+      320,
+      330,
+      175
+    ],
+    "label": "Mop wash / drain pan",
+    "group": "water",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "clean_tank",
+    "module": "station",
+    "min": [
+      880,
+      1030,
+      0
+    ],
+    "size": [
+      270,
+      290,
+      330
+    ],
+    "label": "5 L clean water + removal clearance",
+    "group": "water",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "dirty_tank",
+    "module": "station",
+    "min": [
+      880,
+      1360,
+      0
+    ],
+    "size": [
+      270,
+      290,
+      330
+    ],
+    "label": "5 L dirty water + removal clearance",
+    "group": "water",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "vacuum_service",
+    "module": "station",
+    "min": [
+      30,
+      1370,
+      0
+    ],
+    "size": [
+      340,
+      390,
+      430
+    ],
+    "label": "Vacuum appliance / 5 L debris",
+    "group": "air",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "station_electrical",
+    "module": "station",
+    "min": [
+      420,
+      1420,
+      470
+    ],
+    "size": [
+      360,
+      320,
+      110
+    ],
+    "label": "Supply / charge / station controls",
+    "group": "power",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "battery_rack",
+    "module": "station",
+    "min": [
+      880,
+      250,
+      375
+    ],
+    "size": [
+      280,
+      640,
+      160
+    ],
+    "label": "Four battery bays / dry enclosure",
+    "group": "battery",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component."
+  },
+  {
+    "id": "battery_slot_1",
+    "module": "station",
+    "min": [
+      908,
+      270,
+      390
+    ],
+    "size": [
+      190,
+      90,
+      65
+    ],
+    "label": "Battery bay 1: two spares + receiving/recovery vacancies",
+    "group": "battery",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component.",
+    "parent": "battery_rack"
+  },
+  {
+    "id": "battery_slot_2",
+    "module": "station",
+    "min": [
+      908,
+      420,
+      390
+    ],
+    "size": [
+      190,
+      90,
+      65
+    ],
+    "label": "Battery bay 2: two spares + receiving/recovery vacancies",
+    "group": "battery",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component.",
+    "parent": "battery_rack"
+  },
+  {
+    "id": "battery_slot_3",
+    "module": "station",
+    "min": [
+      908,
+      570,
+      390
+    ],
+    "size": [
+      190,
+      90,
+      65
+    ],
+    "label": "Battery bay 3: two spares + receiving/recovery vacancies",
+    "group": "battery",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component.",
+    "parent": "battery_rack"
+  },
+  {
+    "id": "battery_slot_4",
+    "module": "station",
+    "min": [
+      908,
+      720,
+      390
+    ],
+    "size": [
+      190,
+      90,
+      65
+    ],
+    "label": "Battery bay 4: two spares + receiving/recovery vacancies",
+    "group": "battery",
+    "hardware": [],
+    "shape": "box",
+    "notes": "Station space reservation, not a fabricated component.",
+    "parent": "battery_rack"
+  }
+]

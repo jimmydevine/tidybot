@@ -1,0 +1,617 @@
+{
+  "fabrication_release": false,
+  "valid_shapes": {
+    "wheel_pod": 30,
+    "wheel_pod_bump": 30,
+    "wheel_pod_droop": 29
+  },
+  "supplier_input_hashes": {
+    "1309-0016-0004 assembly.STEP": "8683169d221c1d336928f88cf73317309a14695ad36ae23ddc9c2b819df7ead7",
+    "3626-0014-0072.step": "d0e03e4b2c8cd304ddb108ff69a757a805feed57e79551181fc560537da85be1"
+  },
+  "vendor_cad_used": true,
+  "sampled_interference": [],
+  "axial_checks": [
+    {
+      "angle_deg": 0,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 120,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 120,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 120,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 120,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 120,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 120,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 120,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 120,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 150,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 150,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 150,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 150,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 150,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 150,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 150,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 150,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 180,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 180,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 180,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 180,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 180,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 180,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 180,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 180,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 210,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 210,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 210,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 210,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 210,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 210,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 210,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 210,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 240,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 240,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 240,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 240,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 240,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 240,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 240,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 240,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 270,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 270,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 270,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 270,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 270,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 270,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 270,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 270,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 300,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 300,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 300,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 300,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 300,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 300,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 300,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 300,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 330,
+      "a": "hub",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 330,
+      "a": "hub",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 330,
+      "a": "hub",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 330,
+      "a": "hub",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 330,
+      "a": "wheel",
+      "b": "motor_bracket",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 330,
+      "a": "wheel",
+      "b": "motor_screw_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 330,
+      "a": "wheel",
+      "b": "motor_screw_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 330,
+      "a": "wheel",
+      "b": "moving_cradle",
+      "intersection_mm3": 0.0
+    }
+  ],
+  "mass": {
+    "candidate_per_side_items_g": {
+      "moving_cradle": 25.064257851453718,
+      "upper_fork": 1.8059085396464893,
+      "lower_cup": 0.7403365486439767,
+      "upper_cup": 0.7403365486117898,
+      "lower_guide": 0.13016796461067617,
+      "upper_guide": 0.4022190106469888,
+      "maximum_shim": 2.066544000000001,
+      "motor_bracket": 8.5,
+      "pivot_pin": 31.56672298327024,
+      "collars": 10.2,
+      "bush_pair_allowance_g": 1,
+      "spring_allowance_g": 4,
+      "fasteners_allowance_g": 12,
+      "stop_sensor_allowance_g": 8
+    },
+    "candidate_per_side_subtotal_g": 106.21649344688389,
+    "includes": "Moving cradle, cups, guides, upper fork/shim, pin, collars, motor bracket and allowances",
+    "excludes": "Motor, wheel, hub, fixed cheeks/cap/frame, finished structural fastening and cable retention",
+    "G_pod_allowance_g": 62,
+    "G_mass_replaced": false
+  },
+  "axial_max_intersection_mm3": 0.0,
+  "scope": "18 travel/shim samples for enumerated internal pairs; 12 wheel angles for axial mating if supplier CAD supplied. Not all-pairs, continuous clearance, tolerances or structural qualification."
+}

@@ -1,0 +1,586 @@
+{
+  "revision": "v0.1",
+  "status": "UNPOWERED FIT PROTOTYPE; tape-wrap holder enters bore but wobbles and lacks reach; metal-rod encoder carrier under review; no new print or powered release",
+  "parts": [
+    {
+      "name": "deck",
+      "quantity": 1,
+      "print_extent_mm": [
+        220.0,
+        240.0,
+        12.0
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 263.94
+    },
+    {
+      "name": "motor_bracket",
+      "quantity": 2,
+      "print_extent_mm": [
+        40.0,
+        50.0,
+        41.0
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 19.19
+    },
+    {
+      "name": "caster_riser",
+      "quantity": 1,
+      "print_extent_mm": [
+        56.0,
+        37.0,
+        40.0
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 23.91
+    },
+    {
+      "name": "ballast_tray",
+      "quantity": 1,
+      "print_extent_mm": [
+        168.0,
+        70.0,
+        14.0
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 60.05
+    },
+    {
+      "name": "tray_column",
+      "quantity": 4,
+      "print_extent_mm": [
+        10.0,
+        10.0,
+        42.0
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 2.92
+    },
+    {
+      "name": "electronics_carrier",
+      "quantity": 2,
+      "print_extent_mm": [
+        48.0,
+        54.0,
+        3.0
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 7.47
+    },
+    {
+      "name": "motor_mount_coupon",
+      "quantity": 1,
+      "print_extent_mm": [
+        20.0,
+        20.0,
+        4.0
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 1.47
+    },
+    {
+      "name": "encoder_carrier",
+      "quantity": 2,
+      "print_extent_mm": [
+        29.0,
+        32.0,
+        13.5
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 3.95,
+      "print_ready": false,
+      "scope": "Existing inboard board support; hold duplicate prints pending retention redesign"
+    },
+    {
+      "name": "magnet_carrier",
+      "quantity": 2,
+      "print_extent_mm": [
+        6.4,
+        6.4,
+        17.3
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 0.21,
+      "print_ready": false,
+      "scope": "Retired bore-plug prototype / reference gauge; no further fit prints; see ENCODER_RETENTION.md"
+    },
+    {
+      "name": "magnet_carrier_tape_trial_2p8mm",
+      "quantity": 1,
+      "print_extent_mm": [
+        6.4,
+        6.4,
+        14.8
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 0.14,
+      "print_ready": false,
+      "physical_fit_confirmed": false,
+      "powered_use_released": false,
+      "shaft_diameter_mm": 2.8,
+      "pocket_diameter_mm": 4.4,
+      "pocket_depth_mm": 2.2,
+      "scope": "Retired tape trial: enters bore but wobbles and lacks reach; see ENCODER_METAL_ROD.md"
+    },
+    {
+      "name": "motor_mount_coupon_8p25mm",
+      "quantity": 1,
+      "print_extent_mm": [
+        20.0,
+        20.0,
+        4.0
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 1.46
+    },
+    {
+      "name": "motor_mount_coupon_8p50mm",
+      "quantity": 1,
+      "print_extent_mm": [
+        20.0,
+        20.0,
+        4.0
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 1.45
+    },
+    {
+      "name": "magnet_stem_gauge_2p8mm",
+      "quantity": 1,
+      "print_extent_mm": [
+        12.0,
+        18.0,
+        14.8
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 0.79,
+      "print_ready": false,
+      "scope": "Retired bore-plug prototype / reference gauge; no further fit prints; see ENCODER_RETENTION.md"
+    },
+    {
+      "name": "magnet_stem_gauge_3p0mm",
+      "quantity": 1,
+      "print_extent_mm": [
+        12.0,
+        18.0,
+        14.8
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 0.8,
+      "print_ready": false,
+      "scope": "Retired bore-plug prototype / reference gauge; no further fit prints; see ENCODER_RETENTION.md"
+    },
+    {
+      "name": "magnet_stem_gauge_3p2mm",
+      "quantity": 1,
+      "print_extent_mm": [
+        12.0,
+        18.0,
+        14.8
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 0.8,
+      "print_ready": false,
+      "scope": "Retired bore-plug prototype / reference gauge; no further fit prints; see ENCODER_RETENTION.md"
+    },
+    {
+      "name": "magnet_stem_gauge_3p4mm",
+      "quantity": 1,
+      "print_extent_mm": [
+        12.0,
+        18.0,
+        14.8
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 0.8,
+      "print_ready": false,
+      "scope": "Retired bore-plug prototype / reference gauge; no further fit prints; see ENCODER_RETENTION.md"
+    },
+    {
+      "name": "magnet_stem_gauge_3p6mm",
+      "quantity": 1,
+      "print_extent_mm": [
+        12.0,
+        18.0,
+        14.8
+      ],
+      "closed_mesh": true,
+      "valid_single_solid": true,
+      "solid_volume_cm3": 0.8,
+      "print_ready": false,
+      "scope": "Retired bore-plug prototype / reference gauge; no further fit prints; see ENCODER_RETENTION.md"
+    }
+  ],
+  "encoder_retention_failure": {
+    "reported_date": "2026-09-12",
+    "owner_report": "I've printed this several times and none of them seem to work well, I have to push it in pretty far it just falls right out, pushed in that far there is friction when I spin the wheel and it eventually just falls out anyway",
+    "observations": [
+      "Repeated prints do not stay seated",
+      "Deeper insertion causes extra wheel friction",
+      "Holder still falls out after deeper insertion"
+    ],
+    "root_cause_confirmed": false,
+    "wheel_free_with_holder_removed": true,
+    "action": "Retire tape-wrap trial after reported wobble; evaluate owner-proposed close-fitting metal rod before changing encoder location",
+    "do_not_print_more_stems": true,
+    "followup_owner_report": "Without the holder it spins freely; owner proposes reduced shaft diameter with electrical-tape wrap for grip",
+    "followup_scope": "Free rotation without holder confirmed; tape version enters bore but wobbles and needs more reach; exact contact point of prior drag still unknown",
+    "latest_owner_hypothesis": "Old holder may have rubbed edge of stationary motor mount; not confirmed"
+  },
+  "encoder_retention_redesign": {
+    "status": "held while owner-proposed metal rod is evaluated; no wheel-face redesign released",
+    "preferred_concept": "Magnet plate bolted to existing wheel-to-rotor M2 holes; AS5600 on stationary outboard bracket",
+    "known_wheel_attachment": "Owner-confirmed direct M2 bolts attach wheel to rotating motor face",
+    "reuse": [
+      "AS5600 boards",
+      "included magnets subject to field validation",
+      "motors",
+      "wheels",
+      "deck and motor brackets if new support clears"
+    ],
+    "wheel_bolt_count": null,
+    "wheel_bolt_pitch_mm": null,
+    "outer_bolt_head_access_confirmed": null,
+    "print_ready": false,
+    "rig_width_before_mm": 244,
+    "width_limit_mm": 275,
+    "available_outboard_width_each_side_mm": 15.5,
+    "scope": "Candidate only. Bolt access, hub seating, screw engagement, sensor support/headers and 15.5 mm per-side width allowance must be resolved before CAD release; no through-motor tie bolt or bearing preload assumed."
+  },
+  "encoder_tape_wrap_trial": {
+    "file": "magnet_carrier_tape_trial_2p8mm.stl",
+    "status": "Failed centering trial: enters bore but wobbles; owner reports shaft needs more reach",
+    "owner_request": "Reduce holder shaft and use a few winds of electrical tape for compliant grip",
+    "shaft_diameter_mm": 2.8,
+    "cup_front_x_mm": 89.2,
+    "overall_length_mm": 14.8,
+    "entry_trial_depth_mm": 3,
+    "entry_depth_scope": "Initial maximum hand-fit depth, not measured available bore depth or a mechanical stop. Stop earlier at any resistance/contact.",
+    "tape_band_distance_from_tip_mm": [
+      0.5,
+      2.5
+    ],
+    "tape_strip_width_mm": 2,
+    "actual_tape_thickness_mm": null,
+    "example_tape_thickness_mm": 0.18,
+    "example_wrapped_diameters_mm": {
+      "one_uniform_layer": 3.16,
+      "two_uniform_layers": 3.52
+    },
+    "example_source": "https://www.3m.com/3M/en_US/p/d/b00034650/",
+    "length_rationale": "Use original 14.8 mm reach for shallow seating; remove the 2.5 mm compensation for deeper insertion that caused drag. Sensor gap must be reset and measured.",
+    "physical_fit_confirmed": false,
+    "retention_confirmed": false,
+    "powered_use_released": false,
+    "print_ready": false,
+    "print_quantity_now": 0,
+    "scope": "Tape only on insertion end entirely inside rotating bore; exposed neck through stationary bracket stays bare. Check gentle fit, clearance, runout and migration by hand before any sensor test. Not a qualified final rotor coupling.",
+    "entry_fit_reported": true,
+    "centering_confirmed": false,
+    "additional_length_needed_mm": null,
+    "result_owner_report": "it does fit but the shaft would have to be longer and it wobbles, hard to get it to stay centered to prevent wobbling"
+  },
+  "encoder_metal_rod_proposal": {
+    "status": "concept under review; dimensions and retention not selected",
+    "owner_proposal": "3.4 mm steel rod cut to length with magnet on end",
+    "reported_bore_diameter_mm": 3.4,
+    "bore_measurement_method": "Owner-reported 3.4 mm, corroborated by SpeedyFPV 2204 260KV listing; nominal bore dimension accepted. Instrument not specified; no known-size rod fit claimed.",
+    "straight_bore_engagement_mm": null,
+    "rod_nominal_diameter_mm": 3.4,
+    "rod_tolerance_mm": null,
+    "rod_cut_length_mm": null,
+    "material_preference": "Nonmagnetic rod with controlled diameter/straightness; magnetic steel is an alternative with a short nonmagnetic magnet holder/spacer and sensor validation",
+    "shaft_retention": "Undecided; close sliding fit must first locate shaft without wobble or force. Rod and magnet both need resistance to axial movement and relative rotation.",
+    "magnet_mount": "Centered short cap/socket with retained 4 x 2 mm diametric magnet; geometry not released",
+    "reuse": [
+      "motor brackets",
+      "deck",
+      "AS5600 boards and existing supports if clearance permits",
+      "4 x 2 mm magnets subject to validation"
+    ],
+    "source": "https://ams-osram.com/documents/20143/80162/AnglePositionOnAxis_AN000271_2-00.pdf/bd13692b-b589-af7f-560c-4d62bf25d9dd",
+    "print_ready": false,
+    "physical_fit_confirmed": false,
+    "powered_use_released": false,
+    "latest_bore_observation": "Owner reports hole appears to go through motor; uniform diameter and close support length unverified",
+    "bracket_clearance_review": {
+      "opening_diameter_mm": 4.6,
+      "old_neck_diameter_mm": 3.6,
+      "old_nominal_radial_clearance_mm": 0.5,
+      "nominal_3p4_rod_radial_clearance_mm": 0.6,
+      "contact_confirmed": false,
+      "action": "Unpowered gentle rod fit and bracket-contact check; relieve plastic opening only if contact confirmed, with motor removed; no relief diameter selected"
+    },
+    "bore_listing_source": "https://speedyfpv.com/products/2204-gimbal-motor",
+    "rod_selection_scope": "3.4 mm nominal candidate for close-fit check; supplier rod tolerance and actual fit unverified; no force/press-fit specified"
+  },
+  "assembly_scope": "Historical inboard encoder arrangement; bore-plug retention failed physically; nominal geometry checks do not establish fit",
+  "magnet_stem_fit": {
+    "reported_date": "2026-09-08",
+    "owner_report": "the smaller end of the magnet mount is supposed to fit in the hole in the back of the motor? if so its too large",
+    "tested_design_stem_diameter_mm": 3.8,
+    "actual_printed_diameter_mm": null,
+    "actual_bore_diameter_mm": null,
+    "result": "Repeated full-holder prints fall out; deeper insertion introduces friction and still fails retention",
+    "selected_stem_diameter_mm": 3.4,
+    "diameter_trials_mm": [
+      2.8,
+      3.0,
+      3.2,
+      3.4,
+      3.6
+    ],
+    "trial_edge_notches": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "insertion_length_mm": 3,
+    "tip_chamfer_length_mm": 0.3,
+    "tip_chamfer_radial_mm": 0.15,
+    "gauge_file": "magnet_stem_fit_gauges.stl",
+    "scope": "Earlier temporary stable seating superseded by repeated retention failure and drag; no further diameter/length fit prints proposed",
+    "confirmation_date": "2026-09-08",
+    "confirmation_owner_report": "3.6 fits fine",
+    "gauge_fit_confirmed": true,
+    "motor_count_tested": null,
+    "selection_basis": "Owner clarified installed variant is 3.4 mm and requests 2.5 mm neck extension",
+    "selected_stem_fit_confirmed": false,
+    "confirmed_gauge_diameter_mm": 3.6,
+    "full_holder_fit_history": [
+      {
+        "file": "magnet_carrier_4x2mm_stem_3p6mm.stl",
+        "design_stem_diameter_mm": 3.6,
+        "reported_date": "2026-09-08",
+        "result": "does not fit",
+        "owner_report": "I printed magnet_carrier_4x2mm_stem_3p6mm.stl but this still doesn't fit, let's try 3.4"
+      },
+      {
+        "file": "magnet_carrier_4x2mm_stem_3p4mm.stl",
+        "design_stem_diameter_mm": 3.4,
+        "reported_date": "2026-09-09",
+        "result": "Stable when pushed farther into motor; 4 mm sensor gap; actual insertion depth unmeasured"
+      }
+    ],
+    "gauge_reference_cup_front_x_mm": 89.2
+  },
+  "magnet_stem_trials": [
+    {
+      "name": "magnet_stem_gauge_2p8mm",
+      "diameter_mm": 2.8,
+      "edge_notches": 1,
+      "insertion_length_mm": 3,
+      "tip_chamfer_length_mm": 0.3
+    },
+    {
+      "name": "magnet_stem_gauge_3p0mm",
+      "diameter_mm": 3.0,
+      "edge_notches": 2,
+      "insertion_length_mm": 3,
+      "tip_chamfer_length_mm": 0.3
+    },
+    {
+      "name": "magnet_stem_gauge_3p2mm",
+      "diameter_mm": 3.2,
+      "edge_notches": 3,
+      "insertion_length_mm": 3,
+      "tip_chamfer_length_mm": 0.3
+    },
+    {
+      "name": "magnet_stem_gauge_3p4mm",
+      "diameter_mm": 3.4,
+      "edge_notches": 4,
+      "insertion_length_mm": 3,
+      "tip_chamfer_length_mm": 0.3
+    },
+    {
+      "name": "magnet_stem_gauge_3p6mm",
+      "diameter_mm": 3.6,
+      "edge_notches": 5,
+      "insertion_length_mm": 3,
+      "tip_chamfer_length_mm": 0.3
+    }
+  ],
+  "motor_mount_comparison": [
+    {
+      "name": "motor_mount_coupon_8p25mm",
+      "adjacent_hole_pitch_mm": [
+        8.25,
+        8.25
+      ],
+      "edge_notches": 1,
+      "mounting_hole_diameter_mm": 2.3
+    },
+    {
+      "name": "motor_mount_coupon_8p50mm",
+      "adjacent_hole_pitch_mm": [
+        8.5,
+        8.5
+      ],
+      "edge_notches": 2,
+      "mounting_hole_diameter_mm": 2.3
+    }
+  ],
+  "motor_bracket_square_pitch_mm": [
+    8.5,
+    8.5
+  ],
+  "confirmed_coupon_pitch_mm": 8.5,
+  "not_verified": [
+    "actual component fit",
+    "print strength/load capacity",
+    "motor bearing capacity",
+    "sensor magnetic field/actual gap",
+    "powered operation"
+  ],
+  "carrier_stem_matches_selected_gauge": true,
+  "motor_bracket_versioned_file": "motor_bracket_8p50mm.stl",
+  "encoder_carrier_versioned_file": "encoder_carrier_hiletgo_16mm.stl",
+  "magnet_carrier_versioned_file": "magnet_carrier_4x2mm_stem_3p4mm_plus2p5mm.stl",
+  "motor_mount_comparison_print": {
+    "file": "motor_mount_coupon_comparison.stl",
+    "separate_solids": 2,
+    "closed_mesh": true,
+    "print_extent_mm": [
+      44.0,
+      20.0,
+      4.0
+    ]
+  },
+  "magnet_stem_comparison_print": {
+    "file": "magnet_stem_fit_gauges.stl",
+    "separate_solids": 5,
+    "closed_mesh": true,
+    "print_extent_mm": [
+      76.0,
+      18.0,
+      14.8
+    ]
+  },
+  "measured_gap_adjustment": {
+    "reported_date": "2026-09-09",
+    "installed_variant": "magnet_carrier_4x2mm_stem_3p4mm.stl",
+    "owner_clarification": "Using the 3.4 mm variant; initial 3.6 mm mention was a typo",
+    "measured_chip_face_to_magnet_gap_mm": 4,
+    "requested_neck_extension_mm": 2.5,
+    "expected_gap_same_seating_mm": 1.5,
+    "actual_insertion_depth_mm": null,
+    "installed_spacer_height_mm": null,
+    "owner_report": "Pushed holder farther into motor for stability; measured gap is 4 mm. Add 2.5 mm to length.",
+    "basis": "Differential correction from measured gap; same insertion depth, encoder position and magnet seating must be retained",
+    "assembly_scope": "Illustrative pose anchored to measured gap using provisional PCB stack; inferred holder translation is not a measured insertion depth",
+    "superseded_by": "2026-09-12 retention failure; historical gap correction is not a working mount validation",
+    "inferred_holder_translation_x_mm": 2.5,
+    "unadjusted_reference_gap_mm": -1.0,
+    "insertion_depth_verified": false
+  },
+  "magnet_mount": {
+    "pocket_diameter_mm": 4.4,
+    "pocket_depth_mm": 2.2,
+    "cup_front_x_mm": 86.7,
+    "pocket_floor_x_mm": 88.9,
+    "cup_back_x_mm": 89.9,
+    "magnet_front_x_mm": 86.9,
+    "cup_outer_diameter_mm": 6.4,
+    "stem_start_x_mm": 101,
+    "magnet_mm": [
+      4,
+      2
+    ],
+    "nominal_chip_face_to_cup_edge_mm": 1.3,
+    "inferred_holder_translation_x_mm": 2.5,
+    "stem_mm": [
+      3.4,
+      3
+    ],
+    "magnetic_qualification": false,
+    "tip_chamfer_length_mm": 0.3,
+    "tip_chamfer_radial_mm": 0.15,
+    "physical_fit_confirmed": false,
+    "print_ready": false,
+    "scope": "Retired bore-plug prototype: reported retention failure and drag. Historical gap calculation with inferred pose; actual insertion, PCB stack and field unverified"
+  },
+  "encoder_mount": {
+    "board_outline_mm": [
+      23,
+      23
+    ],
+    "pcb_hole_pitch_mm": [
+      16,
+      16
+    ],
+    "pcb_hole_diameter_mm": 4,
+    "carrier_hole_diameter_mm": 3.4,
+    "deck_attachment": {
+      "side_x_mm": [
+        -74,
+        74
+      ],
+      "y_mm": [
+        60,
+        70
+      ],
+      "through_hole_diameter_mm": 3.4,
+      "fastener": "Two M3 x 20 through bolts per side through deck, motor-bracket foot and encoder-carrier foot"
+    },
+    "nominal_chip_face_to_magnet_mm": 1.5,
+    "pcb_edge_to_carrier_foot_z_gap_mm": 0.5,
+    "physical_fit_confirmed": false,
+    "scope": "Measured baseline gap, illustrative holder pose and provisional PCB stack; actual insertion, spacers and field unverified"
+  },
+  "payload_body_fit": {
+    "battery_body_mm": [
+      135,
+      43,
+      22
+    ],
+    "battery_allowance_mm": [
+      140,
+      50,
+      30
+    ],
+    "battery_total_allowance_remaining_mm": [
+      5,
+      7,
+      8
+    ],
+    "battery_to_tray_underside_mm_before_padding": 20,
+    "wattmeter_body_mm": [
+      86,
+      43,
+      25
+    ],
+    "tray_clear_inside_mm": [
+      162,
+      64
+    ],
+    "wattmeter_end_clearance_mm_each": 38.0,
+    "wattmeter_side_clearance_mm_each": 10.5,
+    "scope": "Nominal rigid body fit only; physical cable bends, plugs, padding and straps still to check"
+  },
+  "nominal_overlap_failures": [],
+  "modeled_assembly_extent_mm": [
+    244.0,
+    240.0,
+    125.0
+  ]
+}

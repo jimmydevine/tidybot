@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="940" viewBox="0 0 1080 940">
+<rect width="1080" height="940" fill="#f8fafc"/><g font-family="sans-serif" fill="#173047">
+<text x="28" y="36" font-size="23">Airborne duster: passive feet, light spar and dust-catching head</text>
+<text x="28" y="62" font-size="15">Reference allocations. Blade-edge access and flight control require validation; no fabrication release.</text>
+<rect x="205.75" y="239.39999999999998" width="184.25" height="120.60000000000001" fill="#dce8f7" stroke="#466cbd"/>
+<text x="215.75" y="284.4" font-size="17">Core + battery</text>
+<text x="215.75" y="307.4" font-size="13">Passive feet below</text>
+<path d="M395.36,335.88 L622.7655408295936,108.47445917040633" stroke="#a96028" stroke-width="7" fill="none"/>
+<path d="M622.7655408295936,108.47445917040633 L689.7655408295936,108.47445917040633" stroke="#a96028" stroke-width="7" fill="none"/>
+<path d="M689.7655408295936,108.47445917040633 L689.7655408295936,128.57445917040633" stroke="#a96028" stroke-width="7" fill="none"/>
+<rect x="671.7655408295936" y="115.57445917040633" width="36" height="13" fill="#258c79"/>
+<rect x="649.5655408295937" y="128.57445917040633" width="390.4344591704063" height="5" fill="#909aa3"/>
+<text x="765" y="114.57445917040633" font-size="15">Stopped blade / surface</text>
+<text x="415" y="385" font-size="15">Horizontal root-to-contact reach: 439 mm</text>
+<text x="415" y="407" font-size="15">Contact height above landing plane: 345 mm</text>
+<text x="415" y="429" font-size="15">Rear tool, 610 mm path; fixed 45° root; station detaches for storage</text>
+<text x="28" y="473" font-size="21">Four-position lift footprints, drawn to the same scale</text>
+<text x="28" y="497" font-size="15">Duct footprints are targets; documented EDF mass and performance screens appear in the report.</text>
+<text x="25" y="535" font-size="17">Guarded 254 mm propellers</text>
+<circle cx="127.4" cy="609.4" r="45.44" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="127.4" cy="609.4" r="40.64" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<circle cx="242.6" cy="609.4" r="45.44" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="242.6" cy="609.4" r="40.64" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<circle cx="242.6" cy="788.6" r="45.44" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="242.6" cy="788.6" r="40.64" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<circle cx="127.4" cy="788.6" r="45.44" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="127.4" cy="788.6" r="40.64" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<rect x="141.0" y="655.0" width="88.0" height="88.0" fill="#dce8f7" stroke="#466cbd"/>
+<text x="25" y="864" font-size="16">644 × 844 mm projected footprint</text>
+<text x="25" y="889" font-size="12">52 mm stair-width margin in the 2° yaw screen</text>
+<text x="375" y="535" font-size="17">150 mm rotor in a hover duct</text>
+<circle cx="468.37258300203047" cy="632.3725830020305" r="28.8" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="468.37258300203047" cy="632.3725830020305" r="24.0" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<circle cx="601.6274169979695" cy="632.3725830020305" r="28.8" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="601.6274169979695" cy="632.3725830020305" r="24.0" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<circle cx="601.6274169979695" cy="765.6274169979695" r="28.8" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="601.6274169979695" cy="765.6274169979695" r="24.0" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<circle cx="468.37258300203047" cy="765.6274169979695" r="28.8" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="468.37258300203047" cy="765.6274169979695" r="24.0" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<rect x="491.0" y="655.0" width="88.0" height="88.0" fill="#dce8f7" stroke="#466cbd"/>
+<text x="375" y="864" font-size="16">596 × 596 mm projected footprint</text>
+<text x="375" y="889" font-size="12">108 mm stair-width margin in the 2° yaw screen</text>
+<text x="725" y="535" font-size="17">90 mm EDF installation</text>
+<circle cx="825.1608081014214" cy="639.1608081014214" r="19.2" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="825.1608081014214" cy="639.1608081014214" r="14.4" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<circle cx="944.8391918985786" cy="639.1608081014214" r="19.2" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="944.8391918985786" cy="639.1608081014214" r="14.4" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<circle cx="944.8391918985786" cy="758.8391918985786" r="19.2" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="944.8391918985786" cy="758.8391918985786" r="14.4" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<circle cx="825.1608081014214" cy="758.8391918985786" r="19.2" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="825.1608081014214" cy="758.8391918985786" r="14.4" fill="none" stroke="#ba782e" stroke-dasharray="3 3"/>
+<rect x="841.0" y="655.0" width="88.0" height="88.0" fill="#dce8f7" stroke="#466cbd"/>
+<text x="725" y="864" font-size="16">494 × 494 mm projected footprint</text>
+<text x="725" y="889" font-size="12">214 mm stair-width margin in the 2° yaw screen</text>
+<text x="28" y="925" font-size="13">Compact footprints alone do not establish lift capability. Inlet/outlet clearance and the complete flight route remain open.</text>
+</g></svg>

@@ -1,0 +1,31 @@
+id,section,qty,candidate,unit_mass_g,mass_basis,envelope_mm,ground_w,flight_w,cost_low_usd,cost_high_usd,cost_basis,source,notes
+battery,core,1,Grepow GA-B-60C-5000-6S1P-EC5,755,manufacturer,165x45x47,0,0,90,160,allowance,https://www.grepow.com/fpv/7-inch-fpv-drone.html,6S 5Ah reference; automatic balance charging and flight-current validation unresolved
+core_frame,core,1,Printed panels plus purchased spacers and load spreaders,300,estimate,200x280x90,0,0,50,130,allowance,,Includes frame only; joint hardware counted separately
+compute,core,1,Raspberry Pi 5 plus cooling and storage,120,estimate,95x70x35,15,15,100,200,allowance,https://www.raspberrypi.com/products/raspberry-pi-5/,Allowance includes cooler; performance for flight perception not demonstrated
+power,core,1,Regulators protection and distribution,120,estimate,80x55x35,5,5,80,180,allowance,,Includes conversion loss allowance; blower 24V regulation to be selected
+lidar,core,1,SLAMTEC RPLIDAR C1,110,manufacturer,60x60x45,3,3,60,120,allowance,https://bucket-download.slamtec.com/6801eb5f9d98927b8397ef40b64ce94049a32a49/SLAMTEC_rplidar_datasheet_C1_v1.0_en.pdf,Envelope includes mounting allowance; 2D sensing only
+vision,core,1,Depth or stereo camera and mounts,100,estimate,100x35x30,5,5,150,400,allowance,,Candidate still open; allow connectors and useful fields of view
+core_harness,core,1,Core harness and two retained interfaces,150,estimate,distributed,1,1,80,180,allowance,,Manual and eventual automatic connector implementation not released
+drive,bottom,2,Pololu 5727 99:1 25D HP 24V encoder motor,102,manufacturer,82x25x25,10,0,40,65,allowance,https://www.pololu.com/product/5727/specs,69mm body plus 12.5mm shaft; continuous gearbox torque limit 4kg-cm from category page; backorder observed
+wheels,bottom,1,Wheels hubs and front/rear support contacts,120,estimate,distributed,0,0,30,70,allowance,,70mm drive wheels; support compliance and hair protection unresolved
+blower,bottom,1,Wonsmart WS7040-24-V200 clean-air blower,85,manufacturer,75x75x45,60,0,60,140,allowance,https://www.wonsmart.com.cn/ws7040-24-v200-15655816895217949.html,Manufacturer drawing gives working point 3kPa over12m3/h under2.5A at24V; must be downstream of filter; bench candidate not proven vacuum pickup
+blower_driver,bottom,1,Matched external blower controller,50,estimate,50x35x15,0,0,20,50,allowance,,Select matched Hall/phase driver; driver loss included in blower allowance
+roller,bottom,1,Removable roller and drive motor,160,estimate,45x200x45,10,0,40,120,allowance,,Dog-hair comparison required; motor envelope modeled separately within allowance
+bin,bottom,1,Bin filter seals and air passages,200,estimate,90x110x45,0,0,30,100,allowance,,Gross packaging volume is not usable bin volume; evacuation port still to design
+bottom_frame,bottom,1,Printed floor chassis and bumper,250,estimate,200x280x90,0,0,30,90,allowance,,Printed structure estimate; contains wheel recesses and service access
+floor_control,bottom,1,Motor drivers MCU cliff sensors and harness,110,estimate,distributed,3,1,60,160,allowance,,Every complete bottom needs sensing and drivetrain
+debris,bottom,1,Maximum study debris allowance,150,estimate,inside bin,0,0,0,0,none,,A load limit to test; station emptying before flight does not excuse omitting retained debris
+lift_motors,lift,4,Hobbywing XRotor/RTF 3110 900KV,89,manufacturer,37.2diax27 plus shaft,0,0,34.99,34.99,listed_reference,https://www.hobbywingdirect.com/products/xrotor-fpv-3110-motors,Mass and thrust source in concept.json; alternative motor mass replaced by selected variant; cost applies only to this reference
+esc,lift,1,Hobbywing compatible 65A 4-in-1 ESC class,60,estimate,65x65x20,0,0,90,170,allowance,https://www.hobbywing.com/en/products/-xrotor3110,Mass/envelope allowance incl wiring; current handling and cooling not verified
+props,lift,4,HQ9x4x3 matched CW/CCW propellers,15,estimate,228.6dia,0,0,4,10,allowance,,Larger variants need reweighing; this row is only a study allowance
+lift_frame,lift,1,Purchased arms and printed central fittings,200,estimate,distributed,0,0,60,160,allowance,,Joint stiffness and rotor-plane height must be verified
+guards,lift,1,Complete rotor access protection,300,estimate,distributed,0,0,60,180,allowance,,Annular envelope is visualized; upper/lower barriers and reach protection are not engineered yet
+flight_controller,lift,1,Holybro Pixhawk 6C Mini current Model A,42.4,manufacturer,54.3x39x17.5,0,2,130.99,180,listed_starting_price,https://holybro.com/products/pixhawk-6c-mini,5V regulated supply required; package variant affects price
+flight_sensing,lift,1,Additional flight views and range sensors,120,estimate,distributed,0,8,150,450,allowance,,Full coverage and indoor localization remain unresolved; no GPS reliance
+lift_harness,lift,1,Lift harness mounts and positive retention,100,estimate,distributed,0,0,50,130,allowance,,Power connector and complete load path need design
+cap,cap,1,Printed cap and status display,70,estimate,200x280x10,1,0,10,40,allowance,,One cap per floor; omitted from airborne mass
+station_frame,station,1,Frame enclosure and linear guides,0,not_airborne,1200x1000x1200,0,0,250,600,allowance,,Per station; masses not modeled for stationary hardware
+station_motion,station,1,Top carriage cap shuttle core support and tool indexer,0,not_airborne,distributed,0,0,300,800,allowance,,Screw/rail mechanism family; illustrative envelopes are not selected hardware
+station_power,station,1,Charger controls and interlocks,0,not_airborne,distributed,0,0,180,450,allowance,,6S per-cell charge management and guided charge connector unresolved
+station_vacuum,station,1,Bin evacuation source hose and waste container,0,not_airborne,distributed,0,0,100,300,allowance,,Requires packed-hair emptying test
+station_water,station,1,Clean/dirty tanks pumps pad tray and dryer,0,not_airborne,distributed,0,0,150,450,allowance,,Later mop phase; included only in full-station budget

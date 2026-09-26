@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img">
+<title>Complete stack · side projection</title>
+<style>text{font-family:Arial,sans-serif;fill:#20344b} .dim{stroke:#5c7186;stroke-width:1;marker-start:url(#a);marker-end:url(#a)}</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5c7186"/></marker></defs>
+<rect width="900" height="480" fill="white"/>
+<text x="30" y="30" font-size="23" text-anchor="start">Complete stack · side projection</text>
+<text x="30" y="55" font-size="12" text-anchor="start">Front at left. Left/center/right components share this projection; see top views for lateral separation.</text>
+<rect x="100" y="254.6" width="426.25" height="105.4" fill="#f5f8fa" stroke="#64798d" />
+<rect x="100" y="184.85" width="426.25" height="69.75" fill="#edf2fc" stroke="#64798d" />
+<rect x="100" y="169.35" width="426.25" height="15.5" fill="#d7e0ea" stroke="#64798d" />
+<g><title>Short roller cassette reservation | proposed reservation | 254.15 x 72 x 35 mm</title>
+<rect x="100" y="305.75" width="111.6" height="54.25" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Rear-pull debris bin | proposed reservation | 145 x 140 x 60 mm</title>
+<rect x="309.25" y="259.25" width="217" height="93" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Vertical filter holder / upper extension | proposed reservation | 30 x 140 x 86 mm</title>
+<rect x="309.25" y="218.95" width="217" height="133.3" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Dirty-air duct corridor | proposed reservation | 50 x 63 x 34 mm</title>
+<rect x="211.6" y="294.9" width="97.65" height="52.7" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Wheel H-bridge above head | proposed reservation | 100 x 80 x 22 mm</title>
+<rect x="100" y="257.7" width="124" height="34.1" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Owned CBM blower, upright | manufacturer envelope | 33 x 97 x 95 mm</title>
+<rect x="327.85" y="201.9" width="150.35" height="147.25" fill="#afd2ef" stroke="#64798d" />
+</g>
+<g><title>Rear outlet / grille allowance | proposed reservation | 41 x 25 x 78 mm</title>
+<rect x="487.5" y="200.35" width="38.75" height="120.9" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Battery tray / restraint / leads | proposed reservation | 63 x 154 x 33 mm</title>
+<rect x="193" y="198.8" width="238.7" height="51.15" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Owned 3S pack listing reference | seller reference; not owner measured | 43 x 132 x 25 mm</title>
+<rect x="208.5" y="203.45" width="204.6" height="38.75" fill="#ddc2e8" stroke="#64798d" />
+</g>
+<g><title>Core left station pickup rail | proposed reservation | 12 x 175 x 8 mm</title>
+<rect x="177.5" y="184.85" width="271.25" height="12.4" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Core-fixed RPLIDAR A1 reference | manufacturer family reference | 96.8 x 70.3 x 55 mm</title>
+<rect x="247.25" y="84.1" width="108.965" height="85.25" fill="#afd2ef" stroke="#64798d" />
+</g>
+<g><title>Owned left wheel | owner dimensions | 8 x 60 x 60 mm</title>
+<ellipse cx="267.4" cy="313.5" rx="46.5" ry="46.5" fill="#a7dac8" stroke="#5f7288"/>
+</g>
+<g><title>Owned roller style A | owner dimensions | 184.15 x 28 x 28 mm</title>
+<ellipse cx="132.55" cy="338.3" rx="21.7" ry="21.7" fill="#a7dac8" stroke="#5f7288"/>
+</g>
+<g><title>Owned roller style B | owner dimensions | 184.15 x 28 x 28 mm</title>
+<ellipse cx="179.05" cy="338.3" rx="21.7" ry="21.7" fill="#a7dac8" stroke="#5f7288"/>
+</g>
+<line x1="70" y1="360" x2="556.25" y2="360" stroke="#20344b" stroke-width="2"/>
+<line x1="100" y1="390" x2="526.25" y2="390" class="dim"/>
+<text x="313.125" y="382" font-size="13" text-anchor="middle">275 mm body depth</text>
+<line x1="60" y1="360" x2="60" y2="84.1" class="dim"/>
+<text x="40" y="220" font-size="13" text-anchor="middle">178</text>
+<text x="600" y="105" font-size="13" text-anchor="start">178 mm total; maximum 180</text>
+<text x="600" y="135" font-size="13" text-anchor="start">123 mm cap top</text>
+<text x="600" y="165" font-size="13" text-anchor="start">45 mm core frame height</text>
+<text x="600" y="195" font-size="13" text-anchor="start">68 mm bottom mating plane</text>
+<text x="600" y="225" font-size="13" text-anchor="start">60 mm wheel diameter</text>
+<text x="600" y="255" font-size="13" text-anchor="start">Tool towers reach 105 mm</text>
+<text x="600" y="285" font-size="13" text-anchor="start">Core has passive tool openings</text>
+<text x="600" y="315" font-size="13" text-anchor="start">Mass / CG still unmeasured</text>
+<text x="30" y="435" font-size="12" text-anchor="start">The main body stays outside 50 mm sofa gaps. The separate reaching bottom remains a later ground module.</text>
+<text x="30" y="458" font-size="12" text-anchor="start">No lift system, flight mass estimate or fabrication parts are included.</text>
+</svg>

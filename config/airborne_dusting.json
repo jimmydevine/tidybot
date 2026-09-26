@@ -1,0 +1,429 @@
+{
+  "revision": "E-balance-and-documented-edf",
+  "status": "PREFERRED_DUSTING_ARCHITECTURE_PRELIMINARY_NOT_FABRICATION",
+  "basis": "Reuses core, cartridge, bare 6S pack and lift accounting from system_design.json. Replaces the earlier wheeled suction duster only. Ground vacuum, mop and sofa modules retain drive.",
+  "body_mm": [
+    275,
+    275,
+    180
+  ],
+  "boom": {
+    "root_mm": [
+      165,
+      283,
+      36
+    ],
+    "main_length_mm": 480,
+    "angle_deg": 45,
+    "main_od_mm": 12,
+    "main_id_mm": 10,
+    "main_cut_lengths_mm": [
+      240,
+      240
+    ],
+    "internal_sleeve_length_mm": 60,
+    "wrist_length_mm": 100,
+    "wrist_od_mm": 10,
+    "wrist_id_mm": 8,
+    "brush_drop_mm": 30,
+    "carbon_density_g_cm3": 1.6,
+    "density_basis": "Material estimate; actual tube grade, tolerances and mass to verify",
+    "tool_reach_datum": "610 mm total path: 480 mm upward spar + 100 mm horizontal over-edge wrist + 30 mm drop. Horizontal reach is shorter; this is a declared interpretation of the owner's approximate 2 ft tool, not 610 mm beyond the guards.",
+    "head_size_mm": [
+      60,
+      50,
+      20
+    ],
+    "tip_force_normal_n": 0.2,
+    "tip_force_retreat_n": 0.5,
+    "root_load_factor": 3,
+    "notes": "Fixed 45-degree keyed root and horizontal head; station detaches/parks the spar, no carried telescope or arm motor. Thin hook approaches a stopped blade from its edge; blade edge geometry and compliance still need qualification. Clean by aircraft translation, not by tilting the whole aircraft into contact. No powered folding motion is modeled. Revision E routes the tool behind the core; flight approaches with the tool end leading. This is a redesigned rear socket, not arbitrary rotation of the keyed module connector.",
+    "direction_y": 1
+  },
+  "payload_g": [
+    5,
+    15,
+    30
+  ],
+  "tool_electrical_w": [
+    2,
+    4
+  ],
+  "hardware": [
+    {
+      "id": "air_frame",
+      "name": "Open bottom frame, four posts, metal module seats and studs",
+      "mass_g": [
+        130,
+        180,
+        260
+      ],
+      "basis": "65 cm3 effective PETG at 1.27 g/cm3 plus two edgewise 270 x 20 x 2 mm aluminum crossmembers (58.3 g) and 39 g posts/seats/fasteners nominal; geometry and strength remain to detail",
+      "cg_mm": [
+        137.5,
+        137.5,
+        50
+      ]
+    },
+    {
+      "id": "air_feet",
+      "name": "Four passive landing feet and compliant soles",
+      "mass_g": [
+        25,
+        40,
+        65
+      ],
+      "basis": "Four 10 g installed feet nominal; no caster, wheels or wheel drive",
+      "cg_mm": [
+        137.5,
+        137.5,
+        8
+      ]
+    },
+    {
+      "id": "air_root",
+      "name": "Keyed metal boom socket, captive station-actuated lock and sensing",
+      "mass_g": [
+        30,
+        50,
+        85
+      ],
+      "basis": "Root clamp/load spreader/retention allowance; through-fastened to rear bottom rail, offset right of the hex central support",
+      "cg_mm": [
+        165,
+        268,
+        36
+      ]
+    },
+    {
+      "id": "air_tubes",
+      "name": "Carbon main spar, sleeve and horizontal wrist",
+      "mass_g": [
+        28,
+        35,
+        50
+      ],
+      "basis": "Calculated annular stock volume at 1.6 g/cm3, rounded; see boom dimensions",
+      "location": "tubes"
+    },
+    {
+      "id": "air_joints",
+      "name": "Spar splice, elbow clamps and fasteners",
+      "mass_g": [
+        18,
+        28,
+        45
+      ],
+      "basis": "Two-piece clamps, positive mechanical retention and inserts; no printed long cantilever",
+      "location": "elbow"
+    },
+    {
+      "id": "air_head",
+      "name": "Replaceable microfiber sleeve, light backing and edge hook",
+      "mass_g": [
+        22,
+        35,
+        60
+      ],
+      "basis": "60 x 50 x 20 mm head allowance; dust retention and finish compatibility require tests",
+      "location": "tip"
+    },
+    {
+      "id": "air_flexure",
+      "name": "Compliant head suspension, mechanical stop and captive breakaway",
+      "mass_g": [
+        15,
+        25,
+        45
+      ],
+      "basis": "Provisional 0.2 N contact / 0.5 N retreat; these are targets, not established limits",
+      "location": "tip"
+    },
+    {
+      "id": "air_tip_sense",
+      "name": "Tip range/force sensing, carrier and short lead",
+      "mass_g": [
+        12,
+        20,
+        35
+      ],
+      "basis": "Sensor assembly allowance; no claim that a range sensor detects every blade or surface",
+      "location": "tip"
+    },
+    {
+      "id": "air_io",
+      "name": "Local MCU, CAN and hardware contact/retention interlocks",
+      "mass_g": [
+        18,
+        28,
+        42
+      ],
+      "basis": "Retain local supervision even without drive motors",
+      "cg_mm": [
+        175,
+        190,
+        35
+      ]
+    },
+    {
+      "id": "air_wiring",
+      "name": "Tool connector, protected wiring and boom sensor harness",
+      "mass_g": [
+        25,
+        40,
+        65
+      ],
+      "basis": "Installed route allowance; includes removable boom connector and branch protection",
+      "cg_mm": [
+        137.5,
+        195,
+        45
+      ]
+    }
+  ],
+  "landing_contacts_xy_mm": [
+    [
+      20,
+      20
+    ],
+    [
+      255,
+      20
+    ],
+    [
+      255,
+      255
+    ],
+    [
+      20,
+      255
+    ]
+  ],
+  "missions": {
+    "local_dusting": {
+      "outbound_s": 20,
+      "return_s": 20,
+      "landing_reserve_s": 30,
+      "transit_power_factor": 1.2,
+      "cleaning_power_factor": 1.1,
+      "energy_margin_fraction": 0.2
+    },
+    "longer_dusting": {
+      "outbound_s": 45,
+      "return_s": 45,
+      "landing_reserve_s": 30,
+      "transit_power_factor": 1.2,
+      "cleaning_power_factor": 1.1,
+      "energy_margin_fraction": 0.2
+    }
+  },
+  "compact_layouts": [
+    {
+      "id": "guarded10",
+      "label": "Guarded 254 mm propellers",
+      "rotor_mm": 254,
+      "outer_mm": 284,
+      "centres_relative_mm": [
+        [
+          -180,
+          -280
+        ],
+        [
+          180,
+          -280
+        ],
+        [
+          180,
+          280
+        ],
+        [
+          -180,
+          280
+        ]
+      ],
+      "evidence": "Current source-matched motor/propeller curve; unmeasured guard losses; installed mass modeled"
+    },
+    {
+      "id": "hover150",
+      "label": "150 mm rotor in a hover duct",
+      "rotor_mm": 150,
+      "outer_mm": 180,
+      "core_radial_clearance_mm": 10,
+      "evidence": "Packaging target only; no matched rotor/motor/duct curve or qualified mass yet"
+    },
+    {
+      "id": "edf90",
+      "label": "90 mm EDF installation",
+      "rotor_mm": 90,
+      "outer_mm": 120,
+      "core_radial_clearance_mm": 10,
+      "evidence": "120 mm installed-envelope target. The separate EDF comparison now uses complete WeMoTec fan/motor masses and voltage-sweep data; installed height, guards and control remain unresolved."
+    }
+  ],
+  "station_additions": [
+    {
+      "name": "Powered landing/launch shuttle, guides and load sensing",
+      "mass_g": [
+        900,
+        1500,
+        2500
+      ],
+      "power_high_w": 30,
+      "basis": "Station-side addition; carries the full robot from open apron into the exchanger after rotor stop. Existing cabinet picker does not imply a landing shuttle exists."
+    },
+    {
+      "name": "Boom pickup, orientation adapter and vertical dry rack",
+      "mass_g": [
+        500,
+        900,
+        1500
+      ],
+      "power_high_w": 20,
+      "basis": "Station removes/reinstalls boom at keyed root; extra rotation axis and end-effector included. Requires continuous supported handling."
+    },
+    {
+      "name": "Enclosed microfiber comb/vacuum service pocket",
+      "mass_g": [
+        350,
+        700,
+        1200
+      ],
+      "power_high_w": 15,
+      "basis": "Shares existing stationary vacuum; dust removal effectiveness and service interval untested"
+    }
+  ],
+  "station_boom_rack_mm": [
+    90,
+    160,
+    700
+  ],
+  "notes": "No drive or autonomous ground repositioning in airborne duster mode. Passive feet support an off-station landing; recovery from a non-flyable landing may require help. This architecture must demonstrate automatic return/landing/exchange before routine deployment. The fixed core retains all its present hardware including idle floor regulators; their mass has not been removed.",
+  "front_reference": {
+    "root_mm": [
+      110,
+      -8,
+      36
+    ],
+    "hardware_cg_mm": {
+      "air_root": [
+        110,
+        7,
+        36
+      ],
+      "air_wiring": [
+        137.5,
+        80,
+        45
+      ]
+    },
+    "flight_camera_rear": [
+      85.5,
+      278,
+      43
+    ]
+  },
+  "flight_layout": {
+    "flight_camera_rear": [
+      -34.5,
+      278,
+      43
+    ]
+  },
+  "ducted_comparison": {
+    "rotor_count": 4,
+    "installation_outer_mm": 120,
+    "installation_height_mm": null,
+    "retained_thrust": 0.85,
+    "retained_thrust_sensitivity": [
+      0.7,
+      0.85,
+      1.0
+    ],
+    "power_overhead_factor": 1.1,
+    "supply_screen_v": 21,
+    "esc_each_g": [
+      65,
+      100,
+      150
+    ],
+    "guard_mount_each_g": [
+      30,
+      50,
+      85
+    ],
+    "yaw_control_g": [
+      60,
+      120,
+      240
+    ],
+    "allowance_basis": "Retain every common quad frame/harness/flight-electronics allowance. Add separately a fan plus intake ring, ESC per fan, inlet/outlet protection and mounting per fan, and a provisional yaw-control assembly. No CAD clearance, ESC model, guard loss or yaw-control qualification is implied. Do not reduce structure simply because ducts are smaller.",
+    "curve_basis": "Manufacturer stabilized-voltage sweep with small r=6 mm inlet lip, at 21 C and 50 m ASL. Linear interpolation only inside supplied data. Power versus thrust is an equivalent-operating-point estimate, not a fixed-6S partial-throttle curve. No extrapolation below the first point.",
+    "candidates": [
+      {
+        "id": "wemotec_1970",
+        "label": "Midi Fan evo / HET 650-58-1970",
+        "fan_motor_g": 348,
+        "inlet_g": 19,
+        "rotor_mm": 89,
+        "shroud_od_mm": 92,
+        "shroud_length_mm": 60,
+        "cells": [
+          4,
+          6
+        ],
+        "points_v_a_w_g": [
+          [
+            14.8,
+            48.5,
+            718,
+            1660
+          ],
+          [
+            18.5,
+            72,
+            1332,
+            2480
+          ],
+          [
+            22.2,
+            91,
+            2020,
+            3200
+          ]
+        ],
+        "source": "https://shop.wemotec.com/Midi-Fan-evo-Impeller-HET-650-58-1970-komplett-montiert-feingewuchtet-und-harmonisch-abgestimmt"
+      },
+      {
+        "id": "wemotec_2000",
+        "label": "Midi Fan evo / HET 650-68-2000",
+        "fan_motor_g": 402,
+        "inlet_g": 19,
+        "rotor_mm": 89,
+        "shroud_od_mm": 92,
+        "shroud_length_mm": 60,
+        "cells": [
+          5,
+          6
+        ],
+        "points_v_a_w_g": [
+          [
+            18.5,
+            78,
+            1443,
+            2810
+          ],
+          [
+            22.2,
+            108,
+            2398,
+            3680
+          ]
+        ],
+        "source": "https://shop.wemotec.com/Midi-Fan-evo-ducted-fan-unit-HET-650-68-2000-completely-assembled-precision-balanced-and-harmonically-tuned"
+      }
+    ],
+    "yaw_source": "https://www.mdpi.com/2076-3417/5/4/666",
+    "yaw_gate": "These fixed EDF products have no documented matched reverse-rotation assemblies or installed net reaction-torque curve in the cited data. Do not apply the propeller quad zero-yaw mixer to them. Stator-equipped aircraft in the cited study use deflecting vanes; applicability, actuator dynamics, loss and mounting envelope must be designed here.",
+    "reviewed_date": "2026-09-13"
+  }
+}

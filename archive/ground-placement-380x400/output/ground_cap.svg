@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 670" role="img">
+<title>Cap and shared joints · top view</title>
+<style>text{font-family:Arial,sans-serif;fill:#20344b} .dim{stroke:#5c7186;stroke-width:1;marker-start:url(#a);marker-end:url(#a)}</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5c7186"/></marker></defs>
+<rect width="900" height="670" fill="white"/>
+<text x="30" y="30" font-size="23" text-anchor="start">Cap and shared joints · top view</text>
+<text x="30" y="54" font-size="12" text-anchor="start">PLACEMENT STUDY · mm · front at top · component sources and allowances in report</text>
+<rect x="85" y="110" width="456" height="480" fill="#fafbfc" stroke="#64798d" />
+<line x1="85" y1="83" x2="541" y2="83" class="dim"/>
+<text x="313" y="75" font-size="13" text-anchor="middle">380 mm body width</text>
+<line x1="57" y1="110" x2="57" y2="590" class="dim"/>
+<text x="42" y="350" font-size="12" text-anchor="middle">400</text>
+<rect x="85" y="110" width="456" height="480" fill="#e9eff4" stroke="#64798d" />
+<rect x="249.4" y="281.6" width="128.4" height="97.2" fill="white" stroke="#64798d" />
+<g><title>Cap low-power connector pocket | proposed reservation | 44 x 30 x 20 mm</title>
+<rect x="421" y="164" width="52.8" height="36" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Core-fixed RPLIDAR A1 reference | manufacturer family reference | 96.8 x 70.3 x 55 mm</title>
+<rect x="255.4" y="287.6" width="116.16" height="84.36" fill="#afd2ef" stroke="#64798d" />
+</g>
+<g><title>Top joint zone 1 | proposed reservation | 20 x 20 x 22 mm</title>
+<rect x="94.6" y="119.6" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Top joint zone 2 | proposed reservation | 20 x 20 x 22 mm</title>
+<rect x="507.4" y="119.6" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Top joint zone 3 | proposed reservation | 20 x 20 x 22 mm</title>
+<rect x="94.6" y="556.4" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Top joint zone 4 | proposed reservation | 20 x 20 x 22 mm</title>
+<rect x="507.4" y="556.4" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<line x1="313" y1="110" x2="313" y2="590" stroke="#c38535" stroke-dasharray="5 5"/>
+<line x1="85" y1="350" x2="541" y2="350" stroke="#c38535" stroke-dasharray="5 5"/>
+<text x="573" y="139" font-size="13" text-anchor="start">Core-fixed A1 in cap opening</text>
+<text x="573" y="168" font-size="13" text-anchor="start">Opening: 107 × 81 mm</text>
+<text x="573" y="197" font-size="13" text-anchor="start">Cap lifts 70 mm over scanner</text>
+<text x="573" y="226" font-size="13" text-anchor="start">Optional display remains open</text>
+<text x="573" y="255" font-size="13" text-anchor="start">Four corner joint zones</text>
+<text x="573" y="284" font-size="13" text-anchor="start">Round + slotted registration</text>
+<text x="573" y="313" font-size="13" text-anchor="start">Different top/bottom keys</text>
+<text x="573" y="342" font-size="13" text-anchor="start">Orange: proposed panel splits</text>
+<text x="573" y="476" font-size="12" text-anchor="start">Green: owner dimensions</text>
+<text x="573" y="497" font-size="12" text-anchor="start">Blue: manufacturer reference</text>
+<text x="573" y="518" font-size="12" text-anchor="start">Purple: seller pack reference</text>
+<text x="573" y="539" font-size="12" text-anchor="start">Grey: proposed space</text>
+<text x="573" y="560" font-size="12" text-anchor="start">Amber: mating reservations</text>
+<text x="30" y="624" font-size="12" text-anchor="start">Positions, clearances and empty bays are design proposals. Full coordinates and limits are in the report.</text>
+<text x="30" y="647" font-size="12" text-anchor="start">Structure, wiring, port adapters and purchased mounts still need detailed fitting. Not fabrication geometry.</text>
+</svg>

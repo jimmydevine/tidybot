@@ -1,0 +1,1287 @@
+{
+  "fabrication_release": false,
+  "source_fingerprint": "41f03ea02c2a917baeb2c7984d7a63319dc2587fb2b5664c99d967a17b3cfa6c",
+  "guide_context_intersections": [],
+  "moving_reference_intersections": [],
+  "head_P_N_intersections": [],
+  "head_frame_rework_required": [
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 0
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 0
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 1
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 1
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 2
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 2
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 3
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 3
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 4
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 4
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 5
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 5
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 6
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 6
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 7
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 7
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 8
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 8
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1715.2306891745498,
+      "pose": 9
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1715.2306891745498,
+      "pose": 9
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1693.4062981231298,
+      "pose": 10
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1656.260390897564,
+      "pose": 10
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1656.9251471807647,
+      "pose": 11
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1664.0112666436348,
+      "pose": 11
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1956.2993713044207,
+      "pose": 12
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1956.2993713044175,
+      "pose": 12
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 13
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 13
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 14
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 14
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1724.88777727157,
+      "pose": 15
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1724.8877772715678,
+      "pose": 15
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1695.5375159661555,
+      "pose": 16
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1658.492721665157,
+      "pose": 16
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1664.666845403925,
+      "pose": 17
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1671.2854953030815,
+      "pose": 17
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1946.7867031621481,
+      "pose": 18
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1946.786703162145,
+      "pose": 18
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 19
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 19
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 20
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 20
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1728.4482796723405,
+      "pose": 21
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1728.44827967234,
+      "pose": 21
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1692.4407188077116,
+      "pose": 22
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1655.2492775671003,
+      "pose": 22
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1671.6264343696578,
+      "pose": 23
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1677.8165952451518,
+      "pose": 23
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1943.2717591166847,
+      "pose": 24
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1943.2717591166847,
+      "pose": 24
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 25
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 25
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 26
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 26
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1724.88777727157,
+      "pose": 27
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1724.8877772715678,
+      "pose": 27
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1685.8484367005658,
+      "pose": 28
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1648.350732341289,
+      "pose": 28
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1674.8986010380224,
+      "pose": 29
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1680.8846104015859,
+      "pose": 29
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1946.7867031621481,
+      "pose": 30
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1946.786703162145,
+      "pose": 30
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 31
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 31
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 32
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 32
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1715.2306891745498,
+      "pose": 33
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1715.2306891745498,
+      "pose": 33
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1678.506204257939,
+      "pose": 34
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1640.6768646681146,
+      "pose": 34
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1672.6465001713514,
+      "pose": 35
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1678.7732031746918,
+      "pose": 35
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1956.2993713044207,
+      "pose": 36
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1956.2993713044175,
+      "pose": 36
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 37
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 37
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 38
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 38
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1703.7240492987785,
+      "pose": 39
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1703.7240492987785,
+      "pose": 39
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1674.547401138734,
+      "pose": 40
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1636.5433911479172,
+      "pose": 40
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1664.9252782740846,
+      "pose": 41
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1671.5281563250476,
+      "pose": 41
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1967.5907262689752,
+      "pose": 42
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1967.5907262689752,
+      "pose": 42
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 43
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 43
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 44
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 44
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1698.2848562489248,
+      "pose": 45
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1698.284856248922,
+      "pose": 45
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1677.6598009870263,
+      "pose": 46
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1639.7928724831631,
+      "pose": 46
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1656.0333461810633,
+      "pose": 47
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1663.172693447797,
+      "pose": 47
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1972.910426639408,
+      "pose": 48
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1972.9104266394081,
+      "pose": 48
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 49
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 49
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 50
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2040.0,
+      "pose": 50
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1703.7240492987785,
+      "pose": 51
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1703.7240492987785,
+      "pose": 51
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1686.0933687931577,
+      "pose": 52
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1648.6068995736691,
+      "pose": 52
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1652.7551689727488,
+      "pose": 53
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1660.0890699434967,
+      "pose": 53
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1967.5907262689752,
+      "pose": 54
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1967.5907262689752,
+      "pose": 54
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 55
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 55
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 56
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 56
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1532.3543733858723,
+      "pose": 57
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1532.3543733858726,
+      "pose": 57
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1474.3728059726125,
+      "pose": 58
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1319.1881652059963,
+      "pose": 58
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1375.7598177796492,
+      "pose": 59
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1366.3204539530332,
+      "pose": 59
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2136.6599432888643,
+      "pose": 60
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2136.659943288861,
+      "pose": 60
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 61
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 61
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 62
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 62
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1556.9623793668877,
+      "pose": 63
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1556.9623793668877,
+      "pose": 63
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1480.187577197899,
+      "pose": 64
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1324.8117504735246,
+      "pose": 64
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1395.90726448196,
+      "pose": 65
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1385.2714900857093,
+      "pose": 65
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2112.9721880865322,
+      "pose": 66
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2112.9721880865322,
+      "pose": 66
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 67
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 67
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 68
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 68
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1566.0118515648064,
+      "pose": 69
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1566.0118515648037,
+      "pose": 69
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1471.8793736480495,
+      "pose": 70
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1316.7808722637508,
+      "pose": 70
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1413.995838997303,
+      "pose": 71
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1402.146471003348,
+      "pose": 71
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2104.2124698633506,
+      "pose": 72
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2104.2124698633506,
+      "pose": 72
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 73
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 73
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 74
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 74
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1556.9623793668877,
+      "pose": 75
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1556.9623793668877,
+      "pose": 75
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1454.0463831900536,
+      "pose": 76
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1299.63651844907,
+      "pose": 76
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1422.4690622987612,
+      "pose": 77
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1410.0064457224646,
+      "pose": 77
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2112.9721880865322,
+      "pose": 78
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2112.9721880865322,
+      "pose": 78
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 79
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 79
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 80
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 80
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1532.3543733858723,
+      "pose": 81
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1532.3543733858726,
+      "pose": 81
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1434.0263298779394,
+      "pose": 82
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1280.540739979946,
+      "pose": 82
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1416.5357226763515,
+      "pose": 83
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1404.5055105714341,
+      "pose": 83
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2136.6599432888643,
+      "pose": 84
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2136.659943288861,
+      "pose": 84
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 85
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 85
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 86
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 86
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1502.9010237350408,
+      "pose": 87
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1502.9010237350385,
+      "pose": 87
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1423.1098001202372,
+      "pose": 88
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1270.1952891969447,
+      "pose": 88
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1396.3796470292866,
+      "pose": 89
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1385.7138473505968,
+      "pose": 89
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2164.737028228911,
+      "pose": 90
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2164.737028228911,
+      "pose": 90
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 91
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 91
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 92
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 92
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1488.9234641684072,
+      "pose": 93
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1488.9234641684072,
+      "pose": 93
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1431.541232020567,
+      "pose": 94
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1278.1814912049967,
+      "pose": 94
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1373.2706306241298,
+      "pose": 95
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1363.9675848979796,
+      "pose": 95
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2177.9485792932055,
+      "pose": 96
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2177.9485792932055,
+      "pose": 96
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 97
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 97
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 98
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2346.0,
+      "pose": 98
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1502.9010237350408,
+      "pose": 99
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1502.9010237350385,
+      "pose": 99
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1454.5137793650688,
+      "pose": 100
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1300.0842435822308,
+      "pose": 100
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1364.8445573789686,
+      "pose": 101
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1355.9840191464857,
+      "pose": 101
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2164.737028228911,
+      "pose": 102
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2164.737028228911,
+      "pose": 102
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 103
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 1836.0,
+      "pose": 103
+    },
+    {
+      "a": "left_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2448.0,
+      "pose": 104
+    },
+    {
+      "a": "right_rail_envelope",
+      "b": "old_head_frame_allocation",
+      "volume_mm3": 2448.0,
+      "pose": 104
+    }
+  ],
+  "valid_shapes": {
+    "left_rail_envelope": true,
+    "right_rail_envelope": true,
+    "left_carriage_envelope": true,
+    "left_drop_link_reference": true,
+    "right_carriage_envelope": true,
+    "right_drop_link_reference": true,
+    "left_bearing_envelope": true,
+    "right_bearing_envelope": true
+  },
+  "pose_count": 105,
+  "scope": "Rail/carriage/bearing catalog envelopes and nominal drop-link stock. New guides versus P interface and modified M/H plus N stock; protected roller and motor versus new guides. Existing head-frame end regions need rework. P carrier supports, precise pivot pins/cages, spring/capture hardware, flex and full dock withdrawal absent. Rail/carriage overlap is intentional.",
+  "minimum_sampled_P_gap_mm": 2.0,
+  "closest_pair": {
+    "pose": 104,
+    "a": "head_allocation",
+    "b": "P_carrier_left_cheek"
+  }
+}

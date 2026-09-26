@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TidyBot captured suspension stops</title>
+<style>body{font:16px system-ui,sans-serif;color:#20323f;background:#f4f6f8;max-width:1050px;margin:25px auto;padding:0 20px}h1{font-size:28px}main{background:white;padding:22px;border-radius:12px}svg{width:100%;height:auto}label{display:block;margin:16px 0}input{vertical-align:middle;width:240px}table{border-collapse:collapse;width:100%;margin:18px 0}td,th{padding:8px;text-align:left;border-bottom:1px solid #d8e0e7}.note{color:#536674}a{color:#155699}</style>
+<h1>Connected suspension and travel stops · K</h1><p>A metal tray, drilled bearing blocks and bolted frame supports. One closed slot limits movement in both directions.</p><main>
+<label>Wheel travel <input id="travel" type="range" min="-2.5" max="10" step="0.1" value="0"> <span id="value"></span></label>
+<svg id="drawing" viewBox="0 0 920 500" role="img" aria-label="Side projection of the captured suspension stop"></svg>
+<p class="note">Side projection combines different X positions. Blue is the moving stop arm; gold is the fixed sleeve. The sleeve is retained on a countersunk screw, washer and thin nut. Actual sleeve tolerances and nut locking remain unqualified.</p>
+<p id="result"></p><table id="mass"></table>
+<p><a href="pod_joints.FCStd">Nominal FreeCAD</a> · <a href="pod_joints_bump.FCStd">Bump</a> · <a href="pod_joints_droop.FCStd">Droop</a> · <a href="pod_joints.md">Calculations</a> · <a href="pod_joints_hardware.csv">Pod hardware/mass</a> · <a href="../../../docs/POD_JOINTS_AND_STOPS.md">Design record</a></p>
+<p class="note">Candidate geometry, not printable release. Full plate/joint fatigue, locking, bearing fits, wheel-drop sensing and spring selection remain open.</p></main>
+<script>const m=__MODEL__;const $=id=>document.getElementById(id);const px=([y,z])=>[90+(y-65)*5,440-z*5];
+function render(){const t=+$('travel').value,a=Math.asin(t/40),c=Math.cos(a),n=Math.sin(a);const rotate=([y,z])=>[145+(y-145)*c+(z-36)*n,36-(y-145)*n+(z-36)*c];let out='';
+const circle=(q,r,fill,stroke='#4f6573')=>{let [x,y]=px(q);out+=`<circle cx="${x}" cy="${y}" r="${5*r}" fill="${fill}" stroke="${stroke}"/>`;};
+const line=(q,r,color,width=2)=>{q=px(q);r=px(r);out+=`<line x1="${q[0]}" y1="${q[1]}" x2="${r[0]}" y2="${r[1]}" stroke="${color}" stroke-width="${width}"/>`;};
+const poly=(qs,fill)=>{out+=`<polygon points="${qs.map(q=>px(q).join(',')).join(' ')}" fill="${fill}"/>`;};
+const text=(x,y,label)=>out+=`<text x="${x}" y="${y}" font-size="15" fill="#20323f">${label}</text>`;
+circle(rotate([105,36]),36,'none','#b3c0c9');circle(rotate([105,36]),12.5,'#d9e2e9');
+poly([[92.5,17.5],[154.5,17.5],[154.5,21.5],[92.5,21.5]].map(rotate),'#8a9aa6');
+poly([[111,21.5],[154,21.5],[154,40],[111,40]].map(rotate),'#65a1bc');
+const arc=[];for(let i=0;i<=60;i++){const v=m.slot.start_rad+(m.slot.end_rad-m.slot.start_rad)*i/60;arc.push(px(rotate([145+m.slot.radius_mm*Math.cos(v),36+m.slot.radius_mm*Math.sin(v)])));}
+const path='M'+arc.map(q=>q.join(',')).join(' L');
+out+=`<path d="${path}" stroke="#65a1bc" stroke-width="72.5" fill="none" stroke-linecap="round"/><path d="${path}" stroke="white" stroke-width="42.5" fill="none" stroke-linecap="round"/>`;
+circle([145,36],12.2,'white','white');circle([145,36],4,'#dcbf77');circle(m.config.stop.fixed_yz_mm,4,'#dcbf77','#9d7019');
+poly([[109,62],[154,62],[154,65],[109,65]],'#657986');line([65,0],[163,0],'#a7b4bd',1);
+text(105,240,'Motor');text(532,265,'8 mm pivot');text(260,95,'Cap and bolted frame connections');text(530,455,'Nominal floor');
+text(620,150,'Closed slot: bump + droop');text(620,185,'8 mm steel sleeve');text(620,220,'8.5 mm slot width');text(620,255,'Clearance-compensated ends');text(620,290,'4 mm aluminum tray');
+$('drawing').innerHTML=out;$('value').textContent=t.toFixed(1)+' mm';
+$('result').textContent=`Pod estimate: ${m.mass.per_pod_interval_g[1].toFixed(1)} g per side, including fixed local supports and completion reserves. The sofa module exceeds the existing 0–6 mm preload adjustment range.`;
+$('mass').innerHTML='<tr><th>Assembly</th><th>G estimate</th><th>K estimate</th></tr>'+Object.entries(m.ground).map(([id,v])=>`<tr><td>${id==='low'?'Sofa vacuum':id}</td><td>${(v.before_g[1]/1000).toFixed(3)} kg</td><td>${(v.after_g[1]/1000).toFixed(3)} kg</td></tr>`).join('');}
+$('travel').addEventListener('input',render);render();</script></html>

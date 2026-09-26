@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="750" viewBox="0 0 1080 750">
+<rect width="1080" height="750" fill="#f8fafc"/><g font-family="sans-serif" fill="#173047">
+<text x="28" y="34" font-size="24">Duster balance: relocate hardware, keep the same mass</text>
+<text x="28" y="60" font-size="15">Plan views: body center cross; red CG point magnified in the readout. Boom is above the guards.</text>
+<text x="50" y="98" font-size="21">Front boom reference</text>
+<circle cx="194.0" cy="267.0" r="63.9" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="356.0" cy="267.0" r="63.9" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="356.0" cy="519.0" r="63.9" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="194.0" cy="519.0" r="63.9" fill="#ffe6cb" stroke="#ba782e"/>
+<rect x="213.125" y="331.125" width="123.75" height="123.75" fill="#dce8f7" stroke="#466cbd"/>
+<path d="M262.625,327.525 L262.625,174.78993526370573" stroke="#a96028" stroke-width="5"/>
+<path d="M262.625,174.78993526370573 L262.625,129.78993526370573" stroke="#a96028" stroke-width="5"/>
+<rect x="249.125" y="118.53993526370573" width="27" height="22.5" fill="#258c79"/>
+<path d="M266,393 H284 M275,384 V402" stroke="#173047"/><circle cx="275.1658887407125" cy="381.7973960462136" r="4" fill="#c83d37"/>
+<rect x="251.6" y="456.225" width="46.800000000000004" height="12.15" fill="#bda4d3"/>
+<rect x="341.375" y="381.525" width="46.800000000000004" height="12.15" fill="#bda4d3"/>
+<text x="50" y="686" font-size="17">CG 137.9 / 112.6 mm; static peak T/W 1.86:1</text>
+<text x="580" y="98" font-size="21">Rear boom, left rear camera</text>
+<circle cx="724.0" cy="267.0" r="63.9" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="886.0" cy="267.0" r="63.9" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="886.0" cy="519.0" r="63.9" fill="#ffe6cb" stroke="#ba782e"/>
+<circle cx="724.0" cy="519.0" r="63.9" fill="#ffe6cb" stroke="#ba782e"/>
+<rect x="743.125" y="331.125" width="123.75" height="123.75" fill="#dce8f7" stroke="#466cbd"/>
+<path d="M817.375,458.475 L817.375,611.2100647362943" stroke="#a96028" stroke-width="5"/>
+<path d="M817.375,611.2100647362943 L817.375,656.2100647362943" stroke="#a96028" stroke-width="5"/>
+<rect x="803.875" y="644.9600647362943" width="27" height="22.5" fill="#258c79"/>
+<path d="M796,393 H814 M805,384 V402" stroke="#173047"/><circle cx="805.0561535530577" cy="397.2342480764765" r="4" fill="#c83d37"/>
+<rect x="727.6" y="456.225" width="46.800000000000004" height="12.15" fill="#bda4d3"/>
+<rect x="871.375" y="381.525" width="46.800000000000004" height="12.15" fill="#bda4d3"/>
+<text x="580" y="686" font-size="17">CG 137.6 / 146.9 mm; static peak T/W 1.97:1</text>
+<text x="28" y="728" font-size="14">Both use 5.249 kg nominal aircraft mass and the same camera/FC accounting. Neither meets the 2:1 target.</text></g></svg>

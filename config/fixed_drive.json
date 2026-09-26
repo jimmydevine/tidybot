@@ -1,0 +1,26 @@
+{
+  "revision": "N: fixed drive mounts versus independent suspension",
+  "status": "Comparison only; head motion and joints are not released for fabrication",
+  "angle": {"x":29,"width":52,"y_front":92.5,"y_back":130,"z_bottom":16.7375,"z_top":65,"wall":4.7625,"inside_radius":6.35},
+  "beam": {"min":[28,130,52.3],"size":[219,12.7,12.7],"wall":1.6002},
+  "cleat": {"leg":15,"wall":3.175,"length":22,"inside_radius":1},
+  "material": {"aluminum_g_mm3":0.0027,"steel_g_mm3":0.00785,"e_mpa":69000,"g_mpa":26000,"angle_bending_screen_mpa":120,"tube_bending_screen_mpa":55},
+  "loads": {"vertical_n":150,"fore_aft_n":25,"bolt_preload_n_each":1250,"friction_assumption":0.15,"section_hole_factor":0.75},
+  "completion_reserve_g":20,
+  "terrain_heights_mm":[4,10],
+  "caster_headings_deg":[0,45,90,135,180,225,270,315],
+  "sources": {
+    "angle":"https://www.onlinemetals.com/en/buy/aluminum/2-x-2-x-0-1875-aluminum-angle-6061-t6-extruded-structural/pid/988",
+    "tube":"https://www.onlinemetals.com/en/buy/aluminum/0-5-x-0-063-aluminum-square-tube-6063-t52-extruded/pid/20685",
+    "tube_properties":"https://www.hydro.com/globalassets/01-products--services/extruded-profiles/americas/ena-resources/alloy-data-sheets/hydro_2019_data_sheet_6063.pdf",
+    "motor_bracket":"https://www.pololu.com/product/2676",
+    "motor_guidance":"https://www.pololu.com/file/0J1829/pololu-25d-metal-gearmotors.pdf"
+  },
+  "notes": [
+    "Dimensioned nominal stock, not a tolerance-controlled drawing. The 6061 angle includes its 6.35 mm inside radius. No drilled-hole mass credit.",
+    "Tube is the documented 1/2 x 1/2 x 0.063 inch 6063-T52 size. A 55 MPa screen is half the cited 110 MPa minimum yield. Stock corner radii still need confirmation.",
+    "Small cleats require 3/4 x 3/4 x 1/8 inch architectural angle, trimmed to 15 mm legs, with inside radius <=1 mm; exact product and tolerances remain to select.",
+    "All prior frame, caster, head, harness and power-carrier budgets are retained. Only the two complete K pod scopes are replaced. No savings from supposed overlap.",
+    "Wheel axes and catalog motor/bracket interface are unchanged. No pivots, springs, collars or stops remain in this drive-mount candidate. Floor following must be provided at the cleaning head."
+  ]
+}

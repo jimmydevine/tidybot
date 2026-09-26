@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-13",
+  "status": "APPROXIMATE_CURVE_COMPARISON_NOT_MEASURED_PERFORMANCE",
+  "curve_note": "Manually read approximate points from published plots; no measurements or guaranteed tolerance envelope. Linear interpolation only inside each curve. Preserve conflicting curves separately.",
+  "system_note": "Designer-selected sensitivity cases, P=P_ref*(Q/Q_ref)^2, not measured filter curves or established pickup requirements. Total includes head, duct, bin, filter and exhaust. Real filter behavior need not be quadratic.",
+  "intersections": [
+    {
+      "curve_id": "biqu_kit_24v",
+      "scenario": "clean",
+      "flow_lps_approx": 4.8,
+      "pressure_kpa_approx": 2.8
+    },
+    {
+      "curve_id": "biqu_kit_24v",
+      "scenario": "loaded",
+      "flow_lps_approx": 3.6,
+      "pressure_kpa_approx": 4.2
+    },
+    {
+      "curve_id": "wonsmart_drawing_24v",
+      "scenario": "clean",
+      "flow_lps_approx": 4.2,
+      "pressure_kpa_approx": 2.3
+    },
+    {
+      "curve_id": "wonsmart_drawing_24v",
+      "scenario": "loaded",
+      "flow_lps_approx": 3.2,
+      "pressure_kpa_approx": 3.4
+    },
+    {
+      "curve_id": "micronel_12v_graph",
+      "scenario": "clean",
+      "flow_lps_approx": 3.6,
+      "pressure_kpa_approx": 1.6
+    },
+    {
+      "curve_id": "micronel_12v_graph",
+      "scenario": "loaded",
+      "flow_lps_approx": 2.6,
+      "pressure_kpa_approx": 2.2
+    }
+  ],
+  "duct_scenarios": [
+    {
+      "flow_lps": 3,
+      "mean_speed_mps": 4.26,
+      "estimated_duct_only_loss_pa": 35,
+      "loss_basis": "Darcy-Weisbach plus assumed local loss coefficient; excludes head, bin, filter, blower ports and exhaust"
+    },
+    {
+      "flow_lps": 4,
+      "mean_speed_mps": 5.68,
+      "estimated_duct_only_loss_pa": 62,
+      "loss_basis": "Darcy-Weisbach plus assumed local loss coefficient; excludes head, bin, filter, blower ports and exhaust"
+    },
+    {
+      "flow_lps": 5,
+      "mean_speed_mps": 7.1,
+      "estimated_duct_only_loss_pa": 97,
+      "loss_basis": "Darcy-Weisbach plus assumed local loss coefficient; excludes head, bin, filter, blower ports and exhaust"
+    }
+  ],
+  "blower_outlet_scenarios": [
+    {
+      "flow_lps": 3,
+      "mean_speed_in_published_12mm_id_outlet_mps": 26.5
+    },
+    {
+      "flow_lps": 4,
+      "mean_speed_in_published_12mm_id_outlet_mps": 35.4
+    },
+    {
+      "flow_lps": 5,
+      "mean_speed_in_published_12mm_id_outlet_mps": 44.2
+    }
+  ],
+  "filter_outer_face_area_cm2": 103.36,
+  "filter_note": "Outer frame area only, not active media area or evidence of pressure loss",
+  "blower_branch_budget": {
+    "nominal_v": 24,
+    "design_continuous_output_w": 80,
+    "assumed_converter_efficiency": 0.9,
+    "battery_current_a_at_nominal_3s": 8.0,
+    "battery_current_a_at_nominal_4s": 6.0,
+    "startup_current_requirement": "unresolved; driver's 6 A peak capability is not a measured blower startup draw",
+    "note": "80 W is an engineering allocation, not typical consumption. Does not select a battery or converter."
+  }
+}

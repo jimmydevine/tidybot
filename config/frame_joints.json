@@ -1,0 +1,59 @@
+{
+  "revision": "G: stock-tube core corner and frame candidate",
+  "status": "Dimensioned candidate; strength screening only, not fabrication or flight release",
+  "material": {
+    "name": "6061-T6 aluminum; verify grade and temper of supplied stock",
+    "density_g_mm3": 0.0027,
+    "elastic_modulus_mpa": 69000,
+    "screen_bending_allowable_mpa": 120,
+    "screen_shear_allowable_mpa": 80,
+    "source": "https://www.hydro.com/globalassets/01-products--services/extruded-profiles/americas/ena-resources/alloy-data-sheets/hydro_2019_data_sheet_6061.pdf",
+    "note": "120/80 MPa are project screening limits, not certified design allowables. E is a declared engineering approximation. Hydro lists 240 MPa minimum yield for its 6061-T6 extrusions."
+  },
+  "corner": {
+    "stock_source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+    "outer_y_mm": 25.4,
+    "outer_z_mm": 38.1,
+    "wall_mm": 3.175,
+    "cut_length_x_mm": 18,
+    "bottom_seat_z_mm": 86,
+    "stud_entry_diameter_mm": 9.5,
+    "stud_neck_clearance_mm": 5,
+    "slider_size_mm": [20,18,2],
+    "release_travel_mm": 8,
+    "draw_gap_mm": 0.5,
+    "inside_radius_screen_mm": 3.175,
+    "bearing_pad_mm": [18,12,2],
+    "effective_flange_width_mm": 10,
+    "wall_sensitivity_mm": [1.5875,2,2.38125,3.175],
+    "note": "Cut four short sections; the tube ends remain open for outward-moving steel sliders. No longitudinal slot or milling is needed in the tube. Corner radii and stock tolerances must be checked."
+  },
+  "rail": {"width_mm": 1.5875, "height_mm": 12.7, "z_mm": 103, "front_length_mm": 255, "side_length_mm": 235},
+  "clip": {"leg_mm": 12.7, "wall_mm": 1.5875, "length_z_mm": 12.7},
+  "joint_fasteners_g": [22,30,45],
+  "stock_mass_factors": [0.95,1,1.1],
+  "loads": {
+    "factored_axial_n": 600,
+    "load_sharing_cases": [4,2],
+    "core_equipment_acceleration_g": 3,
+    "core_equipment_supporting_rails": 2,
+    "rail_effective_span_mm": 247,
+    "rail_deflection_screen_mm": 1,
+    "note": "600 N is inherited from SYSTEM_DESIGN section 4; do not multiply it by another acceleration factor. Two anchors sharing it is an unequal-load case, not permission to fly with two unlocked joints."
+  },
+  "layout": {
+    "pi_shift_x_mm": -2,
+    "pack_protection_shift_x_mm": -3,
+    "rear_tool_inner_edge_x_mm": 29,
+    "filter_shift_x_mm": 2,
+    "sofa_bin_extra_height_mm": 1,
+    "sofa_feed_drive_shift_y_mm": -5,
+    "minimum_bin_wall_mm": 3,
+    "bin_internal_reserve_fraction": 0.15,
+    "bin_target_l": {"vacuum":0.5,"mop":0.35,"low":0.3},
+    "note": "15% internal reserve is a packaging assumption, not tested usable capacity. Preserve target capacities and contents; verify inlet, baffles, seals and evacuation space later."
+  },
+  "floor_bridge_candidate": {"min":[27,83.5,65],"size":[221,1.5,20]},
+  "fabrication_tools": ["stock cut to length by supplier or metal-cutting saw", "drill press", "vise and drill guide", "countersink bit", "files for steel slider or outsourced flat-part cutting"],
+  "procurement_status": "References only; no order or fabrication release. Exact rail/clip stock, fastener lengths, radii and tolerances remain to confirm."
+}

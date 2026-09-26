@@ -1,0 +1,13 @@
+id,qty,each_g,mass_g,cg_mm,basis
+motor_support_angles,2,55.375975870919454,110.75195174183891,"[137.5, 119, 37]",6061 angle volume including inside radius; holes/end radii not deducted
+common_crossmember,1,42.01044578539201,42.01044578539201,"[137.5, 136.35, 58.65]",6063 square tube volume; holes not deducted
+rail_cleats,2,5.071808224094192,10.143616448188384,"[137.5, 141, 69]",Small-angle section; actual corner radius and SKU pending
+Pololu_2676_brackets,2,8.5,17.0,"[137.5, 105, 29]","Catalog mass, preserved motor/shaft position"
+motor_M3x6_flush_screws,4,0.55,2.2,"[137.5, 105, 36]",Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+foot_M3x12_screw_washer_locknut_sets,8,1.9,15.2,"[137.5, 105, 21.5]",Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+support_M4x25_screw_washers_locknut_sets,4,4.2,16.8,"[137.5, 136, 58.65]",Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+beam_M4x25_screw_washers_locknut_sets,2,4,8,"[137.5, 136.35, 63]",Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+rail_M4x12_screw_washers_locknut_sets,4,2.7,10.8,"[137.5, 141, 74.5]",Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+beam_horizontal_compression_sleeves,4,1.025536219008655,4.10214487603462,"[137.5, 136.35, 58.65]","Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+beam_vertical_compression_sleeves,2,1.025536219008655,2.05107243801731,"[137.5, 136.35, 58.65]","Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+completion_reserve,1,20,20,"[137.5, 130, 50]",Local finish/tolerance/retention contingency; not an extra head budget

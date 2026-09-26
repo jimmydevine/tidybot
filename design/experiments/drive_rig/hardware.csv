@@ -1,0 +1,29 @@
+id,item,quantity,unit_usd,price_basis,status,notes,source
+controllers,ST B-G431B-ESC1 integrated MCU and three-phase driver,2,38.98,manufacturer storefront 2026-09-06; reference only not purchase receipt,purchased awaiting delivery,Owner reports two purchased 2026-09-06; expected later this week; actual price and arrival date unknown; keep ST-LINK attached; custom firmware and sensor leads required,https://estore.st.com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits/b-g431b-esc1.html
+encoders,"HiLetgo AS5600 module B09KGWC1PT, 23 x 23 mm",2,5.95,historical Adafruit manufacturer reference 2026-09-06; not ordered-board price,received,"Two received 2026-09-07; owner measures 23 x 23 mm body, 16 x 16 mm corner-hole centers, 4 mm holes, centered chip. Actual paid price unknown; retained price is historical Adafruit reference only.",https://www.amazon.com/dp/B09KGWC1PT
+magnets,Included HiLetgo encoder magnet 4 x 2 mm,2,0,bundled with encoder; no separate purchase allowance,received; total count unconfirmed,Owner reports included 4 mm diameter x 2 mm magnet received 2026-09-07. Quantity 2 is rig requirement; received total unconfirmed. Bore-plug carrier failed retention; tape trial failed centering; metal-rod approach under review; no replacement purchase selected. Magnetization and usable field/gap unverified; earlier K&J part was only a reference.,https://www.amazon.com/dp/B09KGWC1PT
+pi_regulator,Pololu D24V50F5 5 V regulator,1,35,allowance not live quote,proposed purchase,Short 3 A-rated Pi power lead; measure rail under Pi plus USB load,https://www.pololu.com/product/2851
+usb_data,USB-A to Micro-B data cables 20-30 cm,2,4,allowance,proposed purchase,Pi to both ST-LINK USB ports; data-capable,
+pi_power_lead,USB-C 5 V power pigtail rated at least 3 A,1,6,allowance,proposed purchase,Regulator to Pi 4; polarity checked; do not parallel another supply,
+xt60,XT60 mating connector pairs with insulating covers,3,2,allowance,proposed purchase,Battery harness and owned wattmeter SOURCE/LOAD terminations,
+fuses,Inline blade fuse holders and 5 A plus 1 A fuses,3,3,allowance,proposed purchase,One main 5 A near pack; one initial 1 A branch per controller; protect wiring not windings,
+motor_stop,Latching motor-power switch rated at least 5 A at 24 V DC,1,7,allowance,proposed purchase,Interrupt both motor bus feeds; Pi remains powered; accessible at rear,
+cell_alarm,1-8S LiPo balance-plug cell voltage alarm,1,5,allowance,proposed purchase,Initial stop at any cell 3.5 V under load; alarm is not an automatic cutoff,
+wiring,18 AWG power and 24-26 AWG signal wire plus heat shrink and insulated splices,1,10,allowance,proposed purchase,About 2 m of each wire class; strain relief; no motor current through Dupont leads,
+encoder_cables,Four-wire encoder leads 100-150 mm; termination pending board pinout,2,1.5,allowance,proposed purchase,Confirm ordered square-board pinout and connector; STEMMA QT was for earlier Adafruit reference only,
+motor_fasteners,M2 screw and washer assortment including 6 mm pan-head screws,1,7,allowance,proposed purchase,8x M2x6 for stationary mounts; wheel screw lengths depend on actual hub stack,
+m3_fasteners,M3 nuts washers and screws assortment,1,12,allowance,proposed purchase,8x25; 4x20; 4x50; 4x60; 2x14; 16x8; 8x12 mm plus spares; encoder board fasteners preferably nylon; see hardware notes,
+board_standoffs,M2.5 Pi and M3 controller/encoder spacers with insulating washers,1,10,allowance,proposed purchase,M2.5 4x10 mm Pi spacers plus screws/nuts; M3 8x10 mm controller carrier spacers; encoder M3 8x3 mm nonmagnetic spacers and 16 insulating washers (about 7 mm OD); confirm actual fit and sensor gap,
+straps,15 mm hook-and-loop battery and ballast straps plus small cable ties,1,6,allowance,proposed purchase,4 straps total; secure load and wiring separately,
+insulation,Thin nonconductive padding mounting tape and small adhesive supply,1,5,allowance,proposed purchase,Battery protection; board edge pads; future magnet-pocket retention after fit; do not bond failed bore plug,
+thermometer,Small-probe contact thermometer,1,20,allowance model not selected,proposed purchase,Motor case temperature after stopping; controller onboard NTC measures controller only,
+consumables,PETG filament floor tape and labeled ballast bags,1,12,allowance consumption,inventory check,Estimate consumption cost; add full spool cost if none owned; use existing weighed ballast,
+pi_media,Pi microSD card and cooling allowance,1,10,allowance,inventory check,Omit if already present; Pi 4 and suitable OS image required,
+owned_motors,Owned BDUAV 2204-260KV motors,2,0,owned,required reuse,28 x 13 mm; actual electrical ratings unknown,
+owned_wheels,Owned 60 x 8 mm wheels,2,0,owned,required reuse,Direct M2 attachment to motor rotor,
+owned_caster,Owned ball caster,1,0,owned,required reuse,45 x 28 mm flange; 34 mm hole pitch; 3.5 mm holes,
+owned_pi,Owned Raspberry Pi 4,1,0,owned,required reuse,Supervision and future telemetry logging; not motor commutation,
+owned_battery,Owned Zeee 3S 5200 mAh XT60 battery,1,0,owned,required reuse,11.1 V nominal and 12.6 V full; no 4S purchase for this rig; body 135 x 43 x 22 mm; cables at both corners of one end,
+owned_meter,Owned KREATORDIRECT wattmeter,1,0,owned,required reuse,Strap on ballast tray and include in measured mass; manual display readings; body 86 x 43 x 25 mm; two power cables at each end,
+owned_scale,Owned AWS SC-2kg scale,1,0,owned,required reuse,Weigh separate items on its 100 x 100 mm platform; physical load below 2 kg,
+owned_tools,Owned soldering crimping multimeter drill and charger plus phone,1,0,owned,required reuse,Phone video and taped course provide external elapsed-time measurement,

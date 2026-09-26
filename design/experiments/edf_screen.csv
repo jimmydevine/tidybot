@@ -1,0 +1,10 @@
+id,basis,screened_mass_g,raw_ratio_min,raw_ratio_max,assumed_installation_factor,assumed_loss_ratio_min,assumed_loss_ratio_max,target_ratio,mass_budget_at_lower_thrust_g,installed_hover_power_w,validation_status
+pf70_4s,fan_mass_substitution_at_published_voltage_only,4518.4,1.270361,1.270361,0.85,1.079807,1.079807,2,2439.5,,NOT_FLIGHT_VALIDATED
+pf70_4s_on3s,fan_mass_substitution_at_published_voltage_only,4518.4,0.785234,0.785234,0.85,0.667449,0.667449,2,1507.9,,NOT_FLIGHT_VALIDATED
+pf70_6s,fan_mass_substitution_at_published_voltage_only,4518.4,1.607649,1.607649,0.85,1.366501,1.366501,2,3087.2,,NOT_FLIGHT_VALIDATED
+fw70_4s,fan_mass_substitution_at_published_voltage_only,4526.4,1.325557,1.325557,0.85,1.126723,1.126723,2,2550.0,,NOT_FLIGHT_VALIDATED
+fw70_6s_budget,fan_mass_substitution_at_published_voltage_only,4686.4,1.749744,1.877774,0.85,1.487282,1.596108,2,3485.0,,NOT_FLIGHT_VALIDATED
+fw70_6s_standard,fan_mass_substitution_at_published_voltage_only,4686.4,1.835097,1.835097,0.85,1.559833,1.559833,2,3655.0,,NOT_FLIGHT_VALIDATED
+fw70_6s_pro,fan_mass_substitution_at_published_voltage_only,4766.4,2.098019,2.18194,0.85,1.783317,1.854649,2,4250.0,,NOT_FLIGHT_VALIDATED
+fw80_6s_outrunner,fan_mass_substitution_at_published_voltage_only,4946.4,2.240013,2.240013,0.85,1.904011,1.904011,2,4709.0,,NOT_FLIGHT_VALIDATED
+fw80_6s_inrunner,fan_mass_substitution_at_published_voltage_only,5166.4,2.632394,2.709817,0.85,2.237535,2.303345,2,5780.0,,NOT_FLIGHT_VALIDATED

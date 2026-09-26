@@ -1,0 +1,18 @@
+owner,id,mass_g,basis
+body,receiver_plates,18.84,Gross stock; no hole credit
+carrier,slotted_cheeks,13.973500132379751,Analytic finished open slots and lock bores; checked against CAD volume
+carrier,rear_risers,0.5651999999999999,Gross stock
+carrier,crossmember,26.017200000000003,Hollow tube; no drilled-hole credit
+body,air_flange_and_stub,7.94592,Printed gross ring/stub walls; no mounting bosses counted here
+body,seal_and_air_mount_completion,7.05408,Remainder of existing O 15 g body air-face scope; no mass saving booked
+carrier,air_flange,5.71392,Tool-side printed ring; active flex remains in common plumbing budget pending physical partition
+body,body_latch_guides,20,Installed allowance; unresolved hardware is explicit
+body,body_fasteners,12,Installed allowance; unresolved hardware is explicit
+body,body_contact_bank_sensors,10,Installed allowance; unresolved hardware is explicit
+body,body_harness,6,Installed allowance; unresolved hardware is explicit
+body,body_completion,12,Installed allowance; unresolved hardware is explicit
+carrier,carrier_brackets_fasteners,6,Installed allowance; unresolved hardware is explicit
+carrier,carrier_contact_board_io,7,Installed allowance; unresolved hardware is explicit
+carrier,carrier_air_support,3,Installed allowance; unresolved hardware is explicit
+carrier,carrier_completion,5,Installed allowance; unresolved hardware is explicit
+carrier,unallocated_carrier_budget,2.730179867620251,"Remaining allocation, not fabricated material or weight saving"

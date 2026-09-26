@@ -1,0 +1,60 @@
+id,category,status,quantity,unit,item,part_number,source_url,unit_usd,price_basis,notes
+O01,Owned,owned,1,each,DD 70 mm EDF,D2842-3400KV-4S,,0,owner_inventory,Preserve balanced rotor
+O02,Owned,owned,1,each,Printed cradle,retaining_cradle_v2,,0,owner_inventory,Cable exit upward
+O03,Owned,owned,1,set,Installed M3 ear hardware,,,0,owner_inventory,Inspect washers and locking engagement
+O04,Owned,owned,1,each,80 A Classic ESC,,https://www.rcelectricparts.com/80a-esc---classic-series1.html,0,owner_inventory,Check actual XT90 and 4 mm connectors
+O05,Owned,owned,1,each,Zeee 3S 5200 mAh XT60 LiPo,B0972RKJDS,https://www.amazon.com/dp/B0972RKJDS,0,owner_inventory,Initial test battery
+O06,Owned,owned,1,set,Tenergy balance charger and existing supply,,,0,owner_inventory,Exact model and input supply remain to verify
+O07,Owned,owned,1,each,KREATORDIRECT wattmeter,B08MKZL4VY,https://www.amazon.com/dp/B08MKZL4VY,0,owner_inventory,50 A continuous planning limit from owner supplied text
+O08,Owned,owned,1,each,AWS pocket scale,SC-2kg,https://awscales.com/sc-2kg-precision-digital-pocket-scale-2kg-x-0-1g/,0,owner_inventory,2000 g capacity; owner platform 100 x 100 mm
+O09,Owned,owned,1,set,Printer soldering crimping multimeter drilling and wood-cutting tools,,,0,owner_inventory,No shafts or bearings owned
+P01,Pivot,deferred,1,each,8 x 200 mm stainless round shaft,2100-0008-0200,https://www.gobilda.com/8mm-shaft-stainless-steel-200mm-length/,4.99,published_2026-09-05,Keep purchased length
+P02,Pivot,deferred,2,each,8 mm round-bore pillow block,1602-0032-0008,https://www.gobilda.com/8mm-bore-1-side-2-post-pillow-block-24mm-height/,7.99,published_2026-09-05,24 mm axis height; M4 foot threads on 32 mm centers
+P03,Pivot,deferred,2,each,8 mm round-bore Hyper Hub,1310-0016-0008,https://www.gobilda.com/1310-series-hyper-hub-8mm-bore/,7.99,published_2026-09-05,Pinch bolts included; do not substitute REX bore
+P04,Pivot,deferred,2,each,8 mm round clamping collar,2910-0921-0008,https://www.gobilda.com/2910-series-aluminum-clamping-collar-8mm-id-x-21mm-od-9mm-length/,4.99,published_2026-09-05,21 mm OD x 9 mm long
+P05,Pivot,deferred,1,12-pack,8 ID x 11 OD x 0.5 mm shims,2807-0811-0500,https://www.gobilda.com/2807-series-stainless-steel-shim-8mm-id-x-11mm-od-0-50mm-thickness-12-pack/,2.69,published_2026-09-05,Only install needed shims
+P06,Pivot,deferred,1,4-pack,8 ID x 10 OD x 4 mm spacers,1522-0010-0040,https://www.gobilda.com/1522-series-8mm-id-spacer-10mm-od-4mm-length-4-pack/,2.99,published_2026-09-05,Clear stationary housings
+S01,Structure,deferred,1,panel,Plywood nominal 18-19 mm at least 610 x 1220 mm,,,40,allowance,Base board lever cheeks supports crosspieces and gussets
+S02,Structure,deferred,10,m,Battens approximately 25 x 38 mm,,,3,allowance,Fixture bracing and independent barrier frame
+S03,Structure,deferred,1,kit,M4 screws 25 each x20 x25 x35; 50 locknuts; 100 washers 9 OD,,,24,allowance,Packs include spares
+S04,Structure,deferred,1,kit,M6 bolts 25 x40; 50 x50; 25 x70; 100 locknuts; 200 washers 18 OD,,,45,allowance,Through-bolted wood joints and spares
+S05,Structure,deferred,1,kit,M6x200 rod; 2 coupling nuts; 2 acorn nuts; 2 full-thread M6x60 bolts; 12 plain nuts,,,8,allowance,Contact and travel stops
+S06,Structure,deferred,1,kit,100 wood screws approximately 4x40 and wood glue,,,10,allowance,Barrier and supplementary cleats
+S07,Structure,deferred,4,each,F clamp at least 150 mm opening,,,10,allowance,Fixed base and independent barrier
+S08,Structure,deferred,3,panel,Polycarbonate 6 x 600 x 600 mm,,,40,allowance,Supplier cut; barrier stock not a rated burst enclosure
+S09,Structure,deferred,1,kit,32 M4x50 bolts; 32 locknuts; 64 wide M4 steel washers; 64 nylon washers,,,15,allowance,Panel bolts pass through 25 mm batten thickness
+S10,Structure,deferred,1,set,Feeler gauges approximately 0.05-1 mm,,,6,allowance,Unpowered stop adjustment
+E01,Electrical,deferred,1,each,Manual servo tester,TST-20,https://protosupplies.com/product/servo-tester/,2.95,published_2026-09-05,ESC BEC powered; manual mode only
+E02,Electrical,deferred,1,each,Complete emergency DC disconnect,ED125-1,https://www.albrightinternational.com/products/ed125/,150,allowance,Knob and M8 terminal and M5 mounting hardware included; new identified unit
+E03,Electrical,deferred,1,each,Covered inline MIDI fuse holder M5,04980921GXM5,https://www.littelfuse.com/assetdocs/midi-498-il-datasheet?assetguid=%7B2a144dfe-6adb-4d21-9e0f-305f0a0de6ed%7D,12,allowance,Includes terminal hardware
+E04A,Electrical,deferred,2,each,30 A 32 V MIDI fuse,0498030,https://www.littelfuse.com/assetdocs/midi-32v-bolt-down-series-data-sheet?assetguid=b55e8034-180d-40f6-a0a7-bebc2d4a94f5,3,allowance,Initial 20 A stage and spare; not precise current limiting
+E04B,Electrical,deferred,2,each,50 A 32 V MIDI fuse,0498050,https://www.littelfuse.com/assetdocs/midi-32v-bolt-down-series-data-sheet?assetguid=b55e8034-180d-40f6-a0a7-bebc2d4a94f5,3,allowance,Only subsequent qualified 40 A stage and spare
+E05,Electrical,deferred,4,m,10 AWG flexible copper silicone wire: 2 m red plus 2 m black,,,2.5,allowance,Stock quantity; keep installed DC path short
+E06,Electrical,deferred,2,m,12 AWG flexible copper silicone wire: 1 m red plus 1 m black,,,2,allowance,Short phase adapters and XT60 pigtails
+E07,Electrical,deferred,3,pair,Genuine XT60 mating connector pair,,,2,allowance,Both contact genders; do not force oversized wire into cups
+E08,Electrical,deferred,2,pair,Genuine XT90 mating connector pair,,,3,allowance,Match actual ESC input
+E09A,Electrical,deferred,1,6-pair-pack,3.5 mm bullet connectors with insulation,,,8,allowance,Motor adapter and setup motor stock
+E09B,Electrical,deferred,1,6-pair-pack,4.0 mm bullet connectors with insulation,,,8,allowance,ESC adapter stock
+E10A,Electrical,deferred,6,each,10-12 AWG copper crimp ring lug for M5 stud,,,0.75,allowance,Fuse terminals
+E10B,Electrical,deferred,6,each,10-12 AWG copper crimp ring lug for M8 stud,,,0.75,allowance,Disconnect terminals
+E11,Electrical,deferred,1,kit,Adhesive heat-shrink terminal boots and insulating sleeve,,,20,allowance,Insulate all live joints
+E12,Electrical,deferred,1,kit,Insulating enclosure about 200x150x100 mm with glands and mounting screws,,,20,allowance,Drill to actual switch after delivery
+E13,Electrical,deferred,1,each,1 m three-wire 22 AWG JR style servo extension,,,6,allowance,Throttle cable
+E14,Electrical,deferred,2,each,300 mm 3S four-pin JST-XH balance extension,,,3,allowance,Monitor and charger; verify pin sequence
+E15,Electrical,deferred,1,kit,20 screw-mounted P-clips; 50 cable ties; 2 battery straps,,,10,allowance,Fixed harness restraint
+E16,Electrical,deferred,1,each,300 mm servo patch lead with socket contacts at both ends,,,2,allowance,TST-20 to BG-8S for unpowered pulse check
+I01,Measurement,deferred,1,each,Individual-cell checker with per-cell voltage alarm,BG-8S,https://www.isdt.co/down/pdf/BG-8S_en.pdf,45,allowance,Source from RC dealer; direct shop sold out when checked
+I02,Measurement,deferred,1,kit,Thermologger Duo including two K probes and CR2450,SK-500043,https://www.skyrc.com/thermologgerduo?from=banner,40,allowance,Phone Bluetooth app required; stationary insulated surfaces only
+I03,Measurement,deferred,2,each,500 g calibration mass M1 or better,,,15,allowance,Independent known loads
+I04,Measurement,deferred,1,each,0-5 kg continuous-reading spring pull gauge with 0.05 kg or finer graduations,,,20,allowance,Check with known masses before horizontal calibration
+I05,Measurement,deferred,1,kit,2 m low-stretch cord; 2 shackles; 2 M6 eye bolts; 4 nuts; 4 washers; hanging cup or hook,,,8,allowance,Include carrier weight in known load
+C01,Shop,deferred_if_missing,1,each,4 mm banana to mating XT60 charge lead at least 16 AWG,,,10,allowance,Reuse existing correct charge lead
+C02,Shop,deferred_if_missing,1,kit,Small 3S 1000-1500 KV brushless setup motor with cross mount and screws; no propeller,,,15,allowance,Borrow existing suitable unloaded motor if available
+C03,Shop,deferred_if_missing,1,each,IR thermometer about -20 to 150 C or wider with batteries,,,25,allowance,Surface checks after shutdown; not through screen
+C04,Shop,deferred_if_missing,1,each,Phone clamp and tripod,,,15,allowance,Reuse phone for recording
+C05,Shop,deferred_if_missing,1,set,Eye and hearing protection,,,30,allowance,Reuse existing appropriate equipment
+C06,Shop,deferred_if_missing,1,set,LiPo charging bag or container and noncombustible tray,,,20,allowance,Attended charging
+C07,Shop,deferred_if_missing,1,kit,200 g PETG; solder flux; polyimide tape; rubber feet; spare instrument batteries,,,20,allowance,Deduct existing shop stock
+C08,Shop,deferred_if_missing,1,kit,3.5 4.5 6.5 and 10 mm bits; step bit; metric hex keys and spanners; deburring tool,,,25,allowance,Match enclosure glands with step bit
+C09,Shop,deferred_if_missing,1,kit,4 M3x20; 4 M3x12; 8 locknuts; 16 washers 3.2 ID x6 OD x0.5 mm,,,6,allowance,Cradle spares and modest test-load mounting
+C10,Shop,deferred_if_missing,1,kit,10 ohm 50 W 1 percent aluminium-housed resistor; 100x100x3 mm aluminium plate; thermal compound,,,15,allowance,Brief approximately 16 W gross-error check; not high-current calibration

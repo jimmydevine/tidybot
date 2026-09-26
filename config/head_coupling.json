@@ -1,0 +1,239 @@
+{
+  "revision": "P: removable fixed head carrier and service connections",
+  "status": "Detailed interface candidate, not fabrication release; ordinary head compliance and full latch supports remain unfinished",
+  "material_g_mm3": {
+    "steel": 0.00785,
+    "aluminum": 0.0027,
+    "polymer": 0.00124
+  },
+  "withdrawal_mm": 120,
+  "plates": {
+    "mins": [
+      [
+        24.5,
+        40,
+        68
+      ],
+      [
+        249,
+        40,
+        68
+      ]
+    ],
+    "size": [
+      1.5,
+      40,
+      20
+    ]
+  },
+  "cheeks": {
+    "left_min": [
+      22.7,
+      40,
+      66
+    ],
+    "size": [
+      1.5,
+      43,
+      18
+    ],
+    "slot_z": 76,
+    "slot_radius": 2.15,
+    "closed_end_y": 46.15,
+    "right_end_relief_mm": 0.5
+  },
+  "guide_pins": {
+    "y": [
+      46,
+      70
+    ],
+    "z": 76,
+    "diameter": 4,
+    "sleeve_length": 2.3,
+    "washer_od": 7,
+    "washer_t": 0.5,
+    "left_sleeve_start_x": 22.2
+  },
+  "crossmember": {
+    "min": [
+      28,
+      72.5,
+      54
+    ],
+    "size": [
+      219,
+      12,
+      12
+    ],
+    "wall": 1
+  },
+  "rear_risers": {
+    "left_min": [
+      22.7,
+      72.5,
+      60
+    ],
+    "size": [
+      1.5,
+      4,
+      6
+    ]
+  },
+  "locks": {
+    "y": 76,
+    "z": 70,
+    "pin_diameter": 3.8,
+    "hole_diameter": 4.2,
+    "withdrawal_mm": 3,
+    "left_pin_min_x": 23.2,
+    "thread_length": 16,
+    "release_force_n_each": [
+      2,
+      5
+    ],
+    "basis": "M2 x 16 socket-head screw used as a short sliding key: 3.8 mm head bridges cheek and fixed receiver; threaded shank only actuates. Exact screw tolerances, spring, captive pull nut and guide need verification. Retention must transfer through the fixed metal bore, not the unsupported M2 shank.",
+    "body_hole_diameter": 4.1,
+    "pin_length": 2,
+    "thread_diameter": 2,
+    "axial_tolerance_mm": 0.2
+  },
+  "air": {
+    "centre_xz": [
+      137.5,
+      30
+    ],
+    "outer": [
+      56,
+      40
+    ],
+    "inner": [
+      32,
+      22
+    ],
+    "tool_flange_y": 91,
+    "body_flange_y": 96,
+    "flange_thickness": 3,
+    "gasket_free_t": 3,
+    "gasket_compressed_t": 2,
+    "gasket_outer": [
+      42,
+      32
+    ],
+    "gasket_inner": [
+      34,
+      24
+    ],
+    "gasket_pressure_kpa_cases": [
+      10,
+      25,
+      50
+    ],
+    "compression_tolerance_mm": 0.3,
+    "body_stub_end_y": 104,
+    "head_flex_active_y": [
+      66,
+      91
+    ]
+  },
+  "electrical": {
+    "source": "https://www.mouser.com/catalog/specsheets/Mill-Max_0860-0-15-20-82-14-11-0.pdf",
+    "part": "0860-0-15-20-82-14-11-0",
+    "datasheet_revision": "2022-11-15",
+    "free_height_mm": 9.957,
+    "max_stroke_mm": 2.286,
+    "nominal_compression_mm": 1.143,
+    "stack_tolerance_mm": 0.3,
+    "contact_resistance_ohm_max": 0.02,
+    "contact_force_n_nominal": 1.1772,
+    "datasheet_derated_current_a": 7.2,
+    "proposed_tool_bus_v": 12,
+    "proposed_tool_current_limit_a": 4,
+    "logic_bus_v": 5,
+    "logic_current_limit_a": 0.25,
+    "pin_x": [
+      178,
+      186,
+      194,
+      202
+    ],
+    "pin_z": [
+      54,
+      60
+    ],
+    "body_board_front_y": 107,
+    "board_min": [
+      174,
+      107,
+      51
+    ],
+    "board_size": [
+      32,
+      1.6,
+      12
+    ],
+    "target_pad_diameter_mm": 4,
+    "target_board_t": 1.6,
+    "pinout_front_view_rows": [
+      [
+        "12V_TOOL",
+        "POWER_RETURN",
+        "5V_LOGIC",
+        "LOGIC_RETURN"
+      ],
+      [
+        "CAN_H",
+        "CAN_L",
+        "HARD_ENABLE",
+        "ID_PRESENT"
+      ]
+    ],
+    "scope": "Single pin per power conductor; 4 A is a proposed protected branch limit, not proven motor performance. Whole-contact bank, wiring, inrush, temperature rise and CAN implementation need qualification."
+  },
+  "loads": {
+    "vertical_n": 50,
+    "fore_aft_n": 40,
+    "one_lock_fore_aft_n": 40,
+    "e_aluminum_mpa": 69000,
+    "scope": "Local sensitivity loads, not whole-robot flight certification. One latch must retain fore-aft load; the head joint is not a lifting point for the core."
+  },
+  "allowances_g": {
+    "body_latch_guides": 20,
+    "body_fasteners": 12,
+    "body_contact_bank_sensors": 10,
+    "body_harness": 6,
+    "body_completion": 12,
+    "carrier_brackets_fasteners": 6,
+    "carrier_contact_board_io": 7,
+    "carrier_air_support": 3,
+    "carrier_completion": 5
+  },
+  "mass_ownership": {
+    "existing_O_body_interface_g": 93.84,
+    "existing_O_head_adapter_g": 15,
+    "existing_M_head_mount_g": 90,
+    "existing_M_head_lift_g": 62,
+    "carrier_target_g": 70,
+    "remaining_compliance_target_g": 35,
+    "rule": "Carrier target 70 = O adapter 15 + 55 of M mount. Remaining M mount 35 covers unfinished head compliance; existing 62 g lift allowance remains. Allocation within existing total, not a weight saving or completed mechanism. Revisit if compliance cannot meet its remaining allowance."
+  },
+  "sources": {
+    "contacts": "Mill-Max manufacturer datasheet hosted by Mouser, 2022-11-15; older 2022-04 copy has inconsistent stroke/derating entries and is not used",
+    "roller_motor": "https://www.pololu.com/product/4842/specs",
+    "feed_motor": "https://www.pololu.com/product/4845/specs",
+    "motor_driver": "https://www.pololu.com/product/2997/specs"
+  },
+  "bridge_shift_z_mm": 1.5,
+  "end_shoes": {
+    "left_min": [
+      24.2,
+      72.5,
+      59.5
+    ],
+    "size": [
+      8.8,
+      4,
+      5
+    ],
+    "basis": "R correction: moved forward to clear N wheel envelope during head withdrawal. Connection to crossmember front edge remains a bolted-joint reservation; fastener access unresolved"
+  }
+}

@@ -1,0 +1,13 @@
+id,qty,each_g,kind,moving,basis,total_g
+rails,2,9.3,catalog_length,False,"62 mm at 150 g/m; NS-01-17 reference, end tolerance and mounting-hole placement must be specified",18.6
+carriages,2,1.7,catalog,True,"NW-02-17 standard, not preloaded; mounting boss and anti-rotation connection remain to detail",3.4
+spherical_bearings,2,0.5,catalog_reference,True,Historical KGLM-03: ID3 / OD10 / width6 mm; current LC successor is not presumed interchangeable,1.0
+rail_backings_and_carrier_tabs,2,4,allowance,False,Short flat metal backings and offset connection to P carrier; joint design incomplete,8
+drop_links_and_bearing_cages,2,4,allowance,True,"20 mm offset bracket, captured bearing cage and keyed carriage attachment; actual volume unresolved",8
+pivot_pins_and_retainers,2,2,allowance,True,"Smooth 3 mm pivots; left axially located, right floats 1 mm; thread/bearing and roller-end clearance unresolved",4
+mounting_fasteners,1,5,allowance,False,"Rail, backing, cage and interface fastening; no print-thread-only retention",5
+counterbalance_springs_and_anchors,1,3,allowance,False,"Unequal left/right upward preload; 0.03 N/mm each is a design target, not a selected spring",3
+end_stops_and_pitch_stops,1,4,allowance,False,Positive captive slide stops and pitch stops; no friction-only flight restraint,4
+dock_set_capture_hooks,1,10,allowance,False,Two spring-engaged catches plus pitch locator; station raises/releases head; not yet designed,10
+capture_sensors_and_harness,1,4,allowance,False,Independent raised/captured feedback; no implemented controller logic,4
+completion_reserve,1,6,allowance,False,Local completion reserve; service-face supports remain in P and flex in existing plumbing,6

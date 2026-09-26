@@ -1,0 +1,17 @@
+module,item,section_mm,length_mm,qty,purpose
+core,6061/6063 aluminum flat strip,10 x 2,270,4,Upper/lower open frames; drill through joints
+core,6061/6063 aluminum flat strip,10 x 2,250,4,Frame cross rails; no monolithic machined ring
+core,Steel lock plate blank,18 x 2,28,8,M4 mushroom stud/keyhole slot; drilled/filed or outsourced laser-cut
+core,M4 through studs and metal spacers,M4,57,4,"Continuous structural path through core; length allocated, verify shoulders"
+each bottom,PETG skeleton,max 270 x 270,0,1,"120 cm3 effective material allowance, not solid infill slab"
+each bottom,Aluminum pod face plates,32 x 2,42,2,Motor mounting load spreader
+each bottom,M4 pod pivot / polymer bushings / shoulder spacers,M4,20,2,"40 mm trailing arm, 10 mm up travel and positive stops"
+each bottom,Adjustable extension/compression spring,target ~0.8 N/mm,0,2,Set wheel load from measured assembled CG; replaceable spring cassette
+each bottom,624-2RS bearing with printed hub and silicone O-ring,4 x 13 x 5 bearing,0,2,20 mm backup pitch roller; 2 mm normal ground gap
+extension,Printed nested tube stage,"48x36 to 33x21, 1 mm wall",245,6,3 mm size decrement; 45 mm minimum overlap; replaceable seals
+extension,Guided spring-steel feed strip,6 x 0.3,1400,1,"Stock strip, continuously supported; clamp and deburr ends, slip-clutch feed"
+octo10,Pultruded/roll-wrapped carbon main beam,20 OD / 18 ID,1200,2,Motor centres +/-580 mm; 20 mm end allowance each
+octo10,Carbon crossbeam,20 OD / 18 ID,340,2,"At y=-15 and 290 mm, clear of core power trays"
+octo10,Carbon diagonal brace stock,10 OD / 8 ID,1500,1,Cut into diagonals; lengths follow clamp joint geometry
+octo10,Metal split clamps / motor plates,20 mm bore / 2 mm plate,0,12,Purchased clamps and flat drilled plates; no printed primary cantilever
+octo10,Segmented PETG guard rings and mesh,284 mm OD x 62 high,0,8,"Four printed quadrants per ring; top/bottom guard planes, replaceable mesh"

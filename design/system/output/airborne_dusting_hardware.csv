@@ -1,0 +1,11 @@
+id,item,low_g,nominal_g,high_g,mass_basis
+air_frame,"Open bottom frame, four posts, metal module seats and studs",130,180,260,65 cm3 effective PETG at 1.27 g/cm3 plus two edgewise 270 x 20 x 2 mm aluminum crossmembers (58.3 g) and 39 g posts/seats/fasteners nominal; geometry and strength remain to detail
+air_feet,Four passive landing feet and compliant soles,25,40,65,"Four 10 g installed feet nominal; no caster, wheels or wheel drive"
+air_root,"Keyed metal boom socket, captive station-actuated lock and sensing",30,50,85,"Root clamp/load spreader/retention allowance; through-fastened to rear bottom rail, offset right of the hex central support"
+air_tubes,"Carbon main spar, sleeve and horizontal wrist",28,35,50,"Calculated annular stock volume at 1.6 g/cm3, rounded; see boom dimensions"
+air_joints,"Spar splice, elbow clamps and fasteners",18,28,45,"Two-piece clamps, positive mechanical retention and inserts; no printed long cantilever"
+air_head,"Replaceable microfiber sleeve, light backing and edge hook",22,35,60,60 x 50 x 20 mm head allowance; dust retention and finish compatibility require tests
+air_flexure,"Compliant head suspension, mechanical stop and captive breakaway",15,25,45,"Provisional 0.2 N contact / 0.5 N retreat; these are targets, not established limits"
+air_tip_sense,"Tip range/force sensing, carrier and short lead",12,20,35,Sensor assembly allowance; no claim that a range sensor detects every blade or surface
+air_io,"Local MCU, CAN and hardware contact/retention interlocks",18,28,42,Retain local supervision even without drive motors
+air_wiring,"Tool connector, protected wiring and boom sensor harness",25,40,65,Installed route allowance; includes removable boom connector and branch protection

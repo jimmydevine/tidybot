@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="720" viewBox="0 0 940 720">
+<rect width="100%" height="100%" fill="#f7f9fc"/>
+<g font-family="sans-serif">
+<text x="30" y="30" font-size="22">Automatic station / per floor · top</text>
+<text x="30" y="53" font-size="12">Engineering allocations in mm; see hardware worksheet for evidence and mass intervals.</text>
+<rect x="309.40054495912807" y="393.9100817438692" width="82.39782016348774" height="88.50136239782016" fill="#258eac" fill-opacity=".12" stroke="#258eac"><title>5 L clean water + removal clearance</title></rect>
+<text x="312.40054495912807" y="406.9100817438692" font-size="9">clean_tank</text>
+<rect x="309.40054495912807" y="494.61852861035425" width="82.39782016348774" height="88.50136239782016" fill="#258eac" fill-opacity=".12" stroke="#258eac"><title>5 L dirty water + removal clearance</title></rect>
+<text x="312.40054495912807" y="507.61852861035425" font-size="9">dirty_tank</text>
+<rect x="50.0" y="497.67029972752044" width="103.76021798365123" height="119.01907356948229" fill="#3d8d66" fill-opacity=".12" stroke="#3d8d66"><title>Vacuum appliance / 5 L debris</title></rect>
+<text x="53.0" y="510.67029972752044" font-size="9">vacuum_service</text>
+<rect x="178.17438692098094" y="75.0" width="91.55313351498638" height="108.33787465940055" fill="#147c88" fill-opacity=".12" stroke="#147c88"><title>Robot arrival / scale</title></rect>
+<text x="181.17438692098094" y="88.0" font-size="9">arrival</text>
+<rect x="146.1307901907357" y="158.92370572207085" width="25.940054495912808" height="106.81198910081744" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Core forks / vertical lift</title></rect>
+<rect x="181.22615803814713" y="271.8392370572207" width="97.65667574931881" height="100.70844686648502" fill="#258eac" fill-opacity=".12" stroke="#258eac"><title>Mop wash / drain pan</title></rect>
+<text x="184.22615803814713" y="284.8392370572207" font-size="9">wash</text>
+<rect x="54.57765667574932" y="143.66485013623978" width="83.92370572207085" height="102.23433242506812" fill="#b85552" fill-opacity=".12" stroke="#b85552"><title>Bottom position 1</title></rect>
+<text x="57.57765667574932" y="156.66485013623978" font-size="9">slot_1</text>
+<rect x="54.57765667574932" y="256.5803814713896" width="83.92370572207085" height="102.23433242506812" fill="#b85552" fill-opacity=".12" stroke="#b85552"><title>Bottom position 2</title></rect>
+<text x="57.57765667574932" y="269.5803814713896" font-size="9">slot_2</text>
+<rect x="309.40054495912807" y="143.66485013623978" width="83.92370572207085" height="102.23433242506812" fill="#b85552" fill-opacity=".12" stroke="#b85552"><title>Bottom position 3</title></rect>
+<text x="312.40054495912807" y="156.66485013623978" font-size="9">slot_3</text>
+<rect x="309.40054495912807" y="256.5803814713896" width="83.92370572207085" height="102.23433242506812" fill="#b85552" fill-opacity=".12" stroke="#b85552"><title>Bottom position 4</title></rect>
+<text x="312.40054495912807" y="269.5803814713896" font-size="9">slot_4</text>
+<rect x="54.57765667574932" y="369.49591280653954" width="83.92370572207085" height="102.23433242506812" fill="#b85552" fill-opacity=".12" stroke="#b85552"><title>Bottom position 5</title></rect>
+<text x="57.57765667574932" y="382.49591280653954" font-size="9">slot_5</text>
+<rect x="184.27792915531336" y="509.8773841961853" width="83.92370572207085" height="83.92370572207085" fill="#466cbd" fill-opacity=".12" stroke="#466cbd"><title>Cap / scanner-clear storage</title></rect>
+<text x="187.27792915531336" y="522.8773841961853" font-size="9">cap_tray</text>
+<rect x="309.40054495912807" y="155.87193460490465" width="85.44959128065395" height="195.31335149863762" fill="#b88617" fill-opacity=".12" stroke="#b88617"><title>Four battery bays / dry enclosure</title></rect>
+<text x="312.40054495912807" y="168.87193460490465" font-size="9">battery_rack</text>
+<rect x="181.9891008174387" y="167.31607629427793" width="83.92370572207085" height="83.92370572207085" fill="#466cbd" fill-opacity=".12" stroke="#466cbd"><title>Core raised clear of bottom transfer</title></rect>
+<text x="184.9891008174387" y="180.31607629427793" font-size="9">core_held</text>
+<rect x="169.0190735694823" y="512.9291553133514" width="109.86376021798365" height="97.65667574931881" fill="#ca7e26" fill-opacity=".12" stroke="#ca7e26"><title>Supply / charge / station controls</title></rect>
+<text x="172.0190735694823" y="525.9291553133514" font-size="9">station_electrical</text>
+<rect x="125.68392370572208" y="173.5722070844687" width="196.53405994550408" height="440.6757493188011" fill="#6d63a9" fill-opacity=".12" stroke="#6d63a9"><title>Intact eight-rotor top parking</title></rect>
+<text x="128.68392370572207" y="186.5722070844687" font-size="9">top_park</text>
+<rect x="112.56130790190736" y="140.61307901907355" width="222.77929155313353" height="482.1798365122616" fill="#667685" fill-opacity=".12" stroke="#667685"><title>Overhead Y/Z handler</title></rect>
+<text x="115.56130790190736" y="153.61307901907355" font-size="9">top_handler</text>
+<text x="30" y="680" font-size="14">Mass 58.92 kg; range 0.00–0.00 kg, empty machinery allowance; excludes robot and bulk contents.</text>
+<text x="30" y="703" font-size="12">Front = y 0; extensions may have negative y. Distributed frames/wiring are not drawn as solid boxes.</text></g></svg>

@@ -1,0 +1,11 @@
+candidate,item,qty,total_low_g,total_nominal_g,total_high_g,basis
+wemotec_1970,"Retained common quad frame, wiring and flight electronics",1,938.4,1353.0,1956.0,Existing installed allowances; no compact-frame mass credit
+wemotec_1970,"Fan, motor and test intake ring",4,1468,1468,1468,https://shop.wemotec.com/Midi-Fan-evo-Impeller-HET-650-58-1970-komplett-montiert-feingewuchtet-und-harmonisch-abgestimmt
+wemotec_1970,ESC assemblies,4,260,400,600,Unselected installed allowance
+wemotec_1970,Inlet/outlet protection and fan mounts,4,120,200,340,Unmeasured allowance; protection loss independent
+wemotec_1970,"Yaw control, actuation and connections",1,60,120,240,Unselected allowance; no qualified control allocation
+wemotec_2000,"Retained common quad frame, wiring and flight electronics",1,938.4,1353.0,1956.0,Existing installed allowances; no compact-frame mass credit
+wemotec_2000,"Fan, motor and test intake ring",4,1684,1684,1684,https://shop.wemotec.com/Midi-Fan-evo-ducted-fan-unit-HET-650-68-2000-completely-assembled-precision-balanced-and-harmonically-tuned
+wemotec_2000,ESC assemblies,4,260,400,600,Unselected installed allowance
+wemotec_2000,Inlet/outlet protection and fan mounts,4,120,200,340,Unmeasured allowance; protection loss independent
+wemotec_2000,"Yaw control, actuation and connections",1,60,120,240,Unselected allowance; no qualified control allocation

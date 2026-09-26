@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TidyBot vacuum-head layout</title><style>
+body{margin:0;background:#eef2f7;color:#22334c;font:16px/1.5 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:24px}
+h1{font-size:28px;margin-bottom:8px}p{max-width:900px}.tag{font-weight:700;color:#815008}label{font-weight:600}
+select{font:inherit;padding:8px;margin:8px;background:white;border:1px solid #8695a9;border-radius:6px}
+.variant{background:white;padding:16px;border-radius:10px;margin-top:16px}.variant[hidden]{display:none}img{width:100%;height:auto}
+.metrics{font-weight:600;margin:0 0 8px}a{color:#195ca5}:focus-visible{outline:3px solid #236fb3}details{margin-top:20px}
+@media print{body{background:white}main{padding:0}select,details{display:none}img{max-height:75vh;object-fit:contain}}
+</style><main><h1>First vacuum-head layout</h1><p class="tag">Clearance study · not for fabrication</p>
+<p>Compare the two owned roller lengths using the dimensions recorded in the inventory. The short pair is the current reference for the 275 mm body. Its cassette targets a whole print; the long comparison exceeds the body limit. The filter is shown separately here and placed in the <a href="ground_layout.html">full robot layout</a>.</p>
+<label for="variant">Roller pair</label><select id="variant"><option value="long_10in" >10 inch pair</option><option value="short_7_25in" selected>7.25 inch pair</option></select>
+<section class="variant" id="long_10in" hidden><p class="metrics">324 × 72 mm proposed footprint; 35 mm roof reference</p><img src="vacuum_head_long_10in.svg" alt="Dimensioned top and side clearance views for 10 inch pair"><p><a href="vacuum_head_long_10in.svg">Open standalone SVG drawing</a></p></section>
+<section class="variant" id="short_7_25in" ><p class="metrics">254.15 × 72 mm proposed footprint; 35 mm roof reference</p><img src="vacuum_head_short_7_25in.svg" alt="Dimensioned top and side clearance views for 7.25 inch pair"><p><a href="vacuum_head_short_7_25in.svg">Open standalone SVG drawing</a></p></section>
+<p>The center spacing and resulting gap shown in the drawing describe a proposed clearance setting. Pickup, roller contact and the actual end supports still need development. The reserved drive bay has no selected motor or transmission.</p>
+<details><summary>Inputs, calculation and design notes</summary><p><a href="../../../config/vacuum_head_layout.json">Proposed allowances</a> · <a href="../../../config/owned_parts.json">Owner measurements</a> · <a href="report.md">Calculation report</a> · <a href="../../../docs/VACUUM_HEAD.md">Vacuum-head design notes</a></p><p>Edit the allowance file and run <code>python3 design/ground/generate.py</code> to regenerate. These files use no external scripts or network services.</p></details>
+</main><script>const picker=document.getElementById('variant');function showVariant(){for(const section of document.querySelectorAll('.variant'))section.hidden=section.id!==picker.value;}picker.addEventListener('change',showVariant);showVariant();</script></html>

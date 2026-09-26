@@ -1,0 +1,11 @@
+{
+  "valid_shapes": {
+    "floor_support": 125,
+    "floor_support_mop": 115,
+    "floor_support_low": 125,
+    "floor_support_bump": 125,
+    "floor_support_droop": 125
+  },
+  "total": 615,
+  "fabrication_release": false
+}

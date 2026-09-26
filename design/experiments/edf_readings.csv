@@ -1,0 +1,1 @@
+run_id,notes_file,fan_id,installation,elapsed_s,command_unit,command_value,thrust_gf,voltage_v,current_a,min_cell_voltage_v,ambient_c,motor_surface_c,esc_surface_c,battery_surface_c,stop_reason,notes

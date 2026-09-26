@@ -1,0 +1,31 @@
+id,mass_g,basis
+equipment_bridge_front,14.524718934375056,Dimensioned material; attachment holes and supplied radii not credited
+front_left_frame_clip,0.24300000000000002,Gross angle-clip material; supplied bend radius and two-plane fasteners remain to detail
+front_right_frame_clip,0.24300000000000002,Gross angle-clip material; supplied bend radius and two-plane fasteners remain to detail
+equipment_bridge_rear,14.524718934375056,Dimensioned material; attachment holes and supplied radii not credited
+rear_left_frame_clip,0.24300000000000002,Gross angle-clip material; supplied bend radius and two-plane fasteners remain to detail
+rear_right_frame_clip,0.24300000000000002,Gross angle-clip material; supplied bend radius and two-plane fasteners remain to detail
+left_receiver_end,4.047948,1 mm receiver side web with central opening and latch slot; cartridge shoulder is in retained shell/restraint scope
+left_front_receiver_tab,0.0891,Receiver-to-bridge tab material; radiused bend/joint and fastener access remain unresolved
+left_rear_receiver_tab,0.0891,Receiver-to-bridge tab material; radiused bend/joint and fastener access remain unresolved
+left_guide_liner_0,0.16383,"Replaceable guide strip; nominal 0.2 mm clearance to retained cartridge outline, tolerance not qualified"
+left_guide_liner_1,0.16383,"Replaceable guide strip; nominal 0.2 mm clearance to retained cartridge outline, tolerance not qualified"
+left_battery_tongue,0.5275200000000003,"Closed-position tongue material; pawl, spring, guide and sensing retained in completion rows. Opens outward by 3 mm"
+right_receiver_end,4.047948,1 mm receiver side web with central opening and latch slot; cartridge shoulder is in retained shell/restraint scope
+right_front_receiver_tab,0.0891,Receiver-to-bridge tab material; radiused bend/joint and fastener access remain unresolved
+right_rear_receiver_tab,0.0891,Receiver-to-bridge tab material; radiused bend/joint and fastener access remain unresolved
+right_guide_liner_0,0.16383,"Replaceable guide strip; nominal 0.2 mm clearance to retained cartridge outline, tolerance not qualified"
+right_guide_liner_1,0.16383,"Replaceable guide strip; nominal 0.2 mm clearance to retained cartridge outline, tolerance not qualified"
+right_battery_tongue,0.5275199999999985,"Closed-position tongue material; pawl, spring, guide and sensing retained in completion rows. Opens outward by 3 mm"
+pi_tray,7.5905550500000025,Open printed tray with outside ribs and raised rear attachment tabs; local relief clears floor shelf stiffener without changing that bottom part
+supervisor_tray,5.3493035,Printed shelf and outside wall tied to left G rail; board fasteners separate
+power_board_shelf,8.492310000000002,Insulated shelf below protection bay; upright mounting and dielectric isolation retained in remaining mounts allowance
+logic_buck_tray,0.59436,Open logic tray; standoffs/rail attachments remain in equipment mounting allowance
+dock_power_tray,0.7048500000000001,Open logic tray; standoffs/rail attachments remain in equipment mounting allowance
+lidar_tray,3.4137600000000003,Ring plate inside I mount reservation; legs and exact fasteners remain in mounting allowance
+frame_and_equipment_fasteners,14,"Installation allowance for beam clips, carrier fasteners, inserts and load spreaders; exact lengths and holes unresolved"
+receiver_latch_completion,15,"Latch guides, positive pawls, springs, two position sensors and associated hardware; two modeled tongues are counted separately"
+receiver_contact_support,6,Fixed floating contact support and insulation; core-side power wiring stays in core_harness and cartridge contacts stay in battery_cartridge
+remaining_equipment_mounts,28,"Camera, six near-sensor mounts, status hardware mounting, power-board mounting and port supports not detailed by this pass"
+cooling_guides_and_wire_restraints,10,"Short air guides, edge protection, cable clips and isolation; electrical harness/cooler hardware remains separate"
+completion_reserve,15,Unassigned completion reserve inside the replacement scope; not fabricated material

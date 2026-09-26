@@ -1,0 +1,2582 @@
+{
+  "config": {
+    "schema_version": "0.2-compact-placement",
+    "status": "PLACEMENT_ONLY_NOT_FOR_FABRICATION",
+    "date": "2026-09-06",
+    "coordinates": "Millimeters; x left to right, y front to rear, z above floor. Positions are minimum corners; sizes are x/y/z. View directions do not define robot-control coordinates.",
+    "body_mm": [
+      275,
+      275
+    ],
+    "bottom_mate_z_mm": 68,
+    "top_mate_z_mm": 113,
+    "cap_top_z_mm": 123,
+    "head_origin_mm": [
+      10,
+      0,
+      0
+    ],
+    "powered_head_height_reservation_mm": 62,
+    "wheel_centers_mm": [
+      [
+        12,
+        108,
+        30
+      ],
+      [
+        263,
+        108,
+        30
+      ]
+    ],
+    "motor_reference_mm": {
+      "body_diameter": 25,
+      "body_length": 69,
+      "shaft_diameter": 4,
+      "shaft_extension": 12.5
+    },
+    "cap_aperture_mm": [
+      84,
+      90,
+      107,
+      81
+    ],
+    "station": {
+      "docked_tray_top_z_mm": 60,
+      "lowered_tray_top_z_mm": 10,
+      "bottom_projection_above_mate_mm": 37,
+      "required_separated_gap_mm": 8,
+      "bottom_rear_transfer_mm": 310,
+      "tray_xy_mm": [
+        -35,
+        -5,
+        320,
+        290
+      ],
+      "side_access_each_mm": 80,
+      "cap_lift_mm": 70
+    },
+    "reservations": [
+      {
+        "id": "left_drive",
+        "label": "Left motor / hub / mount bay",
+        "module": "bottom",
+        "min": [
+          17,
+          84,
+          12
+        ],
+        "size": [
+          92,
+          49,
+          33
+        ],
+        "bom": [
+          "drive_motors",
+          "hubs_supports"
+        ]
+      },
+      {
+        "id": "right_drive",
+        "label": "Right motor / hub / mount bay",
+        "module": "bottom",
+        "min": [
+          166,
+          84,
+          12
+        ],
+        "size": [
+          92,
+          49,
+          33
+        ],
+        "bom": [
+          "drive_motors",
+          "hubs_supports"
+        ]
+      },
+      {
+        "id": "roller_drive_extension",
+        "label": "Roller drive above cassette roof",
+        "module": "bottom",
+        "min": [
+          221.15,
+          3,
+          35
+        ],
+        "size": [
+          40,
+          66,
+          27
+        ],
+        "bom": [
+          "roller_drive"
+        ],
+        "note": "Continuation of the cassette side drive space; counted once as a drive assembly. Gives 62mm overall head-drive allowance, not a selected motor."
+      },
+      {
+        "id": "dirty_duct",
+        "label": "Dirty-air duct corridor",
+        "module": "bottom",
+        "min": [
+          112,
+          72,
+          8
+        ],
+        "size": [
+          50,
+          63,
+          34
+        ],
+        "bom": [
+          "bin_filter"
+        ],
+        "note": "Outer routing reservation. With proposed 3mm walls a 44x28mm bore would remain; dog-hair bridging and pressure loss need testing."
+      },
+      {
+        "id": "bin_drawer",
+        "label": "Rear-pull debris bin",
+        "module": "bottom",
+        "min": [
+          22,
+          135,
+          5
+        ],
+        "size": [
+          145,
+          140,
+          60
+        ],
+        "bom": [
+          "bin_filter",
+          "vacuum_filter"
+        ],
+        "note": "Dirty bin is one moving piece with adjoining vertical filter chamber; both withdraw rearward together. Downward station-emptying door avoids a long evacuation duct."
+      },
+      {
+        "id": "blower_bay",
+        "label": "Upright CBM blower / mount bay",
+        "module": "bottom",
+        "min": [
+          220,
+          145,
+          5
+        ],
+        "size": [
+          41,
+          105,
+          100
+        ],
+        "bom": [
+          "blower"
+        ],
+        "note": "Axial intake faces left toward filter; tangential outlet faces rear. Rises through an explicit passive core pocket; remains attached to bottom."
+      },
+      {
+        "id": "clean_plenum",
+        "label": "Clean-air plenum / sliding seal",
+        "module": "bottom",
+        "min": [
+          197,
+          135,
+          5
+        ],
+        "size": [
+          23,
+          140,
+          86
+        ],
+        "bom": [
+          "bin_filter"
+        ],
+        "service_min": [
+          200,
+          135,
+          5
+        ],
+        "service_size": [
+          20,
+          140,
+          86
+        ],
+        "note": "Full-height plenum between vertical filter and blower, including isolation valve. Seal face retracts 3mm right before bin/filter maintenance extraction."
+      },
+      {
+        "id": "exhaust",
+        "label": "Rear outlet / grille allowance",
+        "module": "bottom",
+        "min": [
+          220,
+          250,
+          25
+        ],
+        "size": [
+          41,
+          25,
+          78
+        ],
+        "bom": [
+          "bin_filter"
+        ],
+        "note": "Short rear tangential outlet and grille allowance; port adapter and discharge direction require detailing."
+      },
+      {
+        "id": "wheel_driver_bay",
+        "label": "Wheel H-bridge above head",
+        "module": "bottom",
+        "min": [
+          25,
+          0,
+          44
+        ],
+        "size": [
+          100,
+          80,
+          22
+        ],
+        "bom": [
+          "drive_hbridge"
+        ],
+        "note": "Mounted to bottom chassis above cassette roof, not carried by removable roller cassette. Tight terminal/height allowance; verify actual MDD10A assembly before selecting it."
+      },
+      {
+        "id": "bottom_mcu_bay",
+        "label": "Bottom MCU / encoder interface",
+        "module": "bottom",
+        "min": [
+          20,
+          87,
+          48
+        ],
+        "size": [
+          75,
+          47,
+          18
+        ],
+        "bom": [
+          "vacuum_mcu",
+          "vacuum_control"
+        ],
+        "note": "Compact flat carrier above left drive; headers, transceiver and level shifters remain to fit."
+      },
+      {
+        "id": "tool_power_bay",
+        "label": "Tool and blower power stages",
+        "module": "bottom",
+        "min": [
+          177,
+          87,
+          48
+        ],
+        "size": [
+          74,
+          46,
+          18
+        ],
+        "bom": [
+          "roller_drive",
+          "side_brush_drive",
+          "blower_control"
+        ],
+        "note": "Compact stages above right motor; separate from wheel H-bridge. Actual devices and protection unselected."
+      },
+      {
+        "id": "side_brush_sweep",
+        "label": "Flexible edge-brush sweep allowance",
+        "module": "bottom",
+        "min": [
+          -30,
+          151,
+          0
+        ],
+        "size": [
+          70,
+          70,
+          3
+        ],
+        "bom": [
+          "side_brush"
+        ],
+        "shape": "cylinder_z",
+        "outside_body": true,
+        "note": "70mm placeholder centered (5,186); rigid drive stays inside body. Feeds a dedicated side inlet below front dirt well, because brush is behind main rollers."
+      },
+      {
+        "id": "side_brush_drive",
+        "label": "Rear-left edge brush motor / gate bay",
+        "module": "bottom",
+        "min": [
+          0,
+          175,
+          8
+        ],
+        "size": [
+          20,
+          22,
+          45
+        ],
+        "bom": [
+          "side_brush_drive"
+        ],
+        "note": "Small geared drive and edge-inlet gate linkage unselected. Gate should restrict unused edge inlet to preserve main-head suction."
+      },
+      {
+        "id": "rear_support",
+        "label": "Rear-left compliant caster allowance",
+        "module": "bottom",
+        "min": [
+          1,
+          250,
+          0
+        ],
+        "size": [
+          20,
+          20,
+          20
+        ],
+        "bom": [
+          "hubs_supports"
+        ],
+        "shape": "cylinder_z",
+        "note": "Two drive wheels plus this rear caster define support polygon; front head skids have compliant contact. Measure loaded CG before proving stability."
+      },
+      {
+        "id": "front_bumper",
+        "label": "Front bumper upper lip",
+        "module": "bottom",
+        "min": [
+          0,
+          0,
+          35
+        ],
+        "size": [
+          275,
+          3,
+          8
+        ],
+        "bom": [
+          "vacuum_chassis"
+        ],
+        "note": "Separate lip above roller opening; bumper linkage and detection still to detail."
+      },
+      {
+        "id": "left_bumper",
+        "label": "Left bumper / skirt allowance",
+        "module": "bottom",
+        "min": [
+          0,
+          35,
+          64
+        ],
+        "size": [
+          3,
+          210,
+          4
+        ],
+        "bom": [
+          "vacuum_chassis"
+        ]
+      },
+      {
+        "id": "right_bumper",
+        "label": "Right bumper / skirt allowance",
+        "module": "bottom",
+        "min": [
+          272,
+          35,
+          64
+        ],
+        "size": [
+          3,
+          210,
+          4
+        ],
+        "bom": [
+          "vacuum_chassis"
+        ]
+      },
+      {
+        "id": "rear_left_cliff",
+        "label": "Rear-left floor sensor allowance",
+        "module": "bottom",
+        "min": [
+          28,
+          250,
+          0
+        ],
+        "size": [
+          20,
+          20,
+          5
+        ],
+        "bom": [
+          "vacuum_control"
+        ],
+        "note": "Below drawer floor; low-profile board/aperture unselected."
+      },
+      {
+        "id": "rear_right_cliff",
+        "label": "Rear-right floor sensor allowance",
+        "module": "bottom",
+        "min": [
+          240,
+          251,
+          0
+        ],
+        "size": [
+          20,
+          20,
+          12
+        ],
+        "bom": [
+          "vacuum_control"
+        ],
+        "note": "Below rear exhaust and behind blower bay; hardware and field of view unselected."
+      },
+      {
+        "id": "front_left_cliff",
+        "label": "Front-left floor sensor allowance",
+        "module": "bottom",
+        "min": [
+          13,
+          53,
+          3
+        ],
+        "size": [
+          10,
+          18,
+          12
+        ],
+        "bom": [
+          "vacuum_control"
+        ],
+        "parent": "head",
+        "note": "In end-support region; coordinate with actual roller end hardware before printing."
+      },
+      {
+        "id": "front_right_cliff",
+        "label": "Front-right floor sensor allowance",
+        "module": "bottom",
+        "min": [
+          211,
+          53,
+          3
+        ],
+        "size": [
+          10,
+          18,
+          12
+        ],
+        "bom": [
+          "vacuum_control"
+        ],
+        "parent": "head"
+      },
+      {
+        "id": "front_left_skid",
+        "label": "Front left compliant nonmarking skid",
+        "module": "bottom",
+        "min": [
+          13,
+          30,
+          0
+        ],
+        "size": [
+          10,
+          16,
+          3
+        ],
+        "bom": [
+          "hubs_supports"
+        ],
+        "parent": "head"
+      },
+      {
+        "id": "front_right_skid",
+        "label": "Front right compliant nonmarking skid",
+        "module": "bottom",
+        "min": [
+          211,
+          30,
+          0
+        ],
+        "size": [
+          10,
+          16,
+          3
+        ],
+        "bom": [
+          "hubs_supports"
+        ],
+        "parent": "head"
+      },
+      {
+        "id": "edge_inlet",
+        "label": "Gated edge inlet allowance",
+        "module": "bottom",
+        "min": [
+          25,
+          150,
+          5
+        ],
+        "size": [
+          30,
+          34,
+          5
+        ],
+        "bom": [
+          "bin_filter",
+          "side_brush_drive"
+        ],
+        "parent": "bin_drawer",
+        "note": "Floor inlet into front dirt well, separate from main roller duct. Air split and gating require pickup tests; closes during station emptying."
+      },
+      {
+        "id": "empty_port",
+        "label": "Downward evacuation door allowance",
+        "module": "bottom",
+        "min": [
+          65,
+          150,
+          5
+        ],
+        "size": [
+          60,
+          34,
+          5
+        ],
+        "bom": [
+          "bin_filter"
+        ],
+        "parent": "bin_drawer",
+        "note": "Station manifold under supported tray; direct dirt-well evacuation avoids a long narrow rear duct. Door closed while cleaning."
+      },
+      {
+        "id": "battery_tray",
+        "label": "Battery tray / restraint / leads",
+        "module": "core",
+        "min": [
+          23,
+          60,
+          71
+        ],
+        "size": [
+          63,
+          154,
+          33
+        ],
+        "bom": [
+          "battery",
+          "trays"
+        ]
+      },
+      {
+        "id": "power_tray",
+        "label": "Power distribution / regulator strip",
+        "module": "core",
+        "min": [
+          94,
+          60,
+          71
+        ],
+        "size": [
+          44,
+          154,
+          33
+        ],
+        "bom": [
+          "power",
+          "core_wiring"
+        ],
+        "note": "Tighter strip reservation; regulator cooling, fusing and cable bends still to select."
+      },
+      {
+        "id": "pi_tray",
+        "label": "Pi 4 / cooling / cable tray",
+        "module": "core",
+        "min": [
+          149,
+          50,
+          71
+        ],
+        "size": [
+          104,
+          80,
+          33
+        ],
+        "bom": [
+          "control",
+          "trays"
+        ]
+      },
+      {
+        "id": "core_mcu_bay",
+        "label": "Core supervisor / interface bay",
+        "module": "core",
+        "min": [
+          23,
+          3,
+          71
+        ],
+        "size": [
+          67,
+          49,
+          33
+        ],
+        "bom": [
+          "core_supervisor",
+          "core_wiring"
+        ]
+      },
+      {
+        "id": "navigation_bay",
+        "label": "Auxiliary navigation / wiring",
+        "module": "core",
+        "min": [
+          95,
+          6,
+          73
+        ],
+        "size": [
+          75,
+          43,
+          31
+        ],
+        "bom": [
+          "perception",
+          "core_wiring"
+        ]
+      },
+      {
+        "id": "front_sensor_bay",
+        "label": "Outward camera / near-field bay",
+        "module": "core",
+        "min": [
+          190,
+          5,
+          86
+        ],
+        "size": [
+          59,
+          35,
+          26
+        ],
+        "bom": [
+          "perception"
+        ],
+        "note": "Above bottom connector; camera and field of view unselected."
+      },
+      {
+        "id": "left_pickup",
+        "label": "Core left station pickup rail",
+        "module": "core",
+        "min": [
+          0,
+          50,
+          105
+        ],
+        "size": [
+          12,
+          175,
+          8
+        ],
+        "bom": [
+          "frame"
+        ],
+        "note": "Rail above battery service path by 1mm nominally. Section thickness is not a load rating."
+      },
+      {
+        "id": "right_pickup",
+        "label": "Core right station pickup rail",
+        "module": "core",
+        "min": [
+          263,
+          50,
+          105
+        ],
+        "size": [
+          12,
+          175,
+          8
+        ],
+        "bom": [
+          "frame"
+        ]
+      },
+      {
+        "id": "scanner_pedestal",
+        "label": "Core-fixed scanner pedestal",
+        "module": "core",
+        "min": [
+          116,
+          116,
+          107
+        ],
+        "size": [
+          44,
+          44,
+          16
+        ],
+        "bom": [
+          "lidar",
+          "frame"
+        ]
+      },
+      {
+        "id": "bottom_connector",
+        "label": "Bottom floating connector pocket",
+        "module": "interface",
+        "min": [
+          174,
+          3,
+          56
+        ],
+        "size": [
+          40,
+          24,
+          28
+        ],
+        "bom": [
+          "core_wiring",
+          "vacuum_control"
+        ],
+        "note": "Combined mating reservation, projection allocation 16mm above vacuum mate. Connector, interlocks and pinout unselected."
+      },
+      {
+        "id": "top_connector",
+        "label": "Cap low-power connector pocket",
+        "module": "interface",
+        "min": [
+          108,
+          239,
+          103
+        ],
+        "size": [
+          40,
+          28,
+          20
+        ],
+        "bom": [
+          "core_wiring",
+          "cap"
+        ]
+      },
+      {
+        "id": "filter_chamber",
+        "label": "Vertical filter holder / upper extension",
+        "module": "bottom",
+        "min": [
+          167,
+          135,
+          5
+        ],
+        "size": [
+          30,
+          140,
+          86
+        ],
+        "bom": [
+          "bin_filter",
+          "vacuum_filter"
+        ],
+        "note": "Moves with bin drawer. Upper portion rises into a dedicated passive core pocket; contains no core electronics."
+      }
+    ],
+    "latch_corners_xy_mm": [
+      [
+        3,
+        3
+      ],
+      [
+        254,
+        3
+      ],
+      [
+        3,
+        254
+      ],
+      [
+        254,
+        254
+      ]
+    ],
+    "latch_xy_size_mm": [
+      18,
+      18
+    ],
+    "latch_z_ranges_mm": {
+      "bottom": [
+        64,
+        84
+      ],
+      "top": [
+        103,
+        123
+      ]
+    },
+    "service_translations_mm": {
+      "battery_tray": [
+        -100,
+        0,
+        0
+      ],
+      "pi_tray": [
+        140,
+        0,
+        0
+      ],
+      "bin_drawer": [
+        0,
+        160,
+        0
+      ]
+    },
+    "proposed_bin_clear_cavity_mm": {
+      "min": [
+        28,
+        141,
+        10
+      ],
+      "size": [
+        133,
+        122,
+        52
+      ]
+    },
+    "usable_bin_target_l": [
+      0.5,
+      0.6
+    ],
+    "notes": [
+      "Owner size limits: maximum 275x275mm rigid body including wheels; maximum180mm total height including LiDAR. Flexible bristles may extend, explicitly confirmed by owner.",
+      "Positions and all unspecified component envelopes are provisional. 60 x 8 mm wheel diameter/width are owner-reported; 3 mm axle hole and no hub protrusion are owner-confirmed; selected bolt-on adapter geometry remains unmeasured. No replacement motors or control boards have been ordered.",
+      "The 7.25-inch roller pair replaces the long pair in the current compact layout. The original long-pair cassette is324mm wide and does not meet the new limit.",
+      "The upright filter, plenum and blower stay attached to the bottom and rise into explicit passive openings in the core. The core is a frame with equipment trays, not a full slab. No air or dirt crosses a module connector.",
+      "Compact usable bin target is0.5-0.6L versus0.5-0.75L previously; actual dog-hair capacity and emptying interval remain unmeasured.",
+      "Side brush moved behind wheel to feed a separate gated side inlet; airflow sharing and gating must be tested. Do not assume it feeds the front rollers after they have passed.",
+      "Main panels target270x270mm as whole prints. The275mm body includes separate bumpers and station pickup pieces. Nominal bed margins do not establish successful large-print adhesion or toolpath clearance.",
+      "Reference parts nest inside reservation volumes; volumes and BOM IDs are not additive. Unmodeled fasteners, cables, frame seats, gaskets, tolerances and airflow can still require changes.",
+      "Geometry screens do not prove cleaning quality, structure, loaded CG, traction, runtime, automation or whole-assembly lift. Propulsion work stays deferred.",
+      "Bottom retention uses three corner zones and one rear bridge zone above the dirt bin; the bin roof clears that zone by3mm. Bridge structure, core seats and rear station release access remain to design; do not route a support post through the drawer sweep.",
+      "The owner permits replacement parts when they improve size, weight or performance. Current owned-part references are replaceable; compare complete installed systems before freezing the frame.",
+      "Pictured owned ball casters are reserve candidates, not the modeled 20 mm rear support. Owner dimensions are 28 x 45 mm flange and 13 mm overall height, with 3 mm mount height. They exceed the current 20 x 20 mm support bay; load and floor suitability remain unconfirmed."
+    ],
+    "head_roller_set": "short_7_25in",
+    "wheel_inventory_id": "wheels_60_unknown",
+    "wheel_width_allowance_mm": 10,
+    "motor_face_x_mm": [
+      30,
+      245
+    ],
+    "cap_outline_mm": [
+      2.5,
+      2.5,
+      270,
+      270
+    ],
+    "constraints": {
+      "max_rigid_xyz_mm": [
+        275,
+        275,
+        180
+      ],
+      "height_includes": "All installed rigid parts including LiDAR",
+      "flexible_bristles_may_extend": true,
+      "owner_confirmed_brush_scope": true,
+      "interpretation": "Owner wrote width and height 275 followed by height 180; interpreted as 275 width/depth and 180 overall height."
+    },
+    "printing": {
+      "bed_reference_xyz_mm": [
+        280,
+        280,
+        250
+      ],
+      "main_piece_xy_mm": [
+        270,
+        270
+      ],
+      "max_piece_xy_mm": [
+        275,
+        275
+      ],
+      "mode": "whole_main_panels",
+      "source": "https://download.lulzbot.com/TAZ/6.0/documentation/manual/",
+      "note": "270mm panels nominally leave 5mm per bed edge; actual brim/skirt, probing keepouts and flatness must be checked in the printer profile."
+    },
+    "reference_placements": {
+      "filter": [
+        172,
+        137,
+        10
+      ],
+      "blower": [
+        224,
+        147,
+        7
+      ],
+      "driver_pcb": [
+        32,
+        8,
+        47
+      ],
+      "battery": [
+        32,
+        70,
+        76
+      ],
+      "pi_pcb": [
+        158,
+        56,
+        76
+      ],
+      "lidar": [
+        89,
+        95,
+        123
+      ]
+    },
+    "filter_axis_order": [
+      2,
+      0,
+      1
+    ],
+    "blower_axis_order": [
+      2,
+      0,
+      1
+    ],
+    "service_members": {
+      "bin_drawer": [
+        "filter_chamber"
+      ]
+    },
+    "core_clearance_pockets": [
+      {
+        "id": "filter_plenum_pocket",
+        "min": [
+          165,
+          133,
+          68
+        ],
+        "size": [
+          57,
+          142,
+          25
+        ]
+      },
+      {
+        "id": "blower_pocket",
+        "min": [
+          218,
+          143,
+          68
+        ],
+        "size": [
+          45,
+          111,
+          39
+        ]
+      },
+      {
+        "id": "exhaust_pocket",
+        "min": [
+          218,
+          248,
+          68
+        ],
+        "size": [
+          45,
+          27,
+          37
+        ]
+      }
+    ],
+    "latch_corners_by_interface": {
+      "bottom": [
+        [
+          3,
+          3
+        ],
+        [
+          254,
+          3
+        ],
+        [
+          3,
+          254
+        ],
+        [
+          145,
+          254
+        ]
+      ],
+      "top": [
+        [
+          3,
+          3
+        ],
+        [
+          254,
+          3
+        ],
+        [
+          3,
+          254
+        ],
+        [
+          254,
+          254
+        ]
+      ]
+    },
+    "latch_z_overrides": {
+      "bottom_joint_4": [
+        68,
+        84
+      ],
+      "top_joint_4": [
+        105,
+        123
+      ]
+    },
+    "locators_by_interface": {
+      "bottom": [
+        {
+          "kind": "round",
+          "center_xy_mm": [
+            12,
+            12
+          ]
+        },
+        {
+          "kind": "slotted",
+          "center_xy_mm": [
+            154,
+            263
+          ]
+        }
+      ],
+      "top": [
+        {
+          "kind": "round",
+          "center_xy_mm": [
+            12,
+            12
+          ]
+        },
+        {
+          "kind": "slotted",
+          "center_xy_mm": [
+            263,
+            263
+          ]
+        }
+      ]
+    }
+  },
+  "parts": [
+    {
+      "id": "left_drive",
+      "label": "Left motor / hub / mount bay",
+      "module": "bottom",
+      "min": [
+        17,
+        84,
+        12
+      ],
+      "size": [
+        92,
+        49,
+        33
+      ],
+      "bom": [
+        "drive_motors",
+        "hubs_supports"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "right_drive",
+      "label": "Right motor / hub / mount bay",
+      "module": "bottom",
+      "min": [
+        166,
+        84,
+        12
+      ],
+      "size": [
+        92,
+        49,
+        33
+      ],
+      "bom": [
+        "drive_motors",
+        "hubs_supports"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "roller_drive_extension",
+      "label": "Roller drive above cassette roof",
+      "module": "bottom",
+      "min": [
+        221.15,
+        3,
+        35
+      ],
+      "size": [
+        40,
+        66,
+        27
+      ],
+      "bom": [
+        "roller_drive"
+      ],
+      "note": "Continuation of the cassette side drive space; counted once as a drive assembly. Gives 62mm overall head-drive allowance, not a selected motor.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "dirty_duct",
+      "label": "Dirty-air duct corridor",
+      "module": "bottom",
+      "min": [
+        112,
+        72,
+        8
+      ],
+      "size": [
+        50,
+        63,
+        34
+      ],
+      "bom": [
+        "bin_filter"
+      ],
+      "note": "Outer routing reservation. With proposed 3mm walls a 44x28mm bore would remain; dog-hair bridging and pressure loss need testing.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "bin_drawer",
+      "label": "Rear-pull debris bin",
+      "module": "bottom",
+      "min": [
+        22,
+        135,
+        5
+      ],
+      "size": [
+        145,
+        140,
+        60
+      ],
+      "bom": [
+        "bin_filter",
+        "vacuum_filter"
+      ],
+      "note": "Dirty bin is one moving piece with adjoining vertical filter chamber; both withdraw rearward together. Downward station-emptying door avoids a long evacuation duct.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "blower_bay",
+      "label": "Upright CBM blower / mount bay",
+      "module": "bottom",
+      "min": [
+        220,
+        145,
+        5
+      ],
+      "size": [
+        41,
+        105,
+        100
+      ],
+      "bom": [
+        "blower"
+      ],
+      "note": "Axial intake faces left toward filter; tangential outlet faces rear. Rises through an explicit passive core pocket; remains attached to bottom.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "clean_plenum",
+      "label": "Clean-air plenum / sliding seal",
+      "module": "bottom",
+      "min": [
+        197,
+        135,
+        5
+      ],
+      "size": [
+        23,
+        140,
+        86
+      ],
+      "bom": [
+        "bin_filter"
+      ],
+      "service_min": [
+        200,
+        135,
+        5
+      ],
+      "service_size": [
+        20,
+        140,
+        86
+      ],
+      "note": "Full-height plenum between vertical filter and blower, including isolation valve. Seal face retracts 3mm right before bin/filter maintenance extraction.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "exhaust",
+      "label": "Rear outlet / grille allowance",
+      "module": "bottom",
+      "min": [
+        220,
+        250,
+        25
+      ],
+      "size": [
+        41,
+        25,
+        78
+      ],
+      "bom": [
+        "bin_filter"
+      ],
+      "note": "Short rear tangential outlet and grille allowance; port adapter and discharge direction require detailing.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "wheel_driver_bay",
+      "label": "Wheel H-bridge above head",
+      "module": "bottom",
+      "min": [
+        25,
+        0,
+        44
+      ],
+      "size": [
+        100,
+        80,
+        22
+      ],
+      "bom": [
+        "drive_hbridge"
+      ],
+      "note": "Mounted to bottom chassis above cassette roof, not carried by removable roller cassette. Tight terminal/height allowance; verify actual MDD10A assembly before selecting it.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "bottom_mcu_bay",
+      "label": "Bottom MCU / encoder interface",
+      "module": "bottom",
+      "min": [
+        20,
+        87,
+        48
+      ],
+      "size": [
+        75,
+        47,
+        18
+      ],
+      "bom": [
+        "vacuum_mcu",
+        "vacuum_control"
+      ],
+      "note": "Compact flat carrier above left drive; headers, transceiver and level shifters remain to fit.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "tool_power_bay",
+      "label": "Tool and blower power stages",
+      "module": "bottom",
+      "min": [
+        177,
+        87,
+        48
+      ],
+      "size": [
+        74,
+        46,
+        18
+      ],
+      "bom": [
+        "roller_drive",
+        "side_brush_drive",
+        "blower_control"
+      ],
+      "note": "Compact stages above right motor; separate from wheel H-bridge. Actual devices and protection unselected.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "side_brush_sweep",
+      "label": "Flexible edge-brush sweep allowance",
+      "module": "bottom",
+      "min": [
+        -30,
+        151,
+        0
+      ],
+      "size": [
+        70,
+        70,
+        3
+      ],
+      "bom": [
+        "side_brush"
+      ],
+      "shape": "cylinder_z",
+      "outside_body": true,
+      "note": "70mm placeholder centered (5,186); rigid drive stays inside body. Feeds a dedicated side inlet below front dirt well, because brush is behind main rollers.",
+      "basis": "proposed reservation"
+    },
+    {
+      "id": "side_brush_drive",
+      "label": "Rear-left edge brush motor / gate bay",
+      "module": "bottom",
+      "min": [
+        0,
+        175,
+        8
+      ],
+      "size": [
+        20,
+        22,
+        45
+      ],
+      "bom": [
+        "side_brush_drive"
+      ],
+      "note": "Small geared drive and edge-inlet gate linkage unselected. Gate should restrict unused edge inlet to preserve main-head suction.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "rear_support",
+      "label": "Rear-left compliant caster allowance",
+      "module": "bottom",
+      "min": [
+        1,
+        250,
+        0
+      ],
+      "size": [
+        20,
+        20,
+        20
+      ],
+      "bom": [
+        "hubs_supports"
+      ],
+      "shape": "cylinder_z",
+      "note": "Two drive wheels plus this rear caster define support polygon; front head skids have compliant contact. Measure loaded CG before proving stability.",
+      "basis": "proposed reservation"
+    },
+    {
+      "id": "front_bumper",
+      "label": "Front bumper upper lip",
+      "module": "bottom",
+      "min": [
+        0,
+        0,
+        35
+      ],
+      "size": [
+        275,
+        3,
+        8
+      ],
+      "bom": [
+        "vacuum_chassis"
+      ],
+      "note": "Separate lip above roller opening; bumper linkage and detection still to detail.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "left_bumper",
+      "label": "Left bumper / skirt allowance",
+      "module": "bottom",
+      "min": [
+        0,
+        35,
+        64
+      ],
+      "size": [
+        3,
+        210,
+        4
+      ],
+      "bom": [
+        "vacuum_chassis"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "right_bumper",
+      "label": "Right bumper / skirt allowance",
+      "module": "bottom",
+      "min": [
+        272,
+        35,
+        64
+      ],
+      "size": [
+        3,
+        210,
+        4
+      ],
+      "bom": [
+        "vacuum_chassis"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "rear_left_cliff",
+      "label": "Rear-left floor sensor allowance",
+      "module": "bottom",
+      "min": [
+        28,
+        250,
+        0
+      ],
+      "size": [
+        20,
+        20,
+        5
+      ],
+      "bom": [
+        "vacuum_control"
+      ],
+      "note": "Below drawer floor; low-profile board/aperture unselected.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "rear_right_cliff",
+      "label": "Rear-right floor sensor allowance",
+      "module": "bottom",
+      "min": [
+        240,
+        251,
+        0
+      ],
+      "size": [
+        20,
+        20,
+        12
+      ],
+      "bom": [
+        "vacuum_control"
+      ],
+      "note": "Below rear exhaust and behind blower bay; hardware and field of view unselected.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "front_left_cliff",
+      "label": "Front-left floor sensor allowance",
+      "module": "bottom",
+      "min": [
+        13,
+        53,
+        3
+      ],
+      "size": [
+        10,
+        18,
+        12
+      ],
+      "bom": [
+        "vacuum_control"
+      ],
+      "parent": "head",
+      "note": "In end-support region; coordinate with actual roller end hardware before printing.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "front_right_cliff",
+      "label": "Front-right floor sensor allowance",
+      "module": "bottom",
+      "min": [
+        211,
+        53,
+        3
+      ],
+      "size": [
+        10,
+        18,
+        12
+      ],
+      "bom": [
+        "vacuum_control"
+      ],
+      "parent": "head",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "front_left_skid",
+      "label": "Front left compliant nonmarking skid",
+      "module": "bottom",
+      "min": [
+        13,
+        30,
+        0
+      ],
+      "size": [
+        10,
+        16,
+        3
+      ],
+      "bom": [
+        "hubs_supports"
+      ],
+      "parent": "head",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "front_right_skid",
+      "label": "Front right compliant nonmarking skid",
+      "module": "bottom",
+      "min": [
+        211,
+        30,
+        0
+      ],
+      "size": [
+        10,
+        16,
+        3
+      ],
+      "bom": [
+        "hubs_supports"
+      ],
+      "parent": "head",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "edge_inlet",
+      "label": "Gated edge inlet allowance",
+      "module": "bottom",
+      "min": [
+        25,
+        150,
+        5
+      ],
+      "size": [
+        30,
+        34,
+        5
+      ],
+      "bom": [
+        "bin_filter",
+        "side_brush_drive"
+      ],
+      "parent": "bin_drawer",
+      "note": "Floor inlet into front dirt well, separate from main roller duct. Air split and gating require pickup tests; closes during station emptying.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "empty_port",
+      "label": "Downward evacuation door allowance",
+      "module": "bottom",
+      "min": [
+        65,
+        150,
+        5
+      ],
+      "size": [
+        60,
+        34,
+        5
+      ],
+      "bom": [
+        "bin_filter"
+      ],
+      "parent": "bin_drawer",
+      "note": "Station manifold under supported tray; direct dirt-well evacuation avoids a long narrow rear duct. Door closed while cleaning.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "battery_tray",
+      "label": "Battery tray / restraint / leads",
+      "module": "core",
+      "min": [
+        23,
+        60,
+        71
+      ],
+      "size": [
+        63,
+        154,
+        33
+      ],
+      "bom": [
+        "battery",
+        "trays"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "power_tray",
+      "label": "Power distribution / regulator strip",
+      "module": "core",
+      "min": [
+        94,
+        60,
+        71
+      ],
+      "size": [
+        44,
+        154,
+        33
+      ],
+      "bom": [
+        "power",
+        "core_wiring"
+      ],
+      "note": "Tighter strip reservation; regulator cooling, fusing and cable bends still to select.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "pi_tray",
+      "label": "Pi 4 / cooling / cable tray",
+      "module": "core",
+      "min": [
+        149,
+        50,
+        71
+      ],
+      "size": [
+        104,
+        80,
+        33
+      ],
+      "bom": [
+        "control",
+        "trays"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "core_mcu_bay",
+      "label": "Core supervisor / interface bay",
+      "module": "core",
+      "min": [
+        23,
+        3,
+        71
+      ],
+      "size": [
+        67,
+        49,
+        33
+      ],
+      "bom": [
+        "core_supervisor",
+        "core_wiring"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "navigation_bay",
+      "label": "Auxiliary navigation / wiring",
+      "module": "core",
+      "min": [
+        95,
+        6,
+        73
+      ],
+      "size": [
+        75,
+        43,
+        31
+      ],
+      "bom": [
+        "perception",
+        "core_wiring"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "front_sensor_bay",
+      "label": "Outward camera / near-field bay",
+      "module": "core",
+      "min": [
+        190,
+        5,
+        86
+      ],
+      "size": [
+        59,
+        35,
+        26
+      ],
+      "bom": [
+        "perception"
+      ],
+      "note": "Above bottom connector; camera and field of view unselected.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "left_pickup",
+      "label": "Core left station pickup rail",
+      "module": "core",
+      "min": [
+        0,
+        50,
+        105
+      ],
+      "size": [
+        12,
+        175,
+        8
+      ],
+      "bom": [
+        "frame"
+      ],
+      "note": "Rail above battery service path by 1mm nominally. Section thickness is not a load rating.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "right_pickup",
+      "label": "Core right station pickup rail",
+      "module": "core",
+      "min": [
+        263,
+        50,
+        105
+      ],
+      "size": [
+        12,
+        175,
+        8
+      ],
+      "bom": [
+        "frame"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "scanner_pedestal",
+      "label": "Core-fixed scanner pedestal",
+      "module": "core",
+      "min": [
+        116,
+        116,
+        107
+      ],
+      "size": [
+        44,
+        44,
+        16
+      ],
+      "bom": [
+        "lidar",
+        "frame"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "bottom_connector",
+      "label": "Bottom floating connector pocket",
+      "module": "interface",
+      "min": [
+        174,
+        3,
+        56
+      ],
+      "size": [
+        40,
+        24,
+        28
+      ],
+      "bom": [
+        "core_wiring",
+        "vacuum_control"
+      ],
+      "note": "Combined mating reservation, projection allocation 16mm above vacuum mate. Connector, interlocks and pinout unselected.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "top_connector",
+      "label": "Cap low-power connector pocket",
+      "module": "interface",
+      "min": [
+        108,
+        239,
+        103
+      ],
+      "size": [
+        40,
+        28,
+        20
+      ],
+      "bom": [
+        "core_wiring",
+        "cap"
+      ],
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "filter_chamber",
+      "label": "Vertical filter holder / upper extension",
+      "module": "bottom",
+      "min": [
+        167,
+        135,
+        5
+      ],
+      "size": [
+        30,
+        140,
+        86
+      ],
+      "bom": [
+        "bin_filter",
+        "vacuum_filter"
+      ],
+      "note": "Moves with bin drawer. Upper portion rises into a dedicated passive core pocket; contains no core electronics.",
+      "basis": "proposed reservation",
+      "shape": "box"
+    },
+    {
+      "id": "head",
+      "label": "Short roller cassette reservation",
+      "module": "bottom",
+      "min": [
+        10,
+        0,
+        0
+      ],
+      "size": [
+        254.15,
+        72,
+        35
+      ],
+      "basis": "proposed reservation",
+      "bom": [
+        "head",
+        "roller_drive",
+        "vacuum_rollers"
+      ],
+      "note": "35mm cassette roof reference. A separate side-drive extension reaches62mm; wheel driver sits independently above the roof. Not a completed powered head.",
+      "shape": "box"
+    },
+    {
+      "id": "roller_1",
+      "label": "Owned roller style A",
+      "module": "bottom",
+      "min": [
+        25,
+        7.0,
+        0
+      ],
+      "size": [
+        184.15,
+        28,
+        28
+      ],
+      "basis": "owner dimensions",
+      "parent": "head",
+      "shape": "cylinder_x",
+      "source": "../../../config/owned_parts.json",
+      "bom": []
+    },
+    {
+      "id": "roller_2",
+      "label": "Owned roller style B",
+      "module": "bottom",
+      "min": [
+        25,
+        37.0,
+        0
+      ],
+      "size": [
+        184.15,
+        28,
+        28
+      ],
+      "basis": "owner dimensions",
+      "parent": "head",
+      "shape": "cylinder_x",
+      "source": "../../../config/owned_parts.json",
+      "bom": []
+    },
+    {
+      "id": "roller_drive_space",
+      "label": "Roller drive side bay",
+      "module": "bottom",
+      "min": [
+        221.14999999999998,
+        3,
+        3
+      ],
+      "size": [
+        40,
+        66,
+        29
+      ],
+      "basis": "proposed reservation",
+      "parent": "head",
+      "note": "Motor, transmission and opposite rotation remain to detail.",
+      "shape": "box",
+      "bom": []
+    },
+    {
+      "id": "wheel_left",
+      "label": "Owned left wheel",
+      "module": "bottom",
+      "min": [
+        8.0,
+        78.0,
+        0.0
+      ],
+      "size": [
+        8,
+        60,
+        60
+      ],
+      "basis": "owner dimensions",
+      "shape": "cylinder_x",
+      "bom": [
+        "wheels"
+      ],
+      "note": "Owner reports 60 mm diameter x 8 mm width. Owner reports 3 mm center hole. No wheel-hub protrusion reported. Selected motor adapter, fasteners and installed offset still need qualification."
+    },
+    {
+      "id": "motor_left",
+      "label": "25D left motor reference",
+      "module": "bottom",
+      "min": [
+        30,
+        95.5,
+        17.5
+      ],
+      "size": [
+        69,
+        25,
+        25
+      ],
+      "basis": "manufacturer reference; not purchased",
+      "parent": "left_drive",
+      "shape": "cylinder_x",
+      "source": "https://www.pololu.com/product/4846/specs",
+      "bom": []
+    },
+    {
+      "id": "shaft_left",
+      "label": "Left output shaft",
+      "module": "bottom",
+      "min": [
+        17.5,
+        106.0,
+        28.0
+      ],
+      "size": [
+        12.5,
+        4,
+        4
+      ],
+      "basis": "manufacturer reference; not purchased",
+      "parent": "left_drive",
+      "shape": "cylinder_x",
+      "source": "https://www.pololu.com/product/4846/specs",
+      "bom": []
+    },
+    {
+      "id": "wheel_right",
+      "label": "Owned right wheel",
+      "module": "bottom",
+      "min": [
+        259.0,
+        78.0,
+        0.0
+      ],
+      "size": [
+        8,
+        60,
+        60
+      ],
+      "basis": "owner dimensions",
+      "shape": "cylinder_x",
+      "bom": [
+        "wheels"
+      ],
+      "note": "Owner reports 60 mm diameter x 8 mm width. Owner reports 3 mm center hole. No wheel-hub protrusion reported. Selected motor adapter, fasteners and installed offset still need qualification."
+    },
+    {
+      "id": "motor_right",
+      "label": "25D right motor reference",
+      "module": "bottom",
+      "min": [
+        176,
+        95.5,
+        17.5
+      ],
+      "size": [
+        69,
+        25,
+        25
+      ],
+      "basis": "manufacturer reference; not purchased",
+      "parent": "right_drive",
+      "shape": "cylinder_x",
+      "source": "https://www.pololu.com/product/4846/specs",
+      "bom": []
+    },
+    {
+      "id": "shaft_right",
+      "label": "Right output shaft",
+      "module": "bottom",
+      "min": [
+        245,
+        106.0,
+        28.0
+      ],
+      "size": [
+        12.5,
+        4,
+        4
+      ],
+      "basis": "manufacturer reference; not purchased",
+      "parent": "right_drive",
+      "shape": "cylinder_x",
+      "source": "https://www.pololu.com/product/4846/specs",
+      "bom": []
+    },
+    {
+      "id": "filter",
+      "label": "Owned filter including tab allowance",
+      "module": "bottom",
+      "min": [
+        172,
+        137,
+        10
+      ],
+      "size": [
+        19,
+        136,
+        76
+      ],
+      "basis": "owner dimensions + derived tab depth",
+      "parent": "filter_chamber",
+      "source": "../../../config/owned_parts.json",
+      "note": "Broad face vertical, normal to x. Full-face19mm depth reserves unknown tab location. Filter chamber moves rear with bin, then opens for manual filter access.",
+      "shape": "box",
+      "bom": []
+    },
+    {
+      "id": "bin_cavity",
+      "label": "Proposed clear debris cavity",
+      "module": "bottom",
+      "min": [
+        28,
+        141,
+        10
+      ],
+      "size": [
+        133,
+        122,
+        52
+      ],
+      "basis": "proposed reservation",
+      "parent": "bin_drawer",
+      "note": "Rectangular geometric volume, not demonstrated usable capacity.",
+      "shape": "box",
+      "bom": []
+    },
+    {
+      "id": "blower",
+      "label": "Owned CBM blower, upright",
+      "module": "bottom",
+      "min": [
+        224,
+        147,
+        7
+      ],
+      "size": [
+        33,
+        97,
+        95
+      ],
+      "basis": "manufacturer envelope",
+      "parent": "blower_bay",
+      "source": "https://www.sameskydevices.com/product/resource/cbm-97b.pdf",
+      "note": "Rotated 97 x 95 x 33 envelope. Drawing establishes axial inlet / tangential outlet; exact port adapters unmodeled.",
+      "shape": "box",
+      "bom": []
+    },
+    {
+      "id": "driver_pcb",
+      "label": "MDD10A PCB footprint reference",
+      "module": "bottom",
+      "min": [
+        32,
+        8,
+        47
+      ],
+      "size": [
+        84.5,
+        62,
+        1
+      ],
+      "basis": "manufacturer footprint; 1 mm display thickness",
+      "parent": "wheel_driver_bay",
+      "source": "https://www.cytron.io/cytron/p-10amp-5v-30v-dc-motor-driver-2-channels",
+      "note": "Footprint only; board components, terminals and cooling must fit the parent reservation.",
+      "shape": "box",
+      "bom": []
+    },
+    {
+      "id": "battery",
+      "label": "Owned 3S pack listing reference",
+      "module": "core",
+      "min": [
+        32,
+        70,
+        76
+      ],
+      "size": [
+        43,
+        132,
+        25
+      ],
+      "basis": "seller reference; not owner measured",
+      "parent": "battery_tray",
+      "source": "https://www.amazon.com/dp/B0972RKJDS",
+      "note": "Dimensions retained from the exact battery listing in EDF_BENCH_PLAN.md; cables and restraint use tray allowance.",
+      "shape": "box",
+      "bom": []
+    },
+    {
+      "id": "pi_pcb",
+      "label": "Pi 4 PCB footprint reference",
+      "module": "core",
+      "min": [
+        158,
+        56,
+        76
+      ],
+      "size": [
+        85,
+        56,
+        1
+      ],
+      "basis": "manufacturer footprint; 1 mm display thickness",
+      "parent": "pi_tray",
+      "source": "https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf",
+      "note": "Ports, cooler, storage and cables consume the parent tray; 1 mm sheet is only a drawing convention.",
+      "shape": "box",
+      "bom": []
+    },
+    {
+      "id": "lidar",
+      "label": "Core-fixed RPLIDAR A1 reference",
+      "module": "core",
+      "min": [
+        89,
+        95,
+        123
+      ],
+      "size": [
+        96.8,
+        70.3,
+        55
+      ],
+      "basis": "manufacturer family reference",
+      "bom": [
+        "lidar"
+      ],
+      "source": "https://www.slamtec.com/cn/lidar/a1spec",
+      "note": "Owned revision and actual scan-plane offset unconfirmed; everything else is kept at/below the scanner base plane.",
+      "shape": "box"
+    },
+    {
+      "id": "bottom_joint_1",
+      "label": "Bottom joint zone 1",
+      "module": "interface",
+      "min": [
+        3,
+        3,
+        64
+      ],
+      "size": [
+        18,
+        18,
+        20
+      ],
+      "basis": "proposed reservation",
+      "bom": [
+        "core_interfaces"
+      ],
+      "note": "Compact combined mating zone for retention, seat and guides; fit and strength unverified. Initial bolts and later station latch share this zone; halves not modeled.",
+      "shape": "box"
+    },
+    {
+      "id": "bottom_joint_2",
+      "label": "Bottom joint zone 2",
+      "module": "interface",
+      "min": [
+        254,
+        3,
+        64
+      ],
+      "size": [
+        18,
+        18,
+        20
+      ],
+      "basis": "proposed reservation",
+      "bom": [
+        "core_interfaces"
+      ],
+      "note": "Compact combined mating zone for retention, seat and guides; fit and strength unverified. Initial bolts and later station latch share this zone; halves not modeled.",
+      "shape": "box"
+    },
+    {
+      "id": "bottom_joint_3",
+      "label": "Bottom joint zone 3",
+      "module": "interface",
+      "min": [
+        3,
+        254,
+        64
+      ],
+      "size": [
+        18,
+        18,
+        20
+      ],
+      "basis": "proposed reservation",
+      "bom": [
+        "core_interfaces"
+      ],
+      "note": "Compact combined mating zone for retention, seat and guides; fit and strength unverified. Initial bolts and later station latch share this zone; halves not modeled.",
+      "shape": "box"
+    },
+    {
+      "id": "bottom_joint_4",
+      "label": "Bottom joint zone 4",
+      "module": "interface",
+      "min": [
+        145,
+        254,
+        68
+      ],
+      "size": [
+        18,
+        18,
+        16
+      ],
+      "basis": "proposed reservation",
+      "bom": [
+        "core_interfaces"
+      ],
+      "note": "Compact combined mating zone for retention, seat and guides; fit and strength unverified. Initial bolts and later station latch share this zone; halves not modeled.",
+      "shape": "box"
+    },
+    {
+      "id": "top_joint_1",
+      "label": "Top joint zone 1",
+      "module": "interface",
+      "min": [
+        3,
+        3,
+        103
+      ],
+      "size": [
+        18,
+        18,
+        20
+      ],
+      "basis": "proposed reservation",
+      "bom": [
+        "core_interfaces"
+      ],
+      "note": "Compact combined mating zone for retention, seat and guides; fit and strength unverified. Initial bolts and later station latch share this zone; halves not modeled.",
+      "shape": "box"
+    },
+    {
+      "id": "top_joint_2",
+      "label": "Top joint zone 2",
+      "module": "interface",
+      "min": [
+        254,
+        3,
+        103
+      ],
+      "size": [
+        18,
+        18,
+        20
+      ],
+      "basis": "proposed reservation",
+      "bom": [
+        "core_interfaces"
+      ],
+      "note": "Compact combined mating zone for retention, seat and guides; fit and strength unverified. Initial bolts and later station latch share this zone; halves not modeled.",
+      "shape": "box"
+    },
+    {
+      "id": "top_joint_3",
+      "label": "Top joint zone 3",
+      "module": "interface",
+      "min": [
+        3,
+        254,
+        103
+      ],
+      "size": [
+        18,
+        18,
+        20
+      ],
+      "basis": "proposed reservation",
+      "bom": [
+        "core_interfaces"
+      ],
+      "note": "Compact combined mating zone for retention, seat and guides; fit and strength unverified. Initial bolts and later station latch share this zone; halves not modeled.",
+      "shape": "box"
+    },
+    {
+      "id": "top_joint_4",
+      "label": "Top joint zone 4",
+      "module": "interface",
+      "min": [
+        254,
+        254,
+        105
+      ],
+      "size": [
+        18,
+        18,
+        18
+      ],
+      "basis": "proposed reservation",
+      "bom": [
+        "core_interfaces"
+      ],
+      "note": "Compact combined mating zone for retention, seat and guides; fit and strength unverified. Initial bolts and later station latch share this zone; halves not modeled.",
+      "shape": "box"
+    }
+  ],
+  "sources": {
+    "roller_filter": "../../../config/owned_parts.json",
+    "motor": "https://www.pololu.com/product/4846/specs",
+    "blower": "https://www.sameskydevices.com/product/resource/cbm-97b.pdf",
+    "lidar": "https://www.slamtec.com/cn/lidar/a1spec",
+    "pi": "https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf",
+    "driver": "https://www.cytron.io/cytron/p-10amp-5v-30v-dc-motor-driver-2-channels",
+    "battery": "https://www.amazon.com/dp/B0972RKJDS",
+    "printer": "https://download.lulzbot.com/TAZ/6.0/documentation/manual/"
+  },
+  "head_variant": {
+    "id": "short_7_25in",
+    "label": "7.25 inch pair",
+    "roller_length_mm": 184.15,
+    "roller_diameter_mm": 28,
+    "roller_x_mm": 15,
+    "roller_center_y_mm": [
+      21.0,
+      51.0
+    ],
+    "roller_axis_height_mm": 14.0,
+    "max_fin_envelope_gap_mm": 2,
+    "cassette_study_width_mm": 254.15,
+    "cassette_study_depth_mm": 72,
+    "roof_reference_height_mm": 35,
+    "whole_piece_possible": true,
+    "panel_span_with_overlap_mm": 254.15
+  },
+  "derived": {
+    "body_envelope_mm": [
+      275,
+      275,
+      178
+    ],
+    "moving_xy_min_mm": [
+      -30,
+      0
+    ],
+    "gross_bin_cavity_l": 0.843752,
+    "panel_blank_span_mm": [
+      270,
+      270
+    ],
+    "station_separation_mm": 50,
+    "moving_xy_size_mm": [
+      305,
+      275
+    ]
+  },
+  "checks": {
+    "errors": [],
+    "root_pairs_checked": 903,
+    "service_sweeps": [
+      {
+        "id": "battery_tray",
+        "member_ids": [
+          "battery_tray"
+        ],
+        "translation_mm": [
+          -100,
+          0,
+          0
+        ],
+        "sweep": {
+          "min": [
+            -77,
+            60,
+            71
+          ],
+          "size": [
+            163,
+            154,
+            33
+          ]
+        },
+        "occupied_sweeps": [
+          {
+            "min": [
+              -77,
+              60,
+              71
+            ],
+            "size": [
+              163,
+              154,
+              33
+            ]
+          }
+        ],
+        "blockers": []
+      },
+      {
+        "id": "pi_tray",
+        "member_ids": [
+          "pi_tray"
+        ],
+        "translation_mm": [
+          140,
+          0,
+          0
+        ],
+        "sweep": {
+          "min": [
+            149,
+            50,
+            71
+          ],
+          "size": [
+            244,
+            80,
+            33
+          ]
+        },
+        "occupied_sweeps": [
+          {
+            "min": [
+              149,
+              50,
+              71
+            ],
+            "size": [
+              244,
+              80,
+              33
+            ]
+          }
+        ],
+        "blockers": []
+      },
+      {
+        "id": "bin_drawer",
+        "member_ids": [
+          "bin_drawer",
+          "filter_chamber"
+        ],
+        "translation_mm": [
+          0,
+          160,
+          0
+        ],
+        "sweep": {
+          "min": [
+            22,
+            135,
+            5
+          ],
+          "size": [
+            175,
+            300,
+            86
+          ]
+        },
+        "occupied_sweeps": [
+          {
+            "min": [
+              22,
+              135,
+              5
+            ],
+            "size": [
+              145,
+              300,
+              60
+            ]
+          },
+          {
+            "min": [
+              167,
+              135,
+              5
+            ],
+            "size": [
+              30,
+              300,
+              86
+            ]
+          }
+        ],
+        "blockers": []
+      }
+    ],
+    "separated_mate_clearance_mm": 13,
+    "cap_lift_clearance_mm": 5,
+    "bin_released_seal_gap_mm": 3,
+    "actual_bottom_projection_mm": 37,
+    "limits": "AABB reservation checks only; touching routing faces and parent containment intentional. Unmodeled structure, cables, fasteners, tolerances, loads, scan optics, full station hardware and fluid performance are not validated."
+  }
+}

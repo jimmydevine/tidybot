@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1-proposal",
+  "purpose": "Design example; not validated runtime configuration",
+  "length_unit": "m",
+  "geometry_source": "Approximate owner report, not a sensor survey",
+  "floors": [
+    {
+      "id": "downstairs",
+      "approx_area_m2": 92.9,
+      "surfaces": [
+        "wood",
+        "tile"
+      ],
+      "station_candidate": "kitchen"
+    },
+    {
+      "id": "upstairs",
+      "approx_area_m2": 92.9,
+      "surfaces": [
+        "wood",
+        "tile"
+      ],
+      "station_candidate": "master_bedroom"
+    }
+  ],
+  "staircase": {
+    "shape": "straight",
+    "reported_step_count": 15,
+    "confirmed_riser_count": null,
+    "tread_width": 0.9144,
+    "tread_depth": 0.2794,
+    "approx_riser_height": 0.1905,
+    "minimum_headroom": null,
+    "side_obstacles": [
+      {
+        "side": "left",
+        "type": "lip",
+        "inward_projection": 0.0381,
+        "approx_height_above_treads": 0.9398,
+        "vertical_extent": null
+      },
+      {
+        "side": "right",
+        "type": "handrail",
+        "inward_projection": 0.1016,
+        "approx_height_above_treads": 0.9144,
+        "vertical_extent": null
+      }
+    ],
+    "landing_geometry": null,
+    "landing_bookcase": {
+      "reported_depth": 0.3048,
+      "approx_reported_distance_from_stairs": 0.9144,
+      "position_and_measurement_reference": null
+    },
+    "flight_route_validated": false
+  },
+  "operating_conditions": {
+    "floor_transitions": {
+      "approx_height_range": [0.004, 0.010],
+      "basis": "Owner report 2026-09-12; excludes stairs",
+      "edge_profiles_surveyed": false
+    },
+    "dogs_may_enter_work_area": true,
+    "dog_count": 3,
+    "recharge_during_jobs_allowed": true,
+    "periodic_manual_bulk_water_and_waste_service_accepted": true
+  },
+  "station_layout_allowance": {
+    "status": "Historical flight-top station allowance; current ground station envelope remains open",
+    "cabinet_width": 1.2,
+    "cabinet_depth": 1.0,
+    "cabinet_height": 1.2,
+    "front_clear_approach_width": 1.2,
+    "front_clear_approach_depth": 1.0,
+    "default_water_service": "removable_tanks",
+    "plumbing_required": false,
+    "landing_to_station_routes_surveyed": false
+  },
+  "low_furniture": {
+    "owner_report": "A couple of sofas with approximately 50 mm clearance and 36 inch front-to-back depth; approachable from the front",
+    "reported_clearance": 0.05,
+    "floor_ids": null,
+    "access_strategy": "low_cleaning_head_enters_while_main_robot_stays_outside",
+    "required_head_reach": null,
+    "underside_and_leg_geometry_surveyed": false,
+    "pending_question": null,
+    "approx_front_to_back_depth": 0.9144,
+    "accessible_sides": [
+      "front"
+    ],
+    "required_coverage_depth_from_front_edge": 0.9144,
+    "head_reach_basis": "Actuator travel remains unresolved: add actual robot stand-off to coverage depth and account for head geometry and retracted position",
+    "resolved_questions": [
+      "Owner confirmed a low head with the main robot staying outside and suggested a separate module or attachment",
+      "Owner reports both sofas around 36 inches deep and approachable from the front"
+    ]
+  }
+}

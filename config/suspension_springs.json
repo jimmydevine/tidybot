@@ -1,0 +1,46 @@
+{
+  "revision": "L: spring selection and loaded ride height",
+  "status": "Engineering comparison; no spring or fabrication release",
+  "target_travel_mm": 3,
+  "target_by_module_mm": {"vacuum":3,"mop":1,"low":3},
+  "preferred_candidate": "C0420-063-1000-M",
+  "shim_step_mm": 0.25,
+  "heading_step_deg": 15,
+  "spring_rate_factors": [0.9, 1.0, 1.1],
+  "free_length_offsets_mm": [-0.5, 0, 0.5],
+  "seat_error_mm": 0.25,
+  "solid_height_extra_mm": 0.5,
+  "working_length_margin_mm": 0.5,
+  "sensitivity_note": "These are project sensitivity assumptions, not supplier tolerances. Each installed spring is calibrated with its module; settings are held fixed through contents/contact cases.",
+  "spring_envelope_od_mm": 11.2,
+  "spring_envelope_id_mm": 7.0,
+  "anti_tip_raise_mm": 10,
+  "anti_tip_note": "Conditional mount revision: raise the two front anti-tip roller allocations from Z=2..26 to Z=12..36 mm so they do not carry normal running loads at the new resting attitude. Brackets, tipping dynamics and threshold contact remain to design.",
+  "catalog_source": "https://www.asraymond.com/globalassets/catalogs/spec-springs-and-washers-catalog-u.pdf",
+  "catalog_note": "Use catalog load length L1 plus a project margin as a conservative operating-length screen. L1 is not a fatigue-life guarantee. Current SKU, tolerances and duty require supplier confirmation. Music-wire versions only; stainless rates differ.",
+  "candidates": [
+    {"id":"J_target","label":"Earlier unsourced target","od_mm":10,"id_mm":7,"free_length_mm":32.5,"rate_n_mm":5,"solid_height_mm":13.5,"load_length_mm":null,"catalog":false},
+    {"id":"C0360-051-1250-M","od_mm":9.144,"id_mm":6.5532,"free_length_mm":31.75,"rate_n_mm":6.53,"solid_height_mm":15.32,"load_length_mm":20.62,"catalog":true,"note":"Catalog solid height is more conservative than rounded product page; ID leaves inadequate clearance over the 6.5 mm guide."},
+    {"id":"C0360-059-1120-M","od_mm":9.144,"id_mm":6.1468,"free_length_mm":28.448,"rate_n_mm":13.4,"solid_height_mm":17.02,"load_length_mm":20.37,"catalog":true},
+    {"id":"C0420-063-1000-M","od_mm":10.668,"id_mm":7.4676,"free_length_mm":25.4,"rate_n_mm":13.64,"solid_height_mm":15.01,"load_length_mm":17.15,"catalog":true},
+    {"id":"C0420-063-1250-M","od_mm":10.668,"id_mm":7.4676,"free_length_mm":31.75,"rate_n_mm":10.61,"solid_height_mm":17.93,"load_length_mm":21.11,"catalog":true},
+    {"id":"C0480-063-1000-M","od_mm":12.192,"id_mm":8.9916,"free_length_mm":25.4,"rate_n_mm":9.98,"solid_height_mm":12.32,"load_length_mm":15.11,"catalog":true},
+    {"id":"C0480-067-1000-M","od_mm":12.192,"id_mm":8.7884,"free_length_mm":25.4,"rate_n_mm":13.38,"solid_height_mm":14.27,"load_length_mm":16.54,"catalog":true,"note":"Manufacturer web page rounds solid height to 0.52 inch; catalog gives 0.562 inch. Use the larger catalog figure until clarified."}
+  ],
+  "contents": {
+    "vacuum": [{"label":"empty","loads":[]},{"label":"design debris","loads":[[150,85,212,52]]},{"label":"heavy debris","loads":[[300,85,212,52]]}],
+    "mop": [{"label":"dry","loads":[]},{"label":"tank empty, wet pad","loads":[[50,137.5,171,11]]},{"label":"full tank, wet pad","loads":[[350,59,209.5,63],[50,137.5,171,11]]},{"label":"full tank, saturated pad","loads":[[350,59,209.5,63],[100,137.5,171,11]]}],
+    "low": [{"label":"empty","loads":[]},{"label":"design debris","loads":[[120,105,216,79]]},{"label":"heavy debris","loads":[[250,105,216,79]]}]
+  },
+  "calibration_contents_index": {"vacuum":1,"mop":2,"low":1},
+  "tool_contact": {
+    "vacuum": {"force_n":[0,3,6],"at_mm":[137.5,36,0]},
+    "mop": {"force_n":[0,4,8],"at_mm":[137.5,171,0]},
+    "low": {"force_n":[0],"at_mm":[137.5,0,0]}
+  },
+  "contact_note": "Imposed upward normal-force sensitivities, not measured or selected downforces. Sofa study covers stowed transit only; extended head/hose ground reactions and CG movement require a separate model. A prescribed contact point does not model cleaning-head compliance.",
+  "moving_pod_prefixes": ["tray","bearing_block_","bearing_bolt_","motor_bracket","motor_screw_","motor_foot_","lower_fork","stop_arm","arm_angle_","lower_cup","lower_guide","lower_trunnion"],
+  "moving_spring_bushing_allowance_g": 3,
+  "moving_allowance_at_mm": [80,133,32],
+  "scope": "Quasistatic flat floor, ideal three-point support, spherical tire reach, no friction, drive torque, acceleration or damping. K hardware masses retained; moving mass and wheel/hub centres resolved separately. I geometry used only for height checks. No flight conclusion."
+}

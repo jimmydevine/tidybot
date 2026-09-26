@@ -1,0 +1,47 @@
+{
+  "revision": "F: floor-power partition candidate",
+  "status": "Dimensioned allocation and mass study; not fabrication or flight release",
+  "core_interface_allowance_g": [4, 8, 15],
+  "floor_interface_allowance_g": [10, 16, 28],
+  "carrier_fasteners_allowance_g": [6, 10, 18],
+  "aluminum_density_g_mm3": 0.0027,
+  "steel_density_g_mm3": 0.00785,
+  "stock_mass_factors": [0.95, 1, 1.1],
+  "carrier_stock": [
+    {"id":"shelf_left", "min":[26,13,86], "size":[81,70,1]},
+    {"id":"shelf_right", "min":[107,30,86], "size":[34,53,1]},
+    {"id":"shelf_tab", "min":[20,66,86], "size":[6,6,1]},
+    {"id":"foot_plate", "min":[27,66,12], "size":[81,20,2]},
+    {"id":"foot_tab", "min":[20,66,12], "size":[7,6,2]},
+    {"id":"rear_stiffener", "min":[26,80,87], "size":[115,2,8]},
+    {"id":"front_stiffener", "min":[26,13,87], "size":[80,2,8]}
+  ],
+  "posts": {
+    "centres_xy_mm": [[23,69],[106,69],[106,82]],
+    "z_mm": 14,
+    "length_mm": 72,
+    "tube_od_mm": 4,
+    "tube_id_mm": 3,
+    "rod_diameter_mm": 3
+  },
+  "core_logic_bay": {"min":[10,91,124], "size":[34,47,14]},
+  "locations_mm": {
+    "logic_buck_reference": [11,93,126],
+    "motor_buck_reference": [108,36,90],
+    "clamp_resistor_reference": [93,31,90],
+    "brake_cap_reference": [111,60,106],
+    "clamp_control_reference": [108,35,117]
+  },
+  "interface": {
+    "revision": "F_RAW6S",
+    "operating_pack_v": [18,25.2],
+    "raw_branch_allocation_w": 240,
+    "contact_continuous_requirement_a": 20,
+    "qualification": "Unselected blind-mate contacts; no hot mating. Require thermal, fault, wear and cycle-life qualification.",
+    "rails": ["switched raw 6S positive", "power return", "protected 5 V logic", "logic return"],
+    "signals": ["CAN H", "CAN L", "PRESENT", "HARDWARE ENABLE", "ID/service"],
+    "enable_conditions": ["all four bottom locks confirmed", "F_RAW6S module ID accepted", "contacts fully seated", "precharge complete", "voltage and temperature valid", "watchdog healthy"],
+    "disconnect_sequence": ["stop tool and wheels", "hold locks closed while braking energy decays", "disable bottom converters", "open raw branch", "verify branch discharged", "release locks and separate"],
+    "notes": "Raw voltage never shares a mating key with the previous 12/24 V interface. No converter input-capacitance or charge-time qualification is inferred. Flight high-current trunk remains separate."
+  }
+}

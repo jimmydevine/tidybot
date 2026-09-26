@@ -1,0 +1,27 @@
+{
+  "revision": "Owner flight-carried mass budgets, 2026-09-14",
+  "source": "Owner: transient-flight modules including electronics <=4.5 kg excluding lift module; aim for 3.5 kg for hovering modules.",
+  "units": "g",
+  "classes": {
+    "transfer": {"budget_g":4500,"kind":"maximum","description":"Short flights transporting the complete attached floor-cleaning assembly, such as stairs"},
+    "hover": {"budget_g":3500,"kind":"design_target","description":"Sustained airborne work, including dusting"}
+  },
+  "module_classes": {"vacuum":"transfer","mop":"transfer","low":"transfer","air_dust":"hover"},
+  "sofa_transfer_policy": "Owner-confirmed floor-resident attachments: one duplicate extension at each floor station. Park it and restore the normal vacuum head before flight. Include the normal vacuum, core, battery and all retained quick-change hardware; exclude parked extensions. The historical complete low bottom remains classified as transfer only for comparison.",
+  "included": [
+    "Complete electronics/sensor core, structure, wiring, locks and core-side interfaces",
+    "Installed battery cells, cartridge, receiver, protection and all onboard energy-storage hardware outside the lift module",
+    "Complete attached cleaning bottom, including its drive hardware, mounts, actuators, connectors and retained/deployed tools",
+    "Maximum permitted operating load of debris, retained dust, water and wet cleaning media",
+    "Installation and completion allowances until replaced by documented finished parts"
+  ],
+  "excluded": [
+    "Complete physically separate lift module, which must have its own full installed mass ledger",
+    "Cap only when removed and replaced by the lift module",
+    "Equipment and spare packs physically left at a station"
+  ],
+  "interpretation": "Both classes use the same boundary: everything carried except the complete lift top. The 3.5 kg hover value is the current design target, distinguished from the explicit 4.5 kg transfer maximum. A multi-role configuration must meet the stricter target when used for sustained hover.",
+  "accounting_rule": "Actual all-up flight mass = budgeted non-lift assembly + complete lift module. Give each physical item one owner; relabeling carried core/tool hardware as lift is not a mass reduction. Include any extra pack carried for that mission.",
+  "comparison_rule": "Show nominal hardware with usual and maximum modeled contents separately. Also show the upper hardware estimate when defined. Passing an estimated budget is not measured compliance or a demonstrated thrust/endurance result.",
+  "design_rule": "Keep unallocated headroom for unfinished hardware and uncertainty. Do not spend the entire difference to the ceiling or silently reduce battery, water/bin capacity, guards, cleaning performance or automated exchange to claim compliance. No additional percentage reserve is imposed by this configuration."
+}

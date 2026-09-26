@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 890" role="img">
+<title>Service and station access · top view</title>
+<style>text{font-family:Arial,sans-serif;fill:#20344b} .dim{stroke:#5c7186;stroke-width:1;marker-start:url(#a);marker-end:url(#a)}</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5c7186"/></marker></defs>
+<rect width="900" height="890" fill="white"/>
+<text x="30" y="30" font-size="23" text-anchor="start">Service and station access · top view</text>
+<text x="30" y="56" font-size="12" text-anchor="start">Dashed boxes show full straight-line tray sweeps; paths are at different heights.</text>
+<rect x="235" y="90" width="418" height="440" fill="#f7f9fc" stroke="#64798d" />
+<rect x="96.4" y="189" width="264" height="187" fill="#ecf6f1" stroke="#64798d" stroke-dasharray="6 4"/>
+<g><title>Battery tray / restraint / leads | proposed reservation | 90 x 170 x 38 mm</title>
+<rect x="261.4" y="189" width="99" height="187" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<line x1="310.9" y1="282.5" x2="145.9" y2="282.5" stroke="#24674e" stroke-width="2" marker-end="url(#a)"/>
+<rect x="499" y="216.5" width="286" height="126.5" fill="#ecf6f1" stroke="#64798d" stroke-dasharray="6 4"/>
+<g><title>Pi 4 / cooling / cable tray | proposed reservation | 110 x 115 x 38 mm</title>
+<rect x="499" y="216.5" width="121" height="126.5" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<line x1="559.5" y1="279.75" x2="724.5" y2="279.75" stroke="#24674e" stroke-width="2" marker-end="url(#a)"/>
+<rect x="356" y="358.4" width="209" height="391.6" fill="#ecf6f1" stroke="#64798d" stroke-dasharray="6 4"/>
+<g><title>Rear-pull bin + filter drawer | proposed reservation | 190 x 156 x 93 mm</title>
+<rect x="356" y="358.4" width="209" height="171.6" fill="#e9eff4" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<line x1="460.5" y1="444.2" x2="460.5" y2="664.2" stroke="#24674e" stroke-width="2" marker-end="url(#a)"/>
+<g><title>Core left station pickup rail | proposed reservation | 16 x 240 x 8 mm</title>
+<rect x="235" y="178" width="17.6" height="264" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Core right station pickup rail | proposed reservation | 16 x 240 x 8 mm</title>
+<rect x="635.4" y="178" width="17.6" height="264" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<text x="35" y="150" font-size="13" text-anchor="start">Battery: 150 mm stroke</text>
+<text x="675" y="150" font-size="13" text-anchor="start">Pi: 150 mm stroke</text>
+<text x="675" y="171" font-size="12" text-anchor="start">Rail above tray</text>
+<text x="445" y="706" font-size="13" text-anchor="middle">Bin: 200 mm rear stroke</text>
+<text x="445" y="733.5" font-size="12" text-anchor="middle">Retract seal 3 mm first</text>
+<text x="30" y="824" font-size="12" text-anchor="start">Station also reserves 80 mm side access per side, a 30 mm bottom drop and 440 mm rear transfer stroke.</text>
+<text x="30" y="848" font-size="12" text-anchor="start">Dock tray top: 40 mm above floor; lower to 10 mm with core captured. Full cabinet/ramp not designed.</text>
+<text x="30" y="872" font-size="12" text-anchor="start">Battery/Pi servicing occurs off the station or with its fingers withdrawn. Servicing and exchanging are separate states.</text>
+</svg>

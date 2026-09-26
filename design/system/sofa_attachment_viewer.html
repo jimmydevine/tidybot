@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TidyBot — resident sofa extension</title>
+<style>
+body{font:16px/1.5 system-ui,sans-serif;color:#183446;background:#f4f7f8;margin:0}main{max-width:1180px;margin:auto;padding:24px}h1{font-size:26px;margin:0 0 8px}h2{font-size:18px}a{color:#08627b}.panel{background:white;border:1px solid #d4e0e5;border-radius:9px;padding:18px;margin:18px 0}.controls{display:flex;gap:22px;flex-wrap:wrap;align-items:center}label{display:block}input{vertical-align:middle}svg{width:100%;height:270px;background:#fcfcf9;border:1px solid #edf0f1}table{border-collapse:collapse;width:100%}td,th{padding:7px;text-align:left;border-bottom:1px solid #dce5e9}.note{color:#536875;font-size:14px}.key{display:flex;gap:20px;flex-wrap:wrap}.key span:before{content:'●';color:var(--color);margin-right:6px}.warning{border-left:4px solid #b87b20;padding-left:12px}.numbers{font-variant-numeric:tabular-nums}button,select{font:inherit;padding:5px 9px}#reach{min-width:170px}
+</style>
+<main>
+<h1>One vacuum, two floor-resident sofa extensions</h1>
+<p>At each dock, exchange the normal powered floor head for that floor’s extension. Park the extension and restore the normal head before a stair flight.</p>
+<p><a href="../../../docs/SOFA_ATTACHMENT.md">Design and exchange sequence</a> · <a href="sofa_attachment.md">Calculations</a> · <a href="sofa_attachment_mass.csv">Hardware mass ledger</a> · <a href="mass_budgets.md">Flight budgets</a></p>
+<div class="panel controls">
+<label>Configuration <select id="mode"><option value="sofa">Sofa cleaning</option><option value="normal">Normal head installed / extension parked</option></select></label>
+<label>Extension travel <input id="travel" type="range" min="0" max="1000" value="0" step="10"> <output id="distance">0 mm</output></label>
+<label><input id="raised" type="checkbox"> Raise head for transit (+12 mm)</label>
+<button id="full">Maximum stroke</button><button id="stow">Retract</button>
+</div>
+<div class="panel">
+<div class="key"><span style="--color:#8fabbb">Shared vacuum</span><span style="--color:#179eaa">Telescoping air path</span><span style="--color:#e99a35">Cleaning head</span><span style="--color:#8264ad">Extension feed drive</span></div>
+<h2>Top view — front of robot faces left</h2><svg id="top" role="img" aria-label="Top view of vacuum and removable sofa attachment"></svg>
+<h2>Side view — flat floor</h2><svg id="side" role="img" aria-label="Side view of attachment under sofa"></svg>
+<p id="pose" class="warning"></p><p class="note">Space reservations only. Maximum stroke carries the head's leading edge 66 mm beyond the nominal sofa back; actual travel must stop sooner for a rear wall or other obstruction. Suction-mouth position is unfinished. The link is schematic: hitch joints, locks, head compliance, wiring, seals and complete feed mechanism are not drawn. Sofa width/legs are unspecified.</p>
+</div>
+<div class="panel numbers"><h2>What travels with the robot</h2><table id="mass"><tr><th>Configuration</th><th>Nominal mass</th></tr></table><p id="budget" class="warning"></p><p class="note">Maximum modeled debris: 300 g. Ground configurations include the 70 g cap; transfer excludes cap and lift but includes core and battery. All N/M allowances remain except the identified 482 g ordinary head removed during sofa work. Complete upper mass is unknown; these are planning estimates.</p></div>
+<div class="panel"><h2>Confirmed sofa approach space</h2><p id="room"></p><p id="room-confirmation"></p><p>Reserve one extension nest and one empty normal-head nest at each dock, with a supported exchange apron outside the existing robot bay. A nominal extension nest is 270 × 450 × 140 mm; the whole dock and its approach need a separate layout.</p></div>
+<div class="panel"><h2>Head receiver and station removal path</h2><p><a href="sofa_head_receiver.svg">Open receiver placement drawing</a></p><p id="receiver-result"></p><p id="withdrawal-result"></p><p class="note">Head compliance stays between the removable fixed adapter and the cleaning head. The dock supports and locates the head before releasing positive locks. Clearance checks cover existing head/motor boxes and plate reservations; complete locks, adapters, air-flex disconnection, electrical contacts and continuous motion still need detailed geometry.</p></div>
+</main>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const data=JSON.parse(document.getElementById('data').textContent),g=data.config.geometry,m=data.mass,s=data.space;
+const byId=id=>document.getElementById(id),kg=x=>(x/1000).toFixed(3)+' kg';
+const entries=[['Ordinary vacuum ready for transfer; no extension',m.transfer_max_contents_g],['Ordinary vacuum on floor with cap',m.ordinary_ground_max_contents_g],['Sofa cleaning with one extension and cap',m.sofa_ground_max_contents_g],['One parked extension',m.extension_g]];
+entries.forEach(([label,value])=>{let row=document.createElement('tr');for(const text of [label,kg(value)]){let cell=document.createElement('td');cell.textContent=text;row.appendChild(cell);}byId('mass').appendChild(row);});
+byId('budget').textContent=`Transfer remains ${Math.round(m.transfer_reduction_needed_g)} g above the 4.5 kg budget. Quick-change hardware adds ${Math.round(m.flight_interface_increment_g)} g to the existing vacuum. Extension mass carried in flight: 0 g.`;
+byId('room').textContent=`Stowed outline: 275 × ${s.stowed_rigid_outline_mm[1]} × 180 mm. At this sofa position, straight approach space is ${s.floor_in_front_mm} mm; ideal turning sweep is ${Math.round(s.stowed_yaw_swept_diameter_mm)} mm before margins. Full stroke reaches ${s.reach_from_sofa_front_mm} mm beyond the sofa front.`;
+byId('room-confirmation').textContent=`Owner confirmed approximately ${data.config.room_clearance.front_space_mm} mm in front of both sofas and ${data.config.room_clearance.turning_space_diameter_mm} mm nearby turning space. These are approximate room dimensions, not verified navigation margins or station space.`;
+const motion=data.receiver_motion;
+byId('receiver-result').textContent=`The same two receiver plates move higher and outward to clear head travel. ${motion.pose_count} sampled terrain/raised poses: ${motion.revised.intersection_count} plate/head envelope overlaps, with ${motion.revised.minimum_sampled_box_gap_mm.toFixed(2)} mm minimum box separation. No added plate mass.`;
+byId('withdrawal-result').textContent=`Candidate exchange: capture the body, support the head level and withdraw it ${motion.withdrawal_mm} mm straight forward. Existing head/motor swept boxes clear the checked fixed allocations. Handling the extension through that stroke occupies ${motion.exchange_combination_depth_mm} mm of robot-plus-tool depth before margins at the station.`;
+function draw(side){
+ const sofa=byId('mode').value==='sofa',stroke=sofa?Number(byId('travel').value):0,lift=sofa&&byId('raised').checked?g.raised_travel_mm:0;
+ const front=sofa?-340-stroke:0,left=sofa?Math.min(front-40,-480):-45,width=325-left;
+ let items=[],base=250;
+ const rect=(x,y,w,h,color,opacity=1)=>items.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${color}" stroke="#466071" stroke-width="1" opacity="${opacity}"/>`);
+ const circle=(x,y,r)=>items.push(`<circle cx="${x}" cy="${y}" r="${r}" fill="#455560"/>`);
+ const back=g.sofa_front_y_mm-g.sofa_depth_mm;
+ if(sofa){
+  if(side)rect(back,base-180,g.sofa_depth_mm,180-g.sofa_clearance_mm,'#e2dbc9',.8);
+  else rect(back,-20,g.sofa_depth_mm,315,'#ebe7dc',.8);
+  items.push(`<path d="M${g.sofa_front_y_mm},-20 V280" stroke="#a46522" stroke-width="2" stroke-dasharray="6 4"/>`);
+ }
+ if(side){
+  items.push(`<path d="M${left},${base} H325" stroke="#536471"/>`);
+  rect(0,base-180,275,180,'#b9ced9',.7);
+  for(const y of [105,232]){const radius=y===105?36:16;circle(y,base-radius,radius);}
+  if(!sofa){rect(6,base-48,60,48,'#e99a35');rect(6,base-79,60,29,'#8264ad');}
+  if(sofa){
+   rect(-280,base-39,245,15,'#c9dfd7',.5);circle(-220,base-17,17);
+   for(let i=0;i<g.stage_count;i++){const h=g.outer_mm[1]-i*g.stage_step_mm;rect(-280-i*stroke/(g.stage_count-1),base-(22+h/2)-lift,245,h,'#42b4bf');}
+   rect(front,base-38-lift,60,38,'#e99a35');rect(-122,base-77,80,35,'#8264ad');
+   rect(-35,base-41,117,22,'#179eaa');
+  }
+ }else{
+  rect(0,0,275,275,'#c9dbe3');
+  for(const p of data.context_parts){if(sofa&&data.config.removed_normal_head_parts.includes(p.id))continue;const [x,y,z]=p.min,[w,l,h]=p.size;rect(y,x,l,w,p.id==='vac_head'?'#e99a35':'#8fabbb',.7);}
+  for(const x of [2,249])rect(69,x,72,24,'#455560');
+  if(sofa){
+   rect(-280,22.5,245,230,'#d5e9e5',.65);
+   for(let i=0;i<g.stage_count;i++){const w=g.outer_mm[0]-i*g.stage_step_mm;rect(-280-i*stroke/(g.stage_count-1),137.5-w/2,245,w,'#42b4bf');}
+   rect(front,37.5,60,200,'#e99a35');rect(-122,28.5,80,75,'#8264ad');rect(-35,121.5,117,32,'#179eaa');
+   for(const [x,y] of g.supports_xy_mm)rect(y-18,x-12,36,24,'#455560');
+  }
+ }
+ const target=byId(side?'side':'top');target.setAttribute('viewBox',`${left} -25 ${width} 340`);target.innerHTML=items.join('');
+}
+function render(){
+ const sofa=byId('mode').value==='sofa';for(const id of ['travel','raised','full','stow'])byId(id).disabled=!sofa;
+ byId('distance').textContent=byId('travel').value+' mm';draw(false);draw(true);
+ byId('pose').textContent=!sofa?'Normal head reinstalled. Extension stays on this floor. Transfer mass still includes the full vacuum, core, battery and quick-change interface.':byId('raised').checked?'Raised guide height is 52 mm: lower before entering the 50 mm sofa gap. Raise only after fully retracting outside the sofa.':'Working head is 38 mm high and guide is at most 40 mm above the floor. Retract before turning or crossing thresholds; raise only outside the sofa.';
+}
+for(const id of ['mode','travel','raised'])byId(id).addEventListener('input',render);
+byId('full').onclick=()=>{byId('travel').value=1000;byId('raised').checked=false;render();};
+byId('stow').onclick=()=>{byId('travel').value=0;render();};
+render();
+</script></html>

@@ -1,0 +1,16 @@
+id,role,x_mm,y_mm,z_mm,width_mm,depth_mm,height_mm,gross_mass_g,status
+H_left_cheek_outer,pivot support,26,132,26,3,22,36,6.415,candidate blank; not an installed BOM
+H_left_cheek_inner,pivot support,103,132,26,3,22,36,6.415,candidate blank; not an installed BOM
+H_left_cap,pivot support,26,109,62,80,45,3,29.16,candidate blank; not an installed BOM
+H_right_cheek_outer,pivot support,246,132,26,3,22,36,6.415,candidate blank; not an installed BOM
+H_right_cheek_inner,pivot support,169,132,26,3,22,36,6.415,candidate blank; not an installed BOM
+H_right_cap,pivot support,169,109,62,80,45,3,29.16,candidate blank; not an installed BOM
+H_front_bridge,carrier route,28,83.5,65,219,1.5,20,17.739,candidate blank; not an installed BOM
+H_left_rail,carrier route,26,13,65,2,140,21,15.876,candidate blank; not an installed BOM
+H_right_rail,carrier route,247,27,65,2,126,20,13.608,candidate blank; not an installed BOM
+H_shelf_rib,carrier route,105,13,78,2,70,8,3.024,candidate blank; not an installed BOM
+H_inner_rail_0,carrier route,106,85,54,3,68,11,6.059,candidate blank; not an installed BOM
+H_inner_rail_1,carrier route,166,85,54,3,68,11,6.059,candidate blank; not an installed BOM
+H_rear_bridge,rear route,29,263,65,217,3,19,33.396,candidate blank; not an installed BOM
+H_caster_base,caster saddle,117.5,222,53.0,40,44,3,14.256,candidate blank; not an installed BOM
+H_caster_rear_tab,rear route,117.5,263,56.0,40,3,9.0,2.916,candidate blank; not an installed BOM

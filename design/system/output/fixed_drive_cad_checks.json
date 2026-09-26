@@ -1,0 +1,41 @@
+{
+  "fabrication_release": false,
+  "valid_shapes": {
+    "N_left_support_angle": true,
+    "N_right_support_angle": true,
+    "N_crossmember": true,
+    "N_left_cleat": true,
+    "N_right_cleat": true,
+    "left_motor_bracket": true,
+    "right_motor_bracket": true,
+    "left_motor_reference": true,
+    "right_motor_reference": true,
+    "left_motor_screw_0": true,
+    "right_motor_screw_0": true,
+    "left_motor_screw_1": true,
+    "right_motor_screw_1": true,
+    "left_wheel_envelope": true,
+    "right_wheel_envelope": true,
+    "left_hub_envelope": true,
+    "right_hub_envelope": true,
+    "horizontal_sleeve_0": true,
+    "horizontal_sleeve_1": true,
+    "horizontal_sleeve_2": true,
+    "horizontal_sleeve_3": true,
+    "vertical_sleeve_0": true,
+    "vertical_sleeve_1": true
+  },
+  "stock_mass": {
+    "N_left_support_angle": 54.53622101135138,
+    "N_right_support_angle": 54.53622101135135,
+    "N_crossmember": 41.25753057853718,
+    "N_left_cleat": 4.698338379424147,
+    "N_right_cleat": 4.698338379424148
+  },
+  "local_intersections": [],
+  "context_intersections": {
+    "vacuum": [],
+    "mop": []
+  },
+  "exclusions": "Fastener heads/nuts and access are not modeled except the preserved motor screws. Wheel/hub are envelopes, not supplier solids. The old inner rails stop at the new beam; their joints and the beam-cleat-rail connections need detailing. No continuous terrain collision check."
+}

@@ -1,0 +1,140 @@
+bottom,scope,id,mass_g,basis
+vacuum,before,bottom_frame,225,"Bottom PETG skeleton, aluminum rails and module-side studs"
+vacuum,before,caster,112,"TENTE Linea load 5940UAP050L51-8, stem and mounting plate"
+vacuum,before,floor_shelf_left,15.309000000000001,floor shelf left
+vacuum,before,floor_shelf_right,4.8654,floor shelf right
+vacuum,before,floor_shelf_tab,0.09720000000000001,floor shelf tab
+vacuum,before,floor_foot_plate,8.748000000000001,floor foot plate
+vacuum,before,floor_foot_tab,0.2268,floor foot tab
+vacuum,before,floor_rear_stiffener,4.968,floor rear stiffener
+vacuum,before,floor_front_stiffener,3.4560000000000004,floor front stiffener
+vacuum,before,floor_post_0,5.063933198321387,floor post 0
+vacuum,before,floor_post_1,5.063933198321387,floor post 1
+vacuum,before,floor_post_2,5.063933198321387,floor post 2
+vacuum,before,floor_carrier_fasteners,10,floor carrier fasteners
+vacuum,before,N_motor_support_angles,110.75195174183891,6061 angle volume including inside radius; holes/end radii not deducted
+vacuum,before,N_common_crossmember,42.01044578539201,6063 square tube volume; holes not deducted
+vacuum,before,N_rail_cleats,10.143616448188384,Small-angle section; actual corner radius and SKU pending
+vacuum,before,N_Pololu_2676_brackets,17.0,"Catalog mass, preserved motor/shaft position"
+vacuum,before,N_motor_M3x6_flush_screws,2.2,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,before,N_foot_M3x12_screw_washer_locknut_sets,15.2,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,before,N_support_M4x25_screw_washers_locknut_sets,16.8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,before,N_beam_M4x25_screw_washers_locknut_sets,8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,before,N_rail_M4x12_screw_washers_locknut_sets,10.8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,before,N_beam_horizontal_compression_sleeves,4.10214487603462,"Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+vacuum,before,N_beam_vertical_compression_sleeves,2.05107243801731,"Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+vacuum,before,N_completion_reserve,20,Local finish/tolerance/retention contingency; not an extra head budget
+vacuum,before,M_risers,22,"M raised power carrier or tank supports, covered by T webs/tool mounts"
+vacuum,candidate,left_side_rail,25.12944,"Material route; fasteners, holes and stock radii not credited"
+vacuum,candidate,right_front_rail,14.32242,"Material route; fasteners, holes and stock radii not credited"
+vacuum,candidate,right_offset_link,2.0412,"Material route; fasteners, holes and stock radii not credited"
+vacuum,candidate,right_rear_rail,10.580220000000002,"Material route; fasteners, holes and stock radii not credited"
+vacuum,candidate,left_rear_drop,1.018386000000001,"Material route; fasteners, holes and stock radii not credited"
+vacuum,candidate,right_rear_drop,1.0977659999999996,"Material route; fasteners, holes and stock radii not credited"
+vacuum,candidate,front_head_bridge,17.739,"Material route; fasteners, holes and stock radii not credited"
+vacuum,candidate,rear_crossmember,45.07970209848001,Closed tube behind the bin and below cliff windows; joints/sleeves in frame_joints
+vacuum,candidate,left_front_seat,8.889296737499997,"Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+vacuum,candidate,left_rear_seat,8.88929673749999,"Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+vacuum,candidate,right_front_seat,8.88929673750001,"Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+vacuum,candidate,right_rear_seat,7.0410657374999985,"Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+vacuum,candidate,caster_saddle,14.839200000000005,L profile from stock angle or outsourced cut part; no assumption of a home bending brake
+vacuum,candidate,floor_shelf_left,15.309000000000001,"Retained F shelf/stiffener geometry, counted once in this scope"
+vacuum,candidate,floor_shelf_right,4.8654,"Retained F shelf/stiffener geometry, counted once in this scope"
+vacuum,candidate,floor_rear_stiffener,4.968,"Retained F shelf/stiffener geometry, counted once in this scope"
+vacuum,candidate,floor_front_stiffener,3.3264,"Retained F shelf/stiffener geometry, counted once in this scope"
+vacuum,candidate,power_web_left,3.5586,Windowed upright shares chassis support with power shelf; web and attachment dimensions unqualified
+vacuum,candidate,power_web_inner,4.919400000000001,Windowed upright shares chassis support with power shelf; web and attachment dimensions unqualified
+vacuum,candidate,control_board_shelf,5.994000000000001,Open aluminum carrier under blower/drive/supervisor bays; insulation and standoffs separate
+vacuum,candidate,control_front_bridge,4.8978,"Material route; fasteners, holes and stock radii not credited"
+vacuum,candidate,control_rear_web,2.2518000000000002,Rear shelf connection to head bridge; end clips and joint hardware remain in frame_joints
+vacuum,candidate,N_motor_support_angles,110.75195174183891,6061 angle volume including inside radius; holes/end radii not deducted
+vacuum,candidate,N_common_crossmember,42.01044578539201,6063 square tube volume; holes not deducted
+vacuum,candidate,N_rail_cleats,10.143616448188384,Small-angle section; actual corner radius and SKU pending
+vacuum,candidate,N_Pololu_2676_brackets,17.0,"Catalog mass, preserved motor/shaft position"
+vacuum,candidate,N_motor_M3x6_flush_screws,2.2,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,candidate,N_foot_M3x12_screw_washer_locknut_sets,15.2,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,candidate,N_support_M4x25_screw_washers_locknut_sets,16.8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,candidate,N_beam_M4x25_screw_washers_locknut_sets,8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,candidate,N_rail_M4x12_screw_washers_locknut_sets,10.8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+vacuum,candidate,N_beam_horizontal_compression_sleeves,4.10214487603462,"Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+vacuum,candidate,N_beam_vertical_compression_sleeves,2.05107243801731,"Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+vacuum,candidate,N_completion_reserve,20,Local finish/tolerance/retention contingency; not an extra head budget
+vacuum,candidate,caster_bare,90,I catalog bare caster reference
+vacuum,candidate,caster_stem,20,I selected fitting reference
+vacuum,candidate,caster_upper_hardware,12,I upper nut/washer allowance
+vacuum,candidate,caster_secondary_retention,20,I caster-to-plug captive retention allowance; still unresolved
+vacuum,candidate,frame_joints,32,"Rail/corner/crossbeam screws, angle clips and tube crush sleeves; excludes unchanged N hardware and caster nut"
+vacuum,candidate,module_studs,20,"Four M4 mushroom studs, metal shoulders and locking hardware; geometry/grip remains to detail"
+vacuum,candidate,power_mounting,10,"Board standoffs, shelf attachment, dielectric pads and cooling/wire restraints; no electrical hardware removed"
+vacuum,candidate,tool_mounting,22,"Bin, filter/blower or tank/pump mounting and dock support tabs; tool shells and P head receiver retained separately"
+vacuum,candidate,sensor_and_bumper_mounts,20,"Printed local bosses and brackets for existing sensors, anti-tip rollers and bumper; their hardware is retained separately"
+vacuum,candidate,frame_completion,15,"Unassigned frame completion reserve, in addition to the retained N 20 g local drive reserve"
+mop,before,bottom_frame,225,"Bottom PETG skeleton, aluminum rails and module-side studs"
+mop,before,caster,112,"TENTE Linea load 5940UAP050L51-8, stem and mounting plate"
+mop,before,floor_shelf_left,15.309000000000001,floor shelf left
+mop,before,floor_shelf_right,4.8654,floor shelf right
+mop,before,floor_shelf_tab,0.09720000000000001,floor shelf tab
+mop,before,floor_foot_plate,8.748000000000001,floor foot plate
+mop,before,floor_foot_tab,0.2268,floor foot tab
+mop,before,floor_rear_stiffener,4.968,floor rear stiffener
+mop,before,floor_front_stiffener,3.4560000000000004,floor front stiffener
+mop,before,floor_post_0,5.063933198321387,floor post 0
+mop,before,floor_post_1,5.063933198321387,floor post 1
+mop,before,floor_post_2,5.063933198321387,floor post 2
+mop,before,floor_carrier_fasteners,10,floor carrier fasteners
+mop,before,N_motor_support_angles,110.75195174183891,6061 angle volume including inside radius; holes/end radii not deducted
+mop,before,N_common_crossmember,42.01044578539201,6063 square tube volume; holes not deducted
+mop,before,N_rail_cleats,10.143616448188384,Small-angle section; actual corner radius and SKU pending
+mop,before,N_Pololu_2676_brackets,17.0,"Catalog mass, preserved motor/shaft position"
+mop,before,N_motor_M3x6_flush_screws,2.2,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,before,N_foot_M3x12_screw_washer_locknut_sets,15.2,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,before,N_support_M4x25_screw_washers_locknut_sets,16.8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,before,N_beam_M4x25_screw_washers_locknut_sets,8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,before,N_rail_M4x12_screw_washers_locknut_sets,10.8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,before,N_beam_horizontal_compression_sleeves,4.10214487603462,"Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+mop,before,N_beam_vertical_compression_sleeves,2.05107243801731,"Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+mop,before,N_completion_reserve,20,Local finish/tolerance/retention contingency; not an extra head budget
+mop,before,M_risers,18,"M raised power carrier or tank supports, covered by T webs/tool mounts"
+mop,candidate,left_side_rail,25.12944,"Material route; fasteners, holes and stock radii not credited"
+mop,candidate,right_front_rail,14.32242,"Material route; fasteners, holes and stock radii not credited"
+mop,candidate,right_offset_link,2.0412,"Material route; fasteners, holes and stock radii not credited"
+mop,candidate,right_rear_rail,10.580220000000002,"Material route; fasteners, holes and stock radii not credited"
+mop,candidate,left_rear_drop,1.018386000000001,"Material route; fasteners, holes and stock radii not credited"
+mop,candidate,right_rear_drop,1.0977659999999996,"Material route; fasteners, holes and stock radii not credited"
+mop,candidate,front_head_bridge,17.739,"Material route; fasteners, holes and stock radii not credited"
+mop,candidate,rear_crossmember,45.07970209848001,Closed tube behind the bin and below cliff windows; joints/sleeves in frame_joints
+mop,candidate,left_front_seat,8.889296737499997,"Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+mop,candidate,left_rear_seat,8.88929673749999,"Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+mop,candidate,right_front_seat,8.88929673750001,"Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+mop,candidate,right_rear_seat,7.0410657374999985,"Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+mop,candidate,caster_saddle,14.839200000000005,L profile from stock angle or outsourced cut part; no assumption of a home bending brake
+mop,candidate,floor_shelf_left,15.309000000000001,"Retained F shelf/stiffener geometry, counted once in this scope"
+mop,candidate,floor_shelf_right,4.8654,"Retained F shelf/stiffener geometry, counted once in this scope"
+mop,candidate,floor_rear_stiffener,4.968,"Retained F shelf/stiffener geometry, counted once in this scope"
+mop,candidate,floor_front_stiffener,3.3264,"Retained F shelf/stiffener geometry, counted once in this scope"
+mop,candidate,power_web_inner,3.753,Windowed upright shares chassis support with power shelf; web and attachment dimensions unqualified
+mop,candidate,control_board_shelf,5.994000000000001,Open aluminum carrier under blower/drive/supervisor bays; insulation and standoffs separate
+mop,candidate,control_front_bridge,4.8978,"Material route; fasteners, holes and stock radii not credited"
+mop,candidate,control_rear_web,3.94065,Rear shelf connection to head bridge; end clips and joint hardware remain in frame_joints
+mop,candidate,N_motor_support_angles,110.75195174183891,6061 angle volume including inside radius; holes/end radii not deducted
+mop,candidate,N_common_crossmember,42.01044578539201,6063 square tube volume; holes not deducted
+mop,candidate,N_rail_cleats,10.143616448188384,Small-angle section; actual corner radius and SKU pending
+mop,candidate,N_Pololu_2676_brackets,17.0,"Catalog mass, preserved motor/shaft position"
+mop,candidate,N_motor_M3x6_flush_screws,2.2,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,candidate,N_foot_M3x12_screw_washer_locknut_sets,15.2,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,candidate,N_support_M4x25_screw_washers_locknut_sets,16.8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,candidate,N_beam_M4x25_screw_washers_locknut_sets,8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,candidate,N_rail_M4x12_screw_washers_locknut_sets,10.8,Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip
+mop,candidate,N_beam_horizontal_compression_sleeves,4.10214487603462,"Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+mop,candidate,N_beam_vertical_compression_sleeves,2.05107243801731,"Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+mop,candidate,N_completion_reserve,20,Local finish/tolerance/retention contingency; not an extra head budget
+mop,candidate,caster_bare,90,I catalog bare caster reference
+mop,candidate,caster_stem,20,I selected fitting reference
+mop,candidate,caster_upper_hardware,12,I upper nut/washer allowance
+mop,candidate,caster_secondary_retention,20,I caster-to-plug captive retention allowance; still unresolved
+mop,candidate,frame_joints,32,"Rail/corner/crossbeam screws, angle clips and tube crush sleeves; excludes unchanged N hardware and caster nut"
+mop,candidate,module_studs,20,"Four M4 mushroom studs, metal shoulders and locking hardware; geometry/grip remains to detail"
+mop,candidate,power_mounting,10,"Board standoffs, shelf attachment, dielectric pads and cooling/wire restraints; no electrical hardware removed"
+mop,candidate,tool_mounting,22,"Bin, filter/blower or tank/pump mounting and dock support tabs; tool shells and P head receiver retained separately"
+mop,candidate,sensor_and_bumper_mounts,20,"Printed local bosses and brackets for existing sensors, anti-tip rollers and bumper; their hardware is retained separately"
+mop,candidate,frame_completion,15,"Unassigned frame completion reserve, in addition to the retained N 20 g local drive reserve"

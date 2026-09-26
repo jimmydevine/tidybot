@@ -1,0 +1,14 @@
+id,description,quantity,measured_total_g,notes
+prints,All assembled printed parts excluding fit coupon,1,,Weigh together or replace with separate non-overlapping entries
+motors,BDUAV motor pair,2,,Include attached wheel screws only if not counted elsewhere
+wheels,60 x 8 mm wheel pair,2,,
+caster,Owned caster,1,,
+pi,Pi 4 with SD and cooling,1,,
+battery,3S battery,1,,
+controllers,ST boards including ST-LINK daughterboards,2,,
+encoders,AS5600 boards and magnets,2,,
+power,Regulator switch fuses and alarm,1,,
+meter,Owned wattmeter,1,,Carried on tray
+harness,All onboard cables connectors and straps,1,,
+fasteners,Metal fasteners and purchased spacers,1,,
+ballast,Added load for this configuration,1,,Record separately for each configuration

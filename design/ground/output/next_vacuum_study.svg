@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="810" viewBox="0 0 1000 810">
+<style>text{font-family:Arial,sans-serif;fill:#1d2939}.small{font-size:14px}.label{font-size:15px}.heading{font-size:23px;font-weight:bold}</style>
+<rect width="1000" height="810" fill="#f8fafc"/>
+<text x="28" y="35" class="heading">Everyday vacuum: superseded dual-roller study</text>
+<text x="28" y="60" class="small">Retained reference • does not place current single-roller/filter candidates • not printable parts</text>
+<rect x="52.50" y="147.50" width="495.00" height="495.00" rx="4" fill="#ffffff" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<rect x="56.10" y="339.20" width="43.20" height="129.60" rx="4" fill="#667085" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<rect x="500.70" y="339.20" width="43.20" height="129.60" rx="4" fill="#667085" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<rect x="99.30" y="381.50" width="124.20" height="45.00" rx="4" fill="#bed9f7" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<rect x="376.50" y="381.50" width="124.20" height="45.00" rx="4" fill="#bed9f7" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<rect x="107.26" y="179.00" width="385.47" height="129.60" rx="4" fill="#e3f3e8" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<rect x="134.26" y="245.60" width="331.47" height="50.40" rx="4" fill="#94d3a7" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<rect x="134.26" y="191.60" width="331.47" height="50.40" rx="4" fill="#94d3a7" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<text x="300.00" y="272.60" text-anchor="middle" class="label" style="fill:#1d2939">184 mm roller reference</text>
+<text x="300.00" y="213.20" text-anchor="middle" class="label" style="fill:#1d2939">paired rubber rollers</text>
+<rect x="426.00" y="193.40" width="72.00" height="111.60" rx="4" fill="none" stroke="#915fc0" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="127.20" y="470.60" width="345.60" height="144.00" rx="4" fill="#fff0c2" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<text x="300.00" y="513.80" text-anchor="middle" class="label" style="fill:#1d2939">Rear bin reservation</text>
+<text x="300.00" y="537.20" text-anchor="middle" class="label" style="fill:#1d2939">192 × 80 × 60</text>
+<rect x="255.00" y="540.80" width="90.00" height="90.00" rx="4" fill="none" stroke="#a15c1d" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="300.00" y="587.60" text-anchor="middle" class="label" style="fill:#1d2939">Caster well</text>
+<rect x="271.20" y="308.60" width="57.60" height="162.00" rx="4" fill="#e5edf5" stroke="#344054" stroke-width="2" stroke-dasharray=""/>
+<text x="300.00" y="355.40" text-anchor="middle" class="label" style="fill:#1d2939">Duct</text>
+<circle cx="516.0" cy="170.0" r="81.0" fill="none" stroke="#ba6b22" stroke-width="2" stroke-dasharray="5 5"/>
+<circle cx="516.0" cy="170.0" r="5" fill="#ba6b22"/>
+<text x="55" y="685" class="label">275 mm rigid outline; wheel pair occupies 271 mm</text>
+<text x="610" y="120" class="small" style="font-weight:bold">Changed from the old layout</text>
+<text x="610" y="146" class="small" style="">72 × 24 mm tires and ordered 25D motors.</text>
+<text x="610" y="172" class="small" style="">Side brush feeds the main pickup path.</text>
+<text x="610" y="198" class="small" style="">Roller drive bay moves above an end support.</text>
+<text x="610" y="224" class="small" style="">Duct passes through the 85 mm motor gap.</text>
+<text x="610" y="250" class="small" style="">s-series filter choice is superseded.</text>
+<text x="610" y="276" class="small" style="">Current candidates require new 3D fitting.</text>
+<text x="610" y="302" class="small" style=""></text>
+<text x="610" y="328" class="small" style="font-weight:bold">Clearances calculated in this proposal</text>
+<text x="610" y="354" class="small" style="">17 mm between tires and head in plan.</text>
+<text x="610" y="380" class="small" style="">40 mm narrower head reservation: 214 mm.</text>
+<text x="610" y="406" class="small" style="">0.922 L bin outer envelope before deductions.</text>
+<text x="610" y="432" class="small" style="">Caster intrusion reduces collection volume.</text>
+<text x="610" y="458" class="small" style=""></text>
+<text x="610" y="484" class="small" style="font-weight:bold">Still to resolve</text>
+<text x="610" y="510" class="small" style="">Motor brackets, hubs and suspension travel.</text>
+<text x="610" y="536" class="small" style="">Roller ends, transmission and contact depth.</text>
+<text x="610" y="562" class="small" style="">Brush hub/motor and actual bristle sweep.</text>
+<text x="610" y="588" class="small" style="">Bin extraction and automatic emptying.</text>
+<text x="610" y="614" class="small" style="">Full height and core/latch clearance.</text>
+<text x="28" y="750" class="label">Threshold requirement: approximately 4–10 mm. Head compliance and caster size need to accommodate it.</text>
+<text x="28" y="778" class="small">This drawing does not establish complete 3D fit, cleaning performance, structural strength or a finished hardware list.</text>
+</svg>

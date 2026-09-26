@@ -1,0 +1,52 @@
+instance,hardware,low_g,nominal_g,high_g,basis
+pi_bay:pi,pi,65,82,105,installed allowance; owned board available; processing power is a workload estimate
+front_camera:depth_camera,depth_camera,91,106,125,manufacturer drawing and 91 g reference plus mount/cable allowance
+core_mcu_bay:core_mcu,core_mcu,12,20,30,board plus interface allowance
+battery_bay:battery_cartridge,battery_cartridge,85,140,220,"Installed allowance: 65 g shell/restraint, 35 g monitor/ID, 40 g fuse/contacts/wiring nominal; excludes bare cell pack and fixed core receiver"
+battery_bay:battery_receiver,battery_receiver,30,50,85,Additional automatic-exchange receiver allowance; passive latch retained without power
+pack_protection:core_monitor,core_monitor,45,80,140,custom PCB assembly allowance; reference IC is not a complete high-current BMS
+lidar:lidar,lidar,160,170,185,manufacturer family reference; owned revision not measured
+core_misc:core_prints,core_prints,110,160,225,material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output
+core_misc:core_harness,core_harness,85,125,190,route allowance; includes floor harness and short high-current trunk; excludes lift-side wiring
+core_misc:core_near,core_near,20,32,50,sensor plus harness/mount allowance; no all-surface detection guarantee
+core_misc:status,status,8,15,25,small hardware allowance
+dock_logic_power:dock_logic_power,dock_logic_power,25,45,75,"Installed 40 W logic supply/interface allocation, not selected hardware"
+core_logic_power_F:logic_buck,logic_buck,15,25,45,assembly allowance; D42V110F5 family reference; exact variant and thermal review required
+core_interface_F:core_interface_F,core_interface_F,4,8,15,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+G_corner_0_bottom:G_corner_0_bottom,G_corner_0_bottom,3.72337965,3.919347,4.3112817,Gross stock volume times density; drilled material is not credited
+G_corner_0_top:G_corner_0_top,G_corner_0_top,3.72337965,3.919347,4.3112817,Gross stock volume times density; drilled material is not credited
+G_corner_0_front:G_corner_0_front,G_corner_0_front,4.6542245625000005,4.899183750000001,5.389102125000001,Gross stock volume times density; drilled material is not credited
+G_corner_0_rear:G_corner_0_rear,G_corner_0_rear,4.6542245625000005,4.899183750000001,5.389102125000001,Gross stock volume times density; drilled material is not credited
+G_lock_0_bottom:core_locks,core_locks,11.25,16.25,23.125,"mechanism allowance; four top and four bottom, station-actuated"
+G_lock_0_top:core_locks,core_locks,11.25,16.25,23.125,"mechanism allowance; four top and four bottom, station-actuated"
+G_corner_1_bottom:G_corner_1_bottom,G_corner_1_bottom,3.72337965,3.919347,4.3112817,Gross stock volume times density; drilled material is not credited
+G_corner_1_top:G_corner_1_top,G_corner_1_top,3.72337965,3.919347,4.3112817,Gross stock volume times density; drilled material is not credited
+G_corner_1_front:G_corner_1_front,G_corner_1_front,4.6542245625000005,4.899183750000001,5.389102125000001,Gross stock volume times density; drilled material is not credited
+G_corner_1_rear:G_corner_1_rear,G_corner_1_rear,4.6542245625000005,4.899183750000001,5.389102125000001,Gross stock volume times density; drilled material is not credited
+G_lock_1_bottom:core_locks,core_locks,11.25,16.25,23.125,"mechanism allowance; four top and four bottom, station-actuated"
+G_lock_1_top:core_locks,core_locks,11.25,16.25,23.125,"mechanism allowance; four top and four bottom, station-actuated"
+G_corner_2_bottom:G_corner_2_bottom,G_corner_2_bottom,3.72337965,3.919347,4.3112817,Gross stock volume times density; drilled material is not credited
+G_corner_2_top:G_corner_2_top,G_corner_2_top,3.72337965,3.919347,4.3112817,Gross stock volume times density; drilled material is not credited
+G_corner_2_front:G_corner_2_front,G_corner_2_front,4.6542245625000005,4.899183750000001,5.389102125000001,Gross stock volume times density; drilled material is not credited
+G_corner_2_rear:G_corner_2_rear,G_corner_2_rear,4.6542245625000005,4.899183750000001,5.389102125000001,Gross stock volume times density; drilled material is not credited
+G_lock_2_bottom:core_locks,core_locks,11.25,16.25,23.125,"mechanism allowance; four top and four bottom, station-actuated"
+G_lock_2_top:core_locks,core_locks,11.25,16.25,23.125,"mechanism allowance; four top and four bottom, station-actuated"
+G_corner_3_bottom:G_corner_3_bottom,G_corner_3_bottom,3.72337965,3.919347,4.3112817,Gross stock volume times density; drilled material is not credited
+G_corner_3_top:G_corner_3_top,G_corner_3_top,3.72337965,3.919347,4.3112817,Gross stock volume times density; drilled material is not credited
+G_corner_3_front:G_corner_3_front,G_corner_3_front,4.6542245625000005,4.899183750000001,5.389102125000001,Gross stock volume times density; drilled material is not credited
+G_corner_3_rear:G_corner_3_rear,G_corner_3_rear,4.6542245625000005,4.899183750000001,5.389102125000001,Gross stock volume times density; drilled material is not credited
+G_lock_3_bottom:core_locks,core_locks,11.25,16.25,23.125,"mechanism allowance; four top and four bottom, station-actuated"
+G_lock_3_top:core_locks,core_locks,11.25,16.25,23.125,"mechanism allowance; four top and four bottom, station-actuated"
+G_rail_front:G_rail_front,G_rail_front,13.18696959375,13.881020625,15.269122687500001,Gross stock volume times density; drilled material is not credited
+G_rail_rear:G_rail_rear,G_rail_rear,13.18696959375,13.881020625,15.269122687500001,Gross stock volume times density; drilled material is not credited
+G_rail_left:G_rail_left,G_rail_left,12.15269746875,12.792313125000002,14.071544437500004,Gross stock volume times density; drilled material is not credited
+G_rail_right:G_rail_right,G_rail_right,12.15269746875,12.792313125000002,14.071544437500004,Gross stock volume times density; drilled material is not credited
+G_clip_0_x:G_clip_0_x,G_clip_0_x,0.6567627993749999,0.6913292624999999,0.7604621887499999,Gross stock volume times density; drilled material is not credited
+G_clip_0_y:G_clip_0_y,G_clip_0_y,0.5746674494531249,0.6049131046874999,0.6654044151562499,Gross stock volume times density; drilled material is not credited
+G_clip_1_x:G_clip_1_x,G_clip_1_x,0.6567627993749999,0.6913292624999999,0.7604621887499999,Gross stock volume times density; drilled material is not credited
+G_clip_1_y:G_clip_1_y,G_clip_1_y,0.5746674494531249,0.6049131046874999,0.6654044151562499,Gross stock volume times density; drilled material is not credited
+G_clip_2_x:G_clip_2_x,G_clip_2_x,0.6567627993749999,0.6913292624999999,0.7604621887499999,Gross stock volume times density; drilled material is not credited
+G_clip_2_y:G_clip_2_y,G_clip_2_y,0.5746674494531249,0.6049131046874999,0.6654044151562499,Gross stock volume times density; drilled material is not credited
+G_clip_3_x:G_clip_3_x,G_clip_3_x,0.6567627993749999,0.6913292624999999,0.7604621887499999,Gross stock volume times density; drilled material is not credited
+G_clip_3_y:G_clip_3_y,G_clip_3_y,0.5746674494531249,0.6049131046874999,0.6654044151562499,Gross stock volume times density; drilled material is not credited
+G_frame_fasteners:G_frame_fasteners,G_frame_fasteners,22,30,45,"24 M3 screw/nut/washer sets: 8 rail-to-tube, 16 clip joints; 30 g nominal installation allowance"

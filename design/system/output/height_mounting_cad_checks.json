@@ -1,0 +1,9 @@
+{
+  "valid_shapes": {
+    "vacuum": 122,
+    "mop": 112,
+    "low": 122
+  },
+  "total": 356,
+  "fabrication_release": false
+}

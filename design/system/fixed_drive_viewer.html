@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TidyBot fixed-drive comparison</title><style>
+body{font:16px system-ui,sans-serif;color:#1f303e;background:#f2f5f7;max-width:1100px;margin:24px auto;padding:0 18px}main{background:white;padding:20px;border-radius:12px}h1{font-size:27px}svg{width:100%;height:auto;border:1px solid #d2dce2}label{display:inline-block;margin:8px 20px 14px 0}select{font:inherit;padding:5px}a{color:#14598d}.note{color:#556774}#summary{font-size:19px;font-weight:600}#motion{padding:12px;background:#fff0dc}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px;border-bottom:1px solid #dae1e6}
+</style><h1>Fixed drive mounts · weight comparison</h1><p>Two fixed motor supports and one crossmember replace the separate suspension pods. This remains a candidate: the cleaning heads need more motion and the mop needs better weight distribution.</p><main>
+<label>Module <select id="module"><option value="vacuum">Vacuum</option><option value="mop">Mop</option></select></label>
+<label>Step <select id="height"><option>0</option><option>4</option><option selected>10</option></select> mm</label>
+<label>Support state <select id="state"></select></label>
+<label>Caster heading <select id="heading"></select>°</label>
+<p id="summary"></p><p class="note">These floor estimates include the cap and usual contents. The <a href="mass_budgets.md">owner flight-budget check</a> removes the cap and also evaluates maximum contents: 4.5 kg transfer maximum, 3.5 kg hover target, both excluding lift.</p><svg id="drawing" viewBox="0 0 1100 420" role="img" aria-label="Fixed drivetrain top view and schematic chassis attitude"></svg>
+<p id="motion"></p><p id="forces"></p><p class="note">Left: nominal packaging. Right: schematic projection of sampled supports; it is not a collision-free path over a step. Floor-following assumes the head can attain the requested pose. Fastener heads, tolerances, tire deformation and spring/contact behavior still need checking.</p>
+<table><tr><th>Scope</th><th>Comparison</th></tr><tr><td>Mass</td><td id="mass"></td></tr><tr><td>Head</td><td>Existing M travel: −2 to +10 mm; tilt ±1.5°. Red message means this head envelope cannot accommodate the sampled state.</td></tr><tr><td>Floor traction</td><td id="traction"></td></tr></table>
+<p><a href="fixed_drive.md">Calculated report</a> · <a href="fixed_drive_vacuum.FCStd">Vacuum FreeCAD</a> · <a href="fixed_drive_mop.FCStd">Mop FreeCAD</a> · <a href="../../../docs/FIXED_DRIVE_COMPARISON.md">Design record</a></p></main>
+<script>
+const model=__MODEL__, $=id=>document.getElementById(id);
+for(const h of model.config.caster_headings_deg)$('heading').add(new Option(h,h));
+function states(){const b=$('module').value,h=+$('height').value,old=$('state').value;$('state').innerHTML='';for(const s of [...new Set(model.modules[b].terrain.filter(p=>p.step_mm===h).map(p=>p.state))])$('state').add(new Option(s,s));if([...$('state').options].some(o=>o.value===old))$('state').value=old;else if(h)$('state').value='both drive wheels up';}
+function render(){const b=$('module').value,a=model.modules[b],p=a.terrain.find(v=>v.step_mm===+$('height').value&&v.state===$('state').value&&v.heading_deg===+$('heading').value);let svg='';
+const add=s=>svg+=s, txt=(x,y,t)=>add(`<text x="${x}" y="${y}" font-size="14" fill="#243b4b">${t}</text>`);
+const top=(x,y,w,h,color,opacity=1)=>add(`<rect x="${40+x*1.22}" y="${48+y*1.22}" width="${w*1.22}" height="${h*1.22}" fill="${color}" opacity="${opacity}" stroke="#647984" stroke-width="1"/>`);
+txt(40,26,'Nominal top view · front at top');top(0,0,275,275,'#f6f8fa');
+for(const x of [2,249])top(x,69,24,72,'#485965');
+top(44,86,180,66,'#e5b455',.3);top(118.5,92,38,65,'#92aacc',.5);
+for(const x of [29,194])top(x,92.5,52,37.5,'#39988c',.85);
+top(28,130,219,12.7,'#1c776c');for(const x of [28,232])top(x,130,15,22,'#a9d3cb');
+for(const x of [26,247])top(x,13,2,140,'#738693');
+txt(65,263,'Green: new supports and crossmember');txt(65,287,'Yellow: retained battery space');txt(65,311,'Blue: retained central duct space');
+const n=p.normal,c=p.plane_constant,scale=1.62;
+function world(x,y,z){return [(-n[0]*n[1]/(1+n[2])*x+(1-n[1]*n[1]/(1+n[2]))*y-n[1]*z),n[0]*x+n[1]*y+n[2]*z-c];}
+const view=([y,z])=>[610+y*scale,354-z*scale];
+function line(a,b,col,w=2,dash=''){a=view(a);b=view(b);add(`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="${col}" stroke-width="${w}" stroke-dasharray="${dash}"/>`);}
+txt(605,26,'Side projection · body moves with the wheels');
+let pts=[[4,65],[271,65],[271,123],[4,123]].map(([y,z])=>view(world(137.5,y,z)).join(','));add(`<polygon points="${pts.join(' ')}" fill="#cad6df" opacity=".65" stroke="#596e7f"/>`);
+for(const x of [14,261]){const q=world(x,105,36),v=view(q);add(`<circle cx="${v[0]}" cy="${v[1]}" r="${36*scale}" fill="none" stroke="#425a6a" stroke-width="2"/>`);line([q[0]-18,q[1]-36],[q[0]+18,q[1]-36],'#516f4d',4);}
+const ca=p.heading_deg*Math.PI/180,cx=137.5+15.5*Math.cos(ca),cy=232+15.5*Math.sin(ca),cp=world(cx,cy,0);line([cp[0]-16,cp[1]],[cp[0]+16,cp[1]],'#516f4d',4);line(world(cx,cy,55),cp,'#73818b',4);
+const hy=b==='vacuum'?36:171,head=world(137.5,hy,p.q_mm),raw=world(137.5,hy,0);line([head[0]-25,p.head_ground_mm],[head[0]+25,p.head_ground_mm],'#c77527',7);line(raw,head,'#bd4d34',3,'4 3');
+txt(610,390,'Orange: required head contact · green: support levels');
+$('drawing').innerHTML=svg;
+$('summary').textContent=`Potential reduction ${(a.potential_saving_g).toFixed(0)} g · complete ${b} comparison ${(a.mass_g/1000).toFixed(2)} kg`;
+$('motion').textContent=`Head translation ${p.q_mm.toFixed(1)} mm · pitch ${p.pitch_deg.toFixed(2)}° · roll ${p.roll_deg.toFixed(2)}°. ${p.M_head_motion_compatible?'Inside the old motion allocation for this sample.':'Outside the old head motion allocation; redesign required.'}`;
+$('motion').style.background=p.M_head_motion_compatible?'#e3f2e9':'#fff0dc';
+$('forces').textContent=`Ideal support forces: left ${p.support_n[0].toFixed(1)} N, right ${p.support_n[1].toFixed(1)} N, caster ${p.support_n[2].toFixed(1)} N. Positive values do not establish grip or clearance.`;
+$('mass').textContent=`Pod scope ${a.removed_pods_g.toFixed(1)} → ${a.replacement_g.toFixed(1)} g. Battery, water/debris, 225 g frame and all head allowances retained. No lift top included.`;
+const mu=Math.max(...a.traction.thresholds.filter(v=>v.step_mm===10).map(v=>v.minimum_mu_during_caster_climb));$('traction').textContent=`10 mm caster climb requires friction coefficient up to ${mu.toFixed(2)} in the nominal load model. Actual wet tire grip is unmeasured.`;
+}
+for(const id of ['module','height'])$(id).addEventListener('change',()=>{states();render();});for(const id of ['state','heading'])$(id).addEventListener('change',render);states();render();
+</script></html>

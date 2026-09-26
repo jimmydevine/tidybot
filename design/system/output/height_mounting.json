@@ -1,0 +1,6804 @@
+{
+  "revision": "I: suspension-height and caster-fitting layout",
+  "config": {
+    "revision": "I: suspension-height and caster-fitting layout",
+    "status": "Candidate overlay on G/H; no fabrication or purchase release",
+    "lidar": {
+      "model": "SLAMTEC RPLIDAR C1M1",
+      "min_mm": [
+        106.6,
+        101.35,
+        133.5
+      ],
+      "size_mm": [
+        55.6,
+        55.6,
+        41.3
+      ],
+      "bare_mass_g": 110,
+      "mount_hole_square_mm": 43,
+      "mount_thread": "M2.5",
+      "maximum_screw_insertion_mm": 4,
+      "optical_window_bottom_mm": 23.1,
+      "beam_height_mm": 29.8,
+      "drawing_tolerance_mm": 0.2,
+      "mount_bay_min_mm": [
+        102.4,
+        97.15,
+        124.1
+      ],
+      "mount_bay_size_mm": [
+        64,
+        64,
+        9.4
+      ],
+      "mount_allowance_g": [
+        10,
+        18,
+        28
+      ],
+      "note": "Keep the complete rotating optical enclosure clear, not only the nominal beam centre. Bare reference from manufacturer drawing rev1.1; current linked rev1.2 could not be downloaded. Match supplied revision before drilling. Mount bay is a route reservation, not a solid block or completed rail attachment."
+    },
+    "top_port": {
+      "min_mm": [
+        193,
+        88,
+        122.5
+      ],
+      "size_mm": [
+        78,
+        35,
+        32
+      ],
+      "note": "Rotate the existing 78 x 32 x 35 mm reservation about X and lower it 1.6 mm. Preserve volume and raw lift-power allocation. This requires a new connector carrier/mating approach; exact connector not selected. Four load-bearing top seats stay at 124.1 mm."
+    },
+    "cap_max_roof_z_mm": 147.1,
+    "height_reserve_mm": 2,
+    "optical_clearance_min_mm": 1.5,
+    "caster": {
+      "bare_mass_g": 90,
+      "model": "TENTE S70-8x15 / 8, EAN 4031582322040, accessory 0007193200",
+      "added_height_mm": 6,
+      "stem_length_mm": 15,
+      "stem_diameter_mm": 8,
+      "stem_mass_g": 20,
+      "plate_hole_mm": 8.5,
+      "washer_thickness_reserve_mm": 1.6,
+      "nut_height_reserve_mm": 8,
+      "tool_diameter_reserve_mm": 24,
+      "overhead_z_mm": 74,
+      "upper_fasteners_mass_reserve_g": 12,
+      "secondary_retention_mass_reserve_g": 20,
+      "note": "Washer/nut dimensions are procurement envelope requirements, not a selected fastener SKU. Upper nut secures the stem to the plate; it does not prove caster-to-plug pull-out retention. TENTE must confirm exact L51-8 pairing and airborne retention, or a mechanically captive caster must replace this candidate."
+    },
+    "layout": {
+      "vac_bin_upper_bottom_mm": 74,
+      "blower_raise_mm": 10,
+      "mop_pump_raise_mm": 8,
+      "note": "Raise the whole vacuum bin bridge floor rather than introducing a hair-catching internal pocket. Keep its top at 94 mm. Raise complete blower/plenum and exhaust in suction bottoms, and pump allocation in mop bottom."
+    },
+    "sources": {
+      "c1_current_page": "https://www.slamtec.com/en/c1",
+      "c1_datasheet": "https://files.seeedstudio.com/wiki/SLAMRadar/SLAMTEC_rplidar_datasheet_C1M1_en.pdf",
+      "c1_distribution": "https://www.waveshare.com/wiki/RPLIDAR_C1",
+      "a1": "https://www.slamtec.com/en/lidar/a1spec",
+      "caster_stem": "https://e-shop.tente.fr/uploads/document/s7/s70-8x15-8-67e1849d480db980470763.pdf",
+      "caster_order_identity": "https://e-shop.tente.fr/produit/tige-filetee-8x15-mm-pour-les-roulettes-de-meubles-trou-central-8mm"
+    }
+  },
+  "configured_layout": {
+    "revision": "C-review",
+    "date": "2026-09-13",
+    "status": "PRELIMINARY_SYSTEM_DESIGN_NOT_FABRICATION",
+    "scope": "All carried modules and two automatic service stations; battery and propulsion remain comparisons until whole-system calculations close. Automatic battery cartridge exchange is required; pack chemistry, voltage and capacity remain open.",
+    "units": "mm, g, W, N, seconds unless named otherwise",
+    "sources": {
+      "drive": "https://www.pololu.com/product/4846/specs",
+      "roller_motor": "https://www.pololu.com/product/4842/specs",
+      "feed_motor": "https://www.pololu.com/product/4845/specs",
+      "micro_motor": "https://www.pololu.com/product/5216/specs",
+      "wheel": "https://www.gobilda.com/hogback-traction-wheel-72mm-diameter-50a-durometer/",
+      "hub": "https://www.gobilda.com/1309-series-sonic-hub-4mm-bore/",
+      "caster": "https://www.tente.com/en-ca/swivel-castor-50-mm/5940uap050l51-8-load-9011",
+      "roboclaw": "https://www.basicmicro.com/RoboClaw-2x7A-Motor-Controller_p_55.html",
+      "regen": "https://resources.basicmicro.com/manual/roboclaw/operational-requirements/",
+      "brush": "https://www.dreametech.com/products/anti-tangle-roller-brush",
+      "filter": "https://us.roborock.com/products/roborock-washable-filter-x2-for-roborock-s7-series",
+      "blower": "https://global.bttwiki.com/Universal%20Turbo%20Kit.html",
+      "blower_curve": "https://global.bttwiki.com/img/Turbo_Kit/Turbo_Kit_Motor1.webp",
+      "blower_driver": "https://global.bttwiki.com/img/Turbo_Kit/Turbo_Kit_Driver1.webp",
+      "cincon": "https://www.cincon.com/productdownload/Datasheet-CHB100W.pdf",
+      "cincon_sink": "https://www.cincon.com/_i/assets/upload/files/Datasheet-HS-LBQBHBFB.pdf",
+      "logic_buck": "https://www.pololu.com/product/5671/specs",
+      "motor_buck": "https://www.pololu.com/product/5677/specs",
+      "tool_stage": "https://www.pololu.com/product/2997/specs",
+      "pi": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+      "lidar": "https://www.slamtec.com/cn/lidar/a1spec",
+      "camera": "https://docs.luxonis.com/hardware/products/OAK-D%20S2",
+      "camera_drawing": "https://cdn.robotshop.com/media/l/lux/rb-lux-16/pdf/luxonis-oak-d-s2-camera-auto-focus-datasheet.pdf",
+      "mcu": "https://documentation.espressif.com/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+      "tof": "https://www.st.com/en/imaging-and-photonics-solutions/vl53l1X",
+      "pack_monitor": "https://www.ti.com/product/BQ76952",
+      "charger": "https://www.ti.com/product/BQ25756",
+      "pump": "https://www.adafruit.com/product/1150",
+      "lift_actuator": "https://www.actuonix.com/pq12-100-6-r",
+      "flight_controller": "https://docs.holybro.com/autopilot/pixhawk-6c-mini/technical-specification",
+      "flight_motor": "https://www.hobbywing.com/en/uploads/file/20251117/2a4a3f326d2bdede135f3e582b73eef3.pdf",
+      "battery_6s": "https://www.amazon.com/dp/B0BNDHPBBX",
+      "battery_8s": "https://www.amazon.com/dp/B0D3HSY7PM"
+    },
+    "hardware": {
+      "core_prints": {
+        "name": "Core PETG ribs, equipment trays and ducts",
+        "mass_g": [
+          110,
+          160,
+          225
+        ],
+        "mass_basis": "material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "core_metal": {
+        "name": "Two open aluminum perimeter frames, spacers and load spreaders",
+        "mass_g": [
+          110,
+          145,
+          190
+        ],
+        "mass_basis": "calculated stock allowance: two 270/250 mm square 2 mm rings = 112.3 g; spacers/spreaders added",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "core_locks": {
+        "name": "Eight core-side captive sliding locks, seats, springs and detection",
+        "mass_g": [
+          90,
+          130,
+          185
+        ],
+        "mass_basis": "mechanism allowance; four top and four bottom, station-actuated",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "core_harness": {
+        "name": "Core wiring, connector halves, fuse, charge and service access",
+        "mass_g": [
+          85,
+          125,
+          190
+        ],
+        "mass_basis": "route allowance; includes floor harness and short high-current trunk; excludes lift-side wiring",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "Fixed core distribution only; cartridge contacts/receiver and auxiliary dock-power hardware are budgeted separately.",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "core_monitor": {
+        "name": "Core switched discharge bus, current shunt, precharge and protection power stage",
+        "mass_g": [
+          45,
+          80,
+          140
+        ],
+        "mass_basis": "custom PCB assembly allowance; reference IC is not a complete high-current BMS",
+        "source": "",
+        "dimensions_mm": [
+          40,
+          65,
+          25
+        ],
+        "notes": "Cell monitor/temperature sensing travels in battery cartridge and commands this fixed high-current stage. 150 A continuous / 320 A short allocation remains unqualified; custom circuitry required.",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "core_mcu": {
+        "name": "ESP32-DevKitC plus CAN transceiver and hardware watchdog",
+        "mass_g": [
+          12,
+          20,
+          30
+        ],
+        "mass_basis": "board plus interface allowance",
+        "source": "https://documentation.espressif.com/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+        "dimensions_mm": [
+          28,
+          55,
+          18
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "logic_buck": {
+        "name": "5 V regulator and carrier, 40 W design allocation",
+        "mass_g": [
+          15,
+          25,
+          45
+        ],
+        "mass_basis": "assembly allowance; D42V110F5 family reference; exact variant and thermal review required",
+        "source": "https://www.pololu.com/product/5671/specs",
+        "dimensions_mm": [
+          32,
+          44,
+          10
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "motor_buck": {
+        "name": "D42V110F12 regulator and mounting",
+        "mass_g": [
+          15,
+          24,
+          36
+        ],
+        "mass_basis": "catalog bare 15 g plus installed allowance",
+        "source": "https://www.pololu.com/product/5677/specs",
+        "dimensions_mm": [
+          31.75,
+          43.18,
+          9.02
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "regen_clamp": {
+        "name": "12 V braking clamp, reverse blocking, resistor and bulk capacitors",
+        "mass_g": [
+          22,
+          40,
+          70
+        ],
+        "mass_basis": "custom circuit allowance; 15 V comparator threshold, 10 ohm 25 W resistor, 2200 uF/25 V reference",
+        "source": "https://resources.basicmicro.com/manual/roboclaw/operational-requirements/",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "tool_converter": {
+        "name": "Cincon CHB100W-24S24 plus HBT127/PH01 cooling and carrier",
+        "mass_g": [
+          155,
+          190,
+          245
+        ],
+        "mass_basis": "catalog 95+50.4+1.9 g plus fan, carrier and mounting; comparison regulator for 6S case",
+        "source": "https://www.cincon.com/productdownload/Datasheet-CHB100W.pdf",
+        "dimensions_mm": [
+          66,
+          64,
+          30
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "pi": {
+        "name": "Raspberry Pi 5, active cooler and microSD",
+        "mass_g": [
+          65,
+          82,
+          105
+        ],
+        "mass_basis": "installed allowance; owned board available; processing power is a workload estimate",
+        "source": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+        "dimensions_mm": [
+          85,
+          56,
+          23
+        ],
+        "notes": "",
+        "procurement": "owned_board_candidate",
+        "measured_mass_g": null
+      },
+      "lidar": {
+        "name": "Core-fixed SLAMTEC RPLIDAR A1",
+        "mass_g": [
+          160,
+          170,
+          185
+        ],
+        "mass_basis": "manufacturer family reference; owned revision not measured",
+        "source": "https://www.slamtec.com/cn/lidar/a1spec",
+        "dimensions_mm": [
+          96.8,
+          70.3,
+          55
+        ],
+        "notes": "",
+        "procurement": "owned_candidate",
+        "measured_mass_g": null
+      },
+      "depth_camera": {
+        "name": "OAK-D S2 USB stereo camera and bracket",
+        "mass_g": [
+          91,
+          106,
+          125
+        ],
+        "mass_basis": "manufacturer drawing and 91 g reference plus mount/cable allowance",
+        "source": "https://cdn.robotshop.com/media/l/lux/rb-lux-16/pdf/luxonis-oak-d-s2-camera-auto-focus-datasheet.pdf",
+        "dimensions_mm": [
+          97,
+          23.1,
+          29.5
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "core_near": {
+        "name": "Six near-field ToF boards, windows and core IMU allowance",
+        "mass_g": [
+          20,
+          32,
+          50
+        ],
+        "mass_basis": "sensor plus harness/mount allowance; no all-surface detection guarantee",
+        "source": "https://www.st.com/en/imaging-and-photonics-solutions/vl53l1X",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "status": {
+        "name": "Stop switch, buzzer, status LEDs and guard contacts",
+        "mass_g": [
+          8,
+          15,
+          25
+        ],
+        "mass_basis": "small hardware allowance",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "cap": {
+        "name": "Removable cap, light pipe and cap-side retention",
+        "mass_g": [
+          45,
+          70,
+          100
+        ],
+        "mass_basis": "55 cm3 effective PETG/fastener allowance; no screen selected",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "Contoured cover: power bay roof 135 mm; lift connector local fairing <=160 mm, scanner opening remains clear.",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "drive_motor": {
+        "name": "Pololu 4846 75:1 12 V encoder motor",
+        "mass_g": [
+          99,
+          104,
+          110
+        ],
+        "mass_basis": "catalog reference and modest assembly variation",
+        "source": "https://www.pololu.com/product/4846/specs",
+        "dimensions_mm": [
+          25,
+          69,
+          25
+        ],
+        "notes": "",
+        "procurement": "two_ordered_for_first_bottom",
+        "measured_mass_g": null
+      },
+      "drive_wheel": {
+        "name": "goBILDA Hogback 72 x 24 mm silicone wheel",
+        "mass_g": [
+          52,
+          55,
+          59
+        ],
+        "mass_basis": "manufacturer reference",
+        "source": "https://www.gobilda.com/hogback-traction-wheel-72mm-diameter-50a-durometer/",
+        "dimensions_mm": [
+          24,
+          72,
+          72
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "wheel_hub": {
+        "name": "goBILDA Sonic 4 mm hub plus four wheel screws",
+        "mass_g": [
+          12,
+          17,
+          23
+        ],
+        "mass_basis": "installed allowance; shaft engagement 8.5 mm with 8 mm hub",
+        "source": "https://www.gobilda.com/1309-series-sonic-hub-4mm-bore/",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "pod": {
+        "name": "Trailing pod, metal motor plate, M4 pivot, bushings, spring and stops",
+        "mass_g": [
+          42,
+          62,
+          90
+        ],
+        "mass_basis": "per-wheel material/hardware allowance: 28 cm3 PETG plus 26 g stock and fasteners",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "caster": {
+        "name": "TENTE Linea load 5940UAP050L51-8, stem and mounting plate",
+        "mass_g": [
+          90,
+          112,
+          145
+        ],
+        "mass_basis": "catalog caster 90 g, 50.5 mm height and 40.5 mm sweep radius; installed stem/plate added",
+        "source": "https://www.tente.com/en-ca/swivel-castor-50-mm/5940uap050l51-8-load-9011",
+        "dimensions_mm": [
+          81,
+          81,
+          50.5
+        ],
+        "notes": "Twin polyurethane wheels, 92 Shore A and thread guards. Not a 50A soft drive tire; source availability and retained stem still need checking.",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "bottom_frame": {
+        "name": "Bottom PETG skeleton, aluminum rails and module-side studs",
+        "mass_g": [
+          160,
+          225,
+          305
+        ],
+        "mass_basis": "120 cm3 PETG plus 73 g rails/studs; contains no motors, pods, bumper or tool shell",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "bottom_bumper": {
+        "name": "Segmented bumper, six switches, skirt and compliant mounts",
+        "mass_g": [
+          35,
+          55,
+          80
+        ],
+        "mass_basis": "material/hardware allowance",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_sensors": {
+        "name": "Six cliff ToF sensors, two wheel-drop switches and windows",
+        "mass_g": [
+          22,
+          36,
+          55
+        ],
+        "mass_basis": "assembled allowance; separate from core obstacle sensing",
+        "source": "https://www.st.com/en/imaging-and-photonics-solutions/vl53l1X",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "roboclaw": {
+        "name": "RoboClaw IMC404 with standoffs",
+        "mass_g": [
+          18,
+          24,
+          33
+        ],
+        "mass_basis": "catalog board 18 g plus mounts",
+        "source": "https://www.basicmicro.com/RoboClaw-2x7A-Motor-Controller_p_55.html",
+        "dimensions_mm": [
+          48,
+          42,
+          17
+        ],
+        "notes": "",
+        "procurement": "one_ordered_for_first_bottom",
+        "measured_mass_g": null
+      },
+      "bottom_mcu": {
+        "name": "ESP32 bottom controller, CAN, I2C mux and interlocks",
+        "mass_g": [
+          18,
+          28,
+          42
+        ],
+        "mass_basis": "installed electronics allowance",
+        "source": "https://documentation.espressif.com/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+        "dimensions_mm": [
+          28,
+          55,
+          18
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "bottom_harness": {
+        "name": "Bottom harness, connector half and branch protection",
+        "mass_g": [
+          40,
+          65,
+          95
+        ],
+        "mass_basis": "route allowance; includes encoder leads, sensor wiring and short tool cables",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "tricut": {
+        "name": "Dreame TriCut roller, exact purchased revision pending",
+        "mass_g": [
+          110,
+          200,
+          230
+        ],
+        "mass_basis": "manufacturer listing 200 g; bare versus packaged mass unresolved",
+        "source": "https://www.dreametech.com/products/anti-tangle-roller-brush",
+        "dimensions_mm": [
+          200.6,
+          45.1,
+          45.1
+        ],
+        "notes": "",
+        "procurement": "order_category_reported",
+        "measured_mass_g": null
+      },
+      "roller_motor": {
+        "name": "Pololu 4842 9.7:1 12 V encoder gearmotor",
+        "mass_g": [
+          90,
+          95,
+          101
+        ],
+        "mass_basis": "catalog reference",
+        "source": "https://www.pololu.com/product/4842/specs",
+        "dimensions_mm": [
+          63,
+          25,
+          25
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "tool_stage": {
+        "name": "TB9051FTG carrier, header and thermal mounting",
+        "mass_g": [
+          3.1,
+          7,
+          13
+        ],
+        "mass_basis": "catalog bare carrier 3.1 g plus installed allowance",
+        "source": "https://www.pololu.com/product/2997/specs",
+        "dimensions_mm": [
+          25.4,
+          25.4,
+          7.6
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "roller_transmission": {
+        "name": "1:1 belt/pulleys, coupler, bearings and cutter restraint",
+        "mass_g": [
+          25,
+          45,
+          75
+        ],
+        "mass_basis": "mechanical allowance; supplier cutter interface still unresolved",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "head_frame": {
+        "name": "Removable head cassette, guard, suspension and floor lips",
+        "mass_g": [
+          90,
+          135,
+          195
+        ],
+        "mass_basis": "80 cm3 PETG plus springs, bearings, captive M3 hardware and seals",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "side_brush": {
+        "name": "Edge brush, hub and guarded drive",
+        "mass_g": [
+          15,
+          25,
+          40
+        ],
+        "mass_basis": "consumable and hub allowance; excludes motor and power stage",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "micro_motor": {
+        "name": "Pololu 5216 100:1 HPCB 12 V encoder motor",
+        "mass_g": [
+          10,
+          11,
+          13
+        ],
+        "mass_basis": "catalog reference; power limited separately",
+        "source": "https://www.pololu.com/product/5216/specs",
+        "dimensions_mm": [
+          32,
+          12,
+          14
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "bin": {
+        "name": "Removable U-shaped bin, gate, baffle and seals",
+        "mass_g": [
+          130,
+          195,
+          280
+        ],
+        "mass_basis": "145 cm3 PETG effective material plus hardware; 0.50 L usable design target",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "filter": {
+        "name": "Roborock S7/S8 filter and replaceable sealed adapter",
+        "mass_g": [
+          35,
+          55,
+          85
+        ],
+        "mass_basis": "installed allowance; exact filter dimension and resistance still unknown",
+        "source": "https://us.roborock.com/products/roborock-washable-filter-x2-for-roborock-s7-series",
+        "dimensions_mm": [
+          141,
+          76,
+          20
+        ],
+        "notes": "141 x 76 x 20 mm is a maximum element allocation, not a measured filter dimension.",
+        "procurement": "order_category_reported",
+        "measured_mass_g": null
+      },
+      "blower": {
+        "name": "WS7040-24-V200 blower and isolation pads",
+        "mass_g": [
+          115,
+          155,
+          215
+        ],
+        "mass_basis": "mass allowance; source provides dimensions/curve but no verified installed mass",
+        "source": "https://global.bttwiki.com/Universal%20Turbo%20Kit.html",
+        "dimensions_mm": [
+          71,
+          70,
+          37.5
+        ],
+        "notes": "",
+        "procurement": "order_category_reported",
+        "measured_mass_g": null
+      },
+      "blower_driver": {
+        "name": "WS2403DY01V04 and default-off interface",
+        "mass_g": [
+          15,
+          24,
+          36
+        ],
+        "mass_basis": "driver sheet 15 g plus connections; omit optional printer adapter",
+        "source": "https://global.bttwiki.com/img/Turbo_Kit/Turbo_Kit_Driver1.webp",
+        "dimensions_mm": [
+          40,
+          50,
+          12
+        ],
+        "notes": "",
+        "procurement": "expected_in_ordered_kit",
+        "measured_mass_g": null
+      },
+      "air_plumbing": {
+        "name": "Smooth dirt duct, clean plenum, exhaust, evacuation seal and flex joint",
+        "mass_g": [
+          45,
+          75,
+          115
+        ],
+        "mass_basis": "material allowance; all air remains on bottom",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "air_sensing": {
+        "name": "Two 0\u201310 kPa differential sensor channels, protected pressure taps and fill sensor",
+        "mass_g": [
+          22,
+          38,
+          58
+        ],
+        "mass_basis": "board/hose allowance; NXP MPX5010DP family reference, exact carrier TBD",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "mop_pad": {
+        "name": "230 x 32 mm microfiber pad, floating carrier and leaf springs",
+        "mass_g": [
+          70,
+          105,
+          150
+        ],
+        "mass_basis": "material/textile allowance; 8 N normal-force design point, 3 mm peak-to-peak oscillation",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "mop_crank": {
+        "name": "Eccentric, counterweight, rod ends and two guided flexures",
+        "mass_g": [
+          25,
+          45,
+          75
+        ],
+        "mass_basis": "material/mechanism allowance; 15 Hz at 900 RPM, not an OEM mop performance claim",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "pad_lift": {
+        "name": "Actuonix PQ12-R 100:1 6 V, 6 V supply, links and end switches",
+        "mass_g": [
+          45,
+          62,
+          88
+        ],
+        "mass_basis": "19 g catalog actuator plus regulator, links, mount, switches and wire allowance; 12 mm lift from 20 mm stroke",
+        "source": "https://www.actuonix.com/pq12-100-6-r",
+        "dimensions_mm": [
+          65,
+          26,
+          25
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "water_tank": {
+        "name": "350 mL clean-water tank, baffles, cap and contained leak tray",
+        "mass_g": [
+          75,
+          115,
+          175
+        ],
+        "mass_basis": "90 cm3 PETG/liner allowance; printed shell needs a verified liner or leak-tight process",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "pump": {
+        "name": "Adafruit 1150 12 V peristaltic dosing pump",
+        "mass_g": [
+          190,
+          200,
+          215
+        ],
+        "mass_basis": "catalog reference; 200\u2013300 mA while running and up to 100 mL/min",
+        "source": "https://www.adafruit.com/product/1150",
+        "dimensions_mm": [
+          72,
+          55,
+          45
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "wet_plumbing": {
+        "name": "Tubing, drip manifold, dock fill seal, two check valves, shutoff and leak sensing",
+        "mass_g": [
+          40,
+          70,
+          105
+        ],
+        "mass_basis": "installed fluid hardware allowance; no dirty-water tank carried",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "wet_control": {
+        "name": "Pump MOSFET, position interface, supply and protection",
+        "mass_g": [
+          12,
+          22,
+          35
+        ],
+        "mass_basis": "PCB and connectors allowance",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "extension_duct": {
+        "name": "Six telescoping rectangular suction stages",
+        "mass_g": [
+          205,
+          270,
+          380
+        ],
+        "mass_basis": "calculated thin-wall allowance: six 245 mm stages, 1 mm walls, PETG 1.27 g/cm3; guide/seal changes may increase mass",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "extension_guides": {
+        "name": "Retaining collars, low-friction seals, guided spring-steel strip and wipers",
+        "mass_g": [
+          75,
+          125,
+          205
+        ],
+        "mass_basis": "custom mechanism allowance; 45 mm stage overlap, guided unsupported strip gap <=20 mm",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "extension_drive": {
+        "name": "Pololu 4845 feed motor, pinch drive, encoder roller and slip clutch",
+        "mass_g": [
+          140,
+          185,
+          260
+        ],
+        "mass_basis": "catalog motor plus mechanism allowance; 12 N force limit and 50 mm/s feed target",
+        "source": "https://www.pololu.com/product/4845/specs",
+        "dimensions_mm": [
+          75,
+          80,
+          35
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "extension_wiring": {
+        "name": "Coiled sensor lead, stowed switch, tip contact and extension sensing",
+        "mass_g": [
+          20,
+          35,
+          55
+        ],
+        "mass_basis": "installed allowance; 1 m extension, independent retraction confirmation",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "low_head": {
+        "name": "200 x 60 x 38 mm passive suction head, skids and compliant joint",
+        "mass_g": [
+          90,
+          135,
+          195
+        ],
+        "mass_basis": "95 cm3 PETG plus lips/skids; no onboard head motor; optional powered cassette must be rebudgeted",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "low_bin": {
+        "name": "Raised 0.30 L usable-target bin, gate and baffle",
+        "mass_g": [
+          100,
+          155,
+          220
+        ],
+        "mass_basis": "material allowance; raised clear of central telescoping duct",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "dust_head": {
+        "name": "120 x 50 x 32 mm soft brush/suction head with compliant tip",
+        "mass_g": [
+          55,
+          90,
+          145
+        ],
+        "mass_basis": "material allowance; 0.2 N nominal contact and 0.5 N retreat threshold are provisional",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "dust_tip": {
+        "name": "Tip force sensor, range sensor, breakaway retention and flexure",
+        "mass_g": [
+          20,
+          40,
+          70
+        ],
+        "mass_basis": "Earlier horizontal-head sensor/flexure allowance; does not budget an upward articulation actuator for the new ceiling-fan target",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "lift_motor": {
+        "name": "Hobbywing RTF-3115 900KV motor",
+        "mass_g": [
+          122,
+          125,
+          132
+        ],
+        "mass_basis": "manufacturer reference, 4\u20136S, HQ10x4.5x3 curve at 24 V",
+        "source": "https://www.hobbywing.com/en/uploads/file/20251117/2a4a3f326d2bdede135f3e582b73eef3.pdf",
+        "dimensions_mm": [
+          37.2,
+          37.2,
+          48
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "lift_prop": {
+        "name": "HQProp 10x4.5x3 purchased propeller",
+        "mass_g": [
+          14,
+          20,
+          27
+        ],
+        "mass_basis": "mass allowance; exact curve-matched CW/CCW propellers required",
+        "source": "https://www.hobbywing.com/en/uploads/file/20251117/2a4a3f326d2bdede135f3e582b73eef3.pdf",
+        "dimensions_mm": [
+          254,
+          254,
+          12
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "lift_esc": {
+        "name": "One channel of matched 65 A 6S ESC hardware, local capacitors and mounts",
+        "mass_g": [
+          20,
+          32,
+          50
+        ],
+        "mass_basis": "per-channel installed allowance; two four-channel boards for octo; exact assembly thermal/power review pending",
+        "source": "https://www.hobbywing.com/en/uploads/file/20251117/2a4a3f326d2bdede135f3e582b73eef3.pdf",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "lift_guard": {
+        "name": "One 284 mm guard with spaced upper/lower mesh and ribs",
+        "mass_g": [
+          55,
+          90,
+          140
+        ],
+        "mass_basis": "per-rotor material allowance; 5 mm mesh pitch/0.35 mm wire and 25 mm axial stand-off reference; no containment certification",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "lift_structure": {
+        "name": "Carbon tubes, diagonal braces, hub frame and metal clamp joints",
+        "mass_g": [
+          370,
+          540,
+          780
+        ],
+        "mass_basis": "stock/material allowance; 20/18 mm main tubes, 10/8 mm braces, no printed primary arm cantilever",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "lift_joinery": {
+        "name": "Top-side locks, brackets, fasteners and station pickup features",
+        "mass_g": [
+          80,
+          120,
+          180
+        ],
+        "mass_basis": "material/hardware allowance; four positive locks and metal load spreaders",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "lift_harness": {
+        "name": "High-current trunk/branches, connectors, sensing and distribution",
+        "mass_g": [
+          280,
+          430,
+          650
+        ],
+        "mass_basis": "route allowance; includes main contacts and two fore/aft feeds; battery-side protection stays in core",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "flight_controller": {
+        "name": "Holybro Pixhawk 6C Mini current Model A and vibration mount",
+        "mass_g": [
+          42.4,
+          53,
+          70
+        ],
+        "mass_basis": "catalog 42.4 g plus mount",
+        "source": "https://docs.holybro.com/autopilot/pixhawk-6c-mini/technical-specification",
+        "dimensions_mm": [
+          54.3,
+          39,
+          17.5
+        ],
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "flight_power": {
+        "name": "Independent flight-controller regulator, current interface and hold-up",
+        "mass_g": [
+          30,
+          50,
+          85
+        ],
+        "mass_basis": "assembly allowance; flight electronics remain live during floor-tool shutdown",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "flight_sensors": {
+        "name": "Downward range, four sector range boards, mounts and link interfaces",
+        "mass_g": [
+          45,
+          75,
+          115
+        ],
+        "mass_basis": "sensor/mount allowance; stereo cameras budgeted separately; not complete collision coverage by specification alone",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "flight_io": {
+        "name": "Local status, logging, independent disarm/maintenance inputs and harness",
+        "mass_g": [
+          20,
+          35,
+          60
+        ],
+        "mass_basis": "electronics allowance",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "extension_cradle": {
+        "name": "Four-bar extension lift cradle, slides and flex seal",
+        "mass_g": [
+          35,
+          55,
+          90
+        ],
+        "mass_basis": "material and hardware allowance; raises complete tube and head 12 mm before driving",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "Separate from feed drive and its actuator.",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "anti_tip": {
+        "name": "Front backup roller: 624-2RS bearing, printed hub, silicone O-ring, M4 shoulder hardware",
+        "mass_g": [
+          12,
+          18,
+          28
+        ],
+        "mass_basis": "Assembly allowance; 20 mm outside diameter, normally 2 mm above floor",
+        "source": "",
+        "dimensions_mm": [
+          16,
+          24,
+          24
+        ],
+        "notes": "Backup pitch stop, not a load-bearing swivel caster. No claim of wet grip. Pin and inner-race spacer prevent bearing clamping.",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "battery_cartridge": {
+        "name": "Removable cartridge shell, cell monitor/ID/temperature, fuse and recessed contacts",
+        "mass_g": [
+          85,
+          140,
+          220
+        ],
+        "mass_basis": "Installed allowance: 65 g shell/restraint, 35 g monitor/ID, 40 g fuse/contacts/wiring nominal; excludes bare cell pack and fixed core receiver",
+        "source": "https://www.ti.com/product/BQ76952",
+        "dimensions_mm": null,
+        "notes": "Carried once; the same 140 g nominal tare accompanies every stored pack. Main switched discharge stage stays in core. Packaging and flight current are unqualified.",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "battery_receiver": {
+        "name": "Fixed battery guide, positive latch, presence switches and floating contact support",
+        "mass_g": [
+          30,
+          50,
+          85
+        ],
+        "mass_basis": "Additional automatic-exchange receiver allowance; passive latch retained without power",
+        "source": "",
+        "dimensions_mm": null,
+        "notes": "Mass excludes cartridge-side hardware; station actuator releases latch only after mechanical support.",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "dock_logic_power": {
+        "name": "Station logic-power input, 24 V to 5 V regulator, source OR and hold-up capacitors",
+        "mass_g": [
+          25,
+          45,
+          75
+        ],
+        "mass_basis": "Installed 40 W logic supply/interface allocation, not selected hardware",
+        "source": "",
+        "dimensions_mm": [
+          35,
+          60,
+          20
+        ],
+        "notes": "Station 24 V / 60 W protected input; reverse-blocking source selection keeps Pi/supervisor live during pack exchange. No full-system UPS promise.",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_shelf_left": {
+        "name": "floor shelf left",
+        "mass_g": [
+          14.54355,
+          15.309000000000001,
+          16.839900000000004
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_shelf_right": {
+        "name": "floor shelf right",
+        "mass_g": [
+          4.62213,
+          4.8654,
+          5.351940000000001
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_shelf_tab": {
+        "name": "floor shelf tab",
+        "mass_g": [
+          0.09234,
+          0.09720000000000001,
+          0.10692000000000002
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_foot_plate": {
+        "name": "floor foot plate",
+        "mass_g": [
+          8.3106,
+          8.748000000000001,
+          9.622800000000002
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_foot_tab": {
+        "name": "floor foot tab",
+        "mass_g": [
+          0.21545999999999998,
+          0.2268,
+          0.24948000000000004
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_rear_stiffener": {
+        "name": "floor rear stiffener",
+        "mass_g": [
+          4.7196,
+          4.968,
+          5.4648
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_front_stiffener": {
+        "name": "floor front stiffener",
+        "mass_g": [
+          3.2832000000000003,
+          3.4560000000000004,
+          3.8016000000000005
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_post_0": {
+        "name": "floor post 0",
+        "mass_g": [
+          4.810736538405318,
+          5.063933198321387,
+          5.570326518153527
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_post_1": {
+        "name": "floor post 1",
+        "mass_g": [
+          4.810736538405318,
+          5.063933198321387,
+          5.570326518153527
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_post_2": {
+        "name": "floor post 2",
+        "mass_g": [
+          4.810736538405318,
+          5.063933198321387,
+          5.570326518153527
+        ],
+        "mass_basis": "Unperforated stock volume and density; tube plus full-diameter steel rod for each post",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "core_interface_F": {
+        "name": "core interface F",
+        "mass_g": [
+          4,
+          8,
+          15
+        ],
+        "mass_basis": "Additional allowance; existing harness, converter carrier and frame budgets retained",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_interface_F": {
+        "name": "floor interface F",
+        "mass_g": [
+          10,
+          16,
+          28
+        ],
+        "mass_basis": "Additional allowance; existing harness, converter carrier and frame budgets retained",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "floor_carrier_fasteners": {
+        "name": "floor carrier fasteners",
+        "mass_g": [
+          6,
+          10,
+          18
+        ],
+        "mass_basis": "Additional allowance; existing harness, converter carrier and frame budgets retained",
+        "source": "config/core_partition.json",
+        "notes": "Unmeasured design estimate",
+        "procurement": "design_candidate",
+        "measured_mass_g": null
+      },
+      "G_corner_0_bottom": {
+        "name": "G corner 0 bottom",
+        "mass_g": [
+          3.72337965,
+          3.919347,
+          4.3112817
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_0_top": {
+        "name": "G corner 0 top",
+        "mass_g": [
+          3.72337965,
+          3.919347,
+          4.3112817
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_0_front": {
+        "name": "G corner 0 front",
+        "mass_g": [
+          4.6542245625000005,
+          4.899183750000001,
+          5.389102125000001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_0_rear": {
+        "name": "G corner 0 rear",
+        "mass_g": [
+          4.6542245625000005,
+          4.899183750000001,
+          5.389102125000001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_1_bottom": {
+        "name": "G corner 1 bottom",
+        "mass_g": [
+          3.72337965,
+          3.919347,
+          4.3112817
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_1_top": {
+        "name": "G corner 1 top",
+        "mass_g": [
+          3.72337965,
+          3.919347,
+          4.3112817
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_1_front": {
+        "name": "G corner 1 front",
+        "mass_g": [
+          4.6542245625000005,
+          4.899183750000001,
+          5.389102125000001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_1_rear": {
+        "name": "G corner 1 rear",
+        "mass_g": [
+          4.6542245625000005,
+          4.899183750000001,
+          5.389102125000001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_2_bottom": {
+        "name": "G corner 2 bottom",
+        "mass_g": [
+          3.72337965,
+          3.919347,
+          4.3112817
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_2_top": {
+        "name": "G corner 2 top",
+        "mass_g": [
+          3.72337965,
+          3.919347,
+          4.3112817
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_2_front": {
+        "name": "G corner 2 front",
+        "mass_g": [
+          4.6542245625000005,
+          4.899183750000001,
+          5.389102125000001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_2_rear": {
+        "name": "G corner 2 rear",
+        "mass_g": [
+          4.6542245625000005,
+          4.899183750000001,
+          5.389102125000001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_3_bottom": {
+        "name": "G corner 3 bottom",
+        "mass_g": [
+          3.72337965,
+          3.919347,
+          4.3112817
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_3_top": {
+        "name": "G corner 3 top",
+        "mass_g": [
+          3.72337965,
+          3.919347,
+          4.3112817
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_3_front": {
+        "name": "G corner 3 front",
+        "mass_g": [
+          4.6542245625000005,
+          4.899183750000001,
+          5.389102125000001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_corner_3_rear": {
+        "name": "G corner 3 rear",
+        "mass_g": [
+          4.6542245625000005,
+          4.899183750000001,
+          5.389102125000001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "https://www.onlinemetals.com/en/buy/aluminum/1-x-1-5-x-0-125-aluminum-rectangle-tube-6061-t6-extruded/pid/14469",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_rail_front": {
+        "name": "G rail front",
+        "mass_g": [
+          13.18696959375,
+          13.881020625,
+          15.269122687500001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_rail_rear": {
+        "name": "G rail rear",
+        "mass_g": [
+          13.18696959375,
+          13.881020625,
+          15.269122687500001
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_rail_left": {
+        "name": "G rail left",
+        "mass_g": [
+          12.15269746875,
+          12.792313125000002,
+          14.071544437500004
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_rail_right": {
+        "name": "G rail right",
+        "mass_g": [
+          12.15269746875,
+          12.792313125000002,
+          14.071544437500004
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_clip_0_x": {
+        "name": "G clip 0 x",
+        "mass_g": [
+          0.6567627993749999,
+          0.6913292624999999,
+          0.7604621887499999
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_clip_0_y": {
+        "name": "G clip 0 y",
+        "mass_g": [
+          0.5746674494531249,
+          0.6049131046874999,
+          0.6654044151562499
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_clip_1_x": {
+        "name": "G clip 1 x",
+        "mass_g": [
+          0.6567627993749999,
+          0.6913292624999999,
+          0.7604621887499999
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_clip_1_y": {
+        "name": "G clip 1 y",
+        "mass_g": [
+          0.5746674494531249,
+          0.6049131046874999,
+          0.6654044151562499
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_clip_2_x": {
+        "name": "G clip 2 x",
+        "mass_g": [
+          0.6567627993749999,
+          0.6913292624999999,
+          0.7604621887499999
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_clip_2_y": {
+        "name": "G clip 2 y",
+        "mass_g": [
+          0.5746674494531249,
+          0.6049131046874999,
+          0.6654044151562499
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_clip_3_x": {
+        "name": "G clip 3 x",
+        "mass_g": [
+          0.6567627993749999,
+          0.6913292624999999,
+          0.7604621887499999
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_clip_3_y": {
+        "name": "G clip 3 y",
+        "mass_g": [
+          0.5746674494531249,
+          0.6049131046874999,
+          0.6654044151562499
+        ],
+        "mass_basis": "Gross stock volume times density; drilled material is not credited",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      },
+      "G_frame_fasteners": {
+        "name": "G frame fasteners",
+        "mass_g": [
+          22,
+          30,
+          45
+        ],
+        "mass_basis": "24 M3 screw/nut/washer sets: 8 rail-to-tube, 16 clip joints; 30 g nominal installation allowance",
+        "source": "config/frame_joints.json; rail/clip/fastener procurement open",
+        "procurement": "design_candidate",
+        "measured_mass_g": null,
+        "notes": "No purchase or fabrication release; mass is an unmeasured estimate"
+      }
+    },
+    "parts": [
+      {
+        "id": "pi_bay",
+        "module": "core",
+        "label": "Pi 5, active cooling and cable space",
+        "min": [
+          142,
+          13,
+          87
+        ],
+        "size": [
+          104,
+          70,
+          34
+        ],
+        "group": "logic",
+        "hardware": [
+          {
+            "id": "pi",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "front_camera",
+        "module": "core",
+        "label": "Core stereo camera, front-facing",
+        "min": [
+          109,
+          2,
+          54
+        ],
+        "size": [
+          104,
+          26,
+          31
+        ],
+        "group": "sensor",
+        "hardware": [
+          {
+            "id": "depth_camera",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "core_mcu_bay",
+        "module": "core",
+        "label": "Core supervisor / CAN / watchdog",
+        "min": [
+          13,
+          96,
+          89
+        ],
+        "size": [
+          28,
+          58,
+          32
+        ],
+        "group": "logic",
+        "hardware": [
+          {
+            "id": "core_mcu",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "battery_bay",
+        "module": "core",
+        "label": "Automatic battery cartridge / fixed receiver allocation",
+        "min": [
+          44,
+          86,
+          66
+        ],
+        "size": [
+          180,
+          66,
+          55
+        ],
+        "group": "battery",
+        "hardware": [
+          {
+            "id": "battery_cartridge",
+            "qty": 1
+          },
+          {
+            "id": "battery_receiver",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "180 x 66 x 55 mm overall allowance. Withdraw down only after the bottom is removed and core supported. Cell pocket and interface end are nested allocations; no installed pack fit or connector qualification."
+      },
+      {
+        "id": "pack_protection",
+        "module": "core",
+        "label": "Fixed main-bus switching, precharge and current sensing",
+        "min": [
+          227,
+          86,
+          89
+        ],
+        "size": [
+          43,
+          68,
+          32
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "core_monitor",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "Power stage stays on robot; pack identification, cell measurements and charge supervision travel with cartridge."
+      },
+      {
+        "id": "lidar",
+        "module": "core",
+        "label": "SLAMTEC RPLIDAR C1M1",
+        "min": [
+          106.6,
+          101.35,
+          133.5
+        ],
+        "size": [
+          55.6,
+          55.6,
+          41.3
+        ],
+        "group": "sensor",
+        "hardware": [
+          {
+            "id": "lidar",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "core_misc",
+        "module": "core",
+        "label": "Distributed frame, locks, harness, near sensing and controls",
+        "min": [
+          2.5,
+          2.5,
+          66
+        ],
+        "size": [
+          270,
+          270,
+          57
+        ],
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "core_prints",
+            "qty": 1
+          },
+          {
+            "id": "core_harness",
+            "qty": 1
+          },
+          {
+            "id": "core_near",
+            "qty": 1
+          },
+          {
+            "id": "status",
+            "qty": 1
+          }
+        ],
+        "shape": "distributed",
+        "notes": "Mass assigned to the core frame centroid. Perimeter load paths, wire channels and individual sensor locations are described in SYSTEM_DESIGN.md; not a solid box."
+      },
+      {
+        "id": "cap",
+        "module": "cap",
+        "label": "Removable cap, scanner opening and status light",
+        "min": [
+          2.5,
+          2.5,
+          134.1
+        ],
+        "size": [
+          270,
+          270,
+          2
+        ],
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "cap",
+            "qty": 1
+          }
+        ],
+        "shape": "distributed",
+        "notes": "Contoured cap roof at 135 mm; 108 x 83 mm scanner opening and skirts meet four z123 seats. Distributed shell, not a solid plate."
+      },
+      {
+        "id": "wheel_left",
+        "module": "drive",
+        "label": "72 mm wheel and hub, including upward travel",
+        "min": [
+          2,
+          72,
+          0
+        ],
+        "size": [
+          24,
+          74,
+          82
+        ],
+        "group": "drive",
+        "hardware": [
+          {
+            "id": "drive_wheel",
+            "qty": 1
+          },
+          {
+            "id": "wheel_hub",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "pod_left",
+        "module": "drive",
+        "label": "Trailing drive pod and 75:1 encoder motor",
+        "min": [
+          26,
+          88,
+          18
+        ],
+        "size": [
+          80,
+          64,
+          46
+        ],
+        "group": "drive",
+        "hardware": [
+          {
+            "id": "drive_motor",
+            "qty": 1
+          },
+          {
+            "id": "pod",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "wheel_right",
+        "module": "drive",
+        "label": "72 mm wheel and hub, including upward travel",
+        "min": [
+          249,
+          72,
+          0
+        ],
+        "size": [
+          24,
+          74,
+          82
+        ],
+        "group": "drive",
+        "hardware": [
+          {
+            "id": "drive_wheel",
+            "qty": 1
+          },
+          {
+            "id": "wheel_hub",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "pod_right",
+        "module": "drive",
+        "label": "Trailing drive pod and 75:1 encoder motor",
+        "min": [
+          169,
+          88,
+          18
+        ],
+        "size": [
+          80,
+          64,
+          46
+        ],
+        "group": "drive",
+        "hardware": [
+          {
+            "id": "drive_motor",
+            "qty": 1
+          },
+          {
+            "id": "pod",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "drive_control",
+        "module": "drive",
+        "label": "RoboClaw carrier / separate bottom supervisor",
+        "min": [
+          153,
+          29,
+          56
+        ],
+        "size": [
+          58,
+          53,
+          30
+        ],
+        "group": "logic",
+        "hardware": [
+          {
+            "id": "roboclaw",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "drive_misc",
+        "module": "drive",
+        "label": "Distributed bottom frame, bumper, cliff sensors and harness",
+        "min": [
+          2.5,
+          2.5,
+          14
+        ],
+        "size": [
+          270,
+          270,
+          72
+        ],
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "bottom_frame",
+            "qty": 1
+          },
+          {
+            "id": "bottom_bumper",
+            "qty": 1
+          },
+          {
+            "id": "floor_sensors",
+            "qty": 1
+          },
+          {
+            "id": "bottom_harness",
+            "qty": 1
+          }
+        ],
+        "shape": "distributed",
+        "notes": ""
+      },
+      {
+        "id": "caster",
+        "module": "drive",
+        "label": "Centered rear caster; full swivel allocation",
+        "min": [
+          95.5,
+          190,
+          0
+        ],
+        "size": [
+          84,
+          84,
+          54
+        ],
+        "group": "drive",
+        "hardware": [
+          {
+            "id": "caster",
+            "qty": 1
+          }
+        ],
+        "shape": "cylinder_z",
+        "notes": ""
+      },
+      {
+        "id": "vac_head",
+        "module": "vacuum",
+        "label": "Floor-following TriCut cassette",
+        "min": [
+          22.5,
+          6,
+          0
+        ],
+        "size": [
+          230,
+          60,
+          50
+        ],
+        "group": "tool",
+        "hardware": [
+          {
+            "id": "tricut",
+            "qty": 1
+          },
+          {
+            "id": "head_frame",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "vac_head_drive",
+        "module": "vacuum",
+        "label": "Roller motor, transmission and current-sensed drive",
+        "min": [
+          28,
+          6,
+          50
+        ],
+        "size": [
+          75,
+          60,
+          35
+        ],
+        "group": "tool",
+        "hardware": [
+          {
+            "id": "roller_motor",
+            "qty": 1
+          },
+          {
+            "id": "roller_transmission",
+            "qty": 1
+          },
+          {
+            "id": "tool_stage",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "vac_side",
+        "module": "vacuum",
+        "label": "Front-left edge-brush drive",
+        "min": [
+          2,
+          29,
+          0
+        ],
+        "size": [
+          18,
+          35,
+          65
+        ],
+        "group": "tool",
+        "hardware": [
+          {
+            "id": "side_brush",
+            "qty": 1
+          },
+          {
+            "id": "micro_motor",
+            "qty": 1
+          },
+          {
+            "id": "tool_stage",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "vac_flex",
+        "module": "vacuum",
+        "label": "Flexible cassette-to-duct joint",
+        "min": [
+          118.5,
+          66,
+          6
+        ],
+        "size": [
+          38,
+          26,
+          48
+        ],
+        "group": "air",
+        "hardware": [],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "vac_duct",
+        "module": "vacuum",
+        "label": "Smooth main dirt duct",
+        "min": [
+          118.5,
+          92,
+          16
+        ],
+        "size": [
+          38,
+          65,
+          28
+        ],
+        "group": "air",
+        "hardware": [
+          {
+            "id": "air_plumbing",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "vac_bin_left",
+        "module": "vacuum",
+        "label": "Bin left cell",
+        "min": [
+          29,
+          157,
+          16
+        ],
+        "size": [
+          63,
+          105,
+          78
+        ],
+        "group": "air",
+        "hardware": [
+          {
+            "id": "bin",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "",
+        "mass_cg_mm": [
+          104,
+          213,
+          57
+        ]
+      },
+      {
+        "id": "vac_bin_front",
+        "module": "vacuum",
+        "label": "Bin front cell",
+        "min": [
+          92,
+          157,
+          16
+        ],
+        "size": [
+          90,
+          31,
+          78
+        ],
+        "group": "air",
+        "hardware": [],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "vac_bin_upper",
+        "module": "vacuum",
+        "label": "Bin bridge over caster",
+        "min": [
+          92,
+          188,
+          74
+        ],
+        "size": [
+          90,
+          74,
+          20
+        ],
+        "group": "air",
+        "hardware": [],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "filter_bay",
+        "module": "air_common",
+        "label": "Filter drawer and dirty/clean plenums",
+        "min": [
+          29,
+          166,
+          96
+        ],
+        "size": [
+          153,
+          96,
+          35
+        ],
+        "group": "air",
+        "hardware": [
+          {
+            "id": "filter",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "air_bridge",
+        "module": "air_common",
+        "label": "Clean-air bridge",
+        "min": [
+          182,
+          177,
+          112
+        ],
+        "size": [
+          3,
+          57,
+          19
+        ],
+        "group": "air",
+        "hardware": [],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "blower_bay",
+        "module": "air_common",
+        "label": "Blower, inlet plenum and vibration isolation",
+        "min": [
+          185,
+          158,
+          74
+        ],
+        "size": [
+          77,
+          86,
+          68
+        ],
+        "group": "air",
+        "hardware": [
+          {
+            "id": "blower",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "exhaust",
+        "module": "air_common",
+        "label": "Rear clean-air exhaust and diffuser",
+        "min": [
+          194,
+          245,
+          85
+        ],
+        "size": [
+          50,
+          17,
+          32
+        ],
+        "group": "air",
+        "hardware": [],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "blower_driver",
+        "module": "air_common",
+        "label": "Blower driver and default-off interface",
+        "min": [
+          108,
+          31,
+          56
+        ],
+        "size": [
+          40,
+          52,
+          30
+        ],
+        "group": "logic",
+        "hardware": [
+          {
+            "id": "blower_driver",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "air_sensing",
+        "module": "air_common",
+        "label": "Pressure channels / bin-fill sensor, distributed",
+        "min": [
+          26,
+          157,
+          94
+        ],
+        "size": [
+          156,
+          9,
+          37
+        ],
+        "group": "sensor",
+        "hardware": [
+          {
+            "id": "air_sensing",
+            "qty": 1
+          }
+        ],
+        "shape": "distributed",
+        "notes": ""
+      },
+      {
+        "id": "mop_pad",
+        "module": "mop",
+        "label": "Floating 230 x 32 mm mop band; 12 mm lift travel",
+        "min": [
+          22.5,
+          155,
+          0
+        ],
+        "size": [
+          230,
+          32,
+          22
+        ],
+        "group": "tool",
+        "hardware": [
+          {
+            "id": "mop_pad",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "mop_drive",
+        "module": "mop",
+        "label": "Vertical brush motor and eccentric drive",
+        "min": [
+          105,
+          155,
+          24
+        ],
+        "size": [
+          32,
+          31,
+          95
+        ],
+        "group": "tool",
+        "hardware": [
+          {
+            "id": "roller_motor",
+            "qty": 1
+          },
+          {
+            "id": "mop_crank",
+            "qty": 1
+          },
+          {
+            "id": "tool_stage",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "63 mm body plus 12.5 mm output shaft, crank and 12 mm upward travel reserved; motor axis vertical."
+      },
+      {
+        "id": "mop_lift",
+        "module": "mop",
+        "label": "Pad lift actuator and equalizing links",
+        "min": [
+          180,
+          156,
+          27
+        ],
+        "size": [
+          66,
+          29,
+          29
+        ],
+        "group": "tool",
+        "hardware": [
+          {
+            "id": "pad_lift",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "mop_tank",
+        "module": "mop",
+        "label": "350 mL clean-water tank and leak containment",
+        "min": [
+          29,
+          157,
+          23
+        ],
+        "size": [
+          63,
+          105,
+          80
+        ],
+        "group": "water",
+        "hardware": [
+          {
+            "id": "water_tank",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "mop_pump",
+        "module": "mop",
+        "label": "Peristaltic metering pump",
+        "min": [
+          102,
+          194,
+          74
+        ],
+        "size": [
+          76,
+          56,
+          47
+        ],
+        "group": "water",
+        "hardware": [
+          {
+            "id": "pump",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "mop_wet_io",
+        "module": "mop",
+        "label": "Wet controls and separated fill/plumbing manifold",
+        "min": [
+          191,
+          194,
+          66
+        ],
+        "size": [
+          71,
+          46,
+          49
+        ],
+        "group": "water",
+        "hardware": [
+          {
+            "id": "wet_plumbing",
+            "qty": 1
+          },
+          {
+            "id": "wet_control",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "extension",
+        "module": "extension_common",
+        "label": "Six nested suction stages / guided drive strip",
+        "min": [
+          109,
+          0,
+          4
+        ],
+        "size": [
+          48,
+          245,
+          36
+        ],
+        "group": "extension",
+        "hardware": [
+          {
+            "id": "extension_duct",
+            "qty": 1
+          },
+          {
+            "id": "extension_guides",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "Deployed root geometry is generated from stage positions; closed dimension includes skids/guide allowance. Raises 10 mm for transit; low cleaning position shown only while stationary.",
+        "mass_cg_mm": [
+          133,
+          122.5,
+          22
+        ]
+      },
+      {
+        "id": "extension_drive",
+        "module": "extension_common",
+        "label": "Feed motor, pinch rollers and clutch",
+        "min": [
+          28,
+          0,
+          45
+        ],
+        "size": [
+          75,
+          80,
+          35
+        ],
+        "group": "tool",
+        "hardware": [
+          {
+            "id": "extension_drive",
+            "qty": 1
+          },
+          {
+            "id": "tool_stage",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "extension_cable",
+        "module": "extension_common",
+        "label": "Coiled sensor lead / independent stowed detection",
+        "min": [
+          158,
+          0,
+          8
+        ],
+        "size": [
+          8,
+          185,
+          30
+        ],
+        "group": "sensor",
+        "hardware": [
+          {
+            "id": "extension_wiring",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "",
+        "mass_cg_mm": [
+          162,
+          92.5,
+          23
+        ]
+      },
+      {
+        "id": "extension_air_turn",
+        "module": "extension_common",
+        "label": "Rear upward duct into raised bin",
+        "min": [
+          109,
+          245,
+          4
+        ],
+        "size": [
+          48,
+          25,
+          40
+        ],
+        "group": "air",
+        "hardware": [
+          {
+            "id": "air_plumbing",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "extension_bin",
+        "module": "extension_common",
+        "label": "Raised 0.40 L bin above extension transit sweep",
+        "min": [
+          29,
+          157,
+          64
+        ],
+        "size": [
+          153,
+          105,
+          31
+        ],
+        "group": "air",
+        "hardware": [
+          {
+            "id": "low_bin",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "low_head",
+        "module": "low",
+        "label": "Floor-supported passive suction head",
+        "min": [
+          33,
+          -60,
+          0
+        ],
+        "size": [
+          200,
+          60,
+          38
+        ],
+        "group": "tool",
+        "hardware": [
+          {
+            "id": "low_head",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "dust_head",
+        "module": "dust",
+        "label": "Compliant soft-brush suction head",
+        "min": [
+          73,
+          -50,
+          4
+        ],
+        "size": [
+          120,
+          50,
+          32
+        ],
+        "group": "tool",
+        "hardware": [
+          {
+            "id": "dust_head",
+            "qty": 1
+          },
+          {
+            "id": "dust_tip",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "pi_reference",
+        "module": "core",
+        "label": "Pi board/cooler proxy",
+        "min": [
+          151,
+          17,
+          91
+        ],
+        "size": [
+          85,
+          56,
+          23
+        ],
+        "group": "logic",
+        "hardware": [],
+        "shape": "box",
+        "notes": "",
+        "parent": "pi_bay"
+      },
+      {
+        "id": "blower_reference",
+        "module": "air_common",
+        "label": "Bare Wonsmart blower",
+        "min": [
+          188,
+          162,
+          75
+        ],
+        "size": [
+          71,
+          70,
+          37.5
+        ],
+        "group": "air",
+        "hardware": [],
+        "shape": "box",
+        "notes": "",
+        "parent": "blower_bay"
+      },
+      {
+        "id": "filter_reference",
+        "module": "air_common",
+        "label": "Filter maximum element allowance",
+        "min": [
+          33,
+          180,
+          100
+        ],
+        "size": [
+          141,
+          76,
+          20
+        ],
+        "group": "air",
+        "hardware": [],
+        "shape": "box",
+        "notes": "",
+        "parent": "filter_bay"
+      },
+      {
+        "id": "roboclaw_reference",
+        "module": "drive",
+        "label": "RoboClaw reference board",
+        "min": [
+          158,
+          38,
+          62
+        ],
+        "size": [
+          48,
+          42,
+          17
+        ],
+        "group": "logic",
+        "hardware": [],
+        "shape": "box",
+        "notes": "",
+        "parent": "drive_control"
+      },
+      {
+        "id": "bottom_mcu_reference",
+        "module": "drive",
+        "label": "Bottom MCU reference",
+        "min": [
+          217,
+          26,
+          62
+        ],
+        "size": [
+          28,
+          55,
+          18
+        ],
+        "group": "logic",
+        "hardware": [],
+        "shape": "box",
+        "notes": "Full DevKitC board length allowed; connector bends stay in carrier bay.",
+        "parent": "G_bottom_supervisor"
+      },
+      {
+        "id": "tire_reference_left",
+        "module": "drive",
+        "label": "Tire reference",
+        "min": [
+          2,
+          72,
+          0
+        ],
+        "size": [
+          24,
+          72,
+          72
+        ],
+        "group": "drive",
+        "hardware": [],
+        "shape": "cylinder_x",
+        "notes": "",
+        "parent": "wheel_left"
+      },
+      {
+        "id": "motor_reference_left",
+        "module": "drive",
+        "label": "75:1 motor reference",
+        "min": [
+          26,
+          95.5,
+          23.5
+        ],
+        "size": [
+          69,
+          25,
+          25
+        ],
+        "group": "drive",
+        "hardware": [],
+        "shape": "cylinder_x",
+        "notes": "",
+        "parent": "pod_left"
+      },
+      {
+        "id": "tire_reference_right",
+        "module": "drive",
+        "label": "Tire reference",
+        "min": [
+          249,
+          72,
+          0
+        ],
+        "size": [
+          24,
+          72,
+          72
+        ],
+        "group": "drive",
+        "hardware": [],
+        "shape": "cylinder_x",
+        "notes": "",
+        "parent": "wheel_right"
+      },
+      {
+        "id": "motor_reference_right",
+        "module": "drive",
+        "label": "75:1 motor reference",
+        "min": [
+          180,
+          95.5,
+          23.5
+        ],
+        "size": [
+          69,
+          25,
+          25
+        ],
+        "group": "drive",
+        "hardware": [],
+        "shape": "cylinder_x",
+        "notes": "",
+        "parent": "pod_right"
+      },
+      {
+        "id": "extension_flex",
+        "module": "extension_common",
+        "label": "Compliant rear inlet lift joint",
+        "min": [
+          109,
+          245,
+          44
+        ],
+        "size": [
+          48,
+          25,
+          20
+        ],
+        "group": "air",
+        "hardware": [],
+        "shape": "box",
+        "notes": "Compresses from 14 to 4 mm during 10 mm transit lift."
+      },
+      {
+        "id": "mop_motor_reference",
+        "module": "mop",
+        "label": "Mop motor body at lowest working position",
+        "min": [
+          108.5,
+          158,
+          41
+        ],
+        "size": [
+          25,
+          25,
+          63
+        ],
+        "group": "tool",
+        "hardware": [],
+        "shape": "cylinder_z",
+        "parent": "mop_drive",
+        "notes": "Body only; separate shaft/crank and 12 mm lift sweep inside parent."
+      },
+      {
+        "id": "extension_lifter",
+        "module": "extension_common",
+        "label": "Telescope cradle lift, supply and links",
+        "min": [
+          180,
+          156,
+          27
+        ],
+        "size": [
+          66,
+          29,
+          29
+        ],
+        "hardware": [
+          {
+            "id": "pad_lift",
+            "qty": 1
+          },
+          {
+            "id": "extension_cradle",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "group": "extension",
+        "notes": "12 mm travel of entire retracted head/duct; floor driving requires upper-limit confirmation."
+      },
+      {
+        "id": "anti_tip_left",
+        "module": "drive",
+        "label": "Front backup pitch roller left",
+        "min": [
+          2,
+          2,
+          2
+        ],
+        "size": [
+          16,
+          24,
+          24
+        ],
+        "hardware": [
+          {
+            "id": "anti_tip",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "group": "drive",
+        "notes": "20 mm tread diameter inside bracket allocation. 2 mm ground gap; engages after about 1.2 degrees forward pitch."
+      },
+      {
+        "id": "anti_tip_right",
+        "module": "drive",
+        "label": "Front backup pitch roller right",
+        "min": [
+          257,
+          2,
+          2
+        ],
+        "size": [
+          16,
+          24,
+          24
+        ],
+        "hardware": [
+          {
+            "id": "anti_tip",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "group": "drive",
+        "notes": "20 mm tread diameter inside bracket allocation. 2 mm ground gap; engages after about 1.2 degrees forward pitch."
+      },
+      {
+        "id": "bottom_port",
+        "module": "core",
+        "label": "Bottom power / CAN floating connector reservation",
+        "min": [
+          4,
+          160,
+          58
+        ],
+        "size": [
+          18,
+          50,
+          27
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "power",
+        "notes": "Connector assembly reservation; mass included in core harness. Not a released blind-mate connector."
+      },
+      {
+        "id": "top_port",
+        "module": "core",
+        "label": "Protected raw lift power / control connector reservation",
+        "min": [
+          193,
+          88,
+          122.5
+        ],
+        "size": [
+          78,
+          35,
+          32
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "power",
+        "notes": "Rotate the existing 78 x 32 x 35 mm reservation about X and lower it 1.6 mm. Preserve volume and raw lift-power allocation. This requires a new connector carrier/mating approach; exact connector not selected. Four load-bearing top seats stay at 124.1 mm."
+      },
+      {
+        "id": "cliff_front_left",
+        "module": "drive",
+        "label": "cliff front left",
+        "min": [
+          2,
+          6,
+          66
+        ],
+        "size": [
+          13,
+          18,
+          12
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "VL53L1X board/window allocation. Diagonally outward/downward beam must clear wheels/head. Mass in floor_sensors; actual optical cone is not collision-certified."
+      },
+      {
+        "id": "cliff_front_right",
+        "module": "drive",
+        "label": "cliff front right",
+        "min": [
+          257,
+          6,
+          66
+        ],
+        "size": [
+          13,
+          18,
+          12
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "VL53L1X board/window allocation. Diagonally outward/downward beam must clear wheels/head. Mass in floor_sensors; actual optical cone is not collision-certified."
+      },
+      {
+        "id": "cliff_side_left",
+        "module": "drive",
+        "label": "cliff side left",
+        "min": [
+          2,
+          59,
+          90
+        ],
+        "size": [
+          13,
+          18,
+          12
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "VL53L1X board/window allocation. Diagonally outward/downward beam must clear wheels/head. Mass in floor_sensors; actual optical cone is not collision-certified."
+      },
+      {
+        "id": "cliff_side_right",
+        "module": "drive",
+        "label": "cliff side right",
+        "min": [
+          261,
+          59,
+          90
+        ],
+        "size": [
+          13,
+          18,
+          12
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "VL53L1X board/window allocation. Diagonally outward/downward beam must clear wheels/head. Mass in floor_sensors; actual optical cone is not collision-certified."
+      },
+      {
+        "id": "cliff_rear_left",
+        "module": "drive",
+        "label": "cliff rear left",
+        "min": [
+          4,
+          259,
+          70
+        ],
+        "size": [
+          18,
+          13,
+          8
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "VL53L1X board/window allocation. Diagonally outward/downward beam must clear wheels/head. Mass in floor_sensors; actual optical cone is not collision-certified."
+      },
+      {
+        "id": "cliff_rear_right",
+        "module": "drive",
+        "label": "cliff rear right",
+        "min": [
+          253,
+          259,
+          70
+        ],
+        "size": [
+          18,
+          13,
+          8
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "VL53L1X board/window allocation. Diagonally outward/downward beam must clear wheels/head. Mass in floor_sensors; actual optical cone is not collision-certified."
+      },
+      {
+        "id": "near_0",
+        "module": "core",
+        "label": "Core perimeter range sensor 1",
+        "min": [
+          40,
+          2,
+          137.1
+        ],
+        "size": [
+          13,
+          18,
+          8
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "Outward near-obstacle view. Mass in core_near; windows integrated into contoured cap."
+      },
+      {
+        "id": "near_1",
+        "module": "core",
+        "label": "Core perimeter range sensor 2",
+        "min": [
+          235,
+          2,
+          137.1
+        ],
+        "size": [
+          13,
+          18,
+          8
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "Outward near-obstacle view. Mass in core_near; windows integrated into contoured cap."
+      },
+      {
+        "id": "near_2",
+        "module": "core",
+        "label": "Core perimeter range sensor 3",
+        "min": [
+          2,
+          140,
+          125.1
+        ],
+        "size": [
+          13,
+          18,
+          8
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "Outward near-obstacle view. Mass in core_near; windows integrated into contoured cap."
+      },
+      {
+        "id": "near_3",
+        "module": "core",
+        "label": "Core perimeter range sensor 4",
+        "min": [
+          261,
+          140,
+          125.1
+        ],
+        "size": [
+          13,
+          18,
+          8
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "Outward near-obstacle view. Mass in core_near; windows integrated into contoured cap."
+      },
+      {
+        "id": "near_4",
+        "module": "core",
+        "label": "Core perimeter range sensor 5",
+        "min": [
+          45,
+          253,
+          137.1
+        ],
+        "size": [
+          13,
+          18,
+          8
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "Outward near-obstacle view. Mass in core_near; windows integrated into contoured cap."
+      },
+      {
+        "id": "near_5",
+        "module": "core",
+        "label": "Core perimeter range sensor 6",
+        "min": [
+          230,
+          253,
+          137.1
+        ],
+        "size": [
+          13,
+          18,
+          8
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "sensor",
+        "notes": "Outward near-obstacle view. Mass in core_near; windows integrated into contoured cap."
+      },
+      {
+        "id": "pack_cell_pocket",
+        "module": "core",
+        "label": "Bare cell-pack pocket / lead routing allowance",
+        "min": [
+          46,
+          88,
+          67
+        ],
+        "size": [
+          158,
+          62,
+          53
+        ],
+        "group": "battery",
+        "hardware": [],
+        "shape": "box",
+        "parent": "battery_bay",
+        "notes": "Bare 6S/8S orientation screen only. Internal leads, padding, swelling allowance and as-delivered dimensions are not qualified."
+      },
+      {
+        "id": "pack_interface_end",
+        "module": "core",
+        "label": "Cartridge monitor / fuse / recessed mating interface",
+        "min": [
+          206,
+          88,
+          67
+        ],
+        "size": [
+          16,
+          62,
+          53
+        ],
+        "group": "power",
+        "hardware": [],
+        "shape": "box",
+        "parent": "battery_bay",
+        "notes": "Functional allocation; does not establish that a 150 A continuous / 320 A short contact and fuse assembly fits."
+      },
+      {
+        "id": "dock_logic_power",
+        "module": "core",
+        "label": "Dock logic supply / reverse-blocking power handover",
+        "min": [
+          45,
+          90,
+          125.1
+        ],
+        "size": [
+          35,
+          60,
+          20
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "dock_logic_power",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "Above left battery edge, below lidar scan plane. Cap needs a local 146 mm roof. Station power feeds logic only; traction/tools/flight stay disabled."
+      },
+      {
+        "id": "core_logic_power_F",
+        "module": "core",
+        "label": "core logic power F",
+        "min": [
+          10,
+          91,
+          125.1
+        ],
+        "size": [
+          34,
+          47,
+          14
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "logic_buck",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified."
+      },
+      {
+        "id": "cincon_reference",
+        "module": "air_common",
+        "label": "Cincon bare case",
+        "min": [
+          30,
+          16,
+          90
+        ],
+        "size": [
+          61,
+          57.9,
+          12.7
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "tool_converter",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "",
+        "mass_cg_mm": [
+          60.5,
+          45,
+          107
+        ]
+      },
+      {
+        "id": "sink_reference",
+        "module": "air_common",
+        "label": "HBT127 sink",
+        "min": [
+          30,
+          16,
+          103
+        ],
+        "size": [
+          61,
+          58,
+          12.7
+        ],
+        "group": "power",
+        "hardware": [],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "motor_buck_reference",
+        "module": "drive",
+        "label": "12 V buck board",
+        "min": [
+          108,
+          36,
+          90
+        ],
+        "size": [
+          31.75,
+          43.18,
+          9.02
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "motor_buck",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": ""
+      },
+      {
+        "id": "logic_buck_reference",
+        "module": "core",
+        "label": "5 V buck board, upper tier",
+        "min": [
+          11,
+          93,
+          127.1
+        ],
+        "size": [
+          31.75,
+          43.18,
+          9.02
+        ],
+        "group": "power",
+        "hardware": [],
+        "shape": "box",
+        "notes": "",
+        "parent": "core_logic_power_F"
+      },
+      {
+        "id": "power_fan_reference",
+        "module": "air_common",
+        "label": "Converter cooling fan reference",
+        "min": [
+          40,
+          21,
+          118
+        ],
+        "size": [
+          40,
+          40,
+          12
+        ],
+        "group": "power",
+        "hardware": [],
+        "shape": "box",
+        "notes": "40 mm fan horizontal above sink; at least 2 mm inlet space to contoured cap."
+      },
+      {
+        "id": "clamp_resistor_reference",
+        "module": "drive",
+        "label": "10 ohm braking resistor envelope",
+        "min": [
+          93,
+          31,
+          90
+        ],
+        "size": [
+          15,
+          48,
+          14
+        ],
+        "hardware": [
+          {
+            "id": "regen_clamp",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "group": "power",
+        "notes": "Installation target; component selection and electrical/thermal detail open. Mass in regen_clamp.",
+        "mass_cg_mm": [
+          109,
+          54,
+          106
+        ]
+      },
+      {
+        "id": "brake_cap_reference",
+        "module": "drive",
+        "label": "25 V bulk capacitor reservation",
+        "min": [
+          111,
+          60,
+          106
+        ],
+        "size": [
+          16,
+          16,
+          25
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "power",
+        "notes": "Installation target; component selection and electrical/thermal detail open. Mass in regen_clamp."
+      },
+      {
+        "id": "clamp_control_reference",
+        "module": "drive",
+        "label": "Clamp comparator / FET carrier reservation",
+        "min": [
+          108,
+          35,
+          117
+        ],
+        "size": [
+          30,
+          20,
+          12
+        ],
+        "hardware": [],
+        "shape": "box",
+        "group": "power",
+        "notes": "Installation target; component selection and electrical/thermal detail open. Mass in regen_clamp."
+      },
+      {
+        "id": "floor_shelf_left",
+        "module": "drive",
+        "label": "floor shelf left",
+        "min": [
+          26,
+          13,
+          86
+        ],
+        "size": [
+          81,
+          70,
+          1
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_shelf_left",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "stock_mass_g": 15.309000000000001
+      },
+      {
+        "id": "floor_shelf_right",
+        "module": "drive",
+        "label": "floor shelf right",
+        "min": [
+          107,
+          30,
+          86
+        ],
+        "size": [
+          34,
+          53,
+          1
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_shelf_right",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "stock_mass_g": 4.8654
+      },
+      {
+        "id": "floor_shelf_tab",
+        "module": "drive",
+        "label": "floor shelf tab",
+        "min": [
+          20,
+          66,
+          86
+        ],
+        "size": [
+          6,
+          6,
+          1
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_shelf_tab",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "stock_mass_g": 0.09720000000000001
+      },
+      {
+        "id": "floor_foot_plate",
+        "module": "drive",
+        "label": "floor foot plate",
+        "min": [
+          27,
+          66,
+          12
+        ],
+        "size": [
+          81,
+          20,
+          2
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_foot_plate",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "stock_mass_g": 8.748000000000001
+      },
+      {
+        "id": "floor_foot_tab",
+        "module": "drive",
+        "label": "floor foot tab",
+        "min": [
+          20,
+          66,
+          12
+        ],
+        "size": [
+          7,
+          6,
+          2
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_foot_tab",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "stock_mass_g": 0.2268
+      },
+      {
+        "id": "floor_rear_stiffener",
+        "module": "drive",
+        "label": "floor rear stiffener",
+        "min": [
+          26,
+          80,
+          87
+        ],
+        "size": [
+          115,
+          2,
+          8
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_rear_stiffener",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "stock_mass_g": 4.968
+      },
+      {
+        "id": "floor_front_stiffener",
+        "module": "drive",
+        "label": "floor front stiffener",
+        "min": [
+          29,
+          13,
+          87
+        ],
+        "size": [
+          77,
+          2,
+          8
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_front_stiffener",
+            "qty": 1
+          }
+        ],
+        "shape": "box",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified. G trims 3 mm from the left end for slider clearance; the F stock mass is retained conservatively.",
+        "stock_mass_g": 3.4560000000000004
+      },
+      {
+        "id": "floor_post_0",
+        "module": "drive",
+        "label": "floor post 0",
+        "min": [
+          21.0,
+          67.0,
+          14
+        ],
+        "size": [
+          4,
+          4,
+          72
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_post_0",
+            "qty": 1
+          }
+        ],
+        "shape": "cylinder_z",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "stock_mass_g": 5.063933198321387
+      },
+      {
+        "id": "floor_post_1",
+        "module": "drive",
+        "label": "floor post 1",
+        "min": [
+          104.0,
+          67.0,
+          14
+        ],
+        "size": [
+          4,
+          4,
+          72
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_post_1",
+            "qty": 1
+          }
+        ],
+        "shape": "cylinder_z",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "stock_mass_g": 5.063933198321387
+      },
+      {
+        "id": "floor_post_2",
+        "module": "drive",
+        "label": "floor post 2",
+        "min": [
+          104.0,
+          80.0,
+          14
+        ],
+        "size": [
+          4,
+          4,
+          72
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_post_2",
+            "qty": 1
+          }
+        ],
+        "shape": "cylinder_z",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "stock_mass_g": 5.063933198321387
+      },
+      {
+        "id": "core_interface_F",
+        "module": "core",
+        "label": "core interface F",
+        "min": [
+          13,
+          185,
+          72
+        ],
+        "size": [
+          1,
+          1,
+          1
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "core_interface_F",
+            "qty": 1
+          }
+        ],
+        "shape": "distributed",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "mass_cg_mm": [
+          13,
+          185,
+          72
+        ]
+      },
+      {
+        "id": "floor_interface_F",
+        "module": "drive",
+        "label": "floor interface F",
+        "min": [
+          75,
+          95,
+          50
+        ],
+        "size": [
+          1,
+          1,
+          1
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_interface_F",
+            "qty": 1
+          }
+        ],
+        "shape": "distributed",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "mass_cg_mm": [
+          75,
+          95,
+          50
+        ]
+      },
+      {
+        "id": "floor_carrier_fasteners",
+        "module": "drive",
+        "label": "floor carrier fasteners",
+        "min": [
+          80,
+          69,
+          86
+        ],
+        "size": [
+          1,
+          1,
+          1
+        ],
+        "group": "power",
+        "hardware": [
+          {
+            "id": "floor_carrier_fasteners",
+            "qty": 1
+          }
+        ],
+        "shape": "distributed",
+        "notes": "F allocation; attachment details, tolerances and thermal duty remain unqualified.",
+        "mass_cg_mm": [
+          80,
+          69,
+          86
+        ]
+      },
+      {
+        "id": "G_bottom_supervisor",
+        "module": "drive",
+        "label": "Separate bottom supervisor bay",
+        "min": [
+          215,
+          25,
+          56
+        ],
+        "size": [
+          32,
+          57,
+          30
+        ],
+        "shape": "box",
+        "group": "logic",
+        "hardware": [
+          {
+            "id": "bottom_mcu",
+            "qty": 1
+          }
+        ],
+        "notes": "Existing full board size retained; split from the RoboClaw carrier to clear the replacement bridge route"
+      },
+      {
+        "id": "G_corner_0_bottom",
+        "module": "core",
+        "label": "G corner 0 bottom",
+        "min": [
+          5.0,
+          1.3000000000000007,
+          86
+        ],
+        "size": [
+          18,
+          25.4,
+          3.175
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_0_bottom",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          14,
+          14
+        ],
+        "stock_mass_g": 3.919347
+      },
+      {
+        "id": "G_corner_0_top",
+        "module": "core",
+        "label": "G corner 0 top",
+        "min": [
+          5.0,
+          1.3000000000000007,
+          120.925
+        ],
+        "size": [
+          18,
+          25.4,
+          3.175
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_0_top",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          14,
+          14
+        ],
+        "stock_mass_g": 3.919347
+      },
+      {
+        "id": "G_corner_0_front",
+        "module": "core",
+        "label": "G corner 0 front",
+        "min": [
+          5.0,
+          1.3000000000000007,
+          89.175
+        ],
+        "size": [
+          18,
+          3.175,
+          31.75
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_0_front",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 4.899183750000001
+      },
+      {
+        "id": "G_corner_0_rear",
+        "module": "core",
+        "label": "G corner 0 rear",
+        "min": [
+          5.0,
+          23.525,
+          89.175
+        ],
+        "size": [
+          18,
+          3.175,
+          31.75
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_0_rear",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 4.899183750000001
+      },
+      {
+        "id": "G_lock_pad_0_bottom",
+        "module": "core",
+        "label": "G lock pad 0 bottom",
+        "min": [
+          5.0,
+          8.0,
+          89.175
+        ],
+        "size": [
+          18,
+          12,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          14,
+          14
+        ],
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_pad_0_top",
+        "module": "core",
+        "label": "G lock pad 0 top",
+        "min": [
+          5.0,
+          8.0,
+          118.925
+        ],
+        "size": [
+          18,
+          12,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          14,
+          14
+        ],
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_0_bottom",
+        "module": "core",
+        "label": "G lock 0 bottom",
+        "min": [
+          8.0,
+          5.0,
+          91.675
+        ],
+        "size": [
+          20,
+          18,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "core_locks",
+            "qty": 0.125
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "shape_override": "slider",
+        "stud_center": [
+          14,
+          14
+        ],
+        "release_direction": -1,
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_0_top",
+        "module": "core",
+        "label": "G lock 0 top",
+        "min": [
+          8.0,
+          5.0,
+          116.425
+        ],
+        "size": [
+          20,
+          18,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "core_locks",
+            "qty": 0.125
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "shape_override": "slider",
+        "stud_center": [
+          14,
+          14
+        ],
+        "release_direction": -1,
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_corner_1_bottom",
+        "module": "core",
+        "label": "G corner 1 bottom",
+        "min": [
+          252.0,
+          1.3000000000000007,
+          86
+        ],
+        "size": [
+          18,
+          25.4,
+          3.175
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_1_bottom",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          261,
+          14
+        ],
+        "stock_mass_g": 3.919347
+      },
+      {
+        "id": "G_corner_1_top",
+        "module": "core",
+        "label": "G corner 1 top",
+        "min": [
+          252.0,
+          1.3000000000000007,
+          120.925
+        ],
+        "size": [
+          18,
+          25.4,
+          3.175
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_1_top",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          261,
+          14
+        ],
+        "stock_mass_g": 3.919347
+      },
+      {
+        "id": "G_corner_1_front",
+        "module": "core",
+        "label": "G corner 1 front",
+        "min": [
+          252.0,
+          1.3000000000000007,
+          89.175
+        ],
+        "size": [
+          18,
+          3.175,
+          31.75
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_1_front",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 4.899183750000001
+      },
+      {
+        "id": "G_corner_1_rear",
+        "module": "core",
+        "label": "G corner 1 rear",
+        "min": [
+          252.0,
+          23.525,
+          89.175
+        ],
+        "size": [
+          18,
+          3.175,
+          31.75
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_1_rear",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 4.899183750000001
+      },
+      {
+        "id": "G_lock_pad_1_bottom",
+        "module": "core",
+        "label": "G lock pad 1 bottom",
+        "min": [
+          252.0,
+          8.0,
+          89.175
+        ],
+        "size": [
+          18,
+          12,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          261,
+          14
+        ],
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_pad_1_top",
+        "module": "core",
+        "label": "G lock pad 1 top",
+        "min": [
+          252.0,
+          8.0,
+          118.925
+        ],
+        "size": [
+          18,
+          12,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          261,
+          14
+        ],
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_1_bottom",
+        "module": "core",
+        "label": "G lock 1 bottom",
+        "min": [
+          247.0,
+          5.0,
+          91.675
+        ],
+        "size": [
+          20,
+          18,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "core_locks",
+            "qty": 0.125
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "shape_override": "slider",
+        "stud_center": [
+          261,
+          14
+        ],
+        "release_direction": 1,
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_1_top",
+        "module": "core",
+        "label": "G lock 1 top",
+        "min": [
+          247.0,
+          5.0,
+          116.425
+        ],
+        "size": [
+          20,
+          18,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "core_locks",
+            "qty": 0.125
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "shape_override": "slider",
+        "stud_center": [
+          261,
+          14
+        ],
+        "release_direction": 1,
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_corner_2_bottom",
+        "module": "core",
+        "label": "G corner 2 bottom",
+        "min": [
+          5.0,
+          248.3,
+          86
+        ],
+        "size": [
+          18,
+          25.4,
+          3.175
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_2_bottom",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          14,
+          261
+        ],
+        "stock_mass_g": 3.919347
+      },
+      {
+        "id": "G_corner_2_top",
+        "module": "core",
+        "label": "G corner 2 top",
+        "min": [
+          5.0,
+          248.3,
+          120.925
+        ],
+        "size": [
+          18,
+          25.4,
+          3.175
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_2_top",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          14,
+          261
+        ],
+        "stock_mass_g": 3.919347
+      },
+      {
+        "id": "G_corner_2_front",
+        "module": "core",
+        "label": "G corner 2 front",
+        "min": [
+          5.0,
+          248.3,
+          89.175
+        ],
+        "size": [
+          18,
+          3.175,
+          31.75
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_2_front",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 4.899183750000001
+      },
+      {
+        "id": "G_corner_2_rear",
+        "module": "core",
+        "label": "G corner 2 rear",
+        "min": [
+          5.0,
+          270.525,
+          89.175
+        ],
+        "size": [
+          18,
+          3.175,
+          31.75
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_2_rear",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 4.899183750000001
+      },
+      {
+        "id": "G_lock_pad_2_bottom",
+        "module": "core",
+        "label": "G lock pad 2 bottom",
+        "min": [
+          5.0,
+          255.0,
+          89.175
+        ],
+        "size": [
+          18,
+          12,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          14,
+          261
+        ],
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_pad_2_top",
+        "module": "core",
+        "label": "G lock pad 2 top",
+        "min": [
+          5.0,
+          255.0,
+          118.925
+        ],
+        "size": [
+          18,
+          12,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          14,
+          261
+        ],
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_2_bottom",
+        "module": "core",
+        "label": "G lock 2 bottom",
+        "min": [
+          8.0,
+          252.0,
+          91.675
+        ],
+        "size": [
+          20,
+          18,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "core_locks",
+            "qty": 0.125
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "shape_override": "slider",
+        "stud_center": [
+          14,
+          261
+        ],
+        "release_direction": -1,
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_2_top",
+        "module": "core",
+        "label": "G lock 2 top",
+        "min": [
+          8.0,
+          252.0,
+          116.425
+        ],
+        "size": [
+          20,
+          18,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "core_locks",
+            "qty": 0.125
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "shape_override": "slider",
+        "stud_center": [
+          14,
+          261
+        ],
+        "release_direction": -1,
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_corner_3_bottom",
+        "module": "core",
+        "label": "G corner 3 bottom",
+        "min": [
+          252.0,
+          248.3,
+          86
+        ],
+        "size": [
+          18,
+          25.4,
+          3.175
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_3_bottom",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          261,
+          261
+        ],
+        "stock_mass_g": 3.919347
+      },
+      {
+        "id": "G_corner_3_top",
+        "module": "core",
+        "label": "G corner 3 top",
+        "min": [
+          252.0,
+          248.3,
+          120.925
+        ],
+        "size": [
+          18,
+          25.4,
+          3.175
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_3_top",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          261,
+          261
+        ],
+        "stock_mass_g": 3.919347
+      },
+      {
+        "id": "G_corner_3_front",
+        "module": "core",
+        "label": "G corner 3 front",
+        "min": [
+          252.0,
+          248.3,
+          89.175
+        ],
+        "size": [
+          18,
+          3.175,
+          31.75
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_3_front",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 4.899183750000001
+      },
+      {
+        "id": "G_corner_3_rear",
+        "module": "core",
+        "label": "G corner 3 rear",
+        "min": [
+          252.0,
+          270.525,
+          89.175
+        ],
+        "size": [
+          18,
+          3.175,
+          31.75
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_corner_3_rear",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 4.899183750000001
+      },
+      {
+        "id": "G_lock_pad_3_bottom",
+        "module": "core",
+        "label": "G lock pad 3 bottom",
+        "min": [
+          252.0,
+          255.0,
+          89.175
+        ],
+        "size": [
+          18,
+          12,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          261,
+          261
+        ],
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_pad_3_top",
+        "module": "core",
+        "label": "G lock pad 3 top",
+        "min": [
+          252.0,
+          255.0,
+          118.925
+        ],
+        "size": [
+          18,
+          12,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "drill_axis": "z",
+        "drill_diameter": 9.5,
+        "drill_center": [
+          261,
+          261
+        ],
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_3_bottom",
+        "module": "core",
+        "label": "G lock 3 bottom",
+        "min": [
+          247.0,
+          252.0,
+          91.675
+        ],
+        "size": [
+          20,
+          18,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "core_locks",
+            "qty": 0.125
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "shape_override": "slider",
+        "stud_center": [
+          261,
+          261
+        ],
+        "release_direction": 1,
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_lock_3_top",
+        "module": "core",
+        "label": "G lock 3 top",
+        "min": [
+          247.0,
+          252.0,
+          116.425
+        ],
+        "size": [
+          20,
+          18,
+          2
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "core_locks",
+            "qty": 0.125
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "shape_override": "slider",
+        "stud_center": [
+          261,
+          261
+        ],
+        "release_direction": 1,
+        "stock_mass_g": 0
+      },
+      {
+        "id": "G_rail_front",
+        "module": "core",
+        "label": "G rail front",
+        "min": [
+          10,
+          4.475,
+          103
+        ],
+        "size": [
+          255,
+          1.5875,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_rail_front",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 13.881020625
+      },
+      {
+        "id": "G_rail_rear",
+        "module": "core",
+        "label": "G rail rear",
+        "min": [
+          10,
+          268.9375,
+          103
+        ],
+        "size": [
+          255,
+          1.5875,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_rail_rear",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 13.881020625
+      },
+      {
+        "id": "G_rail_left",
+        "module": "core",
+        "label": "G rail left",
+        "min": [
+          2.5,
+          20,
+          103
+        ],
+        "size": [
+          1.5875,
+          235,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_rail_left",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 12.792313125000002
+      },
+      {
+        "id": "G_rail_right",
+        "module": "core",
+        "label": "G rail right",
+        "min": [
+          270.9125,
+          20,
+          103
+        ],
+        "size": [
+          1.5875,
+          235,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_rail_right",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 12.792313125000002
+      },
+      {
+        "id": "G_clip_0_x",
+        "module": "core",
+        "label": "G clip 0 x",
+        "min": [
+          4.0875,
+          26.7,
+          103
+        ],
+        "size": [
+          1.5875,
+          12.7,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_clip_0_x",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 0.6913292624999999
+      },
+      {
+        "id": "G_clip_0_y",
+        "module": "core",
+        "label": "G clip 0 y",
+        "min": [
+          5.675000000000001,
+          26.7,
+          103
+        ],
+        "size": [
+          11.112499999999999,
+          1.5875,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_clip_0_y",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 0.6049131046874999
+      },
+      {
+        "id": "G_clip_1_x",
+        "module": "core",
+        "label": "G clip 1 x",
+        "min": [
+          269.32500000000005,
+          26.7,
+          103
+        ],
+        "size": [
+          1.5875,
+          12.7,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_clip_1_x",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 0.6913292624999999
+      },
+      {
+        "id": "G_clip_1_y",
+        "module": "core",
+        "label": "G clip 1 y",
+        "min": [
+          258.21250000000003,
+          26.7,
+          103
+        ],
+        "size": [
+          11.112499999999999,
+          1.5875,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_clip_1_y",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 0.6049131046874999
+      },
+      {
+        "id": "G_clip_2_x",
+        "module": "core",
+        "label": "G clip 2 x",
+        "min": [
+          4.0875,
+          235.60000000000002,
+          103
+        ],
+        "size": [
+          1.5875,
+          12.7,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_clip_2_x",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 0.6913292624999999
+      },
+      {
+        "id": "G_clip_2_y",
+        "module": "core",
+        "label": "G clip 2 y",
+        "min": [
+          5.675000000000001,
+          246.7125,
+          103
+        ],
+        "size": [
+          11.112499999999999,
+          1.5875,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_clip_2_y",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 0.6049131046874999
+      },
+      {
+        "id": "G_clip_3_x",
+        "module": "core",
+        "label": "G clip 3 x",
+        "min": [
+          269.32500000000005,
+          235.60000000000002,
+          103
+        ],
+        "size": [
+          1.5875,
+          12.7,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_clip_3_x",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 0.6913292624999999
+      },
+      {
+        "id": "G_clip_3_y",
+        "module": "core",
+        "label": "G clip 3 y",
+        "min": [
+          258.21250000000003,
+          246.7125,
+          103
+        ],
+        "size": [
+          11.112499999999999,
+          1.5875,
+          12.7
+        ],
+        "shape": "box",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_clip_3_y",
+            "qty": 1
+          }
+        ],
+        "notes": "G reference; supplied radii, drilled holes, fasteners and tolerance stack remain to qualify.",
+        "stock_mass_g": 0.6049131046874999
+      },
+      {
+        "id": "G_frame_fasteners",
+        "module": "core",
+        "label": "G frame fasteners",
+        "min": [
+          0,
+          0,
+          86
+        ],
+        "size": [
+          275,
+          275,
+          38.1
+        ],
+        "shape": "distributed",
+        "group": "structure",
+        "hardware": [
+          {
+            "id": "G_frame_fasteners",
+            "qty": 1
+          }
+        ],
+        "notes": "Actual fastener lengths and head/lock clearances remain to qualify"
+      },
+      {
+        "id": "I_lidar_mount",
+        "module": "core",
+        "label": "Lidar support reservation",
+        "min": [
+          102.4,
+          97.15,
+          124.1
+        ],
+        "size": [
+          64,
+          64,
+          9.4
+        ],
+        "shape": "box",
+        "hardware": [],
+        "group": "structure",
+        "notes": "Keep the complete rotating optical enclosure clear, not only the nominal beam centre. Bare reference from manufacturer drawing rev1.1; current linked rev1.2 could not be downloaded. Match supplied revision before drilling. Mount bay is a route reservation, not a solid block or completed rail attachment."
+      }
+    ],
+    "limits": {
+      "body_mm": [
+        275,
+        275,
+        180
+      ],
+      "panel_mm": [
+        270,
+        270
+      ],
+      "bottom_mate_z_mm": 86,
+      "top_mate_z_mm": 124.1,
+      "caster_radius_mm": 40.5,
+      "caster_height_mm": 50.5,
+      "stair_clear_width_mm": 914.4,
+      "left_projection_mm": 38.1,
+      "right_projection_mm": 101.6,
+      "stair_tread_mm": 279.4,
+      "stair_riser_mm": 190.5,
+      "riser_count": 15,
+      "sofa_clearance_mm": 50,
+      "sofa_depth_mm": 914.4,
+      "cap_roof_mm": 135
+    },
+    "assumptions": {
+      "lift_extension_permission": "Owner considers 644 x 1444 mm excessive; expanded lift footprint is not accepted. Current rotor layouts remain comparison evidence while compact layout and mass reduction are investigated.",
+      "dusting_target": "Owner reports ceiling fans about 7 ft (2133.6 mm) above floor and 1 ft (304.8 mm) below ceiling; about 2 ft (609.6 mm) duster reach is desired. Reach datum and fan blade geometry remain to detail. Earlier 2 m / 300 mm shelf assumption is superseded.",
+      "purchase_policy": "No new purchases or print release from this paper design.",
+      "mass_ranges": "Low/nominal/high engineering allowances, not confidence intervals. All combinations include only one bottom and one top.",
+      "guard_factor": "0.75 baseline retained thrust at equal electrical operating point; sensitivity 0.65\u20130.85. Not measured guard performance.",
+      "flight_voltage": "21 V under-load screening case; scaled maximum thrust is an estimate, not manufacturer low-voltage data.",
+      "battery_exchange": "Owner requires automatic cartridge exchange and charged station spares. Initial allocation: two spare packs and four rack bays per floor; one pack carried, five packs across two floors. Counts are design assumptions, not purchases or a no-wait guarantee."
+    },
+    "bottoms": {
+      "vacuum": {
+        "label": "Everyday vacuum / drive",
+        "groups": [
+          "drive",
+          "vacuum",
+          "air_common"
+        ],
+        "payload_g": 150,
+        "payload_high_g": 300,
+        "payload_at": [
+          85,
+          212,
+          52
+        ],
+        "swath_m": 0.18,
+        "speed_m_s": 0.22,
+        "coverage_efficiency": 0.6,
+        "payload_note": "0.50 L usable bin target; 150 g design debris load, 300 g stress case; mass checked at dock before lift."
+      },
+      "mop": {
+        "label": "Oscillating mop / drive",
+        "groups": [
+          "drive",
+          "mop"
+        ],
+        "payload_g": 400,
+        "payload_high_g": 450,
+        "payload_at": [
+          67,
+          211,
+          62
+        ],
+        "swath_m": 0.23,
+        "speed_m_s": 0.14,
+        "coverage_efficiency": 0.55,
+        "payload_note": "350 mL clean water plus 50 g pad water; high case allows 100 g wet pad. Dirty water stays in station."
+      },
+      "low": {
+        "label": "Under-sofa vacuum / drive",
+        "groups": [
+          "drive",
+          "air_common",
+          "extension_common",
+          "low"
+        ],
+        "payload_g": 120,
+        "payload_high_g": 250,
+        "payload_at": [
+          105,
+          216,
+          79
+        ],
+        "swath_m": 0.18,
+        "speed_m_s": 0.05,
+        "coverage_efficiency": 0.4,
+        "caster_min_override": [
+          188,
+          190,
+          0
+        ],
+        "payload_note": "0.30 L bin target. Head has 60 mm stowed front overhang; extension is an explicit envelope exception.",
+        "transit_lift_mm": 12
+      },
+      "dust": {
+        "label": "Extended duster / drive",
+        "groups": [
+          "drive",
+          "air_common",
+          "extension_common",
+          "dust"
+        ],
+        "payload_g": 50,
+        "payload_high_g": 150,
+        "payload_at": [
+          105,
+          216,
+          79
+        ],
+        "swath_m": 0.1,
+        "speed_m_s": 0.04,
+        "coverage_efficiency": 0.4,
+        "caster_min_override": [
+          188,
+          190,
+          0
+        ],
+        "payload_note": "Higher shelves require the lift top. Head and guide stow before transfer; contact-flight qualification is open.",
+        "transit_lift_mm": 12
+      }
+    },
+    "batteries": {
+      "design_6s": {
+        "label": "6S / 5.2 Ah comparison",
+        "cells": 6,
+        "nominal_v": 22.2,
+        "full_v": 25.2,
+        "capacity_ah": 5.2,
+        "mass_g": [
+          700,
+          753,
+          820
+        ],
+        "body_mm": [
+          155.5,
+          48.5,
+          50
+        ],
+        "source": "battery_6s",
+        "flight_qualified": false
+      },
+      "design_8s": {
+        "label": "8S / 5.2 Ah comparison",
+        "cells": 8,
+        "nominal_v": 29.6,
+        "full_v": 33.6,
+        "capacity_ah": 5.2,
+        "mass_g": [
+          880,
+          921,
+          980
+        ],
+        "body_mm": [
+          156,
+          47,
+          61
+        ],
+        "source": "battery_8s",
+        "flight_qualified": false
+      }
+    },
+    "power": {
+      "rail_efficiency": {
+        "5v": 0.9,
+        "12v": 0.92,
+        "24v": 0.9,
+        "raw": 1.0
+      },
+      "usable_energy_fraction": 0.8,
+      "core_loads": [
+        {
+          "name": "Pi 5 computation",
+          "rail": "5v",
+          "normal_w": 12,
+          "high_w": 20
+        },
+        {
+          "name": "Stereo camera",
+          "rail": "5v",
+          "normal_w": 4,
+          "high_w": 5
+        },
+        {
+          "name": "RPLIDAR",
+          "rail": "5v",
+          "normal_w": 2.5,
+          "high_w": 3.5
+        },
+        {
+          "name": "MCU, sensing, interfaces and cooling",
+          "rail": "5v",
+          "normal_w": 3,
+          "high_w": 5
+        }
+      ],
+      "drive_loads": [
+        {
+          "name": "Two wheel motors at cleaning load",
+          "rail": "12v",
+          "normal_w": 20,
+          "high_w": 48
+        },
+        {
+          "name": "Bottom control, sensors and driver losses",
+          "rail": "5v",
+          "normal_w": 2,
+          "high_w": 3
+        }
+      ],
+      "tools": {
+        "vacuum": [
+          {
+            "name": "Blower",
+            "rail": "24v",
+            "normal_w": 45.6,
+            "high_w": 64.8
+          },
+          {
+            "name": "Roller drive",
+            "rail": "12v",
+            "normal_w": 14,
+            "high_w": 24
+          },
+          {
+            "name": "Side brush",
+            "rail": "12v",
+            "normal_w": 2,
+            "high_w": 4
+          }
+        ],
+        "mop": [
+          {
+            "name": "Oscillating pad drive",
+            "rail": "12v",
+            "normal_w": 8,
+            "high_w": 18
+          },
+          {
+            "name": "Dosing pump duty average",
+            "rail": "12v",
+            "normal_w": 0.8,
+            "high_w": 3.6
+          },
+          {
+            "name": "Lift and wet control duty average",
+            "rail": "12v",
+            "normal_w": 0.5,
+            "high_w": 6
+          }
+        ],
+        "low": [
+          {
+            "name": "Blower with extension",
+            "rail": "24v",
+            "normal_w": 55,
+            "high_w": 64.8
+          },
+          {
+            "name": "Extension feed during cleaning stroke",
+            "rail": "12v",
+            "normal_w": 12,
+            "high_w": 24
+          }
+        ],
+        "dust": [
+          {
+            "name": "Dust capture blower",
+            "rail": "24v",
+            "normal_w": 35,
+            "high_w": 64.8
+          },
+          {
+            "name": "Boom repositioning duty average",
+            "rail": "12v",
+            "normal_w": 3,
+            "high_w": 24
+          }
+        ]
+      },
+      "rail_allocations_w": {
+        "5v": 40,
+        "12v": 96,
+        "24v": 80
+      },
+      "floor_main_allocation_w": 240,
+      "notes": "Normal/high loads are design scenarios, not measured consumption. High is a simultaneous operating allocation, not unrestricted motor stall. Conversion losses counted once at the rail boundary."
+    },
+    "traction": {
+      "wheel_radius_m": 0.036,
+      "free_speed_rpm": 130,
+      "stall_torque_nm": 2.157463,
+      "stall_current_a": 5,
+      "no_load_current_a": 0.3,
+      "current_limit_a": 2,
+      "continuous_torque_fraction_of_stall": 0.25,
+      "rolling_coefficient": 0.03,
+      "acceleration_m_s2": 0.25,
+      "mop_drag_n": 4,
+      "dry_friction_assumption": 0.6,
+      "wet_friction_sensitivity": [
+        0.2,
+        0.35,
+        0.5
+      ],
+      "drive_contact_xy": [
+        [
+          14,
+          108
+        ],
+        [
+          261,
+          108
+        ]
+      ],
+      "caster_pivot_xy": [
+        137.5,
+        232
+      ],
+      "caster_trail_mm": 15.5,
+      "cg_uncertainty_mm": 15,
+      "threshold_speed_m_s": 0.05,
+      "backup_contact_xy": [
+        [
+          10,
+          14
+        ],
+        [
+          265,
+          14
+        ]
+      ],
+      "backup_ground_gap_mm": 2
+    },
+    "extension": {
+      "stage_count": 6,
+      "stage_length_mm": 245,
+      "overlap_mm": 45,
+      "outer_mm": [
+        48,
+        36
+      ],
+      "step_mm": 3,
+      "wall_mm": 1,
+      "feed_speed_mm_s": 50,
+      "force_limit_n": 12,
+      "sofa_standoff_mm": 80,
+      "head_length_mm": 60,
+      "height_limit_mm": 40,
+      "minimum_strip_guided_gap_mm": 20,
+      "hose_friction_factor": 0.04,
+      "minor_loss_k": 6,
+      "airflow_l_s": 3.6,
+      "tip_contact_n": 0.2,
+      "tip_retreat_n": 0.5
+    },
+    "lift": {
+      "default": "octo10",
+      "source": "flight_motor",
+      "reference_voltage_v": 24,
+      "minimum_voltage_screen_v": 21,
+      "guard_factor": 0.75,
+      "guard_factor_range": [
+        0.65,
+        0.85
+      ],
+      "thrust_to_weight_target": 2,
+      "voltage_scaling_exponent": 2,
+      "power_overhead_factor": 1.1,
+      "maneuver_power_factor": 1.2,
+      "transfer_s": 45,
+      "landing_reserve_s": 30,
+      "energy_margin_fraction": 0.2,
+      "lateral_margin_mm": 25,
+      "yaw_uncertainty_deg": 2,
+      "prop_diameter_mm": 254,
+      "guard_diameter_mm": 284,
+      "rotor_plane_z_mm": 149,
+      "guard_z_range_mm": [
+        118,
+        180
+      ],
+      "curve_thrust_g_power_w": [
+        [
+          761,
+          124
+        ],
+        [
+          1336,
+          262
+        ],
+        [
+          1871,
+          421
+        ],
+        [
+          2451,
+          617
+        ],
+        [
+          3242,
+          894
+        ],
+        [
+          4181,
+          1242
+        ],
+        [
+          4648,
+          1477
+        ]
+      ],
+      "curve_full_throttle_duration_s": 29,
+      "variants": {
+        "quad10": {
+          "label": "Four 10-inch rotors / comparison",
+          "rotors_xy_relative_mm": [
+            [
+              -180,
+              -280
+            ],
+            [
+              180,
+              -280
+            ],
+            [
+              180,
+              280
+            ],
+            [
+              -180,
+              280
+            ]
+          ],
+          "structure_scale": 0.7
+        },
+        "hex10": {
+          "label": "Six 10-inch rotors / comparison",
+          "rotors_xy_relative_mm": [
+            [
+              0,
+              -570
+            ],
+            [
+              180,
+              -280
+            ],
+            [
+              180,
+              280
+            ],
+            [
+              0,
+              570
+            ],
+            [
+              -180,
+              280
+            ],
+            [
+              -180,
+              -280
+            ]
+          ],
+          "structure_scale": 0.88
+        },
+        "octo10": {
+          "label": "Eight 10-inch rotors / load-budget candidate",
+          "rotors_xy_relative_mm": [
+            [
+              -180,
+              -580
+            ],
+            [
+              180,
+              -580
+            ],
+            [
+              -180,
+              -280
+            ],
+            [
+              180,
+              -280
+            ],
+            [
+              -180,
+              280
+            ],
+            [
+              180,
+              280
+            ],
+            [
+              -180,
+              580
+            ],
+            [
+              180,
+              580
+            ]
+          ],
+          "structure_scale": 1.0
+        }
+      },
+      "per_rotor": [
+        "lift_motor",
+        "lift_prop",
+        "lift_esc",
+        "lift_guard"
+      ],
+      "common": {
+        "lift_structure": 1,
+        "lift_joinery": 1,
+        "lift_harness": 1,
+        "flight_controller": 1,
+        "flight_power": 1,
+        "flight_sensors": 1,
+        "flight_io": 1,
+        "depth_camera": 2
+      },
+      "notes": "Non-coaxial layout keeps the propeller disks clear of the core. Eight motors require a geometry-specific allocator; this is not a stock Octo-X frame. Existing 8S pack cannot power this 4\u20136S motor reference. The default identifies the previous accounting comparison, not a selected production top. Its long two-column arrangement is not a minimum-size proof.",
+      "layout_status": "FOOTPRINT_CHALLENGED_REPACKAGING_REQUIRED"
+    },
+    "station": {
+      "count": 2,
+      "cabinet_mm": [
+        1200,
+        1800,
+        1500
+      ],
+      "front_approach_mm": 1600,
+      "core_lift_stroke_mm": 300,
+      "top_lift_stroke_mm": 480,
+      "bottom_transfer_clearance_mm": 15,
+      "clean_water_l": 5,
+      "dirty_water_l": 5,
+      "debris_l": 5,
+      "mop_wash_interval_m2": 10,
+      "wash_water_ml": 120,
+      "wood_water_ml_m2": 3,
+      "tile_water_ml_m2": 6,
+      "dc_supply_w": 280,
+      "vacuum_service_w": 800,
+      "charger_allocation_w": 180,
+      "held_core_origin_mm": [
+        462.5,
+        287.5,
+        10
+      ],
+      "bottom_slot_min_mm": [
+        [
+          45,
+          210,
+          80
+        ],
+        [
+          45,
+          580,
+          80
+        ],
+        [
+          880,
+          210,
+          80
+        ],
+        [
+          880,
+          580,
+          80
+        ],
+        [
+          45,
+          950,
+          80
+        ]
+      ],
+      "top_park_center_mm": [
+        600,
+        1030,
+        650
+      ],
+      "notes": "Five complete-bottom positions: local tool inventory plus receiving vacancy. Intact rotor top parks overhead. Station stock, water and machinery are not carried. Four battery bays hold two resident spares, one returning-pack vacancy and one recovery vacancy. Spare packs are excluded from carried robot mass. Cabinet/top storage dimensions inherit the oversized lift comparison and must be reconsidered with its replacement; they are not an accepted household footprint.",
+      "hardware": [
+        {
+          "item": "2020 aluminum extrusion, cut/drilled frame",
+          "qty": 25,
+          "unit": "m",
+          "mass_each_g": 440,
+          "power_w": 0,
+          "basis": "Stock mass allowance; final supplier section controls mass"
+        },
+        {
+          "item": "2040 gantry extrusion",
+          "qty": 5,
+          "unit": "m",
+          "mass_each_g": 720,
+          "power_w": 0,
+          "basis": "Stock allowance"
+        },
+        {
+          "item": "Enclosure, access doors, bulk-container trays",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 5500,
+          "power_w": 0,
+          "basis": "PP panels / aluminum trays; material allowance"
+        },
+        {
+          "item": "MGN12 rail and two-block carriages: core Z, top Z/Y, bottom X/Y/Z",
+          "qty": 8,
+          "unit": "axis",
+          "mass_each_g": 850,
+          "power_w": 0,
+          "basis": "Average installed rail/blocks allowance; longest axis 1.6 m; bottom picker Z must also reach battery underside at station z=376 mm"
+        },
+        {
+          "item": "TR8x2 screw, anti-backlash nut, end bearings and coupler",
+          "qty": 3,
+          "unit": "set",
+          "mass_each_g": 600,
+          "power_w": 0,
+          "basis": "Core lift, top lift, bottom picker Z; no gravity axis uses belt alone"
+        },
+        {
+          "item": "NEMA17 >=0.45 N m, 24 V current-controlled drive",
+          "qty": 6,
+          "unit": "axis",
+          "mass_each_g": 500,
+          "power_w": 15,
+          "basis": "Core Z, top Y/Z, bottom X/Y/Z; target torque, not a selected motor rating"
+        },
+        {
+          "item": "GT2/GT3 belt, idlers and 2:1 vertical reduction",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 1500,
+          "power_w": 0,
+          "basis": "Horizontal motion and synchronous Z; linear guides carry side loads"
+        },
+        {
+          "item": "Mechanical catches, load forks and positive tool retainers",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 2500,
+          "power_w": 0,
+          "basis": "Catch springs carry load on power loss; >=20 kg held-assembly design load"
+        },
+        {
+          "item": "Bottom support/storage trays including arrival vacancy",
+          "qty": 5,
+          "unit": "tray",
+          "mass_each_g": 450,
+          "power_w": 0,
+          "basis": "Each 275 x 335 mm envelope plus structural cradle"
+        },
+        {
+          "item": "Top cradle plus cap tray and top gripper",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 1200,
+          "power_w": 0,
+          "basis": "1444 mm long intact top parked clear of exchange plane"
+        },
+        {
+          "item": "Core/module lock actuators and position switches",
+          "qty": 2,
+          "unit": "bank",
+          "mass_each_g": 220,
+          "power_w": 12,
+          "basis": "Common cam bars drive four passive locks simultaneously"
+        },
+        {
+          "item": "20 kg weighing platform: four 5 kg load cells, ADC and overload stops",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 550,
+          "power_w": 1,
+          "basis": "Required calibrated mass check; load-cell accuracy not assumed"
+        },
+        {
+          "item": "5 L clean, 5 L dirty and 5 L debris containers, removable",
+          "qty": 3,
+          "unit": "container",
+          "mass_each_g": 550,
+          "power_w": 0,
+          "basis": "Empty container allowance; water and debris separate"
+        },
+        {
+          "item": "Wet fill/wash pumps, strainer, level/flow/leak sensors and valves",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 1500,
+          "power_w": 36,
+          "basis": "Station targets; backflow break and screened drain"
+        },
+        {
+          "item": "Wash pan, scrub roller, drip enclosure and dry-air fan",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 1900,
+          "power_w": 60,
+          "basis": "No heater allocation; drying time depends on humidity"
+        },
+        {
+          "item": "Enclosed off-the-shelf vacuum, 5 L bag/filter and dock coupling",
+          "qty": 1,
+          "unit": "unit",
+          "mass_each_g": 4200,
+          "power_w": 800,
+          "basis": "Mains appliance design allowance; keep its original electrical enclosure"
+        },
+        {
+          "item": "Certified enclosed 24 V >=280 W station DC supply",
+          "qty": 1,
+          "unit": "unit",
+          "mass_each_g": 1000,
+          "power_w": 0,
+          "basis": "Supply rating, not another load; no specific SKU chosen"
+        },
+        {
+          "item": "Four independently controlled CC/CV charge stages; aggregate input allocation shared",
+          "qty": 1,
+          "unit": "assembly",
+          "mass_each_g": 1000,
+          "power_w": 180,
+          "basis": "4 x 250 g board/thermal allowance using BQ25756 controller reference; 180 W TOTAL station charge input, not per bay. No finished automatic charger selected."
+        },
+        {
+          "item": "Station controller, CAN, motor drivers, watchdog, E-stop and sensors",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 850,
+          "power_w": 10,
+          "basis": "ESP32-class controller; at least 18 home/limit and 8 presence/lock inputs"
+        },
+        {
+          "item": "Wire, drag chains, sealed connectors, fasteners and service fittings",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 3500,
+          "power_w": 0,
+          "basis": "Installed allowance"
+        },
+        {
+          "item": "Four battery rack bays, guides, individual contacts, thermal sensing and dry enclosure",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 1800,
+          "power_w": 4,
+          "basis": "Empty installed rack allowance; no claim of fire containment; cartridges counted separately"
+        },
+        {
+          "item": "Battery pickup adapter, positive capture, latch cam and extended picker Z fittings",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 1200,
+          "power_w": 12,
+          "basis": "Shares existing XYZ bottom picker after bottom stored; no separate full robot arm"
+        },
+        {
+          "item": "Protected station logic-power umbilical and source/presence interlocks",
+          "qty": 1,
+          "unit": "set",
+          "mass_each_g": 180,
+          "power_w": 60,
+          "basis": "60 W maximum station-side allocation for robot logic during exchange; 40 W delivered 5 V rail"
+        }
+      ]
+    },
+    "geometry_status": "Preliminary functional allocations; custom structure, contacts and supplier tool interfaces require detail release.",
+    "stock": [
+      {
+        "module": "core",
+        "item": "6061/6063 aluminum flat strip",
+        "section_mm": "10 x 2",
+        "length_mm": 270,
+        "qty": 4,
+        "purpose": "Upper/lower open frames; drill through joints"
+      },
+      {
+        "module": "core",
+        "item": "6061/6063 aluminum flat strip",
+        "section_mm": "10 x 2",
+        "length_mm": 250,
+        "qty": 4,
+        "purpose": "Frame cross rails; no monolithic machined ring"
+      },
+      {
+        "module": "core",
+        "item": "Steel lock plate blank",
+        "section_mm": "18 x 2",
+        "length_mm": 28,
+        "qty": 8,
+        "purpose": "M4 mushroom stud/keyhole slot; drilled/filed or outsourced laser-cut"
+      },
+      {
+        "module": "core",
+        "item": "M4 through studs and metal spacers",
+        "section_mm": "M4",
+        "length_mm": 57,
+        "qty": 4,
+        "purpose": "Continuous structural path through core; length allocated, verify shoulders"
+      },
+      {
+        "module": "each bottom",
+        "item": "PETG skeleton",
+        "section_mm": "max 270 x 270",
+        "length_mm": 0,
+        "qty": 1,
+        "purpose": "120 cm3 effective material allowance, not solid infill slab"
+      },
+      {
+        "module": "each bottom",
+        "item": "Aluminum pod face plates",
+        "section_mm": "32 x 2",
+        "length_mm": 42,
+        "qty": 2,
+        "purpose": "Motor mounting load spreader"
+      },
+      {
+        "module": "each bottom",
+        "item": "M4 pod pivot / polymer bushings / shoulder spacers",
+        "section_mm": "M4",
+        "length_mm": 20,
+        "qty": 2,
+        "purpose": "40 mm trailing arm, 10 mm up travel and positive stops"
+      },
+      {
+        "module": "each bottom",
+        "item": "Adjustable extension/compression spring",
+        "section_mm": "target ~0.8 N/mm",
+        "length_mm": 0,
+        "qty": 2,
+        "purpose": "Set wheel load from measured assembled CG; replaceable spring cassette"
+      },
+      {
+        "module": "each bottom",
+        "item": "624-2RS bearing with printed hub and silicone O-ring",
+        "section_mm": "4 x 13 x 5 bearing",
+        "length_mm": 0,
+        "qty": 2,
+        "purpose": "20 mm backup pitch roller; 2 mm normal ground gap"
+      },
+      {
+        "module": "extension",
+        "item": "Printed nested tube stage",
+        "section_mm": "48x36 to 33x21, 1 mm wall",
+        "length_mm": 245,
+        "qty": 6,
+        "purpose": "3 mm size decrement; 45 mm minimum overlap; replaceable seals"
+      },
+      {
+        "module": "extension",
+        "item": "Guided spring-steel feed strip",
+        "section_mm": "6 x 0.3",
+        "length_mm": 1400,
+        "qty": 1,
+        "purpose": "Stock strip, continuously supported; clamp and deburr ends, slip-clutch feed"
+      },
+      {
+        "module": "octo10",
+        "item": "Pultruded/roll-wrapped carbon main beam",
+        "section_mm": "20 OD / 18 ID",
+        "length_mm": 1200,
+        "qty": 2,
+        "purpose": "Motor centres +/-580 mm; 20 mm end allowance each"
+      },
+      {
+        "module": "octo10",
+        "item": "Carbon crossbeam",
+        "section_mm": "20 OD / 18 ID",
+        "length_mm": 340,
+        "qty": 2,
+        "purpose": "At y=-15 and 290 mm, clear of core power trays"
+      },
+      {
+        "module": "octo10",
+        "item": "Carbon diagonal brace stock",
+        "section_mm": "10 OD / 8 ID",
+        "length_mm": 1500,
+        "qty": 1,
+        "purpose": "Cut into diagonals; lengths follow clamp joint geometry"
+      },
+      {
+        "module": "octo10",
+        "item": "Metal split clamps / motor plates",
+        "section_mm": "20 mm bore / 2 mm plate",
+        "length_mm": 0,
+        "qty": 12,
+        "purpose": "Purchased clamps and flat drilled plates; no printed primary cantilever"
+      },
+      {
+        "module": "octo10",
+        "item": "Segmented PETG guard rings and mesh",
+        "section_mm": "284 mm OD x 62 high",
+        "length_mm": 0,
+        "qty": 8,
+        "purpose": "Four printed quadrants per ring; top/bottom guard planes, replaceable mesh"
+      }
+    ],
+    "interfaces": {
+      "core_bottom_seat_z_mm": 86,
+      "core_top_seat_z_mm": 124.1,
+      "lock_centres_xy_mm": [
+        [
+          14,
+          14
+        ],
+        [
+          261,
+          14
+        ],
+        [
+          14,
+          261
+        ],
+        [
+          261,
+          261
+        ]
+      ],
+      "lock_stud": "M4 through-bolted mushroom shoulder; no printed thread in lift load path",
+      "guide_scheme": "one 4 mm round pin, one relieved/diamond pin, four hard seats",
+      "lock_plate_mm": [
+        18,
+        28,
+        2
+      ],
+      "lock_slide_mm": 8,
+      "clamp_draw_mm": 0.5,
+      "bottom_connector_min_mm": [
+        4,
+        160,
+        58
+      ],
+      "bottom_connector_envelope_mm": [
+        18,
+        50,
+        27
+      ],
+      "top_connector_min_mm": [
+        193,
+        88,
+        123
+      ],
+      "top_connector_envelope_mm": [
+        78,
+        32,
+        35
+      ],
+      "bottom_power": "F_RAW6S: switched raw 6S and protected 5 V logic; local 12/24 V conversion",
+      "signals": [
+        "CAN H",
+        "CAN L",
+        "logic GND",
+        "PRESENT loop",
+        "HARDWARE ENABLE loop",
+        "ID/service"
+      ],
+      "floor_current_allocations_a": {
+        "raw_pack_contact_requirement": 20,
+        "5v": 1.5
+      },
+      "flight_current_requirements_a": {
+        "continuous_hover_design": 150,
+        "short_maneuver_design": 320
+      },
+      "notes": "Connector envelopes are geometric requirements. High-current blind-mate contact assemblies and mechanical locks are not approved parts.",
+      "partition_F": {
+        "revision": "F_RAW6S",
+        "operating_pack_v": [
+          18,
+          25.2
+        ],
+        "raw_branch_allocation_w": 240,
+        "contact_continuous_requirement_a": 20,
+        "qualification": "Unselected blind-mate contacts; no hot mating. Require thermal, fault, wear and cycle-life qualification.",
+        "rails": [
+          "switched raw 6S positive",
+          "power return",
+          "protected 5 V logic",
+          "logic return"
+        ],
+        "signals": [
+          "CAN H",
+          "CAN L",
+          "PRESENT",
+          "HARDWARE ENABLE",
+          "ID/service"
+        ],
+        "enable_conditions": [
+          "all four bottom locks confirmed",
+          "F_RAW6S module ID accepted",
+          "contacts fully seated",
+          "precharge complete",
+          "voltage and temperature valid",
+          "watchdog healthy"
+        ],
+        "disconnect_sequence": [
+          "stop tool and wheels",
+          "hold locks closed while braking energy decays",
+          "disable bottom converters",
+          "open raw branch",
+          "verify branch discharged",
+          "release locks and separate"
+        ],
+        "notes": "Raw voltage never shares a mating key with the previous 12/24 V interface. No converter input-capacitance or charge-time qualification is inferred. Flight high-current trunk remains separate."
+      },
+      "G_mechanical_revision": "Top seat 124.1 mm; core-side sliders release outward in X. Prior top-seat fixtures are incompatible without adaptation."
+    },
+    "battery_exchange": {
+      "required": true,
+      "status": "Preliminary automatic exchange design; no fabrication or electrical release",
+      "spare_packs_per_station": 2,
+      "rack_bays_per_station": 4,
+      "minimum_free_receiving_bays": 1,
+      "recovery_bays_reserved": 1,
+      "cartridges_on_robot": 1,
+      "cartridge_tare_hardware_ids": [
+        "battery_cartridge"
+      ],
+      "extraction_axis": "negative_z_after_bottom_removed",
+      "extraction_drop_mm": 100,
+      "swap_time_target_s": 120,
+      "swap_time_is_target_not_measurement": true,
+      "station_logic_input_w": 60,
+      "logic_rail_capacity_w": 40,
+      "charge_input_efficiency": 0.9,
+      "charge_enabled_time_fraction": 0.8,
+      "recovery_time_scenarios_min": [
+        60,
+        90,
+        120
+      ],
+      "example_charge_c_rate": 1.0,
+      "charge_rate_status": "Arithmetic illustration only; use the selected pack manufacturer limit and measured temperatures",
+      "rack_allocation": {
+        "min": [
+          880,
+          250,
+          375
+        ],
+        "size": [
+          280,
+          640,
+          160
+        ]
+      },
+      "rack_slot_min_mm": [
+        [
+          908,
+          270,
+          390
+        ],
+        [
+          908,
+          420,
+          390
+        ],
+        [
+          908,
+          570,
+          390
+        ],
+        [
+          908,
+          720,
+          390
+        ]
+      ],
+      "rack_slot_size_mm": [
+        190,
+        90,
+        65
+      ],
+      "transfer_battery_min_z_mm": 276,
+      "route_waypoint_y_mm": 950,
+      "side_approach_min_x_mm": 750,
+      "readiness_states": [
+        "EMPTY",
+        "RECEIVING",
+        "COOLING",
+        "CHARGING",
+        "READY",
+        "RESERVED",
+        "FAULT"
+      ],
+      "ready_policy": "Target both resident spares charged while station enabled. Charge terminates; no continuous trickle. Revalidate voltage, cell balance, temperature and task capability before reservation.",
+      "notes": "Never parallel packs or remove a live propulsion connection. A mission needs reachable station energy reserve and a compatible READY pack. Shared charging power, cooling and taper can still create waits."
+    },
+    "dusting_requirements": {
+      "source": "Owner report, 2026-09-13",
+      "highest_surface_above_floor_mm": 2133.6,
+      "surface_to_ceiling_mm": 304.8,
+      "derived_ceiling_height_mm": 2438.4,
+      "requested_tool_reach_mm": 609.6,
+      "reach_datum_status": "Nominal tool reach reported; body-edge versus guard-edge datum unresolved. Do not add hidden rotor stand-off to this requirement.",
+      "fan_state_for_cleaning": "Off, stopped and prevented from restarting during contact; autonomy interface not yet designed",
+      "geometry_implements_target": false,
+      "notes": "Current shared 1 m horizontal telescope is retained as earlier geometry/mass evidence. Fan cleaning needs revised approach and upward articulation or another access mechanism. The under-sofa 914.4 mm depth requirement is unchanged."
+    }
+  },
+  "configured_support": {
+    "revision": "H: wheel-pivot and caster-support study",
+    "status": "Mechanism and support candidates; G remains the complete mass/layout baseline",
+    "wheel": {
+      "radius_mm": 36,
+      "axle_yz_mm": [
+        105,
+        36
+      ],
+      "pivot_yz_mm": [
+        145,
+        36
+      ],
+      "bump_mm": 10,
+      "droop_candidate_mm": 2.5,
+      "pod_x_mm": [
+        26,
+        106
+      ],
+      "motor_reference_min_mm": [
+        26,
+        92.5,
+        23.5
+      ],
+      "motor_reference_size_mm": [
+        69,
+        25,
+        25
+      ],
+      "spring_lever_mm": 16,
+      "cap_bottom_z_mm": 62,
+      "spring_top_z_mm": 62,
+      "spring_seat_z_mm": 36,
+      "spring_x_mm": 80,
+      "spring_od_limit_mm": 10,
+      "wheel_rate_n_mm": 0.8,
+      "spring_solid_height_limit_mm": 18,
+      "spring_bump_clearance_mm": 2,
+      "pivot_diameter_mm": 6,
+      "pivot_bearing_span_mm": 77,
+      "bushing_length_mm": 8,
+      "bushing_od_mm": 8,
+      "bushing_centres_x_mm": [
+        34,
+        98
+      ],
+      "fixed_support_centres_x_mm": [
+        27.5,
+        104.5
+      ],
+      "contact_x_mm": 14,
+      "factored_vertical_wheel_load_n": 150,
+      "horizontal_wheel_load_n": 25,
+      "bump_stop_lever_mm": 32,
+      "bump_stop_x_mm": 100,
+      "spring_force_at_impact_n": 85,
+      "pivot_diameter_sensitivity_mm": [
+        4,
+        5,
+        6
+      ],
+      "steel_bending_screen_mpa": 150,
+      "steel_shear_screen_mpa": 90,
+      "note": "Rear-mounted pivot gives a leading arm, not a trailing arm. Loads are preliminary design cases, not motor-shaft or bushing ratings. Full droop is a candidate to screen, not an adopted height-compatible setting."
+    },
+    "caster": {
+      "bare_height_mm": 50.5,
+      "sweep_radius_mm": 40.5,
+      "centres_xy_mm": {
+        "vacuum": [
+          137.5,
+          232
+        ],
+        "mop": [
+          137.5,
+          232
+        ],
+        "low": [
+          230,
+          232
+        ]
+      },
+      "fitting_height_sensitivity_mm": [
+        0,
+        2.5,
+        5
+      ],
+      "reference_fitting_height_mm": 6,
+      "saddle_width_mm": 40,
+      "saddle_length_mm": 44,
+      "saddle_front_y_mm": 222,
+      "plate_mm": 3,
+      "retainer_allowance_mm": 12,
+      "rear_attachment_y_mm": 266,
+      "factored_vertical_load_n": 100,
+      "horizontal_load_n": 25,
+      "mount_clearance_mm": 1,
+      "note": "The bare L51-8 caster needs a separate retained fitting. 2.5 mm is a sensitivity/reference assumption, not a verified height for an ordered fitting; do not put a generic M8 bolt into its blind bore."
+    },
+    "material": {
+      "aluminum_density_g_mm3": 0.0027,
+      "steel_density_g_mm3": 0.00785,
+      "aluminum_e_mpa": 69000,
+      "aluminum_bending_screen_mpa": 120,
+      "deflection_screen_mm": 0.5,
+      "note": "Same 6061-T6 assumption and preliminary project bending limit as G; supplied stock, holes and joints require qualification."
+    },
+    "carrier": {
+      "bridge_min_mm": [
+        28,
+        83.5,
+        65
+      ],
+      "bridge_size_mm": [
+        219,
+        1.5,
+        20
+      ],
+      "right_shelf_rib_min_mm": [
+        105,
+        13,
+        78
+      ],
+      "right_shelf_rib_size_mm": [
+        2,
+        70,
+        8
+      ],
+      "left_rail_min_mm": [
+        26,
+        13,
+        65
+      ],
+      "left_rail_size_mm": [
+        2,
+        140,
+        21
+      ],
+      "right_rail_min_mm": [
+        247,
+        27,
+        65
+      ],
+      "right_rail_size_mm": [
+        2,
+        126,
+        20
+      ],
+      "inner_rails": [
+        {
+          "min": [
+            106,
+            85,
+            54
+          ],
+          "size": [
+            3,
+            68,
+            11
+          ]
+        },
+        {
+          "min": [
+            166,
+            85,
+            54
+          ],
+          "size": [
+            3,
+            68,
+            11
+          ]
+        }
+      ],
+      "rear_bridge_min_mm": [
+        29,
+        263,
+        65
+      ],
+      "rear_bridge_size_mm": [
+        217,
+        3,
+        19
+      ],
+      "removed_if_closed": [
+        "floor_post_0",
+        "floor_post_1",
+        "floor_post_2",
+        "floor_foot_plate",
+        "floor_foot_tab",
+        "floor_shelf_tab"
+      ],
+      "note": "Stock routes only. Inner rails, pivot-cap joints, rear tie-to-side-frame joints, coupling-stud attachments and fasteners must close before replacing F. Do not install overlapping candidate and F supports."
+    },
+    "sources": {
+      "motor": "https://www.pololu.com/product/4846",
+      "motor_drawing": "https://www.pololu.com/file/0J1634/25d-metal-gearmotor-dimension-diagram.pdf",
+      "wheel_stack": "docs/DRIVETRAIN_SOURCING.md#wheel-to-hub-check-2026-09-12",
+      "caster": "https://www.tente.com/en-ca/swivel-castor-50-mm/5940uap050l51-8-load-9011",
+      "caster_fittings": "https://www.tente.com/media/c0/dd/db/1770226623/Linea_for_furniture.pdf?ts=1771358769"
+    },
+    "motor_load_guidance": {
+      "continuous_kgf_cm": 4,
+      "intermittent_kgf_cm": 8,
+      "continuous_stall_current_fraction": 0.25,
+      "note": "Manufacturer gearbox-load guidance, not the older 25%-of-stall-torque estimate. Retain the lower applicable gearbox and motor thermal limit."
+    }
+  },
+  "height_before": {
+    "vacuum": {
+      "max_height_mm": 181.81250490993477,
+      "part": "lidar",
+      "left_travel_mm": -2.5,
+      "right_travel_mm": -2.5,
+      "caster_heading_deg": 270,
+      "normal": [
+        0.0,
+        -0.022513466389680215,
+        0.9997465397945224
+      ],
+      "sampled_poses": 2592,
+      "reserved_height_mm": 183.81250490993477,
+      "passes_reserved_screen": false
+    },
+    "mop": {
+      "max_height_mm": 181.81250490993477,
+      "part": "lidar",
+      "left_travel_mm": -2.5,
+      "right_travel_mm": -2.5,
+      "caster_heading_deg": 270,
+      "normal": [
+        0.0,
+        -0.022513466389680215,
+        0.9997465397945224
+      ],
+      "sampled_poses": 2592,
+      "reserved_height_mm": 183.81250490993477,
+      "passes_reserved_screen": false
+    },
+    "low": {
+      "max_height_mm": 181.87556236531728,
+      "part": "lidar",
+      "left_travel_mm": -2.5,
+      "right_travel_mm": 10.0,
+      "caster_heading_deg": 305,
+      "normal": [
+        -0.050763009638571346,
+        0.0768118090239468,
+        0.9957525108413751
+      ],
+      "sampled_poses": 2592,
+      "reserved_height_mm": 183.87556236531728,
+      "passes_reserved_screen": false
+    }
+  },
+  "height_after": {
+    "vacuum": {
+      "max_height_mm": 177.34812081085423,
+      "part": "lidar",
+      "left_travel_mm": -2.5,
+      "right_travel_mm": -2.5,
+      "caster_heading_deg": 270,
+      "normal": [
+        0.0,
+        -0.022513466389680215,
+        0.9997465397945224
+      ],
+      "sampled_poses": 2592,
+      "reserved_height_mm": 179.34812081085423,
+      "passes_reserved_screen": true,
+      "local_poses": 225
+    },
+    "mop": {
+      "max_height_mm": 177.34812081085423,
+      "part": "lidar",
+      "left_travel_mm": -2.5,
+      "right_travel_mm": -2.5,
+      "caster_heading_deg": 270,
+      "normal": [
+        0.0,
+        -0.022513466389680215,
+        0.9997465397945224
+      ],
+      "sampled_poses": 2592,
+      "reserved_height_mm": 179.34812081085423,
+      "passes_reserved_screen": true,
+      "local_poses": 225
+    },
+    "low": {
+      "max_height_mm": 177.34812081085423,
+      "part": "lidar",
+      "left_travel_mm": -2.5,
+      "right_travel_mm": -2.5,
+      "caster_heading_deg": 270,
+      "normal": [
+        0.0,
+        -0.022513466389680215,
+        0.9997465397945224
+      ],
+      "sampled_poses": 2592,
+      "reserved_height_mm": 179.34812081085423,
+      "passes_reserved_screen": true,
+      "local_poses": 225
+    }
+  },
+  "nominal_lidar_top_mm": 174.8,
+  "optics": {
+    "window_bottom_mm": 156.6,
+    "beam_centre_mm": 163.3,
+    "highest_surrounding_part": "top_port",
+    "surrounding_top_mm": 154.5,
+    "clear_gap_mm": 2.0999999999999943,
+    "after_sensor_tolerance_mm": 1.8999999999999944,
+    "passes": true,
+    "scope": "Ground cap and core vertical clearance only. Lift frame, connector cable loops, window covers and complete optical cone remain unqualified."
+  },
+  "caster_stack": {
+    "plate_bottom_mm": 56.5,
+    "plate_top_mm": 59.5,
+    "washer_top_mm": 61.1,
+    "nut_top_mm": 69.1,
+    "thread_tip_mm": 71.5,
+    "thread_projection_mm": 2.4000000000000057,
+    "hardware_top_mm": 71.5,
+    "overhead_mm": 74,
+    "overhead_gap_mm": 2.5,
+    "bare_plus_stem_g": 110,
+    "stem_pairing_confirmed": false,
+    "caster_pullout_retention_verified": false
+  },
+  "caster_beam": {
+    "stress_mpa": 80.83333333333333,
+    "deflection_mm": 0.345931293612453,
+    "passes": true,
+    "scope": "Gross 40 x 3 mm strip, rigid root, 100 N vertical plus 25 N fore/aft. Holes, bolted root and caster plug retention unqualified."
+  },
+  "bins": {
+    "vacuum": {
+      "inner_box_l": 0.637464,
+      "after_reserve_l": 0.5418444,
+      "target_l": 0.5,
+      "target_screen_pass": true,
+      "usable_capacity_qualified": false
+    },
+    "mop": {
+      "inner_box_l": 0.417582,
+      "after_reserve_l": 0.3549447,
+      "target_l": 0.35,
+      "target_screen_pass": true,
+      "usable_capacity_qualified": false
+    },
+    "low": {
+      "inner_box_l": 0.363825,
+      "after_reserve_l": 0.30925125,
+      "target_l": 0.3,
+      "target_screen_pass": true,
+      "usable_capacity_qualified": false
+    }
+  },
+  "port_to_pack_protection_gap_mm": 1.5,
+  "conflicts": {
+    "vacuum": [],
+    "mop": [],
+    "low": []
+  },
+  "mass_comparison": {
+    "bare_lidar_delta_g": -60,
+    "new_mount_allowance_g": [
+      10,
+      18,
+      28
+    ],
+    "caster_installation_reserve_g": 142,
+    "caster_delta_from_G_g": 30,
+    "illustrative_net_delta_g": -12,
+    "complete_G_masses_g": {
+      "vacuum": 4776.942082563714,
+      "mop": 4490.942082563714,
+      "low": 5055.942082563714
+    },
+    "note": "Not installed masses: all G supports retained; additional mount is conservative pending allocation within existing core structure. H joints and actual retainers remain incomplete."
+  },
+  "input_sha256": {
+    "config/system_design.json": "0fcabe616ea34c53c47c1d3dbd72489484af97ee88e86682df02577d6bf473a2",
+    "config/core_partition.json": "13c706f6e34d7dd15cbcf47dd890ee2b8d03b5726512eb5da802b25016d1bc11",
+    "config/frame_joints.json": "14dca6f7a3bdebac7e898b5191915c4c2b0a30231f19411a05d1bdd908b5bb35",
+    "config/floor_support.json": "f6bec40b01c20f41a5239abbd6beb3d98dbecb4d64321384e7a21a50e500b27c",
+    "config/height_mounting.json": "11dd586055ab38d75ba7043cc78b9cba4a4124c12a3ab119a1ccbd9a2ee4bfab"
+  },
+  "continuous_envelope_proven": false,
+  "physical_validation": false,
+  "fabrication_release": false
+}

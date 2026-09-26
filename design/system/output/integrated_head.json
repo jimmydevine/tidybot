@@ -1,0 +1,2676 @@
+{
+  "config": {
+    "revision": "R: integrated vacuum cassette ends",
+    "status": "Dimensioned frame candidate; no fabrication release or booked assembly saving",
+    "polymer_density_g_mm3": 0.00127,
+    "aluminum_density_g_mm3": 0.0027,
+    "frame_budget_g": 135,
+    "compliance_budget_g": 35,
+    "hood_wall_mm": 1.4,
+    "end_wall_x_mm": 35.2,
+    "end_wall_thickness_mm": 1.5,
+    "bearing_cage_outer_radius_mm": 7.5,
+    "bearing_pocket_radius_mm": 5.15,
+    "cage_left_x_mm": 28.8,
+    "pitch_pin_y_mm": 48,
+    "pitch_pin_radius_mm": 1.5,
+    "pitch_pin_clearance_mm": 0.2,
+    "side_brush_shift_from_Q_mm": -1,
+    "rail_backing_thickness_mm": 1,
+    "steel_density_g_mm3": 0.00785,
+    "retained_rows": [
+      {
+        "id": "guide_rails",
+        "mass_g": 18.6,
+        "moving": false,
+        "basis": "Q catalog reference: two 62 mm NS-01-17 rails"
+      },
+      {
+        "id": "guide_carriages",
+        "mass_g": 3.4,
+        "moving": true,
+        "basis": "Q catalog reference: two standard NW-02-17 carriages"
+      },
+      {
+        "id": "pivot_bearings",
+        "mass_g": 1,
+        "moving": true,
+        "basis": "Q historical KGLM-03 envelopes; current supplied variant remains to verify"
+      },
+      {
+        "id": "pivot_retention_and_pitch_pin_hardware",
+        "mass_g": 5,
+        "moving": true,
+        "basis": "Allowance: two pivot joints plus two M2 pitch-stop screws/sleeves; exact axial stack unresolved"
+      },
+      {
+        "id": "roller_end_inserts_and_guards",
+        "mass_g": 10,
+        "moving": true,
+        "basis": "Allowance: replaceable drive and stationary end inserts; exact purchased roller interfaces are not inferred"
+      },
+      {
+        "id": "motor_transmission_frame_fastening",
+        "mass_g": 7,
+        "moving": true,
+        "basis": "Allowance: motor bosses, isolators, hood fasteners and captive inserts; motor/transmission masses remain separate"
+      },
+      {
+        "id": "floor_lips_and_shell_seals",
+        "mass_g": 8,
+        "moving": true,
+        "basis": "Allowance: compliant lips, end seals and hood gasket; not the air-flex plumbing"
+      },
+      {
+        "id": "skid_wear_surfaces",
+        "mass_g": 2,
+        "moving": true,
+        "basis": "Allowance: replaceable smooth polymer wear strips on modeled printed ramps"
+      },
+      {
+        "id": "rail_and_carrier_fastening",
+        "mass_g": 5,
+        "moving": false,
+        "basis": "Allowance: backing/rail attachment and flush cheek attachment; exact fastener access remains unresolved"
+      },
+      {
+        "id": "counterbalance_and_travel_stop_completion",
+        "mass_g": 5,
+        "moving": false,
+        "basis": "Allowance: springs/anchors and captive rail end stops; spring/friction performance remains unproven"
+      },
+      {
+        "id": "completion_reserve",
+        "mass_g": 10,
+        "moving": false,
+        "basis": "Unassigned local completion reserve, not material and not a saving"
+      }
+    ],
+    "policy": "Replace the entire prior 135 g frame plus 35 g compliance scope once. Retain P carrier 70 g, powered lift 62 g, plumbing 75 g, risers, roller, motor, transmission, driver, body interface and all other assembly rows. Do not add the separate Q 72/75 g mechanism or its dock-only capture. Do not book savings until joints, flex and floor following close."
+  },
+  "cad": {
+    "source_fingerprint": "41f03ea02c2a917baeb2c7984d7a63319dc2587fb2b5664c99d967a17b3cfa6c",
+    "fabrication_release": false,
+    "pose_count": 105,
+    "intersections": [],
+    "withdrawal_intersections": [],
+    "pitch_stop_controls": [
+      {
+        "angle_deg": -7,
+        "side": "left",
+        "interference_mm3": 0.4217592199592065
+      },
+      {
+        "angle_deg": -7,
+        "side": "right",
+        "interference_mm3": 0.4217592199592065
+      },
+      {
+        "angle_deg": 7,
+        "side": "left",
+        "interference_mm3": 0.4217592199592407
+      },
+      {
+        "angle_deg": 7,
+        "side": "right",
+        "interference_mm3": 0.42175921995924076
+      }
+    ],
+    "valid_solids": {
+      "left_rail_backing": true,
+      "left_carrier_spacer": true,
+      "right_rail_backing": true,
+      "right_carrier_spacer": true,
+      "left_integrated_end": true,
+      "left_drop_link": true,
+      "right_integrated_end": true,
+      "right_drop_link": true,
+      "hood_and_outlet": true
+    },
+    "mass_rows": [
+      {
+        "id": "left_integrated_end",
+        "mass_g": 7.08960077844607,
+        "volume_mm3": 5582.36281767407,
+        "moving": true,
+        "centre_mm": [
+          34.81868638581007,
+          36.18405725538667,
+          21.936873390917476
+        ],
+        "basis": "Solid-volume PETG estimate: end wall, bearing pocket, skid ramps and stop boss; hardware separate"
+      },
+      {
+        "id": "left_drop_link",
+        "mass_g": 3.5692996639090393,
+        "volume_mm3": 1321.9628384848293,
+        "moving": true,
+        "centre_mm": [
+          26.5,
+          34.489040714789134,
+          27.98572515196022
+        ],
+        "basis": "2 mm aluminum profile with pivot/carriage holes and pitch-stop arc slot; keyed attachment unresolved"
+      },
+      {
+        "id": "left_rail_backing",
+        "mass_g": 11.311374574556142,
+        "volume_mm3": 1440.9394362491903,
+        "moving": false,
+        "centre_mm": [
+          19.000000000000004,
+          32.885732940641525,
+          52.598600085667606
+        ],
+        "basis": "1 mm steel L-shaped backing with rear-open P screw relief; rail attachment holes still unmodeled"
+      },
+      {
+        "id": "left_carrier_spacer",
+        "mass_g": 0.44491313808141963,
+        "volume_mm3": 350.32530557592094,
+        "moving": false,
+        "centre_mm": [
+          21.1,
+          50.98393913374212,
+          81.59001560317151
+        ],
+        "basis": "Carrier offset pad; screws, load-spreading and keyed joints not modeled"
+      },
+      {
+        "id": "right_integrated_end",
+        "mass_g": 7.089600778446052,
+        "volume_mm3": 5582.362817674057,
+        "moving": true,
+        "centre_mm": [
+          240.18131361419,
+          36.18405725538668,
+          21.936873390917494
+        ],
+        "basis": "Solid-volume PETG estimate: end wall, bearing pocket, skid ramps and stop boss; hardware separate"
+      },
+      {
+        "id": "right_drop_link",
+        "mass_g": 3.5692996639090393,
+        "volume_mm3": 1321.9628384848293,
+        "moving": true,
+        "centre_mm": [
+          248.49999999999997,
+          34.489040714789134,
+          27.98572515196022
+        ],
+        "basis": "2 mm aluminum profile with pivot/carriage holes and pitch-stop arc slot; keyed attachment unresolved"
+      },
+      {
+        "id": "right_rail_backing",
+        "mass_g": 11.311374574556142,
+        "volume_mm3": 1440.9394362491903,
+        "moving": false,
+        "centre_mm": [
+          256.00000000000006,
+          32.885732940641525,
+          52.598600085667606
+        ],
+        "basis": "1 mm steel L-shaped backing with rear-open P screw relief; rail attachment holes still unmodeled"
+      },
+      {
+        "id": "right_carrier_spacer",
+        "mass_g": 0.4449131380814186,
+        "volume_mm3": 350.32530557592014,
+        "moving": false,
+        "centre_mm": [
+          253.90000000000003,
+          50.98393913374212,
+          81.59001560317154
+        ],
+        "basis": "Carrier offset pad; screws, load-spreading and keyed joints not modeled"
+      },
+      {
+        "id": "hood_and_outlet",
+        "mass_g": 42.09231104000006,
+        "volume_mm3": 33143.55200000005,
+        "moving": true,
+        "centre_mm": [
+          137.49999999999991,
+          36.71041269203729,
+          37.3081596082399
+        ],
+        "basis": "1.4 mm solid walls with rear outlet; end joints, motor mounts, seals and fasteners budgeted separately"
+      }
+    ],
+    "minimum_roller_clearance_mm": 0.49999999999993844,
+    "minimum_guide_clearance_mm": 2.9986424696098375,
+    "scope": "Actual modeled frame/hood/link/backing solids versus P/N and modified H allocations over Q poses; protected purchased envelopes and 120 mm withdrawal with head raised. Rail/carriage overlap, link/carriage face and guide-envelope tangency are intentional. Backing/guide and spacer/cheek face contact is intentional. Bearing pockets and stop slots are checked. Pivot fasteners, carriage antirotation, rail screws/end stops, motor/end inserts, flexible hose and powered lift joints are not modeled.",
+    "withdrawal_samples": 121
+  },
+  "mass": {
+    "rows": [
+      {
+        "id": "left_integrated_end",
+        "mass_g": 7.08960077844607,
+        "volume_mm3": 5582.36281767407,
+        "moving": true,
+        "centre_mm": [
+          34.81868638581007,
+          36.18405725538667,
+          21.936873390917476
+        ],
+        "basis": "Solid-volume PETG estimate: end wall, bearing pocket, skid ramps and stop boss; hardware separate",
+        "kind": "CAD material"
+      },
+      {
+        "id": "left_drop_link",
+        "mass_g": 3.5692996639090393,
+        "volume_mm3": 1321.9628384848293,
+        "moving": true,
+        "centre_mm": [
+          26.5,
+          34.489040714789134,
+          27.98572515196022
+        ],
+        "basis": "2 mm aluminum profile with pivot/carriage holes and pitch-stop arc slot; keyed attachment unresolved",
+        "kind": "CAD material"
+      },
+      {
+        "id": "left_rail_backing",
+        "mass_g": 11.311374574556142,
+        "volume_mm3": 1440.9394362491903,
+        "moving": false,
+        "centre_mm": [
+          19.000000000000004,
+          32.885732940641525,
+          52.598600085667606
+        ],
+        "basis": "1 mm steel L-shaped backing with rear-open P screw relief; rail attachment holes still unmodeled",
+        "kind": "CAD material"
+      },
+      {
+        "id": "left_carrier_spacer",
+        "mass_g": 0.44491313808141963,
+        "volume_mm3": 350.32530557592094,
+        "moving": false,
+        "centre_mm": [
+          21.1,
+          50.98393913374212,
+          81.59001560317151
+        ],
+        "basis": "Carrier offset pad; screws, load-spreading and keyed joints not modeled",
+        "kind": "CAD material"
+      },
+      {
+        "id": "right_integrated_end",
+        "mass_g": 7.089600778446052,
+        "volume_mm3": 5582.362817674057,
+        "moving": true,
+        "centre_mm": [
+          240.18131361419,
+          36.18405725538668,
+          21.936873390917494
+        ],
+        "basis": "Solid-volume PETG estimate: end wall, bearing pocket, skid ramps and stop boss; hardware separate",
+        "kind": "CAD material"
+      },
+      {
+        "id": "right_drop_link",
+        "mass_g": 3.5692996639090393,
+        "volume_mm3": 1321.9628384848293,
+        "moving": true,
+        "centre_mm": [
+          248.49999999999997,
+          34.489040714789134,
+          27.98572515196022
+        ],
+        "basis": "2 mm aluminum profile with pivot/carriage holes and pitch-stop arc slot; keyed attachment unresolved",
+        "kind": "CAD material"
+      },
+      {
+        "id": "right_rail_backing",
+        "mass_g": 11.311374574556142,
+        "volume_mm3": 1440.9394362491903,
+        "moving": false,
+        "centre_mm": [
+          256.00000000000006,
+          32.885732940641525,
+          52.598600085667606
+        ],
+        "basis": "1 mm steel L-shaped backing with rear-open P screw relief; rail attachment holes still unmodeled",
+        "kind": "CAD material"
+      },
+      {
+        "id": "right_carrier_spacer",
+        "mass_g": 0.4449131380814186,
+        "volume_mm3": 350.32530557592014,
+        "moving": false,
+        "centre_mm": [
+          253.90000000000003,
+          50.98393913374212,
+          81.59001560317154
+        ],
+        "basis": "Carrier offset pad; screws, load-spreading and keyed joints not modeled",
+        "kind": "CAD material"
+      },
+      {
+        "id": "hood_and_outlet",
+        "mass_g": 42.09231104000006,
+        "volume_mm3": 33143.55200000005,
+        "moving": true,
+        "centre_mm": [
+          137.49999999999991,
+          36.71041269203729,
+          37.3081596082399
+        ],
+        "basis": "1.4 mm solid walls with rear outlet; end joints, motor mounts, seals and fasteners budgeted separately",
+        "kind": "CAD material"
+      },
+      {
+        "id": "guide_rails",
+        "mass_g": 18.6,
+        "moving": false,
+        "basis": "Q catalog reference: two 62 mm NS-01-17 rails",
+        "kind": "catalog reference"
+      },
+      {
+        "id": "guide_carriages",
+        "mass_g": 3.4,
+        "moving": true,
+        "basis": "Q catalog reference: two standard NW-02-17 carriages",
+        "kind": "catalog reference"
+      },
+      {
+        "id": "pivot_bearings",
+        "mass_g": 1,
+        "moving": true,
+        "basis": "Q historical KGLM-03 envelopes; current supplied variant remains to verify",
+        "kind": "catalog reference"
+      },
+      {
+        "id": "pivot_retention_and_pitch_pin_hardware",
+        "mass_g": 5,
+        "moving": true,
+        "basis": "Allowance: two pivot joints plus two M2 pitch-stop screws/sleeves; exact axial stack unresolved",
+        "kind": "allowance"
+      },
+      {
+        "id": "roller_end_inserts_and_guards",
+        "mass_g": 10,
+        "moving": true,
+        "basis": "Allowance: replaceable drive and stationary end inserts; exact purchased roller interfaces are not inferred",
+        "kind": "allowance"
+      },
+      {
+        "id": "motor_transmission_frame_fastening",
+        "mass_g": 7,
+        "moving": true,
+        "basis": "Allowance: motor bosses, isolators, hood fasteners and captive inserts; motor/transmission masses remain separate",
+        "kind": "allowance"
+      },
+      {
+        "id": "floor_lips_and_shell_seals",
+        "mass_g": 8,
+        "moving": true,
+        "basis": "Allowance: compliant lips, end seals and hood gasket; not the air-flex plumbing",
+        "kind": "allowance"
+      },
+      {
+        "id": "skid_wear_surfaces",
+        "mass_g": 2,
+        "moving": true,
+        "basis": "Allowance: replaceable smooth polymer wear strips on modeled printed ramps",
+        "kind": "allowance"
+      },
+      {
+        "id": "rail_and_carrier_fastening",
+        "mass_g": 5,
+        "moving": false,
+        "basis": "Allowance: backing/rail attachment and flush cheek attachment; exact fastener access remains unresolved",
+        "kind": "allowance"
+      },
+      {
+        "id": "counterbalance_and_travel_stop_completion",
+        "mass_g": 5,
+        "moving": false,
+        "basis": "Allowance: springs/anchors and captive rail end stops; spring/friction performance remains unproven",
+        "kind": "allowance"
+      },
+      {
+        "id": "completion_reserve",
+        "mass_g": 10,
+        "moving": false,
+        "basis": "Unassigned local completion reserve, not material and not a saving",
+        "kind": "allowance"
+      }
+    ],
+    "prior_scope_g": 170,
+    "candidate_scope_g": 161.92268734998538,
+    "modeled_material_g": 86.92268734998538,
+    "reference_g": 23.0,
+    "allowance_g": 52,
+    "conditional_reduction_g": 8.077312650014619,
+    "booked_reduction_g": 0,
+    "current_transfer_g": 5274.841313853186,
+    "hypothetical_transfer_g": 5266.764001203172,
+    "remaining_gap_if_adopted_g": 766.7640012031716,
+    "powered_lift_retained_g": 62,
+    "carrier_retained_g": 70,
+    "plumbing_retained_g": 75
+  },
+  "flex": {
+    "rows": [
+      {
+        "pose": 0,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 1,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 2,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 3,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 4,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 5,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 6,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 7,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 8,
+        "centre_mm": [
+          137.5,
+          66.0,
+          34.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -4.0
+        ],
+        "minimum_centreline_reach_mm": 25.317977802344327,
+        "straight_bore_edge_lengths_mm": [
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 9,
+        "centre_mm": [
+          137.5,
+          65.66559852196144,
+          28.751911069130575
+        ],
+        "delta_mm": [
+          0.0,
+          25.334401478038558,
+          1.2480889308694252
+        ],
+        "minimum_centreline_reach_mm": 25.365126142595884,
+        "straight_bore_edge_lengths_mm": [
+          25.01726180353339,
+          25.712995809725825,
+          25.01726180353339,
+          25.712995809725825
+        ],
+        "end_axis_angle_deg": 1.8130245280231436
+      },
+      {
+        "pose": 10,
+        "centre_mm": [
+          137.3161520725741,
+          65.85819539916452,
+          27.453522952664713
+        ],
+        "delta_mm": [
+          0.1838479274258873,
+          25.141804600835485,
+          2.546477047335287
+        ],
+        "minimum_centreline_reach_mm": 25.271103735286605,
+        "straight_bore_edge_lengths_mm": [
+          25.14633335168629,
+          25.451942453207078,
+          25.093847839598535,
+          25.400045476726593
+        ],
+        "end_axis_angle_deg": 0.7927621016160571
+      },
+      {
+        "pose": 11,
+        "centre_mm": [
+          137.6584868375116,
+          65.81622590930797,
+          27.297181281338677
+        ],
+        "delta_mm": [
+          -0.15848683751158887,
+          25.183774090692026,
+          2.702818718661323
+        ],
+        "minimum_centreline_reach_mm": 25.328893077957858,
+        "straight_bore_edge_lengths_mm": [
+          25.106801154010117,
+          25.499574794234793,
+          25.162473486182265,
+          25.55446219792647
+        ],
+        "end_axis_angle_deg": 1.0202985024717892
+      },
+      {
+        "pose": 12,
+        "centre_mm": [
+          137.5,
+          66.29586402936503,
+          31.211278074370927
+        ],
+        "delta_mm": [
+          0.0,
+          24.704135970634965,
+          -1.2112780743709273
+        ],
+        "minimum_centreline_reach_mm": 24.733813467176308,
+        "straight_bore_edge_lengths_mm": [
+          25.078590523130973,
+          24.38904174907328,
+          25.078590523130973,
+          24.38904174907328
+        ],
+        "end_axis_angle_deg": 1.7968994969346483
+      },
+      {
+        "pose": 13,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 14,
+        "centre_mm": [
+          137.5,
+          66.0,
+          34.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -4.0
+        ],
+        "minimum_centreline_reach_mm": 25.317977802344327,
+        "straight_bore_edge_lengths_mm": [
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 15,
+        "centre_mm": [
+          137.5,
+          65.693705347461,
+          28.85298540805806
+        ],
+        "delta_mm": [
+          0.0,
+          25.306294652538995,
+          1.1470145919419394
+        ],
+        "minimum_centreline_reach_mm": 25.332275687652924,
+        "straight_bore_edge_lengths_mm": [
+          25.012246347005355,
+          25.652308851803028,
+          25.012246347005355,
+          25.652308851803028
+        ],
+        "end_axis_angle_deg": 1.667796003648852
+      },
+      {
+        "pose": 16,
+        "centre_mm": [
+          137.31648368541087,
+          65.86415552827012,
+          27.475921875530755
+        ],
+        "delta_mm": [
+          0.1835163145891272,
+          25.135844471729882,
+          2.524078124469245
+        ],
+        "minimum_centreline_reach_mm": 25.262923938513893,
+        "straight_bore_edge_lengths_mm": [
+          25.144144683451145,
+          25.437330101794274,
+          25.092115834375182,
+          25.38586261595416
+        ],
+        "end_axis_angle_deg": 0.7601987300724804
+      },
+      {
+        "pose": 17,
+        "centre_mm": [
+          137.65734684555912,
+          65.83697249916938,
+          27.374483716017796
+        ],
+        "delta_mm": [
+          -0.15734684555911826,
+          25.163027500830623,
+          2.625516283982204
+        ],
+        "minimum_centreline_reach_mm": 25.300119501591713,
+        "straight_bore_edge_lengths_mm": [
+          25.100208154614005,
+          25.450148128792634,
+          25.154308196345113,
+          25.503562027042282
+        ],
+        "end_axis_angle_deg": 0.9082043864672523
+      },
+      {
+        "pose": 18,
+        "centre_mm": [
+          137.5,
+          66.27382866278055,
+          31.11656769574992
+        ],
+        "delta_mm": [
+          0.0,
+          24.726171337219455,
+          -1.1165676957499215
+        ],
+        "minimum_centreline_reach_mm": 24.75136910186435,
+        "straight_bore_edge_lengths_mm": [
+          25.06898955487707,
+          24.43375248882697,
+          25.06898955487707,
+          24.43375248882697
+        ],
+        "end_axis_angle_deg": 1.6552186540218872
+      },
+      {
+        "pose": 19,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 20,
+        "centre_mm": [
+          137.5,
+          66.0,
+          34.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -4.0
+        ],
+        "minimum_centreline_reach_mm": 25.317977802344327,
+        "straight_bore_edge_lengths_mm": [
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 21,
+        "centre_mm": [
+          137.5,
+          65.70400848046741,
+          28.890193141258436
+        ],
+        "delta_mm": [
+          0.0,
+          25.295991519532592,
+          1.109806858741564
+        ],
+        "minimum_centreline_reach_mm": 25.32032500225806,
+        "straight_bore_edge_lengths_mm": [
+          25.010558357783818,
+          25.63009500506014,
+          25.010558357783818,
+          25.63009500506014
+        ],
+        "end_axis_angle_deg": 1.6142606547041196
+      },
+      {
+        "pose": 22,
+        "centre_mm": [
+          137.31600184080276,
+          65.85549153149894,
+          27.44337255072894
+        ],
+        "delta_mm": [
+          0.1839981591972446,
+          25.14450846850106,
+          2.5566274492710583
+        ],
+        "minimum_centreline_reach_mm": 25.274819591037158,
+        "straight_bore_edge_lengths_mm": [
+          25.147335359162415,
+          25.458572105171726,
+          25.094642964373158,
+          25.406480643631266
+        ],
+        "end_axis_angle_deg": 0.8075139481551137
+      },
+      {
+        "pose": 23,
+        "centre_mm": [
+          137.65632279867293,
+          65.85549153149894,
+          27.443820838019786
+        ],
+        "delta_mm": [
+          -0.15632279867293164,
+          25.14450846850106,
+          2.5561791619802143
+        ],
+        "minimum_centreline_reach_mm": 25.27458792637475,
+        "straight_bore_edge_lengths_mm": [
+          25.094608454664154,
+          25.40605837271795,
+          25.14729630200002,
+          25.45814613493753
+        ],
+        "end_axis_angle_deg": 0.8075139481551137
+      },
+      {
+        "pose": 24,
+        "centre_mm": [
+          137.5,
+          66.26562740402126,
+          31.081527340229194
+        ],
+        "delta_mm": [
+          0.0,
+          24.73437259597874,
+          -1.0815273402291936
+        ],
+        "minimum_centreline_reach_mm": 24.7580065656419,
+        "straight_bore_edge_lengths_mm": [
+          25.06558713298146,
+          24.450429373785035,
+          25.06558713298146,
+          24.450429373785035
+        ],
+        "end_axis_angle_deg": 1.602848054643457
+      },
+      {
+        "pose": 25,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 26,
+        "centre_mm": [
+          137.5,
+          66.0,
+          34.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -4.0
+        ],
+        "minimum_centreline_reach_mm": 25.317977802344327,
+        "straight_bore_edge_lengths_mm": [
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 27,
+        "centre_mm": [
+          137.5,
+          65.693705347461,
+          28.85298540805806
+        ],
+        "delta_mm": [
+          0.0,
+          25.306294652538995,
+          1.1470145919419394
+        ],
+        "minimum_centreline_reach_mm": 25.332275687652924,
+        "straight_bore_edge_lengths_mm": [
+          25.012246347005355,
+          25.652308851803028,
+          25.012246347005355,
+          25.652308851803028
+        ],
+        "end_axis_angle_deg": 1.667796003648852
+      },
+      {
+        "pose": 28,
+        "centre_mm": [
+          137.31497633726815,
+          65.83697249916938,
+          27.374035393331845
+        ],
+        "delta_mm": [
+          0.1850236627318509,
+          25.163027500830623,
+          2.6259646066681555
+        ],
+        "minimum_centreline_reach_mm": 25.300353295533302,
+        "straight_bore_edge_lengths_mm": [
+          25.15434960416197,
+          25.503989598434657,
+          25.10024502276908,
+          25.450572032348536
+        ],
+        "end_axis_angle_deg": 0.9082043864672523
+      },
+      {
+        "pose": 29,
+        "centre_mm": [
+          137.65584157947657,
+          65.86415552827012,
+          27.476370147624987
+        ],
+        "delta_mm": [
+          -0.15584157947657218,
+          25.135844471729882,
+          2.523629852375013
+        ],
+        "minimum_centreline_reach_mm": 25.26269327559288,
+        "straight_bore_edge_lengths_mm": [
+          25.092082432804155,
+          25.38544111401041,
+          25.144106730855018,
+          25.436904885732595
+        ],
+        "end_axis_angle_deg": 0.7601987300724804
+      },
+      {
+        "pose": 30,
+        "centre_mm": [
+          137.5,
+          66.27382866278055,
+          31.11656769574992
+        ],
+        "delta_mm": [
+          0.0,
+          24.726171337219455,
+          -1.1165676957499215
+        ],
+        "minimum_centreline_reach_mm": 24.75136910186435,
+        "straight_bore_edge_lengths_mm": [
+          25.06898955487707,
+          24.43375248882697,
+          25.06898955487707,
+          24.43375248882697
+        ],
+        "end_axis_angle_deg": 1.6552186540218872
+      },
+      {
+        "pose": 31,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 32,
+        "centre_mm": [
+          137.5,
+          66.0,
+          34.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -4.0
+        ],
+        "minimum_centreline_reach_mm": 25.317977802344327,
+        "straight_bore_edge_lengths_mm": [
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 33,
+        "centre_mm": [
+          137.5,
+          65.66559852196144,
+          28.751911069130575
+        ],
+        "delta_mm": [
+          0.0,
+          25.334401478038558,
+          1.2480889308694252
+        ],
+        "minimum_centreline_reach_mm": 25.365126142595884,
+        "straight_bore_edge_lengths_mm": [
+          25.01726180353339,
+          25.712995809725825,
+          25.01726180353339,
+          25.712995809725825
+        ],
+        "end_axis_angle_deg": 1.8130245280231436
+      },
+      {
+        "pose": 34,
+        "centre_mm": [
+          137.31383452243637,
+          65.81622590930797,
+          27.29673291435725
+        ],
+        "delta_mm": [
+          0.18616547756363389,
+          25.183774090692026,
+          2.70326708564275
+        ],
+        "minimum_centreline_reach_mm": 25.329129238336776,
+        "straight_bore_edge_lengths_mm": [
+          25.16251751095434,
+          25.5548915458214,
+          25.106840648099347,
+          25.500000509333468
+        ],
+        "end_axis_angle_deg": 1.0202985024717892
+      },
+      {
+        "pose": 35,
+        "centre_mm": [
+          137.6561727659434,
+          65.85819539916452,
+          27.4539712351191
+        ],
+        "delta_mm": [
+          -0.15617276594340979,
+          25.141804600835485,
+          2.5460287648809015
+        ],
+        "minimum_centreline_reach_mm": 25.270872382864344,
+        "straight_bore_edge_lengths_mm": [
+          25.093813675390514,
+          25.399623445438674,
+          25.146294638905147,
+          25.45151671798502
+        ],
+        "end_axis_angle_deg": 0.7927621016160571
+      },
+      {
+        "pose": 36,
+        "centre_mm": [
+          137.5,
+          66.29586402936503,
+          31.211278074370927
+        ],
+        "delta_mm": [
+          0.0,
+          24.704135970634965,
+          -1.2112780743709273
+        ],
+        "minimum_centreline_reach_mm": 24.733813467176308,
+        "straight_bore_edge_lengths_mm": [
+          25.078590523130973,
+          24.38904174907328,
+          25.078590523130973,
+          24.38904174907328
+        ],
+        "end_axis_angle_deg": 1.7968994969346483
+      },
+      {
+        "pose": 37,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 38,
+        "centre_mm": [
+          137.5,
+          66.0,
+          34.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -4.0
+        ],
+        "minimum_centreline_reach_mm": 25.317977802344327,
+        "straight_bore_edge_lengths_mm": [
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 39,
+        "centre_mm": [
+          137.5,
+          65.6318002809291,
+          28.631178024882978
+        ],
+        "delta_mm": [
+          0.0,
+          25.3681997190709,
+          1.3688219751170223
+        ],
+        "minimum_centreline_reach_mm": 25.405102451795628,
+        "straight_bore_edge_lengths_mm": [
+          25.024073839007233,
+          25.786138717520995,
+          25.024073839007233,
+          25.786138717520995
+        ],
+        "end_axis_angle_deg": 1.986114297573041
+      },
+      {
+        "pose": 40,
+        "centre_mm": [
+          137.3132190300488,
+          65.80498703976079,
+          27.255018725711775
+        ],
+        "delta_mm": [
+          0.18678096995120086,
+          25.19501296023921,
+          2.744981274288225
+        ],
+        "minimum_centreline_reach_mm": 25.34479211580854,
+        "straight_bore_edge_lengths_mm": [
+          25.167077009746297,
+          25.582475586080374,
+          25.110552657149018,
+          25.526791610089894
+        ],
+        "end_axis_angle_deg": 1.0807150510563852
+      },
+      {
+        "pose": 41,
+        "centre_mm": [
+          137.6573088061331,
+          65.83766239997324,
+          27.377061066181376
+        ],
+        "delta_mm": [
+          -0.15730880613310205,
+          25.16233760002676,
+          2.6229389338186238
+        ],
+        "minimum_centreline_reach_mm": 25.29916576112242,
+        "straight_bore_edge_lengths_mm": [
+          25.099994687235085,
+          25.44850511662842,
+          25.154042268059808,
+          25.5018697961971
+        ],
+        "end_axis_angle_deg": 0.9044640678464563
+      },
+      {
+        "pose": 42,
+        "centre_mm": [
+          137.5,
+          66.3217160741371,
+          31.3234700782356
+        ],
+        "delta_mm": [
+          0.0,
+          24.6782839258629,
+          -1.3234700782356015
+        ],
+        "minimum_centreline_reach_mm": 24.71374659118864,
+        "straight_bore_edge_lengths_mm": [
+          25.0907289206895,
+          24.336771901779052,
+          25.0907289206895,
+          24.336771901779052
+        ],
+        "end_axis_angle_deg": 1.9649709788321539
+      },
+      {
+        "pose": 43,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 44,
+        "centre_mm": [
+          137.5,
+          66.0,
+          34.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -4.0
+        ],
+        "minimum_centreline_reach_mm": 25.317977802344327,
+        "straight_bore_edge_lengths_mm": [
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 45,
+        "centre_mm": [
+          137.5,
+          65.61570731277234,
+          28.57399278179637
+        ],
+        "delta_mm": [
+          0.0,
+          25.384292687227656,
+          1.4260072182036296
+        ],
+        "minimum_centreline_reach_mm": 25.4243153657519,
+        "straight_bore_edge_lengths_mm": [
+          25.027611112662807,
+          25.82102860180964,
+          25.027611112662807,
+          25.82102860180964
+        ],
+        "end_axis_angle_deg": 2.0679507347753376
+      },
+      {
+        "pose": 46,
+        "centre_mm": [
+          137.3137029193424,
+          65.81382610468614,
+          27.28781631333709
+        ],
+        "delta_mm": [
+          0.18629708065759587,
+          25.186173895313857,
+          2.712183686662911
+        ],
+        "minimum_centreline_reach_mm": 25.33246933161967,
+        "straight_bore_edge_lengths_mm": [
+          25.163483189038356,
+          25.560780938542152,
+          25.10762511501531,
+          25.505720279215268
+        ],
+        "end_axis_angle_deg": 1.033217072114147
+      },
+      {
+        "pose": 47,
+        "centre_mm": [
+          137.6586182168939,
+          65.81382610468614,
+          27.28826468575475
+        ],
+        "delta_mm": [
+          -0.158618216893899,
+          25.186173895313857,
+          2.7117353142452494
+        ],
+        "minimum_centreline_reach_mm": 25.3322328987842,
+        "straight_bore_edge_lengths_mm": [
+          25.10758531826811,
+          25.50529435574427,
+          25.163438862663728,
+          25.56035138631239
+        ],
+        "end_axis_angle_deg": 1.033217072114147
+      },
+      {
+        "pose": 48,
+        "centre_mm": [
+          137.5,
+          66.33378157724076,
+          31.37624244799324
+        ],
+        "delta_mm": [
+          0.0,
+          24.666218422759243,
+          -1.3762424479932385
+        ],
+        "minimum_centreline_reach_mm": 24.70458205586417,
+        "straight_bore_edge_lengths_mm": [
+          25.096725935857428,
+          24.312447126930756,
+          25.096725935857428,
+          24.312447126930756
+        ],
+        "end_axis_angle_deg": 2.044115855824512
+      },
+      {
+        "pose": 49,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 50,
+        "centre_mm": [
+          137.5,
+          66.0,
+          34.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -4.0
+        ],
+        "minimum_centreline_reach_mm": 25.317977802344327,
+        "straight_bore_edge_lengths_mm": [
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327,
+          25.317977802344327
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 51,
+        "centre_mm": [
+          137.5,
+          65.6318002809291,
+          28.631178024882978
+        ],
+        "delta_mm": [
+          0.0,
+          25.3681997190709,
+          1.3688219751170223
+        ],
+        "minimum_centreline_reach_mm": 25.405102451795628,
+        "straight_bore_edge_lengths_mm": [
+          25.024073839007233,
+          25.786138717520995,
+          25.024073839007233,
+          25.786138717520995
+        ],
+        "end_axis_angle_deg": 1.986114297573041
+      },
+      {
+        "pose": 52,
+        "centre_mm": [
+          137.3150144338634,
+          65.83766239997324,
+          27.376612744884596
+        ],
+        "delta_mm": [
+          0.18498556613658934,
+          25.16233760002676,
+          2.6233872551154036
+        ],
+        "minimum_centreline_reach_mm": 25.299399476029095,
+        "straight_bore_edge_lengths_mm": [
+          25.15408358855636,
+          25.502297308203218,
+          25.100031467775786,
+          25.44892895962866
+        ],
+        "end_axis_angle_deg": 0.9044640678464563
+      },
+      {
+        "pose": 53,
+        "centre_mm": [
+          137.6591012594406,
+          65.80498703976079,
+          27.255467118705734
+        ],
+        "delta_mm": [
+          -0.15910125944060383,
+          25.19501296023921,
+          2.7445328812942655
+        ],
+        "minimum_centreline_reach_mm": 25.344554681703972,
+        "straight_bore_edge_lengths_mm": [
+          25.11051174756791,
+          25.526364921204777,
+          25.167031574454835,
+          25.582045283279637
+        ],
+        "end_axis_angle_deg": 1.0807150510563852
+      },
+      {
+        "pose": 54,
+        "centre_mm": [
+          137.5,
+          66.3217160741371,
+          31.3234700782356
+        ],
+        "delta_mm": [
+          0.0,
+          24.6782839258629,
+          -1.3234700782356015
+        ],
+        "minimum_centreline_reach_mm": 24.71374659118864,
+        "straight_bore_edge_lengths_mm": [
+          25.0907289206895,
+          24.336771901779052,
+          25.0907289206895,
+          24.336771901779052
+        ],
+        "end_axis_angle_deg": 1.9649709788321539
+      },
+      {
+        "pose": 55,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 56,
+        "centre_mm": [
+          137.5,
+          66.0,
+          40.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -10.0
+        ],
+        "minimum_centreline_reach_mm": 26.92582403567252,
+        "straight_bore_edge_lengths_mm": [
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 57,
+        "centre_mm": [
+          137.5,
+          65.08924590204302,
+          26.792238862526943
+        ],
+        "delta_mm": [
+          0.0,
+          25.910754097956982,
+          3.2077611374730566
+        ],
+        "minimum_centreline_reach_mm": 26.108560079787566,
+        "straight_bore_edge_lengths_mm": [
+          25.234963975184773,
+          26.982360286900427,
+          25.234963975184773,
+          26.982360286900427
+        ],
+        "end_axis_angle_deg": 4.567904319136046
+      },
+      {
+        "pose": 58,
+        "centre_mm": [
+          136.9577382024883,
+          65.62981798795745,
+          23.58893222737162
+        ],
+        "delta_mm": [
+          0.5422617975117134,
+          25.370182012042548,
+          6.411067772628378
+        ],
+        "minimum_centreline_reach_mm": 26.173306500448927,
+        "straight_bore_edge_lengths_mm": [
+          25.960917924909825,
+          26.725256509930908,
+          25.639682033245816,
+          26.412662791899013
+        ],
+        "end_axis_angle_deg": 1.9962147052735966
+      },
+      {
+        "pose": 59,
+        "centre_mm": [
+          137.88358932410102,
+          65.51551971570274,
+          23.191035522277875
+        ],
+        "delta_mm": [
+          -0.383589324101024,
+          25.484480284297263,
+          6.8089644777221245
+        ],
+        "minimum_centreline_reach_mm": 26.381203031499187,
+        "straight_bore_edge_lengths_mm": [
+          25.73471840447156,
+          26.71600314986498,
+          26.07464852470793,
+          27.04466220134197
+        ],
+        "end_axis_angle_deg": 2.569366592864273
+      },
+      {
+        "pose": 60,
+        "centre_mm": [
+          137.5,
+          66.66945304004359,
+          32.9759684869135
+        ],
+        "delta_mm": [
+          0.0,
+          24.330546959956408,
+          -2.9759684869135015
+        ],
+        "minimum_centreline_reach_mm": 24.511872711111778,
+        "straight_bore_edge_lengths_mm": [
+          25.366362042885775,
+          23.657588391133206,
+          25.366362042885775,
+          23.657588391133206
+        ],
+        "end_axis_angle_deg": 4.466673550600807
+      },
+      {
+        "pose": 61,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 62,
+        "centre_mm": [
+          137.5,
+          66.0,
+          40.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -10.0
+        ],
+        "minimum_centreline_reach_mm": 26.92582403567252,
+        "straight_bore_edge_lengths_mm": [
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 63,
+        "centre_mm": [
+          137.5,
+          65.17161883820387,
+          27.061212166105907
+        ],
+        "delta_mm": [
+          0.0,
+          25.82838116179613,
+          2.938787833894093
+        ],
+        "minimum_centreline_reach_mm": 25.995033128881932,
+        "straight_bore_edge_lengths_mm": [
+          25.19190608770258,
+          26.79830676518297,
+          25.19190608770258,
+          26.79830676518297
+        ],
+        "end_axis_angle_deg": 4.196911682098071
+      },
+      {
+        "pose": 64,
+        "centre_mm": [
+          136.95986085226025,
+          65.64607668145968,
+          23.64726178596741
+        ],
+        "delta_mm": [
+          0.540139147739751,
+          25.353923318540325,
+          6.352738214032591
+        ],
+        "minimum_centreline_reach_mm": 26.14326798159277,
+        "straight_bore_edge_lengths_mm": [
+          25.944965326019737,
+          26.678613046963772,
+          25.62646639784198,
+          26.368374118816057
+        ],
+        "end_axis_angle_deg": 1.913204155086406
+      },
+      {
+        "pose": 65,
+        "centre_mm": [
+          137.87639393729418,
+          65.57255626514421,
+          23.392002536033637
+        ],
+        "delta_mm": [
+          -0.376393937294182,
+          25.427443734855785,
+          6.607997463966363
+        ],
+        "minimum_centreline_reach_mm": 26.2747444853242,
+        "straight_bore_edge_lengths_mm": [
+          25.685555155404725,
+          26.56094785488607,
+          26.01616493538262,
+          26.88163742033983
+        ],
+        "end_axis_angle_deg": 2.2855862801595217
+      },
+      {
+        "pose": 66,
+        "centre_mm": [
+          137.5,
+          66.62516729793167,
+          32.74733772907949
+        ],
+        "delta_mm": [
+          0.0,
+          24.374832702068332,
+          -2.74733772907949
+        ],
+        "minimum_centreline_reach_mm": 24.529173117972064,
+        "straight_bore_edge_lengths_mm": [
+          25.31737637412458,
+          23.7411180185973,
+          25.31737637412458,
+          23.7411180185973
+        ],
+        "end_axis_angle_deg": 4.118011947709174
+      },
+      {
+        "pose": 67,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 68,
+        "centre_mm": [
+          137.5,
+          66.0,
+          40.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -10.0
+        ],
+        "minimum_centreline_reach_mm": 26.92582403567252,
+        "straight_bore_edge_lengths_mm": [
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 69,
+        "centre_mm": [
+          137.5,
+          65.20153882726606,
+          27.159697145657063
+        ],
+        "delta_mm": [
+          0.0,
+          25.798461172733937,
+          2.840302854342937
+        ],
+        "minimum_centreline_reach_mm": 25.95434297348806,
+        "straight_bore_edge_lengths_mm": [
+          25.177160347123248,
+          26.731654405651796,
+          25.177160347123248,
+          26.731654405651796
+        ],
+        "end_axis_angle_deg": 4.060488212249895
+      },
+      {
+        "pose": 70,
+        "centre_mm": [
+          136.9568286127328,
+          65.62282934002769,
+          23.563917776720587
+        ],
+        "delta_mm": [
+          0.5431713872671935,
+          25.377170659972307,
+          6.4360822232794135
+        ],
+        "minimum_centreline_reach_mm": 26.18623646586348,
+        "straight_bore_edge_lengths_mm": [
+          25.967816010940048,
+          26.745297037457405,
+          25.645408104150647,
+          26.431695783824537
+        ],
+        "end_axis_angle_deg": 2.03177916571444
+      },
+      {
+        "pose": 71,
+        "centre_mm": [
+          137.86995734788934,
+          65.62282934002769,
+          23.57094066764726
+        ],
+        "delta_mm": [
+          -0.36995734788933987,
+          25.377170659972307,
+          6.42905933235274
+        ],
+        "minimum_centreline_reach_mm": 26.181490848374708,
+        "straight_bore_edge_lengths_mm": [
+          25.64366388015516,
+          26.424157038168936,
+          25.965918062022947,
+          26.73767639206349
+        ],
+        "end_axis_angle_deg": 2.03177916571444
+      },
+      {
+        "pose": 72,
+        "centre_mm": [
+          137.5,
+          66.60842551509921,
+          32.66256538100982
+        ],
+        "delta_mm": [
+          0.0,
+          24.391574484900787,
+          -2.66256538100982
+        ],
+        "minimum_centreline_reach_mm": 24.53646592850354,
+        "straight_bore_edge_lengths_mm": [
+          25.300100025758592,
+          23.772962268566886,
+          25.300100025758592,
+          23.772962268566886
+        ],
+        "end_axis_angle_deg": 3.988913393306219
+      },
+      {
+        "pose": 73,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 74,
+        "centre_mm": [
+          137.5,
+          66.0,
+          40.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -10.0
+        ],
+        "minimum_centreline_reach_mm": 26.92582403567252,
+        "straight_bore_edge_lengths_mm": [
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 75,
+        "centre_mm": [
+          137.5,
+          65.17161883820387,
+          27.061212166105907
+        ],
+        "delta_mm": [
+          0.0,
+          25.82838116179613,
+          2.938787833894093
+        ],
+        "minimum_centreline_reach_mm": 25.995033128881932,
+        "straight_bore_edge_lengths_mm": [
+          25.19190608770258,
+          26.79830676518297,
+          25.19190608770258,
+          26.79830676518297
+        ],
+        "end_axis_angle_deg": 4.196911682098071
+      },
+      {
+        "pose": 76,
+        "centre_mm": [
+          136.95033414477726,
+          65.57255626514421,
+          23.384976123373487
+        ],
+        "delta_mm": [
+          0.5496658552227416,
+          25.427443734855785,
+          6.615023876626513
+        ],
+        "minimum_centreline_reach_mm": 26.279565603905887,
+        "straight_bore_edge_lengths_mm": [
+          26.01815105738108,
+          26.889309010373047,
+          25.687389437357417,
+          26.568540523938204
+        ],
+        "end_axis_angle_deg": 2.2855862801595217
+      },
+      {
+        "pose": 77,
+        "centre_mm": [
+          137.86694980826985,
+          65.64607668145968,
+          23.654283174159414
+        ],
+        "delta_mm": [
+          -0.366949808269851,
+          25.353923318540325,
+          6.3457168258405865
+        ],
+        "minimum_centreline_reach_mm": 26.138557761245522,
+        "straight_bore_edge_lengths_mm": [
+          25.62476427859333,
+          26.360860700727297,
+          25.94310861705388,
+          26.67101632816167
+        ],
+        "end_axis_angle_deg": 1.913204155086406
+      },
+      {
+        "pose": 78,
+        "centre_mm": [
+          137.5,
+          66.62516729793167,
+          32.74733772907949
+        ],
+        "delta_mm": [
+          0.0,
+          24.374832702068332,
+          -2.74733772907949
+        ],
+        "minimum_centreline_reach_mm": 24.529173117972064,
+        "straight_bore_edge_lengths_mm": [
+          25.31737637412458,
+          23.7411180185973,
+          25.31737637412458,
+          23.7411180185973
+        ],
+        "end_axis_angle_deg": 4.118011947709174
+      },
+      {
+        "pose": 79,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 80,
+        "centre_mm": [
+          137.5,
+          66.0,
+          40.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -10.0
+        ],
+        "minimum_centreline_reach_mm": 26.92582403567252,
+        "straight_bore_edge_lengths_mm": [
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 81,
+        "centre_mm": [
+          137.5,
+          65.08924590204302,
+          26.792238862526943
+        ],
+        "delta_mm": [
+          0.0,
+          25.910754097956982,
+          3.2077611374730566
+        ],
+        "minimum_centreline_reach_mm": 26.108560079787566,
+        "straight_bore_edge_lengths_mm": [
+          25.234963975184773,
+          26.982360286900427,
+          25.234963975184773,
+          26.982360286900427
+        ],
+        "end_axis_angle_deg": 4.567904319136046
+      },
+      {
+        "pose": 82,
+        "centre_mm": [
+          136.94306594969459,
+          65.51551971570277,
+          23.184004678618855
+        ],
+        "delta_mm": [
+          0.556934050305415,
+          25.484480284297234,
+          6.815995321381145
+        ],
+        "minimum_centreline_reach_mm": 26.38610814648901,
+        "straight_bore_edge_lengths_mm": [
+          26.07673307193458,
+          27.05239033289971,
+          25.73665327265072,
+          26.723655658307464
+        ],
+        "end_axis_angle_deg": 2.569366592864273
+      },
+      {
+        "pose": 83,
+        "centre_mm": [
+          137.86905532281568,
+          65.62981798795745,
+          23.595954658054012
+        ],
+        "delta_mm": [
+          -0.369055322815683,
+          25.370182012042548,
+          6.404045341945988
+        ],
+        "minimum_centreline_reach_mm": 26.168571491336053,
+        "straight_bore_edge_lengths_mm": [
+          25.63795043574867,
+          26.4051316336143,
+          25.959032342046573,
+          26.71764303233155
+        ],
+        "end_axis_angle_deg": 1.9962147052735966
+      },
+      {
+        "pose": 84,
+        "centre_mm": [
+          137.5,
+          66.66945304004359,
+          32.9759684869135
+        ],
+        "delta_mm": [
+          0.0,
+          24.330546959956408,
+          -2.9759684869135015
+        ],
+        "minimum_centreline_reach_mm": 24.511872711111778,
+        "straight_bore_edge_lengths_mm": [
+          25.366362042885775,
+          23.657588391133206,
+          25.366362042885775,
+          23.657588391133206
+        ],
+        "end_axis_angle_deg": 4.466673550600807
+      },
+      {
+        "pose": 85,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 86,
+        "centre_mm": [
+          137.5,
+          66.0,
+          40.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -10.0
+        ],
+        "minimum_centreline_reach_mm": 26.92582403567252,
+        "straight_bore_edge_lengths_mm": [
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 87,
+        "centre_mm": [
+          137.5,
+          64.98871910955599,
+          26.468029326780492
+        ],
+        "delta_mm": [
+          0.0,
+          26.011280890444013,
+          3.531970673219508
+        ],
+        "minimum_centreline_reach_mm": 26.24998191233778,
+        "straight_bore_edge_lengths_mm": [
+          25.292215001255645,
+          27.208041730809498,
+          25.292215001255645,
+          27.208041730809498
+        ],
+        "end_axis_angle_deg": 5.01194869130292
+      },
+      {
+        "pose": 88,
+        "centre_mm": [
+          136.93911287697426,
+          65.48415730750324,
+          23.074379848702968
+        ],
+        "delta_mm": [
+          0.5608871230257364,
+          25.51584269249676,
+          6.925620151297032
+        ],
+        "minimum_centreline_reach_mm": 26.44498132260766,
+        "straight_bore_edge_lengths_mm": [
+          26.109591695657983,
+          27.141932250600632,
+          25.76445785519276,
+          26.808889039823985
+        ],
+        "end_axis_angle_deg": 2.723589028901846
+      },
+      {
+        "pose": 89,
+        "centre_mm": [
+          137.87622556484203,
+          65.5738803577924,
+          23.396693317755762
+        ],
+        "delta_mm": [
+          -0.37622556484203074,
+          25.426119642207595,
+          6.603306682244238
+        ],
+        "minimum_centreline_reach_mm": 26.272281303215124,
+        "straight_bore_edge_lengths_mm": [
+          25.684434250318645,
+          26.55734656916904,
+          26.014825673511424,
+          26.877849067895113
+        ],
+        "end_axis_angle_deg": 2.278946419002765
+      },
+      {
+        "pose": 90,
+        "centre_mm": [
+          137.5,
+          66.72008226763153,
+          33.24584660138051
+        ],
+        "delta_mm": [
+          0.0,
+          24.279917732368475,
+          -3.2458466013805065
+        ],
+        "minimum_centreline_reach_mm": 24.495916501537035,
+        "straight_bore_edge_lengths_mm": [
+          25.42867296254487,
+          23.563451689389492,
+          25.42867296254487,
+          23.563451689389492
+        ],
+        "end_axis_angle_deg": 4.879079581359385
+      },
+      {
+        "pose": 91,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 92,
+        "centre_mm": [
+          137.5,
+          66.0,
+          40.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -10.0
+        ],
+        "minimum_centreline_reach_mm": 26.92582403567252,
+        "straight_bore_edge_lengths_mm": [
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 93,
+        "centre_mm": [
+          137.5,
+          64.94027990172007,
+          26.313289105557438
+        ],
+        "delta_mm": [
+          0.0,
+          26.059720098279925,
+          3.6867108944425624
+        ],
+        "minimum_centreline_reach_mm": 26.319210642036666,
+        "straight_bore_edge_lengths_mm": [
+          25.32157270268086,
+          27.31719227671501,
+          25.32157270268086,
+          27.31719227671501
+        ],
+        "end_axis_angle_deg": 5.222663788332606
+      },
+      {
+        "pose": 94,
+        "centre_mm": [
+          136.94216542304252,
+          65.50839629261301,
+          23.159051565754602
+        ],
+        "delta_mm": [
+          0.5578345769574753,
+          25.491603707386986,
+          6.840948434245398
+        ],
+        "minimum_centreline_reach_mm": 26.399462389785892,
+        "straight_bore_edge_lengths_mm": [
+          26.084156678342797,
+          27.072736153927565,
+          25.742924670402342,
+          26.74301848460368
+        ],
+        "end_axis_angle_deg": 2.6045067941535462
+      },
+      {
+        "pose": 95,
+        "centre_mm": [
+          137.88448023969443,
+          65.50839629261301,
+          23.166082994397456
+        ],
+        "delta_mm": [
+          -0.384480239694426,
+          25.491603707386986,
+          6.833917005602544
+        ],
+        "minimum_centreline_reach_mm": 26.394546904022526,
+        "straight_bore_edge_lengths_mm": [
+          25.74097735460697,
+          26.735358598529174,
+          26.082059954959306,
+          27.065001050686252
+        ],
+        "end_axis_angle_deg": 2.6045067941535462
+      },
+      {
+        "pose": 96,
+        "centre_mm": [
+          137.5,
+          66.74320810696969,
+          33.372429825111645
+        ],
+        "delta_mm": [
+          0.0,
+          24.25679189303031,
+          -3.372429825111645
+        ],
+        "minimum_centreline_reach_mm": 24.49010485618801,
+        "straight_bore_edge_lengths_mm": [
+          25.459571518856865,
+          23.520978818186705,
+          25.459571518856865,
+          23.520978818186705
+        ],
+        "end_axis_angle_deg": 5.072801677719325
+      },
+      {
+        "pose": 97,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 98,
+        "centre_mm": [
+          137.5,
+          66.0,
+          40.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -10.0
+        ],
+        "minimum_centreline_reach_mm": 26.92582403567252,
+        "straight_bore_edge_lengths_mm": [
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252,
+          26.92582403567252
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 99,
+        "centre_mm": [
+          137.5,
+          64.98871910955599,
+          26.468029326780492
+        ],
+        "delta_mm": [
+          0.0,
+          26.011280890444013,
+          3.531970673219508
+        ],
+        "minimum_centreline_reach_mm": 26.24998191233778,
+        "straight_bore_edge_lengths_mm": [
+          25.292215001255645,
+          27.208041730809498,
+          25.292215001255645,
+          27.208041730809498
+        ],
+        "end_axis_angle_deg": 5.01194869130292
+      },
+      {
+        "pose": 100,
+        "centre_mm": [
+          136.9505041184252,
+          65.5738803577924,
+          23.389667002531425
+        ],
+        "delta_mm": [
+          0.5494958815748134,
+          25.426119642207595,
+          6.610332997468575
+        ],
+        "minimum_centreline_reach_mm": 26.27710045117506,
+        "straight_bore_edge_lengths_mm": [
+          26.016809490541824,
+          26.885519329750338,
+          25.686266177412154,
+          26.564937832465404
+        ],
+        "end_axis_angle_deg": 2.278946419002765
+      },
+      {
+        "pose": 101,
+        "centre_mm": [
+          137.88749923964366,
+          65.48415730750324,
+          23.08141331928121
+        ],
+        "delta_mm": [
+          -0.3874992396436596,
+          25.51584269249676,
+          6.918586680718789
+        ],
+        "minimum_centreline_reach_mm": 26.440030741804826,
+        "straight_bore_edge_lengths_mm": [
+          25.762468370107747,
+          26.801204204157507,
+          26.10745372914887,
+          27.134173569438758
+        ],
+        "end_axis_angle_deg": 2.723589028901846
+      },
+      {
+        "pose": 102,
+        "centre_mm": [
+          137.5,
+          66.72008226763153,
+          33.24584660138051
+        ],
+        "delta_mm": [
+          0.0,
+          24.279917732368475,
+          -3.2458466013805065
+        ],
+        "minimum_centreline_reach_mm": 24.495916501537035,
+        "straight_bore_edge_lengths_mm": [
+          25.42867296254487,
+          23.563451689389492,
+          25.42867296254487,
+          23.563451689389492
+        ],
+        "end_axis_angle_deg": 4.879079581359385
+      },
+      {
+        "pose": 103,
+        "centre_mm": [
+          137.5,
+          66.0,
+          30.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          0.0
+        ],
+        "minimum_centreline_reach_mm": 25.0,
+        "straight_bore_edge_lengths_mm": [
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "end_axis_angle_deg": 0.0
+      },
+      {
+        "pose": 104,
+        "centre_mm": [
+          137.5,
+          66.0,
+          46.0
+        ],
+        "delta_mm": [
+          0.0,
+          25.0,
+          -16.0
+        ],
+        "minimum_centreline_reach_mm": 29.68164415931166,
+        "straight_bore_edge_lengths_mm": [
+          29.68164415931166,
+          29.68164415931166,
+          29.68164415931166,
+          29.68164415931166
+        ],
+        "end_axis_angle_deg": 0.0
+      }
+    ],
+    "nominal_axial_gap_mm": 25,
+    "centreline_reach_range_mm": [
+      24.49010485618801,
+      29.68164415931166
+    ],
+    "bore_edge_reach_range_mm": [
+      23.520978818186705,
+      29.68164415931166
+    ],
+    "maximum_end_angle_deg": 5.222663788332606,
+    "scope": "Lengths are lower bounds between mating points, not bend-radius, wall-strain, restoring-force or fatigue approval. Flexible connector must retain open bore throughout motion."
+  }
+}

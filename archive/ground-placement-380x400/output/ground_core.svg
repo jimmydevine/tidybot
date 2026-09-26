@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 670" role="img">
+<title>Electronics core · top view</title>
+<style>text{font-family:Arial,sans-serif;fill:#20344b} .dim{stroke:#5c7186;stroke-width:1;marker-start:url(#a);marker-end:url(#a)}</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5c7186"/></marker></defs>
+<rect width="900" height="670" fill="white"/>
+<text x="30" y="30" font-size="23" text-anchor="start">Electronics core · top view</text>
+<text x="30" y="54" font-size="12" text-anchor="start">PLACEMENT STUDY · mm · front at top · component sources and allowances in report</text>
+<rect x="85" y="110" width="456" height="480" fill="#fafbfc" stroke="#64798d" />
+<line x1="85" y1="83" x2="541" y2="83" class="dim"/>
+<text x="313" y="75" font-size="13" text-anchor="middle">380 mm body width</text>
+<line x1="57" y1="110" x2="57" y2="590" class="dim"/>
+<text x="42" y="350" font-size="12" text-anchor="middle">400</text>
+<g><title>Battery tray / restraint / leads | proposed reservation | 90 x 170 x 38 mm</title>
+<rect x="113.8" y="218" width="108" height="204" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Power distribution / regulation | proposed reservation | 98 x 108 x 38 mm</title>
+<rect x="238.6" y="254" width="117.6" height="129.6" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Pi 4 / cooling / cable tray | proposed reservation | 110 x 115 x 38 mm</title>
+<rect x="373" y="248" width="132" height="138" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Core supervisor / interface bay | proposed reservation | 80 x 70 x 35 mm</title>
+<rect x="255.4" y="410" width="96" height="84" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Auxiliary navigation / wiring | proposed reservation | 155 x 40 x 37 mm</title>
+<rect x="211" y="164" width="186" height="48" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Outward camera / near-field bay | proposed reservation | 70 x 38 x 35 mm</title>
+<rect x="409" y="116" width="84" height="45.6" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Core left station pickup rail | proposed reservation | 16 x 240 x 8 mm</title>
+<rect x="85" y="206" width="19.2" height="288" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Core right station pickup rail | proposed reservation | 16 x 240 x 8 mm</title>
+<rect x="521.8" y="206" width="19.2" height="288" fill="#e3ebf8" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<rect x="283" y="302" width="60" height="60" fill="none" stroke="#64798d" stroke-dasharray="7 3"/>
+<g><title>Bottom floating connector pocket | proposed reservation | 46 x 30 x 27 mm</title>
+<rect x="285.4" y="119.6" width="55.2" height="36" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Cap low-power connector pocket | proposed reservation | 44 x 30 x 20 mm</title>
+<rect x="421" y="164" width="52.8" height="36" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<rect x="255.4" y="287.6" width="116.16" height="84.36" fill="none" stroke="#64798d" stroke-dasharray="7 3"/>
+<g><title>Bottom joint zone 1 | proposed reservation | 20 x 20 x 34 mm</title>
+<rect x="94.6" y="119.6" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Bottom joint zone 2 | proposed reservation | 20 x 20 x 34 mm</title>
+<rect x="507.4" y="119.6" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Bottom joint zone 3 | proposed reservation | 20 x 20 x 34 mm</title>
+<rect x="94.6" y="556.4" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Bottom joint zone 4 | proposed reservation | 20 x 20 x 34 mm</title>
+<rect x="507.4" y="556.4" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Top joint zone 1 | proposed reservation | 20 x 20 x 22 mm</title>
+<rect x="94.6" y="119.6" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Top joint zone 2 | proposed reservation | 20 x 20 x 22 mm</title>
+<rect x="507.4" y="119.6" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Top joint zone 3 | proposed reservation | 20 x 20 x 22 mm</title>
+<rect x="94.6" y="556.4" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Top joint zone 4 | proposed reservation | 20 x 20 x 22 mm</title>
+<rect x="507.4" y="556.4" width="24" height="24" fill="#ffe3b2" stroke="#64798d" stroke-dasharray="4 3"/>
+</g>
+<g><title>Owned 3S pack listing reference | seller reference; not owner measured | 43 x 132 x 25 mm</title>
+<rect x="136.6" y="239.6" width="51.6" height="158.4" fill="#ddc2e8" stroke="#64798d" />
+</g>
+<g><title>Pi 4 PCB footprint reference | manufacturer footprint; 1 mm display thickness | 85 x 56 x 1 mm</title>
+<rect x="385" y="267.2" width="102" height="67.2" fill="#afd2ef" stroke="#64798d" />
+</g>
+<rect x="157.8" y="308" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="167.8" y="323" font-size="14" text-anchor="middle">B</text>
+<rect x="287.4" y="306.8" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="297.4" y="321.8" font-size="14" text-anchor="middle">P</text>
+<rect x="429" y="305" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="439" y="320" font-size="14" text-anchor="middle">C</text>
+<rect x="293.4" y="440" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="303.4" y="455" font-size="14" text-anchor="middle">M</text>
+<rect x="294" y="176" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="304" y="191" font-size="14" text-anchor="middle">N</text>
+<rect x="441" y="126.8" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="451" y="141.8" font-size="14" text-anchor="middle">S</text>
+<rect x="303.48" y="263.6" width="20" height="20" fill="white" stroke="#64798d" />
+<text x="313.48" y="278.6" font-size="14" text-anchor="middle">L</text>
+<text x="573" y="139" font-size="13" text-anchor="start">B  3S battery exits left</text>
+<text x="573" y="168" font-size="13" text-anchor="start">C  Pi 4 tray exits right</text>
+<text x="573" y="197" font-size="13" text-anchor="start">P  Protection + regulators</text>
+<text x="573" y="226" font-size="13" text-anchor="start">M  Independent core supervisor</text>
+<text x="573" y="255" font-size="13" text-anchor="start">N  Navigation / cable allowance</text>
+<text x="573" y="284" font-size="13" text-anchor="start">S  Outward sensor bay</text>
+<text x="573" y="313" font-size="13" text-anchor="start">L  A1 stays on the core</text>
+<text x="573" y="342" font-size="13" text-anchor="start">Side pickup rails above trays</text>
+<text x="573" y="371" font-size="13" text-anchor="start">Core floor z=110; top z=165</text>
+<text x="573" y="400" font-size="13" text-anchor="start">No wheels, bin or water in core</text>
+<text x="573" y="476" font-size="12" text-anchor="start">Green: owner dimensions</text>
+<text x="573" y="497" font-size="12" text-anchor="start">Blue: manufacturer reference</text>
+<text x="573" y="518" font-size="12" text-anchor="start">Purple: seller pack reference</text>
+<text x="573" y="539" font-size="12" text-anchor="start">Grey: proposed space</text>
+<text x="573" y="560" font-size="12" text-anchor="start">Amber: mating reservations</text>
+<text x="30" y="624" font-size="12" text-anchor="start">Positions, clearances and empty bays are design proposals. Full coordinates and limits are in the report.</text>
+<text x="30" y="647" font-size="12" text-anchor="start">Structure, wiring, port adapters and purchased mounts still need detailed fitting. Not fabrication geometry.</text>
+</svg>

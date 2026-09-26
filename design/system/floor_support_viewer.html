@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidybot suspension and support study</title>
+<style>
+body{font:17px/1.5 system-ui,sans-serif;color:#20303b;background:#f4f3ee;margin:0}main{max-width:1050px;margin:auto;padding:30px}h1{font-size:30px;margin:0}p{max-width:900px}a{color:#125c83}.note{border-left:5px solid #b16b25;padding:12px 18px;background:#fff5e9}.controls{display:flex;gap:28px;flex-wrap:wrap;background:white;padding:20px;border-radius:10px}label{display:block}input{width:230px}select{font:inherit}output{font-weight:bold}.metrics{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0}.metric{background:white;border:1px solid #ccd1ce;padding:12px 18px;border-radius:8px}.metric strong{display:block;font-size:25px}.bad{color:#a03625}.good{color:#1c6957}svg{background:white;width:100%;height:auto;border:1px solid #ccd1ce;border-radius:10px}svg text{font:15px system-ui,sans-serif}table{border-collapse:collapse;width:100%;background:white}td,th{border:1px solid #ccd1ce;text-align:left;padding:10px}small{color:#52616a}
+</style></head><body><main>
+<h1>Wheel suspension &amp; rear support</h1>
+<p>Explore the proposed 40 mm leading arm. Its pivot sits behind the wheel, so the axle moves slightly rearward as it rises. The same mechanism would serve the vacuum, mop and sofa bottoms.</p>
+<p class="note"><b>Candidate geometry.</b> G remains the complete mass baseline. The added downward travel exceeds the current height limit in some poses. Moving trays, stops, caster retention and frame joints still need detail before fabrication.</p>
+<div class="controls"><div><label for="left">Left wheel travel <output id="leftValue"></output></label><input id="left" type="range" min="-2.5" max="10" step="0.1" value="0"></div><div><label for="right">Right wheel travel <output id="rightValue"></output></label><input id="right" type="range" min="-2.5" max="10" step="0.1" value="0"></div><div><label for="bottom">Bottom</label><select id="bottom"><option value="vacuum">Vacuum</option><option value="mop">Mop</option><option value="low">Sofa vacuum</option></select></div></div>
+<small>Positive = wheel rises toward chassis (bump). Negative = wheel extends downward (droop).</small>
+<div class="metrics"><div class="metric">Left arm angle<strong id="angle"></strong></div><div class="metric">Left spring spacing<strong id="spring"></strong></div><div class="metric">Height across caster headings<strong id="height"></strong><small>Ideal support model; 180 mm limit</small></div></div>
+<svg id="drawing" viewBox="0 0 1000 465" role="img" aria-label="Side view of the leading-arm suspension and a section through the rear caster saddle"></svg>
+<p>The drawing uses chassis coordinates: its reference floor line stays fixed while you change wheel position. The height calculation separately tilts the chassis onto two tire proxies and a caster support point. Spring and arm outlines are schematic.</p>
+<table><thead><tr><th>Detail</th><th>Design result</th></tr></thead><tbody>
+<tr><td>Pivot</td><td>Smooth 6 mm pin and replaceable bushings; both ends retained. The earlier 4 mm pin fails the impact bending screen.</td></tr>
+<tr><td>Spring</td><td>About 5 N/mm at the spring gives 0.8 N/mm at the wheel. Set preload for each assembled module; use separate travel stops.</td></tr>
+<tr><td>Caster saddle</td><td>40 mm-wide flat plate, 3 mm thick, with a 5 mm retainer allowance above it. Actual stem fitting remains to select.</td></tr>
+<tr><td>Weight</td><td id="mass"></td></tr>
+</tbody></table>
+<p><a href="floor_support.md">Calculations and open joints</a> · <a href="floor_support.FCStd">FreeCAD support model</a> · <a href="floor_support_stock.csv">Candidate stock ledger</a> · <a href="floor_support_validation.md">Verification record</a></p>
+</main><script>
+const data=__DATA__;
+const w=data.config.wheel,c=data.config.caster;
+const $=id=>document.getElementById(id);
+function pose(t){const a=Math.asin(t/40);return {a,y:145-40*Math.cos(a),z:36+t};}
+function normal(l,r,cx,cy){const a=14-cx,b=l.y-cy,c0=261-cx,e=r.y-cy,det=a*e-b*c0;
+const solve=(u,v)=>[(u*e-b*v)/det,(a*v-u*c0)/det],p=solve(36,36),q=solve(-l.z,-r.z);
+const aa=1+q[0]**2+q[1]**2,bb=2*(p[0]*q[0]+p[1]*q[1]),cc=p[0]**2+p[1]**2-1;
+const nz=(-bb+Math.sqrt(bb*bb-4*aa*cc))/(2*aa);return[p[0]+q[0]*nz,p[1]+q[1]*nz,nz];}
+function height(l,r,key){let worst=-Infinity;const center=c.centres_xy_mm[key];
+for(let deg=0;deg<360;deg+=5){const a=deg*Math.PI/180,cx=center[0]+15.5*Math.cos(a),cy=center[1]+15.5*Math.sin(a),n=normal(l,r,cx,cy);
+const x=n[0]>=0?182.8:86,y=n[1]>=0?164.3:94;worst=Math.max(worst,n[0]*(x-cx)+n[1]*(y-cy)+n[2]*179.1);}return worst;}
+function draw(l){const X=y=>45+(y-60)*4,Y=z=>400-z*4;
+const sy=145-16*Math.cos(l.a),sz=36+16*Math.sin(l.a),px=X(145),py=Y(36),ax=X(l.y),az=Y(l.z);
+let s=`<text x="32" y="32" font-weight="bold">Left wheel — side view</text><line x1="32" y1="400" x2="465" y2="400" stroke="#66747b" stroke-dasharray="6 5"/><text x="34" y="433">Reference floor at nominal pose</text>`;
+s+=`<rect x="${X(109)}" y="${Y(65)}" width="180" height="12" fill="#7d8d97"/><rect x="${X(132)}" y="${Y(62)}" width="88" height="144" fill="#adc0c9" opacity=".6"/>`;
+s+=`<circle cx="${ax}" cy="${az}" r="144" fill="#dfe6e5" fill-opacity=".38" stroke="#354d5b" stroke-width="5"/><circle cx="${ax}" cy="${az}" r="50" fill="#6b9cb2"/><line x1="${ax}" y1="${az}" x2="${px}" y2="${py}" stroke="#246c8d" stroke-width="9"/><circle cx="${px}" cy="${py}" r="12" fill="white" stroke="#246c8d" stroke-width="5"/>`;
+s+=`<line x1="${X(129)}" y1="${Y(62)}" x2="${X(sy)}" y2="${Y(sz)}" stroke="#ad752a" stroke-width="8" stroke-dasharray="3 4"/><text x="330" y="85">Fixed roof</text><text x="315" y="277">6 mm pivot</text><text x="35" y="105">72 mm wheel</text>`;
+s+=`<line x1="500" y1="45" x2="500" y2="430" stroke="#d2d8d7"/><text x="545" y="32" font-weight="bold">Caster saddle — cross-section</text><rect x="590" y="155" width="240" height="24" fill="#6b9cb2"/><rect x="670" y="115" width="80" height="40" fill="#ad752a" fill-opacity=".25" stroke="#ad752a" stroke-dasharray="4 3"/><rect x="690" y="179" width="40" height="100" fill="#8a969c"/><path d="M640 325 Q640 252 710 250 Q780 252 780 325" fill="#dfe6e5" stroke="#7d8d97" stroke-width="3"/><line x1="575" y1="107" x2="845" y2="107" stroke="#ad752a" stroke-dasharray="5 4"/><text x="563" y="86">Bin underside: only 1 mm nominal gap*</text><text x="620" y="211">40 mm wide × 3 mm plate</text><text x="610" y="375">*2.5 mm fitting + 5 mm retainer allowance.</text><text x="550" y="403">Stem shape is symbolic; retention remains open.</text>`;
+$('drawing').innerHTML=s;}
+function update(){const lt=Number($('left').value),rt=Number($('right').value),l=pose(lt),r=pose(rt),h=height(l,r,$('bottom').value);
+$('leftValue').textContent=`${lt.toFixed(1)} mm`;$('rightValue').textContent=`${rt.toFixed(1)} mm`;
+$('angle').textContent=`${(l.a*180/Math.PI).toFixed(2)}°`;$('spring').textContent=`${(26-16*Math.sin(l.a)).toFixed(2)} mm`;
+$('height').textContent=`${h.toFixed(1)} mm`;$('height').className=h>180?'bad':'good';draw(l);}
+$('mass').textContent=`${data.gross_candidate_stock_g.toFixed(1)} g of partial support blanks, before joints and the remaining chassis. Complete G mass is unchanged; no saving is credited.`;
+for(const id of ['left','right','bottom'])$(id).addEventListener('input',update);update();
+</script></body></html>

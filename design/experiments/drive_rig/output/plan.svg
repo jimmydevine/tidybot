@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" role="img" aria-label="Dimensioned top view of rolling drive rig">
+<style>text{font:16px sans-serif;fill:#223447}.small{font-size:13px}.dim{stroke:#607787;stroke-width:1;fill:none}</style>
+<rect width="960" height="700" fill="#f6f8fb"/>
+<text x="28" y="32" style="font-size:24px">Rolling rig · top view</text>
+<text x="28" y="57">Front at top. Dimensions in mm. Dashed orange = battery beneath tray.</text>
+<g transform="translate(380 95) scale(2)">
+<rect x="-110" width="220" height="240" fill="#d8e1e6" stroke="#667d8e"/>
+<path d="M -118 65 L 118 65 L 0 210 Z" fill="#339d9620" stroke="#41958d" stroke-dasharray="4 3"/>
+<rect x="-122" y="35" width="8" height="60" rx="3" fill="#303d46"/>
+<rect x="-114" y="51" width="13" height="28" fill="#399593"/>
+<rect x="114" y="35" width="8" height="60" rx="3" fill="#303d46"/>
+<rect x="101" y="51" width="13" height="28" fill="#399593"/>
+<rect x="-67.5" y="98.5" width="135" height="43" fill="#efb661" fill-opacity=".4" stroke="#bc821f" stroke-dasharray="3 2"/>
+<rect x="-84" y="65" width="168" height="70" fill="#bd785340" stroke="#af7050"/>
+<rect x="-43.0" y="78.5" width="86" height="43" fill="#45566a" fill-opacity=".6" stroke="#334455"/>
+<rect x="-100" y="160" width="85" height="56" fill="#74a581" stroke="#315c48"/>
+<rect x="20" y="155.5" width="30" height="41" fill="#74a581" stroke="#315c48"/>
+<rect x="68" y="155.5" width="30" height="41" fill="#74a581" stroke="#315c48"/>
+<rect x="-22.5" y="196" width="45" height="28" fill="#f7f6ef" stroke="#607787"/>
+<circle cx="0" cy="210" r="4" fill="#65727a"/>
+<path class="dim" d="M -122 -9 L 122 -9 M -122 -13 L -122 -5 M 122 -13 L 122 -5 M -135 0 L -135 240 M -139 0 L -131 0 M -139 240 L -131 240"/>
+</g>
+<text x="300" y="72">244 across wheels</text>
+<text x="63" y="350" transform="rotate(-90 63 350)">240 deck length</text>
+<text x="347" y="298" class="small" style="fill:white">Wattmeter</text>
+<text x="284" y="381" class="small">Battery below shelf</text>
+<text x="215" y="478">Pi 4</text>
+<text x="412" y="503" class="small">Controllers</text>
+<text x="339" y="559" class="small">Caster</text>
+<text x="650" y="175">Deck: 220 × 240</text>
+<text x="650" y="210">Wheel track: 236</text>
+<text x="650" y="245">Axle to caster: 145</text>
+<text x="650" y="280">Wheel axle Z: 30</text>
+<text x="650" y="315">Deck underside Z: 50</text>
+<text x="650" y="350">Tray floor Z: 100</text>
+<text x="650" y="385">Tray rim Z: 110</text>
+<text x="650" y="430" class="small">Teal triangle: floor contacts.</text>
+<text x="650" y="450" class="small">Keep load centered between them.</text>
+<text x="650" y="490" class="small">Battery body: 135 × 43 × 22</text>
+<text x="650" y="510" class="small">Meter body: 86 × 43 × 25</text>
+<text x="650" y="530" class="small">Tray inside: 162 × 64</text>
+<text x="28" y="633">Fit prototype · motor bracket pitch 8.50 × 8.50 mm · caster hole pitch 34 mm</text>
+<text x="28" y="663" class="small">Wiring, detailed component profiles and screw clearances still require physical inspection.</text>
+</svg>

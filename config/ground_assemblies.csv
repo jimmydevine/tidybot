@@ -1,0 +1,11 @@
+id,section,state,measured_mass_g,measurement_date,installed_battery_or_contents,notes
+core_ready,core,operational,,,,Actual battery and complete wiring/electronics and core-side joints; excludes top/bottom
+cap_ready,cap,complete,,,,Cap-side joint and display if fitted; cap replaces eventual lift top
+vacuum_empty,vacuum,empty,,,,Complete everyday wheeled vacuum including powered head; excludes separate low-clearance bottom
+vacuum_loaded,vacuum,maximum_permitted_load,,,,Includes vacuum_empty plus debris; record allowed contents; alternative state not additive
+mop_dry,mop,dry_empty,,,,Complete wheeled mop including dry pad and reservoirs
+mop_loaded,mop,maximum_permitted_load,,,,Include wet pad and allowed clean/dirty water combination; alternative state not additive
+duster_empty,duster,empty,,,,Complete wheeled duster and deployed-tool mechanism if present
+duster_loaded,duster,maximum_permitted_load,,,,Include retained debris and consumables; alternative state not additive
+low_clearance_empty,low_clearance,empty,,,,Complete low-clearance bottom including wheels controls head extension duct and dry air system; replaces ordinary vacuum bottom
+low_clearance_loaded,low_clearance,maximum_permitted_load,,,,Includes low_clearance_empty plus permitted debris; alternative state not additive

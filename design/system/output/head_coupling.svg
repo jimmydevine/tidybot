@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 760" role="img" aria-label="Removable head interface and lock section">
+<rect width="1140" height="760" fill="#f8fafc"/>
+<g font-family="sans-serif" font-size="15" fill="#172b40">
+<text x="28" y="34" font-size="25">P • Removable head coupling</text>
+<text x="28" y="59" font-size="15">Candidate geometry • supports, suspension, flex and latch housings remain unfinished</text>
+<rect x="28" y="80" width="566" height="587" fill="white" stroke="#cbd5e1" />
+<rect x="614" y="80" width="498" height="340" fill="white" stroke="#cbd5e1" />
+<rect x="614" y="435" width="498" height="232" fill="white" stroke="#cbd5e1" />
+<text x="45" y="105" font-size="16">TOP VIEW • body front and removable head</text>
+<text x="45" y="128" font-size="13">Orange moves with tool; teal stays with robot. Supports omitted.</text>
+<rect x="63.0" y="418.0" width="495.0" height="219.6" fill="#e8edf3" stroke="#334155" stroke-dasharray="5 4"/>
+<text x="68" y="652" font-size="13">Body continues rearward; electronics above are hidden.</text>
+<path d="M63,418 L558.0,418" fill="none" stroke="#1e293b" stroke-width="2"/>
+<text x="45" y="407" font-size="13">Y=0 • front of body</text>
+<rect x="107.1" y="490.0" width="2.7" height="72.0" fill="#0f9f9c" stroke="#334155" />
+<rect x="511.2" y="490.0" width="2.7" height="72.0" fill="#0f9f9c" stroke="#334155" />
+<rect x="260.1" y="590.8" width="100.8" height="5.4" fill="#0f9f9c" stroke="#334155" />
+<rect x="376.2" y="610.6" width="57.6" height="2.8800000000000003" fill="#0f9f9c" stroke="#334155" />
+<rect x="381.24" y="594.7348" width="4.32" height="15.865199999999987" fill="#0f9f9c" stroke="#334155" />
+<rect x="395.64000000000004" y="594.7348" width="4.32" height="15.865199999999987" fill="#0f9f9c" stroke="#334155" />
+<rect x="410.04" y="594.7348" width="4.32" height="15.865199999999987" fill="#0f9f9c" stroke="#334155" />
+<rect x="424.44000000000005" y="594.7348" width="4.32" height="15.865199999999987" fill="#0f9f9c" stroke="#334155" />
+<g id="moving-tool" transform="translate(0,-0.0)">
+<rect x="103.5" y="428.8" width="414.0" height="108.0" fill="#ffedd5" stroke="#334155" />
+<text x="145.8" y="491.8" font-size="16">Powered cleaning head</text>
+<rect x="103.86" y="490.0" width="2.7" height="77.4" fill="#ed9d32" stroke="#334155" />
+<rect x="514.44" y="490.0" width="2.7" height="77.4" fill="#ed9d32" stroke="#334155" />
+<rect x="113.4" y="548.5" width="394.2" height="21.6" fill="#ed9d32" stroke="#334155" />
+<rect x="276.3" y="536.8" width="68.4" height="45.0" fill="none" stroke="#334155" stroke-dasharray="4 3"/>
+<rect x="260.1" y="581.8" width="100.8" height="5.4" fill="#ed9d32" stroke="#334155" />
+<rect x="376.2" y="591.8548000000001" width="57.6" height="2.8800000000000003" fill="#ed9d32" stroke="#334155" />
+</g>
+<rect x="101.7" y="497.2" width="9.0" height="7.2" fill="#0f9f9c" stroke="#334155" />
+<rect x="101.7" y="540.4" width="9.0" height="7.2" fill="#0f9f9c" stroke="#334155" />
+<rect x="505.8" y="497.2" width="9.0" height="7.2" fill="#0f9f9c" stroke="#334155" />
+<rect x="505.8" y="540.4" width="9.0" height="7.2" fill="#0f9f9c" stroke="#334155" />
+<path d="M48,360 L48,206" fill="none" stroke="#a65b00" stroke-width="2"/>
+<path d="M48,206 L43,216" fill="none" stroke="#475569" />
+<path d="M48,206 L53,216" fill="none" stroke="#475569" />
+<text x="70" y="181" font-size="16">Forward withdrawal: 0–120 mm</text>
+<text x="70" y="203" font-size="13">At 120 mm, mating face clears front by 21.8 mm.</text>
+<text x="632" y="106" font-size="16">LEFT LOCK • section at Z70</text>
+<text x="632" y="129" font-size="13">Screw head bridges two steel bores; shank only actuates.</text>
+<rect x="766.5" y="180" width="37.5" height="128" fill="#fed7aa" stroke="#334155" />
+<rect x="811.5" y="180" width="37.5" height="128" fill="#5ec6c2" stroke="#334155" />
+<rect x="849" y="180" width="50" height="128" fill="#dce4ed" stroke="#334155" />
+<rect x="766.5" y="210.4000000000001" width="37.5" height="67.2" fill="white" stroke="#334155" />
+<rect x="811.5" y="211.20000000000005" width="87.5" height="65.6" fill="white" stroke="#334155" />
+<defs><clipPath id="key-section"><rect x="632" y="150" width="280" height="180"/></clipPath></defs><g clip-path="url(#key-section)"><g id="moving-key">
+<rect x="649" y="228" width="130.0" height="32" fill="#64748b" stroke="#334155" />
+<rect x="779.0" y="213.5999999999999" width="50" height="60.8" fill="#475569" stroke="#334155" />
+</g></g>
+<text x="930" y="185" font-size="13">orange: tool cheek</text>
+<text x="930" y="206" font-size="13">teal: receiver</text>
+<text x="930" y="227" font-size="13">gray: chassis rail</text>
+<path d="M884,276 L839,276" fill="none" stroke="#475569" stroke-width="2"/>
+<path d="M839,276 L848,271" fill="none" stroke="#475569" />
+<path d="M839,276 L848,281" fill="none" stroke="#475569" />
+<text x="923" y="280" font-size="13">3 mm outward</text>
+<text x="632" y="350" font-size="14">Nominal engagement: cheek 1.0 mm / receiver 0.7 mm.</text>
+<text x="632" y="374" font-size="14">Only 0.5 mm minimum with ±0.2 mm axial variation.</text>
+<text x="632" y="398" font-size="14">Actual screw chamfer, guides and wear must be checked.</text>
+<text x="632" y="462" font-size="16">SUPPORTED DOCK EXCHANGE</text>
+<text x="634" y="491" font-size="14">1  Capture robot, carrier and floating head.</text>
+<text x="634" y="517" font-size="14">2  Stop drives; isolate tool and logic power.</text>
+<text x="634" y="543" font-size="14">3  Retract both keys; withdraw 120 mm.</text>
+<text x="634" y="569" font-size="14">4  Park head; present this floor’s extension.</text>
+<text x="634" y="595" font-size="14">5  Seat and lock; check ID on limited logic power.</text>
+<text x="634" y="621" font-size="14">6  Enable tool power only after validation.</text>
+<text x="30" y="697" font-size="17">Mass remains 5.275 kg at maximum debris, excluding lift: 775 g above the transfer limit.</text>
+<text x="30" y="723" font-size="15">Carrier scope ≈68 g against 70 g allocation. Only 35 g remains for unfinished head compliance.</text>
+<text x="30" y="748" font-size="15">735 mm dock handling depth before margins; sofa approach space does not confirm dock space.</text>
+</g>
+</svg>

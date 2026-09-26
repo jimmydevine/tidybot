@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TidyBot — concept study</title>
+<style>
+:root{color-scheme:light;--ink:#183345;--muted:#5f7280;--line:#dce4e8;--paper:#f4f6f6}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,sans-serif}header{background:#142d3e;color:#f0f5f7;padding:25px 4vw}header small{letter-spacing:.15em;color:#92bac7}h1{font-size:30px;font-weight:600;margin:6px 0}header p{margin:4px 0;max-width:900px;color:#c3d2da}main{max-width:1500px;margin:auto;padding:24px}a{color:#23758e}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px}label{display:flex;align-items:center;gap:10px}select,button{padding:9px 12px;border:1px solid #b6c6ce;border-radius:5px;background:white;color:var(--ink);font:inherit}button{cursor:pointer}.controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:18px;align-items:center}.notice{background:#fff3d8;border:1px solid #ecd49b;border-radius:6px;padding:12px 16px;margin-bottom:20px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}.metric,.panel{background:white;border:1px solid var(--line);border-radius:8px;padding:18px}.metric b{display:block;font-size:25px}.metric span{color:var(--muted);font-size:13px}.views{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel p{font-size:13px;color:var(--muted);margin:8px 0}.panel svg{width:100%;height:340px;display:block;background:#fbfcfc;border:1px solid #edf1f3;border-radius:4px}.wide{grid-column:1/-1;margin-top:0}.section{margin-top:20px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;color:var(--muted);font-weight:600}td,th{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}.pass{color:#287083}.fail{color:#ae392c;font-weight:600}.unknown{color:#956609}.badge{font-size:12px;border:1px solid #d6e0e4;border-radius:4px;padding:2px 5px;white-space:nowrap}.legend{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px}.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:5px}.hidden{display:none}.foot{font-size:13px;color:var(--muted);margin:24px 0}input[type=checkbox]{accent-color:#23758e}svg text{font-family:system-ui,sans-serif;fill:#536d7b}svg .dim{stroke:#637f8e;stroke-width:1;fill:none}svg .label{font-size:13px}summary{cursor:pointer;font-weight:600}.tight{max-width:1050px}@media(max-width:850px){.metrics{grid-template-columns:repeat(2,1fr)}.views{grid-template-columns:1fr}.wide{grid-column:auto}main{padding:14px}.controls{gap:12px}.panel svg{height:310px}}
+</style></head><body>
+<header><small>TIDYBOT / ENGINEERING STUDY 01</small><h1>Fit the whole robot. Account for every gram.</h1><p>Editable three-section concept, stair screening and station working volumes. Units are millimetres unless shown otherwise.</p></header>
+<main>
+<div class="notice"><strong>Concept screening — not validated for flight or fabrication.</strong> Green/blue results apply only to simplified geometry and stated assumptions. Unknown site geometry, dogs, guard construction and physical testing remain open.</div>
+<div class="controls"><label>Configuration <select id="variant"></select></label><label>Robot view <select id="mode"><option value="flight">Lift top attached</option><option value="cap">Floor cleaning with cap</option></select></label><label><input type="checkbox" id="components" checked> Component boxes</label><button id="download">Download input configuration</button></div>
+<div id="metrics" class="metrics"></div>
+<div class="views">
+<section class="panel"><h2>Plan view / attached footprint</h2><svg id="plan" role="img" aria-label="Top view of robot and guarded rotor footprints"></svg><p>Dashed lines show the combined rail projection envelope, not a measured cross-section. Hover over parts for names.</p></section>
+<section class="panel"><h2>Interior tread / level landing</h2><svg id="side" role="img" aria-label="Side view of robot on a stair tread"></svg><p>Level pose shown. The check table also samples attitude and position errors. Headroom, terminal landings and rail thicknesses are unknown.</p></section>
+<section class="panel wide"><div class="controls"><h2 style="margin:0">Station / front elevation</h2><label>Working state <select id="phase"><option value="0">Arrival with lift top</option><option value="1">Lift top parked; cap fitted</option><option value="2">Core supported; bottom at tray</option></select></label></div><svg id="station" role="img" aria-label="Station storage and module exchange envelopes"></svg><p>Illustrative working states, not a collision-verified actuator sequence. Tanks sit behind the docking bay in this front projection. Doorways and paths to both stations remain unmeasured.</p></section>
+</div>
+<div class="legend section"><span><i style="background:#f1b34b"></i>Core/battery</span><span><i style="background:#65accb"></i>Cleaning bottom</span><span><i style="background:#df756c"></i>Guard envelope</span><span><i style="background:#627b8a"></i>Lift structure</span><span><i style="background:#81b9c1"></i>Rotor swept disk</span></div>
+<section class="panel section"><h2>Checks for the selected flight configuration</h2><p id="sensitivity"></p><div class="tablewrap"><table><thead><tr><th>Check</th><th>Result</th><th>Margin mm</th><th>What this establishes</th></tr></thead><tbody id="checks"></tbody></table></div></section>
+<section class="panel section"><h2>Component and purchase ledger</h2><p>Manufacturer masses and estimated assemblies are identified separately. Most costs are planning allowances, not quotes. Station rows are per station; their zero mass/power fields mean “not estimated here.”</p><div class="tablewrap"><table><thead><tr><th>Section / candidate</th><th>Qty</th><th>Mass each</th><th>USD each</th><th>Basis and next check</th></tr></thead><tbody id="ledger"></tbody></table></div></section>
+<details class="panel section"><summary>Assumptions and reproducibility</summary><p class="tight">Edit <code>config/concept.json</code>, <code>config/components.csv</code> and the example home profile, then run <code>python3 design/generate.py</code>. This page has no network dependency and uses precomputed Python results. Changing the visual mode does not change the selected flight-check results. The mass estimate includes a 150 g debris allowance. Larger variants only replace motor mass; their guards and arms still require separate mass estimates.</p><pre id="assumptions" style="overflow:auto"></pre></details>
+<p class="foot">Generated from the same geometry inputs as the STEP/FreeCAD concept exports. <a href="report.md">Full generated report</a> · <a href="../../config/components.csv">Editable CSV ledger</a> · <a href="../README.md">Build and model limitations</a></p>
+</main>
+<script>
+const data=/*STUDY_DATA*/;
+const $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function el(tag,attrs={},parent){const n=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);if(parent)parent.appendChild(n);return n}
+function setup(id,vb){const svg=$(id);svg.innerHTML='';svg.setAttribute('viewBox',vb.join(' '));return svg}
+function label(svg,x,y,text,size=14){const n=el('text',{x,y,'font-size':size},svg);n.textContent=text;return n}
+function draw(svg,parts,axes,flip=true,components=true){
+ const [u,w]=axes;
+ const visible=parts.filter(p=>components||!['core','bottom'].includes(p.group));
+ const order={envelope:0,station:1,service:2,stored:3,bottom:4,core:5,wheel:6,cap:7,lift:8,guard:9,prop:10};
+ visible.sort((a,b)=>(order[a.group]||0)-(order[b.group]||0));
+ for(const p of visible){
+  const base={fill:p.color,stroke:p.color,'stroke-width':1.8,'fill-opacity':p.group==='envelope'?.08:p.group==='guard'?.08:p.group==='prop'?.06:.72};let n;
+  if(p.group==='envelope')base['stroke-dasharray']='6 4';
+  const pos=q=>[q[u],flip?-q[w]:q[w]];
+  if(p.shape==='beam'){const a=pos(p.start),b=pos(p.end);n=el('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:p.color,'stroke-width':p.radius*2,'stroke-linecap':'round'},svg)}
+  else if(p.shape==='cylinder'){
+   const axis={x:0,y:1,z:2}[p.axis],center=pos(p.center);
+   if(!axes.includes(axis)) n=el('circle',{cx:center[0],cy:center[1],r:p.radius,...base},svg);
+   else{const width=u===axis?p.height:2*p.radius,height=w===axis?p.height:2*p.radius;n=el('rect',{x:center[0]-width/2,y:center[1]-height/2,width,height,...base},svg)}
+  }else{const a=pos(p.center);n=el('rect',{x:a[0]-p.size[u]/2,y:a[1]-p.size[w]/2,width:p.size[u],height:p.size[w],...base},svg)}
+  const title=el('title',{},n);title.textContent=p.name;
+ }
+}
+function render(){
+ const id=$('variant').value,v=data.config.variants.find(v=>v.id===id),r=data.results.find(r=>r.id===id),c=data.config,b=c.body;
+ const mode=$('mode').value,parts=mode==='cap'?data.cap_scene:data.robot_scenes[id],g=r.geometry,p=r.power;
+ const power=p.bench_equivalent_hover_w==null?'No curve point':Math.round(p.bench_equivalent_hover_w)+' W';
+ $('metrics').innerHTML=[[(r.mass.total_g/1000).toFixed(2)+' kg','Estimated loaded flight mass'],[Math.round(g.length_mm)+' × '+Math.round(g.width_mm)+' mm','Guarded flight footprint'],[power,'Bench-equivalent hover estimate'],[p.voltage_sensitivity_thrust_ratio.toFixed(2)+':1','Thrust reserve / unvalidated sensitivity']].map(([a,b])=>`<div class="metric"><b>${esc(a)}</b><span>${esc(b)}</span></div>`).join('');
+ const span=Math.max(1000,g.length_mm+140,g.width_mm+140),plan=setup('plan',[-span/2,-span/2,span,span]);
+ for(const y of [-g.combined_rail_width_mm/2,g.combined_rail_width_mm/2])el('line',{x1:-span/2,y1:y,x2:span/2,y2:y,stroke:'#c89f5d','stroke-dasharray':'9 6','stroke-width':2},plan);
+ draw(plan,parts,[0,1],true,$('components').checked);label(plan,-span/2+25,-span/2+35,'Forward / upstairs →',34);
+ label(plan,-span/2+25,span/2-25,`${mode==='cap'?'Cap mode':'Lift mode'} · body ${b.length_mm} × ${b.width_mm} mm`,32);
+ const side=setup('side',[-700,-700,1400,1150]),t=data.site.staircase.tread_depth*1000,h=data.site.staircase.approx_riser_height*1000;
+ for(let k=-3;k<=3;k++){el('rect',{x:k*t-t/2,y:-k*h,width:t,height:1200+k*h,fill:'#e7d9c5',stroke:'#c5b295','stroke-width':2},side)}
+ draw(side,parts,[0,2],true,$('components').checked);label(side,-660,-645,'Level interior-step pose; unknown headroom',36);
+ label(side,-650,390,`Tread ${t.toFixed(1)} mm · rise ${h.toFixed(1)} mm · rotor plane ${v.rotor_plane_mm} mm`,34);
+ const st=data.config.station,station=setup('station',[-st.width_mm/2-100,-st.height_mm-70,st.width_mm+200,st.height_mm+150]);
+ draw(station,data.station_scenes[id][Number($('phase').value)],[1,2],true,$('components').checked);
+ label(station,-st.width_mm/2,-st.height_mm-25,`${st.width_mm} W × ${st.depth_mm} D × ${st.height_mm} H mm · front view`,42);
+ const unit=p.ground_minutes_after_reserve==null?'unavailable':Math.round(p.ground_minutes_after_reserve)+' min';
+ $('sensitivity').textContent=`Mass sensitivity ${(r.mass.low_g/1000).toFixed(2)}–${(r.mass.high_g/1000).toFixed(2)} kg. At the high mass, assumed thrust ratio is ${p.high_mass_thrust_ratio.toFixed(2)}:1. Nominal target headroom: ${Math.round(p.target_mass_headroom_g)} g. Ground runtime after assumed flight reserve: ${unit}. These are estimates, not test results.`;
+ $('checks').innerHTML=r.checks.map(ch=>`<tr><td>${esc(ch.name)}</td><td><span class="badge ${ch.status.startsWith('FAIL')?'fail':ch.status==='UNKNOWN'?'unknown':'pass'}">${esc(ch.status)}</span></td><td>${ch.margin_mm??'—'}</td><td>${esc(ch.detail)}</td></tr>`).join('');
+}
+$('variant').innerHTML=data.config.variants.map(v=>`<option value="${esc(v.id)}">${esc(v.label)}</option>`).join('');$('variant').value=data.config.default_variant;
+for(const id of ['variant','mode','components','phase'])$(id).addEventListener('change',render);
+$('ledger').innerHTML=data.ledger.map(row=>`<tr><td><small>${esc(row.section)}</small><br>${row.source?`<a href="${esc(row.source)}">${esc(row.candidate)}</a>`:esc(row.candidate)}</td><td>${row.qty}</td><td>${row.section==='station'?'Not airborne':row.unit_mass_g+' g'}<br><small>${esc(row.mass_basis)}</small></td><td>$${row.cost_low_usd}–${row.cost_high_usd}<br><small>${esc(row.cost_basis)}</small></td><td>${esc(row.notes)}</td></tr>`).join('');
+$('assumptions').textContent=JSON.stringify(data.config.screening,null,2);
+$('download').addEventListener('click',()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(data.config,null,2)],{type:'application/json'}));a.download='concept.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)});
+render();window.tidybotStudy={data,render};
+</script></body></html>

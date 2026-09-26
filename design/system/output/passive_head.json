@@ -1,0 +1,5428 @@
+{
+  "config": {
+    "revision": "Q: passive twin-slide vacuum head",
+    "status": "Kinematic and force comparison, not a finished mount or fabrication release",
+    "pivot_left_mm": [
+      32,
+      30,
+      20
+    ],
+    "pivot_right_x_mm": 243,
+    "carriage_above_pivot_mm": 20,
+    "rail_left_min_mm": [
+      19.5,
+      21.5,
+      12
+    ],
+    "side_brush_shift_x_mm": -1,
+    "rail_envelope_mm": [
+      6,
+      17,
+      62
+    ],
+    "carriage_length_mm": 20,
+    "end_stop_reserve_mm": 1,
+    "rail_end_tolerance_mm": 2,
+    "placement_tolerance_mm": 0.5,
+    "right_axial_float_mm": 1,
+    "rail_spacing_tolerance_mm": 0.5,
+    "pitch_stop_deg": 6,
+    "raised_pivot_z_mm": 36,
+    "target_contact_n": 3.5,
+    "counterbalance_rate_each_n_mm": 0.03,
+    "counterbalance_force_tolerance": 0.2,
+    "spring_rate_factors": [
+      0.8,
+      1,
+      1.2
+    ],
+    "net_parasitic_n_cases": [
+      -1,
+      0,
+      1
+    ],
+    "suction_n_cases": [
+      0,
+      5
+    ],
+    "drag_n_cases": [
+      -1.5,
+      0,
+      1.5
+    ],
+    "support_y_mm": [
+      20,
+      52
+    ],
+    "ramp_rise_mm": 13.5,
+    "ramp_run_mm": 14,
+    "ramp_mu_cases": [
+      0.1,
+      0.2,
+      0.35
+    ],
+    "retention_design_n": 50,
+    "guide_mu_cases": [
+      0.05,
+      0.15,
+      0.3
+    ],
+    "guide_load_offset_mm": 8,
+    "guide_effective_contact_span_mm": 14,
+    "guide_breakaway_allowance_n_each": 0.15,
+    "parts": [
+      {
+        "id": "rails",
+        "qty": 2,
+        "each_g": 9.3,
+        "kind": "catalog_length",
+        "moving": false,
+        "basis": "62 mm at 150 g/m; NS-01-17 reference, end tolerance and mounting-hole placement must be specified"
+      },
+      {
+        "id": "carriages",
+        "qty": 2,
+        "each_g": 1.7,
+        "kind": "catalog",
+        "moving": true,
+        "basis": "NW-02-17 standard, not preloaded; mounting boss and anti-rotation connection remain to detail"
+      },
+      {
+        "id": "spherical_bearings",
+        "qty": 2,
+        "each_g": 0.5,
+        "kind": "catalog_reference",
+        "moving": true,
+        "basis": "Historical KGLM-03: ID3 / OD10 / width6 mm; current LC successor is not presumed interchangeable"
+      },
+      {
+        "id": "rail_backings_and_carrier_tabs",
+        "qty": 2,
+        "each_g": 4,
+        "kind": "allowance",
+        "moving": false,
+        "basis": "Short flat metal backings and offset connection to P carrier; joint design incomplete"
+      },
+      {
+        "id": "drop_links_and_bearing_cages",
+        "qty": 2,
+        "each_g": 4,
+        "kind": "allowance",
+        "moving": true,
+        "basis": "20 mm offset bracket, captured bearing cage and keyed carriage attachment; actual volume unresolved"
+      },
+      {
+        "id": "pivot_pins_and_retainers",
+        "qty": 2,
+        "each_g": 2,
+        "kind": "allowance",
+        "moving": true,
+        "basis": "Smooth 3 mm pivots; left axially located, right floats 1 mm; thread/bearing and roller-end clearance unresolved"
+      },
+      {
+        "id": "mounting_fasteners",
+        "qty": 1,
+        "each_g": 5,
+        "kind": "allowance",
+        "moving": false,
+        "basis": "Rail, backing, cage and interface fastening; no print-thread-only retention"
+      },
+      {
+        "id": "counterbalance_springs_and_anchors",
+        "qty": 1,
+        "each_g": 3,
+        "kind": "allowance",
+        "moving": false,
+        "basis": "Unequal left/right upward preload; 0.03 N/mm each is a design target, not a selected spring"
+      },
+      {
+        "id": "end_stops_and_pitch_stops",
+        "qty": 1,
+        "each_g": 4,
+        "kind": "allowance",
+        "moving": false,
+        "basis": "Positive captive slide stops and pitch stops; no friction-only flight restraint"
+      },
+      {
+        "id": "dock_set_capture_hooks",
+        "qty": 1,
+        "each_g": 10,
+        "kind": "allowance",
+        "moving": false,
+        "basis": "Two spring-engaged catches plus pitch locator; station raises/releases head; not yet designed"
+      },
+      {
+        "id": "capture_sensors_and_harness",
+        "qty": 1,
+        "each_g": 4,
+        "kind": "allowance",
+        "moving": false,
+        "basis": "Independent raised/captured feedback; no implemented controller logic"
+      },
+      {
+        "id": "completion_reserve",
+        "qty": 1,
+        "each_g": 6,
+        "kind": "allowance",
+        "moving": false,
+        "basis": "Local completion reserve; service-face supports remain in P and flex in existing plumbing"
+      }
+    ],
+    "sources": {
+      "guide_catalog": "https://www.igus.com/us/pdf/drylinn.pdf",
+      "current_carriage": "https://www.igus.com/product/drylin-nw-2-17-j?artnr=NW-02-17",
+      "bearing_catalog": "https://www.igus.com/us/pdf/igubal.pdf",
+      "bearing_mass": "https://www.igus.com/contentData/Product_Files/Download/pdf/2016%20igubal%20complete.pdf",
+      "carriage_distribution": "https://www.tme.com/us/en-us/details/nw-02-17/linear-guides/igus/"
+    },
+    "policy": "Compare this whole local mechanism against P remaining compliance 35 g plus M lift 62 g, not against 35 g alone. Keep the 70 g P carrier, 135 g head frame, 75 g plumbing and all other assembly budgets. No savings booked before missing joints/capture, flex and threshold behavior close. Dock-only release cannot provide arbitrary airborne head repositioning."
+  },
+  "calibration": {
+    "mass_g": 498.4,
+    "cg_mm": [
+      116.85393258426967,
+      35.80256821829856,
+      36.14265650080257
+    ],
+    "weight_n": 4.887634359999999,
+    "upward_preload_n": [
+      1.1720656563033165,
+      0.21556870369668235
+    ],
+    "reference_carriage_z_mm": 40
+  },
+  "poses": [
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 0,
+      "state": "level",
+      "step_mm": 0,
+      "heading_deg": 0,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 0,
+      "state": "level",
+      "step_mm": 0,
+      "heading_deg": 45,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 0,
+      "state": "level",
+      "step_mm": 0,
+      "heading_deg": 90,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 0,
+      "state": "level",
+      "step_mm": 0,
+      "heading_deg": 135,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 0,
+      "state": "level",
+      "step_mm": 0,
+      "heading_deg": 180,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 0,
+      "state": "level",
+      "step_mm": 0,
+      "heading_deg": 225,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 0,
+      "state": "level",
+      "step_mm": 0,
+      "heading_deg": 270,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 0,
+      "state": "level",
+      "step_mm": 0,
+      "heading_deg": 315,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        24.0,
+        24.0
+      ],
+      "carriage_z_mm": [
+        44.0,
+        44.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 4,
+      "state": "head meets step",
+      "step_mm": 4,
+      "heading_deg": 0,
+      "travel_margin_mm": 16.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9994993942192016,
+          -0.0316379669929822
+        ],
+        [
+          -0.0,
+          0.0316379669929822,
+          0.9994993942192016
+        ]
+      ],
+      "T": [
+        0.0,
+        0.647777513283593,
+        -3.3211765789823
+      ],
+      "pitch_deg": 1.8130245280232204,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        17.617950315191198,
+        17.617950315191198
+      ],
+      "carriage_z_mm": [
+        37.617950315191194,
+        37.617950315191194
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.0316379669929822,
+        0.9994993942192016
+      ],
+      "plane_constant": -7.3400083423718705,
+      "ground_height_mm": 4,
+      "state": "both drive wheels up",
+      "step_mm": 4,
+      "heading_deg": 0,
+      "travel_margin_mm": 12.117950315191194,
+      "pitch_margin_deg": 4.18697547197678
+    },
+    {
+      "R": [
+        [
+          0.9998688380972395,
+          -0.00022408407907241438,
+          -0.01619433198380567
+        ],
+        [
+          0,
+          0.9999042798056881,
+          -0.01383586738402584
+        ],
+        [
+          0.016195882256802345,
+          0.01383405264533341,
+          0.9997731304577704
+        ]
+      ],
+      "T": [
+        0.3348063429366164,
+        0.2795889535098759,
+        -5.679652245970729
+      ],
+      "pitch_deg": 0.7927621016162779,
+      "roll_deg": -0.9279962717459578,
+      "pivot_z_mm": [
+        15.249100174762356,
+        18.666431330947653
+      ],
+      "carriage_z_mm": [
+        35.249100174762354,
+        38.66643133094765
+      ],
+      "right_float_used_mm": 0.02767516148247051,
+      "normal": [
+        -0.016194331983805668,
+        -0.01383586738402584,
+        0.9997731304577704
+      ],
+      "plane_constant": -5.687654026616262,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 4,
+      "heading_deg": 0,
+      "travel_margin_mm": 9.749100174762354,
+      "pitch_margin_deg": 5.207237898383722
+    },
+    {
+      "R": [
+        [
+          0.9998688216111278,
+          0.0002884121583215694,
+          0.016194331983805668
+        ],
+        [
+          0,
+          0.999841449446912,
+          -0.017806627078086126
+        ],
+        [
+          -0.016196900011260763,
+          0.017804291233434775,
+          0.9997102918564459
+        ]
+      ],
+      "T": [
+        -0.3283412959818577,
+        0.36088905815436334,
+        -1.6421369442130427
+      ],
+      "pitch_deg": 1.0202985024716538,
+      "roll_deg": 0.9280545924309386,
+      "pivot_z_mm": [
+        18.36789682955857,
+        14.950350927182551
+      ],
+      "carriage_z_mm": [
+        38.367896829558575,
+        34.950350927182555
+      ],
+      "right_float_used_mm": 0.027678640052038794,
+      "normal": [
+        0.016194331983805668,
+        -0.017806627078086126,
+        0.9997102918564459
+      ],
+      "plane_constant": -1.6534046885937146,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 4,
+      "heading_deg": 0,
+      "travel_margin_mm": 9.450350927182555,
+      "pitch_margin_deg": 4.979701497528346
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9995082586636985,
+          0.03135667174719015
+        ],
+        [
+          -0.0,
+          -0.03135667174719015,
+          0.9995082586636985
+        ]
+      ],
+      "T": [
+        0.0,
+        -0.6123811948547591,
+        3.295570649774522
+      ],
+      "pitch_deg": -1.7968994969345637,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        22.34503567063279,
+        22.34503567063279
+      ],
+      "carriage_z_mm": [
+        42.34503567063279,
+        42.34503567063279
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.03135667174719015,
+        0.9995082586636986
+      ],
+      "plane_constant": 3.2747478453481156,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 4,
+      "heading_deg": 0,
+      "travel_margin_mm": 16.84503567063279,
+      "pitch_margin_deg": 4.2031005030654365
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -4.0,
+      "ground_height_mm": 4,
+      "state": "all up",
+      "step_mm": 4,
+      "heading_deg": 0,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        24.0,
+        24.0
+      ],
+      "carriage_z_mm": [
+        44.0,
+        44.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 4,
+      "state": "head meets step",
+      "step_mm": 4,
+      "heading_deg": 45,
+      "travel_margin_mm": 16.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9995763766093542,
+          -0.02910442104757403
+        ],
+        [
+          -0.0,
+          0.02910442104757403,
+          0.9995763766093542
+        ]
+      ],
+      "T": [
+        0.0,
+        0.5947971226708582,
+        -3.0551976793624505
+      ],
+      "pitch_deg": 1.6677960036487598,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        17.809462484251856,
+        17.809462484251856
+      ],
+      "carriage_z_mm": [
+        37.80946248425185,
+        37.80946248425185
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.02910442104757403,
+        0.9995763766093543
+      ],
+      "plane_constant": -7.07121465205852,
+      "ground_height_mm": 4,
+      "state": "both drive wheels up",
+      "step_mm": 4,
+      "heading_deg": 45,
+      "travel_margin_mm": 12.309462484251853,
+      "pitch_margin_deg": 4.33220399635124
+    },
+    {
+      "R": [
+        [
+          0.9998688401179499,
+          -0.00021487853318861956,
+          -0.016194331983805668
+        ],
+        [
+          0,
+          0.9999119817665344,
+          -0.013267581532512623
+        ],
+        [
+          0.016195757505770965,
+          0.013265841358083728,
+          0.9997808334289454
+        ]
+      ],
+      "T": [
+        0.33453011189737936,
+        0.267992177654218,
+        -5.619965314014639
+      ],
+      "pitch_deg": 0.7601987300726661,
+      "roll_deg": -0.9279891231007471,
+      "pivot_z_mm": [
+        15.29189083549145,
+        18.709195669209123
+      ],
+      "carriage_z_mm": [
+        35.29189083549145,
+        38.70919566920912
+      ],
+      "right_float_used_mm": 0.027674735112581006,
+      "normal": [
+        -0.016194331983805668,
+        -0.013267581532512623,
+        0.9997808334289453
+      ],
+      "plane_constant": -5.627706705245072,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 4,
+      "heading_deg": 45,
+      "travel_margin_mm": 9.79189083549145,
+      "pitch_margin_deg": 5.239801269927334
+    },
+    {
+      "R": [
+        [
+          0.9998688302503663,
+          0.0002567203974282959,
+          0.016194331983805668
+        ],
+        [
+          0,
+          0.9998743730440995,
+          -0.0158504930418209
+        ],
+        [
+          -0.01619636668404883,
+          0.015848413936617036,
+          0.9997432197729222
+        ]
+      ],
+      "T": [
+        -0.3273908196106845,
+        0.32077866951343026,
+        -1.4368077779298822
+      ],
+      "pitch_deg": 0.908204386467148,
+      "roll_deg": 0.9280240310237312,
+      "pivot_z_mm": [
+        18.515225301737512,
+        15.09779193140321
+      ],
+      "carriage_z_mm": [
+        38.515225301737516,
+        35.09779193140321
+      ],
+      "right_float_used_mm": 0.027676817172705426,
+      "normal": [
+        0.016194331983805668,
+        -0.0158504930418209,
+        0.9997432197729222
+      ],
+      "plane_constant": -1.4468252097927112,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 4,
+      "heading_deg": 45,
+      "travel_margin_mm": 9.597791931403208,
+      "pitch_margin_deg": 5.091795613532852
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9995827414166473,
+          0.028884997178122995
+        ],
+        [
+          -0.0,
+          -0.028884997178122995,
+          0.9995827414166473
+        ]
+      ],
+      "T": [
+        0.0,
+        -0.5651821860618789,
+        3.0354952670066204
+      ],
+      "pitch_deg": -1.6552186540219793,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        22.160600179995875,
+        22.160600179995875
+      ],
+      "carriage_z_mm": [
+        42.160600179995875,
+        42.160600179995875
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.028884997178122995,
+        0.9995827414166473
+      ],
+      "plane_constant": 3.0179033947022136,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 4,
+      "heading_deg": 45,
+      "travel_margin_mm": 16.660600179995875,
+      "pitch_margin_deg": 4.344781345978021
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -4.0,
+      "ground_height_mm": 4,
+      "state": "all up",
+      "step_mm": 4,
+      "heading_deg": 45,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        24.0,
+        24.0
+      ],
+      "carriage_z_mm": [
+        44.0,
+        44.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 4,
+      "state": "head meets step",
+      "step_mm": 4,
+      "heading_deg": 90,
+      "travel_margin_mm": 16.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9996031345112215,
+          -0.028170436193656317
+        ],
+        [
+          -0.0,
+          0.028170436193656317,
+          0.9996031345112215
+        ]
+      ],
+      "T": [
+        0.0,
+        0.5753146885364835,
+        -2.9571496828595265
+      ],
+      "pitch_deg": 1.6142606547041938,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        17.880026093174592,
+        17.880026093174592
+      ],
+      "carriage_z_mm": [
+        37.88002609317459,
+        37.88002609317459
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.028170436193656317,
+        0.9996031345112215
+      ],
+      "plane_constant": -6.972182957929938,
+      "ground_height_mm": 4,
+      "state": "both drive wheels up",
+      "step_mm": 4,
+      "heading_deg": 90,
+      "travel_margin_mm": 12.380026093174592,
+      "pitch_margin_deg": 4.385739345295806
+    },
+    {
+      "R": [
+        [
+          0.9998688371539131,
+          -0.0002282544193621914,
+          -0.016194331983805668
+        ],
+        [
+          0,
+          0.9999006843667838,
+          -0.01409331057052738
+        ],
+        [
+          0.01619594049389135,
+          0.014091462051802162,
+          0.999769534547218
+        ]
+      ],
+      "T": [
+        0.33493148333178624,
+        0.2848456804070345,
+        -5.7066917990166
+      ],
+      "pitch_deg": 0.8075139481550304,
+      "roll_deg": -0.9279996089230811,
+      "pivot_z_mm": [
+        15.229712849286345,
+        18.64705629349742
+      ],
+      "carriage_z_mm": [
+        35.229712849286344,
+        38.64705629349742
+      ],
+      "right_float_used_mm": 0.027675360524344494,
+      "normal": [
+        -0.016194331983805668,
+        -0.01409331057052738,
+        0.9997695345472181
+      ],
+      "plane_constant": -5.714815013978805,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 4,
+      "heading_deg": 90,
+      "travel_margin_mm": 9.729712849286344,
+      "pitch_margin_deg": 5.19248605184497
+    },
+    {
+      "R": [
+        [
+          0.9998688371539131,
+          0.0002282544193621906,
+          0.016194331983805668
+        ],
+        [
+          0,
+          0.9999006843667838,
+          -0.01409331057052733
+        ],
+        [
+          -0.01619594049389135,
+          0.014091462051802112,
+          0.999769534547218
+        ]
+      ],
+      "T": [
+        -0.3265370611821936,
+        0.28484568040703095,
+        -1.2523598759056327
+      ],
+      "pitch_deg": 0.8075139481550275,
+      "roll_deg": 0.9279996089230811,
+      "pivot_z_mm": [
+        18.64750458078827,
+        15.230161136577193
+      ],
+      "carriage_z_mm": [
+        38.647504580788265,
+        35.230161136577195
+      ],
+      "right_float_used_mm": 0.027675360524344494,
+      "normal": [
+        0.016194331983805668,
+        -0.01409331057052733,
+        0.9997695345472181
+      ],
+      "plane_constant": -1.261373718432235,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 4,
+      "heading_deg": 90,
+      "travel_margin_mm": 9.730161136577195,
+      "pitch_margin_deg": 5.1924860518449725
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9996087258785118,
+          0.027971327239483666
+        ],
+        [
+          -0.0,
+          -0.027971327239483666,
+          0.9996087258785118
+        ]
+      ],
+      "T": [
+        0.0,
+        -0.5476883211450279,
+        2.939373161679761
+      ],
+      "pitch_deg": -1.6028480546434738,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        22.092407862065485,
+        22.092407862065485
+      ],
+      "carriage_z_mm": [
+        42.092407862065485,
+        42.092407862065485
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.027971327239483666,
+        0.9996087258785118
+      ],
+      "plane_constant": 2.9229034917722077,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 4,
+      "heading_deg": 90,
+      "travel_margin_mm": 16.592407862065485,
+      "pitch_margin_deg": 4.397151945356526
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -4.0,
+      "ground_height_mm": 4,
+      "state": "all up",
+      "step_mm": 4,
+      "heading_deg": 90,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        24.0,
+        24.0
+      ],
+      "carriage_z_mm": [
+        44.0,
+        44.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 4,
+      "state": "head meets step",
+      "step_mm": 4,
+      "heading_deg": 135,
+      "travel_margin_mm": 16.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9995763766093542,
+          -0.02910442104757403
+        ],
+        [
+          -0.0,
+          0.02910442104757403,
+          0.9995763766093542
+        ]
+      ],
+      "T": [
+        0.0,
+        0.5947971226708582,
+        -3.0551976793624505
+      ],
+      "pitch_deg": 1.6677960036487598,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        17.809462484251856,
+        17.809462484251856
+      ],
+      "carriage_z_mm": [
+        37.80946248425185,
+        37.80946248425185
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.02910442104757403,
+        0.9995763766093543
+      ],
+      "plane_constant": -7.07121465205852,
+      "ground_height_mm": 4,
+      "state": "both drive wheels up",
+      "step_mm": 4,
+      "heading_deg": 135,
+      "travel_margin_mm": 12.309462484251853,
+      "pitch_margin_deg": 4.33220399635124
+    },
+    {
+      "R": [
+        [
+          0.9998688302503663,
+          -0.0002567203974282959,
+          -0.016194331983805668
+        ],
+        [
+          0,
+          0.9998743730440995,
+          -0.0158504930418209
+        ],
+        [
+          0.01619636668404883,
+          0.015848413936617036,
+          0.9997432197729222
+        ]
+      ],
+      "T": [
+        0.3357856835872326,
+        0.32077866951343026,
+        -5.8912569387292635
+      ],
+      "pitch_deg": 0.908204386467148,
+      "roll_deg": -0.9280240310237312,
+      "pivot_z_mm": [
+        15.097343608717255,
+        18.514776979051558
+      ],
+      "carriage_z_mm": [
+        35.09734360871725,
+        38.51477697905156
+      ],
+      "right_float_used_mm": 0.027676817172705426,
+      "normal": [
+        -0.016194331983805668,
+        -0.0158504930418209,
+        0.9997432197729222
+      ],
+      "plane_constant": -5.90026650533927,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 4,
+      "heading_deg": 135,
+      "travel_margin_mm": 9.597343608717253,
+      "pitch_margin_deg": 5.091795613532852
+    },
+    {
+      "R": [
+        [
+          0.9998688401179499,
+          0.00021487853318861956,
+          0.016194331983805668
+        ],
+        [
+          0,
+          0.9999119817665344,
+          -0.013267581532512623
+        ],
+        [
+          -0.016195757505770965,
+          0.013265841358083728,
+          0.9997808334289454
+        ]
+      ],
+      "T": [
+        -0.32613587944615574,
+        0.267992177654218,
+        -1.1656837278333931
+      ],
+      "pitch_deg": 0.7601987300726661,
+      "roll_deg": 0.9279891231007471,
+      "pivot_z_mm": [
+        18.709643941303355,
+        15.292339107585683
+      ],
+      "carriage_z_mm": [
+        38.709643941303355,
+        35.29233910758568
+      ],
+      "right_float_used_mm": 0.027674735112581006,
+      "normal": [
+        0.016194331983805668,
+        -0.013267581532512623,
+        0.9997808334289453
+      ],
+      "plane_constant": -1.174265409698513,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 4,
+      "heading_deg": 135,
+      "travel_margin_mm": 9.792339107585683,
+      "pitch_margin_deg": 5.239801269927334
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9995827414166473,
+          0.028884997178122995
+        ],
+        [
+          -0.0,
+          -0.028884997178122995,
+          0.9995827414166473
+        ]
+      ],
+      "T": [
+        0.0,
+        -0.5651821860618789,
+        3.0354952670066204
+      ],
+      "pitch_deg": -1.6552186540219793,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        22.160600179995875,
+        22.160600179995875
+      ],
+      "carriage_z_mm": [
+        42.160600179995875,
+        42.160600179995875
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.028884997178122995,
+        0.9995827414166473
+      ],
+      "plane_constant": 3.0179033947022136,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 4,
+      "heading_deg": 135,
+      "travel_margin_mm": 16.660600179995875,
+      "pitch_margin_deg": 4.344781345978021
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -4.0,
+      "ground_height_mm": 4,
+      "state": "all up",
+      "step_mm": 4,
+      "heading_deg": 135,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        24.0,
+        24.0
+      ],
+      "carriage_z_mm": [
+        44.0,
+        44.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 4,
+      "state": "head meets step",
+      "step_mm": 4,
+      "heading_deg": 180,
+      "travel_margin_mm": 16.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9994993942192016,
+          -0.0316379669929822
+        ],
+        [
+          -0.0,
+          0.0316379669929822,
+          0.9994993942192016
+        ]
+      ],
+      "T": [
+        0.0,
+        0.647777513283593,
+        -3.3211765789823
+      ],
+      "pitch_deg": 1.8130245280232204,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        17.617950315191198,
+        17.617950315191198
+      ],
+      "carriage_z_mm": [
+        37.617950315191194,
+        37.617950315191194
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.0316379669929822,
+        0.9994993942192016
+      ],
+      "plane_constant": -7.3400083423718705,
+      "ground_height_mm": 4,
+      "state": "both drive wheels up",
+      "step_mm": 4,
+      "heading_deg": 180,
+      "travel_margin_mm": 12.117950315191194,
+      "pitch_margin_deg": 4.18697547197678
+    },
+    {
+      "R": [
+        [
+          0.9998688216111278,
+          -0.0002884121583215694,
+          -0.016194331983805668
+        ],
+        [
+          0,
+          0.999841449446912,
+          -0.017806627078086126
+        ],
+        [
+          0.016196900011260763,
+          0.017804291233434775,
+          0.9997102918564459
+        ]
+      ],
+      "T": [
+        0.3367367128696799,
+        0.36088905815436334,
+        -6.09673281429118
+      ],
+      "pitch_deg": 1.0202985024716538,
+      "roll_deg": -0.9280545924309386,
+      "pivot_z_mm": [
+        14.949902560201124,
+        18.367448462577144
+      ],
+      "carriage_z_mm": [
+        34.949902560201124,
+        38.367448462577144
+      ],
+      "right_float_used_mm": 0.027678640052038794,
+      "normal": [
+        -0.016194331983805668,
+        -0.017806627078086126,
+        0.9997102918564459
+      ],
+      "plane_constant": -6.106845984140273,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 4,
+      "heading_deg": 180,
+      "travel_margin_mm": 9.449902560201124,
+      "pitch_margin_deg": 4.979701497528346
+    },
+    {
+      "R": [
+        [
+          0.9998688380972395,
+          0.00022408407907241438,
+          0.01619433198380567
+        ],
+        [
+          0,
+          0.9999042798056881,
+          -0.01383586738402584
+        ],
+        [
+          -0.016195882256802345,
+          0.01383405264533341,
+          0.9997731304577704
+        ]
+      ],
+      "T": [
+        -0.32641198115996417,
+        0.2795889535098759,
+        -1.2253363428956945
+      ],
+      "pitch_deg": 0.7927621016162779,
+      "roll_deg": 0.9279962717459578,
+      "pivot_z_mm": [
+        18.66687961340204,
+        15.249548457216745
+      ],
+      "carriage_z_mm": [
+        38.66687961340204,
+        35.24954845721675
+      ],
+      "right_float_used_mm": 0.02767516148247051,
+      "normal": [
+        0.016194331983805668,
+        -0.01383586738402584,
+        0.9997731304577704
+      ],
+      "plane_constant": -1.2342127310697038,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 4,
+      "heading_deg": 180,
+      "travel_margin_mm": 9.749548457216747,
+      "pitch_margin_deg": 5.207237898383722
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9995082586636985,
+          0.03135667174719015
+        ],
+        [
+          -0.0,
+          -0.03135667174719015,
+          0.9995082586636985
+        ]
+      ],
+      "T": [
+        0.0,
+        -0.6123811948547591,
+        3.295570649774522
+      ],
+      "pitch_deg": -1.7968994969345637,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        22.34503567063279,
+        22.34503567063279
+      ],
+      "carriage_z_mm": [
+        42.34503567063279,
+        42.34503567063279
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.03135667174719015,
+        0.9995082586636986
+      ],
+      "plane_constant": 3.2747478453481156,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 4,
+      "heading_deg": 180,
+      "travel_margin_mm": 16.84503567063279,
+      "pitch_margin_deg": 4.2031005030654365
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -4.0,
+      "ground_height_mm": 4,
+      "state": "all up",
+      "step_mm": 4,
+      "heading_deg": 180,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        24.0,
+        24.0
+      ],
+      "carriage_z_mm": [
+        44.0,
+        44.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 4,
+      "state": "head meets step",
+      "step_mm": 4,
+      "heading_deg": 225,
+      "travel_margin_mm": 16.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9993992556056674,
+          -0.034657292087494
+        ],
+        [
+          -0.0,
+          0.034657292087494,
+          0.9993992556056674
+        ]
+      ],
+      "T": [
+        0.0,
+        0.711168173579857,
+        -3.638180921061654
+      ],
+      "pitch_deg": 1.9861142975731152,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        17.389522953676515,
+        17.389522953676515
+      ],
+      "carriage_z_mm": [
+        37.38952295367652,
+        37.38952295367652
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.034657292087494,
+        0.9993992556056674
+      ],
+      "plane_constant": -7.660642467382844,
+      "ground_height_mm": 4,
+      "state": "both drive wheels up",
+      "step_mm": 4,
+      "heading_deg": 225,
+      "travel_margin_mm": 11.889522953676519,
+      "pitch_margin_deg": 4.013885702426885
+    },
+    {
+      "R": [
+        [
+          0.9998688165378646,
+          -0.0003054943016072177,
+          -0.016194331983805668
+        ],
+        [
+          0,
+          0.9998221170745095,
+          -0.0188609174921551
+        ],
+        [
+          0.01619721319147296,
+          0.018858443251699428,
+          0.9996909569476722
+        ]
+      ],
+      "T": [
+        0.33724933951265257,
+        0.3825548376078167,
+        -6.207484051158087
+      ],
+      "pitch_deg": 1.0807150510565415,
+      "roll_deg": -0.9280725386895313,
+      "pivot_z_mm": [
+        14.870399207473476,
+        18.288011190874272
+      ],
+      "carriage_z_mm": [
+        34.870399207473476,
+        38.28801119087427
+      ],
+      "right_float_used_mm": 0.02767971051056195,
+      "normal": [
+        -0.016194331983805668,
+        -0.0188609174921551,
+        0.9996909569476721
+      ],
+      "plane_constant": -6.218242534333372,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 4,
+      "heading_deg": 225,
+      "travel_margin_mm": 9.370399207473476,
+      "pitch_margin_deg": 4.919284948943458
+    },
+    {
+      "R": [
+        [
+          0.9998688305213104,
+          0.0002556629526883779,
+          0.016194331983805668
+        ],
+        [
+          0,
+          0.9998754056476252,
+          -0.015785220334126323
+        ],
+        [
+          -0.016196349957539463,
+          0.015783149795004094,
+          0.9997442525119118
+        ]
+      ],
+      "T": [
+        -0.32735910493866527,
+        0.31944223725377086,
+        -1.429956276484571
+      ],
+      "pitch_deg": 0.9044640678464764,
+      "roll_deg": 0.9280230725396145,
+      "pivot_z_mm": [
+        18.520140068962526,
+        15.102710227921698
+      ],
+      "carriage_z_mm": [
+        38.520140068962526,
+        35.1027102279217
+      ],
+      "right_float_used_mm": 0.027676760003511935,
+      "normal": [
+        0.016194331983805668,
+        -0.015785220334126323,
+        0.9997442525119118
+      ],
+      "plane_constant": -1.439934396881163,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 4,
+      "heading_deg": 225,
+      "travel_margin_mm": 9.602710227921698,
+      "pitch_margin_deg": 5.095535932153524
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9994119768103914,
+          0.03428849089630096
+        ],
+        [
+          -0.0,
+          -0.03428849089630096,
+          0.9994119768103914
+        ]
+      ],
+      "T": [
+        0.0,
+        -0.6681291222377617,
+        3.604151173079721
+      ],
+      "pitch_deg": -1.964970978832181,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        22.56373598239852,
+        22.56373598239852
+      ],
+      "carriage_z_mm": [
+        42.56373598239852,
+        42.56373598239852
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.03428849089630096,
+        0.9994119768103914
+      ],
+      "plane_constant": 3.579122709285695,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 4,
+      "heading_deg": 225,
+      "travel_margin_mm": 17.06373598239852,
+      "pitch_margin_deg": 4.035029021167819
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -4.0,
+      "ground_height_mm": 4,
+      "state": "all up",
+      "step_mm": 4,
+      "heading_deg": 225,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        24.0,
+        24.0
+      ],
+      "carriage_z_mm": [
+        44.0,
+        44.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 4,
+      "state": "head meets step",
+      "step_mm": 4,
+      "heading_deg": 270,
+      "travel_margin_mm": 16.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9993487346534332,
+          -0.03608471347512466
+        ],
+        [
+          -0.0,
+          0.03608471347512466,
+          0.9993487346534332
+        ]
+      ],
+      "T": [
+        0.0,
+        0.7412322298994951,
+        -3.7880603471648513
+      ],
+      "pitch_deg": 2.0679507347752644,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        17.28145575015755,
+        17.28145575015755
+      ],
+      "carriage_z_mm": [
+        37.28145575015755,
+        37.28145575015755
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.03608471347512466,
+        0.9993487346534333
+      ],
+      "plane_constant": -7.812340467364489,
+      "ground_height_mm": 4,
+      "state": "both drive wheels up",
+      "step_mm": 4,
+      "heading_deg": 270,
+      "travel_margin_mm": 11.781455750157548,
+      "pitch_margin_deg": 3.9320492652247356
+    },
+    {
+      "R": [
+        [
+          0.9998688205508829,
+          -0.00029206469271350833,
+          -0.016194331983805665
+        ],
+        [
+          0,
+          0.9998374091440096,
+          -0.018032062449820883
+        ],
+        [
+          0.016196965462284624,
+          0.01802969701380227,
+          0.9997062510234714
+        ]
+      ],
+      "T": [
+        0.33684632282927396,
+        0.3655189746761316,
+        -6.120413971342138
+      ],
+      "pitch_deg": 1.0332170721141272,
+      "roll_deg": -0.928058342990365,
+      "pivot_z_mm": [
+        14.932904854334469,
+        18.350464566876525
+      ],
+      "carriage_z_mm": [
+        34.93290485433447,
+        38.350464566876525
+      ],
+      "right_float_used_mm": 0.02767886376371098,
+      "normal": [
+        -0.016194331983805668,
+        -0.018032062449820883,
+        0.9997062510234714
+      ],
+      "plane_constant": -6.130662168159501,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 4,
+      "heading_deg": 270,
+      "travel_margin_mm": 9.432904854334467,
+      "pitch_margin_deg": 4.966782927885873
+    },
+    {
+      "R": [
+        [
+          0.9998688205508829,
+          0.00029206469271350833,
+          0.016194331983805665
+        ],
+        [
+          0,
+          0.9998374091440096,
+          -0.018032062449820883
+        ],
+        [
+          -0.016196965462284624,
+          0.01802969701380227,
+          0.9997062510234714
+        ]
+      ],
+      "T": [
+        -0.32845083808575737,
+        0.3655189746761316,
+        -1.6658000967962039
+      ],
+      "pitch_deg": 1.0332170721141272,
+      "roll_deg": 0.928058342990365,
+      "pivot_z_mm": [
+        18.350912939294187,
+        14.93335322675213
+      ],
+      "carriage_z_mm": [
+        38.35091293929419,
+        34.93335322675213
+      ],
+      "right_float_used_mm": 0.02767886376371098,
+      "normal": [
+        0.016194331983805668,
+        -0.018032062449820883,
+        0.9997062510234714
+      ],
+      "plane_constant": -1.677220872612942,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 4,
+      "heading_deg": 270,
+      "travel_margin_mm": 9.433353226752132,
+      "pitch_margin_deg": 4.966782927885873
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9993636593192372,
+          0.035668984174820936
+        ],
+        [
+          -0.0,
+          -0.035668984174820936,
+          0.9993636593192372
+        ]
+      ],
+      "T": [
+        0.0,
+        -0.6942894630735381,
+        3.7494856239543033
+      ],
+      "pitch_deg": -2.04411585582454,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        22.66668928509442,
+        22.66668928509442
+      ],
+      "carriage_z_mm": [
+        42.66668928509442,
+        42.66668928509442
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.035668984174820936,
+        0.9993636593192372
+      ],
+      "plane_constant": 3.7223350738487326,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 4,
+      "heading_deg": 270,
+      "travel_margin_mm": 17.16668928509442,
+      "pitch_margin_deg": 3.95588414417546
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -4.0,
+      "ground_height_mm": 4,
+      "state": "all up",
+      "step_mm": 4,
+      "heading_deg": 270,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        24.0,
+        24.0
+      ],
+      "carriage_z_mm": [
+        44.0,
+        44.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 4,
+      "state": "head meets step",
+      "step_mm": 4,
+      "heading_deg": 315,
+      "travel_margin_mm": 16.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9993992556056674,
+          -0.034657292087494
+        ],
+        [
+          -0.0,
+          0.034657292087494,
+          0.9993992556056674
+        ]
+      ],
+      "T": [
+        0.0,
+        0.711168173579857,
+        -3.638180921061654
+      ],
+      "pitch_deg": 1.9861142975731152,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        17.389522953676515,
+        17.389522953676515
+      ],
+      "carriage_z_mm": [
+        37.38952295367652,
+        37.38952295367652
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.034657292087494,
+        0.9993992556056674
+      ],
+      "plane_constant": -7.660642467382844,
+      "ground_height_mm": 4,
+      "state": "both drive wheels up",
+      "step_mm": 4,
+      "heading_deg": 315,
+      "travel_margin_mm": 11.889522953676519,
+      "pitch_margin_deg": 4.013885702426885
+    },
+    {
+      "R": [
+        [
+          0.9998688305213104,
+          -0.0002556629526883779,
+          -0.016194331983805668
+        ],
+        [
+          0,
+          0.9998754056476252,
+          -0.015785220334126323
+        ],
+        [
+          0.016196349957539463,
+          0.015783149795004094,
+          0.9997442525119118
+        ]
+      ],
+      "T": [
+        0.3357539515748442,
+        0.31944223725377086,
+        -5.884400836104703
+      ],
+      "pitch_deg": 0.9044640678464764,
+      "roll_deg": -0.9280230725396145,
+      "pivot_z_mm": [
+        15.102261906624918,
+        18.519691747665746
+      ],
+      "carriage_z_mm": [
+        35.10226190662492,
+        38.519691747665746
+      ],
+      "right_float_used_mm": 0.027676760003511935,
+      "normal": [
+        -0.016194331983805668,
+        -0.015785220334126323,
+        0.9997442525119118
+      ],
+      "plane_constant": -5.893375692427722,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 4,
+      "heading_deg": 315,
+      "travel_margin_mm": 9.602261906624918,
+      "pitch_margin_deg": 5.095535932153524
+    },
+    {
+      "R": [
+        [
+          0.9998688165378646,
+          0.0003054943016072177,
+          0.016194331983805668
+        ],
+        [
+          0,
+          0.9998221170745095,
+          -0.0188609174921551
+        ],
+        [
+          -0.01619721319147296,
+          0.018858443251699428,
+          0.9996909569476722
+        ]
+      ],
+      "T": [
+        -0.32885359793601765,
+        0.3825548376078167,
+        -1.7528020305090593
+      ],
+      "pitch_deg": 1.0807150510565415,
+      "roll_deg": 0.9280725386895313,
+      "pivot_z_mm": [
+        18.288459583868235,
+        14.870847600467439
+      ],
+      "carriage_z_mm": [
+        38.28845958386823,
+        34.87084760046744
+      ],
+      "right_float_used_mm": 0.02767971051056195,
+      "normal": [
+        0.016194331983805668,
+        -0.0188609174921551,
+        0.9996909569476721
+      ],
+      "plane_constant": -1.7648012387868137,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 4,
+      "heading_deg": 315,
+      "travel_margin_mm": 9.370847600467442,
+      "pitch_margin_deg": 4.919284948943458
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9994119768103914,
+          0.03428849089630096
+        ],
+        [
+          -0.0,
+          -0.03428849089630096,
+          0.9994119768103914
+        ]
+      ],
+      "T": [
+        0.0,
+        -0.6681291222377617,
+        3.604151173079721
+      ],
+      "pitch_deg": -1.964970978832181,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        22.56373598239852,
+        22.56373598239852
+      ],
+      "carriage_z_mm": [
+        42.56373598239852,
+        42.56373598239852
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.03428849089630096,
+        0.9994119768103914
+      ],
+      "plane_constant": 3.579122709285695,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 4,
+      "heading_deg": 315,
+      "travel_margin_mm": 17.06373598239852,
+      "pitch_margin_deg": 4.035029021167819
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -4.0,
+      "ground_height_mm": 4,
+      "state": "all up",
+      "step_mm": 4,
+      "heading_deg": 315,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        30.0,
+        30.0
+      ],
+      "carriage_z_mm": [
+        50.0,
+        50.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 10,
+      "state": "head meets step",
+      "step_mm": 10,
+      "heading_deg": 0,
+      "travel_margin_mm": 10.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9968236475181392,
+          -0.0796405408609999
+        ],
+        [
+          -0.0,
+          0.0796405408609999,
+          0.9968236475181392
+        ]
+      ],
+      "T": [
+        0.0,
+        1.688101391675822,
+        -8.368746259843226
+      ],
+      "pitch_deg": 4.567904319136076,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        13.956942916349556,
+        13.956942916349556
+      ],
+      "carriage_z_mm": [
+        33.956942916349554,
+        33.956942916349554
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.0796405408609999,
+        0.9968236475181392
+      ],
+      "plane_constant": -18.476605479751978,
+      "ground_height_mm": 10,
+      "state": "both drive wheels up",
+      "step_mm": 10,
+      "heading_deg": 0,
+      "travel_margin_mm": 8.456942916349554,
+      "pitch_margin_deg": 1.4320956808639238
+    },
+    {
+      "R": [
+        [
+          0.9991791162336681,
+          -0.0014111183491271964,
+          -0.040485829959514164
+        ],
+        [
+          0,
+          0.9993931305032031,
+          -0.0348334710157851
+        ],
+        [
+          0.0405104144943734,
+          0.034804876784903245,
+          0.9985727449061894
+        ]
+      ],
+      "T": [
+        0.8783184301867379,
+        0.7148755052196059,
+        -14.23555398059402
+      ],
+      "pitch_deg": 1.9962147052735146,
+      "roll_deg": -2.321711096609438,
+      "pivot_z_mm": [
+        8.076380484896815,
+        16.6240779432096
+      ],
+      "carriage_z_mm": [
+        28.076380484896816,
+        36.6240779432096
+      ],
+      "right_float_used_mm": 0.17320647469603867,
+      "normal": [
+        -0.04048582995951417,
+        -0.0348334710157851,
+        0.9985727449061895
+      ],
+      "plane_constant": -14.275697259467812,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 10,
+      "heading_deg": 0,
+      "travel_margin_mm": 2.5763804848968164,
+      "pitch_margin_deg": 4.003785294726486
+    },
+    {
+      "R": [
+        [
+          0.9991784610132493,
+          0.0018167607668911439,
+          0.04048582995951418
+        ],
+        [
+          0,
+          0.9989946805040364,
+          -0.04482887824425535
+        ],
+        [
+          -0.04052657211256351,
+          0.04479204957304539,
+          0.9981739674264457
+        ]
+      ],
+      "T": [
+        -0.8379301746209649,
+        0.9267371497640156,
+        -4.13805510685901
+      ],
+      "pitch_deg": 2.569366592864285,
+      "roll_deg": 2.3226376208109096,
+      "pivot_z_mm": [
+        15.872335421259233,
+        7.321228705508332
+      ],
+      "carriage_z_mm": [
+        35.87233542125924,
+        27.321228705508332
+      ],
+      "right_float_used_mm": 0.17334472620440766,
+      "normal": [
+        0.04048582995951417,
+        -0.04482887824425535,
+        0.9981739674264457
+      ],
+      "plane_constant": -4.205967768861573,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 10,
+      "heading_deg": 0,
+      "travel_margin_mm": 1.8212287055083323,
+      "pitch_margin_deg": 3.430633407135715
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.996962801314991,
+          0.07787921927039117
+        ],
+        [
+          -0.0,
+          -0.07787921927039117,
+          0.996962801314991
+        ]
+      ],
+      "T": [
+        0.0,
+        -1.4664684248575526,
+        8.207112919309587
+      ],
+      "pitch_deg": -4.466673550600796,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        25.80999236749767,
+        25.80999236749767
+      ],
+      "carriage_z_mm": [
+        45.80999236749767,
+        45.80999236749767
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.07787921927039117,
+        0.996962801314991
+      ],
+      "plane_constant": 8.067978870730752,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 10,
+      "heading_deg": 0,
+      "travel_margin_mm": 14.69000763250233,
+      "pitch_margin_deg": 1.5333264493992038
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -10.0,
+      "ground_height_mm": 10,
+      "state": "all up",
+      "step_mm": 10,
+      "heading_deg": 0,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        30.0,
+        30.0
+      ],
+      "carriage_z_mm": [
+        50.0,
+        50.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 10,
+      "state": "head meets step",
+      "step_mm": 10,
+      "heading_deg": 45,
+      "travel_margin_mm": 10.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9973184234108688,
+          -0.07318444045874084
+        ],
+        [
+          -0.0,
+          0.07318444045874084,
+          0.9973184234108688
+        ]
+      ],
+      "T": [
+        0.0,
+        1.5441361068487502,
+        -7.68851360649705
+      ],
+      "pitch_deg": 4.196911682098094,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        14.45338807548255,
+        14.45338807548255
+      ],
+      "carriage_z_mm": [
+        34.45338807548255,
+        34.45338807548255
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.07318444045874084,
+        0.9973184234108688
+      ],
+      "plane_constant": -17.780903005376516,
+      "ground_height_mm": 10,
+      "state": "both drive wheels up",
+      "step_mm": 10,
+      "heading_deg": 45,
+      "travel_margin_mm": 8.95338807548255,
+      "pitch_margin_deg": 1.8030883179019064
+    },
+    {
+      "R": [
+        [
+          0.9991791974432704,
+          -0.0013523938447120528,
+          -0.04048582995951418
+        ],
+        [
+          0,
+          0.9994425485922773,
+          -0.0333855067862302
+        ],
+        [
+          0.040508411430490714,
+          0.03335810387690235,
+          0.9986222035930885
+        ]
+      ],
+      "T": [
+        0.8765540963470073,
+        0.6844336779562852,
+        -14.082945749393275
+      ],
+      "pitch_deg": 1.9132041550864434,
+      "roll_deg": -2.3215962352196784,
+      "pivot_z_mm": [
+        8.18651060455127,
+        16.73378541638481
+      ],
+      "carriage_z_mm": [
+        28.18651060455127,
+        36.733785416384805
+      ],
+      "right_float_used_mm": 0.1731893394699373,
+      "normal": [
+        -0.04048582995951417,
+        -0.0333855067862302,
+        0.9986222035930885
+      ],
+      "plane_constant": -14.121880502636184,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 10,
+      "heading_deg": 45,
+      "travel_margin_mm": 2.6865106045512697,
+      "pitch_margin_deg": 4.086795844913556
+    },
+    {
+      "R": [
+        [
+          0.9991788060761678,
+          0.0016158776850921058,
+          0.04048582995951417
+        ],
+        [
+          0,
+          0.9992044593262684,
+          -0.039880427060145045
+        ],
+        [
+          -0.040518063727230026,
+          0.03984767749576342,
+          0.9983839186956037
+        ]
+      ],
+      "T": [
+        -0.8319147241803933,
+        0.8214747614148479,
+        -3.6182279770607355
+      ],
+      "pitch_deg": 2.285586280159523,
+      "roll_deg": 2.3221497254999908,
+      "pivot_z_mm": [
+        16.24830268245288,
+        7.6989912360073465
+      ],
+      "carriage_z_mm": [
+        36.24830268245288,
+        27.698991236007345
+      ],
+      "right_float_used_mm": 0.17327191792858898,
+      "normal": [
+        0.04048582995951417,
+        -0.039880427060145045,
+        0.9983839186956037
+      ],
+      "plane_constant": -3.678822148840296,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 10,
+      "heading_deg": 45,
+      "travel_margin_mm": 2.1989912360073447,
+      "pitch_margin_deg": 3.714413719840477
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9974182571504958,
+          0.07181100405138097
+        ],
+        [
+          -0.0,
+          -0.07181100405138097,
+          0.9974182571504958
+        ]
+      ],
+      "T": [
+        0.0,
+        -1.3587677955424944,
+        7.564316281955762
+      ],
+      "pitch_deg": -4.118011947709192,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        25.35835130342425,
+        25.35835130342425
+      ],
+      "carriage_z_mm": [
+        45.35835130342425,
+        45.35835130342425
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.07181100405138097,
+        0.9974182571504958
+      ],
+      "plane_constant": 7.44721268281285,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 10,
+      "heading_deg": 45,
+      "travel_margin_mm": 15.14164869657575,
+      "pitch_margin_deg": 1.881988052290808
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -10.0,
+      "ground_height_mm": 10,
+      "state": "all up",
+      "step_mm": 10,
+      "heading_deg": 45,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        30.0,
+        30.0
+      ],
+      "carriage_z_mm": [
+        50.0,
+        50.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 10,
+      "state": "head meets step",
+      "step_mm": 10,
+      "heading_deg": 90,
+      "travel_margin_mm": 10.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9974898511630992,
+          -0.0708095814605504
+        ],
+        [
+          -0.0,
+          0.0708095814605504,
+          0.9974898511630992
+        ]
+      ],
+      "T": [
+        0.0,
+        1.4914960943180304,
+        -7.438430765632239
+      ],
+      "pitch_deg": 4.060488212249929,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        14.635653701446257,
+        14.635653701446257
+      ],
+      "carriage_z_mm": [
+        34.63565370144626,
+        34.63565370144626
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.0708095814605504,
+        0.9974898511630992
+      ],
+      "plane_constant": -17.525371411486223,
+      "ground_height_mm": 10,
+      "state": "both drive wheels up",
+      "step_mm": 10,
+      "heading_deg": 90,
+      "travel_margin_mm": 9.135653701446259,
+      "pitch_margin_deg": 1.939511787750071
+    },
+    {
+      "R": [
+        [
+          0.9991790803820954,
+          -0.0014362796661979245,
+          -0.04048582995951417
+        ],
+        [
+          0,
+          0.999371316251515,
+          -0.03545380450268361
+        ],
+        [
+          0.04051129875467125,
+          0.035424699779038,
+          0.9985509127324329
+        ]
+      ],
+      "T": [
+        0.8790744169492086,
+        0.7279366025082226,
+        -14.300943369436204
+      ],
+      "pitch_deg": 2.0317791657145112,
+      "roll_deg": -2.3217618026171434,
+      "pivot_z_mm": [
+        8.029177438733075,
+        16.57706147596871
+      ],
+      "carriage_z_mm": [
+        28.029177438733075,
+        36.577061475968705
+      ],
+      "right_float_used_mm": 0.1732140393778806,
+      "normal": [
+        -0.04048582995951417,
+        -0.03545380450268361,
+        0.9985509127324329
+      ],
+      "plane_constant": -14.341618233847392,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 10,
+      "heading_deg": 90,
+      "travel_margin_mm": 2.5291774387330754,
+      "pitch_margin_deg": 3.9682208342854888
+    },
+    {
+      "R": [
+        [
+          0.9991790803820954,
+          0.0014362796661979245,
+          0.04048582995951417
+        ],
+        [
+          0,
+          0.999371316251515,
+          -0.03545380450268361
+        ],
+        [
+          -0.04051129875467125,
+          0.035424699779038,
+          0.9985509127324329
+        ]
+      ],
+      "T": [
+        -0.8265355614032615,
+        0.7279366025082226,
+        -3.1533133209749344
+      ],
+      "pitch_deg": 2.0317791657145112,
+      "roll_deg": 2.3217618026171434,
+      "pivot_z_mm": [
+        16.584084366895382,
+        8.036200329659751
+      ],
+      "carriage_z_mm": [
+        36.58408436689538,
+        28.03620032965975
+      ],
+      "right_float_used_mm": 0.1732140393778806,
+      "normal": [
+        0.04048582995951417,
+        -0.03545380450268361,
+        0.9985509127324329
+      ],
+      "plane_constant": -3.208014994980995,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 10,
+      "heading_deg": 90,
+      "travel_margin_mm": 2.5362003296597493,
+      "pitch_margin_deg": 3.9682208342854888
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9975775293081308,
+          0.06956344600065062
+        ],
+        [
+          -0.0,
+          -0.06956344600065062,
+          0.9975775293081308
+        ]
+      ],
+      "T": [
+        0.0,
+        -1.3185947992569353,
+        7.3264269378088365
+      ],
+      "pitch_deg": -3.988913393306233,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        25.191074143951937,
+        25.191074143951937
+      ],
+      "carriage_z_mm": [
+        45.19107414395194,
+        45.19107414395194
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.06956344600065062,
+        0.9975775293081308
+      ],
+      "plane_constant": 7.216952885161028,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 10,
+      "heading_deg": 90,
+      "travel_margin_mm": 15.308925856048063,
+      "pitch_margin_deg": 2.011086606693767
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -10.0,
+      "ground_height_mm": 10,
+      "state": "all up",
+      "step_mm": 10,
+      "heading_deg": 90,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        30.0,
+        30.0
+      ],
+      "carriage_z_mm": [
+        50.0,
+        50.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 10,
+      "state": "head meets step",
+      "step_mm": 10,
+      "heading_deg": 135,
+      "travel_margin_mm": 10.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9973184234108688,
+          -0.07318444045874084
+        ],
+        [
+          -0.0,
+          0.07318444045874084,
+          0.9973184234108688
+        ]
+      ],
+      "T": [
+        0.0,
+        1.5441361068487502,
+        -7.68851360649705
+      ],
+      "pitch_deg": 4.196911682098094,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        14.45338807548255,
+        14.45338807548255
+      ],
+      "carriage_z_mm": [
+        34.45338807548255,
+        34.45338807548255
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.07318444045874084,
+        0.9973184234108688
+      ],
+      "plane_constant": -17.780903005376516,
+      "ground_height_mm": 10,
+      "state": "both drive wheels up",
+      "step_mm": 10,
+      "heading_deg": 135,
+      "travel_margin_mm": 8.95338807548255,
+      "pitch_margin_deg": 1.8030883179019064
+    },
+    {
+      "R": [
+        [
+          0.9991788060761678,
+          -0.0016158776850921058,
+          -0.04048582995951417
+        ],
+        [
+          0,
+          0.9992044593262684,
+          -0.039880427060145045
+        ],
+        [
+          0.040518063727230026,
+          0.03984767749576342,
+          0.9983839186956037
+        ]
+      ],
+      "T": [
+        0.884471135305688,
+        0.8214747614148479,
+        -14.767721914709139
+      ],
+      "pitch_deg": 2.285586280159523,
+      "roll_deg": -2.3221497254999908,
+      "pivot_z_mm": [
+        7.691964823347199,
+        16.241276269792735
+      ],
+      "carriage_z_mm": [
+        27.6919648233472,
+        36.241276269792735
+      ],
+      "right_float_used_mm": 0.17327191792858898,
+      "normal": [
+        -0.04048582995951417,
+        -0.039880427060145045,
+        0.9983839186956037
+      ],
+      "plane_constant": -14.812425387706693,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 10,
+      "heading_deg": 135,
+      "travel_margin_mm": 2.191964823347199,
+      "pitch_margin_deg": 3.714413719840477
+    },
+    {
+      "R": [
+        [
+          0.9991791974432704,
+          0.0013523938447120528,
+          0.04048582995951418
+        ],
+        [
+          0,
+          0.9994425485922773,
+          -0.0333855067862302
+        ],
+        [
+          -0.040508411430490714,
+          0.03335810387690235,
+          0.9986222035930885
+        ]
+      ],
+      "T": [
+        -0.8240227327162586,
+        0.6844336779562852,
+        -2.9361112178163253
+      ],
+      "pitch_deg": 1.9132041550864434,
+      "roll_deg": 2.3215962352196784,
+      "pivot_z_mm": [
+        16.74080680457681,
+        8.19353199274327
+      ],
+      "carriage_z_mm": [
+        36.740806804576806,
+        28.19353199274327
+      ],
+      "right_float_used_mm": 0.1731893394699373,
+      "normal": [
+        0.04048582995951417,
+        -0.0333855067862302,
+        0.9986222035930885
+      ],
+      "plane_constant": -2.9882772637697865,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 10,
+      "heading_deg": 135,
+      "travel_margin_mm": 2.693531992743271,
+      "pitch_margin_deg": 4.086795844913556
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9974182571504958,
+          0.07181100405138097
+        ],
+        [
+          -0.0,
+          -0.07181100405138097,
+          0.9974182571504958
+        ]
+      ],
+      "T": [
+        0.0,
+        -1.3587677955424944,
+        7.564316281955762
+      ],
+      "pitch_deg": -4.118011947709192,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        25.35835130342425,
+        25.35835130342425
+      ],
+      "carriage_z_mm": [
+        45.35835130342425,
+        45.35835130342425
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.07181100405138097,
+        0.9974182571504958
+      ],
+      "plane_constant": 7.44721268281285,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 10,
+      "heading_deg": 135,
+      "travel_margin_mm": 15.14164869657575,
+      "pitch_margin_deg": 1.881988052290808
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -10.0,
+      "ground_height_mm": 10,
+      "state": "all up",
+      "step_mm": 10,
+      "heading_deg": 135,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        30.0,
+        30.0
+      ],
+      "carriage_z_mm": [
+        50.0,
+        50.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 10,
+      "state": "head meets step",
+      "step_mm": 10,
+      "heading_deg": 180,
+      "travel_margin_mm": 10.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9968236475181392,
+          -0.0796405408609999
+        ],
+        [
+          -0.0,
+          0.0796405408609999,
+          0.9968236475181392
+        ]
+      ],
+      "T": [
+        0.0,
+        1.688101391675822,
+        -8.368746259843226
+      ],
+      "pitch_deg": 4.567904319136076,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        13.956942916349556,
+        13.956942916349556
+      ],
+      "carriage_z_mm": [
+        33.956942916349554,
+        33.956942916349554
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.0796405408609999,
+        0.9968236475181392
+      ],
+      "plane_constant": -18.476605479751978,
+      "ground_height_mm": 10,
+      "state": "both drive wheels up",
+      "step_mm": 10,
+      "heading_deg": 180,
+      "travel_margin_mm": 8.456942916349554,
+      "pitch_margin_deg": 1.4320956808639238
+    },
+    {
+      "R": [
+        [
+          0.9991784610132493,
+          -0.0018167607668911417,
+          -0.04048582995951418
+        ],
+        [
+          0,
+          0.9989946805040364,
+          -0.04482887824425529
+        ],
+        [
+          0.04052657211256351,
+          0.044792049573045334,
+          0.9981739674264457
+        ]
+      ],
+      "T": [
+        0.8905086697730553,
+        0.9267371497640156,
+        -15.289893281472994
+      ],
+      "pitch_deg": 2.5693665928642817,
+      "roll_deg": -2.3226376208109096,
+      "pivot_z_mm": [
+        7.314197861849312,
+        15.865304577600213
+      ],
+      "carriage_z_mm": [
+        27.314197861849312,
+        35.86530457760021
+      ],
+      "right_float_used_mm": 0.17334472620440766,
+      "normal": [
+        -0.04048582995951417,
+        -0.04482887824425529,
+        0.9981739674264457
+      ],
+      "plane_constant": -15.339571007727958,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 10,
+      "heading_deg": 180,
+      "travel_margin_mm": 1.814197861849312,
+      "pitch_margin_deg": 3.4306334071357183
+    },
+    {
+      "R": [
+        [
+          0.9991791162336681,
+          0.0014111183491271964,
+          0.040485829959514164
+        ],
+        [
+          0,
+          0.9993931305032031,
+          -0.0348334710157851
+        ],
+        [
+          -0.0405104144943734,
+          0.034804876784903245,
+          0.9985727449061894
+        ]
+      ],
+      "T": [
+        -0.8257818691414798,
+        0.7148755052196059,
+        -3.088167563958942
+      ],
+      "pitch_deg": 1.9962147052735146,
+      "roll_deg": 2.321711096609438,
+      "pivot_z_mm": [
+        16.631100373891996,
+        8.083402915579208
+      ],
+      "carriage_z_mm": [
+        36.631100373892,
+        28.083402915579207
+      ],
+      "right_float_used_mm": 0.17320647469603867,
+      "normal": [
+        0.04048582995951417,
+        -0.0348334710157851,
+        0.9985727449061895
+      ],
+      "plane_constant": -3.142094020601415,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 10,
+      "heading_deg": 180,
+      "travel_margin_mm": 2.5834029155792066,
+      "pitch_margin_deg": 4.003785294726486
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.996962801314991,
+          0.07787921927039117
+        ],
+        [
+          -0.0,
+          -0.07787921927039117,
+          0.996962801314991
+        ]
+      ],
+      "T": [
+        0.0,
+        -1.4664684248575526,
+        8.207112919309587
+      ],
+      "pitch_deg": -4.466673550600796,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        25.80999236749767,
+        25.80999236749767
+      ],
+      "carriage_z_mm": [
+        45.80999236749767,
+        45.80999236749767
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.07787921927039117,
+        0.996962801314991
+      ],
+      "plane_constant": 8.067978870730752,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 10,
+      "heading_deg": 180,
+      "travel_margin_mm": 14.69000763250233,
+      "pitch_margin_deg": 1.5333264493992038
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -10.0,
+      "ground_height_mm": 10,
+      "state": "all up",
+      "step_mm": 10,
+      "heading_deg": 180,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        30.0,
+        30.0
+      ],
+      "carriage_z_mm": [
+        50.0,
+        50.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 10,
+      "state": "head meets step",
+      "step_mm": 10,
+      "heading_deg": 225,
+      "travel_margin_mm": 10.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9961765006217126,
+          -0.08736349128256593
+        ],
+        [
+          -0.0,
+          0.08736349128256593,
+          0.9961765006217126
+        ]
+      ],
+      "T": [
+        0.0,
+        1.8619748069999424,
+        -9.183256116520237
+      ],
+      "pitch_deg": 5.011948691302893,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        13.361178634390992,
+        13.361178634390992
+      ],
+      "carriage_z_mm": [
+        33.361178634390996,
+        33.361178634390996
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.08736349128256593,
+        0.9961765006217127
+      ],
+      "plane_constant": -19.310812562287765,
+      "ground_height_mm": 10,
+      "state": "both drive wheels up",
+      "step_mm": 10,
+      "heading_deg": 225,
+      "travel_margin_mm": 7.8611786343909955,
+      "pitch_margin_deg": 0.9880513086971066
+    },
+    {
+      "R": [
+        [
+          0.9991782564768622,
+          -0.0019259689372098788,
+          -0.04048582995951417
+        ],
+        [
+          0,
+          0.9988703962867581,
+          -0.047517695882006404
+        ],
+        [
+          0.04053161462189475,
+          0.047478648523180934,
+          0.9980495810081553
+        ]
+      ],
+      "T": [
+        0.8937914600469696,
+        0.9842420290373859,
+        -15.573795394582161
+      ],
+      "pitch_deg": 2.72358902890187,
+      "roll_deg": -2.322926772893024,
+      "pivot_z_mm": [
+        7.108567349177006,
+        15.660738034396799
+      ],
+      "carriage_z_mm": [
+        27.108567349177008,
+        35.6607380343968
+      ],
+      "right_float_used_mm": 0.17338788338207511,
+      "normal": [
+        -0.04048582995951417,
+        -0.047517695882006404,
+        0.9980495810081553
+      ],
+      "plane_constant": -15.62637477075028,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 10,
+      "heading_deg": 225,
+      "travel_margin_mm": 1.608567349177008,
+      "pitch_margin_deg": 3.27641097109813
+    },
+    {
+      "R": [
+        [
+          0.9991788136647735,
+          0.0016111784337027202,
+          0.04048582995951418
+        ],
+        [
+          0,
+          0.9992090742572115,
+          -0.03976463154672099
+        ],
+        [
+          -0.040517876591153246,
+          0.039731977374669505,
+          0.9983885374193971
+        ]
+      ],
+      "T": [
+        -0.8317739894741294,
+        0.8190204032180759,
+        -3.606065280270771
+      ],
+      "pitch_deg": 2.278946419002832,
+      "roll_deg": 2.322138994580471,
+      "pivot_z_mm": [
+        16.257092738440353,
+        7.707820777707017
+      ],
+      "carriage_z_mm": [
+        36.25709273844035,
+        27.707820777707017
+      ],
+      "right_float_used_mm": 0.17327031673280047,
+      "normal": [
+        0.04048582995951417,
+        -0.03976463154672099,
+        0.9983885374193971
+      ],
+      "plane_constant": -3.6664973458742107,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 10,
+      "heading_deg": 225,
+      "travel_margin_mm": 2.207820777707017,
+      "pitch_margin_deg": 3.721053580997168
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.996376418070858,
+          0.08505312170806435
+        ],
+        [
+          -0.0,
+          -0.08505312170806435,
+          0.996376418070858
+        ]
+      ],
+      "T": [
+        0.0,
+        -1.5923549762870266,
+        8.968060091987013
+      ],
+      "pitch_deg": -4.8790795813593695,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        26.343994802162243,
+        26.343994802162243
+      ],
+      "carriage_z_mm": [
+        46.34399480216224,
+        46.34399480216224
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.08505312170806435,
+        0.996376418070858
+      ],
+      "plane_constant": 8.800128829897645,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 10,
+      "heading_deg": 225,
+      "travel_margin_mm": 14.156005197837757,
+      "pitch_margin_deg": 1.1209204186406305
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -10.0,
+      "ground_height_mm": 10,
+      "state": "all up",
+      "step_mm": 10,
+      "heading_deg": 225,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        30.0,
+        30.0
+      ],
+      "carriage_z_mm": [
+        50.0,
+        50.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 10,
+      "state": "head meets step",
+      "step_mm": 10,
+      "heading_deg": 270,
+      "travel_margin_mm": 10.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9958484702884746,
+          -0.09102650286650148
+        ],
+        [
+          -0.0,
+          0.09102650286650148,
+          0.9958484702884746
+        ]
+      ],
+      "T": [
+        0.0,
+        1.9450759486757931,
+        -9.569914192285895
+      ],
+      "pitch_deg": 5.222663788332609,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        13.077850299478643,
+        13.077850299478643
+      ],
+      "carriage_z_mm": [
+        33.07785029947864,
+        33.07785029947864
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.09102650286650148,
+        0.9958484702884746
+      ],
+      "plane_constant": -19.70723787059757,
+      "ground_height_mm": 10,
+      "state": "both drive wheels up",
+      "step_mm": 10,
+      "heading_deg": 270,
+      "travel_margin_mm": 7.577850299478641,
+      "pitch_margin_deg": 0.7773362116673912
+    },
+    {
+      "R": [
+        [
+          0.9991784154632083,
+          -0.0018416419091894184,
+          -0.040485829959514164
+        ],
+        [
+          0,
+          0.998966998520416,
+          -0.04544156541219735
+        ],
+        [
+          0.04052769512854608,
+          0.04540423132472708,
+          0.9981462626816664
+        ]
+      ],
+      "T": [
+        0.8912565616433028,
+        0.9398213526314656,
+        -15.354573662302462
+      ],
+      "pitch_deg": 2.6045067941534894,
+      "roll_deg": -2.3227020177931346,
+      "pivot_z_mm": [
+        7.267364775186155,
+        15.818708447309376
+      ],
+      "carriage_z_mm": [
+        27.267364775186156,
+        35.818708447309376
+      ],
+      "right_float_used_mm": 0.1733543372630505,
+      "normal": [
+        -0.04048582995951417,
+        -0.04544156541219735,
+        0.9981462626816665
+      ],
+      "plane_constant": -15.404900531173926,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 10,
+      "heading_deg": 270,
+      "travel_margin_mm": 1.7673647751861559,
+      "pitch_margin_deg": 3.3954932058465106
+    },
+    {
+      "R": [
+        [
+          0.9991784154632083,
+          0.0018416419091894184,
+          0.040485829959514164
+        ],
+        [
+          0,
+          0.998966998520416,
+          -0.04544156541219735
+        ],
+        [
+          -0.04052769512854608,
+          0.04540423132472708,
+          0.9981462626816664
+        ]
+      ],
+      "T": [
+        -0.8386751512886406,
+        0.9398213526314656,
+        -4.202426073309438
+      ],
+      "pitch_deg": 2.6045067941534894,
+      "roll_deg": 2.3227020177931346,
+      "pivot_z_mm": [
+        15.82573987595223,
+        7.274396203829007
+      ],
+      "carriage_z_mm": [
+        35.82573987595223,
+        27.274396203829006
+      ],
+      "right_float_used_mm": 0.1733543372630505,
+      "normal": [
+        0.04048582995951417,
+        -0.04544156541219735,
+        0.9981462626816665
+      ],
+      "plane_constant": -4.271297292307527,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 10,
+      "heading_deg": 270,
+      "travel_margin_mm": 1.7743962038290064,
+      "pitch_margin_deg": 3.3954932058465106
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9960831513322174,
+          0.08842146590098496
+        ],
+        [
+          -0.0,
+          -0.08842146590098496,
+          0.9960831513322174
+        ]
+      ],
+      "T": [
+        0.0,
+        -1.6509238579862213,
+        9.32575203461013
+      ],
+      "pitch_deg": -5.072801677719354,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        26.594771084224927,
+        26.594771084224927
+      ],
+      "carriage_z_mm": [
+        46.59477108422493,
+        46.59477108422493
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.08842146590098496,
+        0.9960831513322174
+      ],
+      "plane_constant": 9.143247367563244,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 10,
+      "heading_deg": 270,
+      "travel_margin_mm": 13.90522891577507,
+      "pitch_margin_deg": 0.9271983222806464
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -10.0,
+      "ground_height_mm": 10,
+      "state": "all up",
+      "step_mm": 10,
+      "heading_deg": 270,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        30.0,
+        30.0
+      ],
+      "carriage_z_mm": [
+        50.0,
+        50.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": 0.0,
+      "ground_height_mm": 10,
+      "state": "head meets step",
+      "step_mm": 10,
+      "heading_deg": 315,
+      "travel_margin_mm": 10.5,
+      "pitch_margin_deg": 6.0
+    },
+    {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0,
+          0.9961765006217126,
+          -0.08736349128256593
+        ],
+        [
+          -0.0,
+          0.08736349128256593,
+          0.9961765006217126
+        ]
+      ],
+      "T": [
+        0.0,
+        1.8619748069999424,
+        -9.183256116520237
+      ],
+      "pitch_deg": 5.011948691302893,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        13.361178634390992,
+        13.361178634390992
+      ],
+      "carriage_z_mm": [
+        33.361178634390996,
+        33.361178634390996
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        -0.08736349128256593,
+        0.9961765006217127
+      ],
+      "plane_constant": -19.310812562287765,
+      "ground_height_mm": 10,
+      "state": "both drive wheels up",
+      "step_mm": 10,
+      "heading_deg": 315,
+      "travel_margin_mm": 7.8611786343909955,
+      "pitch_margin_deg": 0.9880513086971066
+    },
+    {
+      "R": [
+        [
+          0.9991788136647735,
+          -0.0016111784337027202,
+          -0.04048582995951418
+        ],
+        [
+          0,
+          0.9992090742572115,
+          -0.03976463154672099
+        ],
+        [
+          0.040517876591153246,
+          0.039731977374669505,
+          0.9983885374193971
+        ]
+      ],
+      "T": [
+        0.8843299149286281,
+        0.8190204032180759,
+        -14.75550765806225
+      ],
+      "pitch_deg": 2.278946419002832,
+      "roll_deg": -2.322138994580471,
+      "pivot_z_mm": [
+        7.70079446248268,
+        16.250066423216015
+      ],
+      "carriage_z_mm": [
+        27.70079446248268,
+        36.25006642321601
+      ],
+      "right_float_used_mm": 0.17327031673280047,
+      "normal": [
+        -0.04048582995951417,
+        -0.03976463154672099,
+        0.9983885374193971
+      ],
+      "plane_constant": -14.800100584740608,
+      "ground_height_mm": 0,
+      "state": "left wheel up",
+      "step_mm": 10,
+      "heading_deg": 315,
+      "travel_margin_mm": 2.20079446248268,
+      "pitch_margin_deg": 3.721053580997168
+    },
+    {
+      "R": [
+        [
+          0.9991782564768622,
+          0.0019259689372098788,
+          0.04048582995951417
+        ],
+        [
+          0,
+          0.9988703962867581,
+          -0.047517695882006404
+        ],
+        [
+          -0.04053161462189475,
+          0.047478648523180934,
+          0.9980495810081553
+        ]
+      ],
+      "T": [
+        -0.841199874566172,
+        0.9842420290373859,
+        -4.420567902982862
+      ],
+      "pitch_deg": 2.72358902890187,
+      "roll_deg": 2.322926772893024,
+      "pivot_z_mm": [
+        15.667771504975041,
+        7.115600819755249
+      ],
+      "carriage_z_mm": [
+        35.66777150497504,
+        27.11560081975525
+      ],
+      "right_float_used_mm": 0.17338788338207511,
+      "normal": [
+        0.04048582995951417,
+        -0.047517695882006404,
+        0.9980495810081553
+      ],
+      "plane_constant": -4.492771531883883,
+      "ground_height_mm": 0,
+      "state": "right wheel up",
+      "step_mm": 10,
+      "heading_deg": 315,
+      "travel_margin_mm": 1.615600819755251,
+      "pitch_margin_deg": 3.27641097109813
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          0.996376418070858,
+          0.08505312170806435
+        ],
+        [
+          -0.0,
+          -0.08505312170806435,
+          0.996376418070858
+        ]
+      ],
+      "T": [
+        0.0,
+        -1.5923549762870266,
+        8.968060091987013
+      ],
+      "pitch_deg": -4.8790795813593695,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        26.343994802162243,
+        26.343994802162243
+      ],
+      "carriage_z_mm": [
+        46.34399480216224,
+        46.34399480216224
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.08505312170806435,
+        0.996376418070858
+      ],
+      "plane_constant": 8.800128829897645,
+      "ground_height_mm": 0,
+      "state": "rear caster up",
+      "step_mm": 10,
+      "heading_deg": 315,
+      "travel_margin_mm": 14.156005197837757,
+      "pitch_margin_deg": 1.1209204186406305
+    },
+    {
+      "R": [
+        [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "T": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pitch_deg": -0.0,
+      "roll_deg": 0.0,
+      "pivot_z_mm": [
+        20.0,
+        20.0
+      ],
+      "carriage_z_mm": [
+        40.0,
+        40.0
+      ],
+      "right_float_used_mm": 0.0,
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "plane_constant": -10.0,
+      "ground_height_mm": 10,
+      "state": "all up",
+      "step_mm": 10,
+      "heading_deg": 315,
+      "travel_margin_mm": 14.5,
+      "pitch_margin_deg": 6.0
+    }
+  ],
+  "raised": {
+    "R": [
+      [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      [
+        0,
+        1.0,
+        0.0
+      ],
+      [
+        -0.0,
+        -0.0,
+        1.0
+      ]
+    ],
+    "T": [
+      0.0,
+      0.0,
+      16.0
+    ],
+    "pitch_deg": -0.0,
+    "roll_deg": 0.0,
+    "pivot_z_mm": [
+      36.0,
+      36.0
+    ],
+    "carriage_z_mm": [
+      56.0,
+      56.0
+    ],
+    "right_float_used_mm": 0.0,
+    "normal": [
+      0,
+      0,
+      1
+    ],
+    "plane_constant": 0,
+    "ground_height_mm": 0,
+    "state": "dock captured"
+  },
+  "mass_rows": [
+    {
+      "id": "rails",
+      "qty": 2,
+      "each_g": 9.3,
+      "kind": "catalog_length",
+      "moving": false,
+      "basis": "62 mm at 150 g/m; NS-01-17 reference, end tolerance and mounting-hole placement must be specified",
+      "total_g": 18.6
+    },
+    {
+      "id": "carriages",
+      "qty": 2,
+      "each_g": 1.7,
+      "kind": "catalog",
+      "moving": true,
+      "basis": "NW-02-17 standard, not preloaded; mounting boss and anti-rotation connection remain to detail",
+      "total_g": 3.4
+    },
+    {
+      "id": "spherical_bearings",
+      "qty": 2,
+      "each_g": 0.5,
+      "kind": "catalog_reference",
+      "moving": true,
+      "basis": "Historical KGLM-03: ID3 / OD10 / width6 mm; current LC successor is not presumed interchangeable",
+      "total_g": 1.0
+    },
+    {
+      "id": "rail_backings_and_carrier_tabs",
+      "qty": 2,
+      "each_g": 4,
+      "kind": "allowance",
+      "moving": false,
+      "basis": "Short flat metal backings and offset connection to P carrier; joint design incomplete",
+      "total_g": 8
+    },
+    {
+      "id": "drop_links_and_bearing_cages",
+      "qty": 2,
+      "each_g": 4,
+      "kind": "allowance",
+      "moving": true,
+      "basis": "20 mm offset bracket, captured bearing cage and keyed carriage attachment; actual volume unresolved",
+      "total_g": 8
+    },
+    {
+      "id": "pivot_pins_and_retainers",
+      "qty": 2,
+      "each_g": 2,
+      "kind": "allowance",
+      "moving": true,
+      "basis": "Smooth 3 mm pivots; left axially located, right floats 1 mm; thread/bearing and roller-end clearance unresolved",
+      "total_g": 4
+    },
+    {
+      "id": "mounting_fasteners",
+      "qty": 1,
+      "each_g": 5,
+      "kind": "allowance",
+      "moving": false,
+      "basis": "Rail, backing, cage and interface fastening; no print-thread-only retention",
+      "total_g": 5
+    },
+    {
+      "id": "counterbalance_springs_and_anchors",
+      "qty": 1,
+      "each_g": 3,
+      "kind": "allowance",
+      "moving": false,
+      "basis": "Unequal left/right upward preload; 0.03 N/mm each is a design target, not a selected spring",
+      "total_g": 3
+    },
+    {
+      "id": "end_stops_and_pitch_stops",
+      "qty": 1,
+      "each_g": 4,
+      "kind": "allowance",
+      "moving": false,
+      "basis": "Positive captive slide stops and pitch stops; no friction-only flight restraint",
+      "total_g": 4
+    },
+    {
+      "id": "dock_set_capture_hooks",
+      "qty": 1,
+      "each_g": 10,
+      "kind": "allowance",
+      "moving": false,
+      "basis": "Two spring-engaged catches plus pitch locator; station raises/releases head; not yet designed",
+      "total_g": 10
+    },
+    {
+      "id": "capture_sensors_and_harness",
+      "qty": 1,
+      "each_g": 4,
+      "kind": "allowance",
+      "moving": false,
+      "basis": "Independent raised/captured feedback; no implemented controller logic",
+      "total_g": 4
+    },
+    {
+      "id": "completion_reserve",
+      "qty": 1,
+      "each_g": 6,
+      "kind": "allowance",
+      "moving": false,
+      "basis": "Local completion reserve; service-face supports remain in P and flex in existing plumbing",
+      "total_g": 6
+    }
+  ],
+  "mass": {
+    "candidate_mechanism_g": 75.0,
+    "prior_compliance_and_lift_g": 97,
+    "conditional_reduction_g": 22.0,
+    "catalog_reference_g": 23.0,
+    "unfinished_allowance_g": 52,
+    "current_transfer_g": 5274.841313853186,
+    "hypothetical_transfer_g": 5252.841313853186,
+    "hypothetical_gap_g": 752.841313853186,
+    "booked_reduction_g": 0
+  },
+  "motion": {
+    "carriage_range_mm": [
+      27.108567349177008,
+      50.0
+    ],
+    "tolerance_adjusted_limits_mm": [
+      25.5,
+      60.5
+    ],
+    "minimum_travel_margin_mm": 1.608567349177008,
+    "maximum_pitch_deg": 5.222663788332609,
+    "maximum_roll_deg": 2.322926772893024,
+    "maximum_right_float_mm": 0.17338788338207511,
+    "remaining_float_margin_mm": 0.3266121166179249,
+    "raised_carriage_z_mm": [
+      56.0,
+      56.0
+    ],
+    "raised_floor_clearance_mm": 16
+  },
+  "contact": {
+    "nominal_range_n": [
+      2.9793572215346487,
+      4.015568703696682
+    ],
+    "sensitivity_net_range_n": [
+      1.5977017938415785,
+      5.3099818349573455
+    ],
+    "sensitivity_gross_range_n": [
+      1.5977017938415785,
+      10.309981834957345
+    ],
+    "nonpositive_cases": 0,
+    "cases": 5616
+  },
+  "pitch_screen": [
+    {
+      "net_n": 3.5,
+      "drag_n": -1.5,
+      "cop_y_mm": 29.531666228571435,
+      "stop_moment_nmm": 0,
+      "supported_without_pitch_stop": true
+    },
+    {
+      "net_n": 3.5,
+      "drag_n": 0,
+      "cop_y_mm": 38.10309480000001,
+      "stop_moment_nmm": 0,
+      "supported_without_pitch_stop": true
+    },
+    {
+      "net_n": 3.5,
+      "drag_n": 1.5,
+      "cop_y_mm": 46.67452337142858,
+      "stop_moment_nmm": 0,
+      "supported_without_pitch_stop": true
+    },
+    {
+      "net_n": 2.9793572215346487,
+      "drag_n": -1.5,
+      "cop_y_mm": 29.44982488566589,
+      "stop_moment_nmm": 0,
+      "supported_without_pitch_stop": true
+    },
+    {
+      "net_n": 2.9793572215346487,
+      "drag_n": 0,
+      "cop_y_mm": 39.51911089915949,
+      "stop_moment_nmm": 0,
+      "supported_without_pitch_stop": true
+    },
+    {
+      "net_n": 2.9793572215346487,
+      "drag_n": 1.5,
+      "cop_y_mm": 49.588396912653096,
+      "stop_moment_nmm": 0,
+      "supported_without_pitch_stop": true
+    },
+    {
+      "net_n": 1.5977017938415785,
+      "drag_n": -1.5,
+      "cop_y_mm": 28.974046216685593,
+      "stop_moment_nmm": 0,
+      "supported_without_pitch_stop": true
+    },
+    {
+      "net_n": 1.5977017938415785,
+      "drag_n": 0,
+      "cop_y_mm": 47.751017060454124,
+      "stop_moment_nmm": 0,
+      "supported_without_pitch_stop": true
+    },
+    {
+      "net_n": 1.5977017938415785,
+      "drag_n": 1.5,
+      "cop_y_mm": 66.52798790422266,
+      "stop_moment_nmm": 23.211392335485293,
+      "supported_without_pitch_stop": false
+    }
+  ],
+  "ramp": [
+    {
+      "mu": 0.1,
+      "force_ratio": 1.1778656126482214,
+      "target_contact_push_n": 4.122529644268775,
+      "high_contact_push_n": 12.143773070424066
+    },
+    {
+      "mu": 0.2,
+      "force_ratio": 1.4424778761061947,
+      "target_contact_push_n": 5.048672566371682,
+      "high_contact_push_n": 14.871920699982718
+    },
+    {
+      "mu": 0.35,
+      "force_ratio": 1.9838274932614552,
+      "target_contact_push_n": 6.943396226415094,
+      "high_contact_push_n": 20.45322541921457
+    }
+  ],
+  "guide_friction": [
+    {
+      "mu": 0.05,
+      "feedback_denominator": 0.9428571428571428,
+      "combined_parasitic_bound_n": 1.7697051127272727
+    },
+    {
+      "mu": 0.15,
+      "feedback_denominator": 0.8285714285714285,
+      "combined_parasitic_bound_n": 2.9034760744827586
+    },
+    {
+      "mu": 0.3,
+      "feedback_denominator": 0.6571428571428571,
+      "combined_parasitic_bound_n": 5.3435483617391295
+    }
+  ],
+  "gravity_comparison": {
+    "mechanism_g": 72.0,
+    "conditional_reduction_g": 25.0,
+    "nominal_contact_n": 4.887634359999999,
+    "guide_cases": [
+      {
+        "mu": 0.05,
+        "feedback_denominator": 0.9428571428571428,
+        "combined_parasitic_bound_n": 1.6856060606060608
+      },
+      {
+        "mu": 0.15,
+        "feedback_denominator": 0.8285714285714285,
+        "combined_parasitic_bound_n": 2.6163793103448274
+      },
+      {
+        "mu": 0.3,
+        "feedback_denominator": 0.6571428571428571,
+        "combined_parasitic_bound_n": 4.619565217391304
+      }
+    ],
+    "net_contact_range_n": [
+      0.24881092930966364,
+      9.526457790690333
+    ],
+    "policy": "No counterbalance springs; force set by head mass. Tiny worst-case friction margin is not validation. Dock-only capture limitations unchanged."
+  },
+  "extended_contact": {
+    "combined_parasitic_bound_n": 5.823340338735954,
+    "net_range_n": [
+      -3.2256385448943754,
+      9.23093097845786
+    ],
+    "nonpositive_cases": 936,
+    "cases": 1872
+  },
+  "limitations": [
+    "Horizontal support-plane samples, not a continuous sharp-step traversal.",
+    "Pitch free-body is level only; guides and springs have unmeasured friction and moments.",
+    "Mass includes unfinished joints, pins, springs, capture and supports as explicit allowances.",
+    "Dock-set capture requires a receiving station to release the head. Arbitrary in-flight head positioning is not supplied."
+  ]
+}

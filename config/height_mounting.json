@@ -1,0 +1,58 @@
+{
+  "revision": "I: suspension-height and caster-fitting layout",
+  "status": "Candidate overlay on G/H; no fabrication or purchase release",
+  "lidar": {
+    "model": "SLAMTEC RPLIDAR C1M1",
+    "min_mm": [106.6, 101.35, 133.5],
+    "size_mm": [55.6, 55.6, 41.3],
+    "bare_mass_g": 110,
+    "mount_hole_square_mm": 43,
+    "mount_thread": "M2.5",
+    "maximum_screw_insertion_mm": 4,
+    "optical_window_bottom_mm": 23.1,
+    "beam_height_mm": 29.8,
+    "drawing_tolerance_mm": 0.2,
+    "mount_bay_min_mm": [102.4, 97.15, 124.1],
+    "mount_bay_size_mm": [64, 64, 9.4],
+    "mount_allowance_g": [10, 18, 28],
+    "note": "Keep the complete rotating optical enclosure clear, not only the nominal beam centre. Bare reference from manufacturer drawing rev1.1; current linked rev1.2 could not be downloaded. Match supplied revision before drilling. Mount bay is a route reservation, not a solid block or completed rail attachment."
+  },
+  "top_port": {
+    "min_mm": [193, 88, 122.5],
+    "size_mm": [78, 35, 32],
+    "note": "Rotate the existing 78 x 32 x 35 mm reservation about X and lower it 1.6 mm. Preserve volume and raw lift-power allocation. This requires a new connector carrier/mating approach; exact connector not selected. Four load-bearing top seats stay at 124.1 mm."
+  },
+  "cap_max_roof_z_mm": 147.1,
+  "height_reserve_mm": 2,
+  "optical_clearance_min_mm": 1.5,
+  "caster": {
+    "bare_mass_g": 90,
+    "model": "TENTE S70-8x15 / 8, EAN 4031582322040, accessory 0007193200",
+    "added_height_mm": 6,
+    "stem_length_mm": 15,
+    "stem_diameter_mm": 8,
+    "stem_mass_g": 20,
+    "plate_hole_mm": 8.5,
+    "washer_thickness_reserve_mm": 1.6,
+    "nut_height_reserve_mm": 8,
+    "tool_diameter_reserve_mm": 24,
+    "overhead_z_mm": 74,
+    "upper_fasteners_mass_reserve_g": 12,
+    "secondary_retention_mass_reserve_g": 20,
+    "note": "Washer/nut dimensions are procurement envelope requirements, not a selected fastener SKU. Upper nut secures the stem to the plate; it does not prove caster-to-plug pull-out retention. TENTE must confirm exact L51-8 pairing and airborne retention, or a mechanically captive caster must replace this candidate."
+  },
+  "layout": {
+    "vac_bin_upper_bottom_mm": 74,
+    "blower_raise_mm": 10,
+    "mop_pump_raise_mm": 8,
+    "note": "Raise the whole vacuum bin bridge floor rather than introducing a hair-catching internal pocket. Keep its top at 94 mm. Raise complete blower/plenum and exhaust in suction bottoms, and pump allocation in mop bottom."
+  },
+  "sources": {
+    "c1_current_page": "https://www.slamtec.com/en/c1",
+    "c1_datasheet": "https://files.seeedstudio.com/wiki/SLAMRadar/SLAMTEC_rplidar_datasheet_C1M1_en.pdf",
+    "c1_distribution": "https://www.waveshare.com/wiki/RPLIDAR_C1",
+    "a1": "https://www.slamtec.com/en/lidar/a1spec",
+    "caster_stem": "https://e-shop.tente.fr/uploads/document/s7/s70-8x15-8-67e1849d480db980470763.pdf",
+    "caster_order_identity": "https://e-shop.tente.fr/produit/tige-filetee-8x15-mm-pour-les-roulettes-de-meubles-trou-central-8mm"
+  }
+}

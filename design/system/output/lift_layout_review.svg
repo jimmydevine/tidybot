@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="820" viewBox="0 0 920 820">
+<rect width="920" height="820" fill="#f7f9fc"/>
+<g font-family="sans-serif" fill="#173047">
+<text x="30" y="35" font-size="23">Why the previous lift layout became long</text>
+<text x="30" y="61" font-size="14">Same scale. Existing comparison layouts; neither is a flight-approved design.</text>
+<text x="60" y="103" font-size="19">Eight independent rotors</text>
+<text x="60" y="129" font-size="14">644 × 1444 mm · 8.26 kg complete</text>
+<rect x="60" y="153" width="231.84" height="519.84" fill="none" stroke="#9baab7" stroke-dasharray="5 5"/>
+<circle cx="111.12" cy="204.12" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="111.12" cy="204.12" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="107.12" y="209.12" font-size="14">1</text>
+<circle cx="240.72" cy="204.12" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="240.72" cy="204.12" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="236.72" y="209.12" font-size="14">2</text>
+<circle cx="111.12" cy="312.12" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="111.12" cy="312.12" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="107.12" y="317.12" font-size="14">3</text>
+<circle cx="240.72" cy="312.12" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="240.72" cy="312.12" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="236.72" y="317.12" font-size="14">4</text>
+<circle cx="111.12" cy="513.72" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="111.12" cy="513.72" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="107.12" y="518.72" font-size="14">5</text>
+<circle cx="240.72" cy="513.72" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="240.72" cy="513.72" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="236.72" y="518.72" font-size="14">6</text>
+<circle cx="111.12" cy="621.72" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="111.12" cy="621.72" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="107.12" y="626.72" font-size="14">7</text>
+<circle cx="240.72" cy="621.72" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="240.72" cy="621.72" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="236.72" y="626.72" font-size="14">8</text>
+<rect x="126.42" y="363.42" width="99" height="99" rx="4" fill="#dce8f7" stroke="#466cbd" stroke-width="2"/>
+<text x="138.42" y="408.42" font-size="14">275 mm</text>
+<text x="146.42" y="427.42" font-size="14">body</text>
+<text x="60" y="700.84" font-size="14">Peak thrust/weight screen: 2.59:1</text>
+<text x="510" y="103" font-size="19">Four independent rotors</text>
+<text x="510" y="129" font-size="14">644 × 844 mm · 7.03 kg complete</text>
+<rect x="510" y="153" width="231.84" height="303.84" fill="none" stroke="#9baab7" stroke-dasharray="5 5"/>
+<circle cx="561.12" cy="204.12" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="561.12" cy="204.12" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="557.12" y="209.12" font-size="14">1</text>
+<circle cx="690.72" cy="204.12" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="690.72" cy="204.12" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="686.72" y="209.12" font-size="14">2</text>
+<circle cx="690.72" cy="405.72" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="690.72" cy="405.72" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="686.72" y="410.72" font-size="14">3</text>
+<circle cx="561.12" cy="405.72" r="51.12" fill="#ffe8cf" stroke="#bc7525" stroke-width="2"/>
+<circle cx="561.12" cy="405.72" r="45.72" fill="none" stroke="#bc7525" stroke-dasharray="3 3"/>
+<text x="557.12" y="410.72" font-size="14">4</text>
+<rect x="576.42" y="255.42" width="99" height="99" rx="4" fill="#dce8f7" stroke="#466cbd" stroke-width="2"/>
+<text x="588.42" y="300.42" font-size="14">275 mm</text>
+<text x="596.42" y="319.42" font-size="14">body</text>
+<text x="510" y="484.84" font-size="14">Peak thrust/weight screen: 1.52:1</text>
+<text x="510" y="547" font-size="14">Same core and loaded vacuum bottom.</text>
+<text x="510" y="571" font-size="14">Four rotors miss the provisional 2:1 target;</text>
+<text x="510" y="593" font-size="14">eight were a margin choice, not a minimum.</text>
+<text x="30" y="731" font-size="15">Width: 360 mm between columns + 284 mm guard = 644 mm.</text>
+<text x="30" y="757" font-size="15">Octo length: 1160 mm between outer row centres + 284 mm guard = 1444 mm.</text>
+<text x="30" y="791" font-size="13">Guards stay clear of the central body. Mass, guard losses and thrust margins are model assumptions.</text>
+</g></svg>

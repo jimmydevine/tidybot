@@ -1,0 +1,2974 @@
+{
+  "config": {
+    "revision": "T: integrated floor-frame comparison",
+    "status": "Material-route comparison, not a fabrication release or adopted weight reduction",
+    "material_g_mm3": {
+      "aluminum": 0.0027,
+      "polymer": 0.00127
+    },
+    "side_wall_mm": 2,
+    "seat_wall_mm": 3.175,
+    "rear_tube_wall_mm": 1.6002,
+    "remaining_parts": [
+      {
+        "id": "frame_joints",
+        "mass_g": 32,
+        "basis": "Rail/corner/crossbeam screws, angle clips and tube crush sleeves; excludes unchanged N hardware and caster nut"
+      },
+      {
+        "id": "module_studs",
+        "mass_g": 20,
+        "basis": "Four M4 mushroom studs, metal shoulders and locking hardware; geometry/grip remains to detail"
+      },
+      {
+        "id": "power_mounting",
+        "mass_g": 10,
+        "basis": "Board standoffs, shelf attachment, dielectric pads and cooling/wire restraints; no electrical hardware removed"
+      },
+      {
+        "id": "tool_mounting",
+        "mass_g": 22,
+        "basis": "Bin, filter/blower or tank/pump mounting and dock support tabs; tool shells and P head receiver retained separately"
+      },
+      {
+        "id": "sensor_and_bumper_mounts",
+        "mass_g": 20,
+        "basis": "Printed local bosses and brackets for existing sensors, anti-tip rollers and bumper; their hardware is retained separately"
+      },
+      {
+        "id": "frame_completion",
+        "mass_g": 15,
+        "basis": "Unassigned frame completion reserve, in addition to the retained N 20 g local drive reserve"
+      }
+    ],
+    "screens": {
+      "e_mpa": 69000,
+      "bending_limit_mpa": 120,
+      "deflection_limit_mm": 1,
+      "section_factor": 0.75,
+      "wheel_force_n": 150,
+      "corner_force_n": 300,
+      "caster_force_n": 100,
+      "caster_horizontal_n": 25
+    },
+    "policy": "Replace bottom_frame, the complete F mechanical carrier, M risers and the old installed caster allowance as complete scopes. Carry the complete N assembly through unchanged, counted once. Count caster plate as T material and bare caster/stem/retention from I separately. Keep floor_interface_F, all electronics, harnesses, wheels/motors/hubs, bumper/sensors, cleaning capacity, head hardware and automatic interfaces. R/S savings are not stacked. H route boxes never had separate booked masses and cannot be subtracted as savings."
+  },
+  "cases": [
+    {
+      "bottom": "vacuum",
+      "parts": [
+        {
+          "id": "left_side_rail",
+          "add": [
+            [
+              26,
+              26.7,
+              65,
+              2,
+              221.6,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 9307.199999999999,
+          "centre_mm": [
+            27.0,
+            137.5,
+            75.5
+          ],
+          "mass_g": 25.12944,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_front_rail",
+          "add": [
+            [
+              247,
+              26.7,
+              65,
+              2,
+              126.3,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5304.599999999999,
+          "centre_mm": [
+            248.0,
+            89.85,
+            75.5
+          ],
+          "mass_g": 14.32242,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_offset_link",
+          "add": [
+            [
+              247,
+              153,
+              65,
+              18,
+              2,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 756,
+          "centre_mm": [
+            256.0,
+            154.0,
+            75.5
+          ],
+          "mass_g": 2.0412,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_rear_rail",
+          "add": [
+            [
+              263,
+              155,
+              65,
+              2,
+              93.3,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3918.6000000000004,
+          "centre_mm": [
+            264.0,
+            201.65,
+            75.5
+          ],
+          "mass_g": 10.580220000000002,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "left_rear_drop",
+          "add": [
+            [
+              26,
+              248.3,
+              52.3,
+              2,
+              26.7,
+              33.7
+            ]
+          ],
+          "cut": [
+            [
+              25.9,
+              248.2,
+              52.2,
+              2.2,
+              14.1,
+              12.8
+            ],
+            [
+              25.9,
+              248.2,
+              65,
+              2.2,
+              25.5,
+              21.1
+            ]
+          ],
+          "volume_mm3": 377.1800000000003,
+          "centre_mm": [
+            27.0,
+            269.47512328331305,
+            61.08918023224987
+          ],
+          "mass_g": 1.018386000000001,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_rear_drop",
+          "add": [
+            [
+              263,
+              248.3,
+              62,
+              2,
+              26.7,
+              3
+            ],
+            [
+              263,
+              262.3,
+              52.3,
+              2,
+              12.7,
+              9.7
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 406.5799999999998,
+          "centre_mm": [
+            263.99999999999994,
+            265.89187121845634,
+            59.65201682325741
+          ],
+          "mass_g": 1.0977659999999996,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "front_head_bridge",
+          "add": [
+            [
+              28,
+              83.5,
+              66.5,
+              219,
+              1.5,
+              20
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 6570.0,
+          "centre_mm": [
+            137.5,
+            84.25,
+            76.5
+          ],
+          "mass_g": 17.739,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "rear_crossmember",
+          "add": [
+            [
+              28,
+              262.3,
+              52.3,
+              235,
+              12.7,
+              12.7
+            ]
+          ],
+          "cut": [
+            [
+              27.9,
+              263.9002,
+              53.9002,
+              235.2,
+              9.4996,
+              9.4996
+            ]
+          ],
+          "volume_mm3": 16696.185962400003,
+          "centre_mm": [
+            145.5,
+            268.65000000000003,
+            58.64999999999999
+          ],
+          "mass_g": 45.07970209848001,
+          "basis": "Closed tube behind the bin and below cliff windows; joints/sleeves in frame_joints"
+        },
+        {
+          "id": "left_front_seat",
+          "add": [
+            [
+              5,
+              1.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              24.825,
+              1.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.3321249999985,
+          "centre_mm": [
+            20.827992957746485,
+            14.0,
+            79.82799295774647
+          ],
+          "mass_g": 8.889296737499997,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "left_rear_seat",
+          "add": [
+            [
+              5,
+              248.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              24.825,
+              248.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.332124999996,
+          "centre_mm": [
+            20.82799295774648,
+            261.0,
+            79.82799295774647
+          ],
+          "mass_g": 8.88929673749999,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "right_front_seat",
+          "add": [
+            [
+              247,
+              1.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              247,
+              1.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.3321250000035,
+          "centre_mm": [
+            254.17200704225348,
+            14.000000000000002,
+            79.82799295774646
+          ],
+          "mass_g": 8.88929673750001,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "right_rear_seat",
+          "add": [
+            [
+              247,
+              248.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              263,
+              248.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [
+            [
+              262.9,
+              258.3,
+              64.9,
+              3.375,
+              16,
+              14.1
+            ]
+          ],
+          "volume_mm3": 2607.8021249999993,
+          "centre_mm": [
+            260.2576821989274,
+            259.6875346226662,
+            81.88278690395747
+          ],
+          "mass_g": 7.0410657374999985,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "caster_saddle",
+          "add": [
+            [
+              117.5,
+              222,
+              56.5,
+              40,
+              40.3,
+              3
+            ],
+            [
+              117.5,
+              259.3,
+              59.5,
+              40,
+              3,
+              5.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5496.000000000002,
+          "centre_mm": [
+            137.5,
+            244.3896288209607,
+            58.5103711790393
+          ],
+          "mass_g": 14.839200000000005,
+          "basis": "L profile from stock angle or outsourced cut part; no assumption of a home bending brake"
+        },
+        {
+          "id": "floor_shelf_left",
+          "add": [
+            [
+              26,
+              13,
+              104,
+              81,
+              70,
+              1
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5670,
+          "centre_mm": [
+            66.5,
+            48.0,
+            104.5
+          ],
+          "mass_g": 15.309000000000001,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_shelf_right",
+          "add": [
+            [
+              107,
+              30,
+              104,
+              34,
+              53,
+              1
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1802,
+          "centre_mm": [
+            124.0,
+            56.5,
+            104.5
+          ],
+          "mass_g": 4.8654,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_rear_stiffener",
+          "add": [
+            [
+              26,
+              80,
+              105,
+              115,
+              2,
+              8
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1840,
+          "centre_mm": [
+            83.5,
+            81.0,
+            109.0
+          ],
+          "mass_g": 4.968,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_front_stiffener",
+          "add": [
+            [
+              29,
+              13,
+              105,
+              77,
+              2,
+              8
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1232,
+          "centre_mm": [
+            67.5,
+            14.0,
+            109.0
+          ],
+          "mass_g": 3.3264,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "power_web_left",
+          "add": [
+            [
+              26,
+              26.7,
+              86,
+              2,
+              56.3,
+              18
+            ]
+          ],
+          "cut": [
+            [
+              25.9,
+              32.7,
+              91,
+              2.2,
+              44.3,
+              8
+            ]
+          ],
+          "volume_mm3": 1318.0,
+          "centre_mm": [
+            27.0,
+            54.85,
+            95.00000000000001
+          ],
+          "mass_g": 3.5586,
+          "basis": "Windowed upright shares chassis support with power shelf; web and attachment dimensions unqualified"
+        },
+        {
+          "id": "power_web_inner",
+          "add": [
+            [
+              105,
+              26.7,
+              65,
+              2,
+              56.3,
+              39
+            ]
+          ],
+          "cut": [
+            [
+              104.9,
+              32.7,
+              70,
+              2.2,
+              44.3,
+              29
+            ]
+          ],
+          "volume_mm3": 1822.0000000000005,
+          "centre_mm": [
+            105.99999999999999,
+            54.849999999999994,
+            84.5
+          ],
+          "mass_g": 4.919400000000001,
+          "basis": "Windowed upright shares chassis support with power shelf; web and attachment dimensions unqualified"
+        },
+        {
+          "id": "control_board_shelf",
+          "add": [
+            [
+              108,
+              29,
+              72.5,
+              139,
+              54,
+              1.5
+            ]
+          ],
+          "cut": [
+            [
+              112,
+              33,
+              72.4,
+              131,
+              46,
+              1.7
+            ]
+          ],
+          "volume_mm3": 2220.0,
+          "centre_mm": [
+            177.5,
+            56.0,
+            73.25
+          ],
+          "mass_g": 5.994000000000001,
+          "basis": "Open aluminum carrier under blower/drive/supervisor bays; insulation and standoffs separate"
+        },
+        {
+          "id": "control_front_bridge",
+          "add": [
+            [
+              107,
+              28,
+              65.5,
+              140,
+              1,
+              7
+            ],
+            [
+              108,
+              29,
+              71.0,
+              139,
+              4,
+              1.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1814.0,
+          "centre_mm": [
+            177.22987872105844,
+            29.649393605292172,
+            70.2643329658214
+          ],
+          "mass_g": 4.8978,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "control_rear_web",
+          "add": [
+            [
+              108,
+              82.5,
+              66.5,
+              139,
+              1,
+              6.0
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 834.0,
+          "centre_mm": [
+            177.5,
+            83.0,
+            69.5
+          ],
+          "mass_g": 2.2518000000000002,
+          "basis": "Rear shelf connection to head bridge; end clips and joint hardware remain in frame_joints"
+        }
+      ],
+      "prior_rows": [
+        {
+          "id": "bottom_frame",
+          "mass_g": 225,
+          "basis": "Bottom PETG skeleton, aluminum rails and module-side studs"
+        },
+        {
+          "id": "caster",
+          "mass_g": 112,
+          "basis": "TENTE Linea load 5940UAP050L51-8, stem and mounting plate"
+        },
+        {
+          "id": "floor_shelf_left",
+          "mass_g": 15.309000000000001,
+          "basis": "floor shelf left"
+        },
+        {
+          "id": "floor_shelf_right",
+          "mass_g": 4.8654,
+          "basis": "floor shelf right"
+        },
+        {
+          "id": "floor_shelf_tab",
+          "mass_g": 0.09720000000000001,
+          "basis": "floor shelf tab"
+        },
+        {
+          "id": "floor_foot_plate",
+          "mass_g": 8.748000000000001,
+          "basis": "floor foot plate"
+        },
+        {
+          "id": "floor_foot_tab",
+          "mass_g": 0.2268,
+          "basis": "floor foot tab"
+        },
+        {
+          "id": "floor_rear_stiffener",
+          "mass_g": 4.968,
+          "basis": "floor rear stiffener"
+        },
+        {
+          "id": "floor_front_stiffener",
+          "mass_g": 3.4560000000000004,
+          "basis": "floor front stiffener"
+        },
+        {
+          "id": "floor_post_0",
+          "mass_g": 5.063933198321387,
+          "basis": "floor post 0"
+        },
+        {
+          "id": "floor_post_1",
+          "mass_g": 5.063933198321387,
+          "basis": "floor post 1"
+        },
+        {
+          "id": "floor_post_2",
+          "mass_g": 5.063933198321387,
+          "basis": "floor post 2"
+        },
+        {
+          "id": "floor_carrier_fasteners",
+          "mass_g": 10,
+          "basis": "floor carrier fasteners"
+        },
+        {
+          "id": "N_motor_support_angles",
+          "mass_g": 110.75195174183891,
+          "basis": "6061 angle volume including inside radius; holes/end radii not deducted"
+        },
+        {
+          "id": "N_common_crossmember",
+          "mass_g": 42.01044578539201,
+          "basis": "6063 square tube volume; holes not deducted"
+        },
+        {
+          "id": "N_rail_cleats",
+          "mass_g": 10.143616448188384,
+          "basis": "Small-angle section; actual corner radius and SKU pending"
+        },
+        {
+          "id": "N_Pololu_2676_brackets",
+          "mass_g": 17.0,
+          "basis": "Catalog mass, preserved motor/shaft position"
+        },
+        {
+          "id": "N_motor_M3x6_flush_screws",
+          "mass_g": 2.2,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_foot_M3x12_screw_washer_locknut_sets",
+          "mass_g": 15.2,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_support_M4x25_screw_washers_locknut_sets",
+          "mass_g": 16.8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_beam_M4x25_screw_washers_locknut_sets",
+          "mass_g": 8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_rail_M4x12_screw_washers_locknut_sets",
+          "mass_g": 10.8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_beam_horizontal_compression_sleeves",
+          "mass_g": 4.10214487603462,
+          "basis": "Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+        },
+        {
+          "id": "N_beam_vertical_compression_sleeves",
+          "mass_g": 2.05107243801731,
+          "basis": "Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+        },
+        {
+          "id": "N_completion_reserve",
+          "mass_g": 20,
+          "basis": "Local finish/tolerance/retention contingency; not an extra head budget"
+        },
+        {
+          "id": "M_risers",
+          "mass_g": 22,
+          "basis": "M raised power carrier or tank supports, covered by T webs/tool mounts"
+        }
+      ],
+      "rows": [
+        {
+          "id": "left_side_rail",
+          "add": [
+            [
+              26,
+              26.7,
+              65,
+              2,
+              221.6,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 9307.199999999999,
+          "centre_mm": [
+            27.0,
+            137.5,
+            75.5
+          ],
+          "mass_g": 25.12944,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_front_rail",
+          "add": [
+            [
+              247,
+              26.7,
+              65,
+              2,
+              126.3,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5304.599999999999,
+          "centre_mm": [
+            248.0,
+            89.85,
+            75.5
+          ],
+          "mass_g": 14.32242,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_offset_link",
+          "add": [
+            [
+              247,
+              153,
+              65,
+              18,
+              2,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 756,
+          "centre_mm": [
+            256.0,
+            154.0,
+            75.5
+          ],
+          "mass_g": 2.0412,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_rear_rail",
+          "add": [
+            [
+              263,
+              155,
+              65,
+              2,
+              93.3,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3918.6000000000004,
+          "centre_mm": [
+            264.0,
+            201.65,
+            75.5
+          ],
+          "mass_g": 10.580220000000002,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "left_rear_drop",
+          "add": [
+            [
+              26,
+              248.3,
+              52.3,
+              2,
+              26.7,
+              33.7
+            ]
+          ],
+          "cut": [
+            [
+              25.9,
+              248.2,
+              52.2,
+              2.2,
+              14.1,
+              12.8
+            ],
+            [
+              25.9,
+              248.2,
+              65,
+              2.2,
+              25.5,
+              21.1
+            ]
+          ],
+          "volume_mm3": 377.1800000000003,
+          "centre_mm": [
+            27.0,
+            269.47512328331305,
+            61.08918023224987
+          ],
+          "mass_g": 1.018386000000001,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_rear_drop",
+          "add": [
+            [
+              263,
+              248.3,
+              62,
+              2,
+              26.7,
+              3
+            ],
+            [
+              263,
+              262.3,
+              52.3,
+              2,
+              12.7,
+              9.7
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 406.5799999999998,
+          "centre_mm": [
+            263.99999999999994,
+            265.89187121845634,
+            59.65201682325741
+          ],
+          "mass_g": 1.0977659999999996,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "front_head_bridge",
+          "add": [
+            [
+              28,
+              83.5,
+              66.5,
+              219,
+              1.5,
+              20
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 6570.0,
+          "centre_mm": [
+            137.5,
+            84.25,
+            76.5
+          ],
+          "mass_g": 17.739,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "rear_crossmember",
+          "add": [
+            [
+              28,
+              262.3,
+              52.3,
+              235,
+              12.7,
+              12.7
+            ]
+          ],
+          "cut": [
+            [
+              27.9,
+              263.9002,
+              53.9002,
+              235.2,
+              9.4996,
+              9.4996
+            ]
+          ],
+          "volume_mm3": 16696.185962400003,
+          "centre_mm": [
+            145.5,
+            268.65000000000003,
+            58.64999999999999
+          ],
+          "mass_g": 45.07970209848001,
+          "basis": "Closed tube behind the bin and below cliff windows; joints/sleeves in frame_joints"
+        },
+        {
+          "id": "left_front_seat",
+          "add": [
+            [
+              5,
+              1.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              24.825,
+              1.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.3321249999985,
+          "centre_mm": [
+            20.827992957746485,
+            14.0,
+            79.82799295774647
+          ],
+          "mass_g": 8.889296737499997,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "left_rear_seat",
+          "add": [
+            [
+              5,
+              248.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              24.825,
+              248.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.332124999996,
+          "centre_mm": [
+            20.82799295774648,
+            261.0,
+            79.82799295774647
+          ],
+          "mass_g": 8.88929673749999,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "right_front_seat",
+          "add": [
+            [
+              247,
+              1.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              247,
+              1.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.3321250000035,
+          "centre_mm": [
+            254.17200704225348,
+            14.000000000000002,
+            79.82799295774646
+          ],
+          "mass_g": 8.88929673750001,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "right_rear_seat",
+          "add": [
+            [
+              247,
+              248.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              263,
+              248.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [
+            [
+              262.9,
+              258.3,
+              64.9,
+              3.375,
+              16,
+              14.1
+            ]
+          ],
+          "volume_mm3": 2607.8021249999993,
+          "centre_mm": [
+            260.2576821989274,
+            259.6875346226662,
+            81.88278690395747
+          ],
+          "mass_g": 7.0410657374999985,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "caster_saddle",
+          "add": [
+            [
+              117.5,
+              222,
+              56.5,
+              40,
+              40.3,
+              3
+            ],
+            [
+              117.5,
+              259.3,
+              59.5,
+              40,
+              3,
+              5.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5496.000000000002,
+          "centre_mm": [
+            137.5,
+            244.3896288209607,
+            58.5103711790393
+          ],
+          "mass_g": 14.839200000000005,
+          "basis": "L profile from stock angle or outsourced cut part; no assumption of a home bending brake"
+        },
+        {
+          "id": "floor_shelf_left",
+          "add": [
+            [
+              26,
+              13,
+              104,
+              81,
+              70,
+              1
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5670,
+          "centre_mm": [
+            66.5,
+            48.0,
+            104.5
+          ],
+          "mass_g": 15.309000000000001,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_shelf_right",
+          "add": [
+            [
+              107,
+              30,
+              104,
+              34,
+              53,
+              1
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1802,
+          "centre_mm": [
+            124.0,
+            56.5,
+            104.5
+          ],
+          "mass_g": 4.8654,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_rear_stiffener",
+          "add": [
+            [
+              26,
+              80,
+              105,
+              115,
+              2,
+              8
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1840,
+          "centre_mm": [
+            83.5,
+            81.0,
+            109.0
+          ],
+          "mass_g": 4.968,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_front_stiffener",
+          "add": [
+            [
+              29,
+              13,
+              105,
+              77,
+              2,
+              8
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1232,
+          "centre_mm": [
+            67.5,
+            14.0,
+            109.0
+          ],
+          "mass_g": 3.3264,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "power_web_left",
+          "add": [
+            [
+              26,
+              26.7,
+              86,
+              2,
+              56.3,
+              18
+            ]
+          ],
+          "cut": [
+            [
+              25.9,
+              32.7,
+              91,
+              2.2,
+              44.3,
+              8
+            ]
+          ],
+          "volume_mm3": 1318.0,
+          "centre_mm": [
+            27.0,
+            54.85,
+            95.00000000000001
+          ],
+          "mass_g": 3.5586,
+          "basis": "Windowed upright shares chassis support with power shelf; web and attachment dimensions unqualified"
+        },
+        {
+          "id": "power_web_inner",
+          "add": [
+            [
+              105,
+              26.7,
+              65,
+              2,
+              56.3,
+              39
+            ]
+          ],
+          "cut": [
+            [
+              104.9,
+              32.7,
+              70,
+              2.2,
+              44.3,
+              29
+            ]
+          ],
+          "volume_mm3": 1822.0000000000005,
+          "centre_mm": [
+            105.99999999999999,
+            54.849999999999994,
+            84.5
+          ],
+          "mass_g": 4.919400000000001,
+          "basis": "Windowed upright shares chassis support with power shelf; web and attachment dimensions unqualified"
+        },
+        {
+          "id": "control_board_shelf",
+          "add": [
+            [
+              108,
+              29,
+              72.5,
+              139,
+              54,
+              1.5
+            ]
+          ],
+          "cut": [
+            [
+              112,
+              33,
+              72.4,
+              131,
+              46,
+              1.7
+            ]
+          ],
+          "volume_mm3": 2220.0,
+          "centre_mm": [
+            177.5,
+            56.0,
+            73.25
+          ],
+          "mass_g": 5.994000000000001,
+          "basis": "Open aluminum carrier under blower/drive/supervisor bays; insulation and standoffs separate"
+        },
+        {
+          "id": "control_front_bridge",
+          "add": [
+            [
+              107,
+              28,
+              65.5,
+              140,
+              1,
+              7
+            ],
+            [
+              108,
+              29,
+              71.0,
+              139,
+              4,
+              1.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1814.0,
+          "centre_mm": [
+            177.22987872105844,
+            29.649393605292172,
+            70.2643329658214
+          ],
+          "mass_g": 4.8978,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "control_rear_web",
+          "add": [
+            [
+              108,
+              82.5,
+              66.5,
+              139,
+              1,
+              6.0
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 834.0,
+          "centre_mm": [
+            177.5,
+            83.0,
+            69.5
+          ],
+          "mass_g": 2.2518000000000002,
+          "basis": "Rear shelf connection to head bridge; end clips and joint hardware remain in frame_joints"
+        },
+        {
+          "id": "N_motor_support_angles",
+          "mass_g": 110.75195174183891,
+          "basis": "6061 angle volume including inside radius; holes/end radii not deducted"
+        },
+        {
+          "id": "N_common_crossmember",
+          "mass_g": 42.01044578539201,
+          "basis": "6063 square tube volume; holes not deducted"
+        },
+        {
+          "id": "N_rail_cleats",
+          "mass_g": 10.143616448188384,
+          "basis": "Small-angle section; actual corner radius and SKU pending"
+        },
+        {
+          "id": "N_Pololu_2676_brackets",
+          "mass_g": 17.0,
+          "basis": "Catalog mass, preserved motor/shaft position"
+        },
+        {
+          "id": "N_motor_M3x6_flush_screws",
+          "mass_g": 2.2,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_foot_M3x12_screw_washer_locknut_sets",
+          "mass_g": 15.2,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_support_M4x25_screw_washers_locknut_sets",
+          "mass_g": 16.8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_beam_M4x25_screw_washers_locknut_sets",
+          "mass_g": 8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_rail_M4x12_screw_washers_locknut_sets",
+          "mass_g": 10.8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_beam_horizontal_compression_sleeves",
+          "mass_g": 4.10214487603462,
+          "basis": "Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+        },
+        {
+          "id": "N_beam_vertical_compression_sleeves",
+          "mass_g": 2.05107243801731,
+          "basis": "Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+        },
+        {
+          "id": "N_completion_reserve",
+          "mass_g": 20,
+          "basis": "Local finish/tolerance/retention contingency; not an extra head budget"
+        },
+        {
+          "id": "caster_bare",
+          "mass_g": 90,
+          "basis": "I catalog bare caster reference"
+        },
+        {
+          "id": "caster_stem",
+          "mass_g": 20,
+          "basis": "I selected fitting reference"
+        },
+        {
+          "id": "caster_upper_hardware",
+          "mass_g": 12,
+          "basis": "I upper nut/washer allowance"
+        },
+        {
+          "id": "caster_secondary_retention",
+          "mass_g": 20,
+          "basis": "I caster-to-plug captive retention allowance; still unresolved"
+        },
+        {
+          "id": "frame_joints",
+          "mass_g": 32,
+          "basis": "Rail/corner/crossbeam screws, angle clips and tube crush sleeves; excludes unchanged N hardware and caster nut"
+        },
+        {
+          "id": "module_studs",
+          "mass_g": 20,
+          "basis": "Four M4 mushroom studs, metal shoulders and locking hardware; geometry/grip remains to detail"
+        },
+        {
+          "id": "power_mounting",
+          "mass_g": 10,
+          "basis": "Board standoffs, shelf attachment, dielectric pads and cooling/wire restraints; no electrical hardware removed"
+        },
+        {
+          "id": "tool_mounting",
+          "mass_g": 22,
+          "basis": "Bin, filter/blower or tank/pump mounting and dock support tabs; tool shells and P head receiver retained separately"
+        },
+        {
+          "id": "sensor_and_bumper_mounts",
+          "mass_g": 20,
+          "basis": "Printed local bosses and brackets for existing sensors, anti-tip rollers and bumper; their hardware is retained separately"
+        },
+        {
+          "id": "frame_completion",
+          "mass_g": 15,
+          "basis": "Unassigned frame completion reserve, in addition to the retained N 20 g local drive reserve"
+        }
+      ],
+      "prior_scope_g": 680.9214308844354,
+      "material_g": 215.64669004848002,
+      "candidate_scope_g": 735.7059213379513,
+      "conditional_saving_g": -54.7844904535159,
+      "current_transfer_g": 5274.841313853186,
+      "candidate_transfer_g": 5329.625804306702,
+      "budget_g": 4500,
+      "candidate_over_budget_g": 829.6258043067019,
+      "impossible_zero_scope_transfer_g": 4593.91988296875,
+      "booked_saving_g": 0,
+      "measured_compliance": false
+    },
+    {
+      "bottom": "mop",
+      "parts": [
+        {
+          "id": "left_side_rail",
+          "add": [
+            [
+              26,
+              26.7,
+              65,
+              2,
+              221.6,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 9307.199999999999,
+          "centre_mm": [
+            27.0,
+            137.5,
+            75.5
+          ],
+          "mass_g": 25.12944,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_front_rail",
+          "add": [
+            [
+              247,
+              26.7,
+              65,
+              2,
+              126.3,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5304.599999999999,
+          "centre_mm": [
+            248.0,
+            89.85,
+            75.5
+          ],
+          "mass_g": 14.32242,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_offset_link",
+          "add": [
+            [
+              247,
+              153,
+              65,
+              18,
+              2,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 756,
+          "centre_mm": [
+            256.0,
+            154.0,
+            75.5
+          ],
+          "mass_g": 2.0412,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_rear_rail",
+          "add": [
+            [
+              263,
+              155,
+              65,
+              2,
+              93.3,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3918.6000000000004,
+          "centre_mm": [
+            264.0,
+            201.65,
+            75.5
+          ],
+          "mass_g": 10.580220000000002,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "left_rear_drop",
+          "add": [
+            [
+              26,
+              248.3,
+              52.3,
+              2,
+              26.7,
+              33.7
+            ]
+          ],
+          "cut": [
+            [
+              25.9,
+              248.2,
+              52.2,
+              2.2,
+              14.1,
+              12.8
+            ],
+            [
+              25.9,
+              248.2,
+              65,
+              2.2,
+              25.5,
+              21.1
+            ]
+          ],
+          "volume_mm3": 377.1800000000003,
+          "centre_mm": [
+            27.0,
+            269.47512328331305,
+            61.08918023224987
+          ],
+          "mass_g": 1.018386000000001,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_rear_drop",
+          "add": [
+            [
+              263,
+              248.3,
+              62,
+              2,
+              26.7,
+              3
+            ],
+            [
+              263,
+              262.3,
+              52.3,
+              2,
+              12.7,
+              9.7
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 406.5799999999998,
+          "centre_mm": [
+            263.99999999999994,
+            265.89187121845634,
+            59.65201682325741
+          ],
+          "mass_g": 1.0977659999999996,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "front_head_bridge",
+          "add": [
+            [
+              28,
+              83.5,
+              66.5,
+              219,
+              1.5,
+              20
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 6570.0,
+          "centre_mm": [
+            137.5,
+            84.25,
+            76.5
+          ],
+          "mass_g": 17.739,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "rear_crossmember",
+          "add": [
+            [
+              28,
+              262.3,
+              52.3,
+              235,
+              12.7,
+              12.7
+            ]
+          ],
+          "cut": [
+            [
+              27.9,
+              263.9002,
+              53.9002,
+              235.2,
+              9.4996,
+              9.4996
+            ]
+          ],
+          "volume_mm3": 16696.185962400003,
+          "centre_mm": [
+            145.5,
+            268.65000000000003,
+            58.64999999999999
+          ],
+          "mass_g": 45.07970209848001,
+          "basis": "Closed tube behind the bin and below cliff windows; joints/sleeves in frame_joints"
+        },
+        {
+          "id": "left_front_seat",
+          "add": [
+            [
+              5,
+              1.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              24.825,
+              1.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.3321249999985,
+          "centre_mm": [
+            20.827992957746485,
+            14.0,
+            79.82799295774647
+          ],
+          "mass_g": 8.889296737499997,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "left_rear_seat",
+          "add": [
+            [
+              5,
+              248.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              24.825,
+              248.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.332124999996,
+          "centre_mm": [
+            20.82799295774648,
+            261.0,
+            79.82799295774647
+          ],
+          "mass_g": 8.88929673749999,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "right_front_seat",
+          "add": [
+            [
+              247,
+              1.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              247,
+              1.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.3321250000035,
+          "centre_mm": [
+            254.17200704225348,
+            14.000000000000002,
+            79.82799295774646
+          ],
+          "mass_g": 8.88929673750001,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "right_rear_seat",
+          "add": [
+            [
+              247,
+              248.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              263,
+              248.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [
+            [
+              262.9,
+              258.3,
+              64.9,
+              3.375,
+              16,
+              14.1
+            ]
+          ],
+          "volume_mm3": 2607.8021249999993,
+          "centre_mm": [
+            260.2576821989274,
+            259.6875346226662,
+            81.88278690395747
+          ],
+          "mass_g": 7.0410657374999985,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "caster_saddle",
+          "add": [
+            [
+              117.5,
+              222,
+              56.5,
+              40,
+              40.3,
+              3
+            ],
+            [
+              117.5,
+              259.3,
+              59.5,
+              40,
+              3,
+              5.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5496.000000000002,
+          "centre_mm": [
+            137.5,
+            244.3896288209607,
+            58.5103711790393
+          ],
+          "mass_g": 14.839200000000005,
+          "basis": "L profile from stock angle or outsourced cut part; no assumption of a home bending brake"
+        },
+        {
+          "id": "floor_shelf_left",
+          "add": [
+            [
+              26,
+              13,
+              86,
+              81,
+              70,
+              1
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5670,
+          "centre_mm": [
+            66.5,
+            48.0,
+            86.5
+          ],
+          "mass_g": 15.309000000000001,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_shelf_right",
+          "add": [
+            [
+              107,
+              30,
+              86,
+              34,
+              53,
+              1
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1802,
+          "centre_mm": [
+            124.0,
+            56.5,
+            86.5
+          ],
+          "mass_g": 4.8654,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_rear_stiffener",
+          "add": [
+            [
+              26,
+              80,
+              87,
+              115,
+              2,
+              8
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1840,
+          "centre_mm": [
+            83.5,
+            81.0,
+            91.0
+          ],
+          "mass_g": 4.968,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_front_stiffener",
+          "add": [
+            [
+              29,
+              13,
+              87,
+              77,
+              2,
+              8
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1232,
+          "centre_mm": [
+            67.5,
+            14.0,
+            91.0
+          ],
+          "mass_g": 3.3264,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "power_web_inner",
+          "add": [
+            [
+              105,
+              26.7,
+              65,
+              2,
+              56.3,
+              21
+            ]
+          ],
+          "cut": [
+            [
+              104.9,
+              32.7,
+              70,
+              2.2,
+              44.3,
+              11
+            ]
+          ],
+          "volume_mm3": 1390.0,
+          "centre_mm": [
+            106.0,
+            54.85,
+            75.50000000000001
+          ],
+          "mass_g": 3.753,
+          "basis": "Windowed upright shares chassis support with power shelf; web and attachment dimensions unqualified"
+        },
+        {
+          "id": "control_board_shelf",
+          "add": [
+            [
+              108,
+              29,
+              54.5,
+              139,
+              54,
+              1.5
+            ]
+          ],
+          "cut": [
+            [
+              112,
+              33,
+              54.4,
+              131,
+              46,
+              1.7
+            ]
+          ],
+          "volume_mm3": 2220.0,
+          "centre_mm": [
+            177.5,
+            56.0,
+            55.25
+          ],
+          "mass_g": 5.994000000000001,
+          "basis": "Open aluminum carrier under blower/drive/supervisor bays; insulation and standoffs separate"
+        },
+        {
+          "id": "control_front_bridge",
+          "add": [
+            [
+              107,
+              28,
+              47.5,
+              140,
+              1,
+              7
+            ],
+            [
+              108,
+              29,
+              53.0,
+              139,
+              4,
+              1.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1814.0,
+          "centre_mm": [
+            177.22987872105844,
+            29.649393605292172,
+            52.26433296582139
+          ],
+          "mass_g": 4.8978,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "control_rear_web",
+          "add": [
+            [
+              108,
+              82.5,
+              56.0,
+              139,
+              1,
+              10.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1459.5,
+          "centre_mm": [
+            177.5,
+            83.0,
+            61.25
+          ],
+          "mass_g": 3.94065,
+          "basis": "Rear shelf connection to head bridge; end clips and joint hardware remain in frame_joints"
+        }
+      ],
+      "prior_rows": [
+        {
+          "id": "bottom_frame",
+          "mass_g": 225,
+          "basis": "Bottom PETG skeleton, aluminum rails and module-side studs"
+        },
+        {
+          "id": "caster",
+          "mass_g": 112,
+          "basis": "TENTE Linea load 5940UAP050L51-8, stem and mounting plate"
+        },
+        {
+          "id": "floor_shelf_left",
+          "mass_g": 15.309000000000001,
+          "basis": "floor shelf left"
+        },
+        {
+          "id": "floor_shelf_right",
+          "mass_g": 4.8654,
+          "basis": "floor shelf right"
+        },
+        {
+          "id": "floor_shelf_tab",
+          "mass_g": 0.09720000000000001,
+          "basis": "floor shelf tab"
+        },
+        {
+          "id": "floor_foot_plate",
+          "mass_g": 8.748000000000001,
+          "basis": "floor foot plate"
+        },
+        {
+          "id": "floor_foot_tab",
+          "mass_g": 0.2268,
+          "basis": "floor foot tab"
+        },
+        {
+          "id": "floor_rear_stiffener",
+          "mass_g": 4.968,
+          "basis": "floor rear stiffener"
+        },
+        {
+          "id": "floor_front_stiffener",
+          "mass_g": 3.4560000000000004,
+          "basis": "floor front stiffener"
+        },
+        {
+          "id": "floor_post_0",
+          "mass_g": 5.063933198321387,
+          "basis": "floor post 0"
+        },
+        {
+          "id": "floor_post_1",
+          "mass_g": 5.063933198321387,
+          "basis": "floor post 1"
+        },
+        {
+          "id": "floor_post_2",
+          "mass_g": 5.063933198321387,
+          "basis": "floor post 2"
+        },
+        {
+          "id": "floor_carrier_fasteners",
+          "mass_g": 10,
+          "basis": "floor carrier fasteners"
+        },
+        {
+          "id": "N_motor_support_angles",
+          "mass_g": 110.75195174183891,
+          "basis": "6061 angle volume including inside radius; holes/end radii not deducted"
+        },
+        {
+          "id": "N_common_crossmember",
+          "mass_g": 42.01044578539201,
+          "basis": "6063 square tube volume; holes not deducted"
+        },
+        {
+          "id": "N_rail_cleats",
+          "mass_g": 10.143616448188384,
+          "basis": "Small-angle section; actual corner radius and SKU pending"
+        },
+        {
+          "id": "N_Pololu_2676_brackets",
+          "mass_g": 17.0,
+          "basis": "Catalog mass, preserved motor/shaft position"
+        },
+        {
+          "id": "N_motor_M3x6_flush_screws",
+          "mass_g": 2.2,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_foot_M3x12_screw_washer_locknut_sets",
+          "mass_g": 15.2,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_support_M4x25_screw_washers_locknut_sets",
+          "mass_g": 16.8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_beam_M4x25_screw_washers_locknut_sets",
+          "mass_g": 8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_rail_M4x12_screw_washers_locknut_sets",
+          "mass_g": 10.8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_beam_horizontal_compression_sleeves",
+          "mass_g": 4.10214487603462,
+          "basis": "Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+        },
+        {
+          "id": "N_beam_vertical_compression_sleeves",
+          "mass_g": 2.05107243801731,
+          "basis": "Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+        },
+        {
+          "id": "N_completion_reserve",
+          "mass_g": 20,
+          "basis": "Local finish/tolerance/retention contingency; not an extra head budget"
+        },
+        {
+          "id": "M_risers",
+          "mass_g": 18,
+          "basis": "M raised power carrier or tank supports, covered by T webs/tool mounts"
+        }
+      ],
+      "rows": [
+        {
+          "id": "left_side_rail",
+          "add": [
+            [
+              26,
+              26.7,
+              65,
+              2,
+              221.6,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 9307.199999999999,
+          "centre_mm": [
+            27.0,
+            137.5,
+            75.5
+          ],
+          "mass_g": 25.12944,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_front_rail",
+          "add": [
+            [
+              247,
+              26.7,
+              65,
+              2,
+              126.3,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5304.599999999999,
+          "centre_mm": [
+            248.0,
+            89.85,
+            75.5
+          ],
+          "mass_g": 14.32242,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_offset_link",
+          "add": [
+            [
+              247,
+              153,
+              65,
+              18,
+              2,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 756,
+          "centre_mm": [
+            256.0,
+            154.0,
+            75.5
+          ],
+          "mass_g": 2.0412,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_rear_rail",
+          "add": [
+            [
+              263,
+              155,
+              65,
+              2,
+              93.3,
+              21
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3918.6000000000004,
+          "centre_mm": [
+            264.0,
+            201.65,
+            75.5
+          ],
+          "mass_g": 10.580220000000002,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "left_rear_drop",
+          "add": [
+            [
+              26,
+              248.3,
+              52.3,
+              2,
+              26.7,
+              33.7
+            ]
+          ],
+          "cut": [
+            [
+              25.9,
+              248.2,
+              52.2,
+              2.2,
+              14.1,
+              12.8
+            ],
+            [
+              25.9,
+              248.2,
+              65,
+              2.2,
+              25.5,
+              21.1
+            ]
+          ],
+          "volume_mm3": 377.1800000000003,
+          "centre_mm": [
+            27.0,
+            269.47512328331305,
+            61.08918023224987
+          ],
+          "mass_g": 1.018386000000001,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "right_rear_drop",
+          "add": [
+            [
+              263,
+              248.3,
+              62,
+              2,
+              26.7,
+              3
+            ],
+            [
+              263,
+              262.3,
+              52.3,
+              2,
+              12.7,
+              9.7
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 406.5799999999998,
+          "centre_mm": [
+            263.99999999999994,
+            265.89187121845634,
+            59.65201682325741
+          ],
+          "mass_g": 1.0977659999999996,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "front_head_bridge",
+          "add": [
+            [
+              28,
+              83.5,
+              66.5,
+              219,
+              1.5,
+              20
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 6570.0,
+          "centre_mm": [
+            137.5,
+            84.25,
+            76.5
+          ],
+          "mass_g": 17.739,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "rear_crossmember",
+          "add": [
+            [
+              28,
+              262.3,
+              52.3,
+              235,
+              12.7,
+              12.7
+            ]
+          ],
+          "cut": [
+            [
+              27.9,
+              263.9002,
+              53.9002,
+              235.2,
+              9.4996,
+              9.4996
+            ]
+          ],
+          "volume_mm3": 16696.185962400003,
+          "centre_mm": [
+            145.5,
+            268.65000000000003,
+            58.64999999999999
+          ],
+          "mass_g": 45.07970209848001,
+          "basis": "Closed tube behind the bin and below cliff windows; joints/sleeves in frame_joints"
+        },
+        {
+          "id": "left_front_seat",
+          "add": [
+            [
+              5,
+              1.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              24.825,
+              1.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.3321249999985,
+          "centre_mm": [
+            20.827992957746485,
+            14.0,
+            79.82799295774647
+          ],
+          "mass_g": 8.889296737499997,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "left_rear_seat",
+          "add": [
+            [
+              5,
+              248.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              24.825,
+              248.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.332124999996,
+          "centre_mm": [
+            20.82799295774648,
+            261.0,
+            79.82799295774647
+          ],
+          "mass_g": 8.88929673749999,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "right_front_seat",
+          "add": [
+            [
+              247,
+              1.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              247,
+              1.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 3292.3321250000035,
+          "centre_mm": [
+            254.17200704225348,
+            14.000000000000002,
+            79.82799295774646
+          ],
+          "mass_g": 8.88929673750001,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "right_rear_seat",
+          "add": [
+            [
+              247,
+              248.3,
+              82.825,
+              23,
+              25.4,
+              3.175
+            ],
+            [
+              263,
+              248.3,
+              65,
+              3.175,
+              25.4,
+              17.825
+            ]
+          ],
+          "cut": [
+            [
+              262.9,
+              258.3,
+              64.9,
+              3.375,
+              16,
+              14.1
+            ]
+          ],
+          "volume_mm3": 2607.8021249999993,
+          "centre_mm": [
+            260.2576821989274,
+            259.6875346226662,
+            81.88278690395747
+          ],
+          "mass_g": 7.0410657374999985,
+          "basis": "Angle/profile blank, 86 mm seat retained; 4 mm stud bore and supplied corner radius remain to detail"
+        },
+        {
+          "id": "caster_saddle",
+          "add": [
+            [
+              117.5,
+              222,
+              56.5,
+              40,
+              40.3,
+              3
+            ],
+            [
+              117.5,
+              259.3,
+              59.5,
+              40,
+              3,
+              5.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5496.000000000002,
+          "centre_mm": [
+            137.5,
+            244.3896288209607,
+            58.5103711790393
+          ],
+          "mass_g": 14.839200000000005,
+          "basis": "L profile from stock angle or outsourced cut part; no assumption of a home bending brake"
+        },
+        {
+          "id": "floor_shelf_left",
+          "add": [
+            [
+              26,
+              13,
+              86,
+              81,
+              70,
+              1
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 5670,
+          "centre_mm": [
+            66.5,
+            48.0,
+            86.5
+          ],
+          "mass_g": 15.309000000000001,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_shelf_right",
+          "add": [
+            [
+              107,
+              30,
+              86,
+              34,
+              53,
+              1
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1802,
+          "centre_mm": [
+            124.0,
+            56.5,
+            86.5
+          ],
+          "mass_g": 4.8654,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_rear_stiffener",
+          "add": [
+            [
+              26,
+              80,
+              87,
+              115,
+              2,
+              8
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1840,
+          "centre_mm": [
+            83.5,
+            81.0,
+            91.0
+          ],
+          "mass_g": 4.968,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "floor_front_stiffener",
+          "add": [
+            [
+              29,
+              13,
+              87,
+              77,
+              2,
+              8
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1232,
+          "centre_mm": [
+            67.5,
+            14.0,
+            91.0
+          ],
+          "mass_g": 3.3264,
+          "basis": "Retained F shelf/stiffener geometry, counted once in this scope"
+        },
+        {
+          "id": "power_web_inner",
+          "add": [
+            [
+              105,
+              26.7,
+              65,
+              2,
+              56.3,
+              21
+            ]
+          ],
+          "cut": [
+            [
+              104.9,
+              32.7,
+              70,
+              2.2,
+              44.3,
+              11
+            ]
+          ],
+          "volume_mm3": 1390.0,
+          "centre_mm": [
+            106.0,
+            54.85,
+            75.50000000000001
+          ],
+          "mass_g": 3.753,
+          "basis": "Windowed upright shares chassis support with power shelf; web and attachment dimensions unqualified"
+        },
+        {
+          "id": "control_board_shelf",
+          "add": [
+            [
+              108,
+              29,
+              54.5,
+              139,
+              54,
+              1.5
+            ]
+          ],
+          "cut": [
+            [
+              112,
+              33,
+              54.4,
+              131,
+              46,
+              1.7
+            ]
+          ],
+          "volume_mm3": 2220.0,
+          "centre_mm": [
+            177.5,
+            56.0,
+            55.25
+          ],
+          "mass_g": 5.994000000000001,
+          "basis": "Open aluminum carrier under blower/drive/supervisor bays; insulation and standoffs separate"
+        },
+        {
+          "id": "control_front_bridge",
+          "add": [
+            [
+              107,
+              28,
+              47.5,
+              140,
+              1,
+              7
+            ],
+            [
+              108,
+              29,
+              53.0,
+              139,
+              4,
+              1.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1814.0,
+          "centre_mm": [
+            177.22987872105844,
+            29.649393605292172,
+            52.26433296582139
+          ],
+          "mass_g": 4.8978,
+          "basis": "Material route; fasteners, holes and stock radii not credited"
+        },
+        {
+          "id": "control_rear_web",
+          "add": [
+            [
+              108,
+              82.5,
+              56.0,
+              139,
+              1,
+              10.5
+            ]
+          ],
+          "cut": [],
+          "volume_mm3": 1459.5,
+          "centre_mm": [
+            177.5,
+            83.0,
+            61.25
+          ],
+          "mass_g": 3.94065,
+          "basis": "Rear shelf connection to head bridge; end clips and joint hardware remain in frame_joints"
+        },
+        {
+          "id": "N_motor_support_angles",
+          "mass_g": 110.75195174183891,
+          "basis": "6061 angle volume including inside radius; holes/end radii not deducted"
+        },
+        {
+          "id": "N_common_crossmember",
+          "mass_g": 42.01044578539201,
+          "basis": "6063 square tube volume; holes not deducted"
+        },
+        {
+          "id": "N_rail_cleats",
+          "mass_g": 10.143616448188384,
+          "basis": "Small-angle section; actual corner radius and SKU pending"
+        },
+        {
+          "id": "N_Pololu_2676_brackets",
+          "mass_g": 17.0,
+          "basis": "Catalog mass, preserved motor/shaft position"
+        },
+        {
+          "id": "N_motor_M3x6_flush_screws",
+          "mass_g": 2.2,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_foot_M3x12_screw_washer_locknut_sets",
+          "mass_g": 15.2,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_support_M4x25_screw_washers_locknut_sets",
+          "mass_g": 16.8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_beam_M4x25_screw_washers_locknut_sets",
+          "mass_g": 8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_rail_M4x12_screw_washers_locknut_sets",
+          "mass_g": 10.8,
+          "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+        },
+        {
+          "id": "N_beam_horizontal_compression_sleeves",
+          "mass_g": 4.10214487603462,
+          "basis": "Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+        },
+        {
+          "id": "N_beam_vertical_compression_sleeves",
+          "mass_g": 2.05107243801731,
+          "basis": "Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+        },
+        {
+          "id": "N_completion_reserve",
+          "mass_g": 20,
+          "basis": "Local finish/tolerance/retention contingency; not an extra head budget"
+        },
+        {
+          "id": "caster_bare",
+          "mass_g": 90,
+          "basis": "I catalog bare caster reference"
+        },
+        {
+          "id": "caster_stem",
+          "mass_g": 20,
+          "basis": "I selected fitting reference"
+        },
+        {
+          "id": "caster_upper_hardware",
+          "mass_g": 12,
+          "basis": "I upper nut/washer allowance"
+        },
+        {
+          "id": "caster_secondary_retention",
+          "mass_g": 20,
+          "basis": "I caster-to-plug captive retention allowance; still unresolved"
+        },
+        {
+          "id": "frame_joints",
+          "mass_g": 32,
+          "basis": "Rail/corner/crossbeam screws, angle clips and tube crush sleeves; excludes unchanged N hardware and caster nut"
+        },
+        {
+          "id": "module_studs",
+          "mass_g": 20,
+          "basis": "Four M4 mushroom studs, metal shoulders and locking hardware; geometry/grip remains to detail"
+        },
+        {
+          "id": "power_mounting",
+          "mass_g": 10,
+          "basis": "Board standoffs, shelf attachment, dielectric pads and cooling/wire restraints; no electrical hardware removed"
+        },
+        {
+          "id": "tool_mounting",
+          "mass_g": 22,
+          "basis": "Bin, filter/blower or tank/pump mounting and dock support tabs; tool shells and P head receiver retained separately"
+        },
+        {
+          "id": "sensor_and_bumper_mounts",
+          "mass_g": 20,
+          "basis": "Printed local bosses and brackets for existing sensors, anti-tip rollers and bumper; their hardware is retained separately"
+        },
+        {
+          "id": "frame_completion",
+          "mass_g": 15,
+          "basis": "Unassigned frame completion reserve, in addition to the retained N 20 g local drive reserve"
+        }
+      ],
+      "prior_scope_g": 676.9214308844354,
+      "material_g": 212.61054004848,
+      "candidate_scope_g": 732.6697713379513,
+      "conditional_saving_g": -55.74834045351588,
+      "current_transfer_g": 4704.001313853186,
+      "candidate_transfer_g": 4759.749654306702,
+      "budget_g": 4500,
+      "candidate_over_budget_g": 259.7496543067018,
+      "impossible_zero_scope_transfer_g": 4027.0798829687506,
+      "booked_saving_g": 0,
+      "measured_compliance": false
+    }
+  ],
+  "screens": {
+    "side_web": {
+      "stress_mpa": 83.94612905891101,
+      "deflection_mm": 0.5889246925677104,
+      "passes": true
+    },
+    "corner_seat": {
+      "stress_mpa": 112.47896511541056,
+      "passes": true
+    },
+    "rear_tube": {
+      "combined_stress_mpa": 36.895278991993614,
+      "twist_deg": 0.40160944225543815,
+      "deflection_mm": 0.3486743766413332
+    },
+    "unchanged_drive": {
+      "local_angle_moment_nmm": 7267.562746062992,
+      "foot_column_reactions_n": [
+        302.65748031496065,
+        -152.65748031496065
+      ],
+      "angle_stress_mpa": 98.59058684400429,
+      "angle_screen_mpa": 120,
+      "angle_screen_pass": true,
+      "beam_I_vertical_mm4": 1116.923332085152,
+      "beam_J_mm4": 1641.2736239596895,
+      "beam_combined_stress_mpa": 30.83538252826856,
+      "beam_screen_mpa": 55,
+      "beam_screen_pass": true,
+      "beam_deflection_bound_mm": 0.2110099030861709,
+      "beam_twist_bound_deg": 0.09188625091559448,
+      "support_joint_min_face_pressure_mpa": 1.2088533792452205,
+      "support_joint_friction_margin_n": 222.9309367425445,
+      "scope": "Factored 150 N vertical and +/-25 N fore-aft per wheel, as H/K. Beam load application X55.5/219.5 plus couples from the 41.5 mm outboard wheel offset, supports X36.5/238.5; 25% section reduction for holes. Torsion assumes both ends rotationally restrained, which the cleat/rail joints still need to demonstrate. Local bracket strip and tube screens only; no motor-bearing rating, fatigue or complete joint qualification. Clamp/friction values are assumptions, not torque instructions."
+    },
+    "whole_frame_qualified": false,
+    "scope": "150 N per wheel, 300 N unequal corner case, 100 N caster plus 25 N fore/aft. Side-web strong-axis and corner-strip screens only; eccentric cleat loading, open-section torsion, rear notches, holes, buckling, joints and fatigue are unresolved. Rear-tube torsion assumes both ends restrained. Do not infer 600 N module retention from these local screens."
+  },
+  "fabrication_release": false,
+  "caster_correction_g": 30,
+  "retained_functions": [
+    "motor/wheel/hub geometry",
+    "500 mL vacuum bin",
+    "350 mL mop tank",
+    "all power electronics and cooling",
+    "automatic module/head/battery interfaces",
+    "head lift and compliance",
+    "bumper/sensor hardware"
+  ],
+  "source_fingerprint": "41f03ea02c2a917baeb2c7984d7a63319dc2587fb2b5664c99d967a17b3cfa6c"
+}

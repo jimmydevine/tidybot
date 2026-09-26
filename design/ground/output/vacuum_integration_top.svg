@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="850" viewBox="0 0 850 850">
+<rect width="100%" height="100%" fill="#f7f8fa"/>
+<g font-family="sans-serif" fill="#182536">
+<text x="30" y="28" font-size="20">Vacuum integration · top projection</text>
+<text x="30" y="50" font-size="12">Reserved spaces, not printable parts. Dimensions in mm. See interactive view for heights.</text>
+<rect x="60.0" y="75.0" width="687.5" height="687.5" fill="none" stroke="#182536" stroke-dasharray="6 5"/>
+<rect x="116.25" y="90.00" width="575.00" height="150.00" fill="#c58429" fill-opacity="0.07" stroke="#c58429" stroke-width="1.5" stroke-dasharray="5 3"><title>H · removable head; proposed reservation</title></rect>
+<text x="120.25" y="104.00" font-size="10">head</text>
+<rect x="65.00" y="147.50" width="45.00" height="87.50" fill="#9471b1" fill-opacity="0.07" stroke="#9471b1" stroke-width="1.5" stroke-dasharray="5 3"><title>S · side brush drive; proposed reservation</title></rect>
+<rect x="65.00" y="255.00" width="60.00" height="183.25" fill="#287c91" fill-opacity="0.07" stroke="#287c91" stroke-width="1.5" stroke-dasharray="5 3"><title>Left wheel + bump travel; proposed reservation</title></rect>
+<rect x="682.50" y="255.00" width="60.00" height="183.25" fill="#287c91" fill-opacity="0.07" stroke="#287c91" stroke-width="1.5" stroke-dasharray="5 3"><title>Right wheel + bump travel; proposed reservation</title></rect>
+<rect x="540.00" y="555.00" width="200.00" height="200.00" fill="#287c91" fill-opacity="0.07" stroke="#287c91" stroke-width="1.5" stroke-dasharray="5 3"><title>C · rear caster sweep; proposed reservation</title></rect>
+<text x="544.00" y="569.00" font-size="10">caster</text>
+<rect x="356.25" y="240.00" width="95.00" height="65.00" fill="#478469" fill-opacity="0.07" stroke="#478469" stroke-width="1.5" stroke-dasharray="5 3"><title>Flexible dirty-air joint; proposed reservation</title></rect>
+<text x="360.25" y="254.00" font-size="10">flex_duct</text>
+<rect x="356.25" y="305.00" width="95.00" height="175.00" fill="#478469" fill-opacity="0.07" stroke="#478469" stroke-width="1.5" stroke-dasharray="5 3"><title>D · fixed dirty-air duct; proposed reservation</title></rect>
+<text x="360.25" y="319.00" font-size="10">duct</text>
+<rect x="125.00" y="480.00" width="372.50" height="267.50" fill="#478469" fill-opacity="0.07" stroke="#478469" stroke-width="1.5" stroke-dasharray="5 3"><title>B · rear-pull dirt bin; proposed reservation</title></rect>
+<text x="129.00" y="494.00" font-size="10">bin</text>
+<rect x="125.00" y="295.00" width="200.00" height="160.00" fill="#287c91" fill-opacity="0.07" stroke="#287c91" stroke-width="1.5" stroke-dasharray="5 3"><title>Left motor/mount/wiring bay; proposed reservation</title></rect>
+<text x="129.00" y="309.00" font-size="10">mount_left</text>
+<rect x="482.50" y="295.00" width="200.00" height="160.00" fill="#287c91" fill-opacity="0.07" stroke="#287c91" stroke-width="1.5" stroke-dasharray="5 3"><title>Right motor/mount/wiring bay; proposed reservation</title></rect>
+<text x="486.50" y="309.00" font-size="10">mount_right</text>
+<rect x="130.00" y="90.00" width="185.00" height="150.00" fill="#c58429" fill-opacity="0.07" stroke="#c58429" stroke-width="1.5" stroke-dasharray="5 3"><title>R · roller drive allowance; proposed reservation</title></rect>
+<text x="134.00" y="104.00" font-size="10">roller_drive</text>
+<rect x="330.00" y="92.50" width="110.00" height="147.50" fill="#9471b1" fill-opacity="0.07" stroke="#9471b1" stroke-width="1.5" stroke-dasharray="5 3"><title>W · blower driver; proposed reservation</title></rect>
+<text x="334.00" y="106.50" font-size="10">blower_driver_bay</text>
+<rect x="450.00" y="92.50" width="240.00" height="147.50" fill="#9471b1" fill-opacity="0.07" stroke="#9471b1" stroke-width="1.5" stroke-dasharray="5 3"><title>E · traction and bottom MCU; proposed reservation</title></rect>
+<text x="454.00" y="106.50" font-size="10">bottom_controls</text>
+<rect x="540.00" y="500.00" width="195.00" height="250.00" fill="#478469" fill-opacity="0.07" stroke="#478469" stroke-width="1.5" stroke-dasharray="5 3"><title>V · blower/plenum/exhaust; proposed reservation</title></rect>
+<text x="544.00" y="514.00" font-size="10">blower_bay</text>
+<rect x="500.00" y="305.00" width="175.00" height="175.00" fill="#507cc0" fill-opacity="0.07" stroke="#507cc0" stroke-width="1.5" stroke-dasharray="5 3"><title>24 V converter + cooling bay; proposed reservation</title></rect>
+<text x="504.00" y="319.00" font-size="10">boost_bay</text>
+<rect x="125.00" y="490.00" width="372.50" height="257.50" fill="#478469" fill-opacity="0.07" stroke="#478469" stroke-width="1.5" stroke-dasharray="5 3"><title>F · filter and plenum; proposed reservation</title></rect>
+<text x="129.00" y="504.00" font-size="10">filter_chamber</text>
+<rect x="70.00" y="85.00" width="50.00" height="50.00" fill="#9b6379" fill-opacity="0.07" stroke="#9b6379" stroke-width="1.5" stroke-dasharray="5 3"><title>Joint front_left; proposed reservation</title></rect>
+<rect x="690.00" y="85.00" width="50.00" height="50.00" fill="#9b6379" fill-opacity="0.07" stroke="#9b6379" stroke-width="1.5" stroke-dasharray="5 3"><title>Joint front_right; proposed reservation</title></rect>
+<rect x="70.00" y="695.00" width="50.00" height="50.00" fill="#9b6379" fill-opacity="0.07" stroke="#9b6379" stroke-width="1.5" stroke-dasharray="5 3"><title>Joint rear_left; proposed reservation</title></rect>
+<rect x="500.00" y="690.00" width="35.00" height="60.00" fill="#9b6379" fill-opacity="0.07" stroke="#9b6379" stroke-width="1.5" stroke-dasharray="5 3"><title>Joint rear_inboard; proposed reservation</title></rect>
+<rect x="130.00" y="95.00" width="240.00" height="205.00" fill="#507cc0" fill-opacity="0.07" stroke="#507cc0" stroke-width="1.5" stroke-dasharray="5 3"><title>P · core protection / logic; proposed reservation</title></rect>
+<text x="134.00" y="109.00" font-size="10">core_power</text>
+<rect x="420.00" y="95.00" width="260.00" height="207.50" fill="#507cc0" fill-opacity="0.07" stroke="#507cc0" stroke-width="1.5" stroke-dasharray="5 3"><title>Pi4 + cooling and cables; proposed reservation</title></rect>
+<text x="424.00" y="109.00" font-size="10">pi_tray</text>
+<rect x="85.00" y="330.00" width="410.00" height="147.50" fill="#507cc0" fill-opacity="0.07" stroke="#507cc0" stroke-width="1.5" stroke-dasharray="5 3"><title>BAT · battery and lead bends; proposed reservation</title></rect>
+<text x="89.00" y="344.00" font-size="10">battery_tray</text>
+<rect x="375.00" y="80.00" width="40.00" height="220.00" fill="#507cc0" fill-opacity="0.07" stroke="#507cc0" stroke-width="1.5" stroke-dasharray="5 3"><title>Forward sensing / harness; proposed reservation</title></rect>
+<rect x="70.00" y="165.00" width="35.00" height="135.00" fill="#9b6379" fill-opacity="0.07" stroke="#9b6379" stroke-width="1.5" stroke-dasharray="5 3"><title>Left station support; proposed reservation</title></rect>
+<rect x="702.50" y="165.00" width="35.00" height="135.00" fill="#9b6379" fill-opacity="0.07" stroke="#9b6379" stroke-width="1.5" stroke-dasharray="5 3"><title>Right station support; proposed reservation</title></rect>
+<rect x="497.50" y="532.50" width="42.50" height="140.00" fill="#478469" fill-opacity="0.07" stroke="#478469" stroke-width="1.5" stroke-dasharray="5 3"><title>Clean-air bridge / released seal; proposed reservation</title></rect>
+<rect x="282.50" y="315.00" width="242.00" height="175.75" fill="#586275" fill-opacity="0.07" stroke="#586275" stroke-width="1.5" stroke-dasharray="5 3"><title>L · RPLIDAR A1 reference; manufacturer family reference</title></rect>
+<text x="286.50" y="329.00" font-size="10">lidar</text>
+<rect x="153.00" y="108.62" width="501.50" height="112.75" fill="#c58429" fill-opacity="0.13" stroke="#c58429" stroke-width="1" ><title>TriCut listing envelope; manufacturer listing; not verified rotating geometry</title></rect>
+<rect x="65.00" y="255.00" width="60.00" height="180.00" fill="#287c91" fill-opacity="0.13" stroke="#287c91" stroke-width="1" ><title>Left Hogback tire envelope; manufacturer reference</title></rect>
+<rect x="682.50" y="255.00" width="60.00" height="180.00" fill="#287c91" fill-opacity="0.13" stroke="#287c91" stroke-width="1" ><title>Right Hogback tire envelope; manufacturer reference</title></rect>
+<rect x="542.50" y="557.50" width="195.00" height="195.00" fill="#287c91" fill-opacity="0.13" stroke="#287c91" stroke-width="1" ><title>TENTE reference full swivel sweep; manufacturer geometry reference only; not selected for purchase</title></rect>
+<rect x="125.00" y="313.75" width="172.50" height="62.50" fill="#287c91" fill-opacity="0.13" stroke="#287c91" stroke-width="1" ><title>Left Pololu4846 body; manufacturer reference</title></rect>
+<rect x="510.00" y="313.75" width="172.50" height="62.50" fill="#287c91" fill-opacity="0.13" stroke="#287c91" stroke-width="1" ><title>Right Pololu4846 body; manufacturer reference</title></rect>
+<rect x="335.00" y="102.50" width="100.00" height="125.00" fill="#9471b1" fill-opacity="0.13" stroke="#9471b1" stroke-width="1" ><title>WS2403 driver PCB; manufacturer footprint; display thickness only</title></rect>
+<rect x="610.00" y="97.50" width="70.00" height="137.50" fill="#9471b1" fill-opacity="0.13" stroke="#9471b1" stroke-width="1" ><title>Bottom MCU allowance; proposed reservation</title></rect>
+<rect x="547.50" y="512.50" width="177.50" height="175.00" fill="#478469" fill-opacity="0.13" stroke="#478469" stroke-width="1" ><title>Wonsmart bare blower envelope; manufacturer reference</title></rect>
+<rect x="460.00" y="110.00" width="120.00" height="105.00" fill="#9471b1" fill-opacity="0.13" stroke="#9471b1" stroke-width="1" ><title>RoboClaw reference; manufacturer reference; delivered revision unverified</title></rect>
+<rect x="505.00" y="312.50" width="165.00" height="160.00" fill="#507cc0" fill-opacity="0.13" stroke="#507cc0" stroke-width="1" ><title>Converter carrier allowance; proposed PCB outline; not routed</title></rect>
+<rect x="511.25" y="320.00" width="152.50" height="144.75" fill="#507cc0" fill-opacity="0.13" stroke="#507cc0" stroke-width="1" ><title>Cincon CHB100W-24S24 case; manufacturer reference; working electrical baseline</title></rect>
+<rect x="135.00" y="517.50" width="352.50" height="190.00" fill="#478469" fill-opacity="0.13" stroke="#478469" stroke-width="1" ><title>Unmeasured filter allocation; proposed maximum allocation; not a part dimension</title></rect>
+<rect x="512.50" y="321.25" width="150.00" height="142.25" fill="#507cc0" fill-opacity="0.13" stroke="#507cc0" stroke-width="1" ><title>Cincon PH01 thermal pad; manufacturer reference</title></rect>
+<rect x="511.25" y="319.88" width="152.50" height="145.00" fill="#507cc0" fill-opacity="0.13" stroke="#507cc0" stroke-width="1" ><title>Cincon HBT127 / M-C091 heat sink; manufacturer reference envelope; fins omitted</title></rect>
+<rect x="442.50" y="125.00" width="212.50" height="140.00" fill="#507cc0" fill-opacity="0.13" stroke="#507cc0" stroke-width="1" ><title>Pi4 board reference; manufacturer footprint; display thickness only</title></rect>
+<rect x="107.50" y="350.00" width="337.50" height="107.50" fill="#507cc0" fill-opacity="0.13" stroke="#507cc0" stroke-width="1" ><title>Owned battery body; owner measured</title></rect>
+<rect x="537.50" y="342.38" width="100.00" height="100.00" fill="#507cc0" fill-opacity="0.13" stroke="#507cc0" stroke-width="1" ><title>Noctua NF-A4x10 5V fan allowance; manufacturer extended dimensions with pads; cooling candidate</title></rect>
+<text x="60" y="820" font-size="13">275 mm rigid limit · 178 mm scanner top · dashed outlines are allocations</text></g></svg>

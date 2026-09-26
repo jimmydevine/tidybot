@@ -1,0 +1,21 @@
+id,mass_g,moving,kind,basis
+left_integrated_end,7.08960077844607,True,CAD material,"Solid-volume PETG estimate: end wall, bearing pocket, skid ramps and stop boss; hardware separate"
+left_drop_link,3.5692996639090393,True,CAD material,2 mm aluminum profile with pivot/carriage holes and pitch-stop arc slot; keyed attachment unresolved
+left_rail_backing,11.311374574556142,False,CAD material,1 mm steel L-shaped backing with rear-open P screw relief; rail attachment holes still unmodeled
+left_carrier_spacer,0.44491313808141963,False,CAD material,"Carrier offset pad; screws, load-spreading and keyed joints not modeled"
+right_integrated_end,7.089600778446052,True,CAD material,"Solid-volume PETG estimate: end wall, bearing pocket, skid ramps and stop boss; hardware separate"
+right_drop_link,3.5692996639090393,True,CAD material,2 mm aluminum profile with pivot/carriage holes and pitch-stop arc slot; keyed attachment unresolved
+right_rail_backing,11.311374574556142,False,CAD material,1 mm steel L-shaped backing with rear-open P screw relief; rail attachment holes still unmodeled
+right_carrier_spacer,0.4449131380814186,False,CAD material,"Carrier offset pad; screws, load-spreading and keyed joints not modeled"
+hood_and_outlet,42.09231104000006,True,CAD material,"1.4 mm solid walls with rear outlet; end joints, motor mounts, seals and fasteners budgeted separately"
+guide_rails,18.6,False,catalog reference,Q catalog reference: two 62 mm NS-01-17 rails
+guide_carriages,3.4,True,catalog reference,Q catalog reference: two standard NW-02-17 carriages
+pivot_bearings,1,True,catalog reference,Q historical KGLM-03 envelopes; current supplied variant remains to verify
+pivot_retention_and_pitch_pin_hardware,5,True,allowance,Allowance: two pivot joints plus two M2 pitch-stop screws/sleeves; exact axial stack unresolved
+roller_end_inserts_and_guards,10,True,allowance,Allowance: replaceable drive and stationary end inserts; exact purchased roller interfaces are not inferred
+motor_transmission_frame_fastening,7,True,allowance,"Allowance: motor bosses, isolators, hood fasteners and captive inserts; motor/transmission masses remain separate"
+floor_lips_and_shell_seals,8,True,allowance,"Allowance: compliant lips, end seals and hood gasket; not the air-flex plumbing"
+skid_wear_surfaces,2,True,allowance,Allowance: replaceable smooth polymer wear strips on modeled printed ramps
+rail_and_carrier_fastening,5,False,allowance,Allowance: backing/rail attachment and flush cheek attachment; exact fastener access remains unresolved
+counterbalance_and_travel_stop_completion,5,False,allowance,Allowance: springs/anchors and captive rail end stops; spring/friction performance remains unproven
+completion_reserve,10,False,allowance,"Unassigned local completion reserve, not material and not a saving"

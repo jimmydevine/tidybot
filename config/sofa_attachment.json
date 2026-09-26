@@ -1,0 +1,86 @@
+{
+  "revision": "O: floor-resident sofa attachment feasibility, 2026-09-14",
+  "status": "Architecture and space reservations, not fabrication geometry or measured performance",
+  "policy": {
+    "floors": 2,
+    "extensions_per_floor": 1,
+    "extension_flies": false,
+    "transfer_configuration": "Ordinary vacuum, normal powered head installed, extension parked; core and battery carried; cap replaced by lift",
+    "normal_head_parking_nests_per_floor": 1,
+    "normal_heads_carried_between_floors": 1
+  },
+  "removed_normal_head_parts": ["vac_head", "vac_head_drive"],
+  "extension_source_instances": [
+    "extension:extension_duct", "extension:extension_guides",
+    "extension_drive:extension_drive", "extension_drive:tool_stage",
+    "extension_cable:extension_wiring", "extension_air_turn:air_plumbing",
+    "low_head:low_head", "extension_lifter:pad_lift", "extension_lifter:extension_cradle"
+  ],
+  "body_receiver_stock": {"qty": 2, "plate_size_mm": [1.5, 40, 20], "density_g_mm3": 0.00785},
+  "body_interface_allowances": [
+    {"id":"passive_latches_locators", "mass_g":[14,20,35], "basis":"Two station-released positive locks and locators; no onboard latch motor"},
+    {"id":"air_face_stub_seal", "mass_g":[10,15,25], "basis":"Common smooth air face, short stub and gasket; supplements retained common duct/flex allowance"},
+    {"id":"electrical_connector_seat_sensing", "mass_g":[7,10,18], "basis":"Body half of keyed connector, seating/retention sensing"},
+    {"id":"interface_harness", "mass_g":[4,6,12], "basis":"Local interface wiring in addition to existing vacuum harness"},
+    {"id":"interface_fasteners", "mass_g":[8,12,20], "basis":"Receiver and latch installation fasteners"},
+    {"id":"interface_completion", "mass_g":[8,12,24], "basis":"Unfinished local interface detail; explicit allowance"}
+  ],
+  "normal_head_adapter": {"id":"normal_head_adapter", "mass_g":[10,15,25], "basis":"Removable head-side adapter/contact allowance; parked with normal head during sofa work, carried during ordinary vacuum flight"},
+  "extension_additions": [
+    {"id":"external_support_frame", "mass_g":[55,75,115], "basis":"About 49 g stock for two 245 and two 160 mm aluminum strips, 15 x 1.5 mm; balance for brackets/fasteners. Not a strength-qualified frame"},
+    {"id":"two_swivel_supports", "mass_g":[50,70,110], "basis":"Two nonmarking swivel wheel assemblies, 35 g each nominal; no SKU selected"},
+    {"id":"pitch_roll_hitch", "mass_g":[30,45,80], "basis":"Tool-side articulated hitch, yaw restraint, pins/bushings and retainers"},
+    {"id":"extension_adapter_contacts", "mass_g":[12,20,35], "basis":"Tool-side receiver adapter and electrical contacts"},
+    {"id":"extension_local_io", "mass_g":[12,20,35], "basis":"Local interface/control board; shared body supervisor remains aboard"},
+    {"id":"attachment_obstacle_sensors", "mass_g":[15,25,40], "basis":"Front contact/cliff sensing for tool overhang; existing body sensors remain"},
+    {"id":"attachment_extra_harness", "mass_g":[10,15,25], "basis":"Cart/hitch power and sensor wiring beyond inherited moving-stage lead"},
+    {"id":"attachment_completion", "mass_g":[20,35,70], "basis":"External cart installation detail not in inherited telescope allowances"}
+  ],
+  "geometry": {
+    "body_mm": [275,275,180],
+    "stage_count": 6,
+    "stage_length_mm": 245,
+    "overlap_mm": 45,
+    "outer_mm": [48,36],
+    "stage_step_mm": 3,
+    "wall_mm": 1,
+    "outer_stage_min_mm": [113.5,-280,4],
+    "head_min_stowed_mm": [37.5,-340,0],
+    "head_size_mm": [200,60,38],
+    "raised_travel_mm": 12,
+    "sofa_front_y_mm": -360,
+    "sofa_depth_mm": 914.4,
+    "sofa_clearance_mm": 50,
+    "yaw_center_mm": [137.5,105],
+    "tool_frame_min_mm": [22.5,-280,4],
+    "tool_frame_size_mm": [230,245,35],
+    "deployment_drive_min_mm": [28.5,-122,42],
+    "deployment_drive_size_mm": [75,80,35],
+    "hitch_center_mm": [137.5,-15,30],
+    "air_face_center_mm": [137.5,82,30],
+    "air_face_size_mm": [56,3,40],
+    "receiver_plate_mins_mm": [[24.5,40,68],[249,40,68]],
+    "supports_xy_mm": [[50,-220],[225,-220]],
+    "parking_nest_target_mm": [270,450,140]
+  },
+  "air": {"flow_samples_l_s":[0,2,3.6,6], "link_internal_mm":[32,22], "link_length_mm":150, "link_minor_k":2, "link_minor_k_range":[1,4], "friction_factor":0.04},
+  "room_clearance": {
+    "status": "owner_confirmed_approximate",
+    "confirmed_date": "2026-09-14",
+    "question": "For each sofa, is there roughly 650 mm (26 inches) of clear floor directly in front, with about 1 m (40 inches) of turning space nearby?",
+    "answer": "yes",
+    "front_space_mm": 650,
+    "turning_space_diameter_mm": 1000,
+    "scope": "Owner confirms approximate space at both sofas; not a surveyed obstacle map or confirmation of station exchange-apron space."
+  },
+  "head_exchange": {
+    "withdrawal_mm": 100,
+    "direction": "Negative Y, straight toward the front, with body captured and head supported level at nominal height",
+    "legacy_receiver_plate_mins_mm": [[28,40,50],[245.5,40,50]],
+    "station_actuates_locks": true,
+    "normal_head_compliance": "Keep the floating head between a removable fixed adapter and the cleaning head; the dock supports and locates it before unlocking. Do not rigidly latch the moving roller body to the chassis.",
+    "mass_rule": "Same receiver plate stock and existing O/M interface, head-mount, lift and riser allowances. No added hardware or credited overlap savings in this placement review.",
+    "scope": "Nominal straight withdrawal of head/motor allocation boxes and sampled receiver clearance only. Adapter, locks, flex disconnection, pin engagement, fastener access and loaded deflection remain to detail."
+  },
+  "retained_scope": "Keep all N/M vacuum frame, common plumbing, side brush, electronics, sensing, 90 g head-mount, 62 g lift and 22 g riser allowances. Only the five ledger items assigned to vac_head/vac_head_drive leave with the ordinary head. Reconcile replacement hardware during detailed interface design before claiming further savings."
+}

@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TidyBot springs and ride height</title>
+<style>body{font:16px system-ui,sans-serif;color:#20323f;background:#f3f6f8;max-width:1040px;margin:26px auto;padding:0 20px}h1{font-size:28px}main{background:white;padding:22px;border-radius:12px}label{display:inline-block;margin:8px 20px 8px 0}select{font:inherit;max-width:290px;padding:5px}svg{width:100%;height:auto}table{border-collapse:collapse;width:100%;margin:20px 0}td,th{padding:8px;text-align:left;border-bottom:1px solid #d7dfe5}a{color:#176190}.note{color:#526573}.caution{background:#fff1d5;padding:14px;border-radius:8px}input{width:220px}</style>
+<h1>Suspension springs and loaded ride height · L</h1>
+<p>Fixed preload for each module. Change the contents, tool pressure and caster direction to see the calculated resting position.</p>
+<main>
+<label>Module <select id="module"><option value="vacuum">Vacuum</option><option value="mop">Mop</option><option value="low">Sofa vacuum, stowed</option></select></label>
+<label>Contents <select id="contents"></select></label><label>Tool force <select id="contact"></select></label>
+<label>Caster heading <input id="heading" type="range" min="0" max="345" step="15" value="0"> <span id="headingValue"></span></label>
+<svg id="drawing" viewBox="0 0 920 340" role="img" aria-label="Left and right wheel travel against caster direction"></svg>
+<p id="setting"></p><table id="readout"></table><p class="caution" id="limits"></p>
+<p class="note">This setup requires the front anti-tip mounts to move 10 mm upward and the cleaning heads to follow the floor independently. Positive travel means the wheel moves upward relative to the chassis. The curves show nominal hardware and spring properties. They are calculations on an ideal flat floor, not measured handling or wet-floor traction. Tool forces are sensitivity inputs. The extended sofa head is outside this model.</p>
+<p><a href="suspension_springs.md">Full calculation report</a> · <a href="suspension_springs.FCStd">Candidate FreeCAD pod</a> · <a href="suspension_springs_bump.FCStd">Full bump</a> · <a href="suspension_springs_droop.FCStd">Full droop</a> · <a href="../../../docs/SUSPENSION_SPRING_SELECTION.md">Design record</a></p>
+</main>
+<script>const m=__MODEL__;const $=id=>document.getElementById(id);const names={vacuum:'Vacuum',mop:'Mop',low:'Sofa vacuum'};
+function reset(){let b=$('module').value;let c=m.config.contents[b];$('contents').innerHTML=c.map((v,i)=>`<option value="${i}">${v.label}</option>`).join('');$('contents').value=String(m.config.calibration_contents_index[b]);let f=m.config.tool_contact[b].force_n;$('contact').innerHTML=f.map(v=>`<option value="${v}">${v} N</option>`).join('');$('contact').value=String(f[0]);render();}
+function render(){let b=$('module').value,v=m.preferred[b],label=m.config.contents[b][+$('contents').value].label,force=+$('contact').value,heading=+$('heading').value;
+let rows=v.samples.filter(r=>r.contents===label&&r.contact_n===force),r=rows.find(r=>r.heading_deg===heading);if(!r)throw Error('Missing sampled case');
+const x=a=>70+a/360*660,y=t=>285-(t+2.5)/12.5*245;let out='';
+const text=(x,y,s,color='#20323f')=>out+=`<text x="${x}" y="${y}" fill="${color}" font-size="14">${s}</text>`;
+for(let t of [-2.5,0,2.5,5,7.5,10]){out+=`<line x1="70" y1="${y(t)}" x2="730" y2="${y(t)}" stroke="#d9e2e8"/>`;text(18,y(t)+5,t+'');}
+text(70,22,'Wheel travel (mm)');text(755,y(10)+5,'Bump stop');text(755,y(-2.5)+5,'Droop stop');text(480,333,'Caster heading (degrees)');
+for(let a of [0,90,180,270,360])text(x(a)-8,312,a+'');
+for(let side=0;side<2;side++){let color=side?'#a04e23':'#146b9a';out+=`<polyline points="${rows.map(r=>[x(r.heading_deg),y(r.travel_mm[side])].join(',')).join(' ')}" fill="none" stroke="${color}" stroke-width="3"/>`;out+=`<circle cx="${x(heading)}" cy="${y(r.travel_mm[side])}" r="5" fill="${color}"/>`;text(760,150+side*28,side?'Right wheel':'Left wheel',color);}
+$('drawing').innerHTML=out;$('headingValue').textContent=heading+'°';
+$('setting').textContent=`${names[b]}: ${v.calibration.shims_mm[0]} mm left / ${v.calibration.shims_mm[1]} mm right preload spacers. Target resting travel: +${v.calibration.target_travel_mm} mm. Current modeled mass: ${(r.mass_g/1000).toFixed(3)} kg.`;
+let cells=[['Wheel travel',...r.travel_mm.map(t=>t.toFixed(2)+' mm')],['Travel left before bump',...r.travel_mm.map(t=>(10-t).toFixed(2)+' mm')],['Wheel normal force',...r.support_n.slice(0,2).map(n=>n.toFixed(2)+' N')],['Spring length',...r.springs.map(s=>s.length_mm.toFixed(2)+' mm')],['Spring force',...r.springs.map(s=>s.force_n.toFixed(1)+' N')]];
+$('readout').innerHTML='<tr><th>Quantity</th><th>Left</th><th>Right</th></tr>'+cells.map(row=>'<tr>'+row.map(c=>'<td>'+c+'</td>').join('')+'</tr>').join('');
+$('limits').textContent=`Candidate only: ${m.config.preferred_candidate}. ${v.sensitivity.installed_failures} of 16 assumed calibrated spring-tolerance combinations fail a full-travel spring screen. Nominal full-bump margin above catalog load length, after the 0.5 mm reserve: ${v.installed.working_length_margin_after_reserve_mm.toFixed(2)} mm. Supplier tolerances and floating-head clearance remain to resolve.`;}
+$('module').addEventListener('change',reset);$('contents').addEventListener('change',render);$('contact').addEventListener('change',render);$('heading').addEventListener('input',render);reset();
+</script></html>

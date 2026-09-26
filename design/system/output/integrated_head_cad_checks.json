@@ -1,0 +1,154 @@
+{
+  "source_fingerprint": "41f03ea02c2a917baeb2c7984d7a63319dc2587fb2b5664c99d967a17b3cfa6c",
+  "fabrication_release": false,
+  "pose_count": 105,
+  "intersections": [],
+  "withdrawal_intersections": [],
+  "pitch_stop_controls": [
+    {
+      "angle_deg": -7,
+      "side": "left",
+      "interference_mm3": 0.4217592199592065
+    },
+    {
+      "angle_deg": -7,
+      "side": "right",
+      "interference_mm3": 0.4217592199592065
+    },
+    {
+      "angle_deg": 7,
+      "side": "left",
+      "interference_mm3": 0.4217592199592407
+    },
+    {
+      "angle_deg": 7,
+      "side": "right",
+      "interference_mm3": 0.42175921995924076
+    }
+  ],
+  "valid_solids": {
+    "left_rail_backing": true,
+    "left_carrier_spacer": true,
+    "right_rail_backing": true,
+    "right_carrier_spacer": true,
+    "left_integrated_end": true,
+    "left_drop_link": true,
+    "right_integrated_end": true,
+    "right_drop_link": true,
+    "hood_and_outlet": true
+  },
+  "mass_rows": [
+    {
+      "id": "left_integrated_end",
+      "mass_g": 7.08960077844607,
+      "volume_mm3": 5582.36281767407,
+      "moving": true,
+      "centre_mm": [
+        34.81868638581007,
+        36.18405725538667,
+        21.936873390917476
+      ],
+      "basis": "Solid-volume PETG estimate: end wall, bearing pocket, skid ramps and stop boss; hardware separate"
+    },
+    {
+      "id": "left_drop_link",
+      "mass_g": 3.5692996639090393,
+      "volume_mm3": 1321.9628384848293,
+      "moving": true,
+      "centre_mm": [
+        26.5,
+        34.489040714789134,
+        27.98572515196022
+      ],
+      "basis": "2 mm aluminum profile with pivot/carriage holes and pitch-stop arc slot; keyed attachment unresolved"
+    },
+    {
+      "id": "left_rail_backing",
+      "mass_g": 11.311374574556142,
+      "volume_mm3": 1440.9394362491903,
+      "moving": false,
+      "centre_mm": [
+        19.000000000000004,
+        32.885732940641525,
+        52.598600085667606
+      ],
+      "basis": "1 mm steel L-shaped backing with rear-open P screw relief; rail attachment holes still unmodeled"
+    },
+    {
+      "id": "left_carrier_spacer",
+      "mass_g": 0.44491313808141963,
+      "volume_mm3": 350.32530557592094,
+      "moving": false,
+      "centre_mm": [
+        21.1,
+        50.98393913374212,
+        81.59001560317151
+      ],
+      "basis": "Carrier offset pad; screws, load-spreading and keyed joints not modeled"
+    },
+    {
+      "id": "right_integrated_end",
+      "mass_g": 7.089600778446052,
+      "volume_mm3": 5582.362817674057,
+      "moving": true,
+      "centre_mm": [
+        240.18131361419,
+        36.18405725538668,
+        21.936873390917494
+      ],
+      "basis": "Solid-volume PETG estimate: end wall, bearing pocket, skid ramps and stop boss; hardware separate"
+    },
+    {
+      "id": "right_drop_link",
+      "mass_g": 3.5692996639090393,
+      "volume_mm3": 1321.9628384848293,
+      "moving": true,
+      "centre_mm": [
+        248.49999999999997,
+        34.489040714789134,
+        27.98572515196022
+      ],
+      "basis": "2 mm aluminum profile with pivot/carriage holes and pitch-stop arc slot; keyed attachment unresolved"
+    },
+    {
+      "id": "right_rail_backing",
+      "mass_g": 11.311374574556142,
+      "volume_mm3": 1440.9394362491903,
+      "moving": false,
+      "centre_mm": [
+        256.00000000000006,
+        32.885732940641525,
+        52.598600085667606
+      ],
+      "basis": "1 mm steel L-shaped backing with rear-open P screw relief; rail attachment holes still unmodeled"
+    },
+    {
+      "id": "right_carrier_spacer",
+      "mass_g": 0.4449131380814186,
+      "volume_mm3": 350.32530557592014,
+      "moving": false,
+      "centre_mm": [
+        253.90000000000003,
+        50.98393913374212,
+        81.59001560317154
+      ],
+      "basis": "Carrier offset pad; screws, load-spreading and keyed joints not modeled"
+    },
+    {
+      "id": "hood_and_outlet",
+      "mass_g": 42.09231104000006,
+      "volume_mm3": 33143.55200000005,
+      "moving": true,
+      "centre_mm": [
+        137.49999999999991,
+        36.71041269203729,
+        37.3081596082399
+      ],
+      "basis": "1.4 mm solid walls with rear outlet; end joints, motor mounts, seals and fasteners budgeted separately"
+    }
+  ],
+  "minimum_roller_clearance_mm": 0.49999999999993844,
+  "minimum_guide_clearance_mm": 2.9986424696098375,
+  "scope": "Actual modeled frame/hood/link/backing solids versus P/N and modified H allocations over Q poses; protected purchased envelopes and 120 mm withdrawal with head raised. Rail/carriage overlap, link/carriage face and guide-envelope tangency are intentional. Backing/guide and spacer/cheek face contact is intentional. Bearing pockets and stop slots are checked. Pivot fasteners, carriage antirotation, rail screws/end stops, motor/end inserts, flexible hose and powered lift joints are not modeled.",
+  "withdrawal_samples": 121
+}

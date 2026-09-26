@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="620" viewBox="0 0 820 620">
+<defs><marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#215a8e"/></marker></defs>
+<rect width="820" height="620" fill="#f6f8fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#15243a;font-size:17px} .note{font-size:14px} .dim{stroke:#215a8e;stroke-width:2;marker-start:url(#tip);marker-end:url(#tip)} .guide{stroke:#215a8e;stroke-width:1.5;stroke-dasharray:5 4}</style>
+<text x="35" y="32" font-weight="bold">Mounting holes and raised center ring: owner measurements</text>
+<text x="35" y="57" class="note">Purple motor up, intake lip on the table. The motor-side datum is the duct end, excluding the motor.</text>
+<rect x="320" y="135" width="160" height="282" rx="4" fill="#c7ddd3" stroke="#52675d" stroke-width="2"/>
+<rect x="318.3783783783784" y="259.1287878787879" width="163.24324324324326" height="6.59090909090909" fill="#52675d"/>
+<rect x="307" y="417" width="186" height="8" fill="#52675d"/>
+<rect x="370" y="85" width="60" height="50" rx="5" fill="#ac538f" stroke="#68345d"/>
+<text x="456" y="111" class="note">Purple motor</text>
+<text x="345" y="305">Fan housing</text>
+<rect x="480" y="218.4848484848485" width="36" height="87.87878787878788" fill="#c7ddd3" stroke="#52675d" stroke-width="2"/>
+<circle cx="498" cy="262.42424242424244" r="7" fill="white" stroke="#215a8e" stroke-width="2"/>
+<text x="343" y="241.42424242424244">Hole center</text>
+<line x1="444" y1="246.42424242424244" x2="487" y2="259.42424242424244" stroke="#215a8e" stroke-width="2" marker-end="url(#tip)"/>
+<line x1="498" y1="262.42424242424244" x2="590" y2="262.42424242424244" class="guide"/>
+<line x1="480" y1="135" x2="590" y2="135" class="guide"/>
+<line x1="580" y1="135" x2="580" y2="262.42424242424244" class="dim"/>
+<text x="600" y="191">29 mm from</text>
+<text x="600" y="214">motor-side duct end</text>
+<line x1="580" y1="262.42424242424244" x2="580" y2="425" class="dim"/>
+<text x="600" y="344">D = 37 mm</text>
+<text x="600" y="368">from intake face</text>
+<line x1="315" y1="135" x2="249" y2="135" class="guide"/>
+<line x1="260" y1="135" x2="260" y2="425" class="dim"/>
+<text x="120" y="280">66 mm duct</text>
+<text x="120" y="301" class="note">Motor excluded</text>
+<rect x="100" y="425" width="610" height="20" fill="#d4bd9a" stroke="#88704e"/>
+<text x="110" y="470">Tabletop</text>
+<text x="319" y="470" class="note">Intake lip rests here</text>
+<text x="35" y="508">Ear spans 27–47 mm from intake; hole centered at 37 mm.</text>
+<text x="35" y="535">Dark ring: Ø75.5 × 1.5 mm; center 37 mm from intake.</text>
+<text x="35" y="562" class="note">Ring edges: 36.25–37.75 mm. Cradle groove: Ø76.1 × 2.5 mm, same center.</text>
+<text x="35" y="595" class="note">Coordinates use the owner measurements. Remaining body profile, motor size and ear corners are schematic.</text>
+</svg>

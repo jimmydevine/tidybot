@@ -1,0 +1,52 @@
+[
+  {
+    "file": "vacuum",
+    "valid_shapes": 75,
+    "fabrication_release": false
+  },
+  {
+    "file": "mop",
+    "valid_shapes": 67,
+    "fabrication_release": false
+  },
+  {
+    "file": "low",
+    "valid_shapes": 75,
+    "fabrication_release": false
+  },
+  {
+    "file": "dust",
+    "valid_shapes": 75,
+    "fabrication_release": false
+  },
+  {
+    "file": "quad10",
+    "valid_shapes": 90,
+    "fabrication_release": false
+  },
+  {
+    "file": "hex10",
+    "valid_shapes": 96,
+    "fabrication_release": false
+  },
+  {
+    "file": "octo10",
+    "valid_shapes": 98,
+    "fabrication_release": false
+  },
+  {
+    "file": "low_extended",
+    "valid_shapes": 75,
+    "fabrication_release": false
+  },
+  {
+    "file": "dust_extended",
+    "valid_shapes": 75,
+    "fabrication_release": false
+  },
+  {
+    "file": "station",
+    "valid_shapes": 21,
+    "fabrication_release": false
+  }
+]

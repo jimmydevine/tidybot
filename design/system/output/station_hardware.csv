@@ -1,0 +1,24 @@
+item,qty,unit,mass_each_g,power_w,basis
+"2020 aluminum extrusion, cut/drilled frame",25,m,440,0,Stock mass allowance; final supplier section controls mass
+2040 gantry extrusion,5,m,720,0,Stock allowance
+"Enclosure, access doors, bulk-container trays",1,set,5500,0,PP panels / aluminum trays; material allowance
+"MGN12 rail and two-block carriages: core Z, top Z/Y, bottom X/Y/Z",8,axis,850,0,Average installed rail/blocks allowance; longest axis 1.6 m; bottom picker Z must also reach battery underside at station z=376 mm
+"TR8x2 screw, anti-backlash nut, end bearings and coupler",3,set,600,0,"Core lift, top lift, bottom picker Z; no gravity axis uses belt alone"
+"NEMA17 >=0.45 N m, 24 V current-controlled drive",6,axis,500,15,"Core Z, top Y/Z, bottom X/Y/Z; target torque, not a selected motor rating"
+"GT2/GT3 belt, idlers and 2:1 vertical reduction",1,set,1500,0,Horizontal motion and synchronous Z; linear guides carry side loads
+"Mechanical catches, load forks and positive tool retainers",1,set,2500,0,Catch springs carry load on power loss; >=20 kg held-assembly design load
+Bottom support/storage trays including arrival vacancy,5,tray,450,0,Each 275 x 335 mm envelope plus structural cradle
+Top cradle plus cap tray and top gripper,1,set,1200,0,1444 mm long intact top parked clear of exchange plane
+Core/module lock actuators and position switches,2,bank,220,12,Common cam bars drive four passive locks simultaneously
+"20 kg weighing platform: four 5 kg load cells, ADC and overload stops",1,set,550,1,Required calibrated mass check; load-cell accuracy not assumed
+"5 L clean, 5 L dirty and 5 L debris containers, removable",3,container,550,0,Empty container allowance; water and debris separate
+"Wet fill/wash pumps, strainer, level/flow/leak sensors and valves",1,set,1500,36,Station targets; backflow break and screened drain
+"Wash pan, scrub roller, drip enclosure and dry-air fan",1,set,1900,60,No heater allocation; drying time depends on humidity
+"Enclosed off-the-shelf vacuum, 5 L bag/filter and dock coupling",1,unit,4200,800,Mains appliance design allowance; keep its original electrical enclosure
+Certified enclosed 24 V >=280 W station DC supply,1,unit,1000,0,"Supply rating, not another load; no specific SKU chosen"
+Four independently controlled CC/CV charge stages; aggregate input allocation shared,1,assembly,1000,180,"4 x 250 g board/thermal allowance using BQ25756 controller reference; 180 W TOTAL station charge input, not per bay. No finished automatic charger selected."
+"Station controller, CAN, motor drivers, watchdog, E-stop and sensors",1,set,850,10,ESP32-class controller; at least 18 home/limit and 8 presence/lock inputs
+"Wire, drag chains, sealed connectors, fasteners and service fittings",1,set,3500,0,Installed allowance
+"Four battery rack bays, guides, individual contacts, thermal sensing and dry enclosure",1,set,1800,4,Empty installed rack allowance; no claim of fire containment; cartridges counted separately
+"Battery pickup adapter, positive capture, latch cam and extended picker Z fittings",1,set,1200,12,Shares existing XYZ bottom picker after bottom stored; no separate full robot arm
+Protected station logic-power umbilical and source/presence interlocks,1,set,180,60,60 W maximum station-side allocation for robot logic during exchange; 40 W delivered 5 V rail

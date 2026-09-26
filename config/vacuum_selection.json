@@ -1,0 +1,455 @@
+{
+  "date": "2026-09-13",
+  "status": "COMPONENTS_ORDERED_INTEGRATION_INCOMPLETE",
+  "consumables": {
+    "rollers": {
+      "manufacturer": "Dreame",
+      "part_number_reference": null,
+      "part_number_basis": "TriCut US replacement listing; exact regional SKU and revision not yet established",
+      "description": "TriCut rubber roller with integral hair cutter",
+      "status": "priority_candidate_integration_unverified",
+      "installed_rollers": 1,
+      "reference_envelope_each_mm": null,
+      "published_listing_envelope_mm": [
+        200.6,
+        45.1,
+        45.1
+      ],
+      "dimension_basis": "Manufacturer listing only; installed end interfaces, rotation envelope and complete cassette not verified",
+      "published_listing_weight_g": 200,
+      "weight_basis": "Supplier listing; bare versus packaged mass and complete head mass unverified",
+      "sku_mount_verified": false,
+      "purchase_status": "ordered_awaiting_delivery",
+      "price_usd_each_observed": 49.99,
+      "reason": "Hair pickup and preventing roller/end accumulation take priority over simpler mechanics. Investigate cutting alongside hair-shedding mechanisms; final comparative performance and fit unproven.",
+      "source": "https://www.dreametech.com/products/anti-tangle-roller-brush",
+      "brush_swap_test_source": "https://vacuumwars.com/dreame-l40-review/",
+      "test_limit": "Complete L40 brush swap; does not prove this custom head or repeated pickup of the owners dog-hair mix on wood/tile",
+      "drive_interface_verified": false,
+      "required_speed_torque_known": false,
+      "purchase_report_date": "2026-09-13",
+      "order_reference_basis": "Owner confirmed category order; exact model/revision and quantity inferred from preceding recommendation, not an invoice"
+    },
+    "filter": {
+      "manufacturer": "Roborock",
+      "part_number_reference": "SDLW05RR",
+      "part_number_basis": "Japanese manufacturer catalog S7/S8-family reference; match region and revision before making mount",
+      "description": "S7/S8-family washable filter; Filter-A in cited US Amazon listing",
+      "status": "preferred_candidate",
+      "installed_elements": 1,
+      "pack_quantity": 2,
+      "reference_body_mm": null,
+      "reference_tab_mm": null,
+      "dimension_basis": "Exact individual element and seal dimensions unverified; retail pack dimensions and old s-series dimensions are not fabrication geometry",
+      "sku_mount_verified": false,
+      "purchase_status": "ordered_awaiting_delivery",
+      "price_usd_per_pack_observed": 32.99,
+      "pressure_loss_curve_available": false,
+      "filtration_basis": "Roborock S7 page describes E11 and cites third-party EN 1822-1:2009 testing; this does not establish custom-system efficiency or aftermarket media properties",
+      "reason": "Documented wash/dry maintenance and filter classification; no verified resistance or size advantage over the s-series filter",
+      "source": "https://us.roborock.com/products/roborock-washable-filter-x2-for-roborock-s7-series",
+      "rating_source": "https://us.roborock.com/pages/roborock-s7",
+      "model_reference_source": "https://jp.roborock.com/pages/accessories",
+      "amazon_url": "https://www.amazon.com/dp/B08XZHW5ZQ",
+      "amazon_offer_note": "Retrieved page includes Roborock Technology Co. Ltd seller and Amazon fulfillment, plus conflicting availability text; selected variant and live dispatch unconfirmed",
+      "purchase_report_date": "2026-09-13",
+      "order_reference_basis": "Owner confirmed category order; exact model/revision and quantity inferred from preceding recommendation, not an invoice"
+    }
+  },
+  "preferred_blower": {
+    "kit": "BIQU Universal Turbo Kit V1.0",
+    "kit_part_number": "1060000677",
+    "blower": "Wonsmart WS7040-24-V200",
+    "driver": "WS2403DY01V04",
+    "adapter_included": true,
+    "purchase_status": "ordered_awaiting_delivery",
+    "motor_supply_v": 24,
+    "published_blower_envelope_mm": [
+      71,
+      70,
+      37.5
+    ],
+    "driver_pcb_mm": [
+      50,
+      40
+    ],
+    "adapter_pcb_mm": [
+      38,
+      38
+    ],
+    "installed_mass_g": null,
+    "dimension_note": "Published bare hardware dimensions; add connectors, air fittings, wire bends, vibration mounts and cooling clearance",
+    "release_conditions": [
+      "Exact supplied blower and controller revision and applicable performance curve established; generic motor number or kit marketing alone is insufficient",
+      "24 V branch, startup behavior, thermal duty and hardware default-off control integrated",
+      "Sealed filter/duct/exhaust pressure losses checked in the actual cleaning module",
+      "Complete 3D placement including core pockets and service sweeps"
+    ],
+    "sources": [
+      "https://global.bttwiki.com/Universal%20Turbo%20Kit.html",
+      "https://github.com/bigtreetech/Universal-Turbo-Kit/blob/master/Manual/Universal%20Turbo%20Kit%20User%20Manual.pdf"
+    ],
+    "offers": [
+      {
+        "supplier": "BIQU",
+        "price_usd": 53.99,
+        "availability": "Add to cart shown; dispatch not independently confirmed",
+        "url": "https://biqu.equipment/products/universal-turbo-kit"
+      },
+      {
+        "supplier": "Fabreeko",
+        "price_usd": 74.99,
+        "availability": "Listing includes hose; page exposes conflicting stock template text, so dispatch unconfirmed",
+        "url": "https://www.fabreeko.com/products/biqu-universal-turbo-kit-cpap-fan-for-3d-printer"
+      },
+      {
+        "supplier": "3DJake",
+        "price_usd": 67.62,
+        "availability": "Six shown; international delivery and charges apply",
+        "url": "https://www.3djake.com/biqu/universal-turbo-kit"
+      }
+    ],
+    "kit_required": false,
+    "kit_reason": "Documented retail source for blower and matched driver; adapter and printer accessories are convenience extras, not an established suction improvement.",
+    "alternative_procurement": "Separately sourced Wonsmart blower with its specified controller; verify exact electronics revision and applicable curve, then compare total delivered cost and availability.",
+    "adapter_installation": "Optional pending robot-to-driver electrical interface verification; included kit dimensions are reference reservations, not a requirement to install the adapter.",
+    "purchase_report_date": "2026-09-13",
+    "order_reference_basis": "Owner confirmed category order; exact model/revision and quantity inferred from preceding recommendation, not an invoice"
+  },
+  "sources": {
+    "biqu_manual": {
+      "url": "https://raw.githubusercontent.com/bigtreetech/Universal-Turbo-Kit/master/Manual/Universal%20Turbo%20Kit%20User%20Manual.pdf",
+      "sha256": "3e351539b0003c90ad65d398eb80b841be9d8c07cef3e665c7abca91a8f33fca",
+      "pages": "3: motor table and curve; 4: driver; 5-6: dimensions"
+    },
+    "wonsmart_drawing": {
+      "url": "https://www.wonsmartmotor.com/uploads/WS7040-24-V200.pdf",
+      "sha256": "c5fefa53825f4b265f9873efeb86eca80c9c82578225baa90d7ac5a04b2a68e5",
+      "pages": "1; different curve from BIQU manual, revision field blank"
+    },
+    "micronel_datasheet": {
+      "url": "https://www.micronel.com/wp-content/uploads/2025/04/U51DL-012KK-4.pdf",
+      "sha256": "58ec3c00cc4cd5f3abfb2a9ae121e86c38370b9c225c688ec475d00ce07b0369",
+      "pages": "1: 12 V curve; 2: inconsistent performance table; 5: continuous limits"
+    }
+  },
+  "curve_note": "Manually read approximate points from published plots; no measurements or guaranteed tolerance envelope. Linear interpolation only inside each curve. Preserve conflicting curves separately.",
+  "curves": [
+    {
+      "id": "biqu_kit_24v",
+      "label": "BIQU kit manual, 24 V",
+      "source_id": "biqu_manual",
+      "flow_unit": "m3/h",
+      "pressure_unit": "kPa",
+      "points": [
+        [
+          0,
+          6.6
+        ],
+        [
+          4,
+          6.1
+        ],
+        [
+          8,
+          5.5
+        ],
+        [
+          12,
+          4.5
+        ],
+        [
+          14,
+          3.8
+        ],
+        [
+          18,
+          2.6
+        ],
+        [
+          20,
+          2.0
+        ],
+        [
+          22,
+          1.2
+        ],
+        [
+          24,
+          0.6
+        ],
+        [
+          25.5,
+          0
+        ]
+      ],
+      "tabulated_working_point": {
+        "flow_m3_per_h": 13,
+        "pressure_kpa": 4,
+        "current_a": 1.9,
+        "voltage_v": 24
+      }
+    },
+    {
+      "id": "wonsmart_drawing_24v",
+      "label": "Wonsmart separate drawing, 24 V",
+      "source_id": "wonsmart_drawing",
+      "flow_unit": "m3/h",
+      "pressure_unit": "kPa",
+      "points": [
+        [
+          0,
+          6.7
+        ],
+        [
+          4,
+          6.0
+        ],
+        [
+          6,
+          5.5
+        ],
+        [
+          8,
+          4.5
+        ],
+        [
+          10,
+          3.9
+        ],
+        [
+          12,
+          3.3
+        ],
+        [
+          14,
+          2.7
+        ],
+        [
+          16,
+          2.0
+        ],
+        [
+          18,
+          1.5
+        ],
+        [
+          19,
+          0.8
+        ],
+        [
+          20,
+          0.3
+        ],
+        [
+          21,
+          0
+        ]
+      ],
+      "tabulated_working_point_bounds": {
+        "flow_m3_per_h_greater_than": 12,
+        "pressure_kpa": 3,
+        "current_a_less_than": 2.5,
+        "voltage_v": 24
+      }
+    },
+    {
+      "id": "micronel_12v_graph",
+      "label": "Micronel U51DL-012KK-4, 12 V graph",
+      "source_id": "micronel_datasheet",
+      "flow_unit": "L/min",
+      "pressure_unit": "kPa",
+      "points": [
+        [
+          0,
+          3.5
+        ],
+        [
+          100,
+          2.6
+        ],
+        [
+          180,
+          2.0
+        ],
+        [
+          200,
+          1.8
+        ],
+        [
+          300,
+          0.9
+        ],
+        [
+          350,
+          0.4
+        ],
+        [
+          400,
+          0
+        ]
+      ],
+      "tabulated_working_point": {
+        "flow_lpm": 180,
+        "pressure_kpa": 2.5,
+        "power_w": 30
+      },
+      "conflict": "Table point and shutoff/free-flow endpoints differ from plotted 12 V curve; do not merge or substitute the 15 V curve. 51,400 RPM static table entry exceeds 50,000 RPM continuous limit."
+    }
+  ],
+  "system_scenarios": [
+    {
+      "id": "clean",
+      "label": "Assumed clean system",
+      "reference_flow_lps": 4,
+      "reference_pressure_kpa": 2
+    },
+    {
+      "id": "loaded",
+      "label": "Assumed loaded system",
+      "reference_flow_lps": 3,
+      "reference_pressure_kpa": 3
+    }
+  ],
+  "system_scenario_note": "Designer-selected sensitivity cases, P=P_ref*(Q/Q_ref)^2, not measured filter curves or established pickup requirements. Total includes head, duct, bin, filter and exhaust. Real filter behavior need not be quadratic.",
+  "duct_proposal": {
+    "clear_section_mm": [
+      32,
+      22
+    ],
+    "length_mm": 180,
+    "assumed_air_density_kg_per_m3": 1.2,
+    "assumed_darcy_friction_factor": 0.03,
+    "assumed_total_minor_loss_coefficient": 3,
+    "note": "Sizing example only; smooth rigid passage after a short compliant head joint. No small printer hose on the debris side. Does not establish resistance of the complete system."
+  },
+  "unresolved": [
+    "Exact TriCut revision, end interfaces, stationary restraint, cutter actuation and required speed/torque; compare complete hair-shedding alternatives",
+    "Exact current filter seal/tab geometry, installed holder/plenum size and clean/loaded resistance; no custom-system filtration rating",
+    "Roller drive, guarded cutter servicing, side-brush hub and drive, jam sensing and permitted clearing direction",
+    "Current brush/filter placement including core pockets and service paths; earlier single/dual-roller assumptions do not validate fit",
+    "24 V converter, actual complete-system resistance and complete subassembly BOM"
+  ],
+  "recommendation_record": "docs/VACUUM_RECOMMENDATION_REVIEW.md",
+  "previous_consumables": {
+    "rollers": {
+      "manufacturer": "iRobot",
+      "part_number": "4639309",
+      "description": "e/i/j family complementary rubber roller pair",
+      "installed_pairs": 1,
+      "reference_envelope_each_mm": [
+        184.15,
+        28
+      ],
+      "dimension_basis": "Owner's unidentified short rollers; NOT verified dimensions of genuine 4639309",
+      "sku_mount_verified": false,
+      "purchase_status": "not_ordered",
+      "price_usd_per_pair": 39.99,
+      "availability_observed": "iRobot page says approximately two weeks; Lowe's exact pair listing no longer sold; Home Depot lists replenishment kit 4639168",
+      "source": "https://www.irobot.com/en_US/dual-multi-surface-rubber-brushes-for-roomba-combo-and-roomba-e,-i,-and-j-series-and-roomba-combo-10-max/4639309.html"
+    },
+    "filter": {
+      "manufacturer": "iRobot",
+      "part_number": "4643682",
+      "description": "s-series high-efficiency filter, sold in three-packs",
+      "installed_elements": 1,
+      "pack_quantity": 3,
+      "reference_body_mm": [
+        136,
+        76,
+        14
+      ],
+      "reference_tab_mm": [
+        20,
+        6.5,
+        5
+      ],
+      "dimension_basis": "Owner-measured aftermarket s9-compatible element; genuine SKU sealing dimensions unverified",
+      "sku_mount_verified": false,
+      "purchase_status": "not_ordered",
+      "price_usd_per_pack": 39.99,
+      "availability_observed": "iRobot lists in stock; Lowe's has a listing with location-dependent availability",
+      "pressure_loss_curve_available": false,
+      "source": "https://www.irobot.com/en_US/high-efficiency-filter,-3-pack-for-roomba-s-series/4643682.html"
+    }
+  },
+  "previous_consumables_note": "Superseded dual-roller and s-series filter proposal; dimensions are owner references, not current preferred-part geometry.",
+  "selection_policy": "Hair delivered into the bin is the primary objective; preventing roller/end accumulation and manual detangling takes priority over simpler brush mechanics. Size limits remain fixed. Reuse does not determine selection; current custom-head performance and complete fit are unverified.",
+  "roller_alternatives": {
+    "plain_rubber_fallback": {
+      "manufacturer": "Roborock",
+      "part_number_reference": "SDZS05RR",
+      "part_number_basis": "Japanese manufacturer catalog reference for S7/Q7 Max/Qrevo single rubber brush; verify regional revision against exact purchased part",
+      "description": "Single serviceable all-rubber main roller",
+      "status": "fallback_candidate",
+      "installed_rollers": 1,
+      "reference_envelope_each_mm": null,
+      "dimension_basis": "Exact installed dimensions and end interfaces not verified; do not reuse the old 184.15 x 28 mm pair geometry",
+      "sku_mount_verified": false,
+      "purchase_status": "not_ordered",
+      "price_usd_each_observed": 22.99,
+      "reason": "Documented serviceability and simpler mechanics; hair pickup and preventing accumulation take priority over this simplicity.",
+      "source": "https://us.roborock.com/products/s7-main-brush",
+      "model_reference_source": "https://jp.roborock.com/pages/accessories",
+      "maintenance_source": "https://support.roborock.com/hc/en-us/article_attachments/900008254623",
+      "us_amazon_offer_verified": false
+    },
+    "hair_shedding_comparison": {
+      "families": [
+        "Dreame HyperStream DuoBrush",
+        "Roborock DuoDivide"
+      ],
+      "status": "compare_complete_mechanisms",
+      "exact_part_selected": false,
+      "note": "Distinct mechanisms; full drive, supports and inlet geometry required. Whole-robot tests do not establish brush-only superiority in the custom head.",
+      "sources": [
+        "https://vacuumwars.com/dreame-l60-ultra-pe-review/",
+        "https://au.roborock.com/pages/roborock-qrevo-2-pro"
+      ]
+    },
+    "same_family_comparison_control": {
+      "manufacturer": "Dreame",
+      "description": "Dreame Rubber Brush; L40 Ultra / X40 Ultra compatibility family",
+      "status": "comparison_sample_candidate",
+      "part_number_reference": null,
+      "source": "https://www.dreametech.com/products/l20-ultra-roller-brush",
+      "price_usd_each_observed": 22.99,
+      "published_listing_envelope_mm": [
+        200.1,
+        42.2,
+        42.2
+      ],
+      "published_listing_weight_g": 62.8,
+      "dimension_mass_basis": "Manufacturer listing; exact installed geometry and bare weight unverified",
+      "purchase_status": "ordered_awaiting_delivery",
+      "quantity_for_comparison": 1,
+      "carried_with_tricut": false,
+      "shared_cassette_fit_verified": false,
+      "reason": "Same host-model compatibility supports trying a roller-only change in one cassette; purchased ends restraint guard and floor contact still need matching",
+      "purchase_report_date": "2026-09-13",
+      "order_reference_basis": "Owner confirmed category order; exact model/revision and quantity inferred from preceding recommendation, not an invoice"
+    }
+  },
+  "comparison_plan": "docs/VACUUM_CASSETTE_PLAN.md",
+  "current_build_plan": "docs/VACUUM_MODULE_NEXT_PASS.md",
+  "order_report": {
+    "reported_date": "2026-09-13",
+    "owner_statement": "rollers, filters and blower kit ordered but will also take delivery time",
+    "confirmed_categories": [
+      "rollers",
+      "filters",
+      "blower kit"
+    ],
+    "reference_mapping_basis": "Assumed to refer to the immediately preceding Dreame TriCut/plain comparison, Roborock S7/S8 filter and BIQU kit recommendations; exact purchased variants and quantities not reported",
+    "exact_order_lines_verified": false,
+    "actual_costs_known": false,
+    "received": false
+  },
+  "integration_study": {
+    "input": "config/vacuum_integration.json",
+    "viewer": "design/ground/output/vacuum_integration.html",
+    "decisions": "docs/VACUUM_INTEGRATION.md",
+    "hardware": "config/vacuum_build_hardware.csv",
+    "status": "RESERVATIONS_CHECKED_MECHANISMS_AND_POWER_SELECTION_OPEN"
+  }
+}

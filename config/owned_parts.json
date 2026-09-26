@@ -1,0 +1,1068 @@
+{
+  "schema_version": "0.1-inventory",
+  "updated": "2026-09-12",
+  "scope": "Ground robot and station reuse; EDF and bench tools remain in deferred experiment records",
+  "quantity_rule": "null means uncounted; assembly BOM quantities are separate from stock quantities",
+  "mass_rule": "Manufacturer reference values are not measurements of owned hardware",
+  "owned_parts": [
+    {
+      "id": "pololu_4846_drive_motors",
+      "reported_name": "Pololu 4846 75:1 25D HP 12V encoder gearmotor",
+      "ownership": "owner_reported_purchased_awaiting_delivery",
+      "quantity_purchased": 2,
+      "quantity_received": 0,
+      "quantity_owned": 2,
+      "purchase_report_date": "2026-09-12",
+      "expected_delivery": "On the way; date not reported",
+      "actual_purchase_total_usd": null,
+      "assignment": "First everyday vacuum bottom drivetrain",
+      "known": {
+        "purchase_identity_basis": "Owner reports motors on the way following selection of two Pololu 4846 motors",
+        "reference_unit_mass_g": 104,
+        "body_diameter_mm": 25,
+        "body_length_mm": 69,
+        "shaft_diameter_mm": 4,
+        "shaft_extension_mm": 12.5,
+        "dimensions_and_mass_basis": "Manufacturer reference; not measured delivered hardware"
+      },
+      "unknowns": ["actual unit masses", "condition on arrival", "actual purchase price"],
+      "measured_unit_mass_g": null,
+      "sources": ["https://www.pololu.com/product/4846/specs"]
+    },
+    {
+      "id": "roboclaw_imc404",
+      "reported_name": "RoboClaw 2x7A IMC404 dual brushed motor controller",
+      "ownership": "owner_reported_purchased_awaiting_delivery",
+      "quantity_purchased": 1,
+      "quantity_received": 0,
+      "quantity_owned": 1,
+      "purchase_report_date": "2026-09-12",
+      "expected_delivery": "On the way; date not reported",
+      "actual_purchase_total_usd": null,
+      "assignment": "Both wheel motors on first everyday vacuum bottom",
+      "known": {
+        "purchase_identity_basis": "Owner reports controller on the way following IMC404 selection",
+        "control": "Dual encoder feedback with onboard wheel-speed control"
+      },
+      "unknowns": ["supplier", "delivered hardware revision", "mounting envelope of delivered revision", "actual mass", "actual purchase price"],
+      "measured_unit_mass_g": null,
+      "sources": ["https://www.basicmicro.com/RoboClaw-2x7A-Motor-Controller_p_55.html"]
+    },
+    {
+      "id": "st_b_g431b_esc1",
+      "reported_name": "ST B-G431B-ESC1",
+      "ownership": "owner_reported_purchased_awaiting_delivery",
+      "quantity_purchased": 2,
+      "quantity_received": 0,
+      "quantity_owned": 2,
+      "purchase_report_date": "2026-09-06",
+      "expected_delivery": "Later this week per owner; exact date unknown",
+      "actual_purchase_total_usd": null,
+      "assignment": "One per wheel in rolling BDUAV test rig; final robot qualification pending",
+      "known": {
+        "includes": "STM32G431 MCU, three-phase power stage, current sensing and attached ST-LINK programmer",
+        "basis": "ST product documentation; purchase quantity from owner"
+      },
+      "unknowns": [
+        "delivered board revision",
+        "physical condition",
+        "actual mass",
+        "qualified low-current performance with BDUAV motors"
+      ],
+      "measured_unit_mass_g": null,
+      "source": "https://www.st.com/en/evaluation-tools/b-g431b-esc1.html",
+      "integration_note": "Retain both ST-LINK daughterboards. No separate MCU or programmer needed for this rig. Initial firmware checks USB and external encoder only, with motor leads and battery disconnected."
+    },
+    {
+      "id": "battery_3s",
+      "reported_name": "Zeee 3S 5200mAh 50C XT60",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "core battery candidate",
+      "known": {
+        "voltage_nominal_v": 11.1,
+        "capacity_ah": 5.2,
+        "basis": "owner report",
+        "body_dimensions_lwh_mm": [
+          135,
+          43,
+          22
+        ],
+        "lead_exit": "Cables at both corners of one end",
+        "dimension_report_date": "2026-09-06"
+      },
+      "unknowns": [
+        "actual mass",
+        "condition",
+        "cable/connector bend clearance in assembled rig",
+        "final protection/charge interface"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": []
+    },
+    {
+      "id": "rplidar_a1",
+      "reported_name": "SLAMTEC RPLIDAR A1",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "core navigation scanner",
+      "known": {
+        "family_reference_envelope_mm": [
+          96.8,
+          70.3,
+          55
+        ],
+        "family_reference_mass_g": 170,
+        "reference_scope": "A1M8 family; owned revision unconfirmed"
+      },
+      "unknowns": [
+        "revision",
+        "USB/development adapter and cable",
+        "mount geometry"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://www.slamtec.com/cn/lidar/a1spec",
+        "https://wiki.slamtec.com/download/attachments/83066883/LD108_SLAMTEC_rplidar_datasheet_A1M8_v3.0_en.pdf?api=v2&modificationDate=1677786044000&version=1"
+      ]
+    },
+    {
+      "id": "cbm_blower",
+      "reported_name": "CBM-979533B-168",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "first vacuum blower",
+      "known": {
+        "rated_voltage_v": 12,
+        "datasheet_input_range_v": [
+          6,
+          12.6
+        ],
+        "reference_envelope_mm": [
+          97,
+          95,
+          33
+        ],
+        "reference_mass_g": 184,
+        "free_air_flow_cfm": 54.7,
+        "zero_flow_pressure_in_h2o": 5.22,
+        "listed_max_current_a": 3.85,
+        "listed_max_power_w": 48.3,
+        "current_power_conflict": true,
+        "control": "two-wire DC; manufacturer prohibits power/ground PWM speed control",
+        "discontinued": true
+      },
+      "unknowns": [
+        "startup current",
+        "installed pickup and filter-loading behavior",
+        "protection and supply conditioning"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://www.sameskydevices.com/product/resource/cbm-97b.pdf"
+      ]
+    },
+    {
+      "id": "pololu_wheels_90",
+      "reported_name": "Pololu wheels 90x10mm",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "larger drive-wheel alternative; superseded by60mm reference for compact layout",
+      "known": {
+        "diameter_mm": 90,
+        "width_mm": 10,
+        "basis": "owner report",
+        "standard_d_shaft_reference_bore_mm": 3,
+        "variant_note": "standard D-shaft and servo-spline versions exist"
+      },
+      "unknowns": [
+        "exact hub variant",
+        "available quantity",
+        "motor shaft adapter"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://www.pololu.com/product/1435"
+      ]
+    },
+    {
+      "id": "pi4",
+      "reported_name": "Raspberry Pi 4",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "first core navigation computer",
+      "known": {},
+      "unknowns": [
+        "RAM",
+        "cooling/storage",
+        "actual mass and workload"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#power-supply"
+      ]
+    },
+    {
+      "id": "pi5",
+      "reported_name": "Raspberry Pi 5",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "alternative core computer; not simultaneous with Pi4",
+      "known": {},
+      "unknowns": [
+        "RAM",
+        "cooling/storage",
+        "supply and peripheral budget"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#power-supply"
+      ]
+    },
+    {
+      "id": "pi_zero2w",
+      "reported_name": "Raspberry Pi Zero 2 W",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "candidate station communications computer",
+      "known": {},
+      "unknowns": [
+        "station assignment and quantity"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#power-supply"
+      ]
+    },
+    {
+      "id": "pca9685",
+      "reported_name": "PCA9685 16-channel 12-bit PWM board",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "servo signal tasks; not drive-motor power stage",
+      "known": {},
+      "unknowns": [
+        "board maker/revision",
+        "power rail limits",
+        "output-enable access"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://www.nxp.com/docs/en/data-sheet/PCA9685.pdf"
+      ]
+    },
+    {
+      "id": "ga25_motors",
+      "reported_name": "GA25-371; originally reported as GA25-371N",
+      "ownership": "owner_reported",
+      "quantity_owned": 2,
+      "assignment": "optional slow prototype or reserve; faster long-term candidates in docs/DRIVE_MOTOR_OPTIONS.md",
+      "known": {
+        "voltage_v": 12,
+        "listed_output_rpm": 18,
+        "encoder_present": true,
+        "shaft_shape": "D",
+        "basis": "owner-supplied listing and quantity confirmation"
+      },
+      "unknowns": [
+        "shaft diameter",
+        "mounting dimensions",
+        "no-load versus loaded RPM basis",
+        "continuous/stall current",
+        "encoder voltage pinout and counts",
+        "mass"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": []
+    },
+    {
+      "id": "waveshare_servo_hat",
+      "reported_name": "Waveshare Servo Driver HAT",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "alternative servo signal board, likely station use",
+      "known": {},
+      "unknowns": [
+        "exact revision",
+        "regulator limits",
+        "Pi/servo power interconnection"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://files.waveshare.com/upload/1/1b/Servo_Driver_HAT_User_Manual_EN.pdf"
+      ]
+    },
+    {
+      "id": "bduav_2204",
+      "reported_name": "BDUAV 2204-260KV motors",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "Selected for the owner-requested rolling drive experiment; two units required. Final robot traction selection remains open.",
+      "known": {
+        "reported_model": "2204",
+        "reported_kv_rpm_per_v": 260,
+        "basis": "owner report",
+        "wheel_mount_fit_report": "Owner confirms wheel-matching motor face rotates relative to the opposite side; 60 x 8 mm wheel bolts directly to it with M2 fasteners. No separate wheel hub is needed for this attachment; installed screw length and bearing loads remain to qualify.",
+        "photo_filenames": [
+          "PXL_20260906_152221871.jpg"
+        ],
+        "photo_observations": [
+          "Flat cylindrical form, center opening, four face holes and three wires visible; exact dimensions not recorded from caliper photo."
+        ],
+        "wheel_mount_face_rotates": true,
+        "wheel_mount_fastener_thread": "M2",
+        "separate_wheel_hub_required": false,
+        "physical_label_text": "BDUAV 2204-260KV",
+        "physical_label_confirmed_by_owner": true,
+        "motor_diameter_mm": 28,
+        "motor_body_length_mm": 13,
+        "stationary_hole_pattern_mm": [
+          8.5,
+          8.5
+        ],
+        "stationary_hole_pattern_basis": "Owner confirms printed 8.5 mm coupon fits; selected CAD pitch, not a new precision measurement of the motor. Initial reported spacing was 8 mm.",
+        "initial_reported_stationary_hole_pattern_mm": [
+          8,
+          8
+        ],
+        "stationary_coupon_fit_report": {
+          "date": "2026-09-06",
+          "result": "Original 8 mm coupon spacing is too short; owner estimates 0.25-0.5 mm",
+          "proposed_square_pitch_trials_mm": [
+            8.25,
+            8.5
+          ],
+          "confirmed_print_pitch_mm": 8.5,
+          "confirmation_date": "2026-09-06",
+          "owner_confirmation": "the 8.5mm landed",
+          "full_bracket_fit_confirmed": true,
+          "full_bracket_fit_count": 1,
+          "full_bracket_owner_report": "One motor is mounted to the first completed bracket and spins freely; the second bracket is printing with support off",
+          "second_bracket_fit_confirmed": false,
+          "fit_scope": "Unpowered assembly fit only; load capacity and powered performance untested"
+        },
+        "center_through_hole_diameter_mm": 3.4,
+        "geometry_basis": "Owner measurements 2026-09-06; independent of conflicting purchase-page sheet",
+        "center_bore_rotates": true,
+        "stationary_mount_thread": "M2",
+        "stationary_depth_to_obstruction_mm": 4,
+        "initial_reported_center_through_hole_diameter_mm": 4,
+        "center_bore_measurement_basis": "Owner-reported 3.4 mm, corroborated by SpeedyFPV 2204 260KV listing; nominal bore dimension accepted. Instrument not specified; no known-size rod fit claimed.",
+        "center_bore_through_observation": "Owner says motor hole appears to go all the way through; uniform diameter and supported rod length not verified",
+        "matching_listing_reference": {
+          "url": "https://speedyfpv.com/products/2204-gimbal-motor",
+          "owner_supplied_url": "https://speedyfpv.com/products/2204-gimbal-motor?variant=45538392211670",
+          "listed_model": "2204 260KV",
+          "listed_body_dimensions_mm": [
+            27.85,
+            13.1
+          ],
+          "listed_shaft_hole_diameter_mm": 3.4,
+          "applicability": "Model/KV and approximate body dimensions agree with owned BDUAV motor; corroborates nominal bore size, not exact-unit tolerance, current rating or usable engagement length"
+        }
+      },
+      "classification": {
+        "working_hypothesis": "small three-phase brushless gimbal motor",
+        "status": "owner_confirmed_label_conflicting_listing_sheet",
+        "note": "Owner confirms actual motor is marked BDUAV2204-260KV and the ML2206B/160RPM-per-volt image came from its purchase page. The sheet conflicts with the physical label; its numerical ratings are not specifications for the owned motor."
+      },
+      "unknowns": [
+        "quantity",
+        "exact motor datasheet/type",
+        "rated voltage and current",
+        "phase resistance",
+        "continuous torque",
+        "wheel cantilever/radial load rating",
+        "continuous thermal capability at wheel duty",
+        "correct manufacturer/supplier specification for the physically marked2204-260KV variant",
+        "actual center-bore entrance and printed encoder-carrier fit",
+        "powered sensor field quality and controller calibration"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://speedyfpv.com/products/2204-gimbal-motor"
+      ],
+      "background_sources": [
+        "https://docs.simplefoc.com/bldc_motors",
+        "https://docs.simplefoc.com/bldcmotor",
+        "https://docs.simplefoc.com/motion_control",
+        "https://docs.simplefoc.com/torque_control"
+      ],
+      "integration_note": "Owner-requested rolling test uses measured 28 x 13 mm body and M2 stationary holes with an owner-confirmed 8.5 mm printed square pitch, about 4 mm depth to obstruction, rotating center bore now reported as 3.4 mm (measurement method unconfirmed) and direct M2 wheel attachment. One full bracket has a mounted motor that spins freely; the second is printing. Proposed 2 mm stationary screw engagement and inboard AS5600 feedback. Encoder fit, current limits, sustained traction, temperatures and bearing loads must be checked; final robot drive remains unselected.",
+      "unverified_attached_specification": {
+        "id": "attached_ml2206b_160kv",
+        "source_type": "purchase_page_specification_image_attached_by_owner",
+        "received_date": "2026-09-06",
+        "image_title": "ML2206B Motor",
+        "publisher": null,
+        "source_url": null,
+        "applicability_status": "CONFLICTS_WITH_CONFIRMED_PHYSICAL_LABEL_DO_NOT_APPLY",
+        "conflicts_with_prior_owner_report": {
+          "prior_model": "BDUAV2204",
+          "prior_kv_rpm_per_v": 260,
+          "sheet_model": "ML2206B",
+          "sheet_kv_rpm_per_v": 160
+        },
+        "claims": {
+          "model": "ML2206B",
+          "kv_rpm_per_v": 160,
+          "motor_resistance_rm_ohm": 5.6,
+          "no_load_current_a": 0.06,
+          "no_load_test_voltage_v": 7.4,
+          "maximum_continuous_current_a": 1.3,
+          "maximum_power_w": 15,
+          "motor_diameter_mm": 28,
+          "motor_body_length_mm": 15,
+          "bolt_hole_spacing_mm": 12,
+          "bolt_thread_notation": "M2X4",
+          "stator_arms_notation": "12N",
+          "pole_count_notation": "14P",
+          "approximate_motor_mass_g": 23
+        },
+        "interpretation_limits": [
+          "Image claims conflict with the confirmed physical motor label. Do not apply160KV,1.3A,15W,5.6ohm,23g or28x15mm as owned-motor ratings/dimensions without corrected evidence.",
+          "Rm basis (phase or line-to-line) and current convention (phase/bus; RMS/peak) are not stated.",
+          "7.4V is the condition for the no-load-current entry, not an established rated input range.",
+          "15W does not identify input versus shaft power, test speed or operating point; it is not a low-speed torque guarantee.",
+          "M2X4 is copied as printed; it does not prescribe a4mm total screw length through an8mm wheel or establish all mounting-hole geometry.",
+          "Small drawing annotations are not used to override the legible table or owner dimensions.",
+          "23g is an approximate sheet claim; the owned-motor mass remains unmeasured."
+        ],
+        "source_provenance_confirmation": "Owner confirms image came from the purchase page and actual motor label readsBDUAV2204-260KV."
+      },
+      "rolling_test_requested": "2026-09-06: Printed chassis with two BDUAV motors, 60 mm wheels, caster, Pi, battery and secured ballast; measure carried mass and travel time."
+    },
+    {
+      "id": "iflight_2750kv_motors",
+      "reported_name": "iFlight motors; owner confirms four matching 2750 KV units",
+      "ownership": "owner_reported",
+      "quantity_owned": 4,
+      "assignment": "Reserve inventory; possible later propulsion assessment or geared-drive alternative. Not selected for the BDUAV rolling rig or final wheel module.",
+      "known": {
+        "reported_kv_rpm_per_v": 2750,
+        "basis": "Owner answer 2026-09-06: I have 4 motors, 2750 family",
+        "purchase_link": "https://www.amazon.com/iFlight-1800KV-Brushless-Racing-Quadcopter/dp/B0G4VFNTRS",
+        "link_note": "URL wording says 1800KV; use the owner's 2750 KV confirmation. Direct Amazon retrieval failed; XING-E Pro 2207 is the working family identification pending full physical model/revision confirmation."
+      },
+      "manufacturer_family_reference": {
+        "model": "XING-E Pro 2207",
+        "kv_variants_rpm_per_v": [
+          1800,
+          2450,
+          2750
+        ],
+        "mass_including_wires_g": 33.8,
+        "diameter_mm": 28.5,
+        "overall_length_mm": 33.1,
+        "shaft_diameter_mm": 5,
+        "shaft_protruding_length_mm": 13.5,
+        "mounting_hole_pattern_mm": [
+          16,
+          16
+        ],
+        "mounting_fastener": "M3",
+        "basis": "Official iFlight Europe family specifications; not measurements of the four owned units. No operating current or torque limit adopted."
+      },
+      "unknowns": [
+        "full physical model and revision",
+        "actual dimensions, mass and condition",
+        "continuous wheel-duty torque and temperature",
+        "wheel-bearing load capability, hub and feedback integration",
+        "motor and propeller operating point if reconsidered for lift"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://www.amazon.com/iFlight-1800KV-Brushless-Racing-Quadcopter/dp/B0G4VFNTRS",
+        "https://iflight-rc.eu/en/products/xing-e-pro-2207-fpv-motor"
+      ],
+      "integration_note": "High-speed winding does not establish continuous low-speed wheel torque. An encoder/current-controlled direct drive or an engineered reduction is possible, but adds controller qualification and mechanical work versus the existing BDUAV fit rig. Do not infer a mandatory reduction ratio from unloaded speed. Whole-assembly flight remains deferred until carried mass is known."
+    },
+    {
+      "id": "wheels_60_unknown",
+      "reported_name": "60 mm wheels; manufacturer and model unknown",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "current compact everyday-bottom wheel reference",
+      "known": {
+        "diameter_mm": 60,
+        "basis": "owner report",
+        "width_mm": 8,
+        "measurement_date": "2026-09-06",
+        "width_basis": "owner report; owner confirms no hub protrusion",
+        "axle_hole_diameter_mm": 3,
+        "hub_protrusion_beyond_reported_width_mm": 0,
+        "mounting_hole_fit_report": "Owner confirms wheel-matching motor face rotates relative to the opposite side; 60 x 8 mm wheel bolts directly to it with M2 fasteners. No separate wheel hub is needed for this attachment; installed screw length and bearing loads remain to qualify.",
+        "photo_filenames": [
+          "PXL_20260906_152157886.jpg"
+        ],
+        "direct_motor_mount_id": "bduav_2204",
+        "direct_motor_mount_fastener_thread": "M2"
+      },
+      "unknowns": [
+        "quantity",
+        "manufacturer/model",
+        "exact axle-hole/recess profile",
+        "mounting-hole diameter and center spacing",
+        "selected gearmotor hub fit and assembled offset",
+        "tire material",
+        "mass"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [],
+      "integration_note": "Owner reports 60 x 8 mm wheel, 3 mm center hole and no protrusion. BDUAV rotor face directly accepts the wheel with M2 bolts, as owner-confirmed. This direct-face attachment does not use the center hole as a drive shaft. The alternative 25D gearmotor has a 4 mm shaft and still requires a compatible hub/adapter; selected fastener lengths and bearing loads remain open."
+    },
+    {
+      "id": "vacuum_consumables_b088w8hs1y",
+      "reported_name": "s9/s9+ vacuum consumables with two roller length sets; initial link Amazon B088W8HS1Y",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "quantity_unit": "consumables collection; two length sets reported; individual spare counts unknown",
+      "assignment": "first everyday-vacuum consumable candidates",
+      "known": {
+        "asin": "B088W8HS1Y",
+        "reported_component_types": [
+          "rollers",
+          "brushes",
+          "filters"
+        ],
+        "reported_family": "s9/s9+",
+        "roller_sets": [
+          {
+            "id": "long_10in",
+            "reported_length_in": 10,
+            "converted_length_mm": 254,
+            "reported_style_count": 2,
+            "style_labels": [
+              "A",
+              "B"
+            ],
+            "max_uncompressed_fin_diameter_mm_by_style": {
+              "A": 28,
+              "B": 28
+            },
+            "assignment": "oversized-layout alternative;324mm cassette exceeds275mm body constraint"
+          },
+          {
+            "id": "short_7_25in",
+            "reported_length_in": 7.25,
+            "converted_length_mm": 184.15,
+            "reported_style_count": 2,
+            "style_labels": [
+              "A",
+              "B"
+            ],
+            "max_uncompressed_fin_diameter_mm_by_style": {
+              "A": 28,
+              "B": 28
+            },
+            "assignment": "current compact everyday-vacuum reference"
+          }
+        ],
+        "roller_length_note": "Supplied in response to the overall-length question; use as end-to-end layout lengths for now. Working lengths and support spacing remain unknown. A/B are bookkeeping labels only. Decimal conversions do not establish measurement precision.",
+        "filter": {
+          "reported_body_envelope_mm": [
+            136,
+            76,
+            14
+          ],
+          "pull_tab": {
+            "reported_footprint_mm": [
+              20,
+              6.5
+            ],
+            "reported_approximate_rise_mm": 5,
+            "reported_location": "On one side of the filter, centered along the width axis",
+            "exact_face_and_footprint_orientation_verified": false
+          }
+        },
+        "measurement_date": "2026-09-06",
+        "basis": "owner family confirmation and physical dimensions; initial purchase link does not establish contents of both length sets"
+      },
+      "classification": {
+        "reported_family": "Roomba s9/s9+ replacement consumables",
+        "status": "owner_reported_family",
+        "note": "Owner confirms family and two length sets; do not infer identical end fittings or assign a different robot model to the short set. The original Amazon page was unavailable."
+      },
+      "unknowns": [
+        "exact SKU of each length set and current usable quantities",
+        "roller working length and end support/drive geometry",
+        "filter tab face/orientation and position along the other axis",
+        "filter sealing geometry and grip/extraction clearances",
+        "filter pressure loss and filtration performance",
+        "side-brush hub and sweep envelope",
+        "individual component masses"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [
+        "https://www.amazon.com/dp/B088W8HS1Y"
+      ],
+      "background_sources": [
+        "https://www.irobot.com/en_US/dual-multi-surface-rubber-brushes-for-roomba-s-series/4646490.html",
+        "https://answers.irobot.com/knowledge/20962"
+      ],
+      "integration_note": "Current275mm compact bottom proposes one roller of each style from the184.15mm set plus one filter and one side brush. The254mm set is an oversized-layout alternative. Spares stay offboard. A complete powered head and brush drives have not been reported."
+    },
+    {
+      "id": "passive_ball_casters_unknown",
+      "reported_name": "Passive bearing wheels in owner photos; ball-caster type",
+      "ownership": "owner_reported",
+      "quantity_owned": null,
+      "assignment": "One rear support in rolling drive experiment; final robot floor support remains unqualified",
+      "known": {
+        "basis": "owner report plus photo observation",
+        "type": "ball caster / omnidirectional passive support",
+        "photo_observations": [
+          "Exposed metallic-looking ball in a pale housing with two-hole mounting flange and black backing."
+        ],
+        "photo_filenames": [
+          "PXL_20260906_151409697.jpg",
+          "PXL_20260906_151033012.jpg"
+        ],
+        "mount_plate_xy_mm": [
+          28,
+          45
+        ],
+        "overall_height_mm": 13,
+        "reported_mount_height_mm": 3,
+        "measurement_date": "2026-09-06",
+        "mount_height_interpretation": "Owner term: mount height. Treat as mounting flange thickness provisionally, within the reported 13 mm overall height; mounting datum to ball contact remains to detail if selected.",
+        "mount_hole_spacing_mm": 34,
+        "mount_hole_diameter_mm": 3.5,
+        "rolling_rig_mount_report": {
+          "date": "2026-09-07",
+          "quantity": 1,
+          "owner_report": "One caster riser printed and mounted",
+          "scope": "Subassembly only; deck and complete rolling chassis not reported assembled"
+        }
+      },
+      "unknowns": [
+        "manufacturer/model",
+        "quantity",
+        "mounting-face to floor-contact height",
+        "ball diameter and exact material",
+        "hole diameter and spacing",
+        "ball-down load rating and rolling resistance",
+        "hair/grit tolerance and marking on wood/tile",
+        "mass"
+      ],
+      "measured_unit_mass_g": null,
+      "sources": [],
+      "background_sources": [
+        "https://www.pololu.com/category/45/pololu-ball-casters",
+        "https://www.blickle.us/en-us/guide/material-description-wheel-treads"
+      ],
+      "integration_note": "One owned caster selected for the rolling rig on a printed riser; owner reports one riser printed and mounted. Two drive wheels and this rear caster form three floor contacts. Complete chassis height, load and floor-finish suitability remain to check. Earlier 20 x 20 mm final-robot support reservation requires separate revision if this caster is adopted there."
+    },
+    {
+      "id": "drive_rig_as5600",
+      "reported_name": "HiLetgo AS5600 23 x 23 mm module, B09KGWC1PT",
+      "ownership": "owner_reported_received",
+      "quantity_purchased": 2,
+      "quantity_received": 2,
+      "purchase_report_date": "2026-09-06",
+      "assignment": "One per drive-rig motor",
+      "design_target": "Owner-measured HiLetgo 16 x 16 mm corner-hole pattern; revised carrier preserves existing deck attachment",
+      "unknowns": [
+        "PCB thickness and component/connector clearance",
+        "physical revised-carrier fit",
+        "verified electrical configuration",
+        "actual mass"
+      ],
+      "measured_unit_mass_g": null,
+      "known": {
+        "board_outline_mm": [
+          23,
+          23
+        ],
+        "mounting_holes": "Four corner holes on 16 x 16 mm square pattern",
+        "basis": "Owner report 2026-09-06",
+        "listing_identification": "HiLetgo 2pcs AS5600 module with magnet",
+        "hole_pitch_mm": [
+          16,
+          16
+        ],
+        "mount_hole_diameter_mm": 4,
+        "sensor_centered": true,
+        "mount_measurement_date": "2026-09-07"
+      },
+      "sources": [
+        "https://www.amazon.com/dp/B09KGWC1PT"
+      ],
+      "delivery_status_report_date": "2026-09-07",
+      "delivery_status": "Encoders received, owner-confirmed"
+    },
+    {
+      "id": "drive_rig_magnets",
+      "reported_name": "Magnet included with HiLetgo AS5600 encoder",
+      "ownership": "owner_reported_received",
+      "quantity_purchased": null,
+      "quantity_received": null,
+      "purchase_report_date": "2026-09-06",
+      "assignment": "One per drive-rig rotating center bore",
+      "design_target": "Included 4 mm diameter x 2 mm thick magnet; diametric magnetization required for proposed shaft mounting, unverified",
+      "unknowns": [
+        "total received count",
+        "magnetization and grade",
+        "actual magnetic field at sensor and usable gap",
+        "actual mass"
+      ],
+      "measured_unit_mass_g": null,
+      "quantity_received_minimum": 1,
+      "quantity_required_for_rig": 2,
+      "known": {
+        "diameter_mm": 4,
+        "thickness_mm": 2,
+        "measurement_report_date": "2026-09-07",
+        "owner_report": "the magnet that came with it is 4mm diameter by 2mm thickness"
+      },
+      "sources": [
+        "https://www.amazon.com/dp/B09KGWC1PT"
+      ],
+      "purchase_note": "Included magnet reported received. Earlier K&J D42DIA was a design reference; no separate K&J purchase was confirmed.",
+      "carrier_fit": {
+        "report_date": "2026-09-12",
+        "result": "Tape-wrap carrier enters bore but wobbles and lacks reach; centering failed",
+        "replacement_stem_diameter_mm": null,
+        "next_step": "Verify metal rod/bore fit and straight support depth before selecting rod diameter, length and retention; see ENCODER_METAL_ROD.md",
+        "confirmation_date": "2026-09-08",
+        "owner_confirmation": "3.6 fits fine",
+        "full_holder_fit_confirmed": false,
+        "motor_count_tested": null,
+        "confirmed_gauge_diameter_mm": 3.6,
+        "latest_owner_report": "Tape-wrap carrier fits but wobbles; shaft would need to be longer. Owner proposes 3.4 mm steel rod instead.",
+        "installed_holder_stable": false,
+        "actual_insertion_depth_mm": null,
+        "measured_sensor_gap_mm": 4,
+        "requested_neck_extension_mm": 2.5,
+        "wheel_free_with_holder_removed": true,
+        "replacement_fit_confirmed": false,
+        "latest_owner_hypothesis": "Prior drag may have been shaft rubbing the mount edge; contact location unconfirmed"
+      }
+    },
+    {
+      "id": "drive_rig_wattmeter",
+      "reported_name": "KREATORDIRECT 150A wattmeter",
+      "ownership": "owner_reported",
+      "quantity_owned": 1,
+      "assignment": "Manual battery-bus readings on rolling rig tray",
+      "known": {
+        "body_dimensions_lwh_mm": [
+          86,
+          43,
+          25
+        ],
+        "lead_exit": "Two power cables at each end",
+        "dimension_report_date": "2026-09-06",
+        "basis": "Owner dimensions and earlier photograph; body only"
+      },
+      "unknowns": [
+        "cable/connector bend clearance in assembled rig",
+        "actual mass"
+      ],
+      "measured_unit_mass_g": null
+    }
+  ],
+  "confirmed_missing": [
+    {
+      "function": "brushed DC motor drivers",
+      "quantity_owned": 0,
+      "candidate": "Cytron MDD10A Rev2.0",
+      "first_drive_quantity": 1,
+      "source": "https://www.cytron.io/cytron/p-10amp-5v-30v-dc-motor-driver-2-channels",
+      "status": "candidate_not_ordered"
+    },
+    {
+      "function": "standalone microcontroller boards",
+      "quantity_owned": 0,
+      "candidate": "Espressif ESP32-DevKitC V4",
+      "integration_note": "An ESP32 remains a separate ground-module candidate. The two purchased ST motor controllers each include an MCU, so no separate MCU is required for the rolling rig.",
+      "first_bottom_quantity": 1,
+      "complete_system_quantity": null,
+      "source": "https://documentation.espressif.com/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+      "status": "candidate_not_ordered"
+    }
+  ],
+  "derived": {
+    "wheel_speed_m_s_at_listed_motor_rpm": 0.05654866776461628,
+    "basis": "pi *0.06m *18RPM /60 for current60mm wheels; actual loaded performance unmeasured",
+    "wheel_alternatives_at_18_rpm": {
+      "basis": "v = pi * diameter_m * 18 / 60; geometric comparison at equal wheel RPM, not measured loaded speed",
+      "options": [
+        {
+          "inventory_id": "pololu_wheels_90",
+          "diameter_mm": 90,
+          "speed_m_s": 0.08482300164692443
+        },
+        {
+          "inventory_id": "wheels_60_unknown",
+          "diameter_mm": 60,
+          "speed_m_s": 0.05654866776461628
+        }
+      ],
+      "ideal_force_ratio_60_over_90_at_equal_axle_torque": 1.5,
+      "force_note": "F = torque / radius; excludes traction limits, losses and changes in the motor operating point"
+    },
+    "vacuum_consumable_layout": {
+      "roller_length_difference_mm": 69.85,
+      "roller_length_difference_basis": "(10 - 7.25) inches * 25.4 mm/inch; not a measured difference in cleaning swath",
+      "filter_approximate_local_depth_at_tab_mm": 19,
+      "filter_depth_basis": "14mm body + approximately5mm tab rise, assuming the rise is normal to the broad face and additional to body thickness",
+      "filter_depth_limitations": "Derived local envelope only; exact tab placement, seal, fit clearance, grip access and extraction path remain to detail"
+    },
+    "bduav_wheel_drive_screen": {
+      "status": "DIRECT_MOUNT_AND_PHYSICAL_LABEL_CONFIRMED_PERFORMANCE_UNQUALIFIED",
+      "wheel_diameter_mm": 60,
+      "proposed_cleaning_speed_m_s": [
+        0.15,
+        0.25
+      ],
+      "calculated_wheel_rpm": [
+        47.74648292756861,
+        79.57747154594767
+      ],
+      "formula": "wheel_rpm = speed_m_s *60 /(pi *wheel_diameter_m)",
+      "force_example_total_n": 5,
+      "calculated_torque_per_wheel_nm_at_equal_share": 0.075,
+      "force_example_basis": "Illustration only:5N total straight-line tractive force shared equally by two30mm-radius wheels; not measured robot drag or a motor rating. Real needs include turning, ramp, acceleration and reserve.",
+      "continuous_torque_available_nm": null,
+      "conclusion": "Direct M2 wheel mount and physical2204-260KV label are confirmed. Purchase-page ML2206B/160KV image cannot establish owned-motor current, torque, size or mass. Gearmotor remains layout reference while BDUAV is an optional drive candidate.",
+      "motor_pair_mass_g": null,
+      "installed_drive_mass_difference_g": null
+    }
+  },
+  "pending_questions": [
+    {
+      "id": "drive_rig_remaining_inventory",
+      "asked": "2026-09-06",
+      "question": "ST controllers are ordered; AS5600s and an included magnet are received. Which other rig BOM items are already available, especially the Pi regulator, Micro-USB data cables and sensor leads?"
+    },
+    {
+      "id": "drive_rig_outboard_wheel_bolts",
+      "asked": "2026-09-12",
+      "question": "On the outside face of the wheel, how many M2 bolts attach it to the motor, and what is the center-to-center spacing between opposite bolts? Confirm whether their heads are accessible from outside.",
+      "status": "deferred while metal-rod approach is evaluated"
+    },
+    {
+      "id": "drive_rig_bore_support_depth",
+      "asked": "2026-09-12",
+      "question": "How much straight bore length can support a rod without contacting an obstruction? Earlier 4 mm depth refers to M2 screw holes, not this bore.",
+      "status": "partially answered: apparent through-hole; establish close-fitting support length during rod fit",
+      "owner_answer": "looks like this hole goes all the way through",
+      "remaining_scope": "Uniform bore and assembled wheel clearance not verified; wheel center hole was reported as 3 mm"
+    }
+  ],
+  "resolved_questions": [
+    {
+      "id": "drive_rig_deck_print_started",
+      "date": "2026-09-07",
+      "answer": "Deck is printing; completion and assembled fit not yet reported."
+    },
+    {
+      "id": "drive_rig_square_encoder_mount",
+      "asked": "2026-09-06",
+      "question": "For the ordered HiLetgo 23 x 23 mm board: mounting-hole center spacing in both directions, hole diameter, and sensor-chip center position? A dimensioned listing image or measurements on arrival can establish these.",
+      "reason": "Revise carrier mounting pattern and centering without guessing from board size",
+      "source": "https://www.amazon.com/dp/B09KGWC1PT",
+      "date": "2026-09-07",
+      "answer": "Encoders arrived; holes 16 mm center to center, 4 mm diameter; sensor chip centered.",
+      "resolution": "Revise separate encoder carriers for 16 x 16 mm mounting centers using M3 fasteners; preserve deck and motor bracket geometry. PCB thickness/components remain fit allowances."
+    },
+    {
+      "id": "drive_rig_caster_riser_quantity",
+      "date": "2026-09-07",
+      "question": "One or two caster risers for the rolling rig?",
+      "answer": "One rear caster/riser with two drive wheels; owner reports one riser printed and mounted.",
+      "resolution": "Caster/riser subassembly milestone recorded; full chassis contact/level check remains after deck assembly."
+    },
+    {
+      "id": "drive_rig_encoder_purchase_link",
+      "date": "2026-09-06",
+      "question": "Which 23 x 23 mm AS5600 board was ordered?",
+      "answer": "https://www.amazon.com/dp/B09KGWC1PT",
+      "resolution": "HiLetgo module identified; hole dimensions and sensor centering not verified from accessible listing material."
+    },
+    {
+      "id": "drive_rig_battery_meter_fit",
+      "asked": "2026-09-06",
+      "question": "What are the battery and wattmeter body dimensions (length x width x height), and which ends do their wires exit? The current battery allowance is 140 x 50 x 30 mm.",
+      "date": "2026-09-06",
+      "answer": "Battery 135 x 43 x 22 mm, cables at each corner of one end. Wattmeter 86 x 43 x 25 mm, two power cables at each end.",
+      "resolution": "Body dimensions fit existing rig allowances; confirm lead bends and straps during unpowered assembly."
+    },
+    {
+      "id": "drive_rig_feedback_order",
+      "date": "2026-09-06",
+      "question": "Are the two AS5600 boards and matching magnets ordered or still outstanding?",
+      "answer": "AS5600 and magnets ordered",
+      "resolution": "Mark feedback parts ordered; retain design-target SKU dimensions until parts arrive."
+    },
+    {
+      "id": "drive_rig_first_full_bracket_fit",
+      "date": "2026-09-06",
+      "question": "Does the updated full bracket fit the motor with free rotation?",
+      "answer": "One motor is mounted to the first bracket and spins freely; the other will be mounted when the second print completes.",
+      "resolution": "Record one confirmed unpowered bracket fit; second assembly and powered/load tests remain pending."
+    },
+    {
+      "id": "drive_rig_clip_like_print_feature",
+      "date": "2026-09-06",
+      "question": "Was the clip-like feature generated by Cura support?",
+      "answer": "It was the support. Owner disabled support for the second bracket print.",
+      "resolution": "Feature identified by owner; no further identification photo needed. Second print without support has not yet been evaluated."
+    },
+    {
+      "id": "drive_rig_motor_coupon_comparison_fit",
+      "date": "2026-09-06",
+      "question": "Which comparison coupon fits the stationary motor mount?",
+      "answer": "the 8.5mm landed",
+      "resolution": "Use 8.5 mm adjacent-hole pitch in both CAD axes. Coupon fit is confirmed; a later owner report also confirms one full bracket fit with free motor rotation."
+    },
+    {
+      "id": "drive_rig_motor_coupon_fit",
+      "date": "2026-09-06",
+      "question": "Has the original motor-mount coupon been printed and checked?",
+      "answer": "Spacing is a hair too short; bolts do not quite align, estimated 0.25-0.5 mm.",
+      "resolution": "Original nominal 8 mm pattern failed physical fit. Subsequent 8.50 mm comparison coupon was confirmed fitting; see drive_rig_motor_coupon_comparison_fit."
+    },
+    {
+      "id": "iflight_motor_variant_and_quantity",
+      "date": "2026-09-06",
+      "question": "What model and KV rating are printed on the iFlight motors, and how many matching ones did you find?",
+      "answer": "I have 4 motors, 2750 family",
+      "resolution": "Record four motors and 2750 KV as owner-reported. Full physical model/revision remains unconfirmed; XING-E Pro 2207 specifications are family references only."
+    },
+    {
+      "question": "Motor voltage, RPM and encoders?",
+      "answer": "12V 18rpm GA25-371 with encoder and D shaft"
+    },
+    {
+      "question": "Number of matching motors owned?",
+      "answer": 2
+    },
+    {
+      "question": "Any brushed motor drivers or microcontrollers owned?",
+      "answer": "No; purchase needed"
+    },
+    {
+      "id": "vacuum_head_inventory",
+      "question": "Any vacuum rollers, powered brush-head assemblies or a donor robot vacuum available?",
+      "answer": "Owner has rollers, brushes and filters from Amazon kit B088W8HS1Y; a complete powered head or donor robot was not reported",
+      "source": "https://www.amazon.com/dp/B088W8HS1Y",
+      "date": "2026-09-06"
+    },
+    {
+      "id": "vacuum_consumable_lengths_and_filter",
+      "question": "What are the roller lengths and the filter's outside dimensions?",
+      "answer": "Owner confirms s9/s9+ inventory with two styles in each of two roller lengths: 10 inches and 7.25 inches. Filter body is 136 x 76 x 14mm; pull tab is 20 x 6.5mm and raised roughly5mm, centered along the width axis on one side.",
+      "date": "2026-09-06",
+      "note": "Fin diameters were subsequently answered as 28mm for both styles; exact filter-tab position remains a later fit detail"
+    },
+    {
+      "id": "vacuum_roller_fin_diameters",
+      "question": "What is the maximum uncompressed fin diameter of each roller style?",
+      "answer": "Both styles are 28mm in diameter; use this reported diameter for both length sets in the layout",
+      "date": "2026-09-06"
+    },
+    {
+      "id": "compact_brush_outline",
+      "question": "Should the 275 \u00d7 275 mm limit include the side brush\u2019s flexible bristles, or just the rigid body and wheels that determine the printed parts?",
+      "options": [
+        "Rigid body and wheels; bristles may extend",
+        "Everything, including bristles"
+      ],
+      "date": "2026-09-06",
+      "answer": "Rigid body and wheels; bristles may extend"
+    },
+    {
+      "id": "drive_wheel_60_width",
+      "question": "Width of the owned 60 mm wheels?",
+      "answer": "8 mm; owner report",
+      "date": "2026-09-06",
+      "note": "Hub bore and protrusions remain separate fit details."
+    },
+    {
+      "id": "drive_wheel_60_hub",
+      "question": "For the 60 x 8 mm drive wheels, what is the axle-hole diameter and shape, and does the hub protrude beyond the 8 mm width?",
+      "reason": "Select a compatible hub and verify the full installed width.",
+      "date": "2026-09-06",
+      "answer": "Owner reports 3 mm axle hole, no hub protrusion and face holes compatible with BDUAV motor. Exact bore/recess profile and bolt geometry remain open fit details."
+    },
+    {
+      "id": "passive_ball_caster_envelope",
+      "question": "For the pictured ball caster, what are the mounting plate length x width and overall height including the black backing?",
+      "reason": "Determine whether a revised support mount could accommodate it; does not establish suitability for wood floors.",
+      "date": "2026-09-06",
+      "answer": "Owner reports mounting plate28x45mm, overall height13mm, mount height3mm."
+    },
+    {
+      "id": "bduav_wheel_attachment_rotation",
+      "question": "With the BDUAV motor unplugged, do the wheel-matching holes rotate when the outer bell is turned relative to the wire-exit part?",
+      "reason": "Establish whether the matching pattern is a usable rotating output rather than stationary mounting holes.",
+      "date": "2026-09-06",
+      "answer": "Yes. Owner confirms rotating wheel-mount side and direct attachment of60mm wheels usingM2 bolts."
+    },
+    {
+      "id": "bduav_attached_sheet_identity",
+      "question": "Is the ML2206B/160RPM-per-volt sheet from the exact purchased listing, and what model/KV is printed on the actual motor?",
+      "reason": "Prior owner identification isBDUAV2204-260KV; do not assign160KV ratings to it without establishing applicability.",
+      "date": "2026-09-06",
+      "answer": "Owner confirms BDUAV2204-260KV is printed on the actual motor and the ML2206B/160RPM-per-volt sheet came from the purchase page.",
+      "resolution": "Source provenance resolved; conflicting sheet rejected as an owned-part specification, numerical motor ratings remain unknown."
+    },
+    {
+      "id": "drive_rig_motor_mount",
+      "date": "2026-09-06",
+      "question": "Motor outside diameter, total thickness and mounting-hole spacing on the stationary side opposite the wheel? Is a rotating shaft or center accessible there for an encoder magnet?",
+      "reason": "Finalize replaceable motor brackets and encoder carrier for the owner-requested rolling drive rig.",
+      "answer": "Owner measures 28 mm diameter, 13 mm thick, four stationary holes on 8 mm square pattern and 4 mm center through hole. Whether center surface rotates remains unresolved."
+    },
+    {
+      "id": "drive_rig_caster_mount",
+      "date": "2026-09-06",
+      "question": "Caster mounting-hole center spacing and hole diameter?",
+      "reason": "Finalize adapter; flange 28 x 45 mm and overall height 13 mm already known.",
+      "answer": "Owner measures 34 mm hole pitch and 3.5 mm holes."
+    },
+    {
+      "id": "drive_rig_motor_center_and_threads",
+      "question": "Does the inner metal surface of the 4 mm center hole rotate with the wheel when viewed from the stationary side? Do M2 screws fit the stationary mounting holes, and what is their usable engagement depth?",
+      "date": "2026-09-06",
+      "reason": "Finalize encoder magnet carrier and safe mounting screw lengths.",
+      "answer": "Center bore rotates relative to stationary face; stationary holes are M2 with about 4 mm depth before an internal obstruction."
+    },
+    {
+      "id": "drive_rig_holder_removed_friction",
+      "asked": "2026-09-12",
+      "question": "With the printed magnet holder removed and motor unpowered, does the wheel return to turning freely?",
+      "date": "2026-09-12",
+      "answer": "Owner confirms wheel spins freely without holder."
+    },
+    {
+      "id": "drive_rig_tape_wrap_result",
+      "asked": "2026-09-12",
+      "question": "After the 2.8 mm tape-wrap trial, does the holder stay seated through repeated hand turns with no added wheel drag or visible wobble, and what is the measured magnet-to-chip gap?",
+      "date": "2026-09-12",
+      "answer": "Fits but wobbles and needs a longer shaft; centering failed. Tape-wrap gap and long-term retention not established."
+    },
+    {
+      "id": "drive_rig_bore_measurement_method",
+      "asked": "2026-09-12",
+      "question": "Was 3.4 mm measured with calipers, or verified by fitting a smooth 3.4 mm rod/drill-bit shank by hand?",
+      "date": "2026-09-12",
+      "answer": "Nominal size established: owner reports 3.4 mm and provides matching SpeedyFPV listing explicitly specifying a 3.4 mm shaft hole. Instrument unspecified; rod fit remains a physical assembly check.",
+      "source": "https://speedyfpv.com/products/2204-gimbal-motor"
+    }
+  ],
+  "component_selection_policy": {
+    "updated": "2026-09-06",
+    "replacement_parts_allowed": true,
+    "owner_direction": "Different parts are an option when owned parts are too heavy, too big or not powerful enough.",
+    "design_rule": "Compare task performance, complete installed size/mass, power, serviceability and total cost. Inventory reuse is a candidate preference, not a requirement. Present a consolidated compatible parts proposal before purchases.",
+    "priorities_for_comparison": [
+      "compact vacuum blower and compatible filter air path",
+      "floor-friendly support caster and drive-wheel hub fit",
+      "roller drive and motor control packaging"
+    ],
+    "propulsion": "Remains deferred until module dimensions and carried masses are established."
+  }
+}

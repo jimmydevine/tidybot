@@ -1,0 +1,10 @@
+{
+  "valid_shapes": {
+    "core_partition": 80,
+    "core_partition_mop": 69,
+    "core_partition_low": 80,
+    "core_partition_duster": 61
+  },
+  "total": 290,
+  "fabrication_release": false
+}

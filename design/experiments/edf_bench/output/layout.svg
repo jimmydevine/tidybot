@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="850" viewBox="0 0 1100 850">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1e3a5f"/></marker></defs>
+<rect width="1100" height="850" fill="#f6f8fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#15243a} .small{font-size:14px}.label{font-size:17px}.dim{font-size:15px;fill:#1e3a5f}</style>
+<text x="45" y="42" class="label">EDF bench: horizontal fan / 2:1 force lever</text>
+<text x="45" y="68" class="small">LAYOUT DRAFT — cradle v2; complete stand not validated for powered testing</text>
+<text x="45" y="95" class="small">Side view. Dimensions in mm; drawing schematic. Shielding, bearings, joints and stops require detail design.</text>
+<rect x="70.0" y="515.0" width="780.0" height="20" rx="3" fill="#d4bd9a" stroke="#1e3a5f"/>
+<rect x="440.5" y="333.5" width="117" height="181.50000000000003" rx="3" fill="#dfe5ed" stroke="#1e3a5f"/>
+<text x="570.5" y="443.5" class="small">Fixed twin supports</text>
+<line x1="499.0" y1="317.0" x2="187.0" y2="317.0" stroke="#d57825" stroke-width="14"/>
+<line x1="499.0" y1="317.0" x2="499.0" y2="264.2" stroke="#d57825" stroke-width="14"/>
+<line x1="239.0" y1="317.0" x2="499.0" y2="264.2" stroke="#d57825" stroke-width="5"/>
+<rect x="426.2" y="244.39999999999998" width="156.0" height="19.8" rx="3" fill="#d4bd9a" stroke="#1e3a5f"/>
+<rect x="473.0" y="235.59999999999997" width="62.400000000000006" height="8.8" rx="3" fill="#d57825" stroke="#1e3a5f"/>
+<rect x="488.6" y="186.64999999999998" width="31.200000000000003" height="57.75000000000001" rx="3" fill="#d57825" stroke="#1e3a5f"/>
+<circle cx="499.0" cy="317.0" r="11" fill="white" stroke="#15243a" stroke-width="3"/>
+<text x="518.5" y="302.0" class="small">Pivot, axis across bench</text>
+<rect x="101.2" y="491.9" width="171.6" height="23.1" rx="3" fill="#c5dbef" stroke="#1e3a5f"/>
+<line x1="187.0" y1="324.7" x2="187.0" y2="485.3" stroke="#d57825" stroke-width="5"/>
+<rect x="174.0" y="485.3" width="26" height="6.6" rx="3" fill="#d57825" stroke="#1e3a5f"/>
+<text x="102.5" y="569" class="small">AWS SC-2kg, centered pad</text>
+<text x="102.5" y="591" class="small">100 × 100 measured platform</text>
+<line x1="210.4" y1="405.0" x2="210.4" y2="471.0" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arr)"/>
+<text x="223.4" y="421.5" class="small">Force onto scale</text>
+<rect x="456.1" y="132.74999999999994" width="130.0" height="104.50000000000001" rx="3" fill="none" stroke="#a1afb9"/>
+<rect x="456.1" y="143.47499999999997" width="85.8" height="83.05000000000001" rx="3" fill="#b8d7cb" stroke="#1e3a5f"/>
+<rect x="503.225" y="143.47499999999997" width="1.9500000000000002" height="83.05000000000001" rx="3" fill="#52675d" stroke="#1e3a5f"/>
+<line x1="456.1" y1="185.0" x2="586.1" y2="185.0" stroke="#1e3a5f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="465.2" y="175.0" class="small">Duct</text>
+<line x1="414.5" y1="185.0" x2="297.5" y2="185.0" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arr)"/>
+<text x="213.0" y="172.0" class="label">Thrust left</text>
+<line x1="603.0" y1="185.0" x2="726.5" y2="185.0" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arr)"/>
+<text x="603.0" y="172.0" class="label">Exhaust right</text>
+<text x="720" y="235" class="small">Duct 66 long; lip Ø75.5</text>
+<text x="720" y="257" class="small">Body Ø74; ear span 91</text>
+<text x="720" y="279" class="small">Holes Ø4, spacing ~82.5</text>
+<text x="720" y="301" class="small">Hole centers 37 from inlet face</text>
+<text x="720" y="323" class="small">Outer outline: 100 × 95 allowance</text>
+<text x="720" y="345" class="small">Motor protrusion remains unmeasured</text>
+<text x="720" y="367" class="small">Center ring Ø75.5 × 1.5; aligned with holes</text>
+<line x1="187.0" y1="355.0" x2="499.0" y2="355.0" stroke="#1e3a5f" stroke-width="2"/>
+<line x1="187.0" y1="347.0" x2="187.0" y2="363.0" stroke="#1e3a5f" stroke-width="2"/>
+<line x1="499.0" y1="347.0" x2="499.0" y2="363.0" stroke="#1e3a5f" stroke-width="2"/>
+<text x="267.0" y="378.0" class="dim">L = 240 to scale pad</text>
+<line x1="581.0" y1="317.0" x2="581.0" y2="185.0" stroke="#1e3a5f" stroke-width="2"/>
+<line x1="573.0" y1="317.0" x2="589.0" y2="317.0" stroke="#1e3a5f" stroke-width="2"/>
+<line x1="573.0" y1="185.0" x2="589.0" y2="185.0" stroke="#1e3a5f" stroke-width="2"/>
+<text x="594.0" y="251.0" class="dim">h = 120</text>
+<circle cx="343.0" cy="317.0" r="5" fill="#15243a"/>
+<text x="85" y="266" class="small">Calibration point: 120 left of pivot</text>
+<line x1="210" y1="273" x2="343.0" y2="310.0" stroke="#1e3a5f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="45" y="640" class="label">Thrust (g-force) = (gross scale g − baseline g) × L / h</text>
+<text x="45" y="674" class="small">Here: thrust = 2 × change in scale reading. Example: +500 g on scale means 1,000 g-force thrust.</text>
+<text x="45" y="709" class="small">Record gross baseline before taring. Proposed working stop: 1,800 g gross; scale capacity: 2,000 g.</text>
+<text x="45" y="744" class="small">Calibrate the complete mechanism and check return-to-zero. Friction, cable forces and vibration can bias it.</text>
+<text x="45" y="779" class="small">The moving lever and fan mount contact the fixed structure only through the pivot and scale pad.</text>
+<text x="45" y="814" class="small">Base allowance: 600 × 320 × 18. Use bolted timber/metal sections, bought bearings/shaft, and fitted adapters.</text>
+</svg>

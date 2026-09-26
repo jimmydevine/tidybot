@@ -1,0 +1,166 @@
+{
+  "fabrication_release": false,
+  "scope": "L spring envelope and K local pod geometry only; no new complete-robot collision or structural qualification",
+  "input_hashes": {
+    "config/suspension_springs.json": "d85557f785cab2b8c9728b9736af98dd9060d75b1904261c84c98946dbf230b1",
+    "design/system/output/pod_joints_cad_checks.json": "6cc4cfa6fc3d773b9b5b6f47a4d3efa4efacb8b81ce3eaa76ec2fbf898710d1a"
+  },
+  "spring_checks": [
+    {
+      "travel_mm": -2.5,
+      "shim_mm": 2.5,
+      "length_mm": 24.486552171730406
+    },
+    {
+      "travel_mm": -2.5,
+      "shim_mm": 2.75,
+      "length_mm": 24.236634957219334
+    },
+    {
+      "travel_mm": -2.5,
+      "shim_mm": 3.25,
+      "length_mm": 23.736804703416517
+    },
+    {
+      "travel_mm": -2.5,
+      "shim_mm": 3.75,
+      "length_mm": 23.236980254501855
+    },
+    {
+      "travel_mm": -2.5,
+      "shim_mm": 4.5,
+      "length_mm": 22.487255133684364
+    },
+    {
+      "travel_mm": 0,
+      "shim_mm": 2.5,
+      "length_mm": 23.5
+    },
+    {
+      "travel_mm": 0,
+      "shim_mm": 2.75,
+      "length_mm": 23.25
+    },
+    {
+      "travel_mm": 0,
+      "shim_mm": 3.25,
+      "length_mm": 22.75
+    },
+    {
+      "travel_mm": 0,
+      "shim_mm": 3.75,
+      "length_mm": 22.25
+    },
+    {
+      "travel_mm": 0,
+      "shim_mm": 4.5,
+      "length_mm": 21.5
+    },
+    {
+      "travel_mm": 1,
+      "shim_mm": 2.5,
+      "length_mm": 23.09774483518597
+    },
+    {
+      "travel_mm": 1,
+      "shim_mm": 2.75,
+      "length_mm": 22.847757794786276
+    },
+    {
+      "travel_mm": 1,
+      "shim_mm": 3.25,
+      "length_mm": 22.34778439971584
+    },
+    {
+      "travel_mm": 1,
+      "shim_mm": 3.75,
+      "length_mm": 21.84781195998877
+    },
+    {
+      "travel_mm": 1,
+      "shim_mm": 4.5,
+      "length_mm": 21.09785520734205
+    },
+    {
+      "travel_mm": 3,
+      "shim_mm": 2.5,
+      "length_mm": 22.27912860917351
+    },
+    {
+      "travel_mm": 3,
+      "shim_mm": 2.75,
+      "length_mm": 22.02924390153295
+    },
+    {
+      "travel_mm": 3,
+      "shim_mm": 3.25,
+      "length_mm": 21.52948076674376
+    },
+    {
+      "travel_mm": 3,
+      "shim_mm": 3.75,
+      "length_mm": 21.029726393017874
+    },
+    {
+      "travel_mm": 3,
+      "shim_mm": 4.5,
+      "length_mm": 20.280112352761087
+    },
+    {
+      "travel_mm": 5,
+      "shim_mm": 2.5,
+      "length_mm": 21.440327617728467
+    },
+    {
+      "travel_mm": 5,
+      "shim_mm": 2.75,
+      "length_mm": 21.190644334373108
+    },
+    {
+      "travel_mm": 5,
+      "shim_mm": 3.25,
+      "length_mm": 20.691295555266436
+    },
+    {
+      "travel_mm": 5,
+      "shim_mm": 3.75,
+      "length_mm": 20.191971623358082
+    },
+    {
+      "travel_mm": 5,
+      "shim_mm": 4.5,
+      "length_mm": 19.443035514048027
+    },
+    {
+      "travel_mm": 10,
+      "shim_mm": 2.5,
+      "length_mm": 19.242253921494996
+    },
+    {
+      "travel_mm": 10,
+      "shim_mm": 2.75,
+      "length_mm": 18.993487312056285
+    },
+    {
+      "travel_mm": 10,
+      "shim_mm": 3.25,
+      "length_mm": 18.4960294329366
+    },
+    {
+      "travel_mm": 10,
+      "shim_mm": 3.75,
+      "length_mm": 17.998677212310554
+    },
+    {
+      "travel_mm": 10,
+      "shim_mm": 4.5,
+      "length_mm": 17.252861821348798
+    }
+  ],
+  "unexpected_interferences": [],
+  "valid_shapes": {
+    "suspension_springs": 92,
+    "suspension_springs_bump": 92,
+    "suspension_springs_droop": 92
+  }
+}

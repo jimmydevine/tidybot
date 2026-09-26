@@ -1,0 +1,824 @@
+{
+  "revision": "H: wheel-pivot and caster-support study",
+  "config": {
+    "revision": "H: wheel-pivot and caster-support study",
+    "status": "Mechanism and support candidates; G remains the complete mass/layout baseline",
+    "wheel": {
+      "radius_mm": 36,
+      "axle_yz_mm": [
+        105,
+        36
+      ],
+      "pivot_yz_mm": [
+        145,
+        36
+      ],
+      "bump_mm": 10,
+      "droop_candidate_mm": 2.5,
+      "pod_x_mm": [
+        26,
+        106
+      ],
+      "motor_reference_min_mm": [
+        26,
+        92.5,
+        23.5
+      ],
+      "motor_reference_size_mm": [
+        69,
+        25,
+        25
+      ],
+      "spring_lever_mm": 16,
+      "cap_bottom_z_mm": 62,
+      "spring_top_z_mm": 62,
+      "spring_seat_z_mm": 36,
+      "spring_x_mm": 80,
+      "spring_od_limit_mm": 10,
+      "wheel_rate_n_mm": 0.8,
+      "spring_solid_height_limit_mm": 18,
+      "spring_bump_clearance_mm": 2,
+      "pivot_diameter_mm": 6,
+      "pivot_bearing_span_mm": 77,
+      "bushing_length_mm": 8,
+      "bushing_od_mm": 8,
+      "bushing_centres_x_mm": [
+        34,
+        98
+      ],
+      "fixed_support_centres_x_mm": [
+        27.5,
+        104.5
+      ],
+      "contact_x_mm": 14,
+      "factored_vertical_wheel_load_n": 150,
+      "horizontal_wheel_load_n": 25,
+      "bump_stop_lever_mm": 32,
+      "bump_stop_x_mm": 100,
+      "spring_force_at_impact_n": 85,
+      "pivot_diameter_sensitivity_mm": [
+        4,
+        5,
+        6
+      ],
+      "steel_bending_screen_mpa": 150,
+      "steel_shear_screen_mpa": 90,
+      "note": "Rear-mounted pivot gives a leading arm, not a trailing arm. Loads are preliminary design cases, not motor-shaft or bushing ratings. Full droop is a candidate to screen, not an adopted height-compatible setting."
+    },
+    "caster": {
+      "bare_height_mm": 50.5,
+      "sweep_radius_mm": 40.5,
+      "centres_xy_mm": {
+        "vacuum": [
+          137.5,
+          232
+        ],
+        "mop": [
+          137.5,
+          232
+        ],
+        "low": [
+          230,
+          232
+        ]
+      },
+      "fitting_height_sensitivity_mm": [
+        0,
+        2.5,
+        5
+      ],
+      "reference_fitting_height_mm": 2.5,
+      "saddle_width_mm": 40,
+      "saddle_length_mm": 44,
+      "saddle_front_y_mm": 222,
+      "plate_mm": 3,
+      "retainer_allowance_mm": 5,
+      "rear_attachment_y_mm": 266,
+      "factored_vertical_load_n": 100,
+      "horizontal_load_n": 25,
+      "mount_clearance_mm": 1,
+      "note": "The bare L51-8 caster needs a separate retained fitting. 2.5 mm is a sensitivity/reference assumption, not a verified height for an ordered fitting; do not put a generic M8 bolt into its blind bore."
+    },
+    "material": {
+      "aluminum_density_g_mm3": 0.0027,
+      "steel_density_g_mm3": 0.00785,
+      "aluminum_e_mpa": 69000,
+      "aluminum_bending_screen_mpa": 120,
+      "deflection_screen_mm": 0.5,
+      "note": "Same 6061-T6 assumption and preliminary project bending limit as G; supplied stock, holes and joints require qualification."
+    },
+    "carrier": {
+      "bridge_min_mm": [
+        28,
+        83.5,
+        65
+      ],
+      "bridge_size_mm": [
+        219,
+        1.5,
+        20
+      ],
+      "right_shelf_rib_min_mm": [
+        105,
+        13,
+        78
+      ],
+      "right_shelf_rib_size_mm": [
+        2,
+        70,
+        8
+      ],
+      "left_rail_min_mm": [
+        26,
+        13,
+        65
+      ],
+      "left_rail_size_mm": [
+        2,
+        140,
+        21
+      ],
+      "right_rail_min_mm": [
+        247,
+        27,
+        65
+      ],
+      "right_rail_size_mm": [
+        2,
+        126,
+        20
+      ],
+      "inner_rails": [
+        {
+          "min": [
+            106,
+            85,
+            54
+          ],
+          "size": [
+            3,
+            68,
+            11
+          ]
+        },
+        {
+          "min": [
+            166,
+            85,
+            54
+          ],
+          "size": [
+            3,
+            68,
+            11
+          ]
+        }
+      ],
+      "rear_bridge_min_mm": [
+        29,
+        263,
+        65
+      ],
+      "rear_bridge_size_mm": [
+        217,
+        3,
+        19
+      ],
+      "removed_if_closed": [
+        "floor_post_0",
+        "floor_post_1",
+        "floor_post_2",
+        "floor_foot_plate",
+        "floor_foot_tab",
+        "floor_shelf_tab"
+      ],
+      "note": "Stock routes only. Inner rails, pivot-cap joints, rear tie-to-side-frame joints, coupling-stud attachments and fasteners must close before replacing F. Do not install overlapping candidate and F supports."
+    },
+    "sources": {
+      "motor": "https://www.pololu.com/product/4846",
+      "motor_drawing": "https://www.pololu.com/file/0J1634/25d-metal-gearmotor-dimension-diagram.pdf",
+      "wheel_stack": "docs/DRIVETRAIN_SOURCING.md#wheel-to-hub-check-2026-09-12",
+      "caster": "https://www.tente.com/en-ca/swivel-castor-50-mm/5940uap050l51-8-load-9011",
+      "caster_fittings": "https://www.tente.com/media/c0/dd/db/1770226623/Linea_for_furniture.pdf?ts=1771358769"
+    },
+    "motor_load_guidance": {
+      "continuous_kgf_cm": 4,
+      "intermittent_kgf_cm": 8,
+      "continuous_stall_current_fraction": 0.25,
+      "note": "Manufacturer gearbox-load guidance, not the older 25%-of-stall-torque estimate. Retain the lower applicable gearbox and motor thermal limit."
+    }
+  },
+  "poses": [
+    {
+      "travel_mm": -2.5,
+      "angle_deg": -3.583321698471973,
+      "axle_y_mm": 105.07820144332172,
+      "axle_z_mm": 33.5,
+      "length_mm": 40.0,
+      "pivot_y_mm": 145,
+      "pivot_z_mm": 36,
+      "motor_box": {
+        "min": [
+          26,
+          91.82138939435976,
+          20.24318795103804
+        ],
+        "size": [
+          69,
+          26.513624097923923,
+          26.513624097923923
+        ]
+      },
+      "motor_to_cap_mm": 15.243187951038038,
+      "spring_length_mm": 27.0,
+      "spring_seat_y_mm": 129.0312805773287,
+      "fore_aft_shift_mm": 0.07820144332171708
+    },
+    {
+      "travel_mm": 0,
+      "angle_deg": 0.0,
+      "axle_y_mm": 105.0,
+      "axle_z_mm": 36,
+      "length_mm": 40.0,
+      "pivot_y_mm": 145,
+      "pivot_z_mm": 36,
+      "motor_box": {
+        "min": [
+          26,
+          92.5,
+          23.5
+        ],
+        "size": [
+          69,
+          25.0,
+          25.0
+        ]
+      },
+      "motor_to_cap_mm": 13.5,
+      "spring_length_mm": 26.0,
+      "spring_seat_y_mm": 129.0,
+      "fore_aft_shift_mm": 0.0
+    },
+    {
+      "travel_mm": 10,
+      "angle_deg": 14.477512185929925,
+      "axle_y_mm": 106.27016653792583,
+      "axle_z_mm": 46,
+      "length_mm": 40.0,
+      "pivot_y_mm": 145,
+      "pivot_z_mm": 36,
+      "motor_box": {
+        "min": [
+          26,
+          91.04209358102764,
+          30.771927043101822
+        ],
+        "size": [
+          69,
+          30.456145913796362,
+          30.45614591379635
+        ]
+      },
+      "motor_to_cap_mm": 0.7719270431018259,
+      "spring_length_mm": 22.0,
+      "spring_seat_y_mm": 129.50806661517032,
+      "fore_aft_shift_mm": 1.2701665379258316
+    }
+  ],
+  "pivot": {
+    "arm_bearing_reactions_n": [
+      -178.37890625,
+      286.50390625
+    ],
+    "fixed_support_reactions_n": [
+      -139.13555194805195,
+      247.26055194805195
+    ],
+    "hard_stop_force_n": 173.125,
+    "spring_force_n": 85,
+    "pin_moment_bound_nmm": 1618.50193312785,
+    "screens": [
+      {
+        "diameter_mm": 4,
+        "bending_mpa": 257.5925830610856,
+        "shear_mpa": 22.807731237390943,
+        "passes": false
+      },
+      {
+        "diameter_mm": 5,
+        "bending_mpa": 131.8874025272758,
+        "shear_mpa": 14.596947991930204,
+        "passes": true
+      },
+      {
+        "diameter_mm": 6,
+        "bending_mpa": 76.32372831439572,
+        "shear_mpa": 10.13676943884042,
+        "passes": true
+      }
+    ],
+    "max_projected_bushing_pressure_mpa": 5.971050075036486,
+    "motor_output_radial_load_rating_verified": false,
+    "bushing_rating_verified": false
+  },
+  "caster": {
+    "section": {
+      "area_mm2": 120,
+      "neutral_z_mm": 1.5,
+      "inertia_mm4": 90.0,
+      "c_mm": 1.5
+    },
+    "cantilever_mm": 34,
+    "stress_mpa": 77.70833333333333,
+    "deflection_mm": 0.328479602791197,
+    "passes": true,
+    "rigid_root_assumed": true,
+    "stem_retention_verified": false,
+    "fitting_cases": [
+      {
+        "fitting_height_mm": 0,
+        "saddle_top_mm": 58.5,
+        "vacuum_mop_gap_mm": 3.5,
+        "low_gap_mm": 5.5
+      },
+      {
+        "fitting_height_mm": 2.5,
+        "saddle_top_mm": 61.0,
+        "vacuum_mop_gap_mm": 1.0,
+        "low_gap_mm": 3.0
+      },
+      {
+        "fitting_height_mm": 5,
+        "saddle_top_mm": 63.5,
+        "vacuum_mop_gap_mm": -1.5,
+        "low_gap_mm": 0.5
+      }
+    ]
+  },
+  "stock": [
+    {
+      "id": "H_left_cheek_outer",
+      "min": [
+        26,
+        132,
+        26
+      ],
+      "size": [
+        3,
+        22,
+        36
+      ],
+      "role": "pivot support",
+      "shape": "box",
+      "mass_g": 6.4152000000000005,
+      "hole": {
+        "axis": "x",
+        "diameter": 6.2,
+        "y": 145,
+        "z": 36
+      }
+    },
+    {
+      "id": "H_left_cheek_inner",
+      "min": [
+        103,
+        132,
+        26
+      ],
+      "size": [
+        3,
+        22,
+        36
+      ],
+      "role": "pivot support",
+      "shape": "box",
+      "mass_g": 6.4152000000000005,
+      "hole": {
+        "axis": "x",
+        "diameter": 6.2,
+        "y": 145,
+        "z": 36
+      }
+    },
+    {
+      "id": "H_left_cap",
+      "min": [
+        26,
+        109,
+        62
+      ],
+      "size": [
+        80,
+        45,
+        3
+      ],
+      "role": "pivot support",
+      "shape": "box",
+      "mass_g": 29.16
+    },
+    {
+      "id": "H_right_cheek_outer",
+      "min": [
+        246,
+        132,
+        26
+      ],
+      "size": [
+        3,
+        22,
+        36
+      ],
+      "role": "pivot support",
+      "shape": "box",
+      "mass_g": 6.4152000000000005,
+      "hole": {
+        "axis": "x",
+        "diameter": 6.2,
+        "y": 145,
+        "z": 36
+      }
+    },
+    {
+      "id": "H_right_cheek_inner",
+      "min": [
+        169,
+        132,
+        26
+      ],
+      "size": [
+        3,
+        22,
+        36
+      ],
+      "role": "pivot support",
+      "shape": "box",
+      "mass_g": 6.4152000000000005,
+      "hole": {
+        "axis": "x",
+        "diameter": 6.2,
+        "y": 145,
+        "z": 36
+      }
+    },
+    {
+      "id": "H_right_cap",
+      "min": [
+        169,
+        109,
+        62
+      ],
+      "size": [
+        80,
+        45,
+        3
+      ],
+      "role": "pivot support",
+      "shape": "box",
+      "mass_g": 29.16
+    },
+    {
+      "id": "H_front_bridge",
+      "min": [
+        28,
+        83.5,
+        65
+      ],
+      "size": [
+        219,
+        1.5,
+        20
+      ],
+      "role": "carrier route",
+      "shape": "box",
+      "mass_g": 17.739
+    },
+    {
+      "id": "H_left_rail",
+      "min": [
+        26,
+        13,
+        65
+      ],
+      "size": [
+        2,
+        140,
+        21
+      ],
+      "role": "carrier route",
+      "shape": "box",
+      "mass_g": 15.876000000000001
+    },
+    {
+      "id": "H_right_rail",
+      "min": [
+        247,
+        27,
+        65
+      ],
+      "size": [
+        2,
+        126,
+        20
+      ],
+      "role": "carrier route",
+      "shape": "box",
+      "mass_g": 13.608
+    },
+    {
+      "id": "H_shelf_rib",
+      "min": [
+        105,
+        13,
+        78
+      ],
+      "size": [
+        2,
+        70,
+        8
+      ],
+      "role": "carrier route",
+      "shape": "box",
+      "mass_g": 3.024
+    },
+    {
+      "id": "H_inner_rail_0",
+      "min": [
+        106,
+        85,
+        54
+      ],
+      "size": [
+        3,
+        68,
+        11
+      ],
+      "role": "carrier route",
+      "shape": "box",
+      "mass_g": 6.058800000000001
+    },
+    {
+      "id": "H_inner_rail_1",
+      "min": [
+        166,
+        85,
+        54
+      ],
+      "size": [
+        3,
+        68,
+        11
+      ],
+      "role": "carrier route",
+      "shape": "box",
+      "mass_g": 6.058800000000001
+    },
+    {
+      "id": "H_rear_bridge",
+      "min": [
+        29,
+        263,
+        65
+      ],
+      "size": [
+        217,
+        3,
+        19
+      ],
+      "role": "rear route",
+      "shape": "box",
+      "mass_g": 33.396300000000004
+    },
+    {
+      "id": "H_caster_base",
+      "min": [
+        117.5,
+        222,
+        53.0
+      ],
+      "size": [
+        40,
+        44,
+        3
+      ],
+      "role": "caster saddle",
+      "shape": "box",
+      "mass_g": 14.256,
+      "hole": {
+        "axis": "z",
+        "diameter": 8.5,
+        "x": 137.5,
+        "y": 232
+      }
+    },
+    {
+      "id": "H_caster_rear_tab",
+      "min": [
+        117.5,
+        263,
+        56.0
+      ],
+      "size": [
+        40,
+        3,
+        9.0
+      ],
+      "role": "rear route",
+      "shape": "box",
+      "mass_g": 2.9160000000000004
+    }
+  ],
+  "gross_candidate_stock_g": 196.9137,
+  "conditional_removed_carrier_g": 24.263799594964162,
+  "mass_accounting": {
+    "G_retained": true,
+    "bottom_frame_g": 225,
+    "pod_pair_g": 124,
+    "caster_installation_g": 112,
+    "note": "Candidate stock covers only part of these assemblies; no subtraction/addition to complete G mass until joints, moving pods and retainers close."
+  },
+  "ground": {
+    "vacuum": {
+      "mass_g": [
+        3668.0449784355283,
+        4776.942082563714,
+        6406.136290820085
+      ],
+      "stock_conflicts": [],
+      "candidate_stock_overlaps": [],
+      "loads": {
+        "support_force_ranges_n": [
+          [
+            22.205756716792262,
+            23.056548949215447
+          ],
+          [
+            18.910165946811254,
+            19.760958179234446
+          ],
+          [
+            4.283614477464091,
+            5.474574556400296
+          ]
+        ],
+        "spring_rate_n_mm": 4.999999999999999,
+        "lever_ratio": 0.4,
+        "spring_preload_compression_mm": [
+          [
+            11.102878358396133,
+            11.528274474607725
+          ],
+          [
+            9.455082973405629,
+            9.880479089617225
+          ]
+        ],
+        "scope": "G nominal mass/CG and proposed y=105 contacts, 72 caster headings; excludes uncertainty, tool contact and small moving-part CG shift"
+      }
+    },
+    "mop": {
+      "mass_g": [
+        3604.9449784355284,
+        4490.942082563714,
+        5799.136290820086
+      ],
+      "stock_conflicts": [],
+      "candidate_stock_overlaps": [],
+      "loads": {
+        "support_force_ranges_n": [
+          [
+            16.056553205129845,
+            18.212298738394768
+          ],
+          [
+            13.466128065310782,
+            15.621873598575707
+          ],
+          [
+            10.853863521674619,
+            13.87152961290254
+          ]
+        ],
+        "spring_rate_n_mm": 4.999999999999999,
+        "lever_ratio": 0.4,
+        "spring_preload_compression_mm": [
+          [
+            8.028276602564924,
+            9.106149369197386
+          ],
+          [
+            6.733064032655392,
+            7.8109367992878544
+          ]
+        ],
+        "scope": "G nominal mass/CG and proposed y=105 contacts, 72 caster headings; excludes uncertainty, tool contact and small moving-part CG shift"
+      }
+    },
+    "low": {
+      "mass_g": [
+        3874.9449784355284,
+        5055.942082563714,
+        6902.136290820085
+      ],
+      "stock_conflicts": [],
+      "candidate_stock_overlaps": [],
+      "loads": {
+        "support_force_ranges_n": [
+          [
+            24.196930312982115,
+            25.039662810601804
+          ],
+          [
+            17.580568073136508,
+            19.204012828100787
+          ],
+          [
+            5.769373566411459,
+            7.3734146476559
+          ]
+        ],
+        "spring_rate_n_mm": 4.999999999999999,
+        "lever_ratio": 0.4,
+        "spring_preload_compression_mm": [
+          [
+            12.09846515649106,
+            12.519831405300904
+          ],
+          [
+            8.790284036568256,
+            9.602006414050395
+          ]
+        ],
+        "scope": "G nominal mass/CG and proposed y=105 contacts, 72 caster headings; excludes uncertainty, tool contact and small moving-part CG shift"
+      }
+    }
+  },
+  "height": {
+    "G_nominal_mm": 179.1,
+    "parallel_droop_probe_mm": 181.6,
+    "limit_mm": 180,
+    "droop_adopted": false,
+    "full_pose_envelope_verified": false,
+    "note": "Parallel lift is a clearance probe, not solved caster-constrained chassis attitude; nominal G fit cannot certify suspension travel."
+  },
+  "support_height_screen": {
+    "cases": {
+      "vacuum": {
+        "max_height_mm": 181.81250490993477,
+        "part": "lidar",
+        "left_travel_mm": -2.5,
+        "right_travel_mm": -2.5,
+        "caster_heading_deg": 270,
+        "normal": [
+          0.0,
+          -0.022513466389680215,
+          0.9997465397945224
+        ]
+      },
+      "mop": {
+        "max_height_mm": 181.81250490993477,
+        "part": "lidar",
+        "left_travel_mm": -2.5,
+        "right_travel_mm": -2.5,
+        "caster_heading_deg": 270,
+        "normal": [
+          0.0,
+          -0.022513466389680215,
+          0.9997465397945224
+        ]
+      },
+      "low": {
+        "max_height_mm": 181.87556236531728,
+        "part": "lidar",
+        "left_travel_mm": -2.5,
+        "right_travel_mm": 10,
+        "caster_heading_deg": 305,
+        "normal": [
+          -0.050763009638571346,
+          0.0768118090239468,
+          0.9957525108413751
+        ]
+      }
+    },
+    "sampled_support_poses": 7776,
+    "droop_adopted": false,
+    "full_pose_envelope_verified": false,
+    "scope": "Sampled ideal three-support plane; spherical tire reach and ideal caster point. Not a continuous extremum proof or physical contact/suspension equilibrium. Stop access, spring loads, housing, tolerances and sensor mounts remain open."
+  },
+  "torque": {
+    "old_fraction_screen_nm": 0.53936575,
+    "gearbox_continuous_nm": 0.392266,
+    "continuous_screen_nm": 0.392266,
+    "gearbox_intermittent_nm": 0.784532,
+    "continuous_current_screen_a": 1.25,
+    "burst_current_setting_a": 2,
+    "note": "2 A is a short-duration current setting, not continuous permission; apply motor temperature/duty limits as well."
+  },
+  "input_sha256": {
+    "config/system_design.json": "0fcabe616ea34c53c47c1d3dbd72489484af97ee88e86682df02577d6bf473a2",
+    "config/core_partition.json": "13c706f6e34d7dd15cbcf47dd890ee2b8d03b5726512eb5da802b25016d1bc11",
+    "config/frame_joints.json": "14dca6f7a3bdebac7e898b5191915c4c2b0a30231f19411a05d1bdd908b5bb35",
+    "config/floor_support.json": "f6bec40b01c20f41a5239abbd6beb3d98dbecb4d64321384e7a21a50e500b27c"
+  },
+  "fabrication_release": false,
+  "flight_qualified": false
+}

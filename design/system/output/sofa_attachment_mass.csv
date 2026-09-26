@@ -1,0 +1,26 @@
+scope,id,low_g,nominal_g,high_g,basis
+body_interface,two_receiver_plates,18.84,18.84,18.84,Two gross steel plate volumes; holes not deducted. Latches/fasteners separately counted
+body_interface,passive_latches_locators,14,20,35,Two station-released positive locks and locators; no onboard latch motor
+body_interface,air_face_stub_seal,10,15,25,"Common smooth air face, short stub and gasket; supplements retained common duct/flex allowance"
+body_interface,electrical_connector_seat_sensing,7,10,18,"Body half of keyed connector, seating/retention sensing"
+body_interface,interface_harness,4,6,12,Local interface wiring in addition to existing vacuum harness
+body_interface,interface_fasteners,8,12,20,Receiver and latch installation fasteners
+body_interface,interface_completion,8,12,24,Unfinished local interface detail; explicit allowance
+normal_head_adapter,normal_head_adapter,10,15,25,"Removable head-side adapter/contact allowance; parked with normal head during sofa work, carried during ordinary vacuum flight"
+extension,extension:extension_duct,205,270,380,"Inherited dedicated-sofa function allowance; calculated thin-wall allowance: six 245 mm stages, 1 mm walls, PETG 1.27 g/cm3; guide/seal changes may increase mass"
+extension,extension:extension_guides,75,125,205,"Inherited dedicated-sofa function allowance; custom mechanism allowance; 45 mm stage overlap, guided unsupported strip gap <=20 mm"
+extension,extension_drive:extension_drive,140,185,260,Inherited dedicated-sofa function allowance; catalog motor plus mechanism allowance; 12 N force limit and 50 mm/s feed target
+extension,extension_drive:tool_stage,3.1,7,13,Inherited dedicated-sofa function allowance; catalog bare carrier 3.1 g plus installed allowance
+extension,extension_cable:extension_wiring,20,35,55,"Inherited dedicated-sofa function allowance; installed allowance; 1 m extension, independent retraction confirmation"
+extension,extension_air_turn:air_plumbing,45,75,115,Inherited dedicated-sofa function allowance; material allowance; all air remains on bottom
+extension,low_head:low_head,90,135,195,Inherited dedicated-sofa function allowance; 95 cm3 PETG plus lips/skids; no onboard head motor; optional powered cassette must be rebudgeted
+extension,extension_lifter:pad_lift,45,62,88,"Inherited dedicated-sofa function allowance; 19 g catalog actuator plus regulator, links, mount, switches and wire allowance; 12 mm lift from 20 mm stroke"
+extension,extension_lifter:extension_cradle,35,55,90,Inherited dedicated-sofa function allowance; material and hardware allowance; raises complete tube and head 12 mm before driving
+extension,external_support_frame,55,75,115,"About 49 g stock for two 245 and two 160 mm aluminum strips, 15 x 1.5 mm; balance for brackets/fasteners. Not a strength-qualified frame"
+extension,two_swivel_supports,50,70,110,"Two nonmarking swivel wheel assemblies, 35 g each nominal; no SKU selected"
+extension,pitch_roll_hitch,30,45,80,"Tool-side articulated hitch, yaw restraint, pins/bushings and retainers"
+extension,extension_adapter_contacts,12,20,35,Tool-side receiver adapter and electrical contacts
+extension,extension_local_io,12,20,35,Local interface/control board; shared body supervisor remains aboard
+extension,attachment_obstacle_sensors,15,25,40,Front contact/cliff sensing for tool overhang; existing body sensors remain
+extension,attachment_extra_harness,10,15,25,Cart/hitch power and sensor wiring beyond inherited moving-stage lead
+extension,attachment_completion,20,35,70,External cart installation detail not in inherited telescope allowances

@@ -1,0 +1,991 @@
+{
+  "date": "2026-09-13",
+  "status": "INTEGRATION_RESERVATIONS_NOT_FOR_FABRICATION",
+  "coordinates": "mm; x left-to-right, y front-to-rear, z above floor; minimum corners and x/y/z sizes",
+  "body_limit_mm": [
+    275,
+    275,
+    180
+  ],
+  "main_panel_xy_mm": [
+    270,
+    270
+  ],
+  "bottom_mate_z_mm": 86,
+  "core_top_z_mm": 120,
+  "lidar_mount_z_mm": 123,
+  "parts": [
+    {
+      "id": "head",
+      "label": "H \u00b7 removable head",
+      "group": "head",
+      "min": [
+        22.5,
+        6,
+        0
+      ],
+      "size": [
+        230,
+        60,
+        50
+      ],
+      "basis": "proposed reservation",
+      "motion": [
+        0,
+        0,
+        10
+      ],
+      "note": "10 mm upward compliance allowance; housing/guard/end interfaces unverified.",
+      "motion_group": "complete_head"
+    },
+    {
+      "id": "roller",
+      "label": "TriCut listing envelope",
+      "group": "head",
+      "min": [
+        37.2,
+        13.45,
+        0
+      ],
+      "size": [
+        200.6,
+        45.1,
+        45.1
+      ],
+      "basis": "manufacturer listing; not verified rotating geometry",
+      "parent": "head",
+      "source": "https://www.dreametech.com/products/anti-tangle-roller-brush"
+    },
+    {
+      "id": "roller_drive",
+      "label": "R \u00b7 roller drive allowance",
+      "group": "head",
+      "min": [
+        28,
+        6,
+        50
+      ],
+      "size": [
+        74,
+        60,
+        24
+      ],
+      "basis": "proposed reservation",
+      "motion": [
+        0,
+        0,
+        10
+      ],
+      "note": "Unselected drive; entire motor/coupler travels with cassette. 24 mm height is a design constraint, not a motor specification.",
+      "motion_group": "complete_head"
+    },
+    {
+      "id": "brush_side",
+      "label": "S \u00b7 side brush drive",
+      "group": "bottom",
+      "min": [
+        2,
+        29,
+        0
+      ],
+      "size": [
+        18,
+        35,
+        65
+      ],
+      "basis": "proposed reservation",
+      "note": "Unselected narrow corner drive; flexible bristles omitted, no claimed edge coverage."
+    },
+    {
+      "id": "wheel_left",
+      "label": "Left wheel + bump travel",
+      "group": "traction",
+      "min": [
+        2,
+        72,
+        0
+      ],
+      "size": [
+        24,
+        73.3,
+        82
+      ],
+      "basis": "proposed reservation",
+      "note": "72 mm tire + 10 mm upward travel and 1.271 mm rearward arc movement, rounded up to 1.3 mm."
+    },
+    {
+      "id": "tire_left",
+      "label": "Left Hogback tire envelope",
+      "group": "traction",
+      "min": [
+        2,
+        72,
+        0
+      ],
+      "size": [
+        24,
+        72,
+        72
+      ],
+      "basis": "manufacturer reference",
+      "parent": "wheel_left",
+      "shape": "cylinder_x",
+      "source": "https://www.gobilda.com/hogback-traction-wheel-72mm-diameter-50a-durometer/",
+      "reference_motion": [
+        0,
+        1.2701665379258316,
+        10
+      ]
+    },
+    {
+      "id": "mount_left",
+      "label": "Left motor/mount/wiring bay",
+      "group": "traction",
+      "min": [
+        26,
+        88,
+        18
+      ],
+      "size": [
+        80,
+        64,
+        46
+      ],
+      "basis": "proposed reservation",
+      "note": "Pod including motor, 40 mm trailing-arm span and hinge at y148/z36; detailed pivot and spring not drawn."
+    },
+    {
+      "id": "motor_left",
+      "label": "Left Pololu4846 body",
+      "group": "traction",
+      "min": [
+        26,
+        95.5,
+        23.5
+      ],
+      "size": [
+        69,
+        25,
+        25
+      ],
+      "basis": "manufacturer reference",
+      "parent": "mount_left",
+      "shape": "cylinder_x",
+      "source": "https://www.pololu.com/product/4846/specs",
+      "reference_motion": [
+        0,
+        1.2701665379258316,
+        10
+      ]
+    },
+    {
+      "id": "wheel_right",
+      "label": "Right wheel + bump travel",
+      "group": "traction",
+      "min": [
+        249,
+        72,
+        0
+      ],
+      "size": [
+        24,
+        73.3,
+        82
+      ],
+      "basis": "proposed reservation",
+      "note": "72 mm tire + 10 mm upward travel and 1.271 mm rearward arc movement, rounded up to 1.3 mm."
+    },
+    {
+      "id": "tire_right",
+      "label": "Right Hogback tire envelope",
+      "group": "traction",
+      "min": [
+        249,
+        72,
+        0
+      ],
+      "size": [
+        24,
+        72,
+        72
+      ],
+      "basis": "manufacturer reference",
+      "parent": "wheel_right",
+      "shape": "cylinder_x",
+      "source": "https://www.gobilda.com/hogback-traction-wheel-72mm-diameter-50a-durometer/",
+      "reference_motion": [
+        0,
+        1.2701665379258316,
+        10
+      ]
+    },
+    {
+      "id": "mount_right",
+      "label": "Right motor/mount/wiring bay",
+      "group": "traction",
+      "min": [
+        169,
+        88,
+        18
+      ],
+      "size": [
+        80,
+        64,
+        46
+      ],
+      "basis": "proposed reservation",
+      "note": "Pod including motor, 40 mm trailing-arm span and hinge at y148/z36; detailed pivot and spring not drawn."
+    },
+    {
+      "id": "motor_right",
+      "label": "Right Pololu4846 body",
+      "group": "traction",
+      "min": [
+        180,
+        95.5,
+        23.5
+      ],
+      "size": [
+        69,
+        25,
+        25
+      ],
+      "basis": "manufacturer reference",
+      "parent": "mount_right",
+      "shape": "cylinder_x",
+      "source": "https://www.pololu.com/product/4846/specs",
+      "reference_motion": [
+        0,
+        1.2701665379258316,
+        10
+      ]
+    },
+    {
+      "id": "flex_duct",
+      "label": "Flexible dirty-air joint",
+      "group": "air",
+      "min": [
+        118.5,
+        66,
+        6
+      ],
+      "size": [
+        38,
+        26,
+        48
+      ],
+      "basis": "proposed reservation",
+      "note": "Deformation envelope, not a solid obstruction; must remain sealed over head travel."
+    },
+    {
+      "id": "duct",
+      "label": "D \u00b7 fixed dirty-air duct",
+      "group": "air",
+      "min": [
+        118.5,
+        92,
+        16
+      ],
+      "size": [
+        38,
+        70,
+        28
+      ],
+      "basis": "proposed reservation",
+      "note": "32x22 clear section with proposed3 mm walls; complete loss/bridging unverified."
+    },
+    {
+      "id": "bin",
+      "label": "B \u00b7 rear-pull dirt bin",
+      "group": "air",
+      "min": [
+        26,
+        162,
+        16
+      ],
+      "size": [
+        149,
+        107,
+        64
+      ],
+      "basis": "proposed reservation",
+      "note": "3 mm wall assumption; 0.838 L rectangular inner volume before baffle/gate/freeboard deductions."
+    },
+    {
+      "id": "filter_chamber",
+      "label": "F \u00b7 filter and plenum",
+      "group": "air",
+      "min": [
+        26,
+        166,
+        80
+      ],
+      "size": [
+        149,
+        103,
+        40
+      ],
+      "basis": "proposed reservation",
+      "note": "Unknown filter geometry. Body allocation141x76x20, not a measured replacement filter. Moves rear with bin."
+    },
+    {
+      "id": "filter_allocation",
+      "label": "Unmeasured filter allocation",
+      "group": "air",
+      "min": [
+        30,
+        177,
+        83
+      ],
+      "size": [
+        141,
+        76,
+        20
+      ],
+      "basis": "proposed maximum allocation; not a part dimension",
+      "parent": "filter_chamber"
+    },
+    {
+      "id": "air_bridge",
+      "label": "Clean-air bridge / released seal",
+      "group": "air",
+      "min": [
+        175,
+        183,
+        103
+      ],
+      "size": [
+        17,
+        56,
+        17
+      ],
+      "basis": "proposed reservation",
+      "note": "Proposed top plenum route. Retract seal at least3 mm before rear bin/filter withdrawal; mechanism unmodeled."
+    },
+    {
+      "id": "caster",
+      "label": "C \u00b7 rear caster sweep",
+      "group": "traction",
+      "min": [
+        192,
+        192,
+        0
+      ],
+      "size": [
+        80,
+        80,
+        60
+      ],
+      "basis": "proposed reservation",
+      "note": "Complete swivel allowance. TENTE 1530PJO040P41 geometry reference only; riveted unguarded axle is not the final hair-resistant caster selection."
+    },
+    {
+      "id": "blower_bay",
+      "label": "V \u00b7 blower/plenum/exhaust",
+      "group": "air",
+      "min": [
+        192,
+        170,
+        65
+      ],
+      "size": [
+        78,
+        100,
+        55
+      ],
+      "basis": "proposed reservation",
+      "note": "Above caster with5 mm bay clearance. Top inlet plenum plus rear outlet expansion must fit; exact adapter geometry unresolved."
+    },
+    {
+      "id": "blower",
+      "label": "Wonsmart bare blower envelope",
+      "group": "air",
+      "min": [
+        195,
+        175,
+        66
+      ],
+      "size": [
+        71,
+        70,
+        37.5
+      ],
+      "basis": "manufacturer reference",
+      "parent": "blower_bay",
+      "source": "https://www.wonsmartmotor.com/uploads/WS7040-24-V200.pdf"
+    },
+    {
+      "id": "blower_driver_bay",
+      "label": "W \u00b7 blower driver",
+      "group": "bottom",
+      "min": [
+        108,
+        7,
+        62
+      ],
+      "size": [
+        44,
+        59,
+        24
+      ],
+      "basis": "proposed reservation",
+      "note": "Board reference40x50; component height and terminals unverified."
+    },
+    {
+      "id": "blower_driver",
+      "label": "WS2403 driver PCB",
+      "group": "bottom",
+      "min": [
+        110,
+        11,
+        65
+      ],
+      "size": [
+        40,
+        50,
+        1.6
+      ],
+      "basis": "manufacturer footprint; display thickness only",
+      "parent": "blower_driver_bay",
+      "source": "https://global.bttwiki.com/Universal%20Turbo%20Kit.html"
+    },
+    {
+      "id": "bottom_controls",
+      "label": "E \u00b7 traction and bottom MCU",
+      "group": "bottom",
+      "min": [
+        156,
+        7,
+        62
+      ],
+      "size": [
+        96,
+        59,
+        24
+      ],
+      "basis": "proposed reservation",
+      "note": "RoboClaw reference48x42x17; adjacent MCU allowance. Plug/cooling details remain open."
+    },
+    {
+      "id": "roboclaw",
+      "label": "RoboClaw reference",
+      "group": "bottom",
+      "min": [
+        160,
+        14,
+        66
+      ],
+      "size": [
+        48,
+        42,
+        17
+      ],
+      "basis": "manufacturer reference; delivered revision unverified",
+      "parent": "bottom_controls",
+      "source": "https://www.basicmicro.com/RoboClaw-2x7A-Motor-Controller_p_55.html"
+    },
+    {
+      "id": "bottom_mcu",
+      "label": "Bottom MCU allowance",
+      "group": "bottom",
+      "min": [
+        220,
+        9,
+        65
+      ],
+      "size": [
+        28,
+        55,
+        18
+      ],
+      "basis": "proposed reservation",
+      "parent": "bottom_controls"
+    },
+    {
+      "id": "core_power",
+      "label": "P \u00b7 core protection / logic",
+      "group": "core",
+      "min": [
+        28,
+        8,
+        88
+      ],
+      "size": [
+        96,
+        82,
+        30
+      ],
+      "basis": "proposed reservation",
+      "note": "Core MCU,5 V conversion and protection reservations; actual board layout/thermal design open."
+    },
+    {
+      "id": "pi_tray",
+      "label": "Pi4 + cooling and cables",
+      "group": "core",
+      "min": [
+        144,
+        8,
+        88
+      ],
+      "size": [
+        104,
+        83,
+        32
+      ],
+      "basis": "proposed reservation",
+      "note": "32 mm installed height allowance, not validated cooled Pi assembly."
+    },
+    {
+      "id": "pi",
+      "label": "Pi4 board reference",
+      "group": "core",
+      "min": [
+        153,
+        20,
+        92
+      ],
+      "size": [
+        85,
+        56,
+        1.6
+      ],
+      "basis": "manufacturer footprint; display thickness only",
+      "parent": "pi_tray",
+      "source": "https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf"
+    },
+    {
+      "id": "battery_tray",
+      "label": "BAT \u00b7 battery and lead bends",
+      "group": "core",
+      "min": [
+        10,
+        102,
+        88
+      ],
+      "size": [
+        164,
+        59,
+        32
+      ],
+      "basis": "proposed reservation",
+      "note": "Battery tray withdraws left. Actual lead bend/strap fit unverified."
+    },
+    {
+      "id": "battery",
+      "label": "Owned battery body",
+      "group": "core",
+      "min": [
+        19,
+        110,
+        92
+      ],
+      "size": [
+        135,
+        43,
+        22
+      ],
+      "basis": "owner measured",
+      "parent": "battery_tray"
+    },
+    {
+      "id": "boost_bay",
+      "label": "24 V converter + cooling bay",
+      "group": "core",
+      "min": [
+        176,
+        92,
+        70
+      ],
+      "size": [
+        70,
+        70,
+        50
+      ],
+      "basis": "proposed reservation",
+      "note": "Cincon CHB100W-24S24 working baseline with carrier, PH01 pad, HBT127 heat sink and fan. Core projects 16 mm below mating plane; carrier/duct/harness still need detailing."
+    },
+    {
+      "id": "front_sensors",
+      "label": "Forward sensing / harness",
+      "group": "core",
+      "min": [
+        126,
+        2,
+        88
+      ],
+      "size": [
+        16,
+        88,
+        30
+      ],
+      "basis": "proposed reservation",
+      "note": "Unselected sensor arrangement; cannot establish obstacle or cliff coverage from this reservation."
+    },
+    {
+      "id": "pickup_left",
+      "label": "Left station support",
+      "group": "interface",
+      "min": [
+        4,
+        36,
+        90
+      ],
+      "size": [
+        14,
+        54,
+        24
+      ],
+      "basis": "proposed reservation",
+      "note": "Reservation for positive core support/capture, not a finished load path."
+    },
+    {
+      "id": "pickup_right",
+      "label": "Right station support",
+      "group": "interface",
+      "min": [
+        257,
+        36,
+        90
+      ],
+      "size": [
+        14,
+        54,
+        24
+      ],
+      "basis": "proposed reservation",
+      "note": "Reservation for positive core support/capture, not a finished load path."
+    },
+    {
+      "id": "joint_front_left",
+      "label": "Joint front_left",
+      "group": "interface",
+      "min": [
+        4,
+        4,
+        80
+      ],
+      "size": [
+        20,
+        20,
+        16
+      ],
+      "basis": "proposed reservation",
+      "note": "Seat/lock reservation only. Rear-inboard14 mm width is particularly restrictive; retention strength and station release unresolved."
+    },
+    {
+      "id": "joint_front_right",
+      "label": "Joint front_right",
+      "group": "interface",
+      "min": [
+        252,
+        4,
+        80
+      ],
+      "size": [
+        20,
+        20,
+        16
+      ],
+      "basis": "proposed reservation",
+      "note": "Seat/lock reservation only. Rear-inboard14 mm width is particularly restrictive; retention strength and station release unresolved."
+    },
+    {
+      "id": "joint_rear_left",
+      "label": "Joint rear_left",
+      "group": "interface",
+      "min": [
+        4,
+        248,
+        80
+      ],
+      "size": [
+        20,
+        20,
+        16
+      ],
+      "basis": "proposed reservation",
+      "note": "Seat/lock reservation only. Rear-inboard14 mm width is particularly restrictive; retention strength and station release unresolved."
+    },
+    {
+      "id": "joint_rear_inboard",
+      "label": "Joint rear_inboard",
+      "group": "interface",
+      "min": [
+        176,
+        246,
+        80
+      ],
+      "size": [
+        14,
+        24,
+        16
+      ],
+      "basis": "proposed reservation",
+      "note": "Seat/lock reservation only. Rear-inboard14 mm width is particularly restrictive; retention strength and station release unresolved."
+    },
+    {
+      "id": "lidar",
+      "label": "L \u00b7 RPLIDAR A1 reference",
+      "group": "cap",
+      "min": [
+        89,
+        96,
+        123
+      ],
+      "size": [
+        96.8,
+        70.3,
+        55
+      ],
+      "basis": "manufacturer family reference",
+      "source": "https://www.slamtec.com/cn/lidar/a1spec",
+      "note": "Physically fixed to the core; cap layer in viewer is for visibility only."
+    },
+    {
+      "id": "converter_carrier",
+      "label": "Converter carrier allowance",
+      "group": "core",
+      "parent": "boost_bay",
+      "min": [
+        178,
+        95,
+        74.2
+      ],
+      "size": [
+        66,
+        64,
+        1.6
+      ],
+      "basis": "proposed PCB outline; not routed",
+      "note": "Terminals and component placement unmodeled; 2.2 mm case-to-board gap leaves 0.8 mm minimum pin protrusion through 1.6 mm PCB."
+    },
+    {
+      "id": "converter",
+      "label": "Cincon CHB100W-24S24 case",
+      "group": "core",
+      "parent": "boost_bay",
+      "min": [
+        180.5,
+        98,
+        78
+      ],
+      "size": [
+        61,
+        57.9,
+        12.7
+      ],
+      "basis": "manufacturer reference; working electrical baseline",
+      "note": "95 g bare; nominal case size excludes pins; carrier and thermal assembly not qualified.",
+      "source": "https://www.cincon.com/productdownload/Datasheet-CHB100W.pdf"
+    },
+    {
+      "id": "converter_pad",
+      "label": "Cincon PH01 thermal pad",
+      "group": "core",
+      "parent": "boost_bay",
+      "min": [
+        181,
+        98.5,
+        90.7
+      ],
+      "size": [
+        60,
+        56.9,
+        0.25
+      ],
+      "basis": "manufacturer reference",
+      "note": "",
+      "source": "https://www.cincon.com/_i/assets/upload/files/Datasheet-HS-LBQBHBFB.pdf"
+    },
+    {
+      "id": "converter_heatsink",
+      "label": "Cincon HBT127 / M-C091 heat sink",
+      "group": "core",
+      "parent": "boost_bay",
+      "min": [
+        180.5,
+        97.95,
+        90.95
+      ],
+      "size": [
+        61,
+        58,
+        12.7
+      ],
+      "basis": "manufacturer reference envelope; fins omitted",
+      "note": "50.4 g reference; do not count as solid aluminum block mass.",
+      "source": "https://www.cincon.com/_i/assets/upload/files/Datasheet-HS-LBQBHBFB.pdf"
+    },
+    {
+      "id": "converter_fan",
+      "label": "Noctua NF-A4x10 5V fan allowance",
+      "group": "core",
+      "parent": "boost_bay",
+      "min": [
+        191,
+        106.95,
+        105.65
+      ],
+      "size": [
+        40,
+        40,
+        12
+      ],
+      "basis": "manufacturer extended dimensions with pads; cooling candidate",
+      "note": "12 mm allocated despite nominal 10 mm name; 15 g reference. Air inlet and transverse fin outlets still require duct design; fan free-air rating does not prove cooling.",
+      "source": "https://www.noctua.at/en/products/nf-a4x10-5v/specifications"
+    },
+    {
+      "id": "caster_sweep",
+      "label": "TENTE reference full swivel sweep",
+      "group": "traction",
+      "parent": "caster",
+      "min": [
+        193,
+        193,
+        0
+      ],
+      "size": [
+        78,
+        78,
+        51
+      ],
+      "basis": "manufacturer geometry reference only; not selected for purchase",
+      "note": "40 mm wheel, 19 mm trail, 39 mm sweep radius; 51 mm height excludes our mounting adapter.",
+      "source": "https://www.tente.com/en-ca/swivel-castor-40-mm/1530pjo040p41",
+      "shape": "cylinder_z"
+    }
+  ],
+  "service_groups": [
+    {
+      "id": "bin_service",
+      "members": [
+        "bin",
+        "filter_chamber"
+      ],
+      "delta": [
+        0,
+        125,
+        0
+      ],
+      "released": [
+        "air_bridge"
+      ],
+      "condition": "Clean-air seal released and dirty inlet separated; real latch/rail construction unverified."
+    },
+    {
+      "id": "battery_service",
+      "members": [
+        "battery_tray"
+      ],
+      "delta": [
+        -195,
+        0,
+        0
+      ],
+      "released": [],
+      "condition": "Manual service; station capture withdrawn from path."
+    },
+    {
+      "id": "pi_service",
+      "members": [
+        "pi_tray"
+      ],
+      "delta": [
+        0,
+        -110,
+        0
+      ],
+      "released": [],
+      "condition": "Manual front tray extraction; connector disconnection and frame opening required."
+    },
+    {
+      "id": "head_service",
+      "members": [
+        "head",
+        "roller_drive"
+      ],
+      "delta": [
+        0,
+        -80,
+        0
+      ],
+      "released": [
+        "flex_duct"
+      ],
+      "condition": "Bottom supported above floor; head de-energized and screws/plug/flex joint released. Real flanges unmodeled."
+    }
+  ],
+  "station": {
+    "relative_bottom_drop_mm": 60,
+    "tray_top_start_mm": 70,
+    "tray_top_end_mm": 10,
+    "minimum_separation_mm": 8
+  },
+  "wheel_stack": {
+    "tire_outer_width_mm": 271,
+    "motor_face_x_mm": [
+      26,
+      249
+    ],
+    "hub_back_x_mm": [
+      22,
+      253
+    ],
+    "shaft_length_mm": 12.5,
+    "hub_body_mm": 8,
+    "motor_face_to_hub_back_mm": 4,
+    "proposed_plate_thickness_mm": 2,
+    "plate_to_hub_gap_mm": 2,
+    "shaft_engagement_mm": 8.5,
+    "basis": "Supplier mating dimensions and proposed placement; finished bracket/fasteners and wet traction not qualified."
+  },
+  "unresolved": [
+    "Actual roller ends/cutter actuation and suitable drive within bay",
+    "Actual filter seal and body within 141 \u00d7 76 \u00d7 20 mm allocation",
+    "Serviceable hair-resistant caster SKU within 80 x 80 x 60 mm bay; 10 mm threshold behavior",
+    "Wheel suspension/linkage and full shaft/plate/tire checks",
+    "Cincon converter carrier, default-off interface, startup and cooling qualification",
+    "Frame strength and narrow rear-inboard lock",
+    "Cliff/bump sensor coverage and stopping distances",
+    "Complete wiring cooling sealing and dirt evacuation",
+    "Measured mass/CG incl caster trailing contact and empty/full bin",
+    "Actual supply/driver revisions and blower system losses"
+  ],
+  "wheel_suspension": {
+    "concept": "Independent trailing motor pods; transverse hinge behind each axle",
+    "hinge_y_mm": 148,
+    "hinge_z_mm": 36,
+    "arm_length_mm": 40,
+    "upward_travel_mm": 10,
+    "rearward_shift_at_full_travel_mm": 1.2701665379258316,
+    "status": "Kinematic reservation only; spring preload, pivots, axle load and bracket strength unselected"
+  },
+  "caster_reference": {
+    "part": "caster_sweep",
+    "parent": "caster",
+    "pivot_xy_mm": [
+      232,
+      232
+    ],
+    "sweep_radius_mm": 39,
+    "trail_mm": 19,
+    "overall_height_mm": 51,
+    "minimum_radial_clearance_mm": 1,
+    "status": "Geometric screen only. No selected serviceable caster or contact-load qualification."
+  },
+  "converter_stack": {
+    "board": "converter_carrier",
+    "case": "converter",
+    "thermal_pad": "converter_pad",
+    "heatsink": "converter_heatsink",
+    "fan": "converter_fan",
+    "parent": "boost_bay",
+    "minimum_pin_length_mm": 4.6,
+    "minimum_pin_protrusion_below_pcb_mm": 0.5,
+    "minimum_board_bottom_clearance_mm": 3,
+    "minimum_fan_to_heatsink_mm": 2,
+    "minimum_fan_inlet_clearance_mm": 2,
+    "status": "Nominal placement; mounting holes, pin maximum length, tolerances, terminals and airflow paths unmodeled."
+  }
+}

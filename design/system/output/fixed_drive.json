@@ -1,0 +1,7229 @@
+{
+  "config": {
+    "revision": "N: fixed drive mounts versus independent suspension",
+    "status": "Comparison only; head motion and joints are not released for fabrication",
+    "angle": {
+      "x": 29,
+      "width": 52,
+      "y_front": 92.5,
+      "y_back": 130,
+      "z_bottom": 16.7375,
+      "z_top": 65,
+      "wall": 4.7625,
+      "inside_radius": 6.35
+    },
+    "beam": {
+      "min": [
+        28,
+        130,
+        52.3
+      ],
+      "size": [
+        219,
+        12.7,
+        12.7
+      ],
+      "wall": 1.6002
+    },
+    "cleat": {
+      "leg": 15,
+      "wall": 3.175,
+      "length": 22,
+      "inside_radius": 1
+    },
+    "material": {
+      "aluminum_g_mm3": 0.0027,
+      "steel_g_mm3": 0.00785,
+      "e_mpa": 69000,
+      "g_mpa": 26000,
+      "angle_bending_screen_mpa": 120,
+      "tube_bending_screen_mpa": 55
+    },
+    "loads": {
+      "vertical_n": 150,
+      "fore_aft_n": 25,
+      "bolt_preload_n_each": 1250,
+      "friction_assumption": 0.15,
+      "section_hole_factor": 0.75
+    },
+    "completion_reserve_g": 20,
+    "terrain_heights_mm": [
+      4,
+      10
+    ],
+    "caster_headings_deg": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "sources": {
+      "angle": "https://www.onlinemetals.com/en/buy/aluminum/2-x-2-x-0-1875-aluminum-angle-6061-t6-extruded-structural/pid/988",
+      "tube": "https://www.onlinemetals.com/en/buy/aluminum/0-5-x-0-063-aluminum-square-tube-6063-t52-extruded/pid/20685",
+      "tube_properties": "https://www.hydro.com/globalassets/01-products--services/extruded-profiles/americas/ena-resources/alloy-data-sheets/hydro_2019_data_sheet_6063.pdf",
+      "motor_bracket": "https://www.pololu.com/product/2676",
+      "motor_guidance": "https://www.pololu.com/file/0J1829/pololu-25d-metal-gearmotors.pdf"
+    },
+    "notes": [
+      "Dimensioned nominal stock, not a tolerance-controlled drawing. The 6061 angle includes its 6.35 mm inside radius. No drilled-hole mass credit.",
+      "Tube is the documented 1/2 x 1/2 x 0.063 inch 6063-T52 size. A 55 MPa screen is half the cited 110 MPa minimum yield. Stock corner radii still need confirmation.",
+      "Small cleats require 3/4 x 3/4 x 1/8 inch architectural angle, trimmed to 15 mm legs, with inside radius <=1 mm; exact product and tolerances remain to select.",
+      "All prior frame, caster, head, harness and power-carrier budgets are retained. Only the two complete K pod scopes are replaced. No savings from supposed overlap.",
+      "Wheel axes and catalog motor/bracket interface are unchanged. No pivots, springs, collars or stops remain in this drive-mount candidate. Floor following must be provided at the cleaning head."
+    ]
+  },
+  "stock": [
+    {
+      "id": "motor_support_angles",
+      "qty": 2,
+      "each_g": 55.375975870919454,
+      "mass_g": 110.75195174183891,
+      "cg_mm": [
+        137.5,
+        119,
+        37
+      ],
+      "basis": "6061 angle volume including inside radius; holes/end radii not deducted"
+    },
+    {
+      "id": "common_crossmember",
+      "qty": 1,
+      "each_g": 42.01044578539201,
+      "mass_g": 42.01044578539201,
+      "cg_mm": [
+        137.5,
+        136.35,
+        58.65
+      ],
+      "basis": "6063 square tube volume; holes not deducted"
+    },
+    {
+      "id": "rail_cleats",
+      "qty": 2,
+      "each_g": 5.071808224094192,
+      "mass_g": 10.143616448188384,
+      "cg_mm": [
+        137.5,
+        141,
+        69
+      ],
+      "basis": "Small-angle section; actual corner radius and SKU pending"
+    },
+    {
+      "id": "Pololu_2676_brackets",
+      "qty": 2,
+      "each_g": 8.5,
+      "mass_g": 17.0,
+      "cg_mm": [
+        137.5,
+        105,
+        29
+      ],
+      "basis": "Catalog mass, preserved motor/shaft position"
+    },
+    {
+      "id": "motor_M3x6_flush_screws",
+      "qty": 4,
+      "each_g": 0.55,
+      "mass_g": 2.2,
+      "cg_mm": [
+        137.5,
+        105,
+        36
+      ],
+      "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+    },
+    {
+      "id": "foot_M3x12_screw_washer_locknut_sets",
+      "qty": 8,
+      "each_g": 1.9,
+      "mass_g": 15.2,
+      "cg_mm": [
+        137.5,
+        105,
+        21.5
+      ],
+      "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+    },
+    {
+      "id": "support_M4x25_screw_washers_locknut_sets",
+      "qty": 4,
+      "each_g": 4.2,
+      "mass_g": 16.8,
+      "cg_mm": [
+        137.5,
+        136,
+        58.65
+      ],
+      "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+    },
+    {
+      "id": "beam_M4x25_screw_washers_locknut_sets",
+      "qty": 2,
+      "each_g": 4,
+      "mass_g": 8,
+      "cg_mm": [
+        137.5,
+        136.35,
+        63
+      ],
+      "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+    },
+    {
+      "id": "rail_M4x12_screw_washers_locknut_sets",
+      "qty": 4,
+      "each_g": 2.7,
+      "mass_g": 10.8,
+      "cg_mm": [
+        137.5,
+        141,
+        74.5
+      ],
+      "basis": "Installed fastener allowance including washer(s) and locking nut; verify selected SKU mass/grip"
+    },
+    {
+      "id": "beam_horizontal_compression_sleeves",
+      "qty": 4,
+      "each_g": 1.025536219008655,
+      "mass_g": 4.10214487603462,
+      "cg_mm": [
+        137.5,
+        136.35,
+        58.65
+      ],
+      "basis": "Steel OD6/ID4.3 tube, inner beam width; nominal length 9.4996 mm"
+    },
+    {
+      "id": "beam_vertical_compression_sleeves",
+      "qty": 2,
+      "each_g": 1.025536219008655,
+      "mass_g": 2.05107243801731,
+      "cg_mm": [
+        137.5,
+        136.35,
+        58.65
+      ],
+      "basis": "Steel OD6/ID4.3 tube, inner beam height; nominal length 9.4996 mm"
+    },
+    {
+      "id": "completion_reserve",
+      "qty": 1,
+      "each_g": 20,
+      "mass_g": 20,
+      "cg_mm": [
+        137.5,
+        130,
+        50
+      ],
+      "basis": "Local finish/tolerance/retention contingency; not an extra head budget"
+    }
+  ],
+  "structure": {
+    "local_angle_moment_nmm": 7267.562746062992,
+    "foot_column_reactions_n": [
+      302.65748031496065,
+      -152.65748031496065
+    ],
+    "angle_stress_mpa": 98.59058684400429,
+    "angle_screen_mpa": 120,
+    "angle_screen_pass": true,
+    "beam_I_vertical_mm4": 1116.923332085152,
+    "beam_J_mm4": 1641.2736239596895,
+    "beam_combined_stress_mpa": 30.83538252826856,
+    "beam_screen_mpa": 55,
+    "beam_screen_pass": true,
+    "beam_deflection_bound_mm": 0.2110099030861709,
+    "beam_twist_bound_deg": 0.09188625091559448,
+    "support_joint_min_face_pressure_mpa": 1.2088533792452205,
+    "support_joint_friction_margin_n": 222.9309367425445,
+    "scope": "Factored 150 N vertical and +/-25 N fore-aft per wheel, as H/K. Beam load application X55.5/219.5 plus couples from the 41.5 mm outboard wheel offset, supports X36.5/238.5; 25% section reduction for holes. Torsion assumes both ends rotationally restrained, which the cleat/rail joints still need to demonstrate. Local bracket strip and tube screens only; no motor-bearing rating, fatigue or complete joint qualification. Clamp/friction values are assumptions, not torque instructions."
+  },
+  "modules": {
+    "vacuum": {
+      "mass_g": 5086.001313853186,
+      "cg_mm": [
+        130.09083820130726,
+        115.91329682635903,
+        76.9056681620093
+      ],
+      "M_mass_g": 5315.96895950745,
+      "removed_pods_g": 489.02687694373486,
+      "replacement_g": 259.05923128947126,
+      "potential_saving_g": 229.96764565426383,
+      "terrain": [
+        {
+          "bottom": "vacuum",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            22.347740551407217,
+            18.61300037401133,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            22.453144299274236,
+            18.97758097959298,
+            5.445909505631128
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            22.298241844354184,
+            19.30598227275374,
+            5.272410667390417
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.969840551193425,
+            19.460884727673793,
+            5.445909505631125
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.605259945611774,
+            19.355480979806774,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.409816561225878,
+            18.992158413058725,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.565305832295426,
+            18.573046260694984,
+            6.7382826915079335
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.984417984659167,
+            18.417556989625435,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.30834206506586
+          ],
+          "support_n": [
+            22.347740551407217,
+            18.61300037401133,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            -0.0316379669929822,
+            0.9994993942192016
+          ],
+          "plane_constant": -7.3400083423718705,
+          "q_mm": -2.2021439366093283,
+          "pitch_deg": -1.8130245280232204,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.7952386646859,
+            76.68883358811718
+          ],
+          "support_n": [
+            22.1090040455221,
+            18.305737648844378,
+            6.461893090131866
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.01383586738402584,
+            0.9997731304577704
+          ],
+          "plane_constant": -5.687654026616262,
+          "q_mm": -2.9635144841924723,
+          "pitch_deg": -0.7928660821672633,
+          "roll_deg": -0.9279962717459578,
+          "cg_mm": [
+            130.03070444349044,
+            115.86192065972934,
+            76.57666350023064
+          ],
+          "support_n": [
+            22.10124175029222,
+            18.62226725250367,
+            6.153125781702453
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.017806627078086126,
+            0.9997102918564459
+          ],
+          "plane_constant": -1.6534046885937146,
+          "q_mm": -3.2400254233063475,
+          "pitch_deg": -1.0204323328423992,
+          "roll_deg": 0.9280545924309386,
+          "cg_mm": [
+            130.1515094540067,
+            115.84658519093868,
+            76.61496523192709
+          ],
+          "support_n": [
+            22.357028050055288,
+            18.297878329016985,
+            6.22172840542607
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.03135667174719015,
+            0.9995082586636986
+          ],
+          "plane_constant": 3.2747478453481156,
+          "q_mm": 2.1469634131070214,
+          "pitch_deg": 1.7968994969345637,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.03009554779725,
+            77.11330788593133
+          ],
+          "support_n": [
+            22.581067658886656,
+            18.913301003082093,
+            5.382266122529593
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            22.347740551407217,
+            18.61300037401133,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.30834206506586
+          ],
+          "support_n": [
+            22.453144299274236,
+            18.97758097959298,
+            5.445909505631128
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            -0.02910442104757403,
+            0.9995763766093543
+          ],
+          "plane_constant": -7.07121465205852,
+          "q_mm": -2.0243130406998846,
+          "pitch_deg": -1.6677960036487596,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.80470051289544,
+            76.70648456481491
+          ],
+          "support_n": [
+            22.244388701062405,
+            18.728164338381653,
+            5.904081745054285
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.013267581532512623,
+            0.9997808334289453
+          ],
+          "plane_constant": -5.627706705245072,
+          "q_mm": -2.92399396403222,
+          "pitch_deg": -0.7602984390227432,
+          "roll_deg": -0.9279891231007471,
+          "cg_mm": [
+            130.03070541978553,
+            115.86403165244421,
+            76.58055001465927
+          ],
+          "support_n": [
+            22.216920015073327,
+            19.006113903537415,
+            5.653600865887601
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.0158504930418209,
+            0.9997432197729222
+          ],
+          "plane_constant": -1.4468252097927112,
+          "q_mm": -3.103725083292113,
+          "pitch_deg": -0.9083235110769328,
+          "roll_deg": 0.9280240310237312,
+          "cg_mm": [
+            130.1515060852983,
+            115.85391704619744,
+            76.62839376011688
+          ],
+          "support_n": [
+            22.48172412514202,
+            18.70055115908249,
+            5.694359500273833
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.028884997178122995,
+            0.9995827414166473
+          ],
+          "plane_constant": 3.0179033947022136,
+          "q_mm": 1.9788691964473357,
+          "pitch_deg": 1.6552186540219793,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.0208965301248,
+            77.09718863612859
+          ],
+          "support_n": [
+            22.6579490629353,
+            19.22227724974802,
+            4.99640847181502
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            22.453144299274236,
+            18.97758097959298,
+            5.445909505631128
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.30834206506586
+          ],
+          "support_n": [
+            22.298241844354184,
+            19.30598227275374,
+            5.272410667390417
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            -0.028170436193656317,
+            0.9996031345112215
+          ],
+          "plane_constant": -6.972182957929938,
+          "q_mm": -1.958824644858424,
+          "pitch_deg": -1.6142606547041936,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.8081882533121,
+            76.71297861051933
+          ],
+          "support_n": [
+            22.084289946679245,
+            19.0920303750788,
+            5.700314462740298
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.01409331057052738,
+            0.9997695345472181
+          ],
+          "plane_constant": -5.714815013978805,
+          "q_mm": -2.981422300506961,
+          "pitch_deg": -0.8076198638470312,
+          "roll_deg": -0.9279996089230811,
+          "cg_mm": [
+            130.0307040012225,
+            115.86096432147073,
+            76.57490200891031
+          ],
+          "support_n": [
+            22.050559600787373,
+            19.34068337295877,
+            5.485391810752198
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.01409331057052733,
+            0.9997695345472181
+          ],
+          "plane_constant": -1.261373718432235,
+          "q_mm": -2.9814223005069507,
+          "pitch_deg": -0.8076198638470283,
+          "roll_deg": 0.9279996089230811,
+          "cg_mm": [
+            130.1515030597767,
+            115.86050250968194,
+            76.64043076748906
+          ],
+          "support_n": [
+            22.332969380749653,
+            19.058111338484924,
+            5.485554065263766
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.027971327239483666,
+            0.9996087258785118
+          ],
+          "plane_constant": 2.9229034917722077,
+          "q_mm": 1.9166856606488352,
+          "pitch_deg": 1.6028480546434738,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.01749572696819,
+            77.09121960455583
+          ],
+          "support_n": [
+            22.508421881345658,
+            19.516162309745212,
+            4.852050593407473
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            22.298241844354184,
+            19.30598227275374,
+            5.272410667390417
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.30834206506586
+          ],
+          "support_n": [
+            21.969840551193425,
+            19.460884727673793,
+            5.445909505631125
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            -0.02910442104757403,
+            0.9995763766093543
+          ],
+          "plane_constant": -7.07121465205852,
+          "q_mm": -2.0243130406998846,
+          "pitch_deg": -1.6677960036487596,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.80470051289544,
+            76.70648456481491
+          ],
+          "support_n": [
+            21.720423909982095,
+            19.25212912946196,
+            5.904081745054288
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.0158504930418209,
+            0.9997432197729222
+          ],
+          "plane_constant": -5.90026650533927,
+          "q_mm": -3.103725083292113,
+          "pitch_deg": -0.9083235110769328,
+          "roll_deg": -0.9280240310237312,
+          "cg_mm": [
+            130.03070098268387,
+            115.854436444449,
+            76.56286500153813
+          ],
+          "support_n": [
+            21.6930210327254,
+            19.489442857697636,
+            5.694170894075306
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.013267581532512623,
+            0.9997808334289453
+          ],
+          "plane_constant": -1.174265409698513,
+          "q_mm": -2.9239939640322197,
+          "pitch_deg": -0.7602984390227432,
+          "roll_deg": 0.9279891231007471,
+          "cg_mm": [
+            130.1515016382154,
+            115.86359690072912,
+            76.64607877323803
+          ],
+          "support_n": [
+            21.9983951479032,
+            19.224481014491467,
+            5.653758622103677
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.028884997178122995,
+            0.9995827414166473
+          ],
+          "plane_constant": 3.0179033947022136,
+          "q_mm": 1.9788691964473357,
+          "pitch_deg": 1.6552186540219793,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.0208965301248,
+            77.09718863612859
+          ],
+          "support_n": [
+            22.214536821348467,
+            19.665689491334856,
+            4.99640847181502
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.969840551193425,
+            19.460884727673793,
+            5.445909505631125
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.30834206506586
+          ],
+          "support_n": [
+            21.605259945611774,
+            19.355480979806774,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            -0.0316379669929822,
+            0.9994993942192016
+          ],
+          "plane_constant": -7.3400083423718705,
+          "q_mm": -2.2021439366093283,
+          "pitch_deg": -1.8130245280232204,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.7952386646859,
+            76.68883358811718
+          ],
+          "support_n": [
+            21.29799722044482,
+            19.116744473921653,
+            6.46189309013187
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.017806627078086126,
+            0.9997102918564459
+          ],
+          "plane_constant": -6.106845984140273,
+          "q_mm": -3.2400254233063475,
+          "pitch_deg": -1.0204323328423992,
+          "roll_deg": -0.9280545924309386,
+          "cg_mm": [
+            130.03069762271355,
+            115.84716869854559,
+            76.54943647334834
+          ],
+          "support_n": [
+            21.290375287293188,
+            19.3647614820277,
+            6.221498015177456
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.01383586738402584,
+            0.9997731304577704
+          ],
+          "plane_constant": -1.2342127310697038,
+          "q_mm": -2.9635144841924723,
+          "pitch_deg": -0.7928660821672633,
+          "roll_deg": 0.9279962717459578,
+          "cg_mm": [
+            130.15150261655452,
+            115.8614672846941,
+            76.64219225880939
+          ],
+          "support_n": [
+            21.614533808308412,
+            19.108796398983067,
+            6.153304577206864
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.03135667174719015,
+            0.9995082586636986
+          ],
+          "plane_constant": 3.2747478453481156,
+          "q_mm": 2.1469634131070214,
+          "pitch_deg": 1.7968994969345637,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.03009554779725,
+            77.11330788593133
+          ],
+          "support_n": [
+            21.905560574682532,
+            19.58880808728621,
+            5.3822661225296
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.605259945611774,
+            19.355480979806774,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.30834206506586
+          ],
+          "support_n": [
+            21.409816561225878,
+            18.992158413058725,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            -0.034657292087494,
+            0.9993992556056674
+          ],
+          "plane_constant": -7.660642467382844,
+          "q_mm": -2.414430407766031,
+          "pitch_deg": -1.9861142975731152,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.78396082991105,
+            76.66773084475801
+          ],
+          "support_n": [
+            21.049551840150873,
+            18.69062569656724,
+            7.136457247780232
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.0188609174921551,
+            0.9996909569476721
+          ],
+          "plane_constant": -6.218242534333372,
+          "q_mm": -3.313552887340863,
+          "pitch_deg": -1.080856807964386,
+          "roll_deg": -0.9280725386895313,
+          "cg_mm": [
+            130.0306958119417,
+            115.84325129161644,
+            76.54218636770823
+          ],
+          "support_n": [
+            21.07068149806028,
+            18.973461486380554,
+            6.8324918000575074
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.015785220334126323,
+            0.9997442525119118
+          ],
+          "plane_constant": -1.439934396881163,
+          "q_mm": -3.0991797200544324,
+          "pitch_deg": -0.904582701775749,
+          "roll_deg": 0.9280230725396145,
+          "cg_mm": [
+            130.15150597290207,
+            115.85416168310259,
+            76.62884132463628
+          ],
+          "support_n": [
+            21.391130393195994,
+            18.711387940542878,
+            6.774116450759472
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.03428849089630096,
+            0.9994119768103914
+          ],
+          "plane_constant": 3.579122709285695,
+          "q_mm": 2.346116607989884,
+          "pitch_deg": 1.964970978832181,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.04100543573674,
+            77.13237481430065
+          ],
+          "support_n": [
+            21.76016906372083,
+            19.285394846233928,
+            5.831070874543585
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.409816561225878,
+            18.992158413058725,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.30834206506586
+          ],
+          "support_n": [
+            21.565305832295426,
+            18.573046260694984,
+            6.7382826915079335
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            -0.03608471347512466,
+            0.9993487346534333
+          ],
+          "plane_constant": -7.812340467364489,
+          "q_mm": -2.5149286681506546,
+          "pitch_deg": -2.0679507347752644,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.77862842600543,
+            76.65772859660373
+          ],
+          "support_n": [
+            21.20488330648008,
+            18.21262373487964,
+            7.459127743138623
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.018032062449820883,
+            0.9997062510234714
+          ],
+          "plane_constant": -6.130662168159501,
+          "q_mm": -3.2557436435558036,
+          "pitch_deg": -1.0333525973511895,
+          "roll_deg": -0.928058342990365,
+          "cg_mm": [
+            130.03069723551428,
+            115.84633107241156,
+            76.54788694979645
+          ],
+          "support_n": [
+            21.24154656191485,
+            18.5392228826385,
+            7.095865339944993
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.018032062449820883,
+            0.9997062510234714
+          ],
+          "plane_constant": -1.677220872612942,
+          "q_mm": -3.2557436435558036,
+          "pitch_deg": -1.0333525973511895,
+          "roll_deg": 0.928058342990365,
+          "cg_mm": [
+            130.1515098422783,
+            115.8457401762905,
+            76.6134157083752
+          ],
+          "support_n": [
+            21.53145729843773,
+            18.24904619757514,
+            7.0961312884854735
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.035668984174820936,
+            0.9993636593192372
+          ],
+          "plane_constant": 3.7223350738487326,
+          "q_mm": 2.4398041902145082,
+          "pitch_deg": 2.04411585582454,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.0461418953635,
+            77.14133291997899
+          ],
+          "support_n": [
+            21.914930071660354,
+            18.922670500059912,
+            6.039034212778077
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.565305832295426,
+            18.573046260694984,
+            6.7382826915079335
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.30834206506586
+          ],
+          "support_n": [
+            21.984417984659167,
+            18.417556989625435,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            -0.034657292087494,
+            0.9993992556056674
+          ],
+          "plane_constant": -7.660642467382844,
+          "q_mm": -2.414430407766031,
+          "pitch_deg": -1.9861142975731152,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.78396082991105,
+            76.66773084475801
+          ],
+          "support_n": [
+            21.682885268167684,
+            18.057292268550427,
+            7.136457247780232
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.015785220334126323,
+            0.9997442525119118
+          ],
+          "plane_constant": -5.893375692427722,
+          "q_mm": -3.099179720054433,
+          "pitch_deg": -0.904582701775749,
+          "roll_deg": -0.9280230725396145,
+          "cg_mm": [
+            130.03070109480603,
+            115.85467894219265,
+            76.56331256605753
+          ],
+          "support_n": [
+            21.7038570484543,
+            18.398884766903542,
+            6.773892969140501
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.0188609174921551,
+            0.9996909569476721
+          ],
+          "plane_constant": -1.7648012387868137,
+          "q_mm": -3.313552887340863,
+          "pitch_deg": -1.080856807964386,
+          "roll_deg": 0.9280725386895313,
+          "cg_mm": [
+            130.15151126990963,
+            115.84263322985811,
+            76.60771512628698
+          ],
+          "support_n": [
+            21.965707091189483,
+            18.07816858917056,
+            6.832759104138301
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.03428849089630096,
+            0.9994119768103914
+          ],
+          "plane_constant": 3.579122709285695,
+          "q_mm": 2.346116607989884,
+          "pitch_deg": 1.964970978832181,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.04100543573674,
+            77.13237481430065
+          ],
+          "support_n": [
+            22.27765441783437,
+            18.76790949212039,
+            5.831070874543585
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.984417984659167,
+            18.417556989625435,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.91235291965069
+          ],
+          "support_n": [
+            22.347740551407217,
+            18.61300037401133,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            -0.0796405408609999,
+            0.9968236475181392
+          ],
+          "plane_constant": -18.476605479751978,
+          "q_mm": -5.627420680400646,
+          "pitch_deg": -4.567904319136076,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.61570850838245,
+            76.34423377856895
+          ],
+          "support_n": [
+            21.738614712084328,
+            17.8290328585865,
+            7.308987213827514
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.0348334710157851,
+            0.9985727449061895
+          ],
+          "plane_constant": -14.275697259467812,
+          "q_mm": -7.465545921911472,
+          "pitch_deg": -1.9978533833012864,
+          "roll_deg": -2.321711096609438,
+          "cg_mm": [
+            129.9414094263705,
+            115.78473029071215,
+            76.07428783193565
+          ],
+          "support_n": [
+            21.728126795756765,
+            18.6338669334837,
+            6.514641055257879
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.04482887824425535,
+            0.9981739674264457
+          ],
+          "plane_constant": -4.205967768861573,
+          "q_mm": -8.173855497892257,
+          "pitch_deg": -2.571476328683577,
+          "roll_deg": 2.3226376208109096,
+          "cg_mm": [
+            130.2436289431217,
+            115.74411571858627,
+            76.16744107139684
+          ],
+          "support_n": [
+            22.368725159983132,
+            17.817960988058434,
+            6.689948636456776
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.07787921927039117,
+            0.996962801314991
+          ],
+          "plane_constant": 8.067978870730752,
+          "q_mm": 5.280364493091454,
+          "pitch_deg": 4.466673550600796,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.20299919776865,
+            77.40937373790192
+          ],
+          "support_n": [
+            22.922794443712977,
+            19.353116031701155,
+            4.60072430908421
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            22.347740551407217,
+            18.61300037401133,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.91235291965069
+          ],
+          "support_n": [
+            22.453144299274236,
+            18.97758097959298,
+            5.445909505631128
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            -0.07318444045874084,
+            0.9973184234108688
+          ],
+          "plane_constant": -17.780903005376516,
+          "q_mm": -5.160100353166463,
+          "pitch_deg": -4.196911682098094,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.63988304121371,
+            76.39175187722559
+          ],
+          "support_n": [
+            21.922342543793913,
+            18.343390605131088,
+            6.610901635573342
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.0333855067862302,
+            0.9986222035930885
+          ],
+          "plane_constant": -14.121880502636184,
+          "q_mm": -7.363345830326567,
+          "pitch_deg": -1.9147746385186424,
+          "roll_deg": -2.3215962352196784,
+          "cg_mm": [
+            129.94141561743064,
+            115.79007967376471,
+            76.08445307830992
+          ],
+          "support_n": [
+            21.860001169649728,
+            19.047189703165458,
+            5.9694439116831575
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.039880427060145045,
+            0.9983839186956037
+          ],
+          "plane_constant": -3.678822148840296,
+          "q_mm": -7.822570303728455,
+          "pitch_deg": -2.2874627377016417,
+          "roll_deg": 2.3221497254999908,
+          "cg_mm": [
+            130.24360746021034,
+            115.76281199517713,
+            76.20253635983826
+          ],
+          "support_n": [
+            22.5230495424731,
+            18.28013289586749,
+            6.0734523461577545
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.07181100405138097,
+            0.9974182571504958
+          ],
+          "plane_constant": 7.44721268281285,
+          "q_mm": 4.874601504541669,
+          "pitch_deg": 4.118011947709191,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.18047254795029,
+            77.37151278585074
+          ],
+          "support_n": [
+            22.959094143124453,
+            19.582078831413266,
+            4.3354618099606235
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            22.453144299274236,
+            18.97758097959298,
+            5.445909505631128
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.91235291965069
+          ],
+          "support_n": [
+            22.298241844354184,
+            19.30598227275374,
+            5.272410667390417
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            -0.0708095814605504,
+            0.9974898511630992
+          ],
+          "plane_constant": -17.525371411486223,
+          "q_mm": -4.988748981359558,
+          "pitch_deg": -4.060488212249929,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.64877333204856,
+            76.40913637567826
+          ],
+          "support_n": [
+            21.75487132809121,
+            18.762611756490763,
+            6.359151699916371
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.03545380450268361,
+            0.9985509127324329
+          ],
+          "plane_constant": -14.341618233847392,
+          "q_mm": -7.509361372269698,
+          "pitch_deg": -2.0334470626520065,
+          "roll_deg": -2.3217618026171434,
+          "cg_mm": [
+            129.94140677440205,
+            115.78243838523649,
+            76.06992732948753
+          ],
+          "support_n": [
+            21.67621022190751,
+            19.391227615852603,
+            5.809196946738229
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.03545380450268361,
+            0.9985509127324329
+          ],
+          "plane_constant": -3.208014994980995,
+          "q_mm": -7.5093613722697,
+          "pitch_deg": -2.0334470626520065,
+          "roll_deg": 2.3217618026171434,
+          "cg_mm": [
+            130.24358826543153,
+            115.77953222485154,
+            76.23374922593442
+          ],
+          "support_n": [
+            22.383650422718475,
+            18.682759529557234,
+            5.810224832222634
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.06956344600065062,
+            0.9975775293081308
+          ],
+          "plane_constant": 7.216952885161028,
+          "q_mm": 4.724112854071676,
+          "pitch_deg": 3.988913393306233,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.1721270805724,
+            77.35743438065376
+          ],
+          "support_n": [
+            22.817896896666117,
+            19.82563732506567,
+            4.233100562766555
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            22.298241844354184,
+            19.30598227275374,
+            5.272410667390417
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.91235291965069
+          ],
+          "support_n": [
+            21.969840551193425,
+            19.460884727673793,
+            5.445909505631125
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            -0.07318444045874084,
+            0.9973184234108688
+          ],
+          "plane_constant": -17.780903005376516,
+          "q_mm": -5.160100353166463,
+          "pitch_deg": -4.196911682098094,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.63988304121371,
+            76.39175187722559
+          ],
+          "support_n": [
+            21.335650176731534,
+            18.930082972193468,
+            6.610901635573342
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.039880427060145045,
+            0.9983839186956037
+          ],
+          "plane_constant": -14.812425387706693,
+          "q_mm": -7.822570303728453,
+          "pitch_deg": -2.2874627377016417,
+          "roll_deg": -2.3221497254999908,
+          "cg_mm": [
+            129.94138785694363,
+            115.7660812804886,
+            76.03871446339137
+          ],
+          "support_n": [
+            21.273722057719098,
+            19.530656706000293,
+            6.072256020778951
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.0333855067862302,
+            0.9986222035930885
+          ],
+          "plane_constant": -2.9882772637697865,
+          "q_mm": -7.363345830326567,
+          "pitch_deg": -1.9147746385186424,
+          "roll_deg": 2.3215962352196784,
+          "cg_mm": [
+            130.24357930402715,
+            115.78734315006066,
+            76.24827497475681
+          ],
+          "support_n": [
+            22.039582156481842,
+            18.866609299210577,
+            5.970443328805924
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.07181100405138097,
+            0.9974182571504958
+          ],
+          "plane_constant": 7.44721268281285,
+          "q_mm": 4.874601504541669,
+          "pitch_deg": 4.118011947709191,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.18047254795029,
+            77.37151278585074
+          ],
+          "support_n": [
+            22.574338403013712,
+            19.966834571524007,
+            4.3354618099606235
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.969840551193425,
+            19.460884727673793,
+            5.445909505631125
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.91235291965069
+          ],
+          "support_n": [
+            21.605259945611774,
+            19.355480979806774,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            -0.0796405408609999,
+            0.9968236475181392
+          ],
+          "plane_constant": -18.476605479751978,
+          "q_mm": -5.627420680400646,
+          "pitch_deg": -4.567904319136076,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.61570850838245,
+            76.34423377856895
+          ],
+          "support_n": [
+            20.821292430186944,
+            18.746355140483885,
+            7.308987213827514
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.04482887824425529,
+            0.9981739674264457
+          ],
+          "plane_constant": -15.339571007727958,
+          "q_mm": -8.173855497892244,
+          "pitch_deg": -2.571476328683574,
+          "roll_deg": -2.3226376208109096,
+          "cg_mm": [
+            129.94136672275582,
+            115.74779105014863,
+            76.00361917494993
+          ],
+          "support_n": [
+            20.811724965460574,
+            19.37642588045444,
+            6.688483938583328
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.0348334710157851,
+            0.9985727449061895
+          ],
+          "plane_constant": -3.142094020601415,
+          "q_mm": -7.465545921911474,
+          "pitch_deg": -1.9978533833012864,
+          "roll_deg": 2.321711096609438,
+          "cg_mm": [
+            130.24358557721064,
+            115.7818750104647,
+            76.23810972838254
+          ],
+          "support_n": [
+            21.62616603132926,
+            18.734693527782582,
+            6.515775225386502
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.07787921927039117,
+            0.996962801314991
+          ],
+          "plane_constant": 8.067978870730752,
+          "q_mm": 5.280364493091454,
+          "pitch_deg": 4.466673550600796,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.20299919776865,
+            77.40937373790192
+          ],
+          "support_n": [
+            22.3453756033016,
+            19.93053487211253,
+            4.60072430908421
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.605259945611774,
+            19.355480979806774,
+            5.9158938590797945
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.91235291965069
+          ],
+          "support_n": [
+            21.409816561225878,
+            18.992158413058725,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            -0.08736349128256593,
+            0.9961765006217127
+          ],
+          "plane_constant": -19.310812562287765,
+          "q_mm": -6.189392012627649,
+          "pitch_deg": -5.011948691302893,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.58677858210305,
+            76.28688825434993
+          ],
+          "support_n": [
+            20.486432154404227,
+            18.21930836067504,
+            8.170894269419076
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.047517695882006404,
+            0.9980495810081553
+          ],
+          "plane_constant": -15.62637477075028,
+          "q_mm": -8.365251845636143,
+          "pitch_deg": -2.7258255842830486,
+          "roll_deg": -2.322926772893024,
+          "cg_mm": [
+            129.94135524481146,
+            115.73785061040114,
+            75.9844588259738
+          ],
+          "support_n": [
+            20.553523266403882,
+            18.94198314680053,
+            7.381128371293929
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.03976463154672099,
+            0.9983885374193971
+          ],
+          "plane_constant": -3.6664973458742107,
+          "q_mm": -7.814364786069384,
+          "pitch_deg": -2.2808174194752278,
+          "roll_deg": 2.322138994580471,
+          "cg_mm": [
+            130.24360695782613,
+            115.76324943148289,
+            76.20335502730632
+          ],
+          "support_n": [
+            21.35972988920704,
+            18.28399485735823,
+            7.232910037933074
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.08505312170806435,
+            0.996376418070858
+          ],
+          "plane_constant": 8.800128829897645,
+          "q_mm": 5.759084964613495,
+          "pitch_deg": 4.8790795813593695,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.22962024027595,
+            77.45385629835403
+          ],
+          "support_n": [
+            22.27065414202966,
+            19.712658309421542,
+            4.893322333047141
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.409816561225878,
+            18.992158413058725,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.91235291965069
+          ],
+          "support_n": [
+            21.565305832295426,
+            18.573046260694984,
+            6.7382826915079335
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            -0.09102650286650148,
+            0.9958484702884746
+          ],
+          "plane_constant": -19.70723787059757,
+          "q_mm": -6.457090570758029,
+          "pitch_deg": -5.222663788332609,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.57305257957165,
+            76.25949432583553
+          ],
+          "support_n": [
+            20.639372762589836,
+            17.647113190989394,
+            8.590148830919112
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.04544156541219735,
+            0.9981462626816665
+          ],
+          "plane_constant": -15.404900531173926,
+          "q_mm": -8.217435523793077,
+          "pitch_deg": -2.6066454235545,
+          "roll_deg": -2.3227020177931346,
+          "cg_mm": [
+            129.94136410699295,
+            115.74552610655398,
+            75.99925885467681
+          ],
+          "support_n": [
+            20.747872602597916,
+            18.48442173869811,
+            7.644340443202317
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.04544156541219735,
+            0.9981462626816665
+          ],
+          "plane_constant": -4.271297292307527,
+          "q_mm": -8.217435523793077,
+          "pitch_deg": -2.6066454235545,
+          "roll_deg": 2.3227020177931346,
+          "cg_mm": [
+            130.2436316049069,
+            115.74180049168667,
+            76.1630807511237
+          ],
+          "support_n": [
+            21.476515559688533,
+            17.754084220986286,
+            7.646035003823524
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.08842146590098496,
+            0.9960831513322174
+          ],
+          "plane_constant": 9.143247367563244,
+          "q_mm": 5.98351110261874,
+          "pitch_deg": 5.072801677719354,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.24211574045665,
+            77.47464032634429
+          ],
+          "support_n": [
+            22.42303622425265,
+            19.430776652652206,
+            5.022821907593485
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.565305832295426,
+            18.573046260694984,
+            6.7382826915079335
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            77.91235291965069
+          ],
+          "support_n": [
+            21.984417984659167,
+            18.417556989625435,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "vacuum",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            -0.08736349128256593,
+            0.9961765006217127
+          ],
+          "plane_constant": -19.310812562287765,
+          "q_mm": -6.189392012627649,
+          "pitch_deg": -5.011948691302893,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.58677858210305,
+            76.28688825434993
+          ],
+          "support_n": [
+            21.21156793227549,
+            17.49417258280378,
+            8.170894269419072
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.03976463154672099,
+            0.9983885374193971
+          ],
+          "plane_constant": -14.800100584740608,
+          "q_mm": -7.814364786069384,
+          "pitch_deg": -2.2808174194752278,
+          "roll_deg": -2.322138994580471,
+          "cg_mm": [
+            129.9413883516571,
+            115.76650921666955,
+            76.03953313085943
+          ],
+          "support_n": [
+            21.277581518354786,
+            18.367564179385834,
+            7.231489086757723
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.047517695882006404,
+            0.9980495810081553
+          ],
+          "plane_constant": -4.492771531883883,
+          "q_mm": -8.365251845636143,
+          "pitch_deg": -2.7258255842830486,
+          "roll_deg": 2.322926772893024,
+          "cg_mm": [
+            130.24364062770323,
+            115.73395459143939,
+            76.1482807224207
+          ],
+          "support_n": [
+            21.934148451651236,
+            17.559654934317766,
+            7.382831398529341
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.08505312170806435,
+            0.996376418070858
+          ],
+          "plane_constant": 8.800128829897645,
+          "q_mm": 5.759084964613495,
+          "pitch_deg": 4.8790795813593695,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            116.22962024027595,
+            77.45385629835403
+          ],
+          "support_n": [
+            22.704917881021984,
+            19.27839457042921,
+            4.8933223330471485
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "vacuum",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            130.09083820130726,
+            115.91329682635903,
+            76.9056681620093
+          ],
+          "support_n": [
+            21.984417984659167,
+            18.417556989625435,
+            6.4746598102137405
+          ],
+          "M_head_motion_compatible": true
+        }
+      ],
+      "traction": {
+        "continuous_torque_screen_nm": 0.392266,
+        "intermittent_gearbox_screen_nm": 0.784532,
+        "current_limited_torque_nm": 0.7803589574468084,
+        "flat_torque_nm_each": 0.07682038869596844,
+        "thresholds": [
+          {
+            "step_mm": 4,
+            "heading_deg": 0,
+            "wheel_torque_nm": 0.40506080159466007,
+            "caster_push_n": 2.7684648063486015,
+            "minimum_mu_during_caster_climb": 0.09354467878868186
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 45,
+            "wheel_torque_nm": 0.406320218510618,
+            "caster_push_n": 2.5485259140947933,
+            "minimum_mu_during_caster_climb": 0.08806276805704631
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 90,
+            "wheel_torque_nm": 0.4044693661832809,
+            "caster_push_n": 2.467333546710685,
+            "minimum_mu_during_caster_climb": 0.0860595568312996
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 135,
+            "wheel_torque_nm": 0.4005454626011148,
+            "caster_push_n": 2.5485259140947933,
+            "minimum_mu_during_caster_climb": 0.08806276805704631
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 180,
+            "wheel_torque_nm": 0.3961892704239732,
+            "caster_push_n": 2.7684648063486015,
+            "minimum_mu_during_caster_climb": 0.09354467878868186
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 225,
+            "wheel_torque_nm": 0.39385401471069253,
+            "caster_push_n": 3.0299508822568018,
+            "minimum_mu_during_caster_climb": 0.10016964221280739
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 270,
+            "wheel_torque_nm": 0.39571187861209767,
+            "caster_push_n": 3.153318658352222,
+            "minimum_mu_during_caster_climb": 0.1033366541705998
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 315,
+            "wheel_torque_nm": 0.40071964109732144,
+            "caster_push_n": 3.0299508822568035,
+            "minimum_mu_during_caster_climb": 0.10016964221280743
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 0,
+            "wheel_torque_nm": 0.6115494931298167,
+            "caster_push_n": 5.714630132316368,
+            "minimum_mu_during_caster_climb": 0.15816680061695898
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 45,
+            "wheel_torque_nm": 0.6134509256396056,
+            "caster_push_n": 5.260635045198171,
+            "minimum_mu_during_caster_climb": 0.14711002964675707
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 90,
+            "wheel_torque_nm": 0.6106565604524901,
+            "caster_push_n": 5.093038784590732,
+            "minimum_mu_during_caster_climb": 0.1430696413930413
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 135,
+            "wheel_torque_nm": 0.6047323603390333,
+            "caster_push_n": 5.260635045198171,
+            "minimum_mu_during_caster_climb": 0.14711002964675707
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 180,
+            "wheel_torque_nm": 0.5981555029699197,
+            "caster_push_n": 5.714630132316368,
+            "minimum_mu_during_caster_climb": 0.15816680061695898
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 225,
+            "wheel_torque_nm": 0.5946297990702507,
+            "caster_push_n": 6.254386391864789,
+            "minimum_mu_during_caster_climb": 0.17152905820422648
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 270,
+            "wheel_torque_nm": 0.5974347501362031,
+            "caster_push_n": 6.509040599140623,
+            "minimum_mu_during_caster_climb": 0.17791678095117347
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 315,
+            "wheel_torque_nm": 0.60499533017134,
+            "caster_push_n": 6.254386391864794,
+            "minimum_mu_during_caster_climb": 0.1715290582042266
+          }
+        ],
+        "cg_targets": [
+          {
+            "mu": 0.2,
+            "max_caster_weight_fraction": 0.11086956521739132,
+            "max_cg_y_mm": 117.36195652173913,
+            "required_forward_cg_shift_mm": 0
+          },
+          {
+            "mu": 0.35,
+            "max_caster_weight_fraction": 0.1900990099009901,
+            "max_cg_y_mm": 126.1960396039604,
+            "required_forward_cg_shift_mm": 0
+          },
+          {
+            "mu": 0.5,
+            "max_caster_weight_fraction": 0.25636363636363635,
+            "max_cg_y_mm": 133.58454545454546,
+            "required_forward_cg_shift_mm": 0
+          }
+        ],
+        "scope": "Quasistatic initiation at a sharp edge from level ground with head raised. Uses worst individual wheel load, not an assumed equal split. No impact, tire compliance or edge-friction model. Caster-climb mu is a requirement, not a measured tire property; 0.2/0.35/0.5 remain sensitivity cases."
+      },
+      "q_range_mm": [
+        -8.365251845636143,
+        10.0
+      ],
+      "max_pitch_deg": 5.222663788332609,
+      "max_roll_deg": 2.322926772893024,
+      "min_support_n": 4.233100562766555,
+      "head_motion_fail_count": 64
+    },
+    "mop": {
+      "mass_g": 4724.001313853186,
+      "cg_mm": [
+        131.1328327101653,
+        139.52540148942066,
+        78.31233175779633
+      ],
+      "M_mass_g": 4953.96895950745,
+      "removed_pods_g": 489.02687694373486,
+      "replacement_g": 259.05923128947126,
+      "potential_saving_g": 229.96764565426383,
+      "terrain": [
+        {
+          "bottom": "mop",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.66865364809741,
+            13.221395776927418,
+            8.43657805947351
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.818968540119414,
+            13.741319360958409,
+            7.766339583420516
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.598064196047837,
+            14.209648105621483,
+            7.518915182829019
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.12973545138476,
+            14.43055244969306,
+            7.766339583420518
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            15.60981186735377,
+            14.280237557671057,
+            8.436578059473511
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            15.331092639481119,
+            13.762108046196868,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            15.552833834309268,
+            13.164417743882918,
+            9.609375906306152
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "level",
+          "step_mm": 0,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.150524136623222,
+            12.942676549054767,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.5934493764781
+          ],
+          "support_n": [
+            16.66865364809741,
+            13.221395776927418,
+            8.43657805947351
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.0316379669929822,
+            0.9994993942192016
+          ],
+          "plane_constant": -7.3400083423718705,
+          "q_mm": -1.9308825975622967,
+          "pitch_deg": -1.8130245280232204,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.44217561014773,
+            78.18095077337408
+          ],
+          "support_n": [
+            16.40039277868108,
+            12.876134102400842,
+            9.050100603416416
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.01383586738402584,
+            0.9997731304577704
+          ],
+          "plane_constant": -5.687654026616262,
+          "q_mm": -1.0952485347082612,
+          "pitch_deg": -0.7928660821672633,
+          "roll_deg": -0.9279962717459578,
+          "cg_mm": [
+            131.0902975110732,
+            139.48906091208903,
+            78.23235719816674
+          ],
+          "support_n": [
+            16.39182937702827,
+            13.231802711452552,
+            8.702995396017517
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.017806627078086126,
+            0.9997102918564459
+          ],
+          "plane_constant": -1.6534046885937146,
+          "q_mm": -0.8354341380874735,
+          "pitch_deg": -1.0204323328423992,
+          "roll_deg": 0.9280545924309386,
+          "cg_mm": [
+            131.17545250830744,
+            139.47853849733062,
+            78.26089821989629
+          ],
+          "support_n": [
+            16.679074227442932,
+            12.867828643534857,
+            8.77972461352055
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.03135667174719015,
+            0.9995082586636986
+          ],
+          "plane_constant": 3.2747478453481156,
+          "q_mm": -2.0882699120585144,
+          "pitch_deg": 1.7968994969345637,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.60771142512263,
+            78.1586915631951
+          ],
+          "support_n": [
+            16.929871016185473,
+            13.557592204374089,
+            7.839164263938777
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 0,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.66865364809741,
+            13.221395776927418,
+            8.43657805947351
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.5934493764781
+          ],
+          "support_n": [
+            16.818968540119414,
+            13.741319360958409,
+            7.766339583420516
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.02910442104757403,
+            0.9995763766093543
+          ],
+          "plane_constant": -7.07121465205852,
+          "q_mm": -2.0952462482432797,
+          "pitch_deg": -1.6677960036487596,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.44884685157652,
+            78.16915037656311
+          ],
+          "support_n": [
+            16.584855216910718,
+            13.461605862313546,
+            8.280166405274075
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.013267581532512623,
+            0.9997808334289453
+          ],
+          "plane_constant": -5.627706705245072,
+          "q_mm": -1.1324778166920142,
+          "pitch_deg": -0.7602984390227432,
+          "roll_deg": -0.9279891231007471,
+          "cg_mm": [
+            131.09029833076735,
+            139.4905542140183,
+            78.22965975748386
+          ],
+          "support_n": [
+            16.55423609153112,
+            13.773295712783307,
+            7.9990956801839115
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.0158504930418209,
+            0.9997432197729222
+          ],
+          "plane_constant": -1.4468252097927112,
+          "q_mm": -0.9633589189365783,
+          "pitch_deg": -0.9083235110769328,
+          "roll_deg": 0.9280240310237312,
+          "cg_mm": [
+            131.1754496854007,
+            139.4836893601332,
+            78.25164581702036
+          ],
+          "support_n": [
+            16.850970826271478,
+            13.431114966094507,
+            8.044541692132354
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.028884997178122995,
+            0.9995827414166473
+          ],
+          "plane_constant": 3.0179033947022136,
+          "q_mm": -1.9222331910549915,
+          "pitch_deg": 1.6552186540219793,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.60122974719914,
+            78.17099653377296
+          ],
+          "support_n": [
+            17.04772390471028,
+            14.014631287364471,
+            7.264272292423586
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 45,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.818968540119414,
+            13.741319360958409,
+            7.766339583420516
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.5934493764781
+          ],
+          "support_n": [
+            16.598064196047837,
+            14.209648105621483,
+            7.518915182829019
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.028170436193656317,
+            0.9996031345112215
+          ],
+          "plane_constant": -6.972182957929938,
+          "q_mm": -2.155893968728362,
+          "pitch_deg": -1.6142606547041936,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.45130589783557,
+            78.16479203056087
+          ],
+          "support_n": [
+            16.358298818374987,
+            13.969882727948637,
+            7.998445938174715
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.01409331057052738,
+            0.9997695345472181
+          ],
+          "plane_constant": -5.714815013978805,
+          "q_mm": -1.078386789545071,
+          "pitch_deg": -0.8076198638470312,
+          "roll_deg": -0.9279996089230811,
+          "cg_mm": [
+            131.0902971397367,
+            139.48838440190235,
+            78.23357864151882
+          ],
+          "support_n": [
+            16.320726023242727,
+            14.24850409944082,
+            7.757397361814791
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.01409331057052733,
+            0.9997695345472181
+          ],
+          "plane_constant": -1.261373718432235,
+          "q_mm": -1.0783867895450674,
+          "pitch_deg": -0.8076198638470283,
+          "roll_deg": 0.9279996089230811,
+          "cg_mm": [
+            131.1754471497788,
+            139.4883157650535,
+            78.24331786344305
+          ],
+          "support_n": [
+            16.636923839294624,
+            13.932283884697602,
+            7.757419760506112
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.027971327239483666,
+            0.9996087258785118
+          ],
+          "plane_constant": 2.9229034917722077,
+          "q_mm": -1.860921596642384,
+          "pitch_deg": 1.6028480546434738,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.59883347863217,
+            78.17553651149329
+          ],
+          "support_n": [
+            16.832620353776743,
+            14.44420426335039,
+            7.049802867371206
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 90,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.598064196047837,
+            14.209648105621483,
+            7.518915182829019
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.5934493764781
+          ],
+          "support_n": [
+            16.12973545138476,
+            14.43055244969306,
+            7.766339583420518
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.02910442104757403,
+            0.9995763766093543
+          ],
+          "plane_constant": -7.07121465205852,
+          "q_mm": -2.0952462482432797,
+          "pitch_deg": -1.6677960036487596,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.44884685157652,
+            78.16915037656311
+          ],
+          "support_n": [
+            15.8500219527399,
+            14.196439126484366,
+            8.280166405274072
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.0158504930418209,
+            0.9997432197729222
+          ],
+          "plane_constant": -5.90026650533927,
+          "q_mm": -0.9633589189365788,
+          "pitch_deg": -0.9083235110769328,
+          "roll_deg": -0.9280240310237312,
+          "cg_mm": [
+            131.0902946051526,
+            139.48376655577906,
+            78.24190659509613
+          ],
+          "support_n": [
+            15.819560088012736,
+            14.462551740806601,
+            8.044515655679001
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.013267581532512623,
+            0.9997808334289453
+          ],
+          "plane_constant": -1.174265409698513,
+          "q_mm": -1.1324778166920138,
+          "pitch_deg": -0.7602984390227432,
+          "roll_deg": 0.9279891231007471,
+          "cg_mm": [
+            131.1754459583025,
+            139.4904895989771,
+            78.2393989794081
+          ],
+          "support_n": [
+            16.161714795062256,
+            14.165795231535457,
+            7.999117457900626
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.028884997178122995,
+            0.9995827414166473
+          ],
+          "plane_constant": 3.0179033947022136,
+          "q_mm": -1.9222331910549915,
+          "pitch_deg": 1.6552186540219793,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.60122974719914,
+            78.17099653377296
+          ],
+          "support_n": [
+            16.403047377790823,
+            14.659307814283927,
+            7.264272292423588
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 135,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.12973545138476,
+            14.43055244969306,
+            7.766339583420518
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.5934493764781
+          ],
+          "support_n": [
+            15.60981186735377,
+            14.280237557671057,
+            8.436578059473511
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.0316379669929822,
+            0.9994993942192016
+          ],
+          "plane_constant": -7.3400083423718705,
+          "q_mm": -1.9308825975622967,
+          "pitch_deg": -1.8130245280232204,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.44217561014773,
+            78.18095077337408
+          ],
+          "support_n": [
+            15.264550192827192,
+            14.011976688254725,
+            9.05010060341642
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.017806627078086126,
+            0.9997102918564459
+          ],
+          "plane_constant": -6.106845984140273,
+          "q_mm": -0.8354341380874735,
+          "pitch_deg": -1.0204323328423992,
+          "roll_deg": -0.9280545924309386,
+          "cg_mm": [
+            131.0902917835446,
+            139.47862522123935,
+            78.25115899797207
+          ],
+          "support_n": [
+            15.256277504395898,
+            14.290657171183272,
+            8.77969280891917
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.01383586738402584,
+            0.9997731304577704
+          ],
+          "plane_constant": -1.2342127310697038,
+          "q_mm": -1.0952485347082612,
+          "pitch_deg": -0.7928660821672633,
+          "roll_deg": 0.9279962717459578,
+          "cg_mm": [
+            131.17544677830045,
+            139.48899352915396,
+            78.24209642009099
+          ],
+          "support_n": [
+            15.620219766024894,
+            14.003387640336019,
+            8.703020078137424
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.03135667174719015,
+            0.9995082586636986
+          ],
+          "plane_constant": 3.2747478453481156,
+          "q_mm": -2.0882699120585144,
+          "pitch_deg": 1.7968994969345637,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.60771142512263,
+            78.1586915631951
+          ],
+          "support_n": [
+            15.946008294800441,
+            14.54145492575912,
+            7.839164263938775
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 180,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            15.60981186735377,
+            14.280237557671057,
+            8.436578059473511
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.5934493764781
+          ],
+          "support_n": [
+            15.331092639481119,
+            13.762108046196868,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.034657292087494,
+            0.9993992556056674
+          ],
+          "plane_constant": -7.660642467382844,
+          "q_mm": -1.7352879849508824,
+          "pitch_deg": -1.9861142975731152,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.43422373710445,
+            78.19497174804668
+          ],
+          "support_n": [
+            14.92534806047446,
+            13.422509806478859,
+            9.978769617545018
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.0188609174921551,
+            0.9996909569476721
+          ],
+          "plane_constant": -6.218242534333372,
+          "q_mm": -0.7665418898469464,
+          "pitch_deg": -1.080856807964386,
+          "roll_deg": -0.9280725386895313,
+          "cg_mm": [
+            131.09029026276397,
+            139.4758539322165,
+            78.25613770063251
+          ],
+          "support_n": [
+            14.94941061018687,
+            13.741065453757507,
+            9.636151420553961
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.015785220334126323,
+            0.9997442525119118
+          ],
+          "plane_constant": -1.439934396881163,
+          "q_mm": -0.9676298364189047,
+          "pitch_deg": -0.904582701775749,
+          "roll_deg": 0.9280230725396145,
+          "cg_mm": [
+            131.175449591209,
+            139.48386122348683,
+            78.25133674604741
+          ],
+          "support_n": [
+            15.310071897729275,
+            13.446259254467147,
+            9.570296332301918
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.03428849089630096,
+            0.9994119768103914
+          ],
+          "plane_constant": 3.579122709285695,
+          "q_mm": -2.2855531922599024,
+          "pitch_deg": 1.964970978832181,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.61539836536997,
+            78.144051353544
+          ],
+          "support_n": [
+            15.724383973791817,
+            14.091283226196179,
+            8.510960284510343
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 225,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            15.331092639481119,
+            13.762108046196868,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.5934493764781
+          ],
+          "support_n": [
+            15.552833834309268,
+            13.164417743882918,
+            9.609375906306152
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.03608471347512466,
+            0.9993487346534333
+          ],
+          "plane_constant": -7.812340467364489,
+          "q_mm": -1.6429244428748444,
+          "pitch_deg": -2.0679507347752644,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.4304638294337,
+            78.20158451700057
+          ],
+          "support_n": [
+            15.146480065273241,
+            12.758063974846888,
+            10.42208344437821
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.018032062449820883,
+            0.9997062510234714
+          ],
+          "plane_constant": -6.130662168159501,
+          "q_mm": -0.8206999212287484,
+          "pitch_deg": -1.0333525973511895,
+          "roll_deg": -0.928058342990365,
+          "cg_mm": [
+            131.090291458363,
+            139.47803266247803,
+            78.25222404911155
+          ],
+          "support_n": [
+            15.188017561452751,
+            13.126305109444754,
+            10.012304813600831
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.018032062449820883,
+            0.9997062510234714
+          ],
+          "plane_constant": -1.677220872612942,
+          "q_mm": -0.8206999212287484,
+          "pitch_deg": -1.0333525973511895,
+          "roll_deg": 0.928058342990365,
+          "cg_mm": [
+            131.1754528336484,
+            139.47794484045025,
+            78.2619632710358
+          ],
+          "support_n": [
+            15.514717727197086,
+            12.79956823039606,
+            10.01234152690519
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.035668984174820936,
+            0.9993636593192372
+          ],
+          "plane_constant": 3.7223350738487326,
+          "q_mm": -2.378574803955642,
+          "pitch_deg": 2.04411585582454,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.61901735126946,
+            78.13714097245297
+          ],
+          "support_n": [
+            15.945800040824318,
+            13.557383950397966,
+            8.823443493276056
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 270,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            15.552833834309268,
+            13.164417743882918,
+            9.609375906306152
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 4.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.5934493764781
+          ],
+          "support_n": [
+            16.150524136623222,
+            12.942676549054767,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            4,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.034657292087494,
+            0.9993992556056674
+          ],
+          "plane_constant": -7.660642467382844,
+          "q_mm": -1.7352879849508824,
+          "pitch_deg": -1.9861142975731152,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.43422373710445,
+            78.19497174804668
+          ],
+          "support_n": [
+            15.810925896905212,
+            12.536931970048109,
+            9.97876961754502
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            4,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.016194331983805668,
+            -0.015785220334126323,
+            0.9997442525119118
+          ],
+          "plane_constant": -5.893375692427722,
+          "q_mm": -0.9676298364189051,
+          "pitch_deg": -0.904582701775749,
+          "roll_deg": -0.9280230725396145,
+          "cg_mm": [
+            131.09029469930357,
+            139.48393810119944,
+            78.2415975241232
+          ],
+          "support_n": [
+            15.834704270678703,
+            12.921657732405935,
+            9.570265481413701
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            4,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.016194331983805668,
+            -0.0188609174921551,
+            0.9996909569476721
+          ],
+          "plane_constant": -1.7648012387868137,
+          "q_mm": -0.7665418898469464,
+          "pitch_deg": -1.080856807964386,
+          "roll_deg": 0.9280725386895313,
+          "cg_mm": [
+            131.17545402985064,
+            139.47576207269162,
+            78.26587692255674
+          ],
+          "support_n": [
+            16.129479616115127,
+            12.56095954739711,
+            9.636188320986102
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            4
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.03428849089630096,
+            0.9994119768103914
+          ],
+          "plane_constant": 3.579122709285695,
+          "q_mm": -2.2855531922599024,
+          "pitch_deg": 1.964970978832181,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.61539836536997,
+            78.144051353544
+          ],
+          "support_n": [
+            16.47969931662253,
+            13.335967883365464,
+            8.510960284510345
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 4,
+          "heading_deg": 315,
+          "heights_mm": [
+            4,
+            4,
+            4
+          ],
+          "head_ground_mm": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -4.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.150524136623222,
+            12.942676549054767,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            79.01512580450077
+          ],
+          "support_n": [
+            16.66865364809741,
+            13.221395776927418,
+            8.43657805947351
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.0796405408609999,
+            0.9968236475181392
+          ],
+          "plane_constant": -18.476605479751978,
+          "q_mm": -4.873553115053474,
+          "pitch_deg": -4.567904319136076,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.31556015180618,
+            77.97566128187312
+          ],
+          "support_n": [
+            15.978104079402794,
+            12.332632906107495,
+            10.01589049898805
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.0348334710157851,
+            0.9985727449061895
+          ],
+          "plane_constant": -14.275697259467812,
+          "q_mm": -2.756306048182729,
+          "pitch_deg": -1.9978533833012864,
+          "roll_deg": -2.321711096609438,
+          "cg_mm": [
+            131.02656694001655,
+            139.43397183049683,
+            78.10890069779995
+          ],
+          "support_n": [
+            15.967280332443602,
+            13.245015730277316,
+            9.114331421777422
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.04482887824425535,
+            0.9981739674264457
+          ],
+          "plane_constant": -4.205967768861573,
+          "q_mm": -2.1108857546741953,
+          "pitch_deg": -2.571476328683577,
+          "roll_deg": 2.3226376208109096,
+          "cg_mm": [
+            131.23962785786634,
+            139.40715007458851,
+            78.17934112937265
+          ],
+          "support_n": [
+            16.69235358503476,
+            12.32348132493123,
+            9.31079257453235
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.07787921927039117,
+            0.996962801314991
+          ],
+          "plane_constant": 8.067978870730752,
+          "q_mm": -5.265359567661139,
+          "pitch_deg": 4.466673550600796,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.72950767433895,
+            77.9204315693
+          ],
+          "support_n": [
+            17.314568029868113,
+            14.052711509021192,
+            6.959347945609034
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 0,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.66865364809741,
+            13.221395776927418,
+            8.43657805947351
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            79.01512580450077
+          ],
+          "support_n": [
+            16.818968540119414,
+            13.741319360958409,
+            7.766339583420516
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.07318444045874084,
+            0.9973184234108688
+          ],
+          "plane_constant": -17.780903005376516,
+          "q_mm": -5.2805238159751005,
+          "pitch_deg": -4.196911682098094,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.33261331307878,
+            77.94720972741314
+          ],
+          "support_n": [
+            16.218219791555104,
+            13.023557842885156,
+            9.08484985005808
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.0333855067862302,
+            0.9986222035930885
+          ],
+          "plane_constant": -14.121880502636184,
+          "q_mm": -2.8500840583325866,
+          "pitch_deg": -1.9147746385186424,
+          "roll_deg": -2.3215962352196784,
+          "cg_mm": [
+            131.02657216187978,
+            139.43777670170005,
+            78.10218207014717
+          ],
+          "support_n": [
+            16.148877844991155,
+            13.819958319476234,
+            8.35779132003095
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.039880427060145045,
+            0.9983839186956037
+          ],
+          "plane_constant": -3.678822148840296,
+          "q_mm": -2.4299978150272814,
+          "pitch_deg": -2.2874627377016417,
+          "roll_deg": 2.3221497254999908,
+          "cg_mm": [
+            131.23960995675986,
+            139.42022093121656,
+            78.1565843415382
+          ],
+          "support_n": [
+            16.897779159939045,
+            12.95502189234012,
+            8.473826432219173
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.07181100405138097,
+            0.9974182571504958
+          ],
+          "plane_constant": 7.44721268281285,
+          "q_mm": -4.844977495979549,
+          "pitch_deg": 4.118011947709191,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.71364304633474,
+            77.9522535443444
+          ],
+          "support_n": [
+            17.385814542798514,
+            14.418574616785461,
+            6.522238324914364
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 45,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.818968540119414,
+            13.741319360958409,
+            7.766339583420516
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            79.01512580450077
+          ],
+          "support_n": [
+            16.598064196047837,
+            14.209648105621483,
+            7.518915182829019
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.0708095814605504,
+            0.9974898511630992
+          ],
+          "plane_constant": -17.525371411486223,
+          "q_mm": -5.430564506912846,
+          "pitch_deg": -4.060488212249929,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.33888438852085,
+            77.93669238596145
+          ],
+          "support_n": [
+            15.983474396013928,
+            13.595058305587576,
+            8.748094782896834
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.03545380450268361,
+            0.9985509127324329
+          ],
+          "plane_constant": -14.341618233847392,
+          "q_mm": -2.7161519857145713,
+          "pitch_deg": -2.0334470626520065,
+          "roll_deg": -2.3217618026171434,
+          "cg_mm": [
+            131.02656470283708,
+            139.43234164205006,
+            78.11177583368104
+          ],
+          "support_n": [
+            15.895965721607315,
+            14.305866084230765,
+            8.12479567866026
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.03545380450268361,
+            0.9985509127324329
+          ],
+          "plane_constant": -3.208014994980995,
+          "q_mm": -2.716151985714573,
+          "pitch_deg": -2.0334470626520065,
+          "roll_deg": 2.3217618026171434,
+          "cg_mm": [
+            131.23959395046577,
+            139.43190971351135,
+            78.13612388849161
+          ],
+          "support_n": [
+            16.694304708738223,
+            13.507385200955,
+            8.124937574805116
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.06956344600065062,
+            0.9975775293081308
+          ],
+          "plane_constant": 7.216952885161028,
+          "q_mm": -4.6897571802714175,
+          "pitch_deg": 3.988913393306233,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.7077653946371,
+            77.96398122733237
+          ],
+          "support_n": [
+            17.179709724714208,
+            14.791293634287856,
+            6.355624125496275
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 90,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.598064196047837,
+            14.209648105621483,
+            7.518915182829019
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            79.01512580450077
+          ],
+          "support_n": [
+            16.12973545138476,
+            14.43055244969306,
+            7.766339583420518
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.07318444045874084,
+            0.9973184234108688
+          ],
+          "plane_constant": -17.780903005376516,
+          "q_mm": -5.2805238159751005,
+          "pitch_deg": -4.196911682098094,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.33261331307878,
+            77.94720972741314
+          ],
+          "support_n": [
+            15.41197393331151,
+            13.82980370112875,
+            9.084849850058081
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.039880427060145045,
+            0.9983839186956037
+          ],
+          "plane_constant": -14.812425387706693,
+          "q_mm": -2.4299978150272796,
+          "pitch_deg": -2.2874627377016417,
+          "roll_deg": -2.3221497254999908,
+          "cg_mm": [
+            131.02654873775978,
+            139.42070682925387,
+            78.13223628672762
+          ],
+          "support_n": [
+            15.343621528242842,
+            14.509344672743865,
+            8.473661283511632
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.0333855067862302,
+            0.9986222035930885
+          ],
+          "plane_constant": -2.9882772637697865,
+          "q_mm": -2.8500840583325866,
+          "pitch_deg": -1.9147746385186424,
+          "roll_deg": 2.3215962352196784,
+          "cg_mm": [
+            131.23958647382946,
+            139.43736998543937,
+            78.12653012495774
+          ],
+          "support_n": [
+            16.20839275377796,
+            13.760305444506452,
+            8.357929286213926
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.07181100405138097,
+            0.9974182571504958
+          ],
+          "plane_constant": 7.44721268281285,
+          "q_mm": -4.844977495979549,
+          "pitch_deg": 4.118011947709191,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.71364304633474,
+            77.9522535443444
+          ],
+          "support_n": [
+            16.806990707211813,
+            14.99739845237216,
+            6.522238324914365
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 135,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.12973545138476,
+            14.43055244969306,
+            7.766339583420518
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            79.01512580450077
+          ],
+          "support_n": [
+            15.60981186735377,
+            14.280237557671057,
+            8.436578059473511
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.0796405408609999,
+            0.9968236475181392
+          ],
+          "plane_constant": -18.476605479751978,
+          "q_mm": -4.873553115053474,
+          "pitch_deg": -4.567904319136076,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.31556015180618,
+            77.97566128187312
+          ],
+          "support_n": [
+            14.721048996533847,
+            13.589687988976442,
+            10.015890498988052
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.04482887824425529,
+            0.9981739674264457
+          ],
+          "plane_constant": -15.339571007727958,
+          "q_mm": -2.11088575467419,
+          "pitch_deg": -2.571476328683574,
+          "roll_deg": -2.3226376208109096,
+          "cg_mm": [
+            131.0265308884824,
+            139.40769632131295,
+            78.15499307456206
+          ],
+          "support_n": [
+            14.712105093534593,
+            14.303932013062045,
+            9.3105903779017
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.0348334710157851,
+            0.9985727449061895
+          ],
+          "plane_constant": -3.142094020601415,
+          "q_mm": -2.7563060481827306,
+          "pitch_deg": -1.9978533833012864,
+          "roll_deg": 2.321711096609438,
+          "cg_mm": [
+            131.23959170789828,
+            139.43354746402647,
+            78.13324875261054
+          ],
+          "support_n": [
+            15.63343727716929,
+            13.57870221716798,
+            9.114487990161066
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.07787921927039117,
+            0.996962801314991
+          ],
+          "plane_constant": 8.067978870730752,
+          "q_mm": -5.265359567661139,
+          "pitch_deg": 4.466673550600796,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.72950767433895,
+            77.9204315693
+          ],
+          "support_n": [
+            16.441127599447544,
+            14.926151939441759,
+            6.959347945609036
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 180,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            15.60981186735377,
+            14.280237557671057,
+            8.436578059473511
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            79.01512580450077
+          ],
+          "support_n": [
+            15.331092639481119,
+            13.762108046196868,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.08736349128256593,
+            0.9961765006217127
+          ],
+          "plane_constant": -19.310812562287765,
+          "q_mm": -4.388434730432453,
+          "pitch_deg": -5.011948691302893,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.2951508816206,
+            78.00943028358938
+          ],
+          "support_n": [
+            14.282223898979309,
+            12.884230690837759,
+            11.160172894681269
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.047517695882006404,
+            0.9980495810081553
+          ],
+          "plane_constant": -15.62637477075028,
+          "q_mm": -1.937826729550206,
+          "pitch_deg": -2.7258255842830486,
+          "roll_deg": -2.322926772893024,
+          "cg_mm": [
+            131.0265211886158,
+            139.400625029242,
+            78.16730767011674
+          ],
+          "support_n": [
+            14.360208734452769,
+            13.705218241342417,
+            10.261200508703153
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.03976463154672099,
+            0.9983885374193971
+          ],
+          "plane_constant": -3.6664973458742107,
+          "q_mm": -2.4374748703628693,
+          "pitch_deg": -2.2808174194752278,
+          "roll_deg": 2.322138994580471,
+          "cg_mm": [
+            131.2396095379701,
+            139.42052674140064,
+            78.1560503684081
+          ],
+          "support_n": [
+            15.274370985404742,
+            12.960134055574333,
+            10.092122443519262
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.08505312170806435,
+            0.996376418070858
+          ],
+          "plane_constant": 8.800128829897645,
+          "q_mm": -5.764844368057769,
+          "pitch_deg": 4.8790795813593695,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.74825445075294,
+            77.88250929766374
+          ],
+          "support_n": [
+            16.30088852151342,
+            14.573803362571116,
+            7.451935600413801
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 225,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            15.331092639481119,
+            13.762108046196868,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            79.01512580450077
+          ],
+          "support_n": [
+            15.552833834309268,
+            13.164417743882918,
+            9.609375906306152
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.09102650286650148,
+            0.9958484702884746
+          ],
+          "plane_constant": -19.70723787059757,
+          "q_mm": -4.158971976154223,
+          "pitch_deg": -5.222663788332609,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.2854669656385,
+            78.0253473100953
+          ],
+          "support_n": [
+            14.500110060830174,
+            12.111693970403822,
+            11.714823453264342
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.04544156541219735,
+            0.9981462626816665
+          ],
+          "plane_constant": -15.404900531173926,
+          "q_mm": -2.071431115415983,
+          "pitch_deg": -2.6066454235545,
+          "roll_deg": -2.3227020177931346,
+          "cg_mm": [
+            131.0265286783031,
+            139.4060851354697,
+            78.15780226168005
+          ],
+          "support_n": [
+            14.62486156263563,
+            13.063808793799174,
+            10.637957128063535
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.04544156541219735,
+            0.9981462626816665
+          ],
+          "plane_constant": -4.271297292307527,
+          "q_mm": -2.071431115415983,
+          "pitch_deg": -2.6066454235545,
+          "roll_deg": 2.3227020177931346,
+          "cg_mm": [
+            131.23963007488572,
+            139.40553141538123,
+            78.18215031649063
+          ],
+          "support_n": [
+            15.45220200290954,
+            12.23623442511298,
+            10.638191056475817
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.08842146590098496,
+            0.9960831513322174
+          ],
+          "plane_constant": 9.143247367563244,
+          "q_mm": -6.000325669108492,
+          "pitch_deg": 5.072801677719354,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.75705338071012,
+            77.86458916711697
+          ],
+          "support_n": [
+            16.520466226312053,
+            14.132050135885704,
+            7.674111122300582
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 270,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            15.552833834309268,
+            13.164417743882918,
+            9.609375906306152
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "head meets step",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            0
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": 0.0,
+          "q_mm": 10.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            79.01512580450077
+          ],
+          "support_n": [
+            16.150524136623222,
+            12.942676549054767,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        },
+        {
+          "bottom": "mop",
+          "state": "both drive wheels up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            10,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            -0.08736349128256593,
+            0.9961765006217127
+          ],
+          "plane_constant": -19.310812562287765,
+          "q_mm": -4.388434730432453,
+          "pitch_deg": -5.011948691302893,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.2951508816206,
+            78.00943028358938
+          ],
+          "support_n": [
+            15.272646781264113,
+            11.893807808552955,
+            11.160172894681269
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "left wheel up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            10,
+            0,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            -0.04048582995951417,
+            -0.03976463154672099,
+            0.9983885374193971
+          ],
+          "plane_constant": -14.800100584740608,
+          "q_mm": -2.4374748703628693,
+          "pitch_deg": -2.2808174194752278,
+          "roll_deg": -2.322138994580471,
+          "cg_mm": [
+            131.02654915540947,
+            139.42101122748042,
+            78.13170231359753
+          ],
+          "support_n": [
+            15.348733346242401,
+            12.885967852282308,
+            10.09192628597363
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "right wheel up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            10,
+            0
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.04048582995951417,
+            -0.047517695882006404,
+            0.9980495810081553
+          ],
+          "plane_constant": -4.492771531883883,
+          "q_mm": -1.937826729550206,
+          "pitch_deg": -2.7258255842830486,
+          "roll_deg": 2.322926772893024,
+          "cg_mm": [
+            131.23963758844442,
+            139.40004598281854,
+            78.19165572492732
+          ],
+          "support_n": [
+            16.09362131856003,
+            11.971570560035168,
+            10.261435605903142
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "rear caster up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            0,
+            0,
+            10
+          ],
+          "head_ground_mm": 0,
+          "normal": [
+            0.0,
+            0.08505312170806435,
+            0.996376418070858
+          ],
+          "plane_constant": 8.800128829897645,
+          "q_mm": -5.764844368057769,
+          "pitch_deg": 4.8790795813593695,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.74825445075294,
+            77.88250929766374
+          ],
+          "support_n": [
+            16.96221945299747,
+            13.91247243108707,
+            7.451935600413799
+          ],
+          "M_head_motion_compatible": false
+        },
+        {
+          "bottom": "mop",
+          "state": "all up",
+          "step_mm": 10,
+          "heading_deg": 315,
+          "heights_mm": [
+            10,
+            10,
+            10
+          ],
+          "head_ground_mm": 10,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "plane_constant": -10.0,
+          "q_mm": 0.0,
+          "pitch_deg": 0.0,
+          "roll_deg": 0.0,
+          "cg_mm": [
+            131.1328327101653,
+            139.52540148942066,
+            78.31233175779633
+          ],
+          "support_n": [
+            16.150524136623222,
+            12.942676549054767,
+            9.23342679882035
+          ],
+          "M_head_motion_compatible": true
+        }
+      ],
+      "traction": {
+        "continuous_torque_screen_nm": 0.392266,
+        "intermittent_gearbox_screen_nm": 0.784532,
+        "current_limited_torque_nm": 0.7803589574468084,
+        "flat_torque_nm_each": 0.11827438475396843,
+        "thresholds": [
+          {
+            "step_mm": 4,
+            "heading_deg": 0,
+            "wheel_torque_nm": 0.3108954901200187,
+            "caster_push_n": 8.134958068776623,
+            "minimum_mu_during_caster_climb": 0.28236085019892054
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 45,
+            "wheel_torque_nm": 0.31459620676952493,
+            "caster_push_n": 7.488681597399779,
+            "minimum_mu_during_caster_climb": 0.25562018553165883
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 90,
+            "wheel_torque_nm": 0.30915759471281484,
+            "caster_push_n": 7.2501029805939,
+            "minimum_mu_during_caster_climb": 0.2461338742986581
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 135,
+            "wheel_torque_nm": 0.29762745315795636,
+            "caster_push_n": 7.488681597399779,
+            "minimum_mu_during_caster_climb": 0.25562018553165883
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 180,
+            "wheel_torque_nm": 0.2848270590119606,
+            "caster_push_n": 8.134958068776623,
+            "minimum_mu_during_caster_climb": 0.28236085019892054
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 225,
+            "wheel_torque_nm": 0.27796505835952456,
+            "caster_push_n": 8.903318301568524,
+            "minimum_mu_during_caster_climb": 0.3162924327016537
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 270,
+            "wheel_torque_nm": 0.2834242734814822,
+            "caster_push_n": 9.265826679234362,
+            "minimum_mu_during_caster_climb": 0.3331775254888303
+          },
+          {
+            "step_mm": 4,
+            "heading_deg": 315,
+            "wheel_torque_nm": 0.2981392656107907,
+            "caster_push_n": 8.903318301568522,
+            "minimum_mu_during_caster_climb": 0.31629243270165364
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 0,
+            "wheel_torque_nm": 0.4693813339892177,
+            "caster_push_n": 16.792077832578855,
+            "minimum_mu_during_caster_climb": 0.5390006494254597
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 45,
+            "wheel_torque_nm": 0.47496857270082066,
+            "caster_push_n": 15.458042092385247,
+            "minimum_mu_during_caster_climb": 0.4850659140218662
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 90,
+            "wheel_torque_nm": 0.4667575080075279,
+            "caster_push_n": 14.965571120965008,
+            "minimum_mu_during_caster_climb": 0.4659324447280222
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 135,
+            "wheel_torque_nm": 0.4493496220905765,
+            "caster_push_n": 15.458042092385247,
+            "minimum_mu_during_caster_climb": 0.4850659140218662
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 180,
+            "wheel_torque_nm": 0.43002394426387075,
+            "caster_push_n": 16.792077832578855,
+            "minimum_mu_during_caster_climb": 0.5390006494254597
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 225,
+            "wheel_torque_nm": 0.41966388719507275,
+            "caster_push_n": 18.37811733314143,
+            "minimum_mu_during_caster_climb": 0.6074391473791275
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 270,
+            "wheel_torque_nm": 0.42790605782125124,
+            "caster_push_n": 19.126402553699684,
+            "minimum_mu_during_caster_climb": 0.6414956311304998
+          },
+          {
+            "step_mm": 10,
+            "heading_deg": 315,
+            "wheel_torque_nm": 0.4501223422473434,
+            "caster_push_n": 18.378117333141425,
+            "minimum_mu_during_caster_climb": 0.6074391473791274
+          }
+        ],
+        "cg_targets": [
+          {
+            "mu": 0.2,
+            "max_caster_weight_fraction": 0.11086956521739132,
+            "max_cg_y_mm": 117.36195652173913,
+            "required_forward_cg_shift_mm": 22.163444967681528
+          },
+          {
+            "mu": 0.35,
+            "max_caster_weight_fraction": 0.1900990099009901,
+            "max_cg_y_mm": 126.1960396039604,
+            "required_forward_cg_shift_mm": 13.329361885460258
+          },
+          {
+            "mu": 0.5,
+            "max_caster_weight_fraction": 0.25636363636363635,
+            "max_cg_y_mm": 133.58454545454546,
+            "required_forward_cg_shift_mm": 5.940856034875196
+          }
+        ],
+        "scope": "Quasistatic initiation at a sharp edge from level ground with head raised. Uses worst individual wheel load, not an assumed equal split. No impact, tire compliance or edge-friction model. Caster-climb mu is a requirement, not a measured tire property; 0.2/0.35/0.5 remain sensitivity cases."
+      },
+      "q_range_mm": [
+        -6.000325669108492,
+        10.0
+      ],
+      "max_pitch_deg": 5.222663788332609,
+      "max_roll_deg": 2.322926772893024,
+      "min_support_n": 6.355624125496275,
+      "head_motion_fail_count": 48
+    }
+  }
+}

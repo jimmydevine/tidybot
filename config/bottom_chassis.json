@@ -1,0 +1,18 @@
+{
+  "revision": "T: integrated floor-frame comparison",
+  "status": "Material-route comparison, not a fabrication release or adopted weight reduction",
+  "material_g_mm3": {"aluminum": 0.0027, "polymer": 0.00127},
+  "side_wall_mm": 2,
+  "seat_wall_mm": 3.175,
+  "rear_tube_wall_mm": 1.6002,
+  "remaining_parts": [
+    {"id":"frame_joints", "mass_g":32, "basis":"Rail/corner/crossbeam screws, angle clips and tube crush sleeves; excludes unchanged N hardware and caster nut"},
+    {"id":"module_studs", "mass_g":20, "basis":"Four M4 mushroom studs, metal shoulders and locking hardware; geometry/grip remains to detail"},
+    {"id":"power_mounting", "mass_g":10, "basis":"Board standoffs, shelf attachment, dielectric pads and cooling/wire restraints; no electrical hardware removed"},
+    {"id":"tool_mounting", "mass_g":22, "basis":"Bin, filter/blower or tank/pump mounting and dock support tabs; tool shells and P head receiver retained separately"},
+    {"id":"sensor_and_bumper_mounts", "mass_g":20, "basis":"Printed local bosses and brackets for existing sensors, anti-tip rollers and bumper; their hardware is retained separately"},
+    {"id":"frame_completion", "mass_g":15, "basis":"Unassigned frame completion reserve, in addition to the retained N 20 g local drive reserve"}
+  ],
+  "screens": {"e_mpa":69000, "bending_limit_mpa":120, "deflection_limit_mm":1, "section_factor":0.75, "wheel_force_n":150, "corner_force_n":300, "caster_force_n":100, "caster_horizontal_n":25},
+  "policy": "Replace bottom_frame, the complete F mechanical carrier, M risers and the old installed caster allowance as complete scopes. Carry the complete N assembly through unchanged, counted once. Count caster plate as T material and bare caster/stem/retention from I separately. Keep floor_interface_F, all electronics, harnesses, wheels/motors/hubs, bumper/sensors, cleaning capacity, head hardware and automatic interfaces. R/S savings are not stacked. H route boxes never had separate booked masses and cannot be subtracted as savings."
+}

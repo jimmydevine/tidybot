@@ -1,0 +1,201 @@
+configuration,instance,module,hardware_id,mass_g,basis
+vacuum,pi_bay:pi,core,pi,82,installed allowance; owned board available; processing power is a workload estimate
+vacuum,front_camera:depth_camera,core,depth_camera,106,manufacturer drawing and 91 g reference plus mount/cable allowance
+vacuum,core_mcu_bay:core_mcu,core,core_mcu,20,board plus interface allowance
+vacuum,battery_bay:battery_cartridge,core,battery_cartridge,140,"Installed allowance: 65 g shell/restraint, 35 g monitor/ID, 40 g fuse/contacts/wiring nominal; excludes bare cell pack and fixed core receiver"
+vacuum,battery_bay:battery_receiver,core,battery_receiver,50,Additional automatic-exchange receiver allowance; passive latch retained without power
+vacuum,pack_protection:core_monitor,core,core_monitor,80,custom PCB assembly allowance; reference IC is not a complete high-current BMS
+vacuum,lidar:lidar,core,lidar,170,manufacturer family reference; owned revision not measured
+vacuum,core_misc:core_prints,core,core_prints,160,material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output
+vacuum,core_misc:core_harness,core,core_harness,125,route allowance; includes floor harness and short high-current trunk; excludes lift-side wiring
+vacuum,core_misc:core_near,core,core_near,32,sensor plus harness/mount allowance; no all-surface detection guarantee
+vacuum,core_misc:status,core,status,15,small hardware allowance
+vacuum,cap:cap,cap,cap,70,55 cm3 effective PETG/fastener allowance; no screen selected
+vacuum,wheel_left:drive_wheel,drive,drive_wheel,55,manufacturer reference
+vacuum,wheel_left:wheel_hub,drive,wheel_hub,17,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+vacuum,pod_left:drive_motor,drive,drive_motor,104,catalog reference and modest assembly variation
+vacuum,wheel_right:drive_wheel,drive,drive_wheel,55,manufacturer reference
+vacuum,wheel_right:wheel_hub,drive,wheel_hub,17,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+vacuum,pod_right:drive_motor,drive,drive_motor,104,catalog reference and modest assembly variation
+vacuum,drive_control:roboclaw,drive,roboclaw,24,catalog board 18 g plus mounts
+vacuum,drive_misc:bottom_frame,drive,bottom_frame,225,"120 cm3 PETG plus 73 g rails/studs; contains no motors, pods, bumper or tool shell"
+vacuum,drive_misc:bottom_bumper,drive,bottom_bumper,55,material/hardware allowance
+vacuum,drive_misc:floor_sensors,drive,floor_sensors,36,assembled allowance; separate from core obstacle sensing
+vacuum,drive_misc:bottom_harness,drive,bottom_harness,65,"route allowance; includes encoder leads, sensor wiring and short tool cables"
+vacuum,caster:caster,drive,caster,112,"catalog caster 90 g, 50.5 mm height and 40.5 mm sweep radius; installed stem/plate added"
+vacuum,vac_head:tricut,vacuum,tricut,200,manufacturer listing 200 g; bare versus packaged mass unresolved
+vacuum,vac_head:head_frame,vacuum,head_frame,135,"80 cm3 PETG plus springs, bearings, captive M3 hardware and seals"
+vacuum,vac_head_drive:roller_motor,vacuum,roller_motor,95,catalog reference
+vacuum,vac_head_drive:roller_transmission,vacuum,roller_transmission,45,mechanical allowance; supplier cutter interface still unresolved
+vacuum,vac_head_drive:tool_stage,vacuum,tool_stage,7,catalog bare carrier 3.1 g plus installed allowance
+vacuum,vac_side:side_brush,vacuum,side_brush,25,consumable and hub allowance; excludes motor and power stage
+vacuum,vac_side:micro_motor,vacuum,micro_motor,11,catalog reference; power limited separately
+vacuum,vac_side:tool_stage,vacuum,tool_stage,7,catalog bare carrier 3.1 g plus installed allowance
+vacuum,vac_duct:air_plumbing,vacuum,air_plumbing,75,material allowance; all air remains on bottom
+vacuum,vac_bin_left:bin,vacuum,bin,195,145 cm3 PETG effective material plus hardware; 0.50 L usable design target
+vacuum,filter_bay:filter,air_common,filter,55,installed allowance; exact filter dimension and resistance still unknown
+vacuum,blower_bay:blower,air_common,blower,155,mass allowance; source provides dimensions/curve but no verified installed mass
+vacuum,blower_driver:blower_driver,air_common,blower_driver,24,driver sheet 15 g plus connections; omit optional printer adapter
+vacuum,air_sensing:air_sensing,air_common,air_sensing,38,"board/hose allowance; NXP MPX5010DP family reference, exact carrier TBD"
+vacuum,anti_tip_left:anti_tip,drive,anti_tip,18,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+vacuum,anti_tip_right:anti_tip,drive,anti_tip,18,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+vacuum,dock_logic_power:dock_logic_power,core,dock_logic_power,45,"Installed 40 W logic supply/interface allocation, not selected hardware"
+vacuum,core_logic_power_F:logic_buck,core,logic_buck,25,assembly allowance; D42V110F5 family reference; exact variant and thermal review required
+vacuum,cincon_reference:tool_converter,air_common,tool_converter,190,"catalog 95+50.4+1.9 g plus fan, carrier and mounting; comparison regulator for 6S case"
+vacuum,motor_buck_reference:motor_buck,drive,motor_buck,24,catalog bare 15 g plus installed allowance
+vacuum,clamp_resistor_reference:regen_clamp,drive,regen_clamp,40,"custom circuit allowance; 15 V comparator threshold, 10 ohm 25 W resistor, 2200 uF/25 V reference"
+vacuum,floor_shelf_left:floor_shelf_left,drive,floor_shelf_left,15.309000000000001,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_shelf_right:floor_shelf_right,drive,floor_shelf_right,4.8654,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_shelf_tab:floor_shelf_tab,drive,floor_shelf_tab,0.09720000000000001,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_foot_plate:floor_foot_plate,drive,floor_foot_plate,8.748000000000001,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_foot_tab:floor_foot_tab,drive,floor_foot_tab,0.2268,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_rear_stiffener:floor_rear_stiffener,drive,floor_rear_stiffener,4.968,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_front_stiffener:floor_front_stiffener,drive,floor_front_stiffener,3.4560000000000004,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_post_0:floor_post_0,drive,floor_post_0,5.063933198321387,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_post_1:floor_post_1,drive,floor_post_1,5.063933198321387,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,floor_post_2:floor_post_2,drive,floor_post_2,5.063933198321387,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+vacuum,core_interface_F:core_interface_F,core,core_interface_F,8,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+vacuum,floor_interface_F:floor_interface_F,drive,floor_interface_F,16,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+vacuum,floor_carrier_fasteners:floor_carrier_fasteners,drive,floor_carrier_fasteners,10,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+vacuum,G_bottom_supervisor:bottom_mcu,drive,bottom_mcu,28,installed electronics allowance
+vacuum,G_corner_0_bottom:G_corner_0_bottom,core,G_corner_0_bottom,3.919347,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_0_top:G_corner_0_top,core,G_corner_0_top,3.919347,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_0_front:G_corner_0_front,core,G_corner_0_front,4.899183750000001,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_0_rear:G_corner_0_rear,core,G_corner_0_rear,4.899183750000001,Gross stock volume times density; drilled material is not credited
+vacuum,G_lock_0_bottom:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+vacuum,G_lock_0_top:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+vacuum,G_corner_1_bottom:G_corner_1_bottom,core,G_corner_1_bottom,3.919347,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_1_top:G_corner_1_top,core,G_corner_1_top,3.919347,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_1_front:G_corner_1_front,core,G_corner_1_front,4.899183750000001,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_1_rear:G_corner_1_rear,core,G_corner_1_rear,4.899183750000001,Gross stock volume times density; drilled material is not credited
+vacuum,G_lock_1_bottom:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+vacuum,G_lock_1_top:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+vacuum,G_corner_2_bottom:G_corner_2_bottom,core,G_corner_2_bottom,3.919347,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_2_top:G_corner_2_top,core,G_corner_2_top,3.919347,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_2_front:G_corner_2_front,core,G_corner_2_front,4.899183750000001,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_2_rear:G_corner_2_rear,core,G_corner_2_rear,4.899183750000001,Gross stock volume times density; drilled material is not credited
+vacuum,G_lock_2_bottom:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+vacuum,G_lock_2_top:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+vacuum,G_corner_3_bottom:G_corner_3_bottom,core,G_corner_3_bottom,3.919347,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_3_top:G_corner_3_top,core,G_corner_3_top,3.919347,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_3_front:G_corner_3_front,core,G_corner_3_front,4.899183750000001,Gross stock volume times density; drilled material is not credited
+vacuum,G_corner_3_rear:G_corner_3_rear,core,G_corner_3_rear,4.899183750000001,Gross stock volume times density; drilled material is not credited
+vacuum,G_lock_3_bottom:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+vacuum,G_lock_3_top:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+vacuum,G_rail_front:G_rail_front,core,G_rail_front,13.881020625,Gross stock volume times density; drilled material is not credited
+vacuum,G_rail_rear:G_rail_rear,core,G_rail_rear,13.881020625,Gross stock volume times density; drilled material is not credited
+vacuum,G_rail_left:G_rail_left,core,G_rail_left,12.792313125000002,Gross stock volume times density; drilled material is not credited
+vacuum,G_rail_right:G_rail_right,core,G_rail_right,12.792313125000002,Gross stock volume times density; drilled material is not credited
+vacuum,G_clip_0_x:G_clip_0_x,core,G_clip_0_x,0.6913292624999999,Gross stock volume times density; drilled material is not credited
+vacuum,G_clip_0_y:G_clip_0_y,core,G_clip_0_y,0.6049131046874999,Gross stock volume times density; drilled material is not credited
+vacuum,G_clip_1_x:G_clip_1_x,core,G_clip_1_x,0.6913292624999999,Gross stock volume times density; drilled material is not credited
+vacuum,G_clip_1_y:G_clip_1_y,core,G_clip_1_y,0.6049131046874999,Gross stock volume times density; drilled material is not credited
+vacuum,G_clip_2_x:G_clip_2_x,core,G_clip_2_x,0.6913292624999999,Gross stock volume times density; drilled material is not credited
+vacuum,G_clip_2_y:G_clip_2_y,core,G_clip_2_y,0.6049131046874999,Gross stock volume times density; drilled material is not credited
+vacuum,G_clip_3_x:G_clip_3_x,core,G_clip_3_x,0.6913292624999999,Gross stock volume times density; drilled material is not credited
+vacuum,G_clip_3_y:G_clip_3_y,core,G_clip_3_y,0.6049131046874999,Gross stock volume times density; drilled material is not credited
+vacuum,G_frame_fasteners:G_frame_fasteners,core,G_frame_fasteners,30,"24 M3 screw/nut/washer sets: 8 rail-to-tube, 16 clip joints; 30 g nominal installation allowance"
+vacuum,K_pod_left:pod,drive,pod,244.51343847186743,K modeled solids/catalog items plus itemized fasteners and completion reserve; motor/wheel/hub excluded
+vacuum,K_pod_right:pod,drive,pod,244.51343847186743,K modeled solids/catalog items plus itemized fasteners and completion reserve; motor/wheel/hub excluded
+vacuum,battery,battery,design_6s,753,Listed pack reference; no protection or harness double-counted
+vacuum,M:mount_allowance_g,M additions,mount_allowance_g,90,Additional planning allowance; prior head/frame/support budgets retained
+vacuum,M:lift_addition_g,M additions,lift_addition_g,62,Additional planning allowance; prior head/frame/support budgets retained
+vacuum,M:riser_addition_g,M additions,riser_addition_g,22,Additional planning allowance; prior head/frame/support budgets retained
+vacuum,contents,contents,contents,150,"Same nominal debris or tank/pad-water load in G, K and M"
+mop,pi_bay:pi,core,pi,82,installed allowance; owned board available; processing power is a workload estimate
+mop,front_camera:depth_camera,core,depth_camera,106,manufacturer drawing and 91 g reference plus mount/cable allowance
+mop,core_mcu_bay:core_mcu,core,core_mcu,20,board plus interface allowance
+mop,battery_bay:battery_cartridge,core,battery_cartridge,140,"Installed allowance: 65 g shell/restraint, 35 g monitor/ID, 40 g fuse/contacts/wiring nominal; excludes bare cell pack and fixed core receiver"
+mop,battery_bay:battery_receiver,core,battery_receiver,50,Additional automatic-exchange receiver allowance; passive latch retained without power
+mop,pack_protection:core_monitor,core,core_monitor,80,custom PCB assembly allowance; reference IC is not a complete high-current BMS
+mop,lidar:lidar,core,lidar,170,manufacturer family reference; owned revision not measured
+mop,core_misc:core_prints,core,core_prints,160,material allowance: 126 cm3 effective PETG at 1.27 g/cm3; not slicer output
+mop,core_misc:core_harness,core,core_harness,125,route allowance; includes floor harness and short high-current trunk; excludes lift-side wiring
+mop,core_misc:core_near,core,core_near,32,sensor plus harness/mount allowance; no all-surface detection guarantee
+mop,core_misc:status,core,status,15,small hardware allowance
+mop,cap:cap,cap,cap,70,55 cm3 effective PETG/fastener allowance; no screen selected
+mop,wheel_left:drive_wheel,drive,drive_wheel,55,manufacturer reference
+mop,wheel_left:wheel_hub,drive,wheel_hub,17,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+mop,pod_left:drive_motor,drive,drive_motor,104,catalog reference and modest assembly variation
+mop,wheel_right:drive_wheel,drive,drive_wheel,55,manufacturer reference
+mop,wheel_right:wheel_hub,drive,wheel_hub,17,installed allowance; shaft engagement 8.5 mm with 8 mm hub
+mop,pod_right:drive_motor,drive,drive_motor,104,catalog reference and modest assembly variation
+mop,drive_control:roboclaw,drive,roboclaw,24,catalog board 18 g plus mounts
+mop,drive_misc:bottom_frame,drive,bottom_frame,225,"120 cm3 PETG plus 73 g rails/studs; contains no motors, pods, bumper or tool shell"
+mop,drive_misc:bottom_bumper,drive,bottom_bumper,55,material/hardware allowance
+mop,drive_misc:floor_sensors,drive,floor_sensors,36,assembled allowance; separate from core obstacle sensing
+mop,drive_misc:bottom_harness,drive,bottom_harness,65,"route allowance; includes encoder leads, sensor wiring and short tool cables"
+mop,caster:caster,drive,caster,112,"catalog caster 90 g, 50.5 mm height and 40.5 mm sweep radius; installed stem/plate added"
+mop,mop_pad:mop_pad,mop,mop_pad,105,"material/textile allowance; 8 N normal-force design point, 3 mm peak-to-peak oscillation"
+mop,mop_drive:roller_motor,mop,roller_motor,95,catalog reference
+mop,mop_drive:mop_crank,mop,mop_crank,45,"material/mechanism allowance; 15 Hz at 900 RPM, not an OEM mop performance claim"
+mop,mop_drive:tool_stage,mop,tool_stage,7,catalog bare carrier 3.1 g plus installed allowance
+mop,mop_lift:pad_lift,mop,pad_lift,62,"19 g catalog actuator plus regulator, links, mount, switches and wire allowance; 12 mm lift from 20 mm stroke"
+mop,mop_tank:water_tank,mop,water_tank,115,90 cm3 PETG/liner allowance; printed shell needs a verified liner or leak-tight process
+mop,mop_pump:pump,mop,pump,200,catalog reference; 200–300 mA while running and up to 100 mL/min
+mop,mop_wet_io:wet_plumbing,mop,wet_plumbing,70,installed fluid hardware allowance; no dirty-water tank carried
+mop,mop_wet_io:wet_control,mop,wet_control,22,PCB and connectors allowance
+mop,anti_tip_left:anti_tip,drive,anti_tip,18,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+mop,anti_tip_right:anti_tip,drive,anti_tip,18,"Assembly allowance; 20 mm outside diameter, normally 2 mm above floor"
+mop,dock_logic_power:dock_logic_power,core,dock_logic_power,45,"Installed 40 W logic supply/interface allocation, not selected hardware"
+mop,core_logic_power_F:logic_buck,core,logic_buck,25,assembly allowance; D42V110F5 family reference; exact variant and thermal review required
+mop,motor_buck_reference:motor_buck,drive,motor_buck,24,catalog bare 15 g plus installed allowance
+mop,clamp_resistor_reference:regen_clamp,drive,regen_clamp,40,"custom circuit allowance; 15 V comparator threshold, 10 ohm 25 W resistor, 2200 uF/25 V reference"
+mop,floor_shelf_left:floor_shelf_left,drive,floor_shelf_left,15.309000000000001,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_shelf_right:floor_shelf_right,drive,floor_shelf_right,4.8654,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_shelf_tab:floor_shelf_tab,drive,floor_shelf_tab,0.09720000000000001,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_foot_plate:floor_foot_plate,drive,floor_foot_plate,8.748000000000001,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_foot_tab:floor_foot_tab,drive,floor_foot_tab,0.2268,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_rear_stiffener:floor_rear_stiffener,drive,floor_rear_stiffener,4.968,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_front_stiffener:floor_front_stiffener,drive,floor_front_stiffener,3.4560000000000004,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_post_0:floor_post_0,drive,floor_post_0,5.063933198321387,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_post_1:floor_post_1,drive,floor_post_1,5.063933198321387,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,floor_post_2:floor_post_2,drive,floor_post_2,5.063933198321387,Unperforated stock volume and density; tube plus full-diameter steel rod for each post
+mop,core_interface_F:core_interface_F,core,core_interface_F,8,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+mop,floor_interface_F:floor_interface_F,drive,floor_interface_F,16,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+mop,floor_carrier_fasteners:floor_carrier_fasteners,drive,floor_carrier_fasteners,10,"Additional allowance; existing harness, converter carrier and frame budgets retained"
+mop,G_bottom_supervisor:bottom_mcu,drive,bottom_mcu,28,installed electronics allowance
+mop,G_corner_0_bottom:G_corner_0_bottom,core,G_corner_0_bottom,3.919347,Gross stock volume times density; drilled material is not credited
+mop,G_corner_0_top:G_corner_0_top,core,G_corner_0_top,3.919347,Gross stock volume times density; drilled material is not credited
+mop,G_corner_0_front:G_corner_0_front,core,G_corner_0_front,4.899183750000001,Gross stock volume times density; drilled material is not credited
+mop,G_corner_0_rear:G_corner_0_rear,core,G_corner_0_rear,4.899183750000001,Gross stock volume times density; drilled material is not credited
+mop,G_lock_0_bottom:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+mop,G_lock_0_top:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+mop,G_corner_1_bottom:G_corner_1_bottom,core,G_corner_1_bottom,3.919347,Gross stock volume times density; drilled material is not credited
+mop,G_corner_1_top:G_corner_1_top,core,G_corner_1_top,3.919347,Gross stock volume times density; drilled material is not credited
+mop,G_corner_1_front:G_corner_1_front,core,G_corner_1_front,4.899183750000001,Gross stock volume times density; drilled material is not credited
+mop,G_corner_1_rear:G_corner_1_rear,core,G_corner_1_rear,4.899183750000001,Gross stock volume times density; drilled material is not credited
+mop,G_lock_1_bottom:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+mop,G_lock_1_top:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+mop,G_corner_2_bottom:G_corner_2_bottom,core,G_corner_2_bottom,3.919347,Gross stock volume times density; drilled material is not credited
+mop,G_corner_2_top:G_corner_2_top,core,G_corner_2_top,3.919347,Gross stock volume times density; drilled material is not credited
+mop,G_corner_2_front:G_corner_2_front,core,G_corner_2_front,4.899183750000001,Gross stock volume times density; drilled material is not credited
+mop,G_corner_2_rear:G_corner_2_rear,core,G_corner_2_rear,4.899183750000001,Gross stock volume times density; drilled material is not credited
+mop,G_lock_2_bottom:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+mop,G_lock_2_top:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+mop,G_corner_3_bottom:G_corner_3_bottom,core,G_corner_3_bottom,3.919347,Gross stock volume times density; drilled material is not credited
+mop,G_corner_3_top:G_corner_3_top,core,G_corner_3_top,3.919347,Gross stock volume times density; drilled material is not credited
+mop,G_corner_3_front:G_corner_3_front,core,G_corner_3_front,4.899183750000001,Gross stock volume times density; drilled material is not credited
+mop,G_corner_3_rear:G_corner_3_rear,core,G_corner_3_rear,4.899183750000001,Gross stock volume times density; drilled material is not credited
+mop,G_lock_3_bottom:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+mop,G_lock_3_top:core_locks,core,core_locks,16.25,"mechanism allowance; four top and four bottom, station-actuated"
+mop,G_rail_front:G_rail_front,core,G_rail_front,13.881020625,Gross stock volume times density; drilled material is not credited
+mop,G_rail_rear:G_rail_rear,core,G_rail_rear,13.881020625,Gross stock volume times density; drilled material is not credited
+mop,G_rail_left:G_rail_left,core,G_rail_left,12.792313125000002,Gross stock volume times density; drilled material is not credited
+mop,G_rail_right:G_rail_right,core,G_rail_right,12.792313125000002,Gross stock volume times density; drilled material is not credited
+mop,G_clip_0_x:G_clip_0_x,core,G_clip_0_x,0.6913292624999999,Gross stock volume times density; drilled material is not credited
+mop,G_clip_0_y:G_clip_0_y,core,G_clip_0_y,0.6049131046874999,Gross stock volume times density; drilled material is not credited
+mop,G_clip_1_x:G_clip_1_x,core,G_clip_1_x,0.6913292624999999,Gross stock volume times density; drilled material is not credited
+mop,G_clip_1_y:G_clip_1_y,core,G_clip_1_y,0.6049131046874999,Gross stock volume times density; drilled material is not credited
+mop,G_clip_2_x:G_clip_2_x,core,G_clip_2_x,0.6913292624999999,Gross stock volume times density; drilled material is not credited
+mop,G_clip_2_y:G_clip_2_y,core,G_clip_2_y,0.6049131046874999,Gross stock volume times density; drilled material is not credited
+mop,G_clip_3_x:G_clip_3_x,core,G_clip_3_x,0.6913292624999999,Gross stock volume times density; drilled material is not credited
+mop,G_clip_3_y:G_clip_3_y,core,G_clip_3_y,0.6049131046874999,Gross stock volume times density; drilled material is not credited
+mop,G_frame_fasteners:G_frame_fasteners,core,G_frame_fasteners,30,"24 M3 screw/nut/washer sets: 8 rail-to-tube, 16 clip joints; 30 g nominal installation allowance"
+mop,K_pod_left:pod,drive,pod,244.51343847186743,K modeled solids/catalog items plus itemized fasteners and completion reserve; motor/wheel/hub excluded
+mop,K_pod_right:pod,drive,pod,244.51343847186743,K modeled solids/catalog items plus itemized fasteners and completion reserve; motor/wheel/hub excluded
+mop,battery,battery,design_6s,753,Listed pack reference; no protection or harness double-counted
+mop,M:mount_allowance_g,M additions,mount_allowance_g,80,Additional planning allowance; prior head/frame/support budgets retained
+mop,M:lift_addition_g,M additions,lift_addition_g,0,Additional planning allowance; prior head/frame/support budgets retained
+mop,M:riser_addition_g,M additions,riser_addition_g,18,Additional planning allowance; prior head/frame/support budgets retained
+mop,contents,contents,contents,400,"Same nominal debris or tank/pad-water load in G, K and M"

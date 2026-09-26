@@ -1,0 +1,124 @@
+{
+  "source_fingerprint": "41f03ea02c2a917baeb2c7984d7a63319dc2587fb2b5664c99d967a17b3cfa6c",
+  "fabrication_release": false,
+  "valid_solids": {
+    "equipment_bridge_front": true,
+    "front_left_frame_clip": true,
+    "front_right_frame_clip": true,
+    "equipment_bridge_rear": true,
+    "rear_left_frame_clip": true,
+    "rear_right_frame_clip": true,
+    "left_receiver_end": true,
+    "left_front_receiver_tab": true,
+    "left_rear_receiver_tab": true,
+    "left_guide_liner_0": true,
+    "left_guide_liner_1": true,
+    "left_battery_tongue": true,
+    "right_receiver_end": true,
+    "right_front_receiver_tab": true,
+    "right_rear_receiver_tab": true,
+    "right_guide_liner_0": true,
+    "right_guide_liner_1": true,
+    "right_battery_tongue": true,
+    "pi_tray": true,
+    "supervisor_tray": true,
+    "power_board_shelf": true,
+    "logic_buck_tray": true,
+    "dock_power_tray": true,
+    "lidar_tray": true
+  },
+  "volume_differences_mm3": {
+    "equipment_bridge_front": -9.094947017729282e-13,
+    "front_left_frame_clip": 2.842170943040401e-14,
+    "front_right_frame_clip": 1.4210854715202004e-14,
+    "equipment_bridge_rear": 0.0,
+    "rear_left_frame_clip": 1.4210854715202004e-14,
+    "rear_right_frame_clip": 1.4210854715202004e-14,
+    "left_receiver_end": 0.0,
+    "left_front_receiver_tab": 0.0,
+    "left_rear_receiver_tab": 0.0,
+    "left_guide_liner_0": 0.0,
+    "left_guide_liner_1": 0.0,
+    "left_battery_tongue": -1.4210854715202004e-14,
+    "right_receiver_end": 2.2737367544323206e-13,
+    "right_front_receiver_tab": 0.0,
+    "right_rear_receiver_tab": 0.0,
+    "right_guide_liner_0": 0.0,
+    "right_guide_liner_1": 0.0,
+    "right_battery_tongue": 0.0,
+    "pi_tray": 2.7284841053187847e-12,
+    "supervisor_tray": -2.7284841053187847e-12,
+    "power_board_shelf": -4.547473508864641e-13,
+    "logic_buck_tray": 1.1368683772161603e-13,
+    "dock_power_tray": 1.1368683772161603e-13,
+    "lidar_tray": 0.0
+  },
+  "internal_intersections": [],
+  "component_intersections": [],
+  "protected_reservation_intersections": [],
+  "core_upward_intersections": [],
+  "battery_downward_intersections": [],
+  "minimum_nominal_guide_gap_mm": 0.2,
+  "scope": "S material versus M equipment allocations and N drive supports for vacuum/mop; old filled battery/lidar-mount reservations excluded only for their intended replacement. Protected cell and electrical-end volumes checked separately. 100 mm cartridge withdrawal with tongues released and bottom removed. Upward core sweep includes new S pieces versus floor equipment. Full cartridge construction, cable sweeps, tolerances, sheet radii, motor/lift contacts and unmapped duster layout remain unverified.",
+  "closed_latch_negative_controls": [
+    {
+      "side": "left",
+      "downward_attempt_mm": 0.5,
+      "interference_mm3": 6.0
+    },
+    {
+      "side": "right",
+      "downward_attempt_mm": 0.5,
+      "interference_mm3": 6.0
+    }
+  ],
+  "upward_steps": 181,
+  "downward_steps": 101,
+  "printed_part_bounds_mm": {
+    "left_guide_liner_0": [
+      0.5,
+      6.0,
+      43.0
+    ],
+    "left_guide_liner_1": [
+      0.5,
+      6.0,
+      43.0
+    ],
+    "right_guide_liner_0": [
+      0.5,
+      6.0,
+      43.0
+    ],
+    "right_guide_liner_1": [
+      0.5,
+      6.0,
+      43.0
+    ],
+    "pi_tray": [
+      117.0,
+      77.35,
+      16.299999999999997
+    ],
+    "supervisor_tray": [
+      37.7125,
+      62.0,
+      23.5
+    ],
+    "logic_buck_tray": [
+      35.0,
+      49.0,
+      1.0
+    ],
+    "dock_power_tray": [
+      36.5,
+      62.0,
+      1.0
+    ],
+    "lidar_tray": [
+      64.0,
+      64.0,
+      1.5
+    ]
+  }
+}

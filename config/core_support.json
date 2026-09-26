@@ -1,0 +1,32 @@
+{
+  "revision": "S: shared core equipment supports and battery receiver",
+  "status": "Material and packaging candidate; no fabrication or automatic-exchange release",
+  "replace_hardware_ids": ["core_prints", "battery_receiver"],
+  "material_g_mm3": {"aluminum":0.0027,"polymer":0.00127,"steel":0.00785},
+  "bridge": {"x":4.0875,"length":266.825,"front_y":83.4125,"rear_y":154.6,"z":109.5,"thickness":1.5875,"height":12.7},
+  "receiver": {"left_x":42.3,"right_x":224.7,"sheet_thickness":1,"y":85,"z":66,"depth":69.6,"height":55.5,"latch_stroke":3},
+  "screen": {"e_aluminum_mpa":69000,"equipment_acceleration_g":3,"sharing_beams":2,"bending_limit_mpa":120,"deflection_limit_mm":1,"cartridge_retention_n":100,"latches_sharing":2},
+  "remaining_parts": [
+    {"id":"frame_and_equipment_fasteners","mass_g":14,"basis":"Installation allowance for beam clips, carrier fasteners, inserts and load spreaders; exact lengths and holes unresolved"},
+    {"id":"receiver_latch_completion","mass_g":15,"basis":"Latch guides, positive pawls, springs, two position sensors and associated hardware; two modeled tongues are counted separately"},
+    {"id":"receiver_contact_support","mass_g":6,"basis":"Fixed floating contact support and insulation; core-side power wiring stays in core_harness and cartridge contacts stay in battery_cartridge"},
+    {"id":"remaining_equipment_mounts","mass_g":28,"basis":"Camera, six near-sensor mounts, status hardware mounting, power-board mounting and port supports not detailed by this pass"},
+    {"id":"cooling_guides_and_wire_restraints","mass_g":10,"basis":"Short air guides, edge protection, cable clips and isolation; electrical harness/cooler hardware remains separate"},
+    {"id":"completion_reserve","mass_g":15,"basis":"Unassigned completion reserve inside the replacement scope; not fabricated material"}
+  ],
+  "retained": {
+    "cartridge_shell_and_restraint_g":65,
+    "cartridge_monitor_id_g":35,
+    "cartridge_fuse_contacts_wiring_g":40,
+    "battery_cells_g":753,
+    "battery_capacity_ah":5.2,
+    "battery_nominal_voltage_v":22.2,
+    "module_locks_g":130,
+    "core_harness_g":125,
+    "core_power_protection_g":80
+  },
+  "sources": {
+    "aluminum_reference":"https://www.hydro.com/globalassets/01-products--services/extruded-profiles/americas/ena-resources/alloy-data-sheets/hydro_2019_data_sheet_6061.pdf"
+  },
+  "policy":"Replace only core_prints and battery_receiver. Keep the complete G metal frame and its fasteners, eight module locks, cartridge shell/monitor/contacts, battery cells, protection, harness, cooling electronics and dock-power supply. The 600 N inter-module load stays on the unchanged corner frame; these added bridges screen equipment support only. Do not combine an unverified R saving. No new nominal system saving is booked."
+}

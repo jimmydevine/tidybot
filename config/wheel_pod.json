@@ -1,0 +1,21 @@
+{
+  "revision": "J: wheel-pod packaging and spring mechanism",
+  "status": "Candidate mechanism, not fabrication or purchase release",
+  "motor": {"gear_face_x_mm":26,"body_length_mm":69,"diameter_mm":25,"shaft_length_mm":12.5,"shaft_diameter_mm":4,"boss_diameter_mm":7,"boss_length_mm":2.5,"mount_hole_spacing_mm":17,"maximum_thread_insertion_mm":6},
+  "bracket": {"candidate":"Pololu 2676","mass_g":8.5,"thickness_mm":2,"length_mm":52,"width_mm":25,"height_mm":27,"axis_above_bottom_mm":14.5,"centre_hole_mm":7.5,"motor_screw_length_mm":6,"motor_screw_head":"Flush M3 countersunk replacement; stock bracket needs countersinking and fit verification"},
+  "hub": {"back_x_mm":22,"body_length_mm":8,"pilot_length_mm":2,"wheel_extent_from_back_mm":[-4,20],"wheel_width_mm":24},
+  "pivot": {"diameter_mm":8,"pin_min_x_mm":26,"pin_length_mm":80,"bushing_id_mm":8,"bushing_od_mm":10,"bushing_length_mm":10,"bushing_centres_x_mm":[44,88],"collar_min_x_mm":[29.5,93.5],"collar_width_mm":9,"collar_body_od_mm":18,"collar_clearance_od_mm":22.4,"collar_mass_g":5.1,"collar_candidate":"Ruland MCL-8-A","bushing_candidate":"igus G1SM-0810-10","note":"Internal collars avoid large heads beside the tire. Collar clamping/pin fit and bushing housing tolerances are unqualified. Use the 22.4 mm screw-clearance envelope, not only the 18 mm body."},
+  "spring": {"x_mm":80,"lower_pivot_yz_mm":[129,24],"upper_pivot_yz_mm":[129,56],"seat_offset_mm":3,"free_length_mm":32.5,"rate_n_mm":5,"od_limit_mm":10,"id_min_mm":7,"solid_height_limit_mm":13.5,"solid_margin_mm":2,"shim_range_mm":[0,6],"cup_od_mm":12,"guide_length_mm":14.5,"lower_guide_od_mm":3,"upper_guide_od_mm":6.5,"upper_guide_id_mm":3.8,"minimum_guide_overlap_mm":1.5,"minimum_guide_end_gap_mm":1,"note":"Sourcing target, not a selected spring. Cups rock on 3 mm transverse pins; guides telescope without passing through the trunnions. Shims lower the fixed upper fork to set module-specific preload."},
+  "stop": {"x_mm":100,"lever_mm":32,"strike_z_mm":62,"pad_width_mm":5,"note":"Dimensioned contact targets only. Adjustable compression stop, positive droop capture and wheel-drop sensor still need connected hardware."},
+  "mass": {"printed_density_g_mm3":0.00127,"bush_pair_allowance_g":1,"spring_allowance_g":4,"fasteners_allowance_g":12,"stop_sensor_allowance_g":8,"note":"Solid CAD volumes for printed candidates plus separate allowances. Does not close fixed cap/cheek/frame connections or replace G's complete assembly ledger."},
+  "sources": {
+    "motor":"https://www.pololu.com/product/4846",
+    "motor_drawing":"https://www.pololu.com/file/0J1634/25d-metal-gearmotor-dimension-diagram.pdf",
+    "bracket":"https://www.pololu.com/product/2676",
+    "bracket_drawing":"https://www.pololu.com/file/0J825/2676-bracket-dimensions.pdf",
+    "collar":"https://www.ruland.com/mcl-8-a.html",
+    "bushing":"https://www.igus.com/iglide-ibh/sleeve-bearings/product-details/iglide-g1-m?artnr=G1SM-0810-10",
+    "wheel":"https://www.gobilda.com/hogback-traction-wheel-72mm-diameter-50a-durometer/",
+    "hub":"https://www.gobilda.com/1309-series-sonic-hub-4mm-bore/"
+  }
+}
